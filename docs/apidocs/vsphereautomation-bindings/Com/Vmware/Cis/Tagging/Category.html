@@ -1,0 +1,1591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Com::Vmware::Cis::Tagging::Category
+  
+    &mdash; VMware vSphere Automation Ruby Bindings
+  
+</title>
+
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../../';
+  framesUrl = "../../../../frames.html#!Com/Vmware/Cis/Tagging/Category.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../Com.html" title="Com (module)">Com</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Vmware.html" title="Com::Vmware (module)">Vmware</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Cis.html" title="Com::Vmware::Cis (module)">Cis</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Tagging.html" title="Com::Vmware::Cis::Tagging (module)">Tagging</a></span></span>
+     &raquo; 
+    <span class="title">Category</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Com::Vmware::Cis::Tagging::Category
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">VAPI::Bindings::VapiService</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">VAPI::Bindings::VapiService</li>
+          
+            <li class="next">Com::Vmware::Cis::Tagging::Category</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+The  ``Com::Vmware::Cis::Tagging::Category``   class  provides  methods  to
+create, read, update, delete, and enumerate categories.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Category/CreateSpec.html" title="Com::Vmware::Cis::Tagging::Category::CreateSpec (class)">CreateSpec</a></span>, <span class='object_link'><a href="Category/UpdateSpec.html" title="Com::Vmware::Cis::Tagging::Category::UpdateSpec (class)">UpdateSpec</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_to_used_by-instance_method" title="#add_to_used_by (instance method)">- (Void) <strong>add_to_used_by</strong>(category_id, used_by_entity) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Adds the  ``used_by_entity``  to the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   subscribers  set
+for the specified category.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (String) <strong>create</strong>(create_spec) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Creates a category.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Void) <strong>delete</strong>(category_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Deletes an existing category.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">- (Com::Vmware::Cis::Tagging::CategoryModel) <strong>get</strong>(category_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Fetches the category information for the given category identifier.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Category) <strong>initialize</strong>(config) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list-instance_method" title="#list (instance method)">- (Array&lt;String&gt;) <strong>list</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Enumerates the categories in the system.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list_used_categories-instance_method" title="#list_used_categories (instance method)">- (Array&lt;String&gt;) <strong>list_used_categories</strong>(used_by_entity) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Enumerates all categories for which the  ``used_by_entity``  is part of the
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   subscribers  set
+.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_from_used_by-instance_method" title="#remove_from_used_by (instance method)">- (Void) <strong>remove_from_used_by</strong>(category_id, used_by_entity) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Removes the  ``used_by_entity``  from the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   subscribers  set
+.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#revoke_propagating_permissions-instance_method" title="#revoke_propagating_permissions (instance method)">- (Void) <strong>revoke_propagating_permissions</strong>(category_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Revokes all propagating permissions on the given category.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Void) <strong>update</strong>(category_id, update_spec) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Updates an existing category.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Cis::Tagging::Category (class)">Category</a></span></tt>) <strong>initialize</strong>(config) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>config</span>
+      
+      
+        <span class='type'>(<tt>VAPI::Bindings::StubConfig</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A hash with the api provider details.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+161
+162
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 161</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='cvar'>@@service_info</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_to_used_by-instance_method">
+  
+    - (<tt>Void</tt>) <strong>add_to_used_by</strong>(category_id, used_by_entity) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Adds the  ``used_by_entity``  to the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   subscribers  set
+for the specified category. If the  ``used_by_entity``  is already in the 
+set , then this becomes an idempotent no-op. To invoke this  method , you
+need the modify   :attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by` 
+privilege on the category.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>category_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of the input category.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>used_by_entity</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The name of the user to be added to the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`    set .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the category for the given  ``category_id``  does not exist in the
+system.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/Unauthorized.html" title="Com::Vmware::Vapi::Std::Errors::Unauthorized (class)">Com::Vmware::Vapi::Std::Errors::Unauthorized</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if you do not have the privilege to add an entity to the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   field.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+274
+275
+276
+277
+278
+279</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 274</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_to_used_by'>add_to_used_by</span><span class='lparen'>(</span><span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span> <span class='id identifier rubyid_used_by_entity'>used_by_entity</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@add_to_used_by_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>category_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by_entity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_used_by_entity'>used_by_entity</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    - (<tt>String</tt>) <strong>create</strong>(create_spec) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Creates a category. To invoke this  method , you need the create category
+privilege.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>create_spec</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Category/CreateSpec.html" title="Com::Vmware::Cis::Tagging::Category::CreateSpec (class)">Com::Vmware::Cis::Tagging::Category::CreateSpec</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Specification for the new category to be created.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of the created category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/AlreadyExists.html" title="Com::Vmware::Vapi::Std::Errors::AlreadyExists (class)">Com::Vmware::Vapi::Std::Errors::AlreadyExists</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the   :attr:`Com::Vmware::Cis::Tagging::Category::CreateSpec.name`  
+provided in the  ``create_spec``  is the name of an already existing
+category.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if any of the information in the  ``create_spec``  is invalid.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/Unauthorized.html" title="Com::Vmware::Vapi::Std::Errors::Unauthorized (class)">Com::Vmware::Vapi::Std::Errors::Unauthorized</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if you do not have the privilege to create a category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+178
+179
+180
+181
+182</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 178</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_create_spec'>create_spec</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@create_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>create_spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_create_spec'>create_spec</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    - (<tt>Void</tt>) <strong>delete</strong>(category_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Deletes an existing category. To invoke this  method , you need the delete
+privilege on the category.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>category_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of category to be deleted.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the category for the given  ``category_id``  does not exist in the
+system.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/Unauthorized.html" title="Com::Vmware::Vapi::Std::Errors::Unauthorized (class)">Com::Vmware::Vapi::Std::Errors::Unauthorized</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if you do not have the privilege to delete the category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236
+237
+238</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 234</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_category_id'>category_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@delete_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>category_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    - (<tt><span class='object_link'><a href="CategoryModel.html" title="Com::Vmware::Cis::Tagging::CategoryModel (class)">Com::Vmware::Cis::Tagging::CategoryModel</a></span></tt>) <strong>get</strong>(category_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Fetches the category information for the given category identifier. In
+order to view the category information, you need the read privilege on the
+category.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>category_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of the input category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CategoryModel.html" title="Com::Vmware::Cis::Tagging::CategoryModel (class)">Com::Vmware::Cis::Tagging::CategoryModel</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The   :class:`Com::Vmware::Cis::Tagging::CategoryModel`   that corresponds
+to  ``category_id`` .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the category for the given  ``category_id``  does not exist in the
+system.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/Unauthorized.html" title="Com::Vmware::Vapi::Std::Errors::Unauthorized (class)">Com::Vmware::Vapi::Std::Errors::Unauthorized</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if you do not have the privilege to read the category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+195
+196
+197
+198
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 195</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_category_id'>category_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@get_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>category_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list-instance_method">
+  
+    - (<tt>Array&lt;String&gt;</tt>) <strong>list</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Enumerates the categories in the system. To invoke this  method , you need
+the read privilege on the individual categories. The  list  will only
+contain those categories for which you have read privileges.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The  list  of resource identifiers for the categories in the system.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+245
+246
+247</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 245</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_info</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list_used_categories-instance_method">
+  
+    - (<tt>Array&lt;String&gt;</tt>) <strong>list_used_categories</strong>(used_by_entity) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Enumerates all categories for which the  ``used_by_entity``  is part of the
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   subscribers  set
+. To invoke this  method , you need the read privilege on the individual
+categories.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>used_by_entity</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The field on which the results will be filtered.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The  list  of resource identifiers for the categories in the system that
+are used by  ``used_by_entity`` .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+256
+257
+258
+259
+260</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 256</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list_used_categories'>list_used_categories</span><span class='lparen'>(</span><span class='id identifier rubyid_used_by_entity'>used_by_entity</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_used_categories_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by_entity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_used_by_entity'>used_by_entity</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_from_used_by-instance_method">
+  
+    - (<tt>Void</tt>) <strong>remove_from_used_by</strong>(category_id, used_by_entity) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Removes the  ``used_by_entity``  from the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   subscribers  set
+. If the  ``used_by_entity``  is not using this category, then this becomes
+a no-op. To invoke this  method , you need the modify  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   privilege on the
+category.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>category_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of the input category.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>used_by_entity</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The name of the user to be removed from the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`    set .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the category for the given  ``category_id``  does not exist in the
+system.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/Unauthorized.html" title="Com::Vmware::Vapi::Std::Errors::Unauthorized (class)">Com::Vmware::Vapi::Std::Errors::Unauthorized</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if you do not have the privilege to remove an entity from the  
+:attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`   field.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+293
+294
+295
+296
+297
+298</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 293</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_from_used_by'>remove_from_used_by</span><span class='lparen'>(</span><span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span> <span class='id identifier rubyid_used_by_entity'>used_by_entity</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@remove_from_used_by_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>category_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by_entity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_used_by_entity'>used_by_entity</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="revoke_propagating_permissions-instance_method">
+  
+    - (<tt>Void</tt>) <strong>revoke_propagating_permissions</strong>(category_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Revokes all propagating permissions on the given category. You should then
+attach a direct permission with tagging privileges on the given category.
+To invoke this  method , you need category related privileges (direct or
+propagating) on the concerned category.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>category_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of the input category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the category for the given  ``category_id``  does not exist in the
+system.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/Unauthorized.html" title="Com::Vmware::Vapi::Std::Errors::Unauthorized (class)">Com::Vmware::Vapi::Std::Errors::Unauthorized</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if you do not have the privilege to revoke propagating permissions on the
+category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+310
+311
+312
+313
+314</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 310</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_revoke_propagating_permissions'>revoke_propagating_permissions</span><span class='lparen'>(</span><span class='id identifier rubyid_category_id'>category_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@revoke_propagating_permissions_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>category_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt>Void</tt>) <strong>update</strong>(category_id, update_spec) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Updates an existing category. To invoke this  method , you need the edit
+privilege on the category.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>category_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of the category to be updated.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>update_spec</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Category/UpdateSpec.html" title="Com::Vmware::Cis::Tagging::Category::UpdateSpec (class)">Com::Vmware::Cis::Tagging::Category::UpdateSpec</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Specification to update the category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/AlreadyExists.html" title="Com::Vmware::Vapi::Std::Errors::AlreadyExists (class)">Com::Vmware::Vapi::Std::Errors::AlreadyExists</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the   :attr:`Com::Vmware::Cis::Tagging::Category::UpdateSpec.name`  
+provided in the  ``update_spec``  is the name of an already existing
+category.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if any of the information in the  ``update_spec``  is invalid.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the category for the given  ``category_id``  does not exist in the
+system.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/Unauthorized.html" title="Com::Vmware::Vapi::Std::Errors::Unauthorized (class)">Com::Vmware::Vapi::Std::Errors::Unauthorized</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if you do not have the privilege to update the category.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+217
+218
+219
+220
+221
+222</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 217</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span> <span class='id identifier rubyid_update_spec'>update_spec</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@update_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>category_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>update_spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_update_spec'>update_spec</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  <br>
+  Version 6.5 RC
+  <br>
+  Generated on Fri Oct 28 14:14:42 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

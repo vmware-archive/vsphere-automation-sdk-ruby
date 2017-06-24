@@ -1,0 +1,1463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Com::Vmware::Content::Library::ItemService
+  
+    &mdash; VMware vSphere Automation Ruby Bindings
+  
+</title>
+
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../../';
+  framesUrl = "../../../../frames.html#!Com/Vmware/Content/Library/ItemService.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../../_index.html">Index (I)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../Com.html" title="Com (module)">Com</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Vmware.html" title="Com::Vmware (module)">Vmware</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Content.html" title="Com::Vmware::Content (module)">Content</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Library.html" title="Com::Vmware::Content::Library (module)">Library</a></span></span>
+     &raquo; 
+    <span class="title">ItemService</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Com::Vmware::Content::Library::ItemService
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">VAPI::Bindings::VapiService</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">VAPI::Bindings::VapiService</li>
+          
+            <li class="next">Com::Vmware::Content::Library::ItemService</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+The  ``Com::Vmware::Content::Library::Item``   class  provides  methods 
+for managing library items.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ItemService/FindSpec.html" title="Com::Vmware::Content::Library::ItemService::FindSpec (class)">FindSpec</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="RESOURCE_TYPE-constant" class="">RESOURCE_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.library.Item</span><span class='tstring_end'>'</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#copy-instance_method" title="#copy (instance method)">- (String) <strong>copy</strong>(source_library_item_id, destination_create_spec, client_token = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Copies a library item.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (String) <strong>create</strong>(create_spec, client_token = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Creates a new library item.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Void) <strong>delete</strong>(library_item_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Deletes a library item.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find-instance_method" title="#find (instance method)">- (Array&lt;String&gt;) <strong>find</strong>(spec) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns identifiers of all the visible (as determined by authorization
+policy) library items matching the requested  
+:class:`Com::Vmware::Content::Library::Item::FindSpec`  .
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">- (Com::Vmware::Content::Library::ItemModel) <strong>get</strong>(library_item_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the   :class:`Com::Vmware::Content::Library::ItemModel`   with the
+given identifier.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (ItemService) <strong>initialize</strong>(config) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list-instance_method" title="#list (instance method)">- (Array&lt;String&gt;) <strong>list</strong>(library_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the identifiers of all items in the given library.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Void) <strong>update</strong>(library_item_id, update_spec) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Updates the specified properties of a library item.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Content::Library::ItemService (class)">ItemService</a></span></tt>) <strong>initialize</strong>(config) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>config</span>
+      
+      
+        <span class='type'>(<tt>VAPI::Bindings::StubConfig</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A hash with the api provider details.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 142</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='cvar'>@@service_info</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="copy-instance_method">
+  
+    - (<tt>String</tt>) <strong>copy</strong>(source_library_item_id, destination_create_spec, client_token = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Copies a library item.  
+</p>
+<pre class="code ruby"><code class="ruby">
+ Copying a library item allows a duplicate to be made within the same or different library. The copy occurs by first creating a new library item, whose identifier is returned. The content of the library item is then copied asynchronously. This copy can be tracked as a task.  
+
+ If the copy fails, Content Library Service will roll back the copy by deleting any content that was already copied, and removing the new library item. A failure during rollback may require manual cleanup by an administrator.  
+
+ A library item cannot be copied into a subscribed library.
+
+    If not specified copy is not idempotent.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>client_token</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A unique token generated on the client for each copy request. The token
+should be a universally unique identifier (UUID), for example: 
+``b8a2a2e3-2314-43cd-a871-6ede0f429751`` . This token can be used to
+guarantee idempotent copy.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>source_library_item_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Identifier of the existing library item from which the content will be
+copied.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>destination_create_spec</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ItemModel.html" title="Com::Vmware::Content::Library::ItemModel (class)">Com::Vmware::Content::Library::ItemModel</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Specification for the new library item to be created.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The identifier of the new library item into which the content is being
+copied.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the library item with  ``source_library_item_id``  does not exist, or if
+the library referenced by the  
+:attr:`Com::Vmware::Content::Library::ItemModel.library_id`   property of 
+``destination_create_spec``  does not exist.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if one of the following is true for the new library item:  
+</p>
+<pre class="code ruby"><code class="ruby">
+ * name is empty
+  * name exceeds 80 characters
+  * description exceeds 1024 characters</code></pre>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the  ``client_token``  does not conform to the UUID format.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidElementType.html" title="Com::Vmware::Vapi::Std::Errors::InvalidElementType (class)">Com::Vmware::Vapi::Std::Errors::InvalidElementType</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the   :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  
+property of  ``destination_create_spec``  refers to a subscribed library.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/ResourceInaccessible.html" title="Com::Vmware::Vapi::Std::Errors::ResourceInaccessible (class)">Com::Vmware::Vapi::Std::Errors::ResourceInaccessible</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the copy operation failed because the source or destination library item
+is not accessible.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+181
+182
+183
+184
+185
+186
+187</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 181</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_copy'>copy</span><span class='lparen'>(</span><span class='id identifier rubyid_source_library_item_id'>source_library_item_id</span><span class='comma'>,</span> <span class='id identifier rubyid_destination_create_spec'>destination_create_spec</span><span class='comma'>,</span> <span class='id identifier rubyid_client_token'>client_token</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@copy_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>client_token</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_client_token'>client_token</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>source_library_item_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_source_library_item_id'>source_library_item_id</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>destination_create_spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_destination_create_spec'>destination_create_spec</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    - (<tt>String</tt>) <strong>create</strong>(create_spec, client_token = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Creates a new library item.  
+</p>
+<pre class="code ruby"><code class="ruby">
+ A new library item is created without any content. After creation, content can be added through the   :class:`Com::Vmware::Content::Library::Item::UpdateSession`   and   :class:`Com::Vmware::Content::Library::Item::Updatesession::File`    classs .  
+
+ A library item cannot be created in a subscribed library.
+
+    If not specified creation is not idempotent.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>client_token</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A unique token generated on the client for each creation request. The token
+should be a universally unique identifier (UUID), for example: 
+``b8a2a2e3-2314-43cd-a871-6ede0f429751`` . This token can be used to
+guarantee idempotent creation.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>create_spec</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ItemModel.html" title="Com::Vmware::Content::Library::ItemModel (class)">Com::Vmware::Content::Library::ItemModel</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Specification that defines the properties of the new library item.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Identifier of the new library item.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the   :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  
+property of  ``create_spec``  refers to a library that does not exist.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if one of the following is true for the new library item:  
+</p>
+<pre class="code ruby"><code class="ruby">
+ * name is empty
+  * name exceeds 80 characters
+  * description exceeds 1024 characters</code></pre>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the  ``client_token``  does not conform to the UUID format.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidElementType.html" title="Com::Vmware::Vapi::Std::Errors::InvalidElementType (class)">Com::Vmware::Vapi::Std::Errors::InvalidElementType</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the   :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  
+property of  ``destinationCreateSpec``  refers to a subscribed library.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+216
+217
+218
+219
+220
+221</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 216</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_create_spec'>create_spec</span><span class='comma'>,</span> <span class='id identifier rubyid_client_token'>client_token</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@create_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>client_token</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_client_token'>client_token</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>create_spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_create_spec'>create_spec</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    - (<tt>Void</tt>) <strong>delete</strong>(library_item_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Deletes a library item.  
+</p>
+<pre class="code ruby"><code class="ruby">
+ This  method  will immediately remove the item from the library that owns it. The content of the item will be asynchronously removed from the storage backings. The content deletion can be tracked with a task. In the event that the task fails, an administrator may need to manually remove the files from the storage backing.  
+
+ This  method  cannot be used to delete a library item that is a member of a subscribed library. Removing an item from a subscribed library requires deleting the item from the original published local library and syncing the subscribed library.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>library_item_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Identifier of the library item to delete.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidElementType.html" title="Com::Vmware::Vapi::Std::Errors::InvalidElementType (class)">Com::Vmware::Vapi::Std::Errors::InvalidElementType</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the library item with the given  ``library_item_id``  is a member of a
+subscribed library.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the library item with the specified  ``library_item_id``  does not
+exist.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+237
+238
+239
+240
+241</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 237</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_library_item_id'>library_item_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@delete_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>library_item_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_library_item_id'>library_item_id</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find-instance_method">
+  
+    - (<tt>Array&lt;String&gt;</tt>) <strong>find</strong>(spec) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns identifiers of all the visible (as determined by authorization
+policy) library items matching the requested  
+:class:`Com::Vmware::Content::Library::Item::FindSpec`  .
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>spec</span>
+      
+      
+        <span class='type'>(<tt>Com::Vmware::Content::Library::Item::FindSpec</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Specification describing what properties to filter on.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The  list  of identifiers of all the visible library items matching the
+given  ``spec`` .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if no properties are specified in the  ``spec`` .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+282
+283
+284
+285
+286</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 282</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_spec'>spec</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@find_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_spec'>spec</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    - (<tt><span class='object_link'><a href="ItemModel.html" title="Com::Vmware::Content::Library::ItemModel (class)">Com::Vmware::Content::Library::ItemModel</a></span></tt>) <strong>get</strong>(library_item_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the   :class:`Com::Vmware::Content::Library::ItemModel`   with the
+given identifier.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>library_item_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Identifier of the library item to return.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ItemModel.html" title="Com::Vmware::Content::Library::ItemModel (class)">Com::Vmware::Content::Library::ItemModel</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The   :class:`Com::Vmware::Content::Library::ItemModel`   instance with the
+given  ``library_item_id`` .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if no item with the given  ``library_item_id``  exists.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+252
+253
+254
+255
+256</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 252</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_library_item_id'>library_item_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@get_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>library_item_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_library_item_id'>library_item_id</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list-instance_method">
+  
+    - (<tt>Array&lt;String&gt;</tt>) <strong>list</strong>(library_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the identifiers of all items in the given library.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>library_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Identifier of the library whose items should be returned.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The  list  of identifiers of the items in the library specified by 
+``library_id`` .
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the library associated with  ``library_id``  does not exist.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+267
+268
+269
+270
+271</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 267</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>library_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt>Void</tt>) <strong>update</strong>(library_item_id, update_spec) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Updates the specified properties of a library item.  
+</p>
+<pre class="code ruby"><code class="ruby">
+ This is an incremental update to the library item.  Fields  that are  nil  in the update specification are left unchanged.  
+
+ This  method  cannot update a library item that is a member of a subscribed library. Those items must be updated in the source published library and synchronized to the subscribed library.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>library_item_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Identifier of the library item to update.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>update_spec</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ItemModel.html" title="Com::Vmware::Content::Library::ItemModel (class)">Com::Vmware::Content::Library::ItemModel</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Specification of the properties to set.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/NotFound.html" title="Com::Vmware::Vapi::Std::Errors::NotFound (class)">Com::Vmware::Vapi::Std::Errors::NotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the library item specified by  ``library_item_id``  does not exist.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidElementType.html" title="Com::Vmware::Vapi::Std::Errors::InvalidElementType (class)">Com::Vmware::Vapi::Std::Errors::InvalidElementType</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if the library item corresponding to  ``library_item_id``  is a member of a
+subscribed library.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Vapi/Std/Errors/InvalidArgument.html" title="Com::Vmware::Vapi::Std::Errors::InvalidArgument (class)">Com::Vmware::Vapi::Std::Errors::InvalidArgument</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+if one of the following is true for the  ``update_spec`` :  
+</p>
+<pre class="code ruby"><code class="ruby">
+ * name is empty
+  * name exceeds 80 characters
+  * description exceeds 1024 characters
+  * version is not equal to the current version of the library item</code></pre>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+312
+313
+314
+315
+316
+317</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content/library.rb', line 312</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_library_item_id'>library_item_id</span><span class='comma'>,</span> <span class='id identifier rubyid_update_spec'>update_spec</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@update_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>library_item_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_library_item_id'>library_item_id</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>update_spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_update_spec'>update_spec</span><span class='comma'>,</span>
+    <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  <br>
+  Version 6.5 RC
+  <br>
+  Generated on Fri Oct 28 14:15:00 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

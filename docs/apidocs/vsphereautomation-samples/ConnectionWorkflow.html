@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: ConnectionWorkflow
+  
+    &mdash; VMware vSphere Automation Ruby Samples
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ConnectionWorkflow.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (C)</a> &raquo;
+    
+    
+    <span class="title">ConnectionWorkflow</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: ConnectionWorkflow
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="SampleBase.html" title="SampleBase (class)">SampleBase</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="SampleBase.html" title="SampleBase (class)">SampleBase</a></span></li>
+          
+            <li class="next">ConnectionWorkflow</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="TITLE-constant" class="">TITLE =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>vAPI Connection Workflow</span><span class='tstring_end'>'</span></span></pre></dd>
+      
+        <dt id="DESCRIPTION-constant" class="">DESCRIPTION =
+          
+        </dt>
+        <dd><pre class="code"><span class='heredoc_beg'>&lt;&lt;EOL</span>
+<span class='tstring_content'>Demonstrates vAPI connection and service initialization callflow:
+    Step 1: Setup the required URLs using the LookupServiceHelper utility.
+    Step 2: Connect to the SSO URL and retrieve the SAML token.
+    Step 3: Use the SAML token to login to vAPI service endpoint.
+</span><span class='heredoc_end'>EOL</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+  
+  <h3 class="inherited">Constants inherited
+     from <span class='object_link'><a href="SampleBase.html" title="SampleBase (class)">SampleBase</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SampleBase.html#LOG_LEVELS-constant" title="SampleBase::LOG_LEVELS (constant)">SampleBase::LOG_LEVELS</a></span></p>
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#session_id-instance_method" title="#session_id (instance method)">- (Object) <strong>session_id</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+sample config properties.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#session_svc-instance_method" title="#session_svc (instance method)">- (Object) <strong>session_svc</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+sample config properties.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sso_url-instance_method" title="#sso_url (instance method)">- (Object) <strong>sso_url</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+sample config properties.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#vapi_config-instance_method" title="#vapi_config (instance method)">- (Object) <strong>vapi_config</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+sample config properties.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#vapi_url-instance_method" title="#vapi_url (instance method)">- (Object) <strong>vapi_url</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+sample config properties.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="SampleBase.html" title="SampleBase (class)">SampleBase</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SampleBase.html#description-instance_method" title="SampleBase#description (method)">#description</a></span>, <span class='object_link'><a href="SampleBase.html#log-instance_method" title="SampleBase#log (method)">#log</a></span>, <span class='object_link'><a href="SampleBase.html#ls_ip-instance_method" title="SampleBase#ls_ip (method)">#ls_ip</a></span>, <span class='object_link'><a href="SampleBase.html#ls_url-instance_method" title="SampleBase#ls_url (method)">#ls_url</a></span>, <span class='object_link'><a href="SampleBase.html#mgmt_node_id-instance_method" title="SampleBase#mgmt_node_id (method)">#mgmt_node_id</a></span>, <span class='object_link'><a href="SampleBase.html#mgmt_node_index-instance_method" title="SampleBase#mgmt_node_index (method)">#mgmt_node_index</a></span>, <span class='object_link'><a href="SampleBase.html#mgmt_node_name-instance_method" title="SampleBase#mgmt_node_name (method)">#mgmt_node_name</a></span>, <span class='object_link'><a href="SampleBase.html#multiple_mgmt_node-instance_method" title="SampleBase#multiple_mgmt_node (method)">#multiple_mgmt_node</a></span>, <span class='object_link'><a href="SampleBase.html#option_parser-instance_method" title="SampleBase#option_parser (method)">#option_parser</a></span>, <span class='object_link'><a href="SampleBase.html#options-instance_method" title="SampleBase#options (method)">#options</a></span>, <span class='object_link'><a href="SampleBase.html#sso_password-instance_method" title="SampleBase#sso_password (method)">#sso_password</a></span>, <span class='object_link'><a href="SampleBase.html#sso_username-instance_method" title="SampleBase#sso_username (method)">#sso_username</a></span>, <span class='object_link'><a href="SampleBase.html#title-instance_method" title="SampleBase#title (method)">#title</a></span>, <span class='object_link'><a href="SampleBase.html#use_supporters-instance_method" title="SampleBase#use_supporters (method)">#use_supporters</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cleanup-instance_method" title="#cleanup (instance method)">- (Object) <strong>cleanup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#execute-instance_method" title="#execute (instance method)">- (Object) <strong>execute</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (ConnectionWorkflow) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setup-instance_method" title="#setup (instance method)">- (Object) <strong>setup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="SampleBase.html" title="SampleBase (class)">SampleBase</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SampleBase.html#main-instance_method" title="SampleBase#main (method)">#main</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="ConnectionWorkflow (class)">ConnectionWorkflow</a></span></tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='const'>TITLE</span><span class='comma'>,</span> <span class='const'>DESCRIPTION</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="session_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>session_id</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+sample config properties
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_session_id'>session_id</span>
+  <span class='ivar'>@session_id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="session_svc-instance_method">
+  
+    - (<tt>Object</tt>) <strong>session_svc</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+sample config properties
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_session_svc'>session_svc</span>
+  <span class='ivar'>@session_svc</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="sso_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sso_url</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+sample config properties
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sso_url'>sso_url</span>
+  <span class='ivar'>@sso_url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="vapi_config-instance_method">
+  
+    - (<tt>Object</tt>) <strong>vapi_config</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+sample config properties
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_vapi_config'>vapi_config</span>
+  <span class='ivar'>@vapi_config</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="vapi_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>vapi_url</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+sample config properties
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_vapi_url'>vapi_url</span>
+  <span class='ivar'>@vapi_url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="cleanup-instance_method">
+  
+    - (<tt>Object</tt>) <strong>cleanup</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cleanup'>cleanup</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_session_id'>session_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Disconnect vAPI session ...</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_session_svc'>session_svc</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="execute-instance_method">
+  
+    - (<tt>Object</tt>) <strong>execute</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_execute'>execute</span>
+    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Getting SSO token (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_sso_url'>sso_url</span><span class='rbrace'>}</span><span class='tstring_content'>)...</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_sso'>sso</span> <span class='op'>=</span> <span class='const'>SSO</span><span class='op'>::</span><span class='const'>Connection</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_sso_url'>sso_url</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_login'>login</span><span class='lparen'>(</span><span class='id identifier rubyid_sso_username'>sso_username</span><span class='comma'>,</span> <span class='id identifier rubyid_sso_password'>sso_password</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='id identifier rubyid_sso'>sso</span><span class='period'>.</span><span class='id identifier rubyid_request_bearer_token'>request_bearer_token</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_vapi_config'>vapi_config</span><span class='period'>.</span><span class='id identifier rubyid_set_security_context'>set_security_context</span><span class='lparen'>(</span>
+        <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Security</span><span class='period'>.</span><span class='id identifier rubyid_create_saml_bearer_security_context'>create_saml_bearer_security_context</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+    <span class='comment'># Get the Session Service
+</span>    <span class='ivar'>@session_svc</span> <span class='op'>=</span> <span class='const'>Com</span><span class='op'>::</span><span class='const'>Vmware</span><span class='op'>::</span><span class='const'>Cis</span><span class='op'>::</span><span class='const'>Session</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_vapi_config'>vapi_config</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Login to VAPI endpoint (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vapi_url'>vapi_url</span><span class='rbrace'>}</span><span class='tstring_content'>) using token...</span><span class='tstring_end'>&quot;</span></span>
+    <span class='ivar'>@session_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session_svc'>session_svc</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Got the Session Id: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_session_id'>session_id</span>
+    <span class='id identifier rubyid_vapi_config'>vapi_config</span><span class='period'>.</span><span class='id identifier rubyid_set_security_context'>set_security_context</span><span class='lparen'>(</span>
+        <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Security</span><span class='period'>.</span><span class='id identifier rubyid_create_session_security_context'>create_session_security_context</span><span class='lparen'>(</span><span class='id identifier rubyid_session_id'>session_id</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setup-instance_method">
+  
+    - (<tt>Object</tt>) <strong>setup</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/vcsuite-sdks/ruby/samples/lib/sample/workflow/connection_workflow.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_setup'>setup</span>
+    <span class='id identifier rubyid_lookup_service_helper'>lookup_service_helper</span> <span class='op'>=</span> <span class='const'>LookupServiceHelper</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+    <span class='const'>Sample</span><span class='period'>.</span><span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Connecting to lookup service: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_lookup_service_helper'>lookup_service_helper</span><span class='period'>.</span><span class='id identifier rubyid_soap_url'>soap_url</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='ivar'>@sso_url</span> <span class='op'>=</span> <span class='id identifier rubyid_lookup_service_helper'>lookup_service_helper</span><span class='period'>.</span><span class='id identifier rubyid_find_sso_url'>find_sso_url</span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_mgmt_node_id'>mgmt_node_id</span>
+        <span class='ivar'>@vapi_url</span> <span class='op'>=</span> <span class='id identifier rubyid_lookup_service_helper'>lookup_service_helper</span><span class='period'>.</span><span class='id identifier rubyid_find_vapi_url'>find_vapi_url</span><span class='lparen'>(</span><span class='id identifier rubyid_mgmt_node_id'>mgmt_node_id</span><span class='rparen'>)</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_vapi_url'>vapi_url</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+            <span class='id identifier rubyid_vapi_urls'>vapi_urls</span> <span class='op'>=</span> <span class='id identifier rubyid_lookup_service_helper'>lookup_service_helper</span><span class='period'>.</span><span class='id identifier rubyid_find_vapi_urls'>find_vapi_urls</span><span class='lparen'>(</span><span class='rparen'>)</span>
+            <span class='id identifier rubyid_report_error'>report_error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>management node with id (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_mgmt_node_id'>mgmt_node_id</span><span class='rbrace'>}</span><span class='tstring_content'>) not found; try one of:\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vapi_urls'>vapi_urls</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_vapi_urls'>vapi_urls</span> <span class='op'>=</span> <span class='id identifier rubyid_lookup_service_helper'>lookup_service_helper</span><span class='period'>.</span><span class='id identifier rubyid_find_vapi_urls'>find_vapi_urls</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_mgmt_node_index'>mgmt_node_index</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_vapi_urls'>vapi_urls</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+            <span class='ivar'>@vapi_url</span> <span class='op'>=</span> <span class='id identifier rubyid_vapi_urls'>vapi_urls</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='lbracket'>[</span><span class='id identifier rubyid_mgmt_node_index'>mgmt_node_index</span><span class='rbracket'>]</span>
+        <span class='kw'>else</span>
+            <span class='id identifier rubyid_report_error'>report_error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>management node index (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_mgmt_node_index'>mgmt_node_index</span><span class='rbrace'>}</span><span class='tstring_content'>) not valid; try an index &lt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vapi_urls'>vapi_urls</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='ivar'>@vapi_config</span> <span class='op'>=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiConfig</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_vapi_url'>vapi_url</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  <br>
+  Version 6.5 RC
+  <br>
+  Generated on Fri Oct 28 14:08:43 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

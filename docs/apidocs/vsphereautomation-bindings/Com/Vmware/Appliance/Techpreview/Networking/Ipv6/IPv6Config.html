@@ -1,0 +1,1151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Config
+  
+    &mdash; VMware vSphere Automation Ruby Bindings
+  
+</title>
+
+  <link rel="stylesheet" href="../../../../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../../../../';
+  framesUrl = "../../../../../../frames.html#!Com/Vmware/Appliance/Techpreview/Networking/Ipv6/IPv6Config.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../../../../_index.html">Index (I)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../../../Com.html" title="Com (module)">Com</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../../../Vmware.html" title="Com::Vmware (module)">Vmware</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../../Appliance.html" title="Com::Vmware::Appliance (module)">Appliance</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Techpreview.html" title="Com::Vmware::Appliance::Techpreview (module)">Techpreview</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Networking.html" title="Com::Vmware::Appliance::Techpreview::Networking (module)">Networking</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Ipv6.html" title="Com::Vmware::Appliance::Techpreview::Networking::Ipv6 (class)">Ipv6</a></span></span>
+     &raquo; 
+    <span class="title">IPv6Config</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Config
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">VAPI::Bindings::VapiStruct</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">VAPI::Bindings::VapiStruct</li>
+          
+            <li class="next">Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Config</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+``Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Config``  
+class  Structure that you can use to configure IPv6 on a particular
+interface. Because IPv6 permits multiple addresses per interface, addresses
+can be assigned by DHCP, SLAAC, and can also be statically assigned.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#addresses-instance_method" title="#addresses (instance method)">- (Array&lt;Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address&gt;) <strong>addresses</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A list of addresses to be statically assigned.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#autoconf-instance_method" title="#autoconf (instance method)">- (Boolean) <strong>autoconf</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Address is assigned by Stateless Address Autoconfiguration (SLAAC).
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_gateway-instance_method" title="#default_gateway (instance method)">- (String) <strong>default_gateway</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Default gateway for static IP address assignment.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dhcp-instance_method" title="#dhcp (instance method)">- (Boolean) <strong>dhcp</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Address assigned by a DHCP server.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#interface_name-instance_method" title="#interface_name (instance method)">- (String) <strong>interface_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Network interface, for example, &#8220;nic0&#8221; to configure.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#binding_type-class_method" title="binding_type (class method)">+ (VAPI::Bindings::StructType) <strong>binding_type</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Holds (gets or creates) the binding type metadata for this structure type.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (IPv6Config) <strong>initialize</strong>(ruby_values = nil, struct_value = nil) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Config (class)">IPv6Config</a></span></tt>) <strong>initialize</strong>(ruby_values = nil, struct_value = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ruby_values</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a map of initial property values (optional)
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>struct_value</span>
+      
+      
+        <span class='type'>(<tt>VAPI::Data::StructValue</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a raw StructValue from the wire (optional)
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+621
+622
+623</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb', line 621</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="addresses=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="addresses-instance_method">
+  
+    - (<tt>Array&lt;<span class='object_link'><a href="IPv6Address.html" title="Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address (class)">Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</a></span>&gt;</tt>) <strong>addresses</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+A list of addresses to be statically assigned.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="IPv6Address.html" title="Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address (class)">Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb', line 590</span>
+
+<span class='kw'>class</span> <span class='const'>IPv6Config</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
+
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>        <span class='comment'># @scope class
+</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.networking.ipv6.I_pv6_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                <span class='lbrace'>{</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>interface_name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dhcp</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>autoconf</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>addresses</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>default_gateway</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                <span class='rbrace'>}</span><span class='comma'>,</span>
+                <span class='const'>IPv6Config</span><span class='comma'>,</span>
+                <span class='kw'>false</span><span class='comma'>,</span>
+                <span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:interface_name</span><span class='comma'>,</span>
+                  <span class='symbol'>:dhcp</span><span class='comma'>,</span>
+                  <span class='symbol'>:autoconf</span><span class='comma'>,</span>
+                  <span class='symbol'>:addresses</span><span class='comma'>,</span>
+                  <span class='symbol'>:default_gateway</span>
+
+    <span class='comment'># Constructs a new instance.
+</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="autoconf=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="autoconf-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>autoconf</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Address is assigned by Stateless Address Autoconfiguration (SLAAC).
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb', line 590</span>
+
+<span class='kw'>class</span> <span class='const'>IPv6Config</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
+
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>        <span class='comment'># @scope class
+</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.networking.ipv6.I_pv6_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                <span class='lbrace'>{</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>interface_name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dhcp</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>autoconf</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>addresses</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>default_gateway</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                <span class='rbrace'>}</span><span class='comma'>,</span>
+                <span class='const'>IPv6Config</span><span class='comma'>,</span>
+                <span class='kw'>false</span><span class='comma'>,</span>
+                <span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:interface_name</span><span class='comma'>,</span>
+                  <span class='symbol'>:dhcp</span><span class='comma'>,</span>
+                  <span class='symbol'>:autoconf</span><span class='comma'>,</span>
+                  <span class='symbol'>:addresses</span><span class='comma'>,</span>
+                  <span class='symbol'>:default_gateway</span>
+
+    <span class='comment'># Constructs a new instance.
+</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="default_gateway=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="default_gateway-instance_method">
+  
+    - (<tt>String</tt>) <strong>default_gateway</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Default gateway for static IP address assignment. This configures the
+global IPv6 default gateway on the appliance with the specified gateway
+address and interface. This gateway replaces the existing default gateway
+configured on the appliance. However, if the gateway address is link-local,
+then it is added for that interface. This does not support configuration of
+multiple global default gateways through different interfaces.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb', line 590</span>
+
+<span class='kw'>class</span> <span class='const'>IPv6Config</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
+
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>        <span class='comment'># @scope class
+</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.networking.ipv6.I_pv6_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                <span class='lbrace'>{</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>interface_name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dhcp</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>autoconf</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>addresses</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>default_gateway</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                <span class='rbrace'>}</span><span class='comma'>,</span>
+                <span class='const'>IPv6Config</span><span class='comma'>,</span>
+                <span class='kw'>false</span><span class='comma'>,</span>
+                <span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:interface_name</span><span class='comma'>,</span>
+                  <span class='symbol'>:dhcp</span><span class='comma'>,</span>
+                  <span class='symbol'>:autoconf</span><span class='comma'>,</span>
+                  <span class='symbol'>:addresses</span><span class='comma'>,</span>
+                  <span class='symbol'>:default_gateway</span>
+
+    <span class='comment'># Constructs a new instance.
+</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="dhcp=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="dhcp-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>dhcp</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Address assigned by a DHCP server.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb', line 590</span>
+
+<span class='kw'>class</span> <span class='const'>IPv6Config</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
+
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>        <span class='comment'># @scope class
+</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.networking.ipv6.I_pv6_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                <span class='lbrace'>{</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>interface_name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dhcp</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>autoconf</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>addresses</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>default_gateway</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                <span class='rbrace'>}</span><span class='comma'>,</span>
+                <span class='const'>IPv6Config</span><span class='comma'>,</span>
+                <span class='kw'>false</span><span class='comma'>,</span>
+                <span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:interface_name</span><span class='comma'>,</span>
+                  <span class='symbol'>:dhcp</span><span class='comma'>,</span>
+                  <span class='symbol'>:autoconf</span><span class='comma'>,</span>
+                  <span class='symbol'>:addresses</span><span class='comma'>,</span>
+                  <span class='symbol'>:default_gateway</span>
+
+    <span class='comment'># Constructs a new instance.
+</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="interface_name=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="interface_name-instance_method">
+  
+    - (<tt>String</tt>) <strong>interface_name</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Network interface, for example, &#8220;nic0&#8221; to configure.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb', line 590</span>
+
+<span class='kw'>class</span> <span class='const'>IPv6Config</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
+
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>        <span class='comment'># @scope class
+</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.networking.ipv6.I_pv6_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                <span class='lbrace'>{</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>interface_name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dhcp</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>autoconf</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>addresses</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>default_gateway</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+                <span class='rbrace'>}</span><span class='comma'>,</span>
+                <span class='const'>IPv6Config</span><span class='comma'>,</span>
+                <span class='kw'>false</span><span class='comma'>,</span>
+                <span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:interface_name</span><span class='comma'>,</span>
+                  <span class='symbol'>:dhcp</span><span class='comma'>,</span>
+                  <span class='symbol'>:autoconf</span><span class='comma'>,</span>
+                  <span class='symbol'>:addresses</span><span class='comma'>,</span>
+                  <span class='symbol'>:default_gateway</span>
+
+    <span class='comment'># Constructs a new instance.
+</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="binding_type-class_method">
+  
+    + (<tt>VAPI::Bindings::StructType</tt>) <strong>binding_type</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Holds (gets or creates) the binding type metadata for this structure type.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>VAPI::Bindings::StructType</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the binding type
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/networking.rb', line 596</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.networking.ipv6.I_pv6_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>interface_name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dhcp</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>autoconf</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>addresses</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Appliance::Techpreview::Networking::Ipv6::IPv6Address</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>default_gateway</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>IPv6Config</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  <br>
+  Version 6.5 RC
+  <br>
+  Generated on Fri Oct 28 14:18:26 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
