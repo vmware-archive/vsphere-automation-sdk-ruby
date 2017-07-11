@@ -257,8 +257,6 @@ end
 # main: quick self tester
 if __FILE__ == $0
     cloudvm_ip = ARGV[0]
-    cloudvm_ip ||= "10.20.17.0"
-    #cloudvm_ip ||= "10.67.245.207"
     sso_url = "https://#{cloudvm_ip}/sts/STSService/vsphere.local"
     wsdl_url = "#{sso_url}?wsdl"
     sso = SSO::Connection.new(sso_url, wsdl_url)
