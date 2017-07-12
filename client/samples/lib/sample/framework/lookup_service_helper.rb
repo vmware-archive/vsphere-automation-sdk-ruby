@@ -451,10 +451,7 @@ end
 if __FILE__ == $0
     Sample.log.level = Logger::DEBUG if ENV['DEBUG']
     sample = SelfTestSample.new
-    sample.ls_ip = ARGV[0] || '10.67.245.207'
-    #MXN: sample.ls_ip = '10.160.42.83'
-    #MXN: sample.ls_ip = '10.160.35.191'
-    #MAYBE: sample.main() # for arg parsing
+    sample.ls_ip = ARGV[0]
     ls_helper = LookupServiceHelper.new(sample)
     ls_helper.connect()
     puts '***************************************'
