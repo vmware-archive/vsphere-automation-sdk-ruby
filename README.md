@@ -70,7 +70,7 @@ Install the SDK by running
 
 ```cmd
 gem build vsphere-automation-sdk-ruby.gemspec
-gem install vsphere-automation-sdk-2.6.0.gem
+gem install vsphere-automation-sdk-2.5.0.gem
 ```
 
 ### Uninstalling the SDK
