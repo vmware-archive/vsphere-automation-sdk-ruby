@@ -2764,7 +2764,7 @@ module Com::Vmware::Vcenter
                 end
             end
 
-            attr_accessor :guest_os,
+            attr_accessor :guest_OS,
                           :name,
                           :placement,
                           :hardware_version,
@@ -2872,7 +2872,7 @@ module Com::Vmware::Vcenter
                 end
             end
 
-            attr_accessor :guest_os,
+            attr_accessor :guest_OS,
                           :name,
                           :power_state,
                           :hardware,
