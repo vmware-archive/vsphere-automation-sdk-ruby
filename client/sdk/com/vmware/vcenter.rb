@@ -2668,7 +2668,7 @@ module Com::Vmware::Vcenter
 
 
         # Document-based creation spec.
-        # @!attribute [rw] guest_os
+        # @!attribute [rw] guest_OS
         #     @return [Com::Vmware::Vcenter::Vm::GuestOS]
         #     Guest OS.
         # @!attribute [rw] name
@@ -2764,7 +2764,7 @@ module Com::Vmware::Vcenter
                 end
             end
 
-            attr_accessor :guest_os,
+            attr_accessor :guest_OS,
                           :name,
                           :placement,
                           :hardware_version,
@@ -2791,7 +2791,7 @@ module Com::Vmware::Vcenter
 
 
         # Document-based info.
-        # @!attribute [rw] guest_os
+        # @!attribute [rw] guest_OS
         #     @return [Com::Vmware::Vcenter::Vm::GuestOS]
         #     Guest OS.
         # @!attribute [rw] name
@@ -2872,7 +2872,7 @@ module Com::Vmware::Vcenter
                 end
             end
 
-            attr_accessor :guest_os,
+            attr_accessor :guest_OS,
                           :name,
                           :power_state,
                           :hardware,
@@ -2988,7 +2988,7 @@ module Com::Vmware::Vcenter
         #     @return [Fixnum, nil]
         #     Number of CPU cores.
         #     This  field  will be  nil  if the virtual machine configuration is not available. For example, the configuration information would be unavailable if the server is unable to access the virtual machine files on disk, and is often also unavailable during the intial phases of virtual machine creation.
-        # @!attribute [rw] memory_size_mib
+        # @!attribute [rw] memory_size_MiB
         #     @return [Fixnum, nil]
         #     Memory size in mebibytes.
         #     This  field  will be  nil  if the virtual machine configuration is not available. For example, the configuration information would be unavailable if the server is unable to access the virtual machine files on disk, and is often also unavailable during the intial phases of virtual machine creation.
@@ -3018,7 +3018,7 @@ module Com::Vmware::Vcenter
                           :name,
                           :power_state,
                           :cpu_count,
-                          :memory_size_mib
+                          :memory_size_MiB
 
             # Constructs a new instance.
             # @param ruby_values [Hash] a map of initial property values (optional)

@@ -4164,7 +4164,7 @@ module Com::Vmware::Vcenter::Vm::Hardware
 
 
         # The  ``Com::Vmware::Vcenter::Vm::Hardware::Memory::Info``   class  contains memory-related information about a virtual machine.
-        # @!attribute [rw] size_mib
+        # @!attribute [rw] size_MiB
         #     @return [Fixnum]
         #     Memory size in mebibytes.
         # @!attribute [rw] hot_add_enabled
@@ -4172,13 +4172,13 @@ module Com::Vmware::Vcenter::Vm::Hardware
         #     Flag indicating whether adding memory while the virtual machine is running is enabled.  
         #     
         #      Some guest operating systems may consume more resources or perform less efficiently when they run on hardware that supports adding memory while the machine is running.
-        # @!attribute [rw] hot_add_increment_size_mib
+        # @!attribute [rw] hot_add_increment_size_MiB
         #     @return [Fixnum, nil]
         #     The granularity, in mebibytes, at which memory can be added to a running virtual machine.  
         #     
-        #      When adding memory to a running virtual machine, the amount of memory added must be at least   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_increment_size_mib`   and the total memory size of the virtual machine must be a multiple of {\@link>hotAddIncrementSize}.
+        #      When adding memory to a running virtual machine, the amount of memory added must be at least   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_increment_size_MiB`   and the total memory size of the virtual machine must be a multiple of {\@link>hotAddIncrementSize}.
         #     Only set when   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_enabled`   is true and the virtual machine is running.
-        # @!attribute [rw] hot_add_limit_mib
+        # @!attribute [rw] hot_add_limit_MiB
         #     @return [Fixnum, nil]
         #     The maximum amount of memory, in mebibytes, that can be added to a running virtual machine.
         #     Only set when   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_enabled`   is true and the virtual machine is running.
@@ -4203,10 +4203,10 @@ module Com::Vmware::Vcenter::Vm::Hardware
                 end
             end
 
-            attr_accessor :size_mib,
+            attr_accessor :size_MiB,
                           :hot_add_enabled,
-                          :hot_add_increment_size_mib,
-                          :hot_add_limit_mib
+                          :hot_add_increment_size_MiB,
+                          :hot_add_limit_MiB
 
             # Constructs a new instance.
             # @param ruby_values [Hash] a map of initial property values (optional)
@@ -4218,13 +4218,13 @@ module Com::Vmware::Vcenter::Vm::Hardware
 
 
         # The  ``Com::Vmware::Vcenter::Vm::Hardware::Memory::UpdateSpec``   class  describes the updates to be made to the memory-related settings of a virtual machine.
-        # @!attribute [rw] size_mib
+        # @!attribute [rw] size_MiB
         #     @return [Fixnum, nil]
         #     New memory size in mebibytes.  
         #     
         #      The supported range of memory sizes is constrained by the configured guest operating system and virtual hardware version of the virtual machine.  
         #     
-        #      If the virtual machine is running, this value may only be changed if   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_enabled`   is true, and the new memory size must satisfy the constraints specified by   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_increment_size_mib`   and   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_limit_mib`  .
+        #      If the virtual machine is running, this value may only be changed if   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_enabled`   is true, and the new memory size must satisfy the constraints specified by   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_increment_size_MiB`   and   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_limit_MiB`  .
         #     If  nil , the value is unchanged.
         # @!attribute [rw] hot_add_enabled
         #     @return [Boolean, nil]
@@ -4253,7 +4253,7 @@ module Com::Vmware::Vcenter::Vm::Hardware
                 end
             end
 
-            attr_accessor :size_mib,
+            attr_accessor :size_MiB,
                           :hot_add_enabled
 
             # Constructs a new instance.
