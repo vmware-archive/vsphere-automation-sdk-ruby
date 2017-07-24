@@ -5,6 +5,7 @@
 @samples = {
     'connection' => 'lib/sample/workflow/connection_workflow.rb',
     'tagging' => 'lib/sample/workflow/tagging_workflow.rb',
+	'list_vms' => 'lib/sample/vcenter/vm/list_vms.rb',
 
     # fyi: these are framework self-tests more than samples, but they can be enabled
     # with the understanding that each has its own mechanism for handling arguments.
