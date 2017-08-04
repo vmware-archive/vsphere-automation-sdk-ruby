@@ -9,7 +9,6 @@ require 'com/vmware/vcenter/vapi'
 # Sample Prerequisites:
 # 1 vCenter and ESX
 class ListVms < SampleBase
-
   VCENTER_MODULE = Com::Vmware::Vcenter
   VCENTER_VM_CLASS = VCENTER_MODULE::VM
 
@@ -21,21 +20,16 @@ Demonstrates List of VMs present in the VCenter
 EOL
   # sample attributes
   attr_reader :service_manager, :vm_svc
-
   def initialize
     super(TITLE, DESCRIPTION, true)
-
   end
-
 
   def setup
     ssl_options = {}
     ssl_options[:verify] = :none if insecure
     ssl_options[:ca_file] = ca_file if ca_file
-    ssl_options[:ca_file] = ca_file if ca_file
     @service_manager = get_service_manager(ssl_options)
     @vm_svc = VCENTER_VM_CLASS.new(service_manager.vapi_config)
-
   end
 
   def execute
