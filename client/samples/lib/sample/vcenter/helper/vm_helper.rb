@@ -3,7 +3,7 @@
 # Helper Methods for the VM related operation
 #---------------------------------------------------------------------------
 require 'set'
-class Vm_helper
+class VMHelper
 
   VCENTER_VM_CLASS = Com::Vmware::Vcenter::VM
 
@@ -16,10 +16,9 @@ class Vm_helper
     if vm_summaries.length > 0
       vm_id = vm_summaries[0].vm
       puts "VM ID for the vm name #{vm_name} is #{vm_id}"
-      return vm_id
+      vm_id
     else
       puts "VM #{vm_name} not found"
-      return
     end
   end
   end

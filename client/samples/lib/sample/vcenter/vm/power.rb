@@ -53,7 +53,7 @@ EOL
   # Perform the POWER Operation 1.POWER ON 2.SUSPEND 3.RESUME (POWER ON BACK) 4.RESET 5.POWER OFF (STOP)
   def execute
     log.info "Getting the VM Details #{vm_name}"
-    @vm_id = Vm_helper.get_vm(service_manager.vapi_config, @vm_name)
+    @vm_id = VMHelper.get_vm(service_manager.vapi_config, @vm_name)
     @status = vm_power_svc.get(vm_id)
     if status.state.to_s == (VM_POWER_CLASS::State.new('POWERED_ON')).to_s
       log.info "The VM  #{vm_name} is powered ON and it would be powered OFF"
@@ -67,7 +67,7 @@ EOL
     vm_power_svc.suspend(vm_id)
     log.info "vm.Power.suspend(#{vm_id})"
     #Sometimes the sleep needs to be enabled to handle the suspend timeout in certain GOS
-    sleep(60)
+    #sleep(60)
 
     log.info '3. Resume the VM'
     vm_power_svc.start(vm_id)
