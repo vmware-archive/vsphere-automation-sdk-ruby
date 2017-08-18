@@ -55,7 +55,7 @@ EOL
     log.info "Getting the VM Details #{vm_name}"
     @vm_id = VMHelper.get_vm(service_manager.vapi_config, @vm_name)
     @status = vm_power_svc.get(vm_id)
-    if status.state.to_s == (VM_POWER_CLASS::State.new('POWERED_ON')).to_s
+    if status.state == VM_POWER_CLASS::State::POWERED_ON
       log.info "The VM  #{vm_name} is powered ON and it would be powered OFF"
       vm_power_svc.stop(vm_id)
     end
