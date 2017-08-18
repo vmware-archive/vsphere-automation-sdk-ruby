@@ -1,5 +1,6 @@
 #---------------------------------------------------------------------------
-# Copyright 2016 VMware, Inc.  All rights reserved.
+# Copyright 2017 VMware, Inc.  All rights reserved.
+#
 # AUTO GENERATED FILE -- DO NOT MODIFY!
 #---------------------------------------------------------------------------
 require 'vapi'
