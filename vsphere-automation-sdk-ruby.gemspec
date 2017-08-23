@@ -21,8 +21,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 1.9.3'
 
   spec.add_runtime_dependency('json', '~> 2.1')
-  spec.add_runtime_dependency('nokogiri', '~> 1.8')
-  spec.add_runtime_dependency('savon', '~> 2.11')
+  spec.add_runtime_dependency('nokogiri', '~> 1.7.0')
+  spec.add_runtime_dependency('savon', '~> 2.11.2')
 
   spec.add_development_dependency('bundler', '~> 1.14')
   spec.add_development_dependency('pry', '~> 0.10.4')
