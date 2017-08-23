@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = %w[client/sdk client/sdk/runtime/lib]
 
-  spec.required_ruby_version = '>= 2.3.1'
+  spec.required_ruby_version = '>= 1.9.3'
 
   spec.add_runtime_dependency('json', '~> 2.1')
   spec.add_runtime_dependency('nokogiri', '~> 1.8')
