@@ -83,7 +83,7 @@ module VAPI::Protocol
                 result = VAPI::Data::ListValue.new(list_data_values)
             elsif value.is_a? String
                 result = VAPI::Data::StringValue.new(value)
-            elsif value.is_a? Fixnum
+            elsif value.is_a? Integer
                 result = VAPI::Data::IntegerValue.new(value)
             elsif value.is_a? Float
                 result = VAPI::Data::DoubleValue.new(value)
