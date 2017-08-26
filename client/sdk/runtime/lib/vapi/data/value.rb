@@ -61,9 +61,9 @@ module VAPI::Data
     class IntegerValue < PrimitiveValue
 
         # Constructs a new instance.
-        # @param value [Fixnum] the native Ruby value
+        # @param value [Integer] the native Ruby value
         def initialize(value=0)
-            check_value(value.is_a? Fixnum) #TODO: perhaps allow Integer, wh/ is both Fixnum and Bignum
+            check_value(value.is_a? Integer)
             super(INTEGER, value)
         end
     end
