@@ -5,6 +5,7 @@
 @samples = {
     'connection' => 'lib/sample/workflow/connection_workflow.rb',
     'tagging' => 'lib/sample/workflow/tagging_workflow.rb',
+    'create_basic_vm' => 'lib/sample/vcenter/vm/create/create_basic_vm.rb',
     'list_vms' => 'lib/sample/vcenter/vm/list_vms.rb',
     'power' => 'lib/sample/vcenter/vm/power.rb',
 
