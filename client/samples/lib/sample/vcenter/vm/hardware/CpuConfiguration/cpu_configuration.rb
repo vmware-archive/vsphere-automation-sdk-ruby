@@ -16,7 +16,7 @@ class CPU_Configuration < SampleBase
     Description: Demonstrates how to update a CPU for a VM.
     Author: VMware, Inc.
     Sample Prerequisites: The sample needs an existing VM.
-EOL
+  EOL
   # sample attributes
   attr_reader :service_manager,:vm_name,:vm_svc,
               :status,:vm_id,:cores_per_socket,
