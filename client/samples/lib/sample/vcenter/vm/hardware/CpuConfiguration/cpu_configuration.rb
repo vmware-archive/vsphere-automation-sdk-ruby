@@ -8,7 +8,7 @@ require 'sample/vcenter/helper/vm_helper'
 
 class CPU_Configuration < SampleBase
   VCENTER_VM_CPU_CLASS = Com::Vmware::Vcenter::Vm::Hardware::Cpu
-  VCENTER_VM_CPU_UPDATE_SPEC = Com::Vmware::Vcenter::Vm::Hardware::Cpu::UpdateSpec
+  VCENTER_VM_CPU_UPDATE_SPEC = VCENTER_VM_CPU_CLASS::UpdateSpec
   
 
   TITLE = 'Demonstrates how to update a CPU for a VM'
