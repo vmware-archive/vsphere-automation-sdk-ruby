@@ -25,7 +25,7 @@ end
 # 
 #  Note that  classs  for adapters with no configurable properties or runtime state, such as IDE and PCI adapters, are omitted.
 module Com::Vmware::Vcenter::Vm::Hardware::Adapter
-  # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata``   class  provides  methods  for configuring the virtual SATA adapters of a virtual machine.
+  # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata``   class  provides  methods  for configuring the virtual SATA adapters of a virtual machine.
   class Sata < VAPI::Bindings::VapiService
     # static metamodel definitions
     SERVICE_ID = VAPI::Core::ServiceIdentifier.new('com.vmware.vcenter.vm.hardware.adapter.sata')
@@ -35,7 +35,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       VAPI::Bindings::OperationInputType.new(
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine')
       ),
-      VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Summary')),
+      VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Summary')),
       {
         'com.vmware.vapi.std.errors.error' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::Error'),
         'com.vmware.vapi.std.errors.not_found' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::NotFound'),
@@ -54,7 +54,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine'),
         'adapter' => VAPI::Bindings::IdType.new('com.vmware.vcenter.vm.hardware.SataAdapter')
       ),
-      VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Info'),
+      VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Info'),
       {
         'com.vmware.vapi.std.errors.error' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::Error'),
         'com.vmware.vapi.std.errors.not_found' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::NotFound'),
@@ -71,7 +71,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       VAPI::Core::OperationIdentifier.new('create', SERVICE_ID),
       VAPI::Bindings::OperationInputType.new(
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine'),
-        'spec' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::CreateSpec')
+        'spec' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::CreateSpec')
       ),
       VAPI::Bindings::IdType.new('com.vmware.vcenter.vm.hardware.SataAdapter'),
       {
@@ -133,7 +133,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #
     # @param vm [String]
     #     Virtual machine identifier.
-    # @return [Array<Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Summary>]
+    # @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Summary>]
     #     List of commonly used information about virtual SATA adapters.
     # @raise [Com::Vmware::Vapi::Std::Errors::Error]
     #     if the system reports an error while responding to the request.
@@ -158,7 +158,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #     Virtual machine identifier.
     # @param adapter [String]
     #     Virtual SATA adapter identifier.
-    # @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Info]
+    # @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Info]
     #     Information about the specified virtual SATA adapter.
     # @raise [Com::Vmware::Vapi::Std::Errors::Error]
     #     if the system reports an error while responding to the request.
@@ -182,7 +182,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #
     # @param vm [String]
     #     Virtual machine identifier.
-    # @param spec [Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::CreateSpec]
+    # @param spec [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::CreateSpec]
     #     Specification for the new virtual SATA adapter.
     # @return [String]
     #     Virtual SATA adapter identifier.
@@ -247,12 +247,12 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
                        'adapter' => adapter)
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Info``   class  contains information about a virtual SATA adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Info``   class  contains information about a virtual SATA adapter.
     # @!attribute [rw] label
     #     @return [String]
     #     Device label.
     # @!attribute [rw] type
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Type]
     #     Adapter type.
     # @!attribute [rw] bus
     #     @return [Fixnum]
@@ -271,7 +271,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
             'com.vmware.vcenter.vm.hardware.adapter.sata.info',
             {
               'label' => VAPI::Bindings::StringType.instance,
-              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Type'),
+              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Type'),
               'bus' => VAPI::Bindings::IntegerType.instance,
               'pci_slot_number' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::IntegerType.instance)
             },
@@ -295,9 +295,9 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::CreateSpec``   class  provides a specification for the configuration of a newly-created virtual SATA adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::CreateSpec``   class  provides a specification for the configuration of a newly-created virtual SATA adapter.
     # @!attribute [rw] type
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Type, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Type, nil]
     #     Adapter type.
     #     If  nil , a guest-specific default value will be used.
     # @!attribute [rw] bus
@@ -317,7 +317,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
           @binding_type ||= VAPI::Bindings::StructType.new(
             'com.vmware.vcenter.vm.hardware.adapter.sata.create_spec',
             {
-              'type' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Type')),
+              'type' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Type')),
               'bus' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::IntegerType.instance),
               'pci_slot_number' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::IntegerType.instance)
             },
@@ -340,7 +340,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Summary``   class  contains commonly used information about a Virtual SATA adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Summary``   class  contains commonly used information about a Virtual SATA adapter.
     # @!attribute [rw] adapter
     #     @return [String]
     #     Identifier of the virtual SATA adapter.
@@ -372,9 +372,9 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Type``   enumerated type  defines the valid emulation types for a virtual SATA adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Type``   enumerated type  defines the valid emulation types for a virtual SATA adapter.
     # @!attribute [rw] ahci
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Type]
     #     AHCI host bus adapter.
     class Type < VAPI::Bindings::VapiEnum
       class << self
@@ -410,12 +410,12 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       private_class_method :new
 
       # @!attribute [rw] ahci
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Type]
       #     AHCI host bus adapter.
       AHCI = Type.send(:new, 'AHCI')
     end
   end
-  # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi``   class  provides  methods  for configuring the virtual SCSI adapters of a virtual machine.
+  # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi``   class  provides  methods  for configuring the virtual SCSI adapters of a virtual machine.
   class Scsi < VAPI::Bindings::VapiService
     # static metamodel definitions
     SERVICE_ID = VAPI::Core::ServiceIdentifier.new('com.vmware.vcenter.vm.hardware.adapter.scsi')
@@ -425,7 +425,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       VAPI::Bindings::OperationInputType.new(
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine')
       ),
-      VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Summary')),
+      VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Summary')),
       {
         'com.vmware.vapi.std.errors.error' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::Error'),
         'com.vmware.vapi.std.errors.not_found' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::NotFound'),
@@ -444,7 +444,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine'),
         'adapter' => VAPI::Bindings::IdType.new('com.vmware.vcenter.vm.hardware.ScsiAdapter')
       ),
-      VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Info'),
+      VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Info'),
       {
         'com.vmware.vapi.std.errors.error' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::Error'),
         'com.vmware.vapi.std.errors.not_found' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::NotFound'),
@@ -461,7 +461,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       VAPI::Core::OperationIdentifier.new('create', SERVICE_ID),
       VAPI::Bindings::OperationInputType.new(
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine'),
-        'spec' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::CreateSpec')
+        'spec' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::CreateSpec')
       ),
       VAPI::Bindings::IdType.new('com.vmware.vcenter.vm.hardware.ScsiAdapter'),
       {
@@ -487,7 +487,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       VAPI::Bindings::OperationInputType.new(
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine'),
         'adapter' => VAPI::Bindings::IdType.new('com.vmware.vcenter.vm.hardware.ScsiAdapter'),
-        'spec' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::UpdateSpec')
+        'spec' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::UpdateSpec')
       ),
       VAPI::Bindings::VoidType.instance,
       {
@@ -546,7 +546,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #
     # @param vm [String]
     #     Virtual machine identifier.
-    # @return [Array<Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Summary>]
+    # @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Summary>]
     #     List of commonly used information about virtual SCSI adapters.
     # @raise [Com::Vmware::Vapi::Std::Errors::Error]
     #     if the system reports an error while responding to the request.
@@ -571,7 +571,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #     Virtual machine identifier.
     # @param adapter [String]
     #     Virtual SCSI adapter identifier.
-    # @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Info]
+    # @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Info]
     #     Information about the specified virtual SCSI adapter.
     # @raise [Com::Vmware::Vapi::Std::Errors::Error]
     #     if the system reports an error while responding to the request.
@@ -595,7 +595,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #
     # @param vm [String]
     #     Virtual machine identifier.
-    # @param spec [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::CreateSpec]
+    # @param spec [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::CreateSpec]
     #     Specification for the new virtual SCSI adapter.
     # @return [String]
     #     Virtual SCSI adapter identifier.
@@ -637,7 +637,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #     Virtual machine identifier.
     # @param adapter [String]
     #     Virtual SCSI adapter identifier.
-    # @param spec [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::UpdateSpec]
+    # @param spec [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::UpdateSpec]
     #     Specification for updating the virtual SCSI adapter.
     # @return [Void]
     # @raise [Com::Vmware::Vapi::Std::Errors::Error]
@@ -692,22 +692,22 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
                        'adapter' => adapter)
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Info``   class  contains information about a virtual SCSI adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Info``   class  contains information about a virtual SCSI adapter.
     # @!attribute [rw] label
     #     @return [String]
     #     Device label.
     # @!attribute [rw] type
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
     #     Adapter type.
     # @!attribute [rw] scsi
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::ScsiAddressInfo]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo]
     #     Address of the SCSI adapter on the SCSI bus.
     # @!attribute [rw] pci_slot_number
     #     @return [Fixnum, nil]
     #     Address of the SCSI adapter on the PCI bus. If the PCI address is invalid, the server will change it when the VM is started or as the device is hot added.
     #     May be  nil  if the virtual machine has never been powered on since the adapter was created.
     # @!attribute [rw] sharing
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing]
     #     Bus sharing mode.
     class Info < VAPI::Bindings::VapiStruct
       class << self
@@ -719,10 +719,10 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
             'com.vmware.vcenter.vm.hardware.adapter.scsi.info',
             {
               'label' => VAPI::Bindings::StringType.instance,
-              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type'),
-              'scsi' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::ScsiAddressInfo'),
+              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type'),
+              'scsi' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo'),
               'pci_slot_number' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::IntegerType.instance),
-              'sharing' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing')
+              'sharing' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing')
             },
             Info,
             false,
@@ -745,9 +745,9 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::CreateSpec``   class  provides a specification for the configuration of a newly-created virtual SCSI adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::CreateSpec``   class  provides a specification for the configuration of a newly-created virtual SCSI adapter.
     # @!attribute [rw] type
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type, nil]
     #     Adapter type.
     #     If  nil , a guest-specific default value will be used.
     # @!attribute [rw] bus
@@ -759,9 +759,9 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
     #     Address of the SCSI adapter on the PCI bus. If the PCI address is invalid, the server will change it when the VM is started or as the device is hot added.
     #     If  nil , the server will choose an available address when the virtual machine is powered on.
     # @!attribute [rw] sharing
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing, nil]
     #     Bus sharing mode.
-    #     If  nil , the adapter will default to   :attr:`Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing.NONE`  .
+    #     If  nil , the adapter will default to   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing.NONE`  .
     class CreateSpec < VAPI::Bindings::VapiStruct
       class << self
         # Holds (gets or creates) the binding type metadata for this structure type.
@@ -771,10 +771,10 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
           @binding_type ||= VAPI::Bindings::StructType.new(
             'com.vmware.vcenter.vm.hardware.adapter.scsi.create_spec',
             {
-              'type' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type')),
+              'type' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type')),
               'bus' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::IntegerType.instance),
               'pci_slot_number' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::IntegerType.instance),
-              'sharing' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing'))
+              'sharing' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing'))
             },
             CreateSpec,
             false,
@@ -796,9 +796,9 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::UpdateSpec``   class  describes the updates to be made to the configuration of a virtual SCSI adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::UpdateSpec``   class  describes the updates to be made to the configuration of a virtual SCSI adapter.
     # @!attribute [rw] sharing
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing, nil]
     #     Bus sharing mode.  
     #     
     #      This  field  may only be modified if the virtual machine is not powered on.
@@ -812,7 +812,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
           @binding_type ||= VAPI::Bindings::StructType.new(
             'com.vmware.vcenter.vm.hardware.adapter.scsi.update_spec',
             {
-              'sharing' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing'))
+              'sharing' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing'))
             },
             UpdateSpec,
             false,
@@ -831,7 +831,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Summary``   class  contains commonly used information about a Virtual SCSI adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Summary``   class  contains commonly used information about a Virtual SCSI adapter.
     # @!attribute [rw] adapter
     #     @return [String]
     #     Identifier of the virtual SCSI adapter.
@@ -863,18 +863,18 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type``   enumerated type  defines the valid emulation types for a virtual SCSI adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type``   enumerated type  defines the valid emulation types for a virtual SCSI adapter.
     # @!attribute [rw] buslogic
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
     #     BusLogic host bus adapter.
     # @!attribute [rw] lsilogic
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
     #     LSI Logic host bus adapter.
     # @!attribute [rw] lsilogicsas
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
     #     LSI Logic SAS 1068 host bus adapter.
     # @!attribute [rw] pvscsi
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
     #     Paravirtualized host bus adapter.
     class Type < VAPI::Bindings::VapiEnum
       class << self
@@ -910,34 +910,34 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       private_class_method :new
 
       # @!attribute [rw] buslogic
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
       #     BusLogic host bus adapter.
       BUSLOGIC = Type.send(:new, 'BUSLOGIC')
 
       # @!attribute [rw] lsilogic
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
       #     LSI Logic host bus adapter.
       LSILOGIC = Type.send(:new, 'LSILOGIC')
 
       # @!attribute [rw] lsilogicsas
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
       #     LSI Logic SAS 1068 host bus adapter.
       LSILOGICSAS = Type.send(:new, 'LSILOGICSAS')
 
       # @!attribute [rw] pvscsi
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type]
       #     Paravirtualized host bus adapter.
       PVSCSI = Type.send(:new, 'PVSCSI')
     end
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing``   enumerated type  defines the valid bus sharing modes for a virtual SCSI adapter.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing``   enumerated type  defines the valid bus sharing modes for a virtual SCSI adapter.
     # @!attribute [rw] none
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing]
     #     The virtual SCSI bus is not shared.
     # @!attribute [rw] virtual
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing]
     #     The virtual SCSI bus is shared between two or more virtual machines. In this case, no physical machine is involved.
     # @!attribute [rw] physical
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing]
     #     The virtual SCSI bus is shared between two or more virtual machines residing on different physical hosts.
     class Sharing < VAPI::Bindings::VapiEnum
       class << self
@@ -973,17 +973,17 @@ module Com::Vmware::Vcenter::Vm::Hardware::Adapter
       private_class_method :new
 
       # @!attribute [rw] none
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing]
       #     The virtual SCSI bus is not shared.
       NONE = Sharing.send(:new, 'NONE')
 
       # @!attribute [rw] virtual
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing]
       #     The virtual SCSI bus is shared between two or more virtual machines. In this case, no physical machine is involved.
       VIRTUAL = Sharing.send(:new, 'VIRTUAL')
 
       # @!attribute [rw] physical
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Sharing]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing]
       #     The virtual SCSI bus is shared between two or more virtual machines residing on different physical hosts.
       PHYSICAL = Sharing.send(:new, 'PHYSICAL')
     end

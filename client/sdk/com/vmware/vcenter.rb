@@ -2503,7 +2503,7 @@ module Com::Vmware::Vcenter
 
     # Document-based creation spec.
     # @!attribute [rw] guest_OS
-    #     @return [Com::Vmware::Vcenter::VM::GuestOS]
+    #     @return [Com::Vmware::Vcenter::Vm::GuestOS]
     #     Guest OS.
     # @!attribute [rw] name
     #     @return [String, nil]
@@ -2514,55 +2514,55 @@ module Com::Vmware::Vcenter
     #     Virtual machine placement information.
     #     This  field  is currently required. In the future, if this  field  is  nil , the system will attempt to choose suitable resources on which to place the virtual machine.
     # @!attribute [rw] hardware_version
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Version, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Version, nil]
     #     Virtual hardware version.
     #     If  nil , defaults to the most recent version supported by the server.
     # @!attribute [rw] boot
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::CreateSpec, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::CreateSpec, nil]
     #     Boot configuration.
     #     If  nil , guest-specific default values will be used.
     # @!attribute [rw] boot_devices
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Boot::Device::EntryCreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::EntryCreateSpec>, nil]
     #     Boot device configuration.
     #     If  nil , a server-specific boot sequence will be used.
     # @!attribute [rw] cpu
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Cpu::UpdateSpec, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Cpu::UpdateSpec, nil]
     #     CPU configuration.
     #     If  nil , guest-specific default values will be used.
     # @!attribute [rw] memory
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Memory::UpdateSpec, nil]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Memory::UpdateSpec, nil]
     #     Memory configuration.
     #     If  nil , guest-specific default values will be used.
     # @!attribute [rw] disks
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Disk::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Disk::CreateSpec>, nil]
     #     List of disks.
     #     If  nil , a single blank virtual disk of a guest-specific size will be created on the same storage as the virtual machine configuration, and will use a guest-specific host bus adapter type. If the guest-specific size is 0, no virtual disk will be created.
     # @!attribute [rw] nics
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Ethernet::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Ethernet::CreateSpec>, nil]
     #     List of Ethernet adapters.
     #     If  nil , no Ethernet adapters will be created.
     # @!attribute [rw] cdroms
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Cdrom::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Cdrom::CreateSpec>, nil]
     #     List of CD-ROMs.
     #     If  nil , no CD-ROM devices will be created.
     # @!attribute [rw] floppies
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Floppy::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Floppy::CreateSpec>, nil]
     #     List of floppy drives.
     #     If  nil , no floppy drives will be created.
     # @!attribute [rw] parallel_ports
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Parallel::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Parallel::CreateSpec>, nil]
     #     List of parallel ports.
     #     If  nil , no parallel ports will be created.
     # @!attribute [rw] serial_ports
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Serial::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Serial::CreateSpec>, nil]
     #     List of serial ports.
     #     If  nil , no serial ports will be created.
     # @!attribute [rw] sata_adapters
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::CreateSpec>, nil]
     #     List of SATA adapters.
     #     If  nil , any adapters necessary to connect the virtual machine's storage devices will be created; this includes any devices that explicitly specify a SATA host bus adapter, as well as any devices that do not specify a host bus adapter if the guest's preferred adapter type is SATA.
     # @!attribute [rw] scsi_adapters
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::CreateSpec>, nil]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::CreateSpec>, nil]
     #     List of SCSI adapters.
     #     If  nil , any adapters necessary to connect the virtual machine's storage devices will be created; this includes any devices that explicitly specify a SCSI host bus adapter, as well as any devices that do not specify a host bus adapter if the guest's preferred adapter type is SCSI. The type of the SCSI adapter will be a guest-specific default type.
     class CreateSpec < VAPI::Bindings::VapiStruct
@@ -2574,22 +2574,22 @@ module Com::Vmware::Vcenter
           @binding_type ||= VAPI::Bindings::StructType.new(
             'com.vmware.vcenter.VM.create_spec',
             {
-              'guest_OS' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::GuestOS'),
+              'guest_OS' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::GuestOS'),
               'name' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::StringType.instance),
               'placement' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::PlacementSpec')),
-              'hardware_version' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Version')),
-              'boot' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::CreateSpec')),
-              'boot_devices' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::Device::EntryCreateSpec'))),
-              'cpu' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Cpu::UpdateSpec')),
-              'memory' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Memory::UpdateSpec')),
-              'disks' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Disk::CreateSpec'))),
-              'nics' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Ethernet::CreateSpec'))),
-              'cdroms' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Cdrom::CreateSpec'))),
-              'floppies' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Floppy::CreateSpec'))),
-              'parallel_ports' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Parallel::CreateSpec'))),
-              'serial_ports' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Serial::CreateSpec'))),
-              'sata_adapters' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::CreateSpec'))),
-              'scsi_adapters' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::CreateSpec')))
+              'hardware_version' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Version')),
+              'boot' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::CreateSpec')),
+              'boot_devices' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::EntryCreateSpec'))),
+              'cpu' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Cpu::UpdateSpec')),
+              'memory' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Memory::UpdateSpec')),
+              'disks' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Disk::CreateSpec'))),
+              'nics' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Ethernet::CreateSpec'))),
+              'cdroms' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Cdrom::CreateSpec'))),
+              'floppies' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Floppy::CreateSpec'))),
+              'parallel_ports' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Parallel::CreateSpec'))),
+              'serial_ports' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Serial::CreateSpec'))),
+              'sata_adapters' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::CreateSpec'))),
+              'scsi_adapters' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::CreateSpec')))
             },
             CreateSpec,
             false,
@@ -2625,7 +2625,7 @@ module Com::Vmware::Vcenter
 
     # Document-based info.
     # @!attribute [rw] guest_OS
-    #     @return [Com::Vmware::Vcenter::VM::GuestOS]
+    #     @return [Com::Vmware::Vcenter::Vm::GuestOS]
     #     Guest OS.
     # @!attribute [rw] name
     #     @return [String]
@@ -2634,43 +2634,43 @@ module Com::Vmware::Vcenter
     #     @return [Com::Vmware::Vcenter::Vm::Power::State]
     #     Power state of the virtual machine.
     # @!attribute [rw] hardware
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Info]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Info]
     #     Virtual hardware version information.
     # @!attribute [rw] boot
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Info]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Info]
     #     Boot configuration.
     # @!attribute [rw] boot_devices
-    #     @return [Array<Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry>]
+    #     @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry>]
     #     Boot device configuration. If the  list  has no entries, a server-specific default boot sequence is used.
     # @!attribute [rw] cpu
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Cpu::Info]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Cpu::Info]
     #     CPU configuration.
     # @!attribute [rw] memory
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Memory::Info]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Memory::Info]
     #     Memory configuration.
     # @!attribute [rw] disks
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Disk::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Disk::Info>]
     #     List of disks.
     # @!attribute [rw] nics
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Ethernet::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Ethernet::Info>]
     #     List of Ethernet adapters.
     # @!attribute [rw] cdroms
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Cdrom::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Cdrom::Info>]
     #     List of CD-ROMs.
     # @!attribute [rw] floppies
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Floppy::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Floppy::Info>]
     #     List of floppy drives.
     # @!attribute [rw] parallel_ports
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Parallel::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Parallel::Info>]
     #     List of parallel ports.
     # @!attribute [rw] serial_ports
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Serial::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Serial::Info>]
     #     List of serial ports.
     # @!attribute [rw] sata_adapters
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Info>]
     #     List of SATA adapters.
     # @!attribute [rw] scsi_adapters
-    #     @return [Hash<String, Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Info>]
+    #     @return [Hash<String, Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Info>]
     #     List of SCSI adapters.
     class Info < VAPI::Bindings::VapiStruct
       class << self
@@ -2681,22 +2681,22 @@ module Com::Vmware::Vcenter
           @binding_type ||= VAPI::Bindings::StructType.new(
             'com.vmware.vcenter.VM.info',
             {
-              'guest_OS' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::GuestOS'),
+              'guest_OS' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::GuestOS'),
               'name' => VAPI::Bindings::StringType.instance,
               'power_state' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Power::State'),
-              'hardware' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Info'),
-              'boot' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::Info'),
-              'boot_devices' => VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry')),
-              'cpu' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Cpu::Info'),
-              'memory' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Memory::Info'),
-              'disks' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Disk::Info')),
-              'nics' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Ethernet::Info')),
-              'cdroms' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Cdrom::Info')),
-              'floppies' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Floppy::Info')),
-              'parallel_ports' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Parallel::Info')),
-              'serial_ports' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Serial::Info')),
-              'sata_adapters' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Sata::Info')),
-              'scsi_adapters' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Adapter::Scsi::Info'))
+              'hardware' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Info'),
+              'boot' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::Info'),
+              'boot_devices' => VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry')),
+              'cpu' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Cpu::Info'),
+              'memory' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Memory::Info'),
+              'disks' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Disk::Info')),
+              'nics' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Ethernet::Info')),
+              'cdroms' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Cdrom::Info')),
+              'floppies' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Floppy::Info')),
+              'parallel_ports' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Parallel::Info')),
+              'serial_ports' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Serial::Info')),
+              'sata_adapters' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Sata::Info')),
+              'scsi_adapters' => VAPI::Bindings::MapType.new(VAPI::Bindings::IdType.new, VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Info'))
             },
             Info,
             false,

@@ -23,14 +23,14 @@ end
 
 # The  ``com.vmware.vcenter.vm.hardware.boot``   package  provides  classs  for managing the virtual devices used to boot a virtual machine.
 module Com::Vmware::Vcenter::Vm::Hardware::Boot
-  # The  ``Com::Vmware::Vcenter::VM::Hardware::Boot::Device``   class  provides  methods  for configuring the device order used when booting a virtual machine.  
+  # The  ``Com::Vmware::Vcenter::Vm::Hardware::Boot::Device``   class  provides  methods  for configuring the device order used when booting a virtual machine.  
   # 
   #  The boot order may be specified using a mixture of device classes and device instances, chosen from among the following:  
   # 
-  #   *  :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.CDROM`  : Boot from a virtual CD-ROM drive; the device instance(s) will be chosen by the BIOS subsystem.
-  #    *  :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.FLOPPY`  : Boot from a virtual floppy drive; the device instance(s) will be chosen by the BIOS subsystem.
-  #    *  :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.DISK`  : Boot from a virtual disk device; the device instance is specified explicitly in   :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry.disks`   list, and multiple instances may be specified in the list.
-  #    *  :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.ETHERNET`  : Boot from a virtual Ethernet adapter; the device instance is specified explicitly as   :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry.nic`  , and multiple adapters may be specified in the boot order list.
+  #   *  :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.CDROM`  : Boot from a virtual CD-ROM drive; the device instance(s) will be chosen by the BIOS subsystem.
+  #    *  :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.FLOPPY`  : Boot from a virtual floppy drive; the device instance(s) will be chosen by the BIOS subsystem.
+  #    *  :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.DISK`  : Boot from a virtual disk device; the device instance is specified explicitly in   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry.disks`   list, and multiple instances may be specified in the list.
+  #    *  :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.ETHERNET`  : Boot from a virtual Ethernet adapter; the device instance is specified explicitly as   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry.nic`  , and multiple adapters may be specified in the boot order list.
   #   
   class Device < VAPI::Bindings::VapiService
     # static metamodel definitions
@@ -41,7 +41,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
       VAPI::Bindings::OperationInputType.new(
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine')
       ),
-      VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry')),
+      VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry')),
       {
         'com.vmware.vapi.std.errors.error' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::Error'),
         'com.vmware.vapi.std.errors.not_found' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vapi::Std::Errors::NotFound'),
@@ -58,7 +58,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
       VAPI::Core::OperationIdentifier.new('set', SERVICE_ID),
       VAPI::Bindings::OperationInputType.new(
         'vm' => VAPI::Bindings::IdType.new('VirtualMachine'),
-        'devices' => VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry'))
+        'devices' => VAPI::Bindings::ListType.new(VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry'))
       ),
       VAPI::Bindings::VoidType.instance,
       {
@@ -92,7 +92,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
     #
     # @param vm [String]
     #     Virtual machine identifier.
-    # @return [Array<Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry>]
+    # @return [Array<Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry>]
     #     Ordered list of configured boot devices.
     # @raise [Com::Vmware::Vapi::Std::Errors::Error]
     #     if the system reports an error while responding to the request.
@@ -111,11 +111,11 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
                        'vm' => vm)
     end
 
-    # Sets the virtual devices that will be used to boot the virtual machine. The virtual machine will check the devices in order, attempting to boot from each, until the virtual machine boots successfully. If the  list  is empty, the virtual machine will use a default boot sequence. There should be no more than one instance of   :class:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry`   for a given device type except   :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.ETHERNET`   in the  list .
+    # Sets the virtual devices that will be used to boot the virtual machine. The virtual machine will check the devices in order, attempting to boot from each, until the virtual machine boots successfully. If the  list  is empty, the virtual machine will use a default boot sequence. There should be no more than one instance of   :class:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry`   for a given device type except   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.ETHERNET`   in the  list .
     #
     # @param vm [String]
     #     Virtual machine identifier.
-    # @param devices [Array<Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry>]
+    # @param devices [Array<Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry>]
     #     Ordered list of boot devices.
     # @return [Void]
     # @raise [Com::Vmware::Vapi::Std::Errors::Error]
@@ -123,7 +123,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
     # @raise [Com::Vmware::Vapi::Std::Errors::NotFound]
     #     if the virtual machine is not found, or if any of the specified virtual devices is not found.
     # @raise [Com::Vmware::Vapi::Std::Errors::InvalidArgument]
-    #     if a any of the  ``CDROM``, ``DISK``, ``ETHERNET``, ``FLOPPY``  values appears in more than one  ``Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry``  with the exception of   :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.ETHERNET`  , which may appear multiple times if the virtual machine has been configured with multiple Ethernet adapters.
+    #     if a any of the  ``CDROM``, ``DISK``, ``ETHERNET``, ``FLOPPY``  values appears in more than one  ``Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry``  with the exception of   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.ETHERNET`  , which may appear multiple times if the virtual machine has been configured with multiple Ethernet adapters.
     # @raise [Com::Vmware::Vapi::Std::Errors::ResourceBusy]
     #     if the virtual machine is busy performing another operation.
     # @raise [Com::Vmware::Vapi::Std::Errors::ResourceInaccessible]
@@ -140,9 +140,9 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
                        'devices' => devices)
     end
 
-    # The  class   ``Com::Vmware::Vcenter::VM::Hardware::Boot::Device::EntryCreateSpec``  specifies a list of bootable virtual device classes. When a VM is being created and a  list  of  ``Com::Vmware::Vcenter::VM::Hardware::Boot::Device::EntryCreateSpec``  is specified, the boot order of the specific device instances are not specified in this  class . The boot order of the specific device instance will be the order in which the Ethernet and Disk devices appear in the  ``nics``  and  ``disks``  respectively.
+    # The  class   ``Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::EntryCreateSpec``  specifies a list of bootable virtual device classes. When a VM is being created and a  list  of  ``Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::EntryCreateSpec``  is specified, the boot order of the specific device instances are not specified in this  class . The boot order of the specific device instance will be the order in which the Ethernet and Disk devices appear in the  ``nics``  and  ``disks``  respectively.
     # @!attribute [rw] type
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
     #     Virtual Boot device type.
     class EntryCreateSpec < VAPI::Bindings::VapiStruct
       class << self
@@ -153,7 +153,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
           @binding_type ||= VAPI::Bindings::StructType.new(
             'com.vmware.vcenter.vm.hardware.boot.device.entry_create_spec',
             {
-              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type')
+              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type')
             },
             EntryCreateSpec,
             false,
@@ -172,18 +172,18 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Entry``   class  specifies a bootable virtual device class or specific bootable virtual device(s).
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Entry``   class  specifies a bootable virtual device class or specific bootable virtual device(s).
     # @!attribute [rw] type
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
     #     Virtual device type.
     # @!attribute [rw] nic
     #     @return [String]
     #     Virtual Ethernet device. Ethernet device to use as boot device for this entry.
-    #     This  field  is optional and it is only relevant when the value of  ``type``  is   :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.ETHERNET`  .
+    #     This  field  is optional and it is only relevant when the value of  ``type``  is   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.ETHERNET`  .
     # @!attribute [rw] disks
     #     @return [Array<String>]
     #     Virtual disk device. List of virtual disks in boot order.
-    #     This  field  is optional and it is only relevant when the value of  ``type``  is   :attr:`Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type.DISK`  .
+    #     This  field  is optional and it is only relevant when the value of  ``type``  is   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type.DISK`  .
     class Entry < VAPI::Bindings::VapiStruct
       class << self
         # Holds (gets or creates) the binding type metadata for this structure type.
@@ -193,7 +193,7 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
           @binding_type ||= VAPI::Bindings::StructType.new(
             'com.vmware.vcenter.vm.hardware.boot.device.entry',
             {
-              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type'),
+              'type' => VAPI::Bindings::ReferenceType.new('Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type'),
               'nic' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::IdType.new),
               'disks' => VAPI::Bindings::OptionalType.new(VAPI::Bindings::ListType.new(VAPI::Bindings::IdType.new))
             },
@@ -216,18 +216,18 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
       end
     end
 
-    # The  ``Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type``   enumerated type  defines the valid device types that may be used as bootable devices.
+    # The  ``Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type``   enumerated type  defines the valid device types that may be used as bootable devices.
     # @!attribute [rw] cdrom
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
     #     Virtual CD-ROM device.
     # @!attribute [rw] disk
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
     #     Virtual disk device.
     # @!attribute [rw] ethernet
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
     #     Virtual Ethernet adapter.
     # @!attribute [rw] floppy
-    #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+    #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
     #     Virtual floppy drive.
     class Type < VAPI::Bindings::VapiEnum
       class << self
@@ -263,22 +263,22 @@ module Com::Vmware::Vcenter::Vm::Hardware::Boot
       private_class_method :new
 
       # @!attribute [rw] cdrom
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
       #     Virtual CD-ROM device.
       CDROM = Type.send(:new, 'CDROM')
 
       # @!attribute [rw] disk
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
       #     Virtual disk device.
       DISK = Type.send(:new, 'DISK')
 
       # @!attribute [rw] ethernet
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
       #     Virtual Ethernet adapter.
       ETHERNET = Type.send(:new, 'ETHERNET')
 
       # @!attribute [rw] floppy
-      #     @return [Com::Vmware::Vcenter::VM::Hardware::Boot::Device::Type]
+      #     @return [Com::Vmware::Vcenter::Vm::Hardware::Boot::Device::Type]
       #     Virtual floppy drive.
       FLOPPY = Type.send(:new, 'FLOPPY')
     end
