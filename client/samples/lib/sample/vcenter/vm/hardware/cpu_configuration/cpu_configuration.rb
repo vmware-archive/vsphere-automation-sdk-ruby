@@ -64,14 +64,15 @@ EOL
     @service_manager = get_service_manager(ssl_options)
     @vm_svc = VCENTER_VM_CPU_CLASS.new(service_manager.vapi_config)
   end
+  
   def execute
     log.info "Getting the VM Details #{vm_name}"
     @vm_id = VMHelper.get_vm(service_manager.vapi_config, @vm_name)
-    @vm_cpu_info = @vm_svc.get(vm_id)
-    log.info "Number of CPU cores #{@vm_cpu_info.count}"
-    log.info "Number if cores per socket #{@vm_cpu_info.cores_per_socket}"
-    log.info "Hot add enabled #{@vm_cpu_info.hot_add_enabled}"
-    log.info "Hot remove enabled #{@vm_cpu_info.hot_remove_enabled}"
+    @vm_cpu_info_original = @vm_svc.get(vm_id)
+    log.info "Number of CPU cores #{@vm_cpu_info_original.count}"
+    log.info "Number if cores per socket #{@vm_cpu_info_original.cores_per_socket}"
+    log.info "Hot add enabled #{@vm_cpu_info_original.hot_add_enabled}"
+    log.info "Hot remove enabled #{@vm_cpu_info_original.hot_remove_enabled}"
     @cpu_specs = VCENTER_VM_CPU_UPDATE_SPEC.new(:cores_per_socket => @cores_per_socket.to_i, :count => @count.to_i, :hot_add_enabled => (@hot_add_enabled == "true") ? true : false, :hot_remove_enabled => (@hot_remove_enabled == "true") ? true : false) 
     @vm_cpu_info = @vm_svc.get(vm_id)
     log.info "*** Updating the CPU-related settings of virtual machine #{@vm_name} ***" 
@@ -81,6 +82,16 @@ EOL
     log.info "Number if cores per socket #{@vm_cpu_info.cores_per_socket}"
     log.info "Hot add enabled #{@vm_cpu_info.hot_add_enabled}"
     log.info "Hot remove enabled #{@vm_cpu_info.hot_remove_enabled}"
+  end
+
+  #Restores to previous values
+  def cleanup
+    log.info "Restoring ==> CPU cores #{@vm_cpu_info_original.count}"
+    log.info "Restoring ==> cores per socket #{@vm_cpu_info_original.cores_per_socket}"
+    log.info "Restoring ==> Hot add enabled #{@vm_cpu_info_original.hot_add_enabled}"
+    log.info "Restoring ==> Hot remove enabled #{@vm_cpu_info_original.hot_remove_enabled}"
+    @cpu_specs_original = VCENTER_VM_CPU_UPDATE_SPEC.new(:cores_per_socket => @vm_cpu_info_original.cores_per_socket.to_i, :count => @vm_cpu_info_original.count.to_i, :hot_add_enabled => (@vm_cpu_info_original.hot_add_enabled == "true") ? true : false, :hot_remove_enabled => (@vm_cpu_info_original.hot_remove_enabled == "true") ? true : false) 
+    @vm_svc.update(vm_id,@cpu_specs_original)
   end
 end
 
