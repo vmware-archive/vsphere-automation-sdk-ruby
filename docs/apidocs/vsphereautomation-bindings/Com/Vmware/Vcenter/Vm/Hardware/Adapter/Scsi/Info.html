@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -411,15 +411,15 @@ a raw StructValue from the wire (optional)
       <pre class="lines">
 
 
-781
-782
-783</pre>
+743
+744
+745</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 781</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 743</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -473,79 +473,79 @@ Device label.
       <pre class="lines">
 
 
-750
-751
-752
-753
-754
-755
-756
-757
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774
-775
-776
-777
-778
-779
-780
-781
-782
-783
-784</pre>
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 750</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
-                  <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:scsi</span><span class='comma'>,</span>
-                  <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
-                  <span class='symbol'>:sharing</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
+                <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:scsi</span><span class='comma'>,</span>
+                <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
+                <span class='symbol'>:sharing</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -597,79 +597,79 @@ the adapter was created.
       <pre class="lines">
 
 
-750
-751
-752
-753
-754
-755
-756
-757
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774
-775
-776
-777
-778
-779
-780
-781
-782
-783
-784</pre>
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 750</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
-                  <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:scsi</span><span class='comma'>,</span>
-                  <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
-                  <span class='symbol'>:sharing</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
+                <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:scsi</span><span class='comma'>,</span>
+                <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
+                <span class='symbol'>:sharing</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -681,7 +681,7 @@ the adapter was created.
       <div class="method_details ">
   <h3 class="signature " id="scsi-instance_method">
   
-    - (<tt><span class='object_link'><a href="../../ScsiAddressInfo.html" title="Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo (class)">Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</a></span></tt>) <strong>scsi</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</tt>) <strong>scsi</strong> 
   
 
   
@@ -704,7 +704,7 @@ Address of the SCSI adapter on the SCSI bus.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../../ScsiAddressInfo.html" title="Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo (class)">Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</tt>)</span>
       
       
       
@@ -718,79 +718,79 @@ Address of the SCSI adapter on the SCSI bus.
       <pre class="lines">
 
 
-750
-751
-752
-753
-754
-755
-756
-757
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774
-775
-776
-777
-778
-779
-780
-781
-782
-783
-784</pre>
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 750</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
-                  <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:scsi</span><span class='comma'>,</span>
-                  <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
-                  <span class='symbol'>:sharing</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
+                <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:scsi</span><span class='comma'>,</span>
+                <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
+                <span class='symbol'>:sharing</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -802,7 +802,7 @@ Address of the SCSI adapter on the SCSI bus.
       <div class="method_details ">
   <h3 class="signature " id="sharing-instance_method">
   
-    - (<tt><span class='object_link'><a href="Sharing.html" title="Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing (class)">Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</a></span></tt>) <strong>sharing</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</tt>) <strong>sharing</strong> 
   
 
   
@@ -825,7 +825,7 @@ Bus sharing mode.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Sharing.html" title="Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing (class)">Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</tt>)</span>
       
       
       
@@ -839,79 +839,79 @@ Bus sharing mode.
       <pre class="lines">
 
 
-750
-751
-752
-753
-754
-755
-756
-757
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774
-775
-776
-777
-778
-779
-780
-781
-782
-783
-784</pre>
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 750</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
-                  <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:scsi</span><span class='comma'>,</span>
-                  <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
-                  <span class='symbol'>:sharing</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
+                <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:scsi</span><span class='comma'>,</span>
+                <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
+                <span class='symbol'>:sharing</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -923,7 +923,7 @@ Bus sharing mode.
       <div class="method_details ">
   <h3 class="signature " id="type-instance_method">
   
-    - (<tt><span class='object_link'><a href="Type.html" title="Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type (class)">Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</a></span></tt>) <strong>type</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</tt>) <strong>type</strong> 
   
 
   
@@ -946,7 +946,7 @@ Adapter type.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Type.html" title="Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type (class)">Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</tt>)</span>
       
       
       
@@ -960,79 +960,79 @@ Adapter type.
       <pre class="lines">
 
 
-750
-751
-752
-753
-754
-755
-756
-757
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774
-775
-776
-777
-778
-779
-780
-781
-782
-783
-784</pre>
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 750</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
-                  <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:scsi</span><span class='comma'>,</span>
-                  <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
-                  <span class='symbol'>:sharing</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:label</span><span class='comma'>,</span>
+                <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:scsi</span><span class='comma'>,</span>
+                <span class='symbol'>:pci_slot_number</span><span class='comma'>,</span>
+                <span class='symbol'>:sharing</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1092,37 +1092,39 @@ the binding type
       <pre class="lines">
 
 
-756
-757
-758
-759
-760
-761
-762
-763
-764
-765
-766
-767
-768
-769</pre>
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 756</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware/adapter.rb', line 717</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='lbrace'>{</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-        <span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='const'>Info</span><span class='comma'>,</span>
-        <span class='kw'>false</span><span class='comma'>,</span>
-        <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.adapter.scsi.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>label</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>scsi</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::ScsiAddressInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>pci_slot_number</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sharing</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::Sharing</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='const'>Info</span><span class='comma'>,</span>
+    <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='kw'>nil</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1134,11 +1136,11 @@ the binding type
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:17:34 2016 by
+  Generated on Wed Sep  6 12:05:35 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

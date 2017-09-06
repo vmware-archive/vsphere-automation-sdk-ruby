@@ -85,6 +85,10 @@ module Com::Vmware::Vcenter::Iso
     #     If no .iso file is present on the library item.
     # @raise [Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState]
     #     When the operation is not allowed on the virtual machine in its current state.
+    # @raise [Com::Vmware::Vapi::Std::Errors::Unauthorized]
+    #     If you do not have all of the privileges described in the following list:
+    #
+    #     System.Read
     def mount(library_item, vm)
       invoke_with_info(MOUNT_INFO,
                        'library_item' => library_item,
@@ -102,6 +106,10 @@ module Com::Vmware::Vcenter::Iso
     #     If the virtual machine identified by  ``vm``  is not found or the  ``cdrom``  does not identify a virtual CD-ROM in the virtual machine.
     # @raise [Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState]
     #     When the operation is not allowed on the virtual machine in its current state.
+    # @raise [Com::Vmware::Vapi::Std::Errors::Unauthorized]
+    #     If you do not have all of the privileges described in the following list:
+    #
+    #     System.Read
     def unmount(vm, cdrom)
       invoke_with_info(UNMOUNT_INFO,
                        'vm' => vm,

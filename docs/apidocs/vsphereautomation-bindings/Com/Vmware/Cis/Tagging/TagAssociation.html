@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -124,6 +124,232 @@ methods  to attach, detach, and query tags.
     
   
 </p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="SERVICE_ID-constant" class="">SERVICE_ID =
+          <div class="docstring">
+  <div class="discussion">
+    <p>
+static metamodel definitions
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>ServiceIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.tag_association</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ATTACH_INFO-constant" class="">ATTACH_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>attach</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Tag</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VoidType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_found</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotFound</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.invalid_argument</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::InvalidArgument</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ATTACH_MULTIPLE_TAGS_TO_OBJECT_INFO-constant" class="">ATTACH_MULTIPLE_TAGS_TO_OBJECT_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>attach_multiple_tags_to_object</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::TagAssociation::BatchResult</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ATTACH_TAG_TO_MULTIPLE_OBJECTS_INFO-constant" class="">ATTACH_TAG_TO_MULTIPLE_OBJECTS_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>attach_tag_to_multiple_objects</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Tag</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::TagAssociation::BatchResult</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_found</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotFound</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="DETACH_INFO-constant" class="">DETACH_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>detach</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Tag</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VoidType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_found</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotFound</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="DETACH_MULTIPLE_TAGS_FROM_OBJECT_INFO-constant" class="">DETACH_MULTIPLE_TAGS_FROM_OBJECT_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>detach_multiple_tags_from_object</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::TagAssociation::BatchResult</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="DETACH_TAG_FROM_MULTIPLE_OBJECTS_INFO-constant" class="">DETACH_TAG_FROM_MULTIPLE_OBJECTS_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>detach_tag_from_multiple_objects</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Tag</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::TagAssociation::BatchResult</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_found</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotFound</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LIST_ATTACHED_OBJECTS_INFO-constant" class="">LIST_ATTACHED_OBJECTS_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_objects</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Tag</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_found</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotFound</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LIST_ATTACHED_OBJECTS_ON_TAGS_INFO-constant" class="">LIST_ATTACHED_OBJECTS_ON_TAGS_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_objects_on_tags</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::TagAssociation::TagToObjects</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LIST_ATTACHED_TAGS_INFO-constant" class="">LIST_ATTACHED_TAGS_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_tags</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LIST_ATTACHED_TAGS_ON_OBJECTS_INFO-constant" class="">LIST_ATTACHED_TAGS_ON_OBJECTS_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_tags_on_objects</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::TagAssociation::ObjectToTags</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LIST_ATTACHABLE_TAGS_INFO-constant" class="">LIST_ATTACHABLE_TAGS_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attachable_tags</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::DynamicID</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SERVICE_INFO-constant" class="">SERVICE_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ServiceInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>SERVICE_ID</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>attach</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>ATTACH_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>attach_multiple_tags_to_object</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>ATTACH_MULTIPLE_TAGS_TO_OBJECT_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>attach_tag_to_multiple_objects</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>ATTACH_TAG_TO_MULTIPLE_OBJECTS_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>detach</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>DETACH_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>detach_multiple_tags_from_object</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>DETACH_MULTIPLE_TAGS_FROM_OBJECT_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>detach_tag_from_multiple_objects</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>DETACH_TAG_FROM_MULTIPLE_OBJECTS_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_objects</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>LIST_ATTACHED_OBJECTS_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_objects_on_tags</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>LIST_ATTACHED_OBJECTS_ON_TAGS_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_tags</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>LIST_ATTACHED_TAGS_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attached_tags_on_objects</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>LIST_ATTACHED_TAGS_ON_OBJECTS_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>list_attachable_tags</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>LIST_ATTACHABLE_TAGS_INFO</span>
+<span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -502,15 +728,15 @@ A hash with the api provider details.
       <pre class="lines">
 
 
-1013
-1014
-1015</pre>
+986
+987
+988</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1013</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 986</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='cvar'>@@service_info</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='const'>SERVICE_INFO</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -660,21 +886,19 @@ privilege to read the object.
       <pre class="lines">
 
 
-1031
-1032
-1033
-1034
-1035
-1036</pre>
+1003
+1004
+1005
+1006
+1007</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1031</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1003</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attach'>attach</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@attach_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>ATTACH_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -791,21 +1015,19 @@ if you do not have the privilege to read the object.
       <pre class="lines">
 
 
-1049
-1050
-1051
-1052
-1053
-1054</pre>
+1019
+1020
+1021
+1022
+1023</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1049</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1019</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attach_multiple_tags_to_object'>attach_multiple_tags_to_object</span><span class='lparen'>(</span><span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@attach_multiple_tags_to_object_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>ATTACH_MULTIPLE_TAGS_TO_OBJECT_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -937,21 +1159,19 @@ if you do not have the attach tag privilege on the tag.
       <pre class="lines">
 
 
-1069
-1070
-1071
-1072
-1073
-1074</pre>
+1037
+1038
+1039
+1040
+1041</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1069</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1037</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attach_tag_to_multiple_objects'>attach_tag_to_multiple_objects</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@attach_tag_to_multiple_objects_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>ATTACH_TAG_TO_MULTIPLE_OBJECTS_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1074,21 +1294,19 @@ privilege to read the given object.
       <pre class="lines">
 
 
-1088
-1089
-1090
-1091
-1092
-1093</pre>
+1054
+1055
+1056
+1057
+1058</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1088</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1054</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_detach'>detach</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@detach_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>DETACH_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1205,21 +1423,19 @@ if you do not have the privilege to read the object.
       <pre class="lines">
 
 
-1106
-1107
-1108
-1109
-1110
-1111</pre>
+1070
+1071
+1072
+1073
+1074</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1106</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1070</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_detach_multiple_tags_from_object'>detach_multiple_tags_from_object</span><span class='lparen'>(</span><span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@detach_multiple_tags_from_object_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>DETACH_MULTIPLE_TAGS_FROM_OBJECT_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1351,21 +1567,19 @@ if you do not have the attach tag privilege on the tag.
       <pre class="lines">
 
 
-1126
-1127
-1128
-1129
-1130
-1131</pre>
+1088
+1089
+1090
+1091
+1092</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1126</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1088</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_detach_tag_from_multiple_objects'>detach_tag_from_multiple_objects</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@detach_tag_from_multiple_objects_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>DETACH_TAG_FROM_MULTIPLE_OBJECTS_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1467,19 +1681,17 @@ if you do not have the privilege to read the object.
       <pre class="lines">
 
 
-1200
-1201
-1202
-1203
-1204</pre>
+1152
+1153
+1154
+1155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1200</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1152</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attachable_tags'>list_attachable_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_attachable_tags_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>LIST_ATTACHABLE_TAGS_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1589,19 +1801,17 @@ if you do not have the privilege to read the tag.
       <pre class="lines">
 
 
-1144
-1145
-1146
-1147
-1148</pre>
+1104
+1105
+1106
+1107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1144</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_objects'>list_attached_objects</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_attached_objects_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>LIST_ATTACHED_OBJECTS_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_id'>tag_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1681,19 +1891,17 @@ is attached to.
       <pre class="lines">
 
 
-1157
-1158
-1159
-1160
-1161</pre>
+1115
+1116
+1117
+1118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1157</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_objects_on_tags'>list_attached_objects_on_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_attached_objects_on_tags_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>LIST_ATTACHED_OBJECTS_ON_TAGS_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tag_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tag_ids'>tag_ids</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1789,19 +1997,17 @@ if you do not have the privilege to read the object.
       <pre class="lines">
 
 
-1172
-1173
-1174
-1175
-1176</pre>
+1128
+1129
+1130
+1131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1172</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_tags'>list_attached_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_attached_tags_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>LIST_ATTACHED_TAGS_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_id'>object_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1882,19 +2088,17 @@ attached to that object.
       <pre class="lines">
 
 
-1185
-1186
-1187
-1188
-1189</pre>
+1139
+1140
+1141
+1142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1185</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_tags_on_objects'>list_attached_tags_on_objects</span><span class='lparen'>(</span><span class='id identifier rubyid_object_ids'>object_ids</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@list_attached_tags_on_objects_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>LIST_ATTACHED_TAGS_ON_OBJECTS_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>object_ids</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_object_ids'>object_ids</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1906,11 +2110,11 @@ attached to that object.
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:14:46 2016 by
+  Generated on Wed Sep  6 12:03:27 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

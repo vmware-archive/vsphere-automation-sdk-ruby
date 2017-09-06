@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -469,15 +469,15 @@ a raw StructValue from the wire (optional)
       <pre class="lines">
 
 
-354
-355
-356</pre>
+342
+343
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 354</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 342</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -531,6 +531,18 @@ The text description displayed to the user in help output.
       <pre class="lines">
 
 
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
 319
 320
 321
@@ -557,61 +569,49 @@ The text description displayed to the user in help output.
 342
 343
 344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 319</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 307</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:service_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:operation_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:options</span><span class='comma'>,</span>
-                  <span class='symbol'>:formatter</span><span class='comma'>,</span>
-                  <span class='symbol'>:output_field_list</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:service_id</span><span class='comma'>,</span>
+                <span class='symbol'>:operation_id</span><span class='comma'>,</span>
+                <span class='symbol'>:options</span><span class='comma'>,</span>
+                <span class='symbol'>:formatter</span><span class='comma'>,</span>
+                <span class='symbol'>:output_field_list</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -661,6 +661,18 @@ present, client can choose a default output formatter.
       <pre class="lines">
 
 
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
 319
 320
 321
@@ -687,61 +699,49 @@ present, client can choose a default output formatter.
 342
 343
 344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 319</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 307</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:service_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:operation_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:options</span><span class='comma'>,</span>
-                  <span class='symbol'>:formatter</span><span class='comma'>,</span>
-                  <span class='symbol'>:output_field_list</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:service_id</span><span class='comma'>,</span>
+                <span class='symbol'>:operation_id</span><span class='comma'>,</span>
+                <span class='symbol'>:options</span><span class='comma'>,</span>
+                <span class='symbol'>:formatter</span><span class='comma'>,</span>
+                <span class='symbol'>:output_field_list</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -790,6 +790,18 @@ Basic command identity.
       <pre class="lines">
 
 
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
 319
 320
 321
@@ -816,61 +828,49 @@ Basic command identity.
 342
 343
 344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 319</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 307</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:service_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:operation_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:options</span><span class='comma'>,</span>
-                  <span class='symbol'>:formatter</span><span class='comma'>,</span>
-                  <span class='symbol'>:output_field_list</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:service_id</span><span class='comma'>,</span>
+                <span class='symbol'>:operation_id</span><span class='comma'>,</span>
+                <span class='symbol'>:options</span><span class='comma'>,</span>
+                <span class='symbol'>:formatter</span><span class='comma'>,</span>
+                <span class='symbol'>:output_field_list</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -919,6 +919,18 @@ The operation identifier corresponding to this CLI command.
       <pre class="lines">
 
 
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
 319
 320
 321
@@ -945,61 +957,49 @@ The operation identifier corresponding to this CLI command.
 342
 343
 344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 319</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 307</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:service_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:operation_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:options</span><span class='comma'>,</span>
-                  <span class='symbol'>:formatter</span><span class='comma'>,</span>
-                  <span class='symbol'>:output_field_list</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:service_id</span><span class='comma'>,</span>
+                <span class='symbol'>:operation_id</span><span class='comma'>,</span>
+                <span class='symbol'>:options</span><span class='comma'>,</span>
+                <span class='symbol'>:formatter</span><span class='comma'>,</span>
+                <span class='symbol'>:output_field_list</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1048,6 +1048,18 @@ The input for this command.
       <pre class="lines">
 
 
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
 319
 320
 321
@@ -1074,61 +1086,49 @@ The input for this command.
 342
 343
 344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 319</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 307</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:service_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:operation_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:options</span><span class='comma'>,</span>
-                  <span class='symbol'>:formatter</span><span class='comma'>,</span>
-                  <span class='symbol'>:output_field_list</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:service_id</span><span class='comma'>,</span>
+                <span class='symbol'>:operation_id</span><span class='comma'>,</span>
+                <span class='symbol'>:options</span><span class='comma'>,</span>
+                <span class='symbol'>:formatter</span><span class='comma'>,</span>
+                <span class='symbol'>:output_field_list</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1177,6 +1177,18 @@ List of output structure name and output field info.
       <pre class="lines">
 
 
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
 319
 320
 321
@@ -1203,61 +1215,49 @@ List of output structure name and output field info.
 342
 343
 344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 319</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 307</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:service_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:operation_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:options</span><span class='comma'>,</span>
-                  <span class='symbol'>:formatter</span><span class='comma'>,</span>
-                  <span class='symbol'>:output_field_list</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:service_id</span><span class='comma'>,</span>
+                <span class='symbol'>:operation_id</span><span class='comma'>,</span>
+                <span class='symbol'>:options</span><span class='comma'>,</span>
+                <span class='symbol'>:formatter</span><span class='comma'>,</span>
+                <span class='symbol'>:output_field_list</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1306,6 +1306,18 @@ The service identifier that contains the operations for this CLI command.
       <pre class="lines">
 
 
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
 319
 320
 321
@@ -1332,61 +1344,49 @@ The service identifier that contains the operations for this CLI command.
 342
 343
 344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 319</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 307</span>
 
 <span class='kw'>class</span> <span class='const'>Info</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Info</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Info</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:service_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:operation_id</span><span class='comma'>,</span>
-                  <span class='symbol'>:options</span><span class='comma'>,</span>
-                  <span class='symbol'>:formatter</span><span class='comma'>,</span>
-                  <span class='symbol'>:output_field_list</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:identity</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:service_id</span><span class='comma'>,</span>
+                <span class='symbol'>:operation_id</span><span class='comma'>,</span>
+                <span class='symbol'>:options</span><span class='comma'>,</span>
+                <span class='symbol'>:formatter</span><span class='comma'>,</span>
+                <span class='symbol'>:output_field_list</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1446,41 +1446,43 @@ the binding type
       <pre class="lines">
 
 
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
 325
 326
 327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340</pre>
+328</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 325</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/cli.rb', line 312</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='lbrace'>{</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-        <span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='const'>Info</span><span class='comma'>,</span>
-        <span class='kw'>false</span><span class='comma'>,</span>
-        <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.cli.command.info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>identity</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::Identity</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>service_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.service</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operation_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.operation</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>options</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OptionInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>formatter</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::FormatterType</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>output_field_list</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Cli::Command::OutputInfo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='const'>Info</span><span class='comma'>,</span>
+    <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='kw'>nil</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1492,11 +1494,11 @@ the binding type
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:15:19 2016 by
+  Generated on Wed Sep  6 12:03:53 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

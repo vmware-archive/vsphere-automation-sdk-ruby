@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -299,15 +299,15 @@ a raw StructValue from the wire (optional)
       <pre class="lines">
 
 
-3968
-3969
-3970</pre>
+3779
+3780
+3781</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3968</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3779</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -361,63 +361,63 @@ Identifier of the virtual floppy drive.
       <pre class="lines">
 
 
-3945
-3946
-3947
-3948
-3949
-3950
-3951
-3952
-3953
-3954
-3955
-3956
-3957
-3958
-3959
-3960
-3961
-3962
-3963
-3964
-3965
-3966
-3967
-3968
-3969
-3970
-3971</pre>
+3756
+3757
+3758
+3759
+3760
+3761
+3762
+3763
+3764
+3765
+3766
+3767
+3768
+3769
+3770
+3771
+3772
+3773
+3774
+3775
+3776
+3777
+3778
+3779
+3780
+3781
+3782</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3945</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3756</span>
 
 <span class='kw'>class</span> <span class='const'>Summary</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.floppy.summary</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>floppy</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.Floppy</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>Summary</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.floppy.summary</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>floppy</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.Floppy</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>Summary</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:floppy</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:floppy</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -477,29 +477,31 @@ the binding type
       <pre class="lines">
 
 
-3951
-3952
-3953
-3954
-3955
-3956
-3957
-3958
-3959
-3960</pre>
+3761
+3762
+3763
+3764
+3765
+3766
+3767
+3768
+3769
+3770
+3771</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3951</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3761</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.floppy.summary</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='lbrace'>{</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>floppy</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.Floppy</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-        <span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='const'>Summary</span><span class='comma'>,</span>
-        <span class='kw'>false</span><span class='comma'>,</span>
-        <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.floppy.summary</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>floppy</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.Floppy</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='const'>Summary</span><span class='comma'>,</span>
+    <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='kw'>nil</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -511,11 +513,11 @@ the binding type
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:15:58 2016 by
+  Generated on Wed Sep  6 12:06:43 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

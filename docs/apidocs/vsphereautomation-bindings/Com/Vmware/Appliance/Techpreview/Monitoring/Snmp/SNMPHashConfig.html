@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -363,15 +363,15 @@ a raw StructValue from the wire (optional)
       <pre class="lines">
 
 
-951
-952
-953</pre>
+933
+934
+935</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 951</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 933</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -426,6 +426,24 @@ Provide filename to secret for authentication hash, use in set --users
       <pre class="lines">
 
 
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
 924
 925
 926
@@ -438,59 +456,41 @@ Provide filename to secret for authentication hash, use in set --users
 933
 934
 935
-936
-937
-938
-939
-940
-941
-942
-943
-944
-945
-946
-947
-948
-949
-950
-951
-952
-953
-954</pre>
+936</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 924</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 906</span>
 
 <span class='kw'>class</span> <span class='const'>SNMPHashConfig</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:auth_hash</span><span class='comma'>,</span>
-                  <span class='symbol'>:priv_hash</span><span class='comma'>,</span>
-                  <span class='symbol'>:raw_secret</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:auth_hash</span><span class='comma'>,</span>
+                <span class='symbol'>:priv_hash</span><span class='comma'>,</span>
+                <span class='symbol'>:raw_secret</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -540,6 +540,24 @@ Provide filename to secret for privacy hash, use in set --users
       <pre class="lines">
 
 
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
 924
 925
 926
@@ -552,59 +570,41 @@ Provide filename to secret for privacy hash, use in set --users
 933
 934
 935
-936
-937
-938
-939
-940
-941
-942
-943
-944
-945
-946
-947
-948
-949
-950
-951
-952
-953
-954</pre>
+936</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 924</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 906</span>
 
 <span class='kw'>class</span> <span class='const'>SNMPHashConfig</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:auth_hash</span><span class='comma'>,</span>
-                  <span class='symbol'>:priv_hash</span><span class='comma'>,</span>
-                  <span class='symbol'>:raw_secret</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:auth_hash</span><span class='comma'>,</span>
+                <span class='symbol'>:priv_hash</span><span class='comma'>,</span>
+                <span class='symbol'>:raw_secret</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -654,6 +654,24 @@ command line instead of file.
       <pre class="lines">
 
 
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
 924
 925
 926
@@ -666,59 +684,41 @@ command line instead of file.
 933
 934
 935
-936
-937
-938
-939
-940
-941
-942
-943
-944
-945
-946
-947
-948
-949
-950
-951
-952
-953
-954</pre>
+936</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 924</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 906</span>
 
 <span class='kw'>class</span> <span class='const'>SNMPHashConfig</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:auth_hash</span><span class='comma'>,</span>
-                  <span class='symbol'>:priv_hash</span><span class='comma'>,</span>
-                  <span class='symbol'>:raw_secret</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:auth_hash</span><span class='comma'>,</span>
+                <span class='symbol'>:priv_hash</span><span class='comma'>,</span>
+                <span class='symbol'>:raw_secret</span>
 
-    <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -778,33 +778,35 @@ the binding type
       <pre class="lines">
 
 
-930
-931
-932
-933
-934
-935
-936
-937
-938
-939
-940
-941</pre>
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 930</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/appliance/techpreview/monitoring.rb', line 911</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='lbrace'>{</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-        <span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
-        <span class='kw'>false</span><span class='comma'>,</span>
-        <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.appliance.techpreview.monitoring.snmp.SNMP_hash_config</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>auth_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>priv_hash</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>raw_secret</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='const'>SNMPHashConfig</span><span class='comma'>,</span>
+    <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='kw'>nil</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -816,11 +818,11 @@ the binding type
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:18:13 2016 by
+  Generated on Wed Sep  6 12:04:57 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

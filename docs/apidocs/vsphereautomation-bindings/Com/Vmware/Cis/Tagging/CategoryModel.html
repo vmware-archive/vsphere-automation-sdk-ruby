@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -449,15 +449,15 @@ a raw StructValue from the wire (optional)
       <pre class="lines">
 
 
-1378
-1379
-1380</pre>
+1321
+1322
+1323</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1378</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1321</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -515,6 +515,63 @@ attached to any non IS object.
       <pre class="lines">
 
 
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308
+1309
+1310
+1311
+1312
+1313
+1314
+1315
+1316
+1317
+1318
+1319
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335
+1336
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
 1345
 1346
 1347
@@ -545,171 +602,98 @@ attached to any non IS object.
 1372
 1373
 1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383
-1384
-1385
-1386
-1387
-1388
-1389
-1390
-1391
-1392
-1393
-1394
-1395
-1396
-1397
-1398
-1399
-1400
-1401
-1402
-1403
-1404
-1405
-1406
-1407
-1408
-1409
-1410
-1411
-1412
-1413
-1414
-1415
-1416
-1417
-1418
-1419
-1420
-1421
-1422
-1423
-1424
-1425
-1426
-1427
-1428
-1429
-1430
-1431
-1432
-1433
-1434
-1435
-1436
-1437
-1438
-1439
-1440</pre>
+1375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1345</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1288</span>
 
 <span class='kw'>class</span> <span class='const'>CategoryModel</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>CategoryModel</span><span class='comma'>,</span>
-                <span class='kw'>true</span><span class='comma'>,</span>
-                <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>CategoryModel</span><span class='comma'>,</span>
+        <span class='kw'>true</span><span class='comma'>,</span>
+        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
-                  <span class='symbol'>:name</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:cardinality</span><span class='comma'>,</span>
-                  <span class='symbol'>:associable_types</span><span class='comma'>,</span>
-                  <span class='symbol'>:used_by</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
+                <span class='symbol'>:name</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:cardinality</span><span class='comma'>,</span>
+                <span class='symbol'>:associable_types</span><span class='comma'>,</span>
+                <span class='symbol'>:used_by</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
+</span>  <span class='comment'># @!attribute [rw] single
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
+</span>  <span class='comment'># @!attribute [rw] multiple
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
+</span>  <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Cardinality</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
-</span>    <span class='comment'># @!attribute [rw] single
+    <span class='comment'># @!attribute [rw] single
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>    <span class='comment'># @!attribute [rw] multiple
+</span>    <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] multiple
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>    <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Cardinality</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] single
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>        <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] multiple
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>        <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -758,6 +742,63 @@ The associated cardinality ( ``SINGLE``, ``MULTIPLE`` ) of the category.
       <pre class="lines">
 
 
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308
+1309
+1310
+1311
+1312
+1313
+1314
+1315
+1316
+1317
+1318
+1319
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335
+1336
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
 1345
 1346
 1347
@@ -788,171 +829,98 @@ The associated cardinality ( ``SINGLE``, ``MULTIPLE`` ) of the category.
 1372
 1373
 1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383
-1384
-1385
-1386
-1387
-1388
-1389
-1390
-1391
-1392
-1393
-1394
-1395
-1396
-1397
-1398
-1399
-1400
-1401
-1402
-1403
-1404
-1405
-1406
-1407
-1408
-1409
-1410
-1411
-1412
-1413
-1414
-1415
-1416
-1417
-1418
-1419
-1420
-1421
-1422
-1423
-1424
-1425
-1426
-1427
-1428
-1429
-1430
-1431
-1432
-1433
-1434
-1435
-1436
-1437
-1438
-1439
-1440</pre>
+1375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1345</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1288</span>
 
 <span class='kw'>class</span> <span class='const'>CategoryModel</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>CategoryModel</span><span class='comma'>,</span>
-                <span class='kw'>true</span><span class='comma'>,</span>
-                <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>CategoryModel</span><span class='comma'>,</span>
+        <span class='kw'>true</span><span class='comma'>,</span>
+        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
-                  <span class='symbol'>:name</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:cardinality</span><span class='comma'>,</span>
-                  <span class='symbol'>:associable_types</span><span class='comma'>,</span>
-                  <span class='symbol'>:used_by</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
+                <span class='symbol'>:name</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:cardinality</span><span class='comma'>,</span>
+                <span class='symbol'>:associable_types</span><span class='comma'>,</span>
+                <span class='symbol'>:used_by</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
+</span>  <span class='comment'># @!attribute [rw] single
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
+</span>  <span class='comment'># @!attribute [rw] multiple
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
+</span>  <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Cardinality</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
-</span>    <span class='comment'># @!attribute [rw] single
+    <span class='comment'># @!attribute [rw] single
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>    <span class='comment'># @!attribute [rw] multiple
+</span>    <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] multiple
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>    <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Cardinality</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] single
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>        <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] multiple
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>        <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1001,6 +969,63 @@ The description of the category.
       <pre class="lines">
 
 
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308
+1309
+1310
+1311
+1312
+1313
+1314
+1315
+1316
+1317
+1318
+1319
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335
+1336
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
 1345
 1346
 1347
@@ -1031,171 +1056,98 @@ The description of the category.
 1372
 1373
 1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383
-1384
-1385
-1386
-1387
-1388
-1389
-1390
-1391
-1392
-1393
-1394
-1395
-1396
-1397
-1398
-1399
-1400
-1401
-1402
-1403
-1404
-1405
-1406
-1407
-1408
-1409
-1410
-1411
-1412
-1413
-1414
-1415
-1416
-1417
-1418
-1419
-1420
-1421
-1422
-1423
-1424
-1425
-1426
-1427
-1428
-1429
-1430
-1431
-1432
-1433
-1434
-1435
-1436
-1437
-1438
-1439
-1440</pre>
+1375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1345</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1288</span>
 
 <span class='kw'>class</span> <span class='const'>CategoryModel</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>CategoryModel</span><span class='comma'>,</span>
-                <span class='kw'>true</span><span class='comma'>,</span>
-                <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>CategoryModel</span><span class='comma'>,</span>
+        <span class='kw'>true</span><span class='comma'>,</span>
+        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
-                  <span class='symbol'>:name</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:cardinality</span><span class='comma'>,</span>
-                  <span class='symbol'>:associable_types</span><span class='comma'>,</span>
-                  <span class='symbol'>:used_by</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
+                <span class='symbol'>:name</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:cardinality</span><span class='comma'>,</span>
+                <span class='symbol'>:associable_types</span><span class='comma'>,</span>
+                <span class='symbol'>:used_by</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
+</span>  <span class='comment'># @!attribute [rw] single
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
+</span>  <span class='comment'># @!attribute [rw] multiple
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
+</span>  <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Cardinality</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
-</span>    <span class='comment'># @!attribute [rw] single
+    <span class='comment'># @!attribute [rw] single
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>    <span class='comment'># @!attribute [rw] multiple
+</span>    <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] multiple
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>    <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Cardinality</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] single
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>        <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] multiple
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>        <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1244,6 +1196,63 @@ The unique identifier of the category.
       <pre class="lines">
 
 
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308
+1309
+1310
+1311
+1312
+1313
+1314
+1315
+1316
+1317
+1318
+1319
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335
+1336
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
 1345
 1346
 1347
@@ -1274,171 +1283,98 @@ The unique identifier of the category.
 1372
 1373
 1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383
-1384
-1385
-1386
-1387
-1388
-1389
-1390
-1391
-1392
-1393
-1394
-1395
-1396
-1397
-1398
-1399
-1400
-1401
-1402
-1403
-1404
-1405
-1406
-1407
-1408
-1409
-1410
-1411
-1412
-1413
-1414
-1415
-1416
-1417
-1418
-1419
-1420
-1421
-1422
-1423
-1424
-1425
-1426
-1427
-1428
-1429
-1430
-1431
-1432
-1433
-1434
-1435
-1436
-1437
-1438
-1439
-1440</pre>
+1375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1345</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1288</span>
 
 <span class='kw'>class</span> <span class='const'>CategoryModel</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>CategoryModel</span><span class='comma'>,</span>
-                <span class='kw'>true</span><span class='comma'>,</span>
-                <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>CategoryModel</span><span class='comma'>,</span>
+        <span class='kw'>true</span><span class='comma'>,</span>
+        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
-                  <span class='symbol'>:name</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:cardinality</span><span class='comma'>,</span>
-                  <span class='symbol'>:associable_types</span><span class='comma'>,</span>
-                  <span class='symbol'>:used_by</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
+                <span class='symbol'>:name</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:cardinality</span><span class='comma'>,</span>
+                <span class='symbol'>:associable_types</span><span class='comma'>,</span>
+                <span class='symbol'>:used_by</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
+</span>  <span class='comment'># @!attribute [rw] single
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
+</span>  <span class='comment'># @!attribute [rw] multiple
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
+</span>  <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Cardinality</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
-</span>    <span class='comment'># @!attribute [rw] single
+    <span class='comment'># @!attribute [rw] single
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>    <span class='comment'># @!attribute [rw] multiple
+</span>    <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] multiple
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>    <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Cardinality</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] single
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>        <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] multiple
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>        <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1487,6 +1423,63 @@ The display name of the category.
       <pre class="lines">
 
 
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308
+1309
+1310
+1311
+1312
+1313
+1314
+1315
+1316
+1317
+1318
+1319
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335
+1336
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
 1345
 1346
 1347
@@ -1517,171 +1510,98 @@ The display name of the category.
 1372
 1373
 1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383
-1384
-1385
-1386
-1387
-1388
-1389
-1390
-1391
-1392
-1393
-1394
-1395
-1396
-1397
-1398
-1399
-1400
-1401
-1402
-1403
-1404
-1405
-1406
-1407
-1408
-1409
-1410
-1411
-1412
-1413
-1414
-1415
-1416
-1417
-1418
-1419
-1420
-1421
-1422
-1423
-1424
-1425
-1426
-1427
-1428
-1429
-1430
-1431
-1432
-1433
-1434
-1435
-1436
-1437
-1438
-1439
-1440</pre>
+1375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1345</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1288</span>
 
 <span class='kw'>class</span> <span class='const'>CategoryModel</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>CategoryModel</span><span class='comma'>,</span>
-                <span class='kw'>true</span><span class='comma'>,</span>
-                <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>CategoryModel</span><span class='comma'>,</span>
+        <span class='kw'>true</span><span class='comma'>,</span>
+        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
-                  <span class='symbol'>:name</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:cardinality</span><span class='comma'>,</span>
-                  <span class='symbol'>:associable_types</span><span class='comma'>,</span>
-                  <span class='symbol'>:used_by</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
+                <span class='symbol'>:name</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:cardinality</span><span class='comma'>,</span>
+                <span class='symbol'>:associable_types</span><span class='comma'>,</span>
+                <span class='symbol'>:used_by</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
+</span>  <span class='comment'># @!attribute [rw] single
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
+</span>  <span class='comment'># @!attribute [rw] multiple
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
+</span>  <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Cardinality</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
-</span>    <span class='comment'># @!attribute [rw] single
+    <span class='comment'># @!attribute [rw] single
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>    <span class='comment'># @!attribute [rw] multiple
+</span>    <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] multiple
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>    <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Cardinality</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] single
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>        <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] multiple
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>        <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1733,6 +1653,63 @@ not modify other users subscription from this  set .
       <pre class="lines">
 
 
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308
+1309
+1310
+1311
+1312
+1313
+1314
+1315
+1316
+1317
+1318
+1319
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335
+1336
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
 1345
 1346
 1347
@@ -1763,171 +1740,98 @@ not modify other users subscription from this  set .
 1372
 1373
 1374
-1375
-1376
-1377
-1378
-1379
-1380
-1381
-1382
-1383
-1384
-1385
-1386
-1387
-1388
-1389
-1390
-1391
-1392
-1393
-1394
-1395
-1396
-1397
-1398
-1399
-1400
-1401
-1402
-1403
-1404
-1405
-1406
-1407
-1408
-1409
-1410
-1411
-1412
-1413
-1414
-1415
-1416
-1417
-1418
-1419
-1420
-1421
-1422
-1423
-1424
-1425
-1426
-1427
-1428
-1429
-1430
-1431
-1432
-1433
-1434
-1435
-1436
-1437
-1438
-1439
-1440</pre>
+1375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1345</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1288</span>
 
 <span class='kw'>class</span> <span class='const'>CategoryModel</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>CategoryModel</span><span class='comma'>,</span>
-                <span class='kw'>true</span><span class='comma'>,</span>
-                <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>CategoryModel</span><span class='comma'>,</span>
+        <span class='kw'>true</span><span class='comma'>,</span>
+        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
-                  <span class='symbol'>:name</span><span class='comma'>,</span>
-                  <span class='symbol'>:description</span><span class='comma'>,</span>
-                  <span class='symbol'>:cardinality</span><span class='comma'>,</span>
-                  <span class='symbol'>:associable_types</span><span class='comma'>,</span>
-                  <span class='symbol'>:used_by</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span>
+                <span class='symbol'>:name</span><span class='comma'>,</span>
+                <span class='symbol'>:description</span><span class='comma'>,</span>
+                <span class='symbol'>:cardinality</span><span class='comma'>,</span>
+                <span class='symbol'>:associable_types</span><span class='comma'>,</span>
+                <span class='symbol'>:used_by</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
+</span>  <span class='comment'># @!attribute [rw] single
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
+</span>  <span class='comment'># @!attribute [rw] multiple
+</span>  <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
+</span>  <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
+</span>  <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Cardinality</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Cis::Tagging::CategoryModel::Cardinality``   enumerated type  defines the number of tags in a category that can be assigned to an object.
-</span>    <span class='comment'># @!attribute [rw] single
+    <span class='comment'># @!attribute [rw] single
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>    <span class='comment'># @!attribute [rw] multiple
+</span>    <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] multiple
 </span>    <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
 </span>    <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>    <span class='kw'>class</span> <span class='const'>Cardinality</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model.cardinality</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Cardinality</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Cardinality] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] single
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can only be assigned one of the tags in this category. For example, if a category is &quot;Operating System&quot;, then different tags of this category would be &quot;Windows&quot;, &quot;Linux&quot;, and so on. In this case a VM object can be assigned only one of these tags and hence the cardinality of the associated category here is single.
-</span>        <span class='const'>SINGLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SINGLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] multiple
-</span>        <span class='comment'>#     @return [Com::Vmware::Cis::Tagging::CategoryModel::Cardinality]
-</span>        <span class='comment'>#     An object can be assigned several of the tags in this category. For example, if a category is &quot;Server&quot;, then different tags of this category would be &quot;AppServer&quot;, &quot;DatabaseServer&quot; and so on. In this case a VM object can be assigned more than one of the above tags and hence the cardinality of the associated category here is multiple.
-</span>        <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>MULTIPLE</span> <span class='op'>=</span> <span class='const'>Cardinality</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MULTIPLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1987,39 +1891,41 @@ the binding type
       <pre class="lines">
 
 
-1351
-1352
-1353
-1354
-1355
-1356
-1357
-1358
-1359
-1360
-1361
-1362
-1363
-1364
-1365</pre>
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1351</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/cis/tagging.rb', line 1293</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='lbrace'>{</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_types'>resource_types</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-        <span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='const'>CategoryModel</span><span class='comma'>,</span>
-        <span class='kw'>true</span><span class='comma'>,</span>
-        <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.category_model</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.cis.tagging.Category</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cardinality</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Cis::Tagging::CategoryModel::Cardinality</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>associable_types</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>used_by</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>SetType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='const'>CategoryModel</span><span class='comma'>,</span>
+    <span class='kw'>true</span><span class='comma'>,</span>
+    <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2031,11 +1937,11 @@ the binding type
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:14:48 2016 by
+  Generated on Wed Sep  6 12:03:28 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -421,15 +421,15 @@ a raw StructValue from the wire (optional)
       <pre class="lines">
 
 
-1791
-1792
-1793</pre>
+1658
+1659
+1660</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1791</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1658</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -486,229 +486,213 @@ relevant when the value of  ``type``  is
       <pre class="lines">
 
 
-1760
-1761
-1762
-1763
-1764
-1765
-1766
-1767
-1768
-1769
-1770
-1771
-1772
-1773
-1774
-1775
-1776
-1777
-1778
-1779
-1780
-1781
-1782
-1783
-1784
-1785
-1786
-1787
-1788
-1789
-1790
-1791
-1792
-1793
-1794
-1795
-1796
-1797
-1798
-1799
-1800
-1801
-1802
-1803
-1804
-1805
-1806
-1807
-1808
-1809
-1810
-1811
-1812
-1813
-1814
-1815
-1816
-1817
-1818
-1819
-1820
-1821
-1822
-1823
-1824
-1825
-1826
-1827
-1828
-1829
-1830
-1831
-1832
-1833
-1834
-1835
-1836
-1837
-1838
-1839
-1840
-1841
-1842
-1843
-1844
-1845
-1846
-1847
-1848
-1849
-1850
-1851
-1852
-1853
-1854
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869</pre>
+1627
+1628
+1629
+1630
+1631
+1632
+1633
+1634
+1635
+1636
+1637
+1638
+1639
+1640
+1641
+1642
+1643
+1644
+1645
+1646
+1647
+1648
+1649
+1650
+1651
+1652
+1653
+1654
+1655
+1656
+1657
+1658
+1659
+1660
+1661
+1662
+1663
+1664
+1665
+1666
+1667
+1668
+1669
+1670
+1671
+1672
+1673
+1674
+1675
+1676
+1677
+1678
+1679
+1680
+1681
+1682
+1683
+1684
+1685
+1686
+1687
+1688
+1689
+1690
+1691
+1692
+1693
+1694
+1695
+1696
+1697
+1698
+1699
+1700
+1701
+1702
+1703
+1704
+1705
+1706
+1707
+1708
+1709
+1710
+1711
+1712
+1713
+1714
+1715
+1716
+1717
+1718
+1719
+1720
+1721
+1722
+1723
+1724
+1725
+1726
+1727
+1728</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1760</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1627</span>
 
 <span class='kw'>class</span> <span class='const'>PrimitiveValue</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:double_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:long_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:string_value</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
+                <span class='symbol'>:double_value</span><span class='comma'>,</span>
+                <span class='symbol'>:long_value</span><span class='comma'>,</span>
+                <span class='symbol'>:string_value</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
+</span>  <span class='comment'># @!attribute [rw] boolean
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a boolean (true or false).
+</span>  <span class='comment'># @!attribute [rw] double
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a double (64 bit floating number).
+</span>  <span class='comment'># @!attribute [rw] long
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
+</span>  <span class='comment'># @!attribute [rw] string
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
+</span>  <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Type</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Type] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
-</span>    <span class='comment'># @!attribute [rw] boolean
+    <span class='comment'># @!attribute [rw] boolean
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>    <span class='comment'># @!attribute [rw] double
+</span>    <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] double
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>    <span class='comment'># @!attribute [rw] long
+</span>    <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] long
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>    <span class='comment'># @!attribute [rw] string
+</span>    <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] string
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>    <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Type</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Type] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] boolean
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>        <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] double
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>        <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] long
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>        <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] string
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>        <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -760,229 +744,213 @@ relevant when the value of  ``type``  is
       <pre class="lines">
 
 
-1760
-1761
-1762
-1763
-1764
-1765
-1766
-1767
-1768
-1769
-1770
-1771
-1772
-1773
-1774
-1775
-1776
-1777
-1778
-1779
-1780
-1781
-1782
-1783
-1784
-1785
-1786
-1787
-1788
-1789
-1790
-1791
-1792
-1793
-1794
-1795
-1796
-1797
-1798
-1799
-1800
-1801
-1802
-1803
-1804
-1805
-1806
-1807
-1808
-1809
-1810
-1811
-1812
-1813
-1814
-1815
-1816
-1817
-1818
-1819
-1820
-1821
-1822
-1823
-1824
-1825
-1826
-1827
-1828
-1829
-1830
-1831
-1832
-1833
-1834
-1835
-1836
-1837
-1838
-1839
-1840
-1841
-1842
-1843
-1844
-1845
-1846
-1847
-1848
-1849
-1850
-1851
-1852
-1853
-1854
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869</pre>
+1627
+1628
+1629
+1630
+1631
+1632
+1633
+1634
+1635
+1636
+1637
+1638
+1639
+1640
+1641
+1642
+1643
+1644
+1645
+1646
+1647
+1648
+1649
+1650
+1651
+1652
+1653
+1654
+1655
+1656
+1657
+1658
+1659
+1660
+1661
+1662
+1663
+1664
+1665
+1666
+1667
+1668
+1669
+1670
+1671
+1672
+1673
+1674
+1675
+1676
+1677
+1678
+1679
+1680
+1681
+1682
+1683
+1684
+1685
+1686
+1687
+1688
+1689
+1690
+1691
+1692
+1693
+1694
+1695
+1696
+1697
+1698
+1699
+1700
+1701
+1702
+1703
+1704
+1705
+1706
+1707
+1708
+1709
+1710
+1711
+1712
+1713
+1714
+1715
+1716
+1717
+1718
+1719
+1720
+1721
+1722
+1723
+1724
+1725
+1726
+1727
+1728</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1760</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1627</span>
 
 <span class='kw'>class</span> <span class='const'>PrimitiveValue</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:double_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:long_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:string_value</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
+                <span class='symbol'>:double_value</span><span class='comma'>,</span>
+                <span class='symbol'>:long_value</span><span class='comma'>,</span>
+                <span class='symbol'>:string_value</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
+</span>  <span class='comment'># @!attribute [rw] boolean
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a boolean (true or false).
+</span>  <span class='comment'># @!attribute [rw] double
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a double (64 bit floating number).
+</span>  <span class='comment'># @!attribute [rw] long
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
+</span>  <span class='comment'># @!attribute [rw] string
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
+</span>  <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Type</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Type] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
-</span>    <span class='comment'># @!attribute [rw] boolean
+    <span class='comment'># @!attribute [rw] boolean
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>    <span class='comment'># @!attribute [rw] double
+</span>    <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] double
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>    <span class='comment'># @!attribute [rw] long
+</span>    <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] long
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>    <span class='comment'># @!attribute [rw] string
+</span>    <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] string
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>    <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Type</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Type] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] boolean
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>        <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] double
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>        <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] long
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>        <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] string
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>        <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1034,229 +1002,213 @@ relevant when the value of  ``type``  is
       <pre class="lines">
 
 
-1760
-1761
-1762
-1763
-1764
-1765
-1766
-1767
-1768
-1769
-1770
-1771
-1772
-1773
-1774
-1775
-1776
-1777
-1778
-1779
-1780
-1781
-1782
-1783
-1784
-1785
-1786
-1787
-1788
-1789
-1790
-1791
-1792
-1793
-1794
-1795
-1796
-1797
-1798
-1799
-1800
-1801
-1802
-1803
-1804
-1805
-1806
-1807
-1808
-1809
-1810
-1811
-1812
-1813
-1814
-1815
-1816
-1817
-1818
-1819
-1820
-1821
-1822
-1823
-1824
-1825
-1826
-1827
-1828
-1829
-1830
-1831
-1832
-1833
-1834
-1835
-1836
-1837
-1838
-1839
-1840
-1841
-1842
-1843
-1844
-1845
-1846
-1847
-1848
-1849
-1850
-1851
-1852
-1853
-1854
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869</pre>
+1627
+1628
+1629
+1630
+1631
+1632
+1633
+1634
+1635
+1636
+1637
+1638
+1639
+1640
+1641
+1642
+1643
+1644
+1645
+1646
+1647
+1648
+1649
+1650
+1651
+1652
+1653
+1654
+1655
+1656
+1657
+1658
+1659
+1660
+1661
+1662
+1663
+1664
+1665
+1666
+1667
+1668
+1669
+1670
+1671
+1672
+1673
+1674
+1675
+1676
+1677
+1678
+1679
+1680
+1681
+1682
+1683
+1684
+1685
+1686
+1687
+1688
+1689
+1690
+1691
+1692
+1693
+1694
+1695
+1696
+1697
+1698
+1699
+1700
+1701
+1702
+1703
+1704
+1705
+1706
+1707
+1708
+1709
+1710
+1711
+1712
+1713
+1714
+1715
+1716
+1717
+1718
+1719
+1720
+1721
+1722
+1723
+1724
+1725
+1726
+1727
+1728</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1760</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1627</span>
 
 <span class='kw'>class</span> <span class='const'>PrimitiveValue</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:double_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:long_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:string_value</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
+                <span class='symbol'>:double_value</span><span class='comma'>,</span>
+                <span class='symbol'>:long_value</span><span class='comma'>,</span>
+                <span class='symbol'>:string_value</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
+</span>  <span class='comment'># @!attribute [rw] boolean
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a boolean (true or false).
+</span>  <span class='comment'># @!attribute [rw] double
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a double (64 bit floating number).
+</span>  <span class='comment'># @!attribute [rw] long
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
+</span>  <span class='comment'># @!attribute [rw] string
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
+</span>  <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Type</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Type] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
-</span>    <span class='comment'># @!attribute [rw] boolean
+    <span class='comment'># @!attribute [rw] boolean
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>    <span class='comment'># @!attribute [rw] double
+</span>    <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] double
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>    <span class='comment'># @!attribute [rw] long
+</span>    <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] long
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>    <span class='comment'># @!attribute [rw] string
+</span>    <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] string
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>    <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Type</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Type] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] boolean
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>        <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] double
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>        <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] long
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>        <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] string
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>        <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1308,229 +1260,213 @@ relevant when the value of  ``type``  is
       <pre class="lines">
 
 
-1760
-1761
-1762
-1763
-1764
-1765
-1766
-1767
-1768
-1769
-1770
-1771
-1772
-1773
-1774
-1775
-1776
-1777
-1778
-1779
-1780
-1781
-1782
-1783
-1784
-1785
-1786
-1787
-1788
-1789
-1790
-1791
-1792
-1793
-1794
-1795
-1796
-1797
-1798
-1799
-1800
-1801
-1802
-1803
-1804
-1805
-1806
-1807
-1808
-1809
-1810
-1811
-1812
-1813
-1814
-1815
-1816
-1817
-1818
-1819
-1820
-1821
-1822
-1823
-1824
-1825
-1826
-1827
-1828
-1829
-1830
-1831
-1832
-1833
-1834
-1835
-1836
-1837
-1838
-1839
-1840
-1841
-1842
-1843
-1844
-1845
-1846
-1847
-1848
-1849
-1850
-1851
-1852
-1853
-1854
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869</pre>
+1627
+1628
+1629
+1630
+1631
+1632
+1633
+1634
+1635
+1636
+1637
+1638
+1639
+1640
+1641
+1642
+1643
+1644
+1645
+1646
+1647
+1648
+1649
+1650
+1651
+1652
+1653
+1654
+1655
+1656
+1657
+1658
+1659
+1660
+1661
+1662
+1663
+1664
+1665
+1666
+1667
+1668
+1669
+1670
+1671
+1672
+1673
+1674
+1675
+1676
+1677
+1678
+1679
+1680
+1681
+1682
+1683
+1684
+1685
+1686
+1687
+1688
+1689
+1690
+1691
+1692
+1693
+1694
+1695
+1696
+1697
+1698
+1699
+1700
+1701
+1702
+1703
+1704
+1705
+1706
+1707
+1708
+1709
+1710
+1711
+1712
+1713
+1714
+1715
+1716
+1717
+1718
+1719
+1720
+1721
+1722
+1723
+1724
+1725
+1726
+1727
+1728</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1760</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1627</span>
 
 <span class='kw'>class</span> <span class='const'>PrimitiveValue</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:double_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:long_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:string_value</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
+                <span class='symbol'>:double_value</span><span class='comma'>,</span>
+                <span class='symbol'>:long_value</span><span class='comma'>,</span>
+                <span class='symbol'>:string_value</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
+</span>  <span class='comment'># @!attribute [rw] boolean
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a boolean (true or false).
+</span>  <span class='comment'># @!attribute [rw] double
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a double (64 bit floating number).
+</span>  <span class='comment'># @!attribute [rw] long
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
+</span>  <span class='comment'># @!attribute [rw] string
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
+</span>  <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Type</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Type] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
-</span>    <span class='comment'># @!attribute [rw] boolean
+    <span class='comment'># @!attribute [rw] boolean
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>    <span class='comment'># @!attribute [rw] double
+</span>    <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] double
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>    <span class='comment'># @!attribute [rw] long
+</span>    <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] long
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>    <span class='comment'># @!attribute [rw] string
+</span>    <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] string
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>    <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Type</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Type] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] boolean
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>        <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] double
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>        <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] long
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>        <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] string
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>        <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1579,229 +1515,213 @@ Type of the constant value.
       <pre class="lines">
 
 
-1760
-1761
-1762
-1763
-1764
-1765
-1766
-1767
-1768
-1769
-1770
-1771
-1772
-1773
-1774
-1775
-1776
-1777
-1778
-1779
-1780
-1781
-1782
-1783
-1784
-1785
-1786
-1787
-1788
-1789
-1790
-1791
-1792
-1793
-1794
-1795
-1796
-1797
-1798
-1799
-1800
-1801
-1802
-1803
-1804
-1805
-1806
-1807
-1808
-1809
-1810
-1811
-1812
-1813
-1814
-1815
-1816
-1817
-1818
-1819
-1820
-1821
-1822
-1823
-1824
-1825
-1826
-1827
-1828
-1829
-1830
-1831
-1832
-1833
-1834
-1835
-1836
-1837
-1838
-1839
-1840
-1841
-1842
-1843
-1844
-1845
-1846
-1847
-1848
-1849
-1850
-1851
-1852
-1853
-1854
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869</pre>
+1627
+1628
+1629
+1630
+1631
+1632
+1633
+1634
+1635
+1636
+1637
+1638
+1639
+1640
+1641
+1642
+1643
+1644
+1645
+1646
+1647
+1648
+1649
+1650
+1651
+1652
+1653
+1654
+1655
+1656
+1657
+1658
+1659
+1660
+1661
+1662
+1663
+1664
+1665
+1666
+1667
+1668
+1669
+1670
+1671
+1672
+1673
+1674
+1675
+1676
+1677
+1678
+1679
+1680
+1681
+1682
+1683
+1684
+1685
+1686
+1687
+1688
+1689
+1690
+1691
+1692
+1693
+1694
+1695
+1696
+1697
+1698
+1699
+1700
+1701
+1702
+1703
+1704
+1705
+1706
+1707
+1708
+1709
+1710
+1711
+1712
+1713
+1714
+1715
+1716
+1717
+1718
+1719
+1720
+1721
+1722
+1723
+1724
+1725
+1726
+1727
+1728</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1760</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1627</span>
 
 <span class='kw'>class</span> <span class='const'>PrimitiveValue</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
-                  <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:double_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:long_value</span><span class='comma'>,</span>
-                  <span class='symbol'>:string_value</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:type</span><span class='comma'>,</span>
+                <span class='symbol'>:boolean_value</span><span class='comma'>,</span>
+                <span class='symbol'>:double_value</span><span class='comma'>,</span>
+                <span class='symbol'>:long_value</span><span class='comma'>,</span>
+                <span class='symbol'>:string_value</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
+</span>  <span class='comment'># @!attribute [rw] boolean
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a boolean (true or false).
+</span>  <span class='comment'># @!attribute [rw] double
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a double (64 bit floating number).
+</span>  <span class='comment'># @!attribute [rw] long
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
+</span>  <span class='comment'># @!attribute [rw] string
+</span>  <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
+</span>  <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
+</span>  <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Type</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Type] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type``   enumerated type  defines the valid types for values in constant elements.
-</span>    <span class='comment'># @!attribute [rw] boolean
+    <span class='comment'># @!attribute [rw] boolean
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>    <span class='comment'># @!attribute [rw] double
+</span>    <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] double
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>    <span class='comment'># @!attribute [rw] long
+</span>    <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] long
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>    <span class='comment'># @!attribute [rw] string
+</span>    <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] string
 </span>    <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
 </span>    <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>    <span class='kw'>class</span> <span class='const'>Type</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value.type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Type</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Type] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] boolean
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a boolean (true or false).
-</span>        <span class='const'>BOOLEAN</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BOOLEAN</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] double
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a double (64 bit floating number).
-</span>        <span class='const'>DOUBLE</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DOUBLE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] long
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a long (64 bit signed integer).
-</span>        <span class='const'>LONG</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>LONG</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] string
-</span>        <span class='comment'>#     @return [Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type]
-</span>        <span class='comment'>#     Indicates the value is a string (a variable length sequence of characters). The encoding is UTF8.
-</span>        <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>STRING</span> <span class='op'>=</span> <span class='const'>Type</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STRING</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1861,37 +1781,39 @@ the binding type
       <pre class="lines">
 
 
-1766
-1767
-1768
-1769
-1770
-1771
-1772
-1773
-1774
-1775
-1776
-1777
-1778
-1779</pre>
+1632
+1633
+1634
+1635
+1636
+1637
+1638
+1639
+1640
+1641
+1642
+1643
+1644
+1645
+1646</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1766</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vapi/metadata/metamodel.rb', line 1632</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='lbrace'>{</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-        <span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
-        <span class='kw'>false</span><span class='comma'>,</span>
-        <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.metadata.metamodel.primitive_value</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Metadata::Metamodel::PrimitiveValue::Type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>boolean_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>BooleanType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>double_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>DoubleType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>long_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IntegerType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string_value</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='const'>PrimitiveValue</span><span class='comma'>,</span>
+    <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='kw'>nil</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1903,11 +1825,11 @@ the binding type
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:16:45 2016 by
+  Generated on Wed Sep  6 12:05:55 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -122,12 +122,12 @@ enumerated type  defines the IP protocols supported by the guest software.
         <dt id="IP_V4-constant" class="">IP_V4 =
           
         </dt>
-        <dd><pre class="code"><span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V4</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V4</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="IP_V6-constant" class="">IP_V6 =
           
         </dt>
-        <dd><pre class="code"><span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V6</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V6</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
     </dl>
   
@@ -261,9 +261,131 @@ enum type.
       
     </ul>
   
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (IpProtocol) <strong>initialize</strong>(value, unknown = nil) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
 
   
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol (class)">IpProtocol</a></span></tt>) <strong>initialize</strong>(value, unknown = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the actual value of the enum instance
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>unknown</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the unknown value when value is &#8216;UKNOWN&#8217;
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1449
+1450
+1451</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1449</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -309,105 +431,95 @@ It supports the IPv4 protocol.
       <pre class="lines">
 
 
-1497
-1498
-1499
-1500
-1501
-1502
-1503
-1504
-1505
-1506
-1507
-1508
-1509
-1510
-1511
-1512
-1513
-1514
-1515
-1516
-1517
-1518
-1519
-1520
-1521
-1522
-1523
-1524
-1525
-1526
-1527
-1528
-1529
-1530
-1531
-1532
-1533
-1534
-1535
-1536
-1537
-1538
-1539
-1540
-1541
-1542
-1543
-1544</pre>
+1422
+1423
+1424
+1425
+1426
+1427
+1428
+1429
+1430
+1431
+1432
+1433
+1434
+1435
+1436
+1437
+1438
+1439
+1440
+1441
+1442
+1443
+1444
+1445
+1446
+1447
+1448
+1449
+1450
+1451
+1452
+1453
+1454
+1455
+1456
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1497</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1422</span>
 
 <span class='kw'>class</span> <span class='const'>IpProtocol</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.ovf.ip_allocation_params.ip_protocol</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>IpProtocol</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [IpProtocol] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.ovf.ip_allocation_params.ip_protocol</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>IpProtocol</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [IpProtocol] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] ip_v4
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
-</span>    <span class='comment'>#     It supports the IPv4 protocol.
-</span>    <span class='const'>IP_V4</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V4</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] ip_v6
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
-</span>    <span class='comment'>#     It supports the IPv6 protocol.
-</span>    <span class='const'>IP_V6</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V6</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] ip_v4
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
+</span>  <span class='comment'>#     It supports the IPv4 protocol.
+</span>  <span class='const'>IP_V4</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V4</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] ip_v6
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
+</span>  <span class='comment'>#     It supports the IPv6 protocol.
+</span>  <span class='const'>IP_V6</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V6</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -456,105 +568,95 @@ It supports the IPv6 protocol.
       <pre class="lines">
 
 
-1497
-1498
-1499
-1500
-1501
-1502
-1503
-1504
-1505
-1506
-1507
-1508
-1509
-1510
-1511
-1512
-1513
-1514
-1515
-1516
-1517
-1518
-1519
-1520
-1521
-1522
-1523
-1524
-1525
-1526
-1527
-1528
-1529
-1530
-1531
-1532
-1533
-1534
-1535
-1536
-1537
-1538
-1539
-1540
-1541
-1542
-1543
-1544</pre>
+1422
+1423
+1424
+1425
+1426
+1427
+1428
+1429
+1430
+1431
+1432
+1433
+1434
+1435
+1436
+1437
+1438
+1439
+1440
+1441
+1442
+1443
+1444
+1445
+1446
+1447
+1448
+1449
+1450
+1451
+1452
+1453
+1454
+1455
+1456
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1497</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1422</span>
 
 <span class='kw'>class</span> <span class='const'>IpProtocol</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.ovf.ip_allocation_params.ip_protocol</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>IpProtocol</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [IpProtocol] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.ovf.ip_allocation_params.ip_protocol</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>IpProtocol</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [IpProtocol] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] ip_v4
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
-</span>    <span class='comment'>#     It supports the IPv4 protocol.
-</span>    <span class='const'>IP_V4</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V4</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] ip_v6
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
-</span>    <span class='comment'>#     It supports the IPv6 protocol.
-</span>    <span class='const'>IP_V6</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V6</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] ip_v4
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
+</span>  <span class='comment'>#     It supports the IPv4 protocol.
+</span>  <span class='const'>IP_V4</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V4</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] ip_v6
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Ovf::IpAllocationParams::IpProtocol]
+</span>  <span class='comment'>#     It supports the IPv6 protocol.
+</span>  <span class='const'>IP_V6</span> <span class='op'>=</span> <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IP_V6</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -615,19 +717,21 @@ the binding type
       <pre class="lines">
 
 
-1503
-1504
-1505
-1506
-1507</pre>
+1427
+1428
+1429
+1430
+1431
+1432</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1503</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1427</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.ovf.ip_allocation_params.ip_protocol</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='const'>IpProtocol</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.ovf.ip_allocation_params.ip_protocol</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='const'>IpProtocol</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -703,23 +807,19 @@ built for the value
       <pre class="lines">
 
 
-1514
-1515
-1516
-1517
-1518
-1519
-1520</pre>
+1439
+1440
+1441
+1442
+1443</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1514</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/ovf.rb', line 1439</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>begin</span>
-        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>rescue</span> <span class='const'>NameError</span>
-        <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>NameError</span>
+  <span class='const'>IpProtocol</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -731,11 +831,11 @@ built for the value
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:14:35 2016 by
+  Generated on Wed Sep  6 12:07:26 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

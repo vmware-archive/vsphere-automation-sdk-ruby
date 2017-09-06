@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -124,6 +124,85 @@ methods  for configuring the memory settings of a virtual machine.
     
   
 </p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="SERVICE_ID-constant" class="">SERVICE_ID =
+          <div class="docstring">
+  <div class="discussion">
+    <p>
+static metamodel definitions
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>ServiceIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.memory</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="GET_INFO-constant" class="">GET_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>vm</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>VirtualMachine</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Memory::Info</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.error</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Error</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_found</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotFound</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.resource_inaccessible</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::ResourceInaccessible</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.service_unavailable</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::ServiceUnavailable</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthenticated</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthenticated</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="UPDATE_INFO-constant" class="">UPDATE_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>OperationIdentifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>update</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>SERVICE_ID</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OperationInputType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>vm</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>IdType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>VirtualMachine</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vcenter::Vm::Hardware::Memory::UpdateSpec</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VoidType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.error</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Error</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_found</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotFound</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.invalid_argument</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::InvalidArgument</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.not_allowed_in_current_state</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.resource_busy</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::ResourceBusy</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.resource_inaccessible</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::ResourceInaccessible</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.service_unavailable</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::ServiceUnavailable</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthenticated</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthenticated</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vapi.std.errors.unauthorized</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::Errors::Unauthorized</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SERVICE_INFO-constant" class="">SERVICE_INFO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ServiceInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='const'>SERVICE_ID</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>GET_INFO</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>update</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>UPDATE_INFO</span>
+<span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -271,15 +350,15 @@ A hash with the api provider details.
       <pre class="lines">
 
 
-4100
-4101
-4102</pre>
+3897
+3898
+3899</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 4100</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3897</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='cvar'>@@service_info</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='const'>SERVICE_INFO</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -296,7 +375,7 @@ A hash with the api provider details.
       <div class="method_details first">
   <h3 class="signature first" id="get-instance_method">
   
-    - (<tt><span class='object_link'><a href="Memory/Info.html" title="Com::Vmware::Vcenter::Vm::Hardware::Memory::Info (class)">Com::Vmware::Vcenter::Vm::Hardware::Memory::Info</a></span></tt>) <strong>get</strong>(vm) 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Memory::Info</tt>) <strong>get</strong>(vm) 
   
 
   
@@ -340,7 +419,7 @@ Virtual machine identifier.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Memory/Info.html" title="Com::Vmware::Vcenter::Vm::Hardware::Memory::Info (class)">Com::Vmware::Vcenter::Vm::Hardware::Memory::Info</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Memory::Info</tt>)</span>
       
       
       
@@ -455,19 +534,17 @@ if the user doesn&#8217;t have the required privileges.
       <pre class="lines">
 
 
-4123
-4124
-4125
-4126
-4127</pre>
+3919
+3920
+3921
+3922</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 4123</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3919</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_vm'>vm</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@get_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>vm</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_vm'>vm</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>GET_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>vm</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_vm'>vm</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -518,7 +595,7 @@ Virtual machine identifier.
         <span class='name'>spec</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Memory/UpdateSpec.html" title="Com::Vmware::Vcenter::Vm::Hardware::Memory::UpdateSpec (class)">Com::Vmware::Vcenter::Vm::Hardware::Memory::UpdateSpec</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Memory::UpdateSpec</tt>)</span>
       
       
       
@@ -711,21 +788,19 @@ if the user doesn&#8217;t have the required privileges.
       <pre class="lines">
 
 
-4157
-4158
-4159
-4160
-4161
-4162</pre>
+3951
+3952
+3953
+3954
+3955</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 4157</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 3951</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_vm'>vm</span><span class='comma'>,</span> <span class='id identifier rubyid_spec'>spec</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='cvar'>@@update_info</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>vm</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_vm'>vm</span><span class='comma'>,</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_spec'>spec</span><span class='comma'>,</span>
-    <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_invoke_with_info'>invoke_with_info</span><span class='lparen'>(</span><span class='const'>UPDATE_INFO</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>vm</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_vm'>vm</span><span class='comma'>,</span>
+                   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>spec</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_spec'>spec</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -737,11 +812,11 @@ if the user doesn&#8217;t have the required privileges.
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:15:59 2016 by
+  Generated on Wed Sep  6 12:06:45 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

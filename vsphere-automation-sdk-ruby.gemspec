@@ -1,11 +1,11 @@
 # coding: utf-8
 
-$LOAD_PATH.unshift(File.expand_path('../client/sdk/runtime/lib', __FILE__))
-require 'vapi/version'
+$LOAD_PATH.unshift(File.expand_path('../client/sdk', __FILE__))
+require 'com/vmware/vapi/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'vsphere-automation-sdk'
-  spec.version       = VAPI::VERSION
+  spec.version       = Com::Vmware::VAPI::VERSION
   spec.authors       = ['J.R. Garcia']
   spec.email         = ['jrg@vmware.com']
   spec.license       = 'MIT'

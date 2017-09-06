@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -122,32 +122,32 @@ enumerated type  defines the valid backing types for a virtual serial port.
         <dt id="FILE-constant" class="">FILE =
           
         </dt>
-        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="HOST_DEVICE-constant" class="">HOST_DEVICE =
           
         </dt>
-        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="PIPE_SERVER-constant" class="">PIPE_SERVER =
           
         </dt>
-        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="PIPE_CLIENT-constant" class="">PIPE_CLIENT =
           
         </dt>
-        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="NETWORK_SERVER-constant" class="">NETWORK_SERVER =
           
         </dt>
-        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="NETWORK_CLIENT-constant" class="">NETWORK_CLIENT =
           
         </dt>
-        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
     </dl>
   
@@ -394,9 +394,131 @@ enum type.
       
     </ul>
   
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (BackingType) <strong>initialize</strong>(value, unknown = nil) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
 
   
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">BackingType</a></span></tt>) <strong>initialize</strong>(value, unknown = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the actual value of the enum instance
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>unknown</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the unknown value when value is &#8216;UKNOWN&#8217;
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5480
+5481
+5482</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5480</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -405,7 +527,7 @@ enum type.
       <div class="method_details first">
   <h3 class="signature first" id="file-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>) <strong>file</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>) <strong>file</strong> 
   
 
   
@@ -428,7 +550,7 @@ Virtual serial port is backed by a file.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>)</span>
       
       
       
@@ -442,145 +564,135 @@ Virtual serial port is backed by a file.
       <pre class="lines">
 
 
-5719
-5720
-5721
-5722
-5723
-5724
-5725
-5726
-5727
-5728
-5729
-5730
-5731
-5732
-5733
-5734
-5735
-5736
-5737
-5738
-5739
-5740
-5741
-5742
-5743
-5744
-5745
-5746
-5747
-5748
-5749
-5750
-5751
-5752
-5753
-5754
-5755
-5756
-5757
-5758
-5759
-5760
-5761
-5762
-5763
-5764
-5765
-5766
-5767
-5768
-5769
-5770
-5771
-5772
-5773
-5774
-5775
-5776
-5777
-5778
-5779
-5780
-5781
-5782
-5783
-5784
-5785
-5786</pre>
+5453
+5454
+5455
+5456
+5457
+5458
+5459
+5460
+5461
+5462
+5463
+5464
+5465
+5466
+5467
+5468
+5469
+5470
+5471
+5472
+5473
+5474
+5475
+5476
+5477
+5478
+5479
+5480
+5481
+5482
+5483
+5484
+5485
+5486
+5487
+5488
+5489
+5490
+5491
+5492
+5493
+5494
+5495
+5496
+5497
+5498
+5499
+5500
+5501
+5502
+5503
+5504
+5505
+5506
+5507
+5508
+5509
+5510
+5511
+5512
+5513
+5514
+5515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5719</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5453</span>
 
 <span class='kw'>class</span> <span class='const'>BackingType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>BackingType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [BackingType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>BackingType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [BackingType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] file
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a file.
-</span>    <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] host_device
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
-</span>    <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] file
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a file.
+</span>  <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] host_device
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
+</span>  <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
-</span>    <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
-</span>    <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] network_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
+</span>  <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] network_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
+</span>  <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -592,7 +704,7 @@ Virtual serial port is backed by a file.
       <div class="method_details ">
   <h3 class="signature " id="host_device-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>) <strong>host_device</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>) <strong>host_device</strong> 
   
 
   
@@ -616,7 +728,7 @@ machine is running.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>)</span>
       
       
       
@@ -630,145 +742,135 @@ machine is running.
       <pre class="lines">
 
 
-5719
-5720
-5721
-5722
-5723
-5724
-5725
-5726
-5727
-5728
-5729
-5730
-5731
-5732
-5733
-5734
-5735
-5736
-5737
-5738
-5739
-5740
-5741
-5742
-5743
-5744
-5745
-5746
-5747
-5748
-5749
-5750
-5751
-5752
-5753
-5754
-5755
-5756
-5757
-5758
-5759
-5760
-5761
-5762
-5763
-5764
-5765
-5766
-5767
-5768
-5769
-5770
-5771
-5772
-5773
-5774
-5775
-5776
-5777
-5778
-5779
-5780
-5781
-5782
-5783
-5784
-5785
-5786</pre>
+5453
+5454
+5455
+5456
+5457
+5458
+5459
+5460
+5461
+5462
+5463
+5464
+5465
+5466
+5467
+5468
+5469
+5470
+5471
+5472
+5473
+5474
+5475
+5476
+5477
+5478
+5479
+5480
+5481
+5482
+5483
+5484
+5485
+5486
+5487
+5488
+5489
+5490
+5491
+5492
+5493
+5494
+5495
+5496
+5497
+5498
+5499
+5500
+5501
+5502
+5503
+5504
+5505
+5506
+5507
+5508
+5509
+5510
+5511
+5512
+5513
+5514
+5515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5719</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5453</span>
 
 <span class='kw'>class</span> <span class='const'>BackingType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>BackingType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [BackingType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>BackingType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [BackingType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] file
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a file.
-</span>    <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] host_device
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
-</span>    <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] file
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a file.
+</span>  <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] host_device
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
+</span>  <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
-</span>    <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
-</span>    <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] network_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
+</span>  <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] network_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
+</span>  <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -780,7 +882,7 @@ machine is running.
       <div class="method_details ">
   <h3 class="signature " id="network_client-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>) <strong>network_client</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>) <strong>network_client</strong> 
   
 
   
@@ -805,7 +907,7 @@ initiating a connection to a remote system.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>)</span>
       
       
       
@@ -819,145 +921,135 @@ initiating a connection to a remote system.
       <pre class="lines">
 
 
-5719
-5720
-5721
-5722
-5723
-5724
-5725
-5726
-5727
-5728
-5729
-5730
-5731
-5732
-5733
-5734
-5735
-5736
-5737
-5738
-5739
-5740
-5741
-5742
-5743
-5744
-5745
-5746
-5747
-5748
-5749
-5750
-5751
-5752
-5753
-5754
-5755
-5756
-5757
-5758
-5759
-5760
-5761
-5762
-5763
-5764
-5765
-5766
-5767
-5768
-5769
-5770
-5771
-5772
-5773
-5774
-5775
-5776
-5777
-5778
-5779
-5780
-5781
-5782
-5783
-5784
-5785
-5786</pre>
+5453
+5454
+5455
+5456
+5457
+5458
+5459
+5460
+5461
+5462
+5463
+5464
+5465
+5466
+5467
+5468
+5469
+5470
+5471
+5472
+5473
+5474
+5475
+5476
+5477
+5478
+5479
+5480
+5481
+5482
+5483
+5484
+5485
+5486
+5487
+5488
+5489
+5490
+5491
+5492
+5493
+5494
+5495
+5496
+5497
+5498
+5499
+5500
+5501
+5502
+5503
+5504
+5505
+5506
+5507
+5508
+5509
+5510
+5511
+5512
+5513
+5514
+5515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5719</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5453</span>
 
 <span class='kw'>class</span> <span class='const'>BackingType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>BackingType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [BackingType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>BackingType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [BackingType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] file
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a file.
-</span>    <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] host_device
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
-</span>    <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] file
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a file.
+</span>  <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] host_device
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
+</span>  <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
-</span>    <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
-</span>    <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] network_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
+</span>  <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] network_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
+</span>  <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -969,7 +1061,7 @@ initiating a connection to a remote system.
       <div class="method_details ">
   <h3 class="signature " id="network_server-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>) <strong>network_server</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>) <strong>network_server</strong> 
   
 
   
@@ -994,7 +1086,7 @@ accepting a connection from a remote system.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>)</span>
       
       
       
@@ -1008,145 +1100,135 @@ accepting a connection from a remote system.
       <pre class="lines">
 
 
-5719
-5720
-5721
-5722
-5723
-5724
-5725
-5726
-5727
-5728
-5729
-5730
-5731
-5732
-5733
-5734
-5735
-5736
-5737
-5738
-5739
-5740
-5741
-5742
-5743
-5744
-5745
-5746
-5747
-5748
-5749
-5750
-5751
-5752
-5753
-5754
-5755
-5756
-5757
-5758
-5759
-5760
-5761
-5762
-5763
-5764
-5765
-5766
-5767
-5768
-5769
-5770
-5771
-5772
-5773
-5774
-5775
-5776
-5777
-5778
-5779
-5780
-5781
-5782
-5783
-5784
-5785
-5786</pre>
+5453
+5454
+5455
+5456
+5457
+5458
+5459
+5460
+5461
+5462
+5463
+5464
+5465
+5466
+5467
+5468
+5469
+5470
+5471
+5472
+5473
+5474
+5475
+5476
+5477
+5478
+5479
+5480
+5481
+5482
+5483
+5484
+5485
+5486
+5487
+5488
+5489
+5490
+5491
+5492
+5493
+5494
+5495
+5496
+5497
+5498
+5499
+5500
+5501
+5502
+5503
+5504
+5505
+5506
+5507
+5508
+5509
+5510
+5511
+5512
+5513
+5514
+5515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5719</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5453</span>
 
 <span class='kw'>class</span> <span class='const'>BackingType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>BackingType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [BackingType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>BackingType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [BackingType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] file
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a file.
-</span>    <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] host_device
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
-</span>    <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] file
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a file.
+</span>  <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] host_device
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
+</span>  <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
-</span>    <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
-</span>    <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] network_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
+</span>  <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] network_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
+</span>  <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1158,7 +1240,7 @@ accepting a connection from a remote system.
       <div class="method_details ">
   <h3 class="signature " id="pipe_client-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>) <strong>pipe_client</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>) <strong>pipe_client</strong> 
   
 
   
@@ -1184,7 +1266,7 @@ information sent through the virtual serial port.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>)</span>
       
       
       
@@ -1198,145 +1280,135 @@ information sent through the virtual serial port.
       <pre class="lines">
 
 
-5719
-5720
-5721
-5722
-5723
-5724
-5725
-5726
-5727
-5728
-5729
-5730
-5731
-5732
-5733
-5734
-5735
-5736
-5737
-5738
-5739
-5740
-5741
-5742
-5743
-5744
-5745
-5746
-5747
-5748
-5749
-5750
-5751
-5752
-5753
-5754
-5755
-5756
-5757
-5758
-5759
-5760
-5761
-5762
-5763
-5764
-5765
-5766
-5767
-5768
-5769
-5770
-5771
-5772
-5773
-5774
-5775
-5776
-5777
-5778
-5779
-5780
-5781
-5782
-5783
-5784
-5785
-5786</pre>
+5453
+5454
+5455
+5456
+5457
+5458
+5459
+5460
+5461
+5462
+5463
+5464
+5465
+5466
+5467
+5468
+5469
+5470
+5471
+5472
+5473
+5474
+5475
+5476
+5477
+5478
+5479
+5480
+5481
+5482
+5483
+5484
+5485
+5486
+5487
+5488
+5489
+5490
+5491
+5492
+5493
+5494
+5495
+5496
+5497
+5498
+5499
+5500
+5501
+5502
+5503
+5504
+5505
+5506
+5507
+5508
+5509
+5510
+5511
+5512
+5513
+5514
+5515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5719</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5453</span>
 
 <span class='kw'>class</span> <span class='const'>BackingType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>BackingType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [BackingType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>BackingType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [BackingType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] file
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a file.
-</span>    <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] host_device
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
-</span>    <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] file
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a file.
+</span>  <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] host_device
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
+</span>  <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
-</span>    <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
-</span>    <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] network_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
+</span>  <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] network_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
+</span>  <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1348,7 +1420,7 @@ information sent through the virtual serial port.
       <div class="method_details ">
   <h3 class="signature " id="pipe_server-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>) <strong>pipe_server</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>) <strong>pipe_server</strong> 
   
 
   
@@ -1374,7 +1446,7 @@ through the virtual serial port.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType (class)">Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType</tt>)</span>
       
       
       
@@ -1388,145 +1460,135 @@ through the virtual serial port.
       <pre class="lines">
 
 
-5719
-5720
-5721
-5722
-5723
-5724
-5725
-5726
-5727
-5728
-5729
-5730
-5731
-5732
-5733
-5734
-5735
-5736
-5737
-5738
-5739
-5740
-5741
-5742
-5743
-5744
-5745
-5746
-5747
-5748
-5749
-5750
-5751
-5752
-5753
-5754
-5755
-5756
-5757
-5758
-5759
-5760
-5761
-5762
-5763
-5764
-5765
-5766
-5767
-5768
-5769
-5770
-5771
-5772
-5773
-5774
-5775
-5776
-5777
-5778
-5779
-5780
-5781
-5782
-5783
-5784
-5785
-5786</pre>
+5453
+5454
+5455
+5456
+5457
+5458
+5459
+5460
+5461
+5462
+5463
+5464
+5465
+5466
+5467
+5468
+5469
+5470
+5471
+5472
+5473
+5474
+5475
+5476
+5477
+5478
+5479
+5480
+5481
+5482
+5483
+5484
+5485
+5486
+5487
+5488
+5489
+5490
+5491
+5492
+5493
+5494
+5495
+5496
+5497
+5498
+5499
+5500
+5501
+5502
+5503
+5504
+5505
+5506
+5507
+5508
+5509
+5510
+5511
+5512
+5513
+5514
+5515</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5719</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5453</span>
 
 <span class='kw'>class</span> <span class='const'>BackingType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>BackingType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [BackingType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>BackingType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [BackingType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] file
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a file.
-</span>    <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] host_device
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
-</span>    <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] file
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a file.
+</span>  <span class='const'>FILE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>FILE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] host_device
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a device on the host where the virtual machine is running.
+</span>  <span class='const'>HOST_DEVICE</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_DEVICE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] pipe_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
-</span>    <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe server. The virtual machine will accept a connection from a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_server
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
-</span>    <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] pipe_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a named pipe client. The virtual machine will connect to the named pipe provided by a host application or another virtual machine on the same host. This is useful for capturing debugging information sent through the virtual serial port.
+</span>  <span class='const'>PIPE_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PIPE_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] network_client
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
-</span>    <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
-</span>    <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] network_server
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network server. This backing may be used to create a network-accessible serial port on the virtual machine, accepting a connection from a remote system.
+</span>  <span class='const'>NETWORK_SERVER</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_SERVER</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] network_client
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Serial::BackingType]
+</span>  <span class='comment'>#     Virtual serial port is backed by a network client. This backing may be used to create a network-accessible serial port on the virtual machine, initiating a connection to a remote system.
+</span>  <span class='const'>NETWORK_CLIENT</span> <span class='op'>=</span> <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>NETWORK_CLIENT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1587,19 +1649,21 @@ the binding type
       <pre class="lines">
 
 
-5725
-5726
-5727
-5728
-5729</pre>
+5458
+5459
+5460
+5461
+5462
+5463</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5725</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5458</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='const'>BackingType</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.serial.backing_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='const'>BackingType</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1675,23 +1739,19 @@ built for the value
       <pre class="lines">
 
 
-5736
-5737
-5738
-5739
-5740
-5741
-5742</pre>
+5470
+5471
+5472
+5473
+5474</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5736</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 5470</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>begin</span>
-        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>rescue</span> <span class='const'>NameError</span>
-        <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>NameError</span>
+  <span class='const'>BackingType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1703,11 +1763,11 @@ built for the value
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:16:10 2016 by
+  Generated on Wed Sep  6 12:06:59 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

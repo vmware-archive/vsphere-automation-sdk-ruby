@@ -15,6 +15,7 @@ module Com
   end
 end
 
+# The  ``com.vmware.cis``   package  provides VMware common infrastructure  classs  such as session and task.
 module Com::Vmware::Cis
   # The  ``Com::Vmware::Cis::Session``   class  allows API clients to manage session tokens including creating, deleting and obtaining information about sessions.  
   # 

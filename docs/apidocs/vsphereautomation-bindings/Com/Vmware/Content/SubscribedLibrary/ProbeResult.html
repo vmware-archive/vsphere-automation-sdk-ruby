@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/content.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -368,15 +368,15 @@ a raw StructValue from the wire (optional)
       <pre class="lines">
 
 
-784
-785
-786</pre>
+739
+740
+741</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 784</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 739</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -431,6 +431,51 @@ detailed error messages.
       <pre class="lines">
 
 
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
 757
 758
 759
@@ -515,201 +560,140 @@ detailed error messages.
 838
 839
 840
-841
-842
-843
-844
-845
-846
-847
-848
-849
-850
-851
-852
-853
-854
-855
-856
-857
-858
-859
-860
-861
-862
-863
-864
-865
-866
-867
-868
-869
-870
-871
-872
-873
-874
-875
-876
-877
-878
-879
-880
-881
-882
-883
-884
-885
-886
-887
-888
-889
-890
-891
-892
-893
-894</pre>
+841</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 757</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>ProbeResult</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>ProbeResult</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>ProbeResult</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:status</span><span class='comma'>,</span>
-                  <span class='symbol'>:ssl_thumbprint</span><span class='comma'>,</span>
-                  <span class='symbol'>:error_messages</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:status</span><span class='comma'>,</span>
+                <span class='symbol'>:ssl_thumbprint</span><span class='comma'>,</span>
+                <span class='symbol'>:error_messages</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status``   enumerated type  defines the error status constants for the probe result.
+</span>  <span class='comment'># @!attribute [rw] success
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the probe was successful.
+</span>  <span class='comment'># @!attribute [rw] invalid_url
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the supplied URL was not valid.
+</span>  <span class='comment'># @!attribute [rw] timed_out
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
+</span>  <span class='comment'># @!attribute [rw] host_not_found
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the host in the URL could not be found.
+</span>  <span class='comment'># @!attribute [rw] resource_not_found
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the given resource at the URL was not found.
+</span>  <span class='comment'># @!attribute [rw] invalid_credentials
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
+</span>  <span class='comment'># @!attribute [rw] certificate_error
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
+</span>  <span class='comment'># @!attribute [rw] unknown_error
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
+</span>  <span class='kw'>class</span> <span class='const'>Status</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result.status</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Status</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Status] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status``   enumerated type  defines the error status constants for the probe result.
-</span>    <span class='comment'># @!attribute [rw] success
+    <span class='comment'># @!attribute [rw] success
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the probe was successful.
-</span>    <span class='comment'># @!attribute [rw] invalid_url
+</span>    <span class='const'>SUCCESS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SUCCESS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] invalid_url
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the supplied URL was not valid.
-</span>    <span class='comment'># @!attribute [rw] timed_out
+</span>    <span class='const'>INVALID_URL</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_URL</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] timed_out
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
-</span>    <span class='comment'># @!attribute [rw] host_not_found
+</span>    <span class='const'>TIMED_OUT</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TIMED_OUT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] host_not_found
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the host in the URL could not be found.
-</span>    <span class='comment'># @!attribute [rw] resource_not_found
+</span>    <span class='const'>HOST_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] resource_not_found
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the given resource at the URL was not found.
-</span>    <span class='comment'># @!attribute [rw] invalid_credentials
+</span>    <span class='const'>RESOURCE_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>RESOURCE_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] invalid_credentials
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
-</span>    <span class='comment'># @!attribute [rw] certificate_error
+</span>    <span class='const'>INVALID_CREDENTIALS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_CREDENTIALS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] certificate_error
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
-</span>    <span class='comment'># @!attribute [rw] unknown_error
+</span>    <span class='const'>CERTIFICATE_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>CERTIFICATE_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] unknown_error
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
-</span>    <span class='kw'>class</span> <span class='const'>Status</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result.status</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Status</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Status] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] success
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the probe was successful.
-</span>        <span class='const'>SUCCESS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SUCCESS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] invalid_url
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the supplied URL was not valid.
-</span>        <span class='const'>INVALID_URL</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_URL</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] timed_out
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
-</span>        <span class='const'>TIMED_OUT</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TIMED_OUT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] host_not_found
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the host in the URL could not be found.
-</span>        <span class='const'>HOST_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] resource_not_found
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the given resource at the URL was not found.
-</span>        <span class='const'>RESOURCE_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>RESOURCE_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] invalid_credentials
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
-</span>        <span class='const'>INVALID_CREDENTIALS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_CREDENTIALS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] certificate_error
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
-</span>        <span class='const'>CERTIFICATE_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>CERTIFICATE_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] unknown_error
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
-</span>        <span class='const'>UNKNOWN_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>UNKNOWN_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -759,6 +743,51 @@ returned if the host is secured with SSL/TLS.
       <pre class="lines">
 
 
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
 757
 758
 759
@@ -843,201 +872,140 @@ returned if the host is secured with SSL/TLS.
 838
 839
 840
-841
-842
-843
-844
-845
-846
-847
-848
-849
-850
-851
-852
-853
-854
-855
-856
-857
-858
-859
-860
-861
-862
-863
-864
-865
-866
-867
-868
-869
-870
-871
-872
-873
-874
-875
-876
-877
-878
-879
-880
-881
-882
-883
-884
-885
-886
-887
-888
-889
-890
-891
-892
-893
-894</pre>
+841</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 757</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>ProbeResult</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>ProbeResult</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>ProbeResult</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:status</span><span class='comma'>,</span>
-                  <span class='symbol'>:ssl_thumbprint</span><span class='comma'>,</span>
-                  <span class='symbol'>:error_messages</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:status</span><span class='comma'>,</span>
+                <span class='symbol'>:ssl_thumbprint</span><span class='comma'>,</span>
+                <span class='symbol'>:error_messages</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status``   enumerated type  defines the error status constants for the probe result.
+</span>  <span class='comment'># @!attribute [rw] success
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the probe was successful.
+</span>  <span class='comment'># @!attribute [rw] invalid_url
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the supplied URL was not valid.
+</span>  <span class='comment'># @!attribute [rw] timed_out
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
+</span>  <span class='comment'># @!attribute [rw] host_not_found
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the host in the URL could not be found.
+</span>  <span class='comment'># @!attribute [rw] resource_not_found
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the given resource at the URL was not found.
+</span>  <span class='comment'># @!attribute [rw] invalid_credentials
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
+</span>  <span class='comment'># @!attribute [rw] certificate_error
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
+</span>  <span class='comment'># @!attribute [rw] unknown_error
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
+</span>  <span class='kw'>class</span> <span class='const'>Status</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result.status</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Status</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Status] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status``   enumerated type  defines the error status constants for the probe result.
-</span>    <span class='comment'># @!attribute [rw] success
+    <span class='comment'># @!attribute [rw] success
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the probe was successful.
-</span>    <span class='comment'># @!attribute [rw] invalid_url
+</span>    <span class='const'>SUCCESS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SUCCESS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] invalid_url
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the supplied URL was not valid.
-</span>    <span class='comment'># @!attribute [rw] timed_out
+</span>    <span class='const'>INVALID_URL</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_URL</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] timed_out
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
-</span>    <span class='comment'># @!attribute [rw] host_not_found
+</span>    <span class='const'>TIMED_OUT</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TIMED_OUT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] host_not_found
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the host in the URL could not be found.
-</span>    <span class='comment'># @!attribute [rw] resource_not_found
+</span>    <span class='const'>HOST_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] resource_not_found
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the given resource at the URL was not found.
-</span>    <span class='comment'># @!attribute [rw] invalid_credentials
+</span>    <span class='const'>RESOURCE_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>RESOURCE_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] invalid_credentials
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
-</span>    <span class='comment'># @!attribute [rw] certificate_error
+</span>    <span class='const'>INVALID_CREDENTIALS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_CREDENTIALS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] certificate_error
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
-</span>    <span class='comment'># @!attribute [rw] unknown_error
+</span>    <span class='const'>CERTIFICATE_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>CERTIFICATE_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] unknown_error
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
-</span>    <span class='kw'>class</span> <span class='const'>Status</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result.status</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Status</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Status] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] success
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the probe was successful.
-</span>        <span class='const'>SUCCESS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SUCCESS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] invalid_url
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the supplied URL was not valid.
-</span>        <span class='const'>INVALID_URL</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_URL</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] timed_out
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
-</span>        <span class='const'>TIMED_OUT</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TIMED_OUT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] host_not_found
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the host in the URL could not be found.
-</span>        <span class='const'>HOST_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] resource_not_found
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the given resource at the URL was not found.
-</span>        <span class='const'>RESOURCE_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>RESOURCE_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] invalid_credentials
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
-</span>        <span class='const'>INVALID_CREDENTIALS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_CREDENTIALS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] certificate_error
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
-</span>        <span class='const'>CERTIFICATE_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>CERTIFICATE_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] unknown_error
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
-</span>        <span class='const'>UNKNOWN_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>UNKNOWN_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1088,6 +1056,51 @@ The status of probe result. This will be one of  ``SUCCESS``,
       <pre class="lines">
 
 
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
 757
 758
 759
@@ -1172,201 +1185,140 @@ The status of probe result. This will be one of  ``SUCCESS``,
 838
 839
 840
-841
-842
-843
-844
-845
-846
-847
-848
-849
-850
-851
-852
-853
-854
-855
-856
-857
-858
-859
-860
-861
-862
-863
-864
-865
-866
-867
-868
-869
-870
-871
-872
-873
-874
-875
-876
-877
-878
-879
-880
-881
-882
-883
-884
-885
-886
-887
-888
-889
-890
-891
-892
-893
-894</pre>
+841</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 757</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 712</span>
 
 <span class='kw'>class</span> <span class='const'>ProbeResult</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiStruct</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='lbrace'>{</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-                <span class='rbrace'>}</span><span class='comma'>,</span>
-                <span class='const'>ProbeResult</span><span class='comma'>,</span>
-                <span class='kw'>false</span><span class='comma'>,</span>
-                <span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this structure type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::StructType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='const'>ProbeResult</span><span class='comma'>,</span>
+        <span class='kw'>false</span><span class='comma'>,</span>
+        <span class='kw'>nil</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:status</span><span class='comma'>,</span>
-                  <span class='symbol'>:ssl_thumbprint</span><span class='comma'>,</span>
-                  <span class='symbol'>:error_messages</span>
+  <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:status</span><span class='comma'>,</span>
+                <span class='symbol'>:ssl_thumbprint</span><span class='comma'>,</span>
+                <span class='symbol'>:error_messages</span>
+
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
+</span>  <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># The  ``Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status``   enumerated type  defines the error status constants for the probe result.
+</span>  <span class='comment'># @!attribute [rw] success
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the probe was successful.
+</span>  <span class='comment'># @!attribute [rw] invalid_url
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the supplied URL was not valid.
+</span>  <span class='comment'># @!attribute [rw] timed_out
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
+</span>  <span class='comment'># @!attribute [rw] host_not_found
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the host in the URL could not be found.
+</span>  <span class='comment'># @!attribute [rw] resource_not_found
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the given resource at the URL was not found.
+</span>  <span class='comment'># @!attribute [rw] invalid_credentials
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
+</span>  <span class='comment'># @!attribute [rw] certificate_error
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
+</span>  <span class='comment'># @!attribute [rw] unknown_error
+</span>  <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
+</span>  <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
+</span>  <span class='kw'>class</span> <span class='const'>Status</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+      <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>      <span class='comment'># @scope class
+</span>      <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+        <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+          <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result.status</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+          <span class='const'>Status</span>
+        <span class='rparen'>)</span>
+      <span class='kw'>end</span>
+
+      <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>      <span class='comment'># of this enum type.
+</span>      <span class='comment'># @param value [String] the actual value of the enum instance
+</span>      <span class='comment'># @return [Status] the instance found for the value, otherwise
+</span>      <span class='comment'>#         an unknown instance will be built for the value
+</span>      <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>NameError</span>
+        <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># Constructs a new instance.
-</span>    <span class='comment'># @param ruby_values [Hash] a map of initial property values (optional)
-</span>    <span class='comment'># @param struct_value [VAPI::Data::StructValue] a raw StructValue from the wire (optional)
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_values'>ruby_values</span><span class='comma'>,</span> <span class='id identifier rubyid_struct_value'>struct_value</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @param value [String] the actual value of the enum instance
+</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 
+    <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># The  ``Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status``   enumerated type  defines the error status constants for the probe result.
-</span>    <span class='comment'># @!attribute [rw] success
+    <span class='comment'># @!attribute [rw] success
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the probe was successful.
-</span>    <span class='comment'># @!attribute [rw] invalid_url
+</span>    <span class='const'>SUCCESS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SUCCESS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] invalid_url
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the supplied URL was not valid.
-</span>    <span class='comment'># @!attribute [rw] timed_out
+</span>    <span class='const'>INVALID_URL</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_URL</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] timed_out
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
-</span>    <span class='comment'># @!attribute [rw] host_not_found
+</span>    <span class='const'>TIMED_OUT</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TIMED_OUT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] host_not_found
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the host in the URL could not be found.
-</span>    <span class='comment'># @!attribute [rw] resource_not_found
+</span>    <span class='const'>HOST_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] resource_not_found
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the given resource at the URL was not found.
-</span>    <span class='comment'># @!attribute [rw] invalid_credentials
+</span>    <span class='const'>RESOURCE_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>RESOURCE_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] invalid_credentials
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
-</span>    <span class='comment'># @!attribute [rw] certificate_error
+</span>    <span class='const'>INVALID_CREDENTIALS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_CREDENTIALS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] certificate_error
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
-</span>    <span class='comment'># @!attribute [rw] unknown_error
+</span>    <span class='const'>CERTIFICATE_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>CERTIFICATE_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># @!attribute [rw] unknown_error
 </span>    <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
 </span>    <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
-</span>    <span class='kw'>class</span> <span class='const'>Status</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-        <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-            <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>            <span class='comment'># @scope class
-</span>            <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-                <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result.status</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                    <span class='const'>Status</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-
-            <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>            <span class='comment'># of this enum type.
-</span>            <span class='comment'># @param value [String] the actual value of the enum instance
-</span>            <span class='comment'># @return [Status] the instance found for the value, otherwise
-</span>            <span class='comment'>#         an unknown instance will be built for the value
-</span>            <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>begin</span>
-                    <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                    <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-                <span class='kw'>end</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_private'>private</span>
-
-        <span class='comment'># Constructs a new instance.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-            <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_public'>public</span>
-
-        <span class='comment'># @!attribute [rw] success
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the probe was successful.
-</span>        <span class='const'>SUCCESS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SUCCESS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] invalid_url
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the supplied URL was not valid.
-</span>        <span class='const'>INVALID_URL</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_URL</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] timed_out
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the probe timed out while attempting to connect to the URL.
-</span>        <span class='const'>TIMED_OUT</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TIMED_OUT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] host_not_found
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the host in the URL could not be found.
-</span>        <span class='const'>HOST_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOST_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] resource_not_found
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the given resource at the URL was not found.
-</span>        <span class='const'>RESOURCE_NOT_FOUND</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>RESOURCE_NOT_FOUND</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] invalid_credentials
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the connection was rejected due to invalid credentials.
-</span>        <span class='const'>INVALID_CREDENTIALS</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>INVALID_CREDENTIALS</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] certificate_error
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates that the provided server certificate thumbprint in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`   is invalid. In this case, the returned  null  should be set in   :attr:`Com::Vmware::Content::Library::SubscriptionInfo.ssl_thumbprint`  .
-</span>        <span class='const'>CERTIFICATE_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>CERTIFICATE_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-        <span class='comment'># @!attribute [rw] unknown_error
-</span>        <span class='comment'>#     @return [Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status]
-</span>        <span class='comment'>#     Indicates an unspecified error different from the other error cases defined in   :class:`Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status`  .
-</span>        <span class='const'>UNKNOWN_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-    <span class='kw'>end</span>
-
-
+</span>    <span class='const'>UNKNOWN_ERROR</span> <span class='op'>=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN_ERROR</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1426,33 +1378,35 @@ the binding type
       <pre class="lines">
 
 
-763
-764
-765
-766
-767
-768
-769
-770
-771
-772
-773
-774</pre>
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 763</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/content.rb', line 717</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='lbrace'>{</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
-            <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
-        <span class='rbrace'>}</span><span class='comma'>,</span>
-        <span class='const'>ProbeResult</span><span class='comma'>,</span>
-        <span class='kw'>false</span><span class='comma'>,</span>
-        <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StructType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.content.subscribed_library.probe_result</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='lbrace'>{</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Content::SubscribedLibrary::ProbeResult::Status</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ssl_thumbprint</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>OptionalType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>StringType</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>error_messages</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ListType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>ReferenceType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Com::Vmware::Vapi::Std::LocalizableMessage</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='const'>ProbeResult</span><span class='comma'>,</span>
+    <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='kw'>nil</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1464,11 +1418,11 @@ the binding type
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:13:49 2016 by
+  Generated on Wed Sep  6 12:03:09 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>
