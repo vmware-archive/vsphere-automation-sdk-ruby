@@ -83,7 +83,7 @@ EOL
       sata_svc.delete(vm_id, sata)
     end
     sata_summaries = sata_svc.list(vm_id)
-    log.info"Sata Summary after deleting the SATA adapters is #{sata_summaries.to_yaml}"
+    log.info "Sata Summary after deleting the SATA adapters is #{sata_summaries.to_yaml}"
   end
 end
 
