@@ -17,7 +17,7 @@ class SCSIConfiguration < SampleBase
 EOL
 
   # sample attributes
-  attr_reader :service_manager,:vm_name,:vm_id,:scsi_svc,:scsi_to_delete
+  attr_reader :service_manager, :vm_name,:vm_id, :scsi_svc, :scsi_to_delete
 
   def initialize
     super(TITLE, DESCRIPTION, true)
@@ -25,8 +25,8 @@ EOL
 
   def inject_options
     option_parser.on("-v", "--vm-name NAME","Name of the VM") do |value|
-      options[:vm_name] =  value
-      end 
+    options[:vm_name] =  value
+    end 
   end
   
   def check_options
@@ -43,17 +43,17 @@ EOL
 
   def execute
     @vm_id = VMHelper.get_vm(service_manager.vapi_config, @vm_name)
-    if not vm_id
+    unless vm_id
       raise "Sample requires an existing vm with name #{vm_name}. '
                         'Please create the vm first."
     end
     #Get Information about the Existing/Original SCSI adapters of the VM
     log.info "Using VM #{vm_name} for the SCSI Configuration"
     scsi_summaries = scsi_svc.list(vm_id)
-    (scsi_summaries).each do|scsi_summary|
+    (scsi_summaries).each do |scsi_summary|
       scsi = scsi_summary.adapter
       scsi_info = scsi_svc.get(vm_id, scsi)
-      log.info"Original SCSI Adapter Information for the vm #{vm_name} , scsi-id #{scsi} is #{scsi_info.to_yaml}"
+      log.info "Original SCSI Adapter Information for the vm #{vm_name} , scsi-id #{scsi} is #{scsi_info.to_yaml}"
     end
 
     #Create a SCSI adapter with the Default Configuration
@@ -71,7 +71,7 @@ EOL
     scsi_create_spec = HARDWARE_ADAPTER_SCSI_CLASS::CreateSpec.new('bus' => 2,
                                                                    'sharing' => HARDWARE_ADAPTER_SCSI_CLASS::Sharing::VIRTUAL)
     scsi = scsi_svc.create(vm_id, scsi_create_spec)
-    log.info("The scsi controller created for the vm #{vm_name} is Scsi #{scsi}")
+    log.info "The scsi controller created for the vm #{vm_name} is Scsi #{scsi}"
     scsi_to_delete << scsi
     scsi_info = scsi_svc.get(vm_id, scsi)
     log.info "vm.hardware.adapter.Scsi.get #{scsi_info.to_yaml}"
@@ -91,8 +91,8 @@ EOL
   #Delete the SCSI adapter if the cleanup option is specified
   def cleanup()
     log.info "Cleanup: Delete the VM SCSI adapters that were added #{scsi_to_delete}"
-    (scsi_to_delete).each do|scsi|
-      log.info"Deleting the SCSI adapter #{scsi} of the VM #{vm_name} , ID '#{vm_id}' "
+    (scsi_to_delete).each do |scsi|
+      log.info "Deleting the SCSI adapter #{scsi} of the VM #{vm_name} , ID '#{vm_id}' "
       scsi_svc.delete(vm_id, scsi)
     end
     scsi_summaries = scsi_svc.list(vm_id)
