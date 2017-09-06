@@ -17,7 +17,7 @@ class SATAConfiguration < SampleBase
 EOL
 
   # sample attributes
-  attr_reader :service_manager,:vm_name,:vm_id,:sata_svc,:satas_to_delete
+  attr_reader :service_manager, :vm_name, :vm_id, :sata_svc, :satas_to_delete
 
   def initialize
     super(TITLE, DESCRIPTION, true)
@@ -25,8 +25,8 @@ EOL
 
   def inject_options
     option_parser.on("-v", "--vm-name NAME","Name of the VM") do |value|
-      options[:vm_name] =  value
-      end 
+    options[:vm_name] =  value
+    end 
   end
   
   def check_options
@@ -43,24 +43,24 @@ EOL
 
   def execute
     @vm_id = VMHelper.get_vm(service_manager.vapi_config, @vm_name)
-    if not vm_id
+    unless vm_id
       raise "Sample requires an existing vm with name #{vm_name}. '
                         'Please create the vm first."
     end
     #Get Information about the Existing/Original SATA adapters of the VM
     log.info "Using VM #{vm_name} for the SATA Configuration"
     sata_summaries = sata_svc.list(vm_id)
-    (sata_summaries).each do|sata_summary|
+    (sata_summaries).each do |sata_summary|
       sata = sata_summary.adapter
       sata_info = sata_svc.get(vm_id, sata)
-      log.info"Original SATA Adapter Information for the vm #{vm_name} with the sata-id #{sata} is #{sata_info.to_yaml}"
+      log.info "Original SATA Adapter Information for the vm #{vm_name} with the sata-id #{sata} is #{sata_info.to_yaml}"
     end
 
     #Create a SATA adapter with the Default Configuration
     log.info "# Example: Create SATA adapter with default configuration"
     sata_create_spec = HARDWARE_ADAPTER_SATA_CLASS::CreateSpec.new()
     sata = sata_svc.create(vm_id, sata_create_spec)
-    log.info("The sata controller created for the vm #{vm_name} is Sata #{sata}")
+    log.info "The sata controller created for the vm #{vm_name} is Sata #{sata}"
     @satas_to_delete = Array.new
     satas_to_delete << sata
 
@@ -68,7 +68,7 @@ EOL
     log.info "# Example : Create SATA adapter with a specific bus id"
     sata_create_spec = HARDWARE_ADAPTER_SATA_CLASS::CreateSpec.new('bus' => 2)
     sata = sata_svc.create(vm_id, sata_create_spec)
-    log.info("The sata controller created for the vm #{vm_name} is Sata #{sata}")
+    log.info "The sata controller created for the vm #{vm_name} is Sata #{sata}"
     satas_to_delete << sata
 
     sata_summaries = sata_svc.list(vm_id)
@@ -77,8 +77,8 @@ EOL
 
   #Delete the SATA adapter created if the cleanup option is specified
   def cleanup()
-    log.info"Cleanup: Delete the VM SATA adapters that were added #{satas_to_delete}"
-    (satas_to_delete).each do|sata|
+    log.info "Cleanup: Delete the VM SATA adapters that were added #{satas_to_delete}"
+    (satas_to_delete).each do |sata|
       log.info "Deleting the SATA adapter #{sata} of the VM #{vm_name} , ID '#{vm_id}'"
       sata_svc.delete(vm_id, sata)
     end
