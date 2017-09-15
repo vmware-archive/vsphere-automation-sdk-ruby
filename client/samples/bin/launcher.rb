@@ -8,6 +8,8 @@
     'create_basic_vm' => 'lib/sample/vcenter/vm/create/create_basic_vm.rb',
     'list_vms' => 'lib/sample/vcenter/vm/list_vms.rb',
     'power' => 'lib/sample/vcenter/vm/power.rb',
+    'create_default_vm' => 'lib/sample/vcenter/vm/create/create_default_vm.rb',
+    'configure_cpu' => 'lib/sample/vcenter/vm/hardware/cpu_configuration/cpu_configuration.rb',
     'sata' => 'lib/sample/vcenter/vm/hardware/adapter/sata.rb',
     'scsi' => 'lib/sample/vcenter/vm/hardware/adapter/scsi.rb',
 
