@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -122,17 +122,17 @@ the power states of a host.
         <dt id="POWERED_ON-constant" class="">POWERED_ON =
           
         </dt>
-        <dd><pre class="code"><span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="POWERED_OFF-constant" class="">POWERED_OFF =
           
         </dt>
-        <dd><pre class="code"><span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="STANDBY-constant" class="">STANDBY =
           
         </dt>
-        <dd><pre class="code"><span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
     </dl>
   
@@ -295,9 +295,131 @@ enum type.
       
     </ul>
   
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (PowerState) <strong>initialize</strong>(value, unknown = nil) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
 
   
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Host::PowerState (class)">PowerState</a></span></tt>) <strong>initialize</strong>(value, unknown = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the actual value of the enum instance
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>unknown</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the unknown value when value is &#8216;UKNOWN&#8217;
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1773
+1774
+1775</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1773</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -346,115 +468,105 @@ processes but fail to power off.
       <pre class="lines">
 
 
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869
-1870
-1871
-1872
-1873
-1874
-1875
-1876
-1877
-1878
-1879
-1880
-1881
-1882
-1883
-1884
-1885
-1886
-1887
-1888
-1889
-1890
-1891
-1892
-1893
-1894
-1895
-1896
-1897
-1898
-1899
-1900
-1901
-1902
-1903
-1904
-1905
-1906
-1907</pre>
+1746
+1747
+1748
+1749
+1750
+1751
+1752
+1753
+1754
+1755
+1756
+1757
+1758
+1759
+1760
+1761
+1762
+1763
+1764
+1765
+1766
+1767
+1768
+1769
+1770
+1771
+1772
+1773
+1774
+1775
+1776
+1777
+1778
+1779
+1780
+1781
+1782
+1783
+1784
+1785
+1786
+1787
+1788
+1789
+1790
+1791
+1792
+1793</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1855</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1746</span>
 
 <span class='kw'>class</span> <span class='const'>PowerState</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>PowerState</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [PowerState] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>PowerState</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [PowerState] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] powered_on
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host is powered on. A host that is entering standby mode is also in this state.
-</span>    <span class='const'>POWERED_ON</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] powered_off
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host was specifically powered off by the user through vCenter server. This state is not a cetain state, because after vCenter server issues the command to power off the host, the host might crash, or kill all the processes but fail to power off.
-</span>    <span class='const'>POWERED_OFF</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] powered_on
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host is powered on. A host that is entering standby mode is also in this state.
+</span>  <span class='const'>POWERED_ON</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] standby
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host was specifically put in standby mode, either explicitly by the user, or automatically by DPM. This state is not a cetain state, because after VirtualCenter issues the command to put the host in standby state, the host might crash, or kill all the processes but fail to enter standby mode. A host that is exiting standby mode is also in this state.
-</span>    <span class='const'>STANDBY</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] powered_off
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host was specifically powered off by the user through vCenter server. This state is not a cetain state, because after vCenter server issues the command to power off the host, the host might crash, or kill all the processes but fail to power off.
+</span>  <span class='const'>POWERED_OFF</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] standby
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host was specifically put in standby mode, either explicitly by the user, or automatically by DPM. This state is not a cetain state, because after VirtualCenter issues the command to put the host in standby state, the host might crash, or kill all the processes but fail to enter standby mode. A host that is exiting standby mode is also in this state.
+</span>  <span class='const'>STANDBY</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -504,115 +616,105 @@ this state.
       <pre class="lines">
 
 
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869
-1870
-1871
-1872
-1873
-1874
-1875
-1876
-1877
-1878
-1879
-1880
-1881
-1882
-1883
-1884
-1885
-1886
-1887
-1888
-1889
-1890
-1891
-1892
-1893
-1894
-1895
-1896
-1897
-1898
-1899
-1900
-1901
-1902
-1903
-1904
-1905
-1906
-1907</pre>
+1746
+1747
+1748
+1749
+1750
+1751
+1752
+1753
+1754
+1755
+1756
+1757
+1758
+1759
+1760
+1761
+1762
+1763
+1764
+1765
+1766
+1767
+1768
+1769
+1770
+1771
+1772
+1773
+1774
+1775
+1776
+1777
+1778
+1779
+1780
+1781
+1782
+1783
+1784
+1785
+1786
+1787
+1788
+1789
+1790
+1791
+1792
+1793</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1855</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1746</span>
 
 <span class='kw'>class</span> <span class='const'>PowerState</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>PowerState</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [PowerState] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>PowerState</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [PowerState] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] powered_on
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host is powered on. A host that is entering standby mode is also in this state.
-</span>    <span class='const'>POWERED_ON</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] powered_off
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host was specifically powered off by the user through vCenter server. This state is not a cetain state, because after vCenter server issues the command to power off the host, the host might crash, or kill all the processes but fail to power off.
-</span>    <span class='const'>POWERED_OFF</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] powered_on
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host is powered on. A host that is entering standby mode is also in this state.
+</span>  <span class='const'>POWERED_ON</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] standby
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host was specifically put in standby mode, either explicitly by the user, or automatically by DPM. This state is not a cetain state, because after VirtualCenter issues the command to put the host in standby state, the host might crash, or kill all the processes but fail to enter standby mode. A host that is exiting standby mode is also in this state.
-</span>    <span class='const'>STANDBY</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] powered_off
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host was specifically powered off by the user through vCenter server. This state is not a cetain state, because after vCenter server issues the command to power off the host, the host might crash, or kill all the processes but fail to power off.
+</span>  <span class='const'>POWERED_OFF</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] standby
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host was specifically put in standby mode, either explicitly by the user, or automatically by DPM. This state is not a cetain state, because after VirtualCenter issues the command to put the host in standby state, the host might crash, or kill all the processes but fail to enter standby mode. A host that is exiting standby mode is also in this state.
+</span>  <span class='const'>STANDBY</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -665,115 +767,105 @@ mode. A host that is exiting standby mode is also in this state.
       <pre class="lines">
 
 
-1855
-1856
-1857
-1858
-1859
-1860
-1861
-1862
-1863
-1864
-1865
-1866
-1867
-1868
-1869
-1870
-1871
-1872
-1873
-1874
-1875
-1876
-1877
-1878
-1879
-1880
-1881
-1882
-1883
-1884
-1885
-1886
-1887
-1888
-1889
-1890
-1891
-1892
-1893
-1894
-1895
-1896
-1897
-1898
-1899
-1900
-1901
-1902
-1903
-1904
-1905
-1906
-1907</pre>
+1746
+1747
+1748
+1749
+1750
+1751
+1752
+1753
+1754
+1755
+1756
+1757
+1758
+1759
+1760
+1761
+1762
+1763
+1764
+1765
+1766
+1767
+1768
+1769
+1770
+1771
+1772
+1773
+1774
+1775
+1776
+1777
+1778
+1779
+1780
+1781
+1782
+1783
+1784
+1785
+1786
+1787
+1788
+1789
+1790
+1791
+1792
+1793</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1855</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1746</span>
 
 <span class='kw'>class</span> <span class='const'>PowerState</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>PowerState</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [PowerState] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>PowerState</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [PowerState] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] powered_on
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host is powered on. A host that is entering standby mode is also in this state.
-</span>    <span class='const'>POWERED_ON</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] powered_off
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host was specifically powered off by the user through vCenter server. This state is not a cetain state, because after vCenter server issues the command to power off the host, the host might crash, or kill all the processes but fail to power off.
-</span>    <span class='const'>POWERED_OFF</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] powered_on
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host is powered on. A host that is entering standby mode is also in this state.
+</span>  <span class='const'>POWERED_ON</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_ON</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] standby
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
-</span>    <span class='comment'>#     The host was specifically put in standby mode, either explicitly by the user, or automatically by DPM. This state is not a cetain state, because after VirtualCenter issues the command to put the host in standby state, the host might crash, or kill all the processes but fail to enter standby mode. A host that is exiting standby mode is also in this state.
-</span>    <span class='const'>STANDBY</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] powered_off
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host was specifically powered off by the user through vCenter server. This state is not a cetain state, because after vCenter server issues the command to power off the host, the host might crash, or kill all the processes but fail to power off.
+</span>  <span class='const'>POWERED_OFF</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POWERED_OFF</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] standby
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Host::PowerState]
+</span>  <span class='comment'>#     The host was specifically put in standby mode, either explicitly by the user, or automatically by DPM. This state is not a cetain state, because after VirtualCenter issues the command to put the host in standby state, the host might crash, or kill all the processes but fail to enter standby mode. A host that is exiting standby mode is also in this state.
+</span>  <span class='const'>STANDBY</span> <span class='op'>=</span> <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STANDBY</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -834,19 +926,21 @@ the binding type
       <pre class="lines">
 
 
-1861
-1862
-1863
-1864
-1865</pre>
+1751
+1752
+1753
+1754
+1755
+1756</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1861</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1751</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='const'>PowerState</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.host.power_state</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='const'>PowerState</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -922,23 +1016,19 @@ built for the value
       <pre class="lines">
 
 
-1872
-1873
-1874
-1875
-1876
-1877
-1878</pre>
+1763
+1764
+1765
+1766
+1767</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1872</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter.rb', line 1763</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>begin</span>
-        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>rescue</span> <span class='const'>NameError</span>
-        <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>NameError</span>
+  <span class='const'>PowerState</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -950,11 +1040,11 @@ built for the value
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:13:37 2016 by
+  Generated on Wed Sep  6 12:08:21 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>

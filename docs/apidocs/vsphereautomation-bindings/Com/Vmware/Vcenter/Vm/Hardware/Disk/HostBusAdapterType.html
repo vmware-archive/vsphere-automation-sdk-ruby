@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
+    <dd class="r2 last">/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -123,17 +123,17 @@ used for attaching a virtual storage device to a virtual machine.
         <dt id="IDE-constant" class="">IDE =
           
         </dt>
-        <dd><pre class="code"><span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="SCSI-constant" class="">SCSI =
           
         </dt>
-        <dd><pre class="code"><span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
         <dt id="SATA-constant" class="">SATA =
           
         </dt>
-        <dd><pre class="code"><span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
       
     </dl>
   
@@ -295,9 +295,131 @@ enum type.
       
     </ul>
   
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (HostBusAdapterType) <strong>initialize</strong>(value, unknown = nil) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
 
   
+    <span class="summary_desc"><div class='inline'><p>
+Constructs a new instance.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType (class)">HostBusAdapterType</a></span></tt>) <strong>initialize</strong>(value, unknown = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Constructs a new instance.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the actual value of the enum instance
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>unknown</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the unknown value when value is &#8216;UKNOWN&#8217;
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2132
+2133
+2134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2132</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -306,7 +428,7 @@ enum type.
       <div class="method_details first">
   <h3 class="signature first" id="ide-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType (class)">Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</a></span></tt>) <strong>ide</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</tt>) <strong>ide</strong> 
   
 
   
@@ -329,7 +451,7 @@ Disk is attached to an IDE adapter.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType (class)">Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</tt>)</span>
       
       
       
@@ -343,115 +465,105 @@ Disk is attached to an IDE adapter.
       <pre class="lines">
 
 
-2213
-2214
-2215
-2216
-2217
-2218
-2219
-2220
-2221
-2222
-2223
-2224
-2225
-2226
-2227
-2228
-2229
-2230
-2231
-2232
-2233
-2234
-2235
-2236
-2237
-2238
-2239
-2240
-2241
-2242
-2243
-2244
-2245
-2246
-2247
-2248
-2249
-2250
-2251
-2252
-2253
-2254
-2255
-2256
-2257
-2258
-2259
-2260
-2261
-2262
-2263
-2264
-2265</pre>
+2105
+2106
+2107
+2108
+2109
+2110
+2111
+2112
+2113
+2114
+2115
+2116
+2117
+2118
+2119
+2120
+2121
+2122
+2123
+2124
+2125
+2126
+2127
+2128
+2129
+2130
+2131
+2132
+2133
+2134
+2135
+2136
+2137
+2138
+2139
+2140
+2141
+2142
+2143
+2144
+2145
+2146
+2147
+2148
+2149
+2150
+2151
+2152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2213</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2105</span>
 
 <span class='kw'>class</span> <span class='const'>HostBusAdapterType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>HostBusAdapterType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [HostBusAdapterType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>HostBusAdapterType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [HostBusAdapterType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] ide
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to an IDE adapter.
-</span>    <span class='const'>IDE</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] scsi
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to a SCSI adapter.
-</span>    <span class='const'>SCSI</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] ide
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to an IDE adapter.
+</span>  <span class='const'>IDE</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] sata
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to a SATA adapter.
-</span>    <span class='const'>SATA</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] scsi
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to a SCSI adapter.
+</span>  <span class='const'>SCSI</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] sata
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to a SATA adapter.
+</span>  <span class='const'>SATA</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -463,7 +575,7 @@ Disk is attached to an IDE adapter.
       <div class="method_details ">
   <h3 class="signature " id="sata-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType (class)">Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</a></span></tt>) <strong>sata</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</tt>) <strong>sata</strong> 
   
 
   
@@ -486,7 +598,7 @@ Disk is attached to a SATA adapter.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType (class)">Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</tt>)</span>
       
       
       
@@ -500,115 +612,105 @@ Disk is attached to a SATA adapter.
       <pre class="lines">
 
 
-2213
-2214
-2215
-2216
-2217
-2218
-2219
-2220
-2221
-2222
-2223
-2224
-2225
-2226
-2227
-2228
-2229
-2230
-2231
-2232
-2233
-2234
-2235
-2236
-2237
-2238
-2239
-2240
-2241
-2242
-2243
-2244
-2245
-2246
-2247
-2248
-2249
-2250
-2251
-2252
-2253
-2254
-2255
-2256
-2257
-2258
-2259
-2260
-2261
-2262
-2263
-2264
-2265</pre>
+2105
+2106
+2107
+2108
+2109
+2110
+2111
+2112
+2113
+2114
+2115
+2116
+2117
+2118
+2119
+2120
+2121
+2122
+2123
+2124
+2125
+2126
+2127
+2128
+2129
+2130
+2131
+2132
+2133
+2134
+2135
+2136
+2137
+2138
+2139
+2140
+2141
+2142
+2143
+2144
+2145
+2146
+2147
+2148
+2149
+2150
+2151
+2152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2213</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2105</span>
 
 <span class='kw'>class</span> <span class='const'>HostBusAdapterType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>HostBusAdapterType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [HostBusAdapterType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>HostBusAdapterType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [HostBusAdapterType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] ide
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to an IDE adapter.
-</span>    <span class='const'>IDE</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] scsi
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to a SCSI adapter.
-</span>    <span class='const'>SCSI</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] ide
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to an IDE adapter.
+</span>  <span class='const'>IDE</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] sata
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to a SATA adapter.
-</span>    <span class='const'>SATA</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] scsi
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to a SCSI adapter.
+</span>  <span class='const'>SCSI</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] sata
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to a SATA adapter.
+</span>  <span class='const'>SATA</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -620,7 +722,7 @@ Disk is attached to a SATA adapter.
       <div class="method_details ">
   <h3 class="signature " id="scsi-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType (class)">Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</a></span></tt>) <strong>scsi</strong> 
+    - (<tt>Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</tt>) <strong>scsi</strong> 
   
 
   
@@ -643,7 +745,7 @@ Disk is attached to a SCSI adapter.
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType (class)">Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</a></span></tt>)</span>
+        <span class='type'>(<tt>Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType</tt>)</span>
       
       
       
@@ -657,115 +759,105 @@ Disk is attached to a SCSI adapter.
       <pre class="lines">
 
 
-2213
-2214
-2215
-2216
-2217
-2218
-2219
-2220
-2221
-2222
-2223
-2224
-2225
-2226
-2227
-2228
-2229
-2230
-2231
-2232
-2233
-2234
-2235
-2236
-2237
-2238
-2239
-2240
-2241
-2242
-2243
-2244
-2245
-2246
-2247
-2248
-2249
-2250
-2251
-2252
-2253
-2254
-2255
-2256
-2257
-2258
-2259
-2260
-2261
-2262
-2263
-2264
-2265</pre>
+2105
+2106
+2107
+2108
+2109
+2110
+2111
+2112
+2113
+2114
+2115
+2116
+2117
+2118
+2119
+2120
+2121
+2122
+2123
+2124
+2125
+2126
+2127
+2128
+2129
+2130
+2131
+2132
+2133
+2134
+2135
+2136
+2137
+2138
+2139
+2140
+2141
+2142
+2143
+2144
+2145
+2146
+2147
+2148
+2149
+2150
+2151
+2152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2213</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2105</span>
 
 <span class='kw'>class</span> <span class='const'>HostBusAdapterType</span> <span class='op'>&lt;</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>VapiEnum</span>
-
-    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
-        <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
-</span>        <span class='comment'># @scope class
-</span>        <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-            <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-                <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-                <span class='const'>HostBusAdapterType</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
-
-        <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
-</span>        <span class='comment'># of this enum type.
-</span>        <span class='comment'># @param value [String] the actual value of the enum instance
-</span>        <span class='comment'># @return [HostBusAdapterType] the instance found for the value, otherwise
-</span>        <span class='comment'>#         an unknown instance will be built for the value
-</span>        <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>begin</span>
-                <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>rescue</span> <span class='const'>NameError</span>
-                <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-            <span class='kw'>end</span>
-        <span class='kw'>end</span>
+  <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+    <span class='comment'># Holds (gets or creates) the binding type metadata for this enumeration type.
+</span>    <span class='comment'># @scope class
+</span>    <span class='comment'># @return [VAPI::Bindings::EnumType] the binding type
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
+      <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+        <span class='const'>HostBusAdapterType</span>
+      <span class='rparen'>)</span>
     <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_private'>private</span>
-
-    <span class='comment'># Constructs a new instance.
+    <span class='comment'># Converts from a string value (perhaps off the wire) to an instance
+</span>    <span class='comment'># of this enum type.
 </span>    <span class='comment'># @param value [String] the actual value of the enum instance
-</span>    <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
-</span>    <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-        <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+</span>    <span class='comment'># @return [HostBusAdapterType] the instance found for the value, otherwise
+</span>    <span class='comment'>#         an unknown instance will be built for the value
+</span>    <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='const'>NameError</span>
+      <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
 
-    <span class='id identifier rubyid_public'>public</span>
+  <span class='comment'># Constructs a new instance.
+</span>  <span class='comment'># @param value [String] the actual value of the enum instance
+</span>  <span class='comment'># @param unknown [String] the unknown value when value is 'UKNOWN'
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_binding_type'>binding_type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_unknown'>unknown</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-    <span class='comment'># @!attribute [rw] ide
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to an IDE adapter.
-</span>    <span class='const'>IDE</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private_class_method'>private_class_method</span> <span class='symbol'>:new</span>
 
-    <span class='comment'># @!attribute [rw] scsi
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to a SCSI adapter.
-</span>    <span class='const'>SCSI</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] ide
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to an IDE adapter.
+</span>  <span class='const'>IDE</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>IDE</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
-    <span class='comment'># @!attribute [rw] sata
-</span>    <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
-</span>    <span class='comment'>#     Disk is attached to a SATA adapter.
-</span>    <span class='const'>SATA</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># @!attribute [rw] scsi
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to a SCSI adapter.
+</span>  <span class='const'>SCSI</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SCSI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 
+  <span class='comment'># @!attribute [rw] sata
+</span>  <span class='comment'>#     @return [Com::Vmware::Vcenter::Vm::Hardware::Disk::HostBusAdapterType]
+</span>  <span class='comment'>#     Disk is attached to a SATA adapter.
+</span>  <span class='const'>SATA</span> <span class='op'>=</span> <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>SATA</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -826,19 +918,21 @@ the binding type
       <pre class="lines">
 
 
-2219
-2220
-2221
-2222
-2223</pre>
+2110
+2111
+2112
+2113
+2114
+2115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2219</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2110</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binding_type'>binding_type</span>
-    <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
-        <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-        <span class='const'>HostBusAdapterType</span><span class='rparen'>)</span>
+  <span class='ivar'>@binding_type</span> <span class='op'>||=</span> <span class='const'>VAPI</span><span class='op'>::</span><span class='const'>Bindings</span><span class='op'>::</span><span class='const'>EnumType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>com.vmware.vcenter.vm.hardware.disk.host_bus_adapter_type</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+    <span class='const'>HostBusAdapterType</span>
+  <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -914,23 +1008,19 @@ built for the value
       <pre class="lines">
 
 
-2230
-2231
-2232
-2233
-2234
-2235
-2236</pre>
+2122
+2123
+2124
+2125
+2126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/build/mts/release/bora-4571906/build/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2230</span>
+      <pre class="code"><span class="info file"># File '/dbc/sc-dbc1215/jrg/vcsuite-sdks/vsphereautosdks-layer1/build/gradle/ruby/sdk/aggregated-bindings/ruby/com/vmware/vcenter/vm/hardware.rb', line 2122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_string'>from_string</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>begin</span>
-        <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>rescue</span> <span class='const'>NameError</span>
-        <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+  <span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>NameError</span>
+  <span class='const'>HostBusAdapterType</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UNKNOWN</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -942,11 +1032,11 @@ built for the value
 </div>
 
     <div id="footer">
-  Copyright &copy; 2014-2016 VMware Inc.  All rights reserved.
+  Copyright &copy; 2014-2017 VMware Inc.  All rights reserved.
   <br>
   Version 6.5 RC
   <br>
-  Generated on Fri Oct 28 14:15:46 2016 by
+  Generated on Wed Sep  6 12:06:27 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-1.9.2).
 </div>
