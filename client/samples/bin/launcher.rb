@@ -8,6 +8,8 @@
     'create_basic_vm' => 'lib/sample/vcenter/vm/create/create_basic_vm.rb',
     'list_vms' => 'lib/sample/vcenter/vm/list_vms.rb',
     'power' => 'lib/sample/vcenter/vm/power.rb',
+    'sata' => 'lib/sample/vcenter/vm/hardware/adapter/sata.rb',
+    'scsi' => 'lib/sample/vcenter/vm/hardware/adapter/scsi.rb',
 
     # fyi: these are framework self-tests more than samples, but they can be enabled
     # with the understanding that each has its own mechanism for handling arguments.
