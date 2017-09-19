@@ -486,7 +486,7 @@ New memory size in mebibytes.
 <pre class="code ruby"><code class="ruby">
  The supported range of memory sizes is constrained by the configured guest operating system and virtual hardware version of the virtual machine.  
 
- If the virtual machine is running, this value may only be changed if   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_enabled`   is true, and the new memory size must satisfy the constraints specified by   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_increment_size_MiB`   and   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_limit_mib`  .
+ If the virtual machine is running, this value may only be changed if   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_enabled`   is true, and the new memory size must satisfy the constraints specified by   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_increment_size_MiB`   and   :attr:`Com::Vmware::Vcenter::Vm::Hardware::Memory::Info.hot_add_limit_MiB`  .
 </code></pre>
 <p>
 If  nil , the value is unchanged.
