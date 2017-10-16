@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'nokogiri', '~> 1.8'
+gem 'savon', '~> 2.11'
+gem 'vapi_client', '~> 1.0'

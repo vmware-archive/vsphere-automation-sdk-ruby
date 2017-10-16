@@ -58,7 +58,7 @@ extensions. The easiest way to install everything needed is to use the
 [Ruby Installer](https://rubyinstaller.org/). You will need to install the
 Development Kit (DevKit) as well.
 
-The Gem specification file (`vsphere-automation-sdk-ruby.gemspec`) lists the
+The Gem specification files (files with a `.gemspec` extension) lists the
 required dependencies. To install them, you will need
 [Bundler](http://bundler.io). You can install Bundler by running
 `gem install bundler` and then the required packages by running
@@ -69,15 +69,14 @@ Bundler, please refer to the [Bundler documentation](http://bundler.io/).
 Install the SDK by running
 
 ```cmd
-gem build vsphere-automation-sdk-ruby.gemspec
-gem install vsphere-automation-sdk-2.5.0.gem
+gem install vapi_client 
 ```
 
 ### Uninstalling the SDK
 Uninstall the SDK by running
 
 ```
-gem uninstall vsphere-automation-sdk
+gem uninstall vapi_client
 ```
 
 ### Setting up a vSphere Test Environment
@@ -99,7 +98,7 @@ existing datacenters, clusters or attached hosts on the vCenter server).
 To run a sample:
 
 ```cmd
-cd client/samples
+cd samples
 bin/run_sample --help
 ```
 
@@ -144,8 +143,7 @@ provides valuable information to consumers of the resource.
 
 ### Code Style
 Please conform to the [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide).
-Check your code by running [RuboCop](http://rubocop.readthedocs.io/en/latest/)
-using Bundler (`bundle exec rubocop [filename]`).
+Check your code by running [RuboCop](http://rubocop.readthedocs.io/en/latest/).
 
 ## Resource Maintenance
 ### Maintenance Ownership
