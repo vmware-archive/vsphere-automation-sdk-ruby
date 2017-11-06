@@ -18,7 +18,7 @@ class DiskConfiguration < SampleBase
   Demonstrates the various Disk Operations available for a VM
 
   Sample Prerequisites:
-  i.  An existing VM.
+  i.  An existing VM. (vm name)
   ii. Existing vmdks, residing in any of the accessible datastore (This is optional for 'Add Exisiting vmdks as disks' scenarios)
 EOL
 

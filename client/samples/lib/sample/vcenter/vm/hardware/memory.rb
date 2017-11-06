@@ -16,6 +16,8 @@ class MemoryConfiguration < SampleBase
 
   Sample Prerequisites:
   The sample needs an existing VM.
+  -vm-name
+
   Additional steps when clearData flag (-X) option is specified
   Revert the Memory configuration to original state
 EOL

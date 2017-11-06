@@ -59,10 +59,11 @@ class CreateExhaustiveVM < SampleBase
       - datacenter
       - vm folder
       - datastore
-      - standard switch network
-      - distributed switch network
+      - standard switch portgroup
+      - distributed switch portgroup
       - iso datastore path
       - serial port network location
+      - vm name
   Step 1: Create a VM.
 
   Additional steps when clearData flag (-X) option is specified
