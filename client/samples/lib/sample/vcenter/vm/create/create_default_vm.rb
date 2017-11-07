@@ -23,10 +23,11 @@ class CreateDefaultVM < SampleBase
    Demonstrates how to create a VM with system provided defaults
    Author: VMware, Inc.
    Sample Prerequisites:
-   The sample needs a datacenter and the following resources:
+    - datacenter
     - vm folder
     - datastore
     - cluster
+    - vm name
 EOL
   # sample attributes
   attr_reader :service_manager,:vm_name,:vm_svc,

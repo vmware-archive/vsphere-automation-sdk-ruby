@@ -14,6 +14,7 @@ class SATAConfiguration < SampleBase
 
   Sample Prerequisites:
   The sample needs an existing VM.
+  - vm name
 EOL
 
   # sample attributes

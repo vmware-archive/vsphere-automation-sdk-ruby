@@ -32,7 +32,8 @@ class CreateBasicVM < SampleBase
       - datacenter
       - vm folder
       - datastore
-      - standard switch network
+      - standard switch portgroup-name
+      - vm name
   Step 1: Create a VM.
   
   Additional steps when clearData flag (-X) option is specified
