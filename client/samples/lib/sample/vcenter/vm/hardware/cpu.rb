@@ -40,11 +40,11 @@ EOL
         options[:count] =  c
       end
       #Flag indicating whether adding CPUs while the virtual machine is running is enabled.
-      option_parser.on("-hae", "--hot-add-enabled", "Flag indicating whether adding CPUs while the virtual machine is running is enabled") do |hae|
+      option_parser.on("-ae", "--hot-add-enabled", "Flag indicating whether adding CPUs while the virtual machine is running is enabled") do |hae|
         options[:hot_add_enabled] =  hae
       end
       #Flag indicating whether removing CPUs while the virtual machine is running is enabled.
-      option_parser.on("-hre", "--hot-remove-enabled", "Flag indicating whether removing CPUs while the virtual machine is running is enabled") do |hre|
+      option_parser.on("-re", "--hot-remove-enabled", "Flag indicating whether removing CPUs while the virtual machine is running is enabled") do |hre|
         options[:hot_remove_enabled] =  hre
     end
   end
