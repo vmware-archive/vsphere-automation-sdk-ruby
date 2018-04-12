@@ -40,21 +40,21 @@ EOL
   end
 
   def inject_options
-      option_parser.on("-ds", "--datastore-name ", "Name of the Datastore to locate the VM") do |ds|
-        options[:datastore_name] =  ds
-      end
-      option_parser.on("-cname", "--cluster-name ", "Name of the Cluster to locate the VM") do |cn|
-        options[:cluster_name] =  cn
-      end
-      option_parser.on("-fname", "--folder-name ", "Name of the Folder to locate the VM") do |fn|
-        options[:folder_name] =  fn
-      end
-      option_parser.on("-dname", "--datacenter-name ", "Name of the Datacenter") do |dn|
-        options[:datacenter_name] =  dn
-      end
-      option_parser.on("-v", "--vm-name NAME","Name of the VM to be created") do |vn|
-        options[:vm_name] =  vn
-      end
+    option_parser.on("-s", "--datastore-name ", "Name of the Datastore to locate the VM") do |ds|
+      options[:datastore_name] =  ds
+    end
+    option_parser.on("-c", "--cluster-name ", "Name of the Cluster to locate the VM") do |cn|
+      options[:cluster_name] =  cn
+    end
+    option_parser.on("-f", "--folder-name ", "Name of the Folder to locate the VM") do |fn|
+      options[:folder_name] =  fn
+    end
+    option_parser.on("-d", "--datacenter-name ", "Name of the Datacenter") do |dn|
+      options[:datacenter_name] =  dn
+    end
+    option_parser.on("-v", "--vm-name NAME","Name of the VM to be created") do |vn|
+      options[:vm_name] =  vn
+    end
   end
 
   def check_options
@@ -88,7 +88,7 @@ EOL
     vm_id = VMHelper.get_vm(service_manager.vapi_config, vm_name)
     status = vm_power_svc.get(vm_id)
     if status.state == VM_POWER_CLASS::State::POWERED_ON ||
-      status.state == VM_POWER_CLASS::State::SUSPENDED
+       status.state == VM_POWER_CLASS::State::SUSPENDED
       log.info "The VM  #{vm_name} would be powered OFF"
       vm_power_svc.stop(vm_id)
     end

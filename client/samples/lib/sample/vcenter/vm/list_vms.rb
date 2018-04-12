@@ -38,7 +38,7 @@ EOL
     vm_svc.list.each do |vm|
       log.info "#{vm.name}, #{vm.power_state}, #{vm.cpu_count}, #{vm.memory_size_MiB}"
     end
- end
+  end
 
   # main: quick self tester
   if __FILE__ == $0
