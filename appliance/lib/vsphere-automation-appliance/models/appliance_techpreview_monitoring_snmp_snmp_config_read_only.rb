@@ -285,7 +285,7 @@ module VSphereAutomation
           end
         end
       else # model
-        temp_model = VSphereAutomation.const_get(type).new
+        temp_model = VSphereAutomation::Appliance.const_get(type).new
         temp_model.build_from_hash(value)
       end
     end
