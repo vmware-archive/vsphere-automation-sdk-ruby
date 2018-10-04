@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LocalLibraryApi
 
-All URIs are relative to *http://localhost/rest*
+All URIs are relative to *http:///rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

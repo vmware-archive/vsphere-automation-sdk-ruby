@@ -68,7 +68,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost/rest*
+All URIs are relative to *http:///rest*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
