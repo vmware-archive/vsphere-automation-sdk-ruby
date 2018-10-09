@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'pry'
+gem 'vsphere-automation-cis', path: '../cis'
+gem 'vsphere-automation-vcenter', path: '../vcenter'
