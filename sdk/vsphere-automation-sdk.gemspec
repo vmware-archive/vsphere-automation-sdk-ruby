@@ -13,10 +13,10 @@ OpenAPI Generator version: 3.2.3
 =end
 
 $:.push File.expand_path("../lib", __FILE__)
-require "vsphere-automation-vsphere/version"
+require "vsphere-automation-sdk/version"
 
 Gem::Specification.new do |s|
-  s.name        = "vsphere-automation-vsphere"
+  s.name        = "vsphere-automation-sdk"
   s.version     = VSphereAutomation::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["J.R. Garcia"]
