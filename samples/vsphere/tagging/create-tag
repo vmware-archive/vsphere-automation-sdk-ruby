@@ -53,11 +53,14 @@ session_id = session_api.create('').value
 api_client.default_headers['vmware-api-session-id'] = session_id
  
 api_instance = VSphereAutomation::CIS::TaggingTagApi.new(api_client)
+
 create_spec =  VSphereAutomation::CIS::CisTaggingTagCreateSpec.new(
   name: options[:name],
   description: options[:description],
   category_id: options[:category_id]
 )
+create_model = VSphereAutomation::CIS::CisTaggingTagCreate.new(create_spec: create_spec)
 
-result = api_instance.create(cis_tagging_tag_create: { create_spec: create_spec.to_hash }).value
-puts result
+result = api_instance.create(cis_tagging_tag_create: create_model).value
+
+puts "Tag ID: #{result}"
