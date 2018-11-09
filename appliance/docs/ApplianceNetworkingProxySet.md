@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ApplianceNetworkingProxyConfig**](ApplianceNetworkingProxyConfig.md) |  | [optional] 
+**config** | [**ApplianceNetworkingProxyConfig**](ApplianceNetworkingProxyConfig.md) |  | 
 
 

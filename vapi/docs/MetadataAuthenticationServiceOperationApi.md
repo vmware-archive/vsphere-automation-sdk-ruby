@@ -1,6 +1,6 @@
 # VSphereAutomation::VAPI::MetadataAuthenticationServiceOperationApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> VapiMetadataAuthenticationServiceOperationResult get(service_id, opts)
+> VapiMetadataAuthenticationServiceOperationResult get(service_id, vapi_metadata_authentication_service_operation_get)
 
 Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 
@@ -20,13 +20,11 @@ require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::MetadataAuthenticationServiceOperationApi.new
 service_id = 'service_id_example' # String | Identifier of the service element.
-opts = {
-  vapi_metadata_authentication_service_operation_get: VSphereAutomation::VapiMetadataAuthenticationServiceOperationGet.new # VapiMetadataAuthenticationServiceOperationGet | 
-}
+vapi_metadata_authentication_service_operation_get = VSphereAutomation::VapiMetadataAuthenticationServiceOperationGet.new # VapiMetadataAuthenticationServiceOperationGet | 
 
 begin
   #Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
-  result = api_instance.get(service_id, opts)
+  result = api_instance.get(service_id, vapi_metadata_authentication_service_operation_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataAuthenticationServiceOperationApi->get: #{e}"
@@ -38,7 +36,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_id** | **String**| Identifier of the service element. | 
- **vapi_metadata_authentication_service_operation_get** | [**VapiMetadataAuthenticationServiceOperationGet**](VapiMetadataAuthenticationServiceOperationGet.md)|  | [optional] 
+ **vapi_metadata_authentication_service_operation_get** | [**VapiMetadataAuthenticationServiceOperationGet**](VapiMetadataAuthenticationServiceOperationGet.md)|  | 
 
 ### Return type
 
@@ -56,7 +54,7 @@ No authorization required
 
 
 # **list**
-> VapiMetadataAuthenticationServiceOperationListResult list
+> VapiMetadataAuthenticationServiceOperationListResult list(service_id)
 
 Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have authentication information.
 
@@ -66,10 +64,11 @@ Returns the identifiers for the operation elements contained in the service elem
 require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::MetadataAuthenticationServiceOperationApi.new
+service_id = 'service_id_example' # String | Identifier of the service element.
 
 begin
   #Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have authentication information.
-  result = api_instance.list
+  result = api_instance.list(service_id)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataAuthenticationServiceOperationApi->list: #{e}"
@@ -77,7 +76,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_id** | **String**| Identifier of the service element. | 
 
 ### Return type
 

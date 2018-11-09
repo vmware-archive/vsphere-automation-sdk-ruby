@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**vm** | **String** | The identifier of the virtual machine where the specified ISO image will be mounted. | [optional] 
+**vm** | **String** | The identifier of the virtual machine where the specified ISO image will be mounted. | 
 
 

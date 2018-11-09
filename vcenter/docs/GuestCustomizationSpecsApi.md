@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::GuestCustomizationSpecsApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::GuestCustomizationSpecsApi.new
 opts = {
-  filter_names: ['filter_names_example'], # Array<String> | Names that guest customization specifications must have to match the filter (see CustomizationSpecs.Summary.name). If unset or empty, guest customization specifications with any name match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.guest.CustomizationSpec. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: com.vmware.vcenter.guest.CustomizationSpec.
+  filter_names: ['filter_names_example'], # Array<String> | Names that guest customization specifications must have to match the filter (see CustomizationSpecs.Summary.name). If unset or empty, guest customization specifications with any name match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.guest.CustomizationSpec. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.guest.CustomizationSpec.
   filter_os_type: 'filter_os_type_example' # String | The CustomizationSpecs.OsType enumerated type defines the types of guest operating systems for which guest customization is supported.
 }
 
@@ -36,7 +36,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_names** | [**Array&lt;String&gt;**](String.md)| Names that guest customization specifications must have to match the filter (see CustomizationSpecs.Summary.name). If unset or empty, guest customization specifications with any name match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.guest.CustomizationSpec. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: com.vmware.vcenter.guest.CustomizationSpec. | [optional] 
+ **filter_names** | [**Array&lt;String&gt;**](String.md)| Names that guest customization specifications must have to match the filter (see CustomizationSpecs.Summary.name). If unset or empty, guest customization specifications with any name match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.guest.CustomizationSpec. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.guest.CustomizationSpec. | [optional] 
  **filter_os_type** | **String**| The CustomizationSpecs.OsType enumerated type defines the types of guest operating systems for which guest customization is supported. | [optional] 
 
 ### Return type

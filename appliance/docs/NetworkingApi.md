@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NetworkingApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -87,7 +87,7 @@ No authorization required
 
 
 # **update**
-> update(opts)
+> update(appliance_networking_update)
 
 Enable or Disable ipv6 on all interfaces
 
@@ -97,13 +97,11 @@ Enable or Disable ipv6 on all interfaces
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingApi.new
-opts = {
-  appliance_networking_update: VSphereAutomation::ApplianceNetworkingUpdate.new # ApplianceNetworkingUpdate | 
-}
+appliance_networking_update = VSphereAutomation::ApplianceNetworkingUpdate.new # ApplianceNetworkingUpdate | 
 
 begin
   #Enable or Disable ipv6 on all interfaces
-  api_instance.update(opts)
+  api_instance.update(appliance_networking_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingApi->update: #{e}"
 end
@@ -113,7 +111,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_networking_update** | [**ApplianceNetworkingUpdate**](ApplianceNetworkingUpdate.md)|  | [optional] 
+ **appliance_networking_update** | [**ApplianceNetworkingUpdate**](ApplianceNetworkingUpdate.md)|  | 
 
 ### Return type
 

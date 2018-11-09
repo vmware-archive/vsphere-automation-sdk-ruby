@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryItemStorageApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> ContentLibraryItemStorageResult get(library_item_id, opts)
+> ContentLibraryItemStorageResult get(library_item_id, content_library_item_storage_get)
 
 Retrieves the storage information for a specific file in a library item.
 
@@ -20,13 +20,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemStorageApi.new
 library_item_id = 'library_item_id_example' # String | Identifier of the library item whose storage information should be retrieved.
-opts = {
-  content_library_item_storage_get: VSphereAutomation::ContentLibraryItemStorageGet.new # ContentLibraryItemStorageGet | 
-}
+content_library_item_storage_get = VSphereAutomation::ContentLibraryItemStorageGet.new # ContentLibraryItemStorageGet | 
 
 begin
   #Retrieves the storage information for a specific file in a library item.
-  result = api_instance.get(library_item_id, opts)
+  result = api_instance.get(library_item_id, content_library_item_storage_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemStorageApi->get: #{e}"
@@ -38,7 +36,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **String**| Identifier of the library item whose storage information should be retrieved. | 
- **content_library_item_storage_get** | [**ContentLibraryItemStorageGet**](ContentLibraryItemStorageGet.md)|  | [optional] 
+ **content_library_item_storage_get** | [**ContentLibraryItemStorageGet**](ContentLibraryItemStorageGet.md)|  | 
 
 ### Return type
 
@@ -56,7 +54,7 @@ No authorization required
 
 
 # **list**
-> ContentLibraryItemStorageListResult list
+> ContentLibraryItemStorageListResult list(library_item_id)
 
 Lists all storage items for a given library item.
 
@@ -66,10 +64,11 @@ Lists all storage items for a given library item.
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemStorageApi.new
+library_item_id = 'library_item_id_example' # String | Identifier of the library item whose storage information should be listed.
 
 begin
   #Lists all storage items for a given library item.
-  result = api_instance.list
+  result = api_instance.list(library_item_id)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemStorageApi->list: #{e}"
@@ -77,7 +76,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **library_item_id** | **String**| Identifier of the library item whose storage information should be listed. | 
 
 ### Return type
 

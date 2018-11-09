@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ApplianceTechpreviewMonitoringSnmpSNMPHashConfig**](ApplianceTechpreviewMonitoringSnmpSNMPHashConfig.md) |  | [optional] 
+**config** | [**ApplianceTechpreviewMonitoringSnmpSNMPHashConfig**](ApplianceTechpreviewMonitoringSnmpSNMPHashConfig.md) |  | 
 
 

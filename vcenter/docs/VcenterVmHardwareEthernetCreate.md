@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareEthernetCreateSpec**](VcenterVmHardwareEthernetCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareEthernetCreateSpec**](VcenterVmHardwareEthernetCreateSpec.md) |  | 
 
 

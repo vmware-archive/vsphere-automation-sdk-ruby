@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::VmonServiceApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -221,7 +221,7 @@ No authorization required
 
 
 # **update**
-> update(service, opts)
+> update(service, appliance_vmon_service_update)
 
 Updates the properties of a service.
 
@@ -232,13 +232,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::VmonServiceApi.new
 service = 'service_example' # String | identifier of the service whose properties are being updated. The parameter must be an identifier for the resource type: appliance.vmon.Service.
-opts = {
-  appliance_vmon_service_update: VSphereAutomation::ApplianceVmonServiceUpdate.new # ApplianceVmonServiceUpdate | 
-}
+appliance_vmon_service_update = VSphereAutomation::ApplianceVmonServiceUpdate.new # ApplianceVmonServiceUpdate | 
 
 begin
   #Updates the properties of a service.
-  api_instance.update(service, opts)
+  api_instance.update(service, appliance_vmon_service_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmonServiceApi->update: #{e}"
 end
@@ -249,7 +247,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **String**| identifier of the service whose properties are being updated. The parameter must be an identifier for the resource type: appliance.vmon.Service. | 
- **appliance_vmon_service_update** | [**ApplianceVmonServiceUpdate**](ApplianceVmonServiceUpdate.md)|  | [optional] 
+ **appliance_vmon_service_update** | [**ApplianceVmonServiceUpdate**](ApplianceVmonServiceUpdate.md)|  | 
 
 ### Return type
 

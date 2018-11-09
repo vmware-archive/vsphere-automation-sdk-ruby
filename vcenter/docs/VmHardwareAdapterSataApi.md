@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareAdapterSataApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterVmHardwareAdapterSataCreateResult create(vm, opts)
+> VcenterVmHardwareAdapterSataCreateResult create(vm, vcenter_vm_hardware_adapter_sata_create)
 
 Adds a virtual SATA adapter to the virtual machine.
 
@@ -22,13 +22,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareAdapterSataApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_adapter_sata_create: VSphereAutomation::VcenterVmHardwareAdapterSataCreate.new # VcenterVmHardwareAdapterSataCreate | 
-}
+vcenter_vm_hardware_adapter_sata_create = VSphereAutomation::VcenterVmHardwareAdapterSataCreate.new # VcenterVmHardwareAdapterSataCreate | 
 
 begin
   #Adds a virtual SATA adapter to the virtual machine.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_adapter_sata_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareAdapterSataApi->create: #{e}"
@@ -40,7 +38,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_adapter_sata_create** | [**VcenterVmHardwareAdapterSataCreate**](VcenterVmHardwareAdapterSataCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_adapter_sata_create** | [**VcenterVmHardwareAdapterSataCreate**](VcenterVmHardwareAdapterSataCreate.md)|  | 
 
 ### Return type
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareSerialUpdateSpec**](VcenterVmHardwareSerialUpdateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareSerialUpdateSpec**](VcenterVmHardwareSerialUpdateSpec.md) |  | 
 
 

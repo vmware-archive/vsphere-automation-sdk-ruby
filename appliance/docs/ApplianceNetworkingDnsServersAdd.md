@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**server** | **String** | DNS server. | [optional] 
+**server** | **String** | DNS server. | 
 
 

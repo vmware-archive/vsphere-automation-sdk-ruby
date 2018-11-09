@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::TechpreviewServicesStatusApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> ApplianceTechpreviewServicesStatusResult get(opts)
+> ApplianceTechpreviewServicesStatusResult get(appliance_techpreview_services_status_get)
 
 Get status of a service.
 
@@ -18,13 +18,11 @@ Get status of a service.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::TechpreviewServicesStatusApi.new
-opts = {
-  appliance_techpreview_services_status_get: VSphereAutomation::ApplianceTechpreviewServicesStatusGet.new # ApplianceTechpreviewServicesStatusGet | 
-}
+appliance_techpreview_services_status_get = VSphereAutomation::ApplianceTechpreviewServicesStatusGet.new # ApplianceTechpreviewServicesStatusGet | 
 
 begin
   #Get status of a service.
-  result = api_instance.get(opts)
+  result = api_instance.get(appliance_techpreview_services_status_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TechpreviewServicesStatusApi->get: #{e}"
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_techpreview_services_status_get** | [**ApplianceTechpreviewServicesStatusGet**](ApplianceTechpreviewServicesStatusGet.md)|  | [optional] 
+ **appliance_techpreview_services_status_get** | [**ApplianceTechpreviewServicesStatusGet**](ApplianceTechpreviewServicesStatusGet.md)|  | 
 
 ### Return type
 

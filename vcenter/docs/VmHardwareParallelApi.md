@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareParallelApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -58,7 +58,7 @@ No authorization required
 
 
 # **create**
-> VcenterVmHardwareParallelCreateResult create(vm, opts)
+> VcenterVmHardwareParallelCreateResult create(vm, vcenter_vm_hardware_parallel_create)
 
 Adds a virtual parallel port to the virtual machine.
 
@@ -69,13 +69,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareParallelApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_parallel_create: VSphereAutomation::VcenterVmHardwareParallelCreate.new # VcenterVmHardwareParallelCreate | 
-}
+vcenter_vm_hardware_parallel_create = VSphereAutomation::VcenterVmHardwareParallelCreate.new # VcenterVmHardwareParallelCreate | 
 
 begin
   #Adds a virtual parallel port to the virtual machine.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_parallel_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareParallelApi->create: #{e}"
@@ -87,7 +85,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_parallel_create** | [**VcenterVmHardwareParallelCreate**](VcenterVmHardwareParallelCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_parallel_create** | [**VcenterVmHardwareParallelCreate**](VcenterVmHardwareParallelCreate.md)|  | 
 
 ### Return type
 
@@ -281,7 +279,7 @@ No authorization required
 
 
 # **update**
-> update(vm, port, opts)
+> update(vm, port, vcenter_vm_hardware_parallel_update)
 
 Updates the configuration of a virtual parallel port.
 
@@ -293,13 +291,11 @@ require 'vsphere-automation-vcenter'
 api_instance = VSphereAutomation::VCenter::VmHardwareParallelApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 port = 'port_example' # String | Virtual parallel port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ParallelPort.
-opts = {
-  vcenter_vm_hardware_parallel_update: VSphereAutomation::VcenterVmHardwareParallelUpdate.new # VcenterVmHardwareParallelUpdate | 
-}
+vcenter_vm_hardware_parallel_update = VSphereAutomation::VcenterVmHardwareParallelUpdate.new # VcenterVmHardwareParallelUpdate | 
 
 begin
   #Updates the configuration of a virtual parallel port.
-  api_instance.update(vm, port, opts)
+  api_instance.update(vm, port, vcenter_vm_hardware_parallel_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareParallelApi->update: #{e}"
 end
@@ -311,7 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **port** | **String**| Virtual parallel port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ParallelPort. | 
- **vcenter_vm_hardware_parallel_update** | [**VcenterVmHardwareParallelUpdate**](VcenterVmHardwareParallelUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_parallel_update** | [**VcenterVmHardwareParallelUpdate**](VcenterVmHardwareParallelUpdate.md)|  | 
 
 ### Return type
 

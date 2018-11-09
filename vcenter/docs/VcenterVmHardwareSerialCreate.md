@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareSerialCreateSpec**](VcenterVmHardwareSerialCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareSerialCreateSpec**](VcenterVmHardwareSerialCreateSpec.md) |  | 
 
 

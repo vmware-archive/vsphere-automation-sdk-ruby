@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -131,7 +131,7 @@ No authorization required
 
 
 # **hash**
-> ApplianceTechpreviewMonitoringSnmpHashResult hash(opts)
+> ApplianceTechpreviewMonitoringSnmpHashResult hash(appliance_techpreview_monitoring_snmp_hash)
 
 Generate localized keys for secure SNMPv3 communications.
 
@@ -141,13 +141,11 @@ Generate localized keys for secure SNMPv3 communications.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
-opts = {
-  appliance_techpreview_monitoring_snmp_hash: VSphereAutomation::ApplianceTechpreviewMonitoringSnmpHash.new # ApplianceTechpreviewMonitoringSnmpHash | 
-}
+appliance_techpreview_monitoring_snmp_hash = VSphereAutomation::ApplianceTechpreviewMonitoringSnmpHash.new # ApplianceTechpreviewMonitoringSnmpHash | 
 
 begin
   #Generate localized keys for secure SNMPv3 communications.
-  result = api_instance.hash(opts)
+  result = api_instance.hash(appliance_techpreview_monitoring_snmp_hash)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TechpreviewMonitoringSnmpApi->hash: #{e}"
@@ -158,7 +156,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_techpreview_monitoring_snmp_hash** | [**ApplianceTechpreviewMonitoringSnmpHash**](ApplianceTechpreviewMonitoringSnmpHash.md)|  | [optional] 
+ **appliance_techpreview_monitoring_snmp_hash** | [**ApplianceTechpreviewMonitoringSnmpHash**](ApplianceTechpreviewMonitoringSnmpHash.md)|  | 
 
 ### Return type
 
@@ -253,7 +251,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_techpreview_monitoring_snmp_set)
 
 Set SNMP configuration.
 
@@ -263,13 +261,11 @@ Set SNMP configuration.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
-opts = {
-  appliance_techpreview_monitoring_snmp_set: VSphereAutomation::ApplianceTechpreviewMonitoringSnmpSet.new # ApplianceTechpreviewMonitoringSnmpSet | 
-}
+appliance_techpreview_monitoring_snmp_set = VSphereAutomation::ApplianceTechpreviewMonitoringSnmpSet.new # ApplianceTechpreviewMonitoringSnmpSet | 
 
 begin
   #Set SNMP configuration.
-  api_instance.set(opts)
+  api_instance.set(appliance_techpreview_monitoring_snmp_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TechpreviewMonitoringSnmpApi->set: #{e}"
 end
@@ -279,7 +275,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_techpreview_monitoring_snmp_set** | [**ApplianceTechpreviewMonitoringSnmpSet**](ApplianceTechpreviewMonitoringSnmpSet.md)|  | [optional] 
+ **appliance_techpreview_monitoring_snmp_set** | [**ApplianceTechpreviewMonitoringSnmpSet**](ApplianceTechpreviewMonitoringSnmpSet.md)|  | 
 
 ### Return type
 

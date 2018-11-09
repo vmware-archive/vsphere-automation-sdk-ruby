@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::HostApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -54,7 +54,7 @@ No authorization required
 
 
 # **create**
-> VcenterHostCreateResult create(opts)
+> VcenterHostCreateResult create(vcenter_host_create)
 
 Add a new standalone host in the vCenter inventory. The newly connected host will be in connected state. The vCenter Server will verify the SSL certificate before adding the host to its inventory. In the case where the SSL certificate cannot be verified because the Certificate Authority is not recognized or the certificate is self signed, the vCenter Server will fall back to thumbprint verification mode as defined by Host.CreateSpec.ThumbprintVerification.
 
@@ -64,13 +64,11 @@ Add a new standalone host in the vCenter inventory. The newly connected host wil
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::HostApi.new
-opts = {
-  vcenter_host_create: VSphereAutomation::VcenterHostCreate.new # VcenterHostCreate | 
-}
+vcenter_host_create = VSphereAutomation::VcenterHostCreate.new # VcenterHostCreate | 
 
 begin
   #Add a new standalone host in the vCenter inventory. The newly connected host will be in connected state. The vCenter Server will verify the SSL certificate before adding the host to its inventory. In the case where the SSL certificate cannot be verified because the Certificate Authority is not recognized or the certificate is self signed, the vCenter Server will fall back to thumbprint verification mode as defined by Host.CreateSpec.ThumbprintVerification.
-  result = api_instance.create(opts)
+  result = api_instance.create(vcenter_host_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling HostApi->create: #{e}"
@@ -81,7 +79,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_host_create** | [**VcenterHostCreate**](VcenterHostCreate.md)|  | [optional] 
+ **vcenter_host_create** | [**VcenterHostCreate**](VcenterHostCreate.md)|  | 
 
 ### Return type
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**update_spec** | [**ContentLibraryItemUpdateSessionModel**](ContentLibraryItemUpdateSessionModel.md) |  | [optional] 
+**update_spec** | [**ContentLibraryItemUpdateSessionModel**](ContentLibraryItemUpdateSessionModel.md) |  | 
 
 

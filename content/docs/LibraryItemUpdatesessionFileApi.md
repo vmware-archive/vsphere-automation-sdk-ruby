@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryItemUpdatesessionFileApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **add**
-> ContentLibraryItemUpdatesessionFileAddResult add(update_session_id, opts)
+> ContentLibraryItemUpdatesessionFileAddResult add(update_session_id, content_library_item_updatesession_file_add)
 
 Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. <p> When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
 
@@ -23,13 +23,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session to be modified.
-opts = {
-  content_library_item_updatesession_file_add: VSphereAutomation::ContentLibraryItemUpdatesessionFileAdd.new # ContentLibraryItemUpdatesessionFileAdd | 
-}
+content_library_item_updatesession_file_add = VSphereAutomation::ContentLibraryItemUpdatesessionFileAdd.new # ContentLibraryItemUpdatesessionFileAdd | 
 
 begin
   #Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. <p> When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
-  result = api_instance.add(update_session_id, opts)
+  result = api_instance.add(update_session_id, content_library_item_updatesession_file_add)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdatesessionFileApi->add: #{e}"
@@ -41,7 +39,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session to be modified. | 
- **content_library_item_updatesession_file_add** | [**ContentLibraryItemUpdatesessionFileAdd**](ContentLibraryItemUpdatesessionFileAdd.md)|  | [optional] 
+ **content_library_item_updatesession_file_add** | [**ContentLibraryItemUpdatesessionFileAdd**](ContentLibraryItemUpdatesessionFileAdd.md)|  | 
 
 ### Return type
 
@@ -59,7 +57,7 @@ No authorization required
 
 
 # **get**
-> ContentLibraryItemUpdatesessionFileResult get(update_session_id, opts)
+> ContentLibraryItemUpdatesessionFileResult get(update_session_id, content_library_item_updatesession_file_get)
 
 Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
 
@@ -70,13 +68,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session.
-opts = {
-  content_library_item_updatesession_file_get: VSphereAutomation::ContentLibraryItemUpdatesessionFileGet.new # ContentLibraryItemUpdatesessionFileGet | 
-}
+content_library_item_updatesession_file_get = VSphereAutomation::ContentLibraryItemUpdatesessionFileGet.new # ContentLibraryItemUpdatesessionFileGet | 
 
 begin
   #Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
-  result = api_instance.get(update_session_id, opts)
+  result = api_instance.get(update_session_id, content_library_item_updatesession_file_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdatesessionFileApi->get: #{e}"
@@ -88,7 +84,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session. | 
- **content_library_item_updatesession_file_get** | [**ContentLibraryItemUpdatesessionFileGet**](ContentLibraryItemUpdatesessionFileGet.md)|  | [optional] 
+ **content_library_item_updatesession_file_get** | [**ContentLibraryItemUpdatesessionFileGet**](ContentLibraryItemUpdatesessionFileGet.md)|  | 
 
 ### Return type
 
@@ -106,7 +102,7 @@ No authorization required
 
 
 # **list**
-> ContentLibraryItemUpdatesessionFileListResult list
+> ContentLibraryItemUpdatesessionFileListResult list(update_session_id)
 
 Lists all files in the library item associated with the update session.
 
@@ -116,10 +112,11 @@ Lists all files in the library item associated with the update session.
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
+update_session_id = 'update_session_id_example' # String | Identifier of the update session.
 
 begin
   #Lists all files in the library item associated with the update session.
-  result = api_instance.list
+  result = api_instance.list(update_session_id)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdatesessionFileApi->list: #{e}"
@@ -127,7 +124,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_session_id** | **String**| Identifier of the update session. | 
 
 ### Return type
 
@@ -145,7 +145,7 @@ No authorization required
 
 
 # **remove**
-> remove(update_session_id, opts)
+> remove(update_session_id, content_library_item_updatesession_file_remove)
 
 Requests a file to be removed. The file will only be effectively removed when the update session is completed.
 
@@ -156,13 +156,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session.
-opts = {
-  content_library_item_updatesession_file_remove: VSphereAutomation::ContentLibraryItemUpdatesessionFileRemove.new # ContentLibraryItemUpdatesessionFileRemove | 
-}
+content_library_item_updatesession_file_remove = VSphereAutomation::ContentLibraryItemUpdatesessionFileRemove.new # ContentLibraryItemUpdatesessionFileRemove | 
 
 begin
   #Requests a file to be removed. The file will only be effectively removed when the update session is completed.
-  api_instance.remove(update_session_id, opts)
+  api_instance.remove(update_session_id, content_library_item_updatesession_file_remove)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdatesessionFileApi->remove: #{e}"
 end
@@ -173,7 +171,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session. | 
- **content_library_item_updatesession_file_remove** | [**ContentLibraryItemUpdatesessionFileRemove**](ContentLibraryItemUpdatesessionFileRemove.md)|  | [optional] 
+ **content_library_item_updatesession_file_remove** | [**ContentLibraryItemUpdatesessionFileRemove**](ContentLibraryItemUpdatesessionFileRemove.md)|  | 
 
 ### Return type
 

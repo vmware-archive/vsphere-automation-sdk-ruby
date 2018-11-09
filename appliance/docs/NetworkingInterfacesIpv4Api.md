@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NetworkingInterfacesIpv4Api
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -52,7 +52,7 @@ No authorization required
 
 
 # **set**
-> set(interface_name, opts)
+> set(interface_name, appliance_networking_interfaces_ipv4_set)
 
 Set IPv4 network configuration for specific network interface.
 
@@ -63,13 +63,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingInterfacesIpv4Api.new
 interface_name = 'interface_name_example' # String | Network interface to update, for example, \"nic0\".
-opts = {
-  appliance_networking_interfaces_ipv4_set: VSphereAutomation::ApplianceNetworkingInterfacesIpv4Set.new # ApplianceNetworkingInterfacesIpv4Set | 
-}
+appliance_networking_interfaces_ipv4_set = VSphereAutomation::ApplianceNetworkingInterfacesIpv4Set.new # ApplianceNetworkingInterfacesIpv4Set | 
 
 begin
   #Set IPv4 network configuration for specific network interface.
-  api_instance.set(interface_name, opts)
+  api_instance.set(interface_name, appliance_networking_interfaces_ipv4_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingInterfacesIpv4Api->set: #{e}"
 end
@@ -80,7 +78,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **interface_name** | **String**| Network interface to update, for example, \&quot;nic0\&quot;. | 
- **appliance_networking_interfaces_ipv4_set** | [**ApplianceNetworkingInterfacesIpv4Set**](ApplianceNetworkingInterfacesIpv4Set.md)|  | [optional] 
+ **appliance_networking_interfaces_ipv4_set** | [**ApplianceNetworkingInterfacesIpv4Set**](ApplianceNetworkingInterfacesIpv4Set.md)|  | 
 
 ### Return type
 

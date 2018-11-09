@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::RecoveryBackupJobApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -54,7 +54,7 @@ No authorization required
 
 
 # **create**
-> ApplianceRecoveryBackupJobCreateResult create(opts)
+> ApplianceRecoveryBackupJobCreateResult create(appliance_recovery_backup_job_create)
 
 Initiate backup.
 
@@ -64,13 +64,11 @@ Initiate backup.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupJobApi.new
-opts = {
-  appliance_recovery_backup_job_create: VSphereAutomation::ApplianceRecoveryBackupJobCreate.new # ApplianceRecoveryBackupJobCreate | 
-}
+appliance_recovery_backup_job_create = VSphereAutomation::ApplianceRecoveryBackupJobCreate.new # ApplianceRecoveryBackupJobCreate | 
 
 begin
   #Initiate backup.
-  result = api_instance.create(opts)
+  result = api_instance.create(appliance_recovery_backup_job_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupJobApi->create: #{e}"
@@ -81,7 +79,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_recovery_backup_job_create** | [**ApplianceRecoveryBackupJobCreate**](ApplianceRecoveryBackupJobCreate.md)|  | [optional] 
+ **appliance_recovery_backup_job_create** | [**ApplianceRecoveryBackupJobCreate**](ApplianceRecoveryBackupJobCreate.md)|  | 
 
 ### Return type
 

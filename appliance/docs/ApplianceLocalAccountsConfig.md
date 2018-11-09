@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**password** | **String** | Password | [optional] 
+**password** | **String** | Password | 
 **old_password** | **String** | Old password of the user (required in case of the password change, not required if superAdmin user changes the password of the other user) | [optional] 
 **full_name** | **String** | Full name of the user | [optional] 
 **email** | **String** | Email address of the local account | [optional] 
-**roles** | **Array&lt;String&gt;** | User roles | [optional] 
+**roles** | **Array&lt;String&gt;** | User roles | 
 **enabled** | **BOOLEAN** | Flag indicating if the account is enabled | [optional] 
 **password_expires** | **BOOLEAN** | Flag indicating if the account password expires | [optional] 
 **password_expires_at** | **DateTime** | Date when the account&#39;s password will expire | [optional] 

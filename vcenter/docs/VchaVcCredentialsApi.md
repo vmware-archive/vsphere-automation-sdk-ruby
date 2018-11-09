@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VchaVcCredentialsApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **validate**
-> validate(opts)
+> validate(vcenter_vcha_vc_credentials_validate)
 
 Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
 
@@ -18,13 +18,11 @@ Validates the credentials of the management vCenter server of the active node of
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaVcCredentialsApi.new
-opts = {
-  vcenter_vcha_vc_credentials_validate: VSphereAutomation::VcenterVchaVcCredentialsValidate.new # VcenterVchaVcCredentialsValidate | 
-}
+vcenter_vcha_vc_credentials_validate = VSphereAutomation::VcenterVchaVcCredentialsValidate.new # VcenterVchaVcCredentialsValidate | 
 
 begin
   #Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
-  api_instance.validate(opts)
+  api_instance.validate(vcenter_vcha_vc_credentials_validate)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaVcCredentialsApi->validate: #{e}"
 end
@@ -34,7 +32,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_vc_credentials_validate** | [**VcenterVchaVcCredentialsValidate**](VcenterVchaVcCredentialsValidate.md)|  | [optional] 
+ **vcenter_vcha_vc_credentials_validate** | [**VcenterVchaVcCredentialsValidate**](VcenterVchaVcCredentialsValidate.md)|  | 
 
 ### Return type
 

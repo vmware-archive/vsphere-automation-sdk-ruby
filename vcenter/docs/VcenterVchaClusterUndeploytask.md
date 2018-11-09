@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVchaClusterUndeploySpec**](VcenterVchaClusterUndeploySpec.md) |  | [optional] 
+**spec** | [**VcenterVchaClusterUndeploySpec**](VcenterVchaClusterUndeploySpec.md) |  | 
 
 

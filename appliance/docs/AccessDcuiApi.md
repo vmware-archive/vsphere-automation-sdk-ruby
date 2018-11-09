@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::AccessDcuiApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_access_dcui_set)
 
 Set enabled state of Direct Console User Interface (DCUI TTY2).
 
@@ -58,13 +58,11 @@ Set enabled state of Direct Console User Interface (DCUI TTY2).
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::AccessDcuiApi.new
-opts = {
-  appliance_access_dcui_set: VSphereAutomation::ApplianceAccessDcuiSet.new # ApplianceAccessDcuiSet | 
-}
+appliance_access_dcui_set = VSphereAutomation::ApplianceAccessDcuiSet.new # ApplianceAccessDcuiSet | 
 
 begin
   #Set enabled state of Direct Console User Interface (DCUI TTY2).
-  api_instance.set(opts)
+  api_instance.set(appliance_access_dcui_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling AccessDcuiApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_access_dcui_set** | [**ApplianceAccessDcuiSet**](ApplianceAccessDcuiSet.md)|  | [optional] 
+ **appliance_access_dcui_set** | [**ApplianceAccessDcuiSet**](ApplianceAccessDcuiSet.md)|  | 
 
 ### Return type
 

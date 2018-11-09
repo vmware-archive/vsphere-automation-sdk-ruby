@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmTemplateLibraryItemsApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterVmTemplateLibraryItemsCreateResult create(opts)
+> VcenterVmTemplateLibraryItemsCreateResult create(vcenter_vm_template_library_items_create)
 
 Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
 
@@ -20,13 +20,11 @@ Creates a library item in content library from a virtual machine. This {@term op
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmTemplateLibraryItemsApi.new
-opts = {
-  vcenter_vm_template_library_items_create: VSphereAutomation::VcenterVmTemplateLibraryItemsCreate.new # VcenterVmTemplateLibraryItemsCreate | 
-}
+vcenter_vm_template_library_items_create = VSphereAutomation::VcenterVmTemplateLibraryItemsCreate.new # VcenterVmTemplateLibraryItemsCreate | 
 
 begin
   #Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
-  result = api_instance.create(opts)
+  result = api_instance.create(vcenter_vm_template_library_items_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmTemplateLibraryItemsApi->create: #{e}"
@@ -37,7 +35,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vm_template_library_items_create** | [**VcenterVmTemplateLibraryItemsCreate**](VcenterVmTemplateLibraryItemsCreate.md)|  | [optional] 
+ **vcenter_vm_template_library_items_create** | [**VcenterVmTemplateLibraryItemsCreate**](VcenterVmTemplateLibraryItemsCreate.md)|  | 
 
 ### Return type
 
@@ -55,7 +53,7 @@ No authorization required
 
 
 # **deploy**
-> VcenterVmTemplateLibraryItemsDeployResult deploy(template_library_item, opts)
+> VcenterVmTemplateLibraryItemsDeployResult deploy(template_library_item, vcenter_vm_template_library_items_deploy)
 
 Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
 
@@ -66,13 +64,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmTemplateLibraryItemsApi.new
 template_library_item = 'template_library_item_example' # String | identifier of the content library item containing the source virtual machine template to be deployed.
-opts = {
-  vcenter_vm_template_library_items_deploy: VSphereAutomation::VcenterVmTemplateLibraryItemsDeploy.new # VcenterVmTemplateLibraryItemsDeploy | 
-}
+vcenter_vm_template_library_items_deploy = VSphereAutomation::VcenterVmTemplateLibraryItemsDeploy.new # VcenterVmTemplateLibraryItemsDeploy | 
 
 begin
   #Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
-  result = api_instance.deploy(template_library_item, opts)
+  result = api_instance.deploy(template_library_item, vcenter_vm_template_library_items_deploy)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmTemplateLibraryItemsApi->deploy: #{e}"
@@ -84,7 +80,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_library_item** | **String**| identifier of the content library item containing the source virtual machine template to be deployed. | 
- **vcenter_vm_template_library_items_deploy** | [**VcenterVmTemplateLibraryItemsDeploy**](VcenterVmTemplateLibraryItemsDeploy.md)|  | [optional] 
+ **vcenter_vm_template_library_items_deploy** | [**VcenterVmTemplateLibraryItemsDeploy**](VcenterVmTemplateLibraryItemsDeploy.md)|  | 
 
 ### Return type
 

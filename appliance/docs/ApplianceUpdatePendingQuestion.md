@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data_item** | **String** | ID of the data item | [optional] 
-**text** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | [optional] 
-**description** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | [optional] 
-**type** | [**ApplianceUpdatePendingQuestionInputType**](ApplianceUpdatePendingQuestionInputType.md) |  | [optional] 
+**data_item** | **String** | ID of the data item | 
+**text** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | 
+**description** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | 
+**type** | [**ApplianceUpdatePendingQuestionInputType**](ApplianceUpdatePendingQuestionInputType.md) |  | 
 **allowed_values** | **Array&lt;String&gt;** | List of allowed values | [optional] 
 **regexp** | **String** | Regexp to validate the input | [optional] 
 **default_answer** | **String** | Default answer | [optional] 

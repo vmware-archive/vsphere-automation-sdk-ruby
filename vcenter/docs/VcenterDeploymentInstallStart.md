@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterDeploymentInstallInstallSpec**](VcenterDeploymentInstallInstallSpec.md) |  | [optional] 
+**spec** | [**VcenterDeploymentInstallInstallSpec**](VcenterDeploymentInstallInstallSpec.md) |  | 
 
 

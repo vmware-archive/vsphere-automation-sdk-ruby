@@ -1,6 +1,6 @@
 # VSphereAutomation::VAPI::MetadataMetamodelServiceOperationApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -54,7 +54,7 @@ No authorization required
 
 
 # **list**
-> VapiMetadataMetamodelServiceOperationListResult list
+> VapiMetadataMetamodelServiceOperationListResult list(service_id)
 
 Returns the identifiers for the operation elements that are defined in the scope of {@param.name serviceId}.
 
@@ -64,10 +64,11 @@ Returns the identifiers for the operation elements that are defined in the scope
 require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::MetadataMetamodelServiceOperationApi.new
+service_id = 'service_id_example' # String | Identifier of the service element.
 
 begin
   #Returns the identifiers for the operation elements that are defined in the scope of {@param.name serviceId}.
-  result = api_instance.list
+  result = api_instance.list(service_id)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataMetamodelServiceOperationApi->list: #{e}"
@@ -75,7 +76,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_id** | **String**| Identifier of the service element. | 
 
 ### Return type
 

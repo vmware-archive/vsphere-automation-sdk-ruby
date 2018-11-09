@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **String** | message | [optional] 
-**result** | [**ApplianceNetworkingDnsServersMessageStatus**](ApplianceNetworkingDnsServersMessageStatus.md) |  | [optional] 
+**message** | **String** | message | 
+**result** | [**ApplianceNetworkingDnsServersMessageStatus**](ApplianceNetworkingDnsServersMessageStatus.md) |  | 
 
 

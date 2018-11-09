@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ApplianceLocalAccountsConfig**](ApplianceLocalAccountsConfig.md) |  | [optional] 
+**config** | [**ApplianceLocalAccountsConfig**](ApplianceLocalAccountsConfig.md) |  | 
 
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareCdromApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -58,7 +58,7 @@ No authorization required
 
 
 # **create**
-> VcenterVmHardwareCdromCreateResult create(vm, opts)
+> VcenterVmHardwareCdromCreateResult create(vm, vcenter_vm_hardware_cdrom_create)
 
 Adds a virtual CD-ROM device to the virtual machine.
 
@@ -69,13 +69,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_cdrom_create: VSphereAutomation::VcenterVmHardwareCdromCreate.new # VcenterVmHardwareCdromCreate | 
-}
+vcenter_vm_hardware_cdrom_create = VSphereAutomation::VcenterVmHardwareCdromCreate.new # VcenterVmHardwareCdromCreate | 
 
 begin
   #Adds a virtual CD-ROM device to the virtual machine.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_cdrom_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareCdromApi->create: #{e}"
@@ -87,7 +85,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_cdrom_create** | [**VcenterVmHardwareCdromCreate**](VcenterVmHardwareCdromCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_cdrom_create** | [**VcenterVmHardwareCdromCreate**](VcenterVmHardwareCdromCreate.md)|  | 
 
 ### Return type
 
@@ -281,7 +279,7 @@ No authorization required
 
 
 # **update**
-> update(vm, cdrom, opts)
+> update(vm, cdrom, vcenter_vm_hardware_cdrom_update)
 
 Updates the configuration of a virtual CD-ROM device.
 
@@ -293,13 +291,11 @@ require 'vsphere-automation-vcenter'
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 cdrom = 'cdrom_example' # String | Virtual CD-ROM device identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Cdrom.
-opts = {
-  vcenter_vm_hardware_cdrom_update: VSphereAutomation::VcenterVmHardwareCdromUpdate.new # VcenterVmHardwareCdromUpdate | 
-}
+vcenter_vm_hardware_cdrom_update = VSphereAutomation::VcenterVmHardwareCdromUpdate.new # VcenterVmHardwareCdromUpdate | 
 
 begin
   #Updates the configuration of a virtual CD-ROM device.
-  api_instance.update(vm, cdrom, opts)
+  api_instance.update(vm, cdrom, vcenter_vm_hardware_cdrom_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareCdromApi->update: #{e}"
 end
@@ -311,7 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **cdrom** | **String**| Virtual CD-ROM device identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Cdrom. | 
- **vcenter_vm_hardware_cdrom_update** | [**VcenterVmHardwareCdromUpdate**](VcenterVmHardwareCdromUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_cdrom_update** | [**VcenterVmHardwareCdromUpdate**](VcenterVmHardwareCdromUpdate.md)|  | 
 
 ### Return type
 

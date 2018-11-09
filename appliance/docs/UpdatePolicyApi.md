@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::UpdatePolicyApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_update_policy_set)
 
 Sets the automatic update checking and staging policy.
 
@@ -58,13 +58,11 @@ Sets the automatic update checking and staging policy.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::UpdatePolicyApi.new
-opts = {
-  appliance_update_policy_set: VSphereAutomation::ApplianceUpdatePolicySet.new # ApplianceUpdatePolicySet | 
-}
+appliance_update_policy_set = VSphereAutomation::ApplianceUpdatePolicySet.new # ApplianceUpdatePolicySet | 
 
 begin
   #Sets the automatic update checking and staging policy.
-  api_instance.set(opts)
+  api_instance.set(appliance_update_policy_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePolicyApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_update_policy_set** | [**ApplianceUpdatePolicySet**](ApplianceUpdatePolicySet.md)|  | [optional] 
+ **appliance_update_policy_set** | [**ApplianceUpdatePolicySet**](ApplianceUpdatePolicySet.md)|  | 
 
 ### Return type
 

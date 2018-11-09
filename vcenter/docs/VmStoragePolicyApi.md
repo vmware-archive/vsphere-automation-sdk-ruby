@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmStoragePolicyApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -52,7 +52,7 @@ No authorization required
 
 
 # **update**
-> update(vm, opts)
+> update(vm, vcenter_vm_storage_policy_update)
 
 Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
 
@@ -63,13 +63,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmStoragePolicyApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_storage_policy_update: VSphereAutomation::VcenterVmStoragePolicyUpdate.new # VcenterVmStoragePolicyUpdate | 
-}
+vcenter_vm_storage_policy_update = VSphereAutomation::VcenterVmStoragePolicyUpdate.new # VcenterVmStoragePolicyUpdate | 
 
 begin
   #Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
-  api_instance.update(vm, opts)
+  api_instance.update(vm, vcenter_vm_storage_policy_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmStoragePolicyApi->update: #{e}"
 end
@@ -80,7 +78,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_storage_policy_update** | [**VcenterVmStoragePolicyUpdate**](VcenterVmStoragePolicyUpdate.md)|  | [optional] 
+ **vcenter_vm_storage_policy_update** | [**VcenterVmStoragePolicyUpdate**](VcenterVmStoragePolicyUpdate.md)|  | 
 
 ### Return type
 

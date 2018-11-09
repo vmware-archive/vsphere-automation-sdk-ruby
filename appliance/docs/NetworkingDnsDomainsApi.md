@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NetworkingDnsDomainsApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **add**
-> add(opts)
+> add(appliance_networking_dns_domains_add)
 
 Add domain to DNS search domains.
 
@@ -20,13 +20,11 @@ Add domain to DNS search domains.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingDnsDomainsApi.new
-opts = {
-  appliance_networking_dns_domains_add: VSphereAutomation::ApplianceNetworkingDnsDomainsAdd.new # ApplianceNetworkingDnsDomainsAdd | 
-}
+appliance_networking_dns_domains_add = VSphereAutomation::ApplianceNetworkingDnsDomainsAdd.new # ApplianceNetworkingDnsDomainsAdd | 
 
 begin
   #Add domain to DNS search domains.
-  api_instance.add(opts)
+  api_instance.add(appliance_networking_dns_domains_add)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingDnsDomainsApi->add: #{e}"
 end
@@ -36,7 +34,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_networking_dns_domains_add** | [**ApplianceNetworkingDnsDomainsAdd**](ApplianceNetworkingDnsDomainsAdd.md)|  | [optional] 
+ **appliance_networking_dns_domains_add** | [**ApplianceNetworkingDnsDomainsAdd**](ApplianceNetworkingDnsDomainsAdd.md)|  | 
 
 ### Return type
 
@@ -93,7 +91,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_networking_dns_domains_set)
 
 Set DNS search domains.
 
@@ -103,13 +101,11 @@ Set DNS search domains.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingDnsDomainsApi.new
-opts = {
-  appliance_networking_dns_domains_set: VSphereAutomation::ApplianceNetworkingDnsDomainsSet.new # ApplianceNetworkingDnsDomainsSet | 
-}
+appliance_networking_dns_domains_set = VSphereAutomation::ApplianceNetworkingDnsDomainsSet.new # ApplianceNetworkingDnsDomainsSet | 
 
 begin
   #Set DNS search domains.
-  api_instance.set(opts)
+  api_instance.set(appliance_networking_dns_domains_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingDnsDomainsApi->set: #{e}"
 end
@@ -119,7 +115,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_networking_dns_domains_set** | [**ApplianceNetworkingDnsDomainsSet**](ApplianceNetworkingDnsDomainsSet.md)|  | [optional] 
+ **appliance_networking_dns_domains_set** | [**ApplianceNetworkingDnsDomainsSet**](ApplianceNetworkingDnsDomainsSet.md)|  | 
 
 ### Return type
 

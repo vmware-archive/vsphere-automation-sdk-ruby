@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryItemApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **copy**
-> ContentLibraryItemCopyResult copy(source_library_item_id, opts)
+> ContentLibraryItemCopyResult copy(source_library_item_id, content_library_item_copy)
 
 Copies a library item. <p> Copying a library item allows a duplicate to be made within the same or different library. The copy occurs by first creating a new library item, whose identifier is returned. The content of the library item is then copied asynchronously. This copy can be tracked as a task. <p> If the copy fails, Content Library Service will roll back the copy by deleting any content that was already copied, and removing the new library item. A failure during rollback may require manual cleanup by an administrator. <p> A library item cannot be copied into a subscribed library.
 
@@ -25,13 +25,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemApi.new
 source_library_item_id = 'source_library_item_id_example' # String | Identifier of the existing library item from which the content will be copied.
-opts = {
-  content_library_item_copy: VSphereAutomation::ContentLibraryItemCopy.new # ContentLibraryItemCopy | 
-}
+content_library_item_copy = VSphereAutomation::ContentLibraryItemCopy.new # ContentLibraryItemCopy | 
 
 begin
   #Copies a library item. <p> Copying a library item allows a duplicate to be made within the same or different library. The copy occurs by first creating a new library item, whose identifier is returned. The content of the library item is then copied asynchronously. This copy can be tracked as a task. <p> If the copy fails, Content Library Service will roll back the copy by deleting any content that was already copied, and removing the new library item. A failure during rollback may require manual cleanup by an administrator. <p> A library item cannot be copied into a subscribed library.
-  result = api_instance.copy(source_library_item_id, opts)
+  result = api_instance.copy(source_library_item_id, content_library_item_copy)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemApi->copy: #{e}"
@@ -43,7 +41,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_library_item_id** | **String**| Identifier of the existing library item from which the content will be copied. | 
- **content_library_item_copy** | [**ContentLibraryItemCopy**](ContentLibraryItemCopy.md)|  | [optional] 
+ **content_library_item_copy** | [**ContentLibraryItemCopy**](ContentLibraryItemCopy.md)|  | 
 
 ### Return type
 
@@ -61,7 +59,7 @@ No authorization required
 
 
 # **create**
-> ContentLibraryItemCreateResult create(opts)
+> ContentLibraryItemCreateResult create(content_library_item_create)
 
 Creates a new library item. <p> A new library item is created without any content. After creation, content can be added through the {@link UpdateSession} and {@link File} {@term services}. <p> A library item cannot be created in a subscribed library.
 
@@ -71,13 +69,11 @@ Creates a new library item. <p> A new library item is created without any conten
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemApi.new
-opts = {
-  content_library_item_create: VSphereAutomation::ContentLibraryItemCreate.new # ContentLibraryItemCreate | 
-}
+content_library_item_create = VSphereAutomation::ContentLibraryItemCreate.new # ContentLibraryItemCreate | 
 
 begin
   #Creates a new library item. <p> A new library item is created without any content. After creation, content can be added through the {@link UpdateSession} and {@link File} {@term services}. <p> A library item cannot be created in a subscribed library.
-  result = api_instance.create(opts)
+  result = api_instance.create(content_library_item_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemApi->create: #{e}"
@@ -88,7 +84,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_library_item_create** | [**ContentLibraryItemCreate**](ContentLibraryItemCreate.md)|  | [optional] 
+ **content_library_item_create** | [**ContentLibraryItemCreate**](ContentLibraryItemCreate.md)|  | 
 
 ### Return type
 
@@ -148,7 +144,7 @@ No authorization required
 
 
 # **find**
-> ContentLibraryItemFindResult find(opts)
+> ContentLibraryItemFindResult find(content_library_item_find)
 
 Returns identifiers of all the visible (as determined by authorization policy) library items matching the requested {@link Item.FindSpec}.
 
@@ -158,13 +154,11 @@ Returns identifiers of all the visible (as determined by authorization policy) l
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemApi.new
-opts = {
-  content_library_item_find: VSphereAutomation::ContentLibraryItemFind.new # ContentLibraryItemFind | 
-}
+content_library_item_find = VSphereAutomation::ContentLibraryItemFind.new # ContentLibraryItemFind | 
 
 begin
   #Returns identifiers of all the visible (as determined by authorization policy) library items matching the requested {@link Item.FindSpec}.
-  result = api_instance.find(opts)
+  result = api_instance.find(content_library_item_find)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemApi->find: #{e}"
@@ -175,7 +169,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_library_item_find** | [**ContentLibraryItemFind**](ContentLibraryItemFind.md)|  | [optional] 
+ **content_library_item_find** | [**ContentLibraryItemFind**](ContentLibraryItemFind.md)|  | 
 
 ### Return type
 
@@ -236,7 +230,7 @@ No authorization required
 
 
 # **list**
-> ContentLibraryItemListResult list
+> ContentLibraryItemListResult list(library_id)
 
 Returns the identifiers of all items in the given library.
 
@@ -246,10 +240,11 @@ Returns the identifiers of all items in the given library.
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemApi.new
+library_id = 'library_id_example' # String | Identifier of the library whose items should be returned.
 
 begin
   #Returns the identifiers of all items in the given library.
-  result = api_instance.list
+  result = api_instance.list(library_id)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemApi->list: #{e}"
@@ -257,7 +252,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **library_id** | **String**| Identifier of the library whose items should be returned. | 
 
 ### Return type
 
@@ -275,7 +273,7 @@ No authorization required
 
 
 # **update**
-> update(library_item_id, opts)
+> update(library_item_id, content_library_item_update)
 
 Updates the specified properties of a library item. <p> This is an incremental update to the library item. {@term Fields} that are {@term unset} in the update specification are left unchanged. <p> This {@term operation} cannot update a library item that is a member of a subscribed library. Those items must be updated in the source published library and synchronized to the subscribed library.
 
@@ -286,13 +284,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemApi.new
 library_item_id = 'library_item_id_example' # String | Identifier of the library item to update.
-opts = {
-  content_library_item_update: VSphereAutomation::ContentLibraryItemUpdate.new # ContentLibraryItemUpdate | 
-}
+content_library_item_update = VSphereAutomation::ContentLibraryItemUpdate.new # ContentLibraryItemUpdate | 
 
 begin
   #Updates the specified properties of a library item. <p> This is an incremental update to the library item. {@term Fields} that are {@term unset} in the update specification are left unchanged. <p> This {@term operation} cannot update a library item that is a member of a subscribed library. Those items must be updated in the source published library and synchronized to the subscribed library.
-  api_instance.update(library_item_id, opts)
+  api_instance.update(library_item_id, content_library_item_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemApi->update: #{e}"
 end
@@ -303,7 +299,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **String**| Identifier of the library item to update. | 
- **content_library_item_update** | [**ContentLibraryItemUpdate**](ContentLibraryItemUpdate.md)|  | [optional] 
+ **content_library_item_update** | [**ContentLibraryItemUpdate**](ContentLibraryItemUpdate.md)|  | 
 
 ### Return type
 

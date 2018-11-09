@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Name of the component. | [optional] 
-**services** | [**VapiRestNavigationLink**](VapiRestNavigationLink.md) |  | [optional] 
-**documentation** | **String** | Component documentation. | [optional] 
+**name** | **String** | Name of the component. | 
+**services** | [**VapiRestNavigationLink**](VapiRestNavigationLink.md) |  | 
+**documentation** | **String** | Component documentation. | 
 
 

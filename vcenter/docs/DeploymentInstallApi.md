@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::DeploymentInstallApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ No authorization required
 
 
 # **check**
-> VcenterDeploymentInstallCheckResult check(opts)
+> VcenterDeploymentInstallCheckResult check(vcenter_deployment_install_check)
 
 Run sanity checks using the InstallSpec parameters passed.
 
@@ -59,13 +59,11 @@ Run sanity checks using the InstallSpec parameters passed.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallApi.new
-opts = {
-  vcenter_deployment_install_check: VSphereAutomation::VcenterDeploymentInstallCheck.new # VcenterDeploymentInstallCheck | 
-}
+vcenter_deployment_install_check = VSphereAutomation::VcenterDeploymentInstallCheck.new # VcenterDeploymentInstallCheck | 
 
 begin
   #Run sanity checks using the InstallSpec parameters passed.
-  result = api_instance.check(opts)
+  result = api_instance.check(vcenter_deployment_install_check)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallApi->check: #{e}"
@@ -76,7 +74,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_install_check** | [**VcenterDeploymentInstallCheck**](VcenterDeploymentInstallCheck.md)|  | [optional] 
+ **vcenter_deployment_install_check** | [**VcenterDeploymentInstallCheck**](VcenterDeploymentInstallCheck.md)|  | 
 
 ### Return type
 
@@ -133,7 +131,7 @@ No authorization required
 
 
 # **start**
-> start(opts)
+> start(vcenter_deployment_install_start)
 
 Start the appliance installation.
 
@@ -143,13 +141,11 @@ Start the appliance installation.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallApi.new
-opts = {
-  vcenter_deployment_install_start: VSphereAutomation::VcenterDeploymentInstallStart.new # VcenterDeploymentInstallStart | 
-}
+vcenter_deployment_install_start = VSphereAutomation::VcenterDeploymentInstallStart.new # VcenterDeploymentInstallStart | 
 
 begin
   #Start the appliance installation.
-  api_instance.start(opts)
+  api_instance.start(vcenter_deployment_install_start)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallApi->start: #{e}"
 end
@@ -159,7 +155,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_install_start** | [**VcenterDeploymentInstallStart**](VcenterDeploymentInstallStart.md)|  | [optional] 
+ **vcenter_deployment_install_start** | [**VcenterDeploymentInstallStart**](VcenterDeploymentInstallStart.md)|  | 
 
 ### Return type
 

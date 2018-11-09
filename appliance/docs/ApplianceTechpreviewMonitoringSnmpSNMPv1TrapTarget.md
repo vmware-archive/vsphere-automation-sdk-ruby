@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ip** | **String** | SNMP target ip | [optional] 
-**port** | **Integer** | SNMP target port | [optional] 
-**community** | **String** | SNMP target community | [optional] 
+**ip** | **String** | SNMP target ip | 
+**port** | **Integer** | SNMP target port | 
+**community** | **String** | SNMP target community | 
 
 

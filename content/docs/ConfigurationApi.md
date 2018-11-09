@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::ConfigurationApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **update**
-> update(opts)
+> update(content_configuration_update)
 
 Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn't guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
 
@@ -58,13 +58,11 @@ Updates the configuration. The update is incremental. Any {@term field} in the {
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::ConfigurationApi.new
-opts = {
-  content_configuration_update: VSphereAutomation::ContentConfigurationUpdate.new # ContentConfigurationUpdate | 
-}
+content_configuration_update = VSphereAutomation::ContentConfigurationUpdate.new # ContentConfigurationUpdate | 
 
 begin
   #Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn't guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
-  api_instance.update(opts)
+  api_instance.update(content_configuration_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling ConfigurationApi->update: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_configuration_update** | [**ContentConfigurationUpdate**](ContentConfigurationUpdate.md)|  | [optional] 
+ **content_configuration_update** | [**ContentConfigurationUpdate**](ContentConfigurationUpdate.md)|  | 
 
 ### Return type
 

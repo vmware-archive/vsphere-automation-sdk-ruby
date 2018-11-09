@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareCdromUpdateSpec**](VcenterVmHardwareCdromUpdateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareCdromUpdateSpec**](VcenterVmHardwareCdromUpdateSpec.md) |  | 
 
 

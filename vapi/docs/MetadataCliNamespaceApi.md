@@ -1,6 +1,6 @@
 # VSphereAutomation::VAPI::MetadataCliNamespaceApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ No authorization required
 
 
 # **get**
-> VapiMetadataCliNamespaceResult get(opts)
+> VapiMetadataCliNamespaceResult get(vapi_metadata_cli_namespace_get)
 
 Retreives information about a namespace including information about children of that namespace.
 
@@ -59,13 +59,11 @@ Retreives information about a namespace including information about children of 
 require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::MetadataCliNamespaceApi.new
-opts = {
-  vapi_metadata_cli_namespace_get: VSphereAutomation::VapiMetadataCliNamespaceGet.new # VapiMetadataCliNamespaceGet | 
-}
+vapi_metadata_cli_namespace_get = VSphereAutomation::VapiMetadataCliNamespaceGet.new # VapiMetadataCliNamespaceGet | 
 
 begin
   #Retreives information about a namespace including information about children of that namespace.
-  result = api_instance.get(opts)
+  result = api_instance.get(vapi_metadata_cli_namespace_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataCliNamespaceApi->get: #{e}"
@@ -76,7 +74,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vapi_metadata_cli_namespace_get** | [**VapiMetadataCliNamespaceGet**](VapiMetadataCliNamespaceGet.md)|  | [optional] 
+ **vapi_metadata_cli_namespace_get** | [**VapiMetadataCliNamespaceGet**](VapiMetadataCliNamespaceGet.md)|  | 
 
 ### Return type
 

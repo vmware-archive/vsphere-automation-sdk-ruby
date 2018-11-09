@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::LoggingForwardingApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_logging_forwarding_set)
 
 Sets the configuration for forwarding log messages to remote log servers.
 
@@ -59,13 +59,11 @@ Sets the configuration for forwarding log messages to remote log servers.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::LoggingForwardingApi.new
-opts = {
-  appliance_logging_forwarding_set: VSphereAutomation::ApplianceLoggingForwardingSet.new # ApplianceLoggingForwardingSet | 
-}
+appliance_logging_forwarding_set = VSphereAutomation::ApplianceLoggingForwardingSet.new # ApplianceLoggingForwardingSet | 
 
 begin
   #Sets the configuration for forwarding log messages to remote log servers.
-  api_instance.set(opts)
+  api_instance.set(appliance_logging_forwarding_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LoggingForwardingApi->set: #{e}"
 end
@@ -75,7 +73,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_logging_forwarding_set** | [**ApplianceLoggingForwardingSet**](ApplianceLoggingForwardingSet.md)|  | [optional] 
+ **appliance_logging_forwarding_set** | [**ApplianceLoggingForwardingSet**](ApplianceLoggingForwardingSet.md)|  | 
 
 ### Return type
 
@@ -93,7 +91,7 @@ No authorization required
 
 
 # **test**
-> ApplianceLoggingForwardingTestResult test(appliance_logging_forwarding_test)
+> ApplianceLoggingForwardingTestResult test(opts)
 
 Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
 
@@ -103,11 +101,13 @@ Validates the current log forwarding configuration by checking the liveness of t
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::LoggingForwardingApi.new
-appliance_logging_forwarding_test = VSphereAutomation::ApplianceLoggingForwardingTest.new # ApplianceLoggingForwardingTest | 
+opts = {
+  appliance_logging_forwarding_test: VSphereAutomation::ApplianceLoggingForwardingTest.new # ApplianceLoggingForwardingTest | 
+}
 
 begin
   #Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
-  result = api_instance.test(appliance_logging_forwarding_test)
+  result = api_instance.test(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LoggingForwardingApi->test: #{e}"
@@ -118,7 +118,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_logging_forwarding_test** | [**ApplianceLoggingForwardingTest**](ApplianceLoggingForwardingTest.md)|  | 
+ **appliance_logging_forwarding_test** | [**ApplianceLoggingForwardingTest**](ApplianceLoggingForwardingTest.md)|  | [optional] 
 
 ### Return type
 

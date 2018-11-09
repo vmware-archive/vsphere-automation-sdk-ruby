@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::SystemConfigPscRegistrationApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **repoint**
-> repoint(opts)
+> repoint(vcenter_system_config_psc_registration_repoint)
 
 Repoint this vCenter Server appliance to a different external PSC.
 
@@ -58,13 +58,11 @@ Repoint this vCenter Server appliance to a different external PSC.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::SystemConfigPscRegistrationApi.new
-opts = {
-  vcenter_system_config_psc_registration_repoint: VSphereAutomation::VcenterSystemConfigPscRegistrationRepoint.new # VcenterSystemConfigPscRegistrationRepoint | 
-}
+vcenter_system_config_psc_registration_repoint = VSphereAutomation::VcenterSystemConfigPscRegistrationRepoint.new # VcenterSystemConfigPscRegistrationRepoint | 
 
 begin
   #Repoint this vCenter Server appliance to a different external PSC.
-  api_instance.repoint(opts)
+  api_instance.repoint(vcenter_system_config_psc_registration_repoint)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SystemConfigPscRegistrationApi->repoint: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_system_config_psc_registration_repoint** | [**VcenterSystemConfigPscRegistrationRepoint**](VcenterSystemConfigPscRegistrationRepoint.md)|  | [optional] 
+ **vcenter_system_config_psc_registration_repoint** | [**VcenterSystemConfigPscRegistrationRepoint**](VcenterSystemConfigPscRegistrationRepoint.md)|  | 
 
 ### Return type
 

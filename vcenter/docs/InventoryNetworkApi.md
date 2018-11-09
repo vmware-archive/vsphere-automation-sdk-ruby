@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::InventoryNetworkApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **find**
-> VcenterInventoryNetworkFindResult find(opts)
+> VcenterInventoryNetworkFindResult find(vcenter_inventory_network_find)
 
 Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
 
@@ -18,13 +18,11 @@ Returns network information for the specified vCenter Server networks. The key i
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::InventoryNetworkApi.new
-opts = {
-  vcenter_inventory_network_find: VSphereAutomation::VcenterInventoryNetworkFind.new # VcenterInventoryNetworkFind | 
-}
+vcenter_inventory_network_find = VSphereAutomation::VcenterInventoryNetworkFind.new # VcenterInventoryNetworkFind | 
 
 begin
   #Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
-  result = api_instance.find(opts)
+  result = api_instance.find(vcenter_inventory_network_find)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling InventoryNetworkApi->find: #{e}"
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_inventory_network_find** | [**VcenterInventoryNetworkFind**](VcenterInventoryNetworkFind.md)|  | [optional] 
+ **vcenter_inventory_network_find** | [**VcenterInventoryNetworkFind**](VcenterInventoryNetworkFind.md)|  | 
 
 ### Return type
 

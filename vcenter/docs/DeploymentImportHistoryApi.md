@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::DeploymentImportHistoryApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -165,7 +165,7 @@ No authorization required
 
 
 # **start**
-> start(vcenter_deployment_import_history_start)
+> start(opts)
 
 Creates and starts task for importing vCenter historical data.
 
@@ -175,11 +175,13 @@ Creates and starts task for importing vCenter historical data.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentImportHistoryApi.new
-vcenter_deployment_import_history_start = VSphereAutomation::VcenterDeploymentImportHistoryStart.new # VcenterDeploymentImportHistoryStart | 
+opts = {
+  vcenter_deployment_import_history_start: VSphereAutomation::VcenterDeploymentImportHistoryStart.new # VcenterDeploymentImportHistoryStart | 
+}
 
 begin
   #Creates and starts task for importing vCenter historical data.
-  api_instance.start(vcenter_deployment_import_history_start)
+  api_instance.start(opts)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentImportHistoryApi->start: #{e}"
 end
@@ -189,7 +191,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_import_history_start** | [**VcenterDeploymentImportHistoryStart**](VcenterDeploymentImportHistoryStart.md)|  | 
+ **vcenter_deployment_import_history_start** | [**VcenterDeploymentImportHistoryStart**](VcenterDeploymentImportHistoryStart.md)|  | [optional] 
 
 ### Return type
 

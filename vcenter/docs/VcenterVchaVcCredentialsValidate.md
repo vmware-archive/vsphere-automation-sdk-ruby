@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVchaCredentialsSpec**](VcenterVchaCredentialsSpec.md) |  | [optional] 
+**spec** | [**VcenterVchaCredentialsSpec**](VcenterVchaCredentialsSpec.md) |  | 
 
 

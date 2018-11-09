@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryItemFileApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> ContentLibraryItemFileResult get(library_item_id, opts)
+> ContentLibraryItemFileResult get(library_item_id, content_library_item_file_get)
 
 Retrieves the information for a single file in a library item by its name.
 
@@ -20,13 +20,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemFileApi.new
 library_item_id = 'library_item_id_example' # String | Identifier of the library item whose file information should be returned.
-opts = {
-  content_library_item_file_get: VSphereAutomation::ContentLibraryItemFileGet.new # ContentLibraryItemFileGet | 
-}
+content_library_item_file_get = VSphereAutomation::ContentLibraryItemFileGet.new # ContentLibraryItemFileGet | 
 
 begin
   #Retrieves the information for a single file in a library item by its name.
-  result = api_instance.get(library_item_id, opts)
+  result = api_instance.get(library_item_id, content_library_item_file_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemFileApi->get: #{e}"
@@ -38,7 +36,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **String**| Identifier of the library item whose file information should be returned. | 
- **content_library_item_file_get** | [**ContentLibraryItemFileGet**](ContentLibraryItemFileGet.md)|  | [optional] 
+ **content_library_item_file_get** | [**ContentLibraryItemFileGet**](ContentLibraryItemFileGet.md)|  | 
 
 ### Return type
 
@@ -56,7 +54,7 @@ No authorization required
 
 
 # **list**
-> ContentLibraryItemFileListResult list
+> ContentLibraryItemFileListResult list(library_item_id)
 
 Lists all of the files that are stored within a given library item.
 
@@ -66,10 +64,11 @@ Lists all of the files that are stored within a given library item.
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemFileApi.new
+library_item_id = 'library_item_id_example' # String | Identifier of the library item whose files should be listed.
 
 begin
   #Lists all of the files that are stored within a given library item.
-  result = api_instance.list
+  result = api_instance.list(library_item_id)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemFileApi->list: #{e}"
@@ -77,7 +76,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **library_item_id** | **String**| Identifier of the library item whose files should be listed. | 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::ServicesServiceApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -221,7 +221,7 @@ No authorization required
 
 
 # **update**
-> update(service, opts)
+> update(service, vcenter_services_service_update)
 
 Updates the properties of a service.
 
@@ -232,13 +232,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::ServicesServiceApi.new
 service = 'service_example' # String | identifier of the service whose properties are being updated.
-opts = {
-  vcenter_services_service_update: VSphereAutomation::VcenterServicesServiceUpdate.new # VcenterServicesServiceUpdate | 
-}
+vcenter_services_service_update = VSphereAutomation::VcenterServicesServiceUpdate.new # VcenterServicesServiceUpdate | 
 
 begin
   #Updates the properties of a service.
-  api_instance.update(service, opts)
+  api_instance.update(service, vcenter_services_service_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling ServicesServiceApi->update: #{e}"
 end
@@ -249,7 +247,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **String**| identifier of the service whose properties are being updated. | 
- **vcenter_services_service_update** | [**VcenterServicesServiceUpdate**](VcenterServicesServiceUpdate.md)|  | [optional] 
+ **vcenter_services_service_update** | [**VcenterServicesServiceUpdate**](VcenterServicesServiceUpdate.md)|  | 
 
 ### Return type
 

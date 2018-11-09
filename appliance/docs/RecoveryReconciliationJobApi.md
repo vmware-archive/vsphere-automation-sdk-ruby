@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::RecoveryReconciliationJobApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> ApplianceRecoveryReconciliationJobCreateResult create(opts)
+> ApplianceRecoveryReconciliationJobCreateResult create(appliance_recovery_reconciliation_job_create)
 
 Initiate reconciliation.
 
@@ -19,13 +19,11 @@ Initiate reconciliation.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryReconciliationJobApi.new
-opts = {
-  appliance_recovery_reconciliation_job_create: VSphereAutomation::ApplianceRecoveryReconciliationJobCreate.new # ApplianceRecoveryReconciliationJobCreate | 
-}
+appliance_recovery_reconciliation_job_create = VSphereAutomation::ApplianceRecoveryReconciliationJobCreate.new # ApplianceRecoveryReconciliationJobCreate | 
 
 begin
   #Initiate reconciliation.
-  result = api_instance.create(opts)
+  result = api_instance.create(appliance_recovery_reconciliation_job_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryReconciliationJobApi->create: #{e}"
@@ -36,7 +34,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_recovery_reconciliation_job_create** | [**ApplianceRecoveryReconciliationJobCreate**](ApplianceRecoveryReconciliationJobCreate.md)|  | [optional] 
+ **appliance_recovery_reconciliation_job_create** | [**ApplianceRecoveryReconciliationJobCreate**](ApplianceRecoveryReconciliationJobCreate.md)|  | 
 
 ### Return type
 

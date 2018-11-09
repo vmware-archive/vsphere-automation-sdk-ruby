@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterSystemConfigDeploymentTypeReconfigureSpec**](VcenterSystemConfigDeploymentTypeReconfigureSpec.md) |  | [optional] 
+**spec** | [**VcenterSystemConfigDeploymentTypeReconfigureSpec**](VcenterSystemConfigDeploymentTypeReconfigureSpec.md) |  | 
 
 

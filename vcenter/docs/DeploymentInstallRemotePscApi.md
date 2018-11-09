@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::DeploymentInstallRemotePscApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **check**
-> VcenterDeploymentInstallRemotePscCheckResult check(opts)
+> VcenterDeploymentInstallRemotePscCheckResult check(vcenter_deployment_install_remote_psc_check)
 
 Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
 
@@ -18,13 +18,11 @@ Checks whether the remote PSC is reachable and the deployed vCenter Server can b
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallRemotePscApi.new
-opts = {
-  vcenter_deployment_install_remote_psc_check: VSphereAutomation::VcenterDeploymentInstallRemotePscCheck.new # VcenterDeploymentInstallRemotePscCheck | 
-}
+vcenter_deployment_install_remote_psc_check = VSphereAutomation::VcenterDeploymentInstallRemotePscCheck.new # VcenterDeploymentInstallRemotePscCheck | 
 
 begin
   #Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
-  result = api_instance.check(opts)
+  result = api_instance.check(vcenter_deployment_install_remote_psc_check)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallRemotePscApi->check: #{e}"
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_install_remote_psc_check** | [**VcenterDeploymentInstallRemotePscCheck**](VcenterDeploymentInstallRemotePscCheck.md)|  | [optional] 
+ **vcenter_deployment_install_remote_psc_check** | [**VcenterDeploymentInstallRemotePscCheck**](VcenterDeploymentInstallRemotePscCheck.md)|  | 
 
 ### Return type
 

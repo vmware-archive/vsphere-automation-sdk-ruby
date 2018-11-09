@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VchaClusterApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **deploytask**
-> VcenterVchaClusterDeploytaskResult deploytask(opts)
+> VcenterVchaClusterDeploytaskResult deploytask(vcenter_vcha_cluster_deploytask)
 
 Prepares, clones, and configures a VCHA cluster.
 
@@ -21,13 +21,11 @@ Prepares, clones, and configures a VCHA cluster.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-opts = {
-  vcenter_vcha_cluster_deploytask: VSphereAutomation::VcenterVchaClusterDeploytask.new # VcenterVchaClusterDeploytask | 
-}
+vcenter_vcha_cluster_deploytask = VSphereAutomation::VcenterVchaClusterDeploytask.new # VcenterVchaClusterDeploytask | 
 
 begin
   #Prepares, clones, and configures a VCHA cluster.
-  result = api_instance.deploytask(opts)
+  result = api_instance.deploytask(vcenter_vcha_cluster_deploytask)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->deploytask: #{e}"
@@ -38,7 +36,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_deploytask** | [**VcenterVchaClusterDeploytask**](VcenterVchaClusterDeploytask.md)|  | [optional] 
+ **vcenter_vcha_cluster_deploytask** | [**VcenterVchaClusterDeploytask**](VcenterVchaClusterDeploytask.md)|  | 
 
 ### Return type
 
@@ -56,7 +54,7 @@ No authorization required
 
 
 # **failovertask**
-> VcenterVchaClusterFailovertaskResult failovertask(opts)
+> VcenterVchaClusterFailovertaskResult failovertask(vcenter_vcha_cluster_failovertask)
 
 Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
 
@@ -66,13 +64,11 @@ Initiates failover from the active vCenter node to the passive node.   For force
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-opts = {
-  vcenter_vcha_cluster_failovertask: VSphereAutomation::VcenterVchaClusterFailovertask.new # VcenterVchaClusterFailovertask | 
-}
+vcenter_vcha_cluster_failovertask = VSphereAutomation::VcenterVchaClusterFailovertask.new # VcenterVchaClusterFailovertask | 
 
 begin
   #Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
-  result = api_instance.failovertask(opts)
+  result = api_instance.failovertask(vcenter_vcha_cluster_failovertask)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->failovertask: #{e}"
@@ -83,7 +79,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_failovertask** | [**VcenterVchaClusterFailovertask**](VcenterVchaClusterFailovertask.md)|  | [optional] 
+ **vcenter_vcha_cluster_failovertask** | [**VcenterVchaClusterFailovertask**](VcenterVchaClusterFailovertask.md)|  | 
 
 ### Return type
 
@@ -101,7 +97,7 @@ No authorization required
 
 
 # **get**
-> VcenterVchaClusterResult get(vcenter_vcha_cluster_get)
+> VcenterVchaClusterResult get(opts)
 
 Retrieves the status of a VCHA cluster.
 
@@ -111,11 +107,13 @@ Retrieves the status of a VCHA cluster.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-vcenter_vcha_cluster_get = VSphereAutomation::VcenterVchaClusterGet.new # VcenterVchaClusterGet | 
+opts = {
+  vcenter_vcha_cluster_get: VSphereAutomation::VcenterVchaClusterGet.new # VcenterVchaClusterGet | 
+}
 
 begin
   #Retrieves the status of a VCHA cluster.
-  result = api_instance.get(vcenter_vcha_cluster_get)
+  result = api_instance.get(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->get: #{e}"
@@ -126,7 +124,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_get** | [**VcenterVchaClusterGet**](VcenterVchaClusterGet.md)|  | 
+ **vcenter_vcha_cluster_get** | [**VcenterVchaClusterGet**](VcenterVchaClusterGet.md)|  | [optional] 
 
 ### Return type
 
@@ -144,7 +142,7 @@ No authorization required
 
 
 # **undeploytask**
-> VcenterVchaClusterUndeploytaskResult undeploytask(opts)
+> VcenterVchaClusterUndeploytaskResult undeploytask(vcenter_vcha_cluster_undeploytask)
 
 Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
 
@@ -154,13 +152,11 @@ Destroys the VCHA cluster and removes all VCHA specific information from the VCV
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-opts = {
-  vcenter_vcha_cluster_undeploytask: VSphereAutomation::VcenterVchaClusterUndeploytask.new # VcenterVchaClusterUndeploytask | 
-}
+vcenter_vcha_cluster_undeploytask = VSphereAutomation::VcenterVchaClusterUndeploytask.new # VcenterVchaClusterUndeploytask | 
 
 begin
   #Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
-  result = api_instance.undeploytask(opts)
+  result = api_instance.undeploytask(vcenter_vcha_cluster_undeploytask)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->undeploytask: #{e}"
@@ -171,7 +167,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_undeploytask** | [**VcenterVchaClusterUndeploytask**](VcenterVchaClusterUndeploytask.md)|  | [optional] 
+ **vcenter_vcha_cluster_undeploytask** | [**VcenterVchaClusterUndeploytask**](VcenterVchaClusterUndeploytask.md)|  | 
 
 ### Return type
 

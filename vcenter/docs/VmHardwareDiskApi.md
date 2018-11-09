@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareDiskApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterVmHardwareDiskCreateResult create(vm, opts)
+> VcenterVmHardwareDiskCreateResult create(vm, vcenter_vm_hardware_disk_create)
 
 Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
 
@@ -23,13 +23,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareDiskApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_disk_create: VSphereAutomation::VcenterVmHardwareDiskCreate.new # VcenterVmHardwareDiskCreate | 
-}
+vcenter_vm_hardware_disk_create = VSphereAutomation::VcenterVmHardwareDiskCreate.new # VcenterVmHardwareDiskCreate | 
 
 begin
   #Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_disk_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareDiskApi->create: #{e}"
@@ -41,7 +39,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_disk_create** | [**VcenterVmHardwareDiskCreate**](VcenterVmHardwareDiskCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_disk_create** | [**VcenterVmHardwareDiskCreate**](VcenterVmHardwareDiskCreate.md)|  | 
 
 ### Return type
 
@@ -191,7 +189,7 @@ No authorization required
 
 
 # **update**
-> update(vm, disk, opts)
+> update(vm, disk, vcenter_vm_hardware_disk_update)
 
 Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
 
@@ -203,13 +201,11 @@ require 'vsphere-automation-vcenter'
 api_instance = VSphereAutomation::VCenter::VmHardwareDiskApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 disk = 'disk_example' # String | Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
-opts = {
-  vcenter_vm_hardware_disk_update: VSphereAutomation::VcenterVmHardwareDiskUpdate.new # VcenterVmHardwareDiskUpdate | 
-}
+vcenter_vm_hardware_disk_update = VSphereAutomation::VcenterVmHardwareDiskUpdate.new # VcenterVmHardwareDiskUpdate | 
 
 begin
   #Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
-  api_instance.update(vm, disk, opts)
+  api_instance.update(vm, disk, vcenter_vm_hardware_disk_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareDiskApi->update: #{e}"
 end
@@ -221,7 +217,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **disk** | **String**| Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk. | 
- **vcenter_vm_hardware_disk_update** | [**VcenterVmHardwareDiskUpdate**](VcenterVmHardwareDiskUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_disk_update** | [**VcenterVmHardwareDiskUpdate**](VcenterVmHardwareDiskUpdate.md)|  | 
 
 ### Return type
 

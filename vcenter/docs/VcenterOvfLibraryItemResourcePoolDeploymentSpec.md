@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | Name assigned to the deployed target virtual machine or virtual appliance. | [optional] 
 **annotation** | **String** | Annotation assigned to the deployed target virtual machine or virtual appliance. | [optional] 
-**accept_all_eula** | **BOOLEAN** | Whether to accept all End User License Agreements. See {@link OvfSummary#eulas}. | [optional] 
+**accept_all_eula** | **BOOLEAN** | Whether to accept all End User License Agreements. See {@link OvfSummary#eulas}. | 
 **network_mappings** | **Array&lt;Object&gt;** | Specification of the target network to use for sections of type ovf:NetworkSection in the OVF descriptor. The key in the {@term map} is the section identifier of the ovf:NetworkSection section in the OVF descriptor and the value is the target network to be used for deployment. | [optional] 
 **storage_mappings** | **Array&lt;Object&gt;** | Specification of the target storage to use for sections of type vmw:StorageGroupSection in the OVF descriptor. The key in the {@term map} is the section identifier of the ovf:StorageGroupSection section in the OVF descriptor and the value is the target storage specification to be used for deployment. See {@link StorageGroupMapping}. | [optional] 
 **storage_provisioning** | [**VcenterOvfDiskProvisioningType**](VcenterOvfDiskProvisioningType.md) |  | [optional] 

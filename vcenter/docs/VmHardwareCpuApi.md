@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareCpuApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -52,7 +52,7 @@ No authorization required
 
 
 # **update**
-> update(vm, opts)
+> update(vm, vcenter_vm_hardware_cpu_update)
 
 Updates the CPU-related settings of a virtual machine.
 
@@ -63,13 +63,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCpuApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_cpu_update: VSphereAutomation::VcenterVmHardwareCpuUpdate.new # VcenterVmHardwareCpuUpdate | 
-}
+vcenter_vm_hardware_cpu_update = VSphereAutomation::VcenterVmHardwareCpuUpdate.new # VcenterVmHardwareCpuUpdate | 
 
 begin
   #Updates the CPU-related settings of a virtual machine.
-  api_instance.update(vm, opts)
+  api_instance.update(vm, vcenter_vm_hardware_cpu_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareCpuApi->update: #{e}"
 end
@@ -80,7 +78,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_cpu_update** | [**VcenterVmHardwareCpuUpdate**](VcenterVmHardwareCpuUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_cpu_update** | [**VcenterVmHardwareCpuUpdate**](VcenterVmHardwareCpuUpdate.md)|  | 
 
 ### Return type
 

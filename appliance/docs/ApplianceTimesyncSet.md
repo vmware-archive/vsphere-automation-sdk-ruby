@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mode** | [**ApplianceTimesyncTimeSyncMode**](ApplianceTimesyncTimeSyncMode.md) |  | [optional] 
+**mode** | [**ApplianceTimesyncTimeSyncMode**](ApplianceTimesyncTimeSyncMode.md) |  | 
 
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterDeploymentStandalonePscSpec**](VcenterDeploymentStandalonePscSpec.md) |  | [optional] 
+**spec** | [**VcenterDeploymentStandalonePscSpec**](VcenterDeploymentStandalonePscSpec.md) |  | 
 
 

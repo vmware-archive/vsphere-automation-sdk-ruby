@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterDatacenterCreateSpec**](VcenterDatacenterCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterDatacenterCreateSpec**](VcenterDatacenterCreateSpec.md) |  | 
 
 

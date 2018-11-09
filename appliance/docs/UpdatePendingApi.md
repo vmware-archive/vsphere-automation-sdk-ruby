@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::UpdatePendingApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -57,7 +57,7 @@ No authorization required
 
 
 # **install**
-> install(version, opts)
+> install(version, appliance_update_pending_install)
 
 Starts operation of installing the appliance update. Will fail is the update is not staged
 
@@ -68,13 +68,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
-opts = {
-  appliance_update_pending_install: VSphereAutomation::ApplianceUpdatePendingInstall.new # ApplianceUpdatePendingInstall | 
-}
+appliance_update_pending_install = VSphereAutomation::ApplianceUpdatePendingInstall.new # ApplianceUpdatePendingInstall | 
 
 begin
   #Starts operation of installing the appliance update. Will fail is the update is not staged
-  api_instance.install(version, opts)
+  api_instance.install(version, appliance_update_pending_install)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->install: #{e}"
 end
@@ -85,7 +83,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
- **appliance_update_pending_install** | [**ApplianceUpdatePendingInstall**](ApplianceUpdatePendingInstall.md)|  | [optional] 
+ **appliance_update_pending_install** | [**ApplianceUpdatePendingInstall**](ApplianceUpdatePendingInstall.md)|  | 
 
 ### Return type
 
@@ -103,7 +101,7 @@ No authorization required
 
 
 # **list**
-> ApplianceUpdatePendingListResult list
+> ApplianceUpdatePendingListResult list(source_type, opts)
 
 Checks if new updates are available.
 
@@ -113,10 +111,14 @@ Checks if new updates are available.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
+source_type = nil # Object | type of the source
+opts = {
+  url: 'url_example' # String | specific URL to check at
+}
 
 begin
   #Checks if new updates are available.
-  result = api_instance.list
+  result = api_instance.list(source_type, opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->list: #{e}"
@@ -124,7 +126,11 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_type** | [**Object**](.md)| type of the source | 
+ **url** | **String**| specific URL to check at | [optional] 
 
 ### Return type
 
@@ -227,7 +233,7 @@ No authorization required
 
 
 # **stage_and_install**
-> stage_and_install(version, opts)
+> stage_and_install(version, appliance_update_pending_stage_and_install)
 
 Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
 
@@ -238,13 +244,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
-opts = {
-  appliance_update_pending_stage_and_install: VSphereAutomation::ApplianceUpdatePendingStageAndInstall.new # ApplianceUpdatePendingStageAndInstall | 
-}
+appliance_update_pending_stage_and_install = VSphereAutomation::ApplianceUpdatePendingStageAndInstall.new # ApplianceUpdatePendingStageAndInstall | 
 
 begin
   #Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
-  api_instance.stage_and_install(version, opts)
+  api_instance.stage_and_install(version, appliance_update_pending_stage_and_install)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->stage_and_install: #{e}"
 end
@@ -255,7 +259,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
- **appliance_update_pending_stage_and_install** | [**ApplianceUpdatePendingStageAndInstall**](ApplianceUpdatePendingStageAndInstall.md)|  | [optional] 
+ **appliance_update_pending_stage_and_install** | [**ApplianceUpdatePendingStageAndInstall**](ApplianceUpdatePendingStageAndInstall.md)|  | 
 
 ### Return type
 
@@ -273,7 +277,7 @@ No authorization required
 
 
 # **validate**
-> ApplianceUpdatePendingValidateResult validate(version, opts)
+> ApplianceUpdatePendingValidateResult validate(version, appliance_update_pending_validate)
 
 Validates the user provided data before the update installation.
 
@@ -284,13 +288,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
-opts = {
-  appliance_update_pending_validate: VSphereAutomation::ApplianceUpdatePendingValidate.new # ApplianceUpdatePendingValidate | 
-}
+appliance_update_pending_validate = VSphereAutomation::ApplianceUpdatePendingValidate.new # ApplianceUpdatePendingValidate | 
 
 begin
   #Validates the user provided data before the update installation.
-  result = api_instance.validate(version, opts)
+  result = api_instance.validate(version, appliance_update_pending_validate)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->validate: #{e}"
@@ -302,7 +304,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
- **appliance_update_pending_validate** | [**ApplianceUpdatePendingValidate**](ApplianceUpdatePendingValidate.md)|  | [optional] 
+ **appliance_update_pending_validate** | [**ApplianceUpdatePendingValidate**](ApplianceUpdatePendingValidate.md)|  | 
 
 ### Return type
 

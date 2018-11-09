@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -53,7 +53,7 @@ No authorization required
 
 
 # **update**
-> update(vm, opts)
+> update(vm, vcenter_vm_hardware_update)
 
 Updates the virtual hardware settings of a virtual machine.
 
@@ -64,13 +64,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_update: VSphereAutomation::VcenterVmHardwareUpdate.new # VcenterVmHardwareUpdate | 
-}
+vcenter_vm_hardware_update = VSphereAutomation::VcenterVmHardwareUpdate.new # VcenterVmHardwareUpdate | 
 
 begin
   #Updates the virtual hardware settings of a virtual machine.
-  api_instance.update(vm, opts)
+  api_instance.update(vm, vcenter_vm_hardware_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareApi->update: #{e}"
 end
@@ -81,7 +79,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_update** | [**VcenterVmHardwareUpdate**](VcenterVmHardwareUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_update** | [**VcenterVmHardwareUpdate**](VcenterVmHardwareUpdate.md)|  | 
 
 ### Return type
 
@@ -99,7 +97,7 @@ No authorization required
 
 
 # **upgrade**
-> upgrade(vm, vcenter_vm_hardware_upgrade)
+> upgrade(vm, opts)
 
 Upgrades the virtual machine to a newer virtual hardware version.
 
@@ -110,11 +108,13 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_hardware_upgrade = VSphereAutomation::VcenterVmHardwareUpgrade.new # VcenterVmHardwareUpgrade | 
+opts = {
+  vcenter_vm_hardware_upgrade: VSphereAutomation::VcenterVmHardwareUpgrade.new # VcenterVmHardwareUpgrade | 
+}
 
 begin
   #Upgrades the virtual machine to a newer virtual hardware version.
-  api_instance.upgrade(vm, vcenter_vm_hardware_upgrade)
+  api_instance.upgrade(vm, opts)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareApi->upgrade: #{e}"
 end
@@ -125,7 +125,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_upgrade** | [**VcenterVmHardwareUpgrade**](VcenterVmHardwareUpgrade.md)|  | 
+ **vcenter_vm_hardware_upgrade** | [**VcenterVmHardwareUpgrade**](VcenterVmHardwareUpgrade.md)|  | [optional] 
 
 ### Return type
 

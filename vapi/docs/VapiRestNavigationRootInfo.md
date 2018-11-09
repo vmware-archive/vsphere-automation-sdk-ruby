@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**components** | [**VapiRestNavigationLink**](VapiRestNavigationLink.md) |  | [optional] 
-**resources** | [**VapiRestNavigationLink**](VapiRestNavigationLink.md) |  | [optional] 
+**components** | [**VapiRestNavigationLink**](VapiRestNavigationLink.md) |  | 
+**resources** | [**VapiRestNavigationLink**](VapiRestNavigationLink.md) |  | 
 
 

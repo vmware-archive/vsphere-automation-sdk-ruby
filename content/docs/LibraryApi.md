@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **find**
-> ContentLibraryFindResult find(opts)
+> ContentLibraryFindResult find(content_library_find)
 
 Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
 
@@ -21,13 +21,11 @@ Returns a list of all the visible (as determined by authorization policy) librar
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryApi.new
-opts = {
-  content_library_find: VSphereAutomation::ContentLibraryFind.new # ContentLibraryFind | 
-}
+content_library_find = VSphereAutomation::ContentLibraryFind.new # ContentLibraryFind | 
 
 begin
   #Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-  result = api_instance.find(opts)
+  result = api_instance.find(content_library_find)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryApi->find: #{e}"
@@ -38,7 +36,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_library_find** | [**ContentLibraryFind**](ContentLibraryFind.md)|  | [optional] 
+ **content_library_find** | [**ContentLibraryFind**](ContentLibraryFind.md)|  | 
 
 ### Return type
 
@@ -138,7 +136,7 @@ No authorization required
 
 
 # **update**
-> update(library_id, opts)
+> update(library_id, content_library_update)
 
 Updates the properties of a library. <p> This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
 
@@ -149,13 +147,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the library to update.
-opts = {
-  content_library_update: VSphereAutomation::ContentLibraryUpdate.new # ContentLibraryUpdate | 
-}
+content_library_update = VSphereAutomation::ContentLibraryUpdate.new # ContentLibraryUpdate | 
 
 begin
   #Updates the properties of a library. <p> This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
-  api_instance.update(library_id, opts)
+  api_instance.update(library_id, content_library_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryApi->update: #{e}"
 end
@@ -166,7 +162,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_id** | **String**| Identifier of the library to update. | 
- **content_library_update** | [**ContentLibraryUpdate**](ContentLibraryUpdate.md)|  | [optional] 
+ **content_library_update** | [**ContentLibraryUpdate**](ContentLibraryUpdate.md)|  | 
 
 ### Return type
 

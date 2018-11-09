@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareFloppyCreateSpec**](VcenterVmHardwareFloppyCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareFloppyCreateSpec**](VcenterVmHardwareFloppyCreateSpec.md) |  | 
 
 

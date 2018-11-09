@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of the file. | [optional] 
-**error_message** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | [optional] 
+**name** | **String** | The name of the file. | 
+**error_message** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | 
 
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::VAPI::RestNavigationOptionsApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> VapiRestNavigationOptionsResult get(opts)
+> VapiRestNavigationOptionsResult get(vapi_rest_navigation_options_get)
 
 Retrieves operations for specific URL.
 
@@ -18,13 +18,11 @@ Retrieves operations for specific URL.
 require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::RestNavigationOptionsApi.new
-opts = {
-  vapi_rest_navigation_options_get: VSphereAutomation::VapiRestNavigationOptionsGet.new # VapiRestNavigationOptionsGet | 
-}
+vapi_rest_navigation_options_get = VSphereAutomation::VapiRestNavigationOptionsGet.new # VapiRestNavigationOptionsGet | 
 
 begin
   #Retrieves operations for specific URL.
-  result = api_instance.get(opts)
+  result = api_instance.get(vapi_rest_navigation_options_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RestNavigationOptionsApi->get: #{e}"
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vapi_rest_navigation_options_get** | [**VapiRestNavigationOptionsGet**](VapiRestNavigationOptionsGet.md)|  | [optional] 
+ **vapi_rest_navigation_options_get** | [**VapiRestNavigationOptionsGet**](VapiRestNavigationOptionsGet.md)|  | 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::RecoveryRestoreApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **validate**
-> ApplianceRecoveryRestoreValidateResult validate(opts)
+> ApplianceRecoveryRestoreValidateResult validate(appliance_recovery_restore_validate)
 
 Get metadata before restore
 
@@ -18,13 +18,11 @@ Get metadata before restore
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryRestoreApi.new
-opts = {
-  appliance_recovery_restore_validate: VSphereAutomation::ApplianceRecoveryRestoreValidate.new # ApplianceRecoveryRestoreValidate | 
-}
+appliance_recovery_restore_validate = VSphereAutomation::ApplianceRecoveryRestoreValidate.new # ApplianceRecoveryRestoreValidate | 
 
 begin
   #Get metadata before restore
-  result = api_instance.validate(opts)
+  result = api_instance.validate(appliance_recovery_restore_validate)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryRestoreApi->validate: #{e}"
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_recovery_restore_validate** | [**ApplianceRecoveryRestoreValidate**](ApplianceRecoveryRestoreValidate.md)|  | [optional] 
+ **appliance_recovery_restore_validate** | [**ApplianceRecoveryRestoreValidate**](ApplianceRecoveryRestoreValidate.md)|  | 
 
 ### Return type
 

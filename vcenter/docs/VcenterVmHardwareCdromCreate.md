@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareCdromCreateSpec**](VcenterVmHardwareCdromCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareCdromCreateSpec**](VcenterVmHardwareCdromCreateSpec.md) |  | 
 
 

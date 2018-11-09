@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareAdapterScsiUpdateSpec**](VcenterVmHardwareAdapterScsiUpdateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareAdapterScsiUpdateSpec**](VcenterVmHardwareAdapterScsiUpdateSpec.md) |  | 
 
 

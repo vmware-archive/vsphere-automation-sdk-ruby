@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryItemDownloadsessionFileApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> ContentLibraryItemDownloadsessionFileResult get(download_session_id, opts)
+> ContentLibraryItemDownloadsessionFileResult get(download_session_id, content_library_item_downloadsession_file_get)
 
 Retrieves file download information for a specific file.
 
@@ -21,13 +21,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadsessionFileApi.new
 download_session_id = 'download_session_id_example' # String | Identifier of the download session.
-opts = {
-  content_library_item_downloadsession_file_get: VSphereAutomation::ContentLibraryItemDownloadsessionFileGet.new # ContentLibraryItemDownloadsessionFileGet | 
-}
+content_library_item_downloadsession_file_get = VSphereAutomation::ContentLibraryItemDownloadsessionFileGet.new # ContentLibraryItemDownloadsessionFileGet | 
 
 begin
   #Retrieves file download information for a specific file.
-  result = api_instance.get(download_session_id, opts)
+  result = api_instance.get(download_session_id, content_library_item_downloadsession_file_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadsessionFileApi->get: #{e}"
@@ -39,7 +37,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **download_session_id** | **String**| Identifier of the download session. | 
- **content_library_item_downloadsession_file_get** | [**ContentLibraryItemDownloadsessionFileGet**](ContentLibraryItemDownloadsessionFileGet.md)|  | [optional] 
+ **content_library_item_downloadsession_file_get** | [**ContentLibraryItemDownloadsessionFileGet**](ContentLibraryItemDownloadsessionFileGet.md)|  | 
 
 ### Return type
 
@@ -57,7 +55,7 @@ No authorization required
 
 
 # **list**
-> ContentLibraryItemDownloadsessionFileListResult list
+> ContentLibraryItemDownloadsessionFileListResult list(download_session_id)
 
 Lists the information of all the files in the library item associated with the download session.
 
@@ -67,10 +65,11 @@ Lists the information of all the files in the library item associated with the d
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadsessionFileApi.new
+download_session_id = 'download_session_id_example' # String | Identifier of the download session.
 
 begin
   #Lists the information of all the files in the library item associated with the download session.
-  result = api_instance.list
+  result = api_instance.list(download_session_id)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadsessionFileApi->list: #{e}"
@@ -78,7 +77,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **download_session_id** | **String**| Identifier of the download session. | 
 
 ### Return type
 
@@ -96,7 +98,7 @@ No authorization required
 
 
 # **prepare**
-> ContentLibraryItemDownloadsessionFilePrepareResult prepare(download_session_id, opts)
+> ContentLibraryItemDownloadsessionFilePrepareResult prepare(download_session_id, content_library_item_downloadsession_file_prepare)
 
 Requests a file to be prepared for download.
 
@@ -107,13 +109,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadsessionFileApi.new
 download_session_id = 'download_session_id_example' # String | Identifier of the download session.
-opts = {
-  content_library_item_downloadsession_file_prepare: VSphereAutomation::ContentLibraryItemDownloadsessionFilePrepare.new # ContentLibraryItemDownloadsessionFilePrepare | 
-}
+content_library_item_downloadsession_file_prepare = VSphereAutomation::ContentLibraryItemDownloadsessionFilePrepare.new # ContentLibraryItemDownloadsessionFilePrepare | 
 
 begin
   #Requests a file to be prepared for download.
-  result = api_instance.prepare(download_session_id, opts)
+  result = api_instance.prepare(download_session_id, content_library_item_downloadsession_file_prepare)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadsessionFileApi->prepare: #{e}"
@@ -125,7 +125,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **download_session_id** | **String**| Identifier of the download session. | 
- **content_library_item_downloadsession_file_prepare** | [**ContentLibraryItemDownloadsessionFilePrepare**](ContentLibraryItemDownloadsessionFilePrepare.md)|  | [optional] 
+ **content_library_item_downloadsession_file_prepare** | [**ContentLibraryItemDownloadsessionFilePrepare**](ContentLibraryItemDownloadsessionFilePrepare.md)|  | 
 
 ### Return type
 

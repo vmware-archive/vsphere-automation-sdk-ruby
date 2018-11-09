@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Type of the vCenter Server network. | [optional] 
+**type** | **String** | Type of the vCenter Server network. | 
 
 

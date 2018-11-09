@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**VcenterVmHardwareEthernetBackingType**](VcenterVmHardwareEthernetBackingType.md) |  | [optional] 
+**type** | [**VcenterVmHardwareEthernetBackingType**](VcenterVmHardwareEthernetBackingType.md) |  | 
 **network** | **String** | Identifier of the network backing the virtual Ethernet adapter. If unset, the identifier of the network backing could not be determined. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network. | [optional] 
 **network_name** | **String** | Name of the standard portgroup backing the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is STANDARD_PORTGROUP. | [optional] 
 **host_device** | **String** | Name of the device backing the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is HOST_DEVICE. | [optional] 

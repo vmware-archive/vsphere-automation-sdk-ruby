@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VchaClusterActiveApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> VcenterVchaClusterActiveResult get(vcenter_vcha_cluster_active_get)
+> VcenterVchaClusterActiveResult get(opts)
 
 Retrieves information about the active node of a VCHA cluster.
 
@@ -18,11 +18,13 @@ Retrieves information about the active node of a VCHA cluster.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterActiveApi.new
-vcenter_vcha_cluster_active_get = VSphereAutomation::VcenterVchaClusterActiveGet.new # VcenterVchaClusterActiveGet | 
+opts = {
+  vcenter_vcha_cluster_active_get: VSphereAutomation::VcenterVchaClusterActiveGet.new # VcenterVchaClusterActiveGet | 
+}
 
 begin
   #Retrieves information about the active node of a VCHA cluster.
-  result = api_instance.get(vcenter_vcha_cluster_active_get)
+  result = api_instance.get(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterActiveApi->get: #{e}"
@@ -33,7 +35,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_active_get** | [**VcenterVchaClusterActiveGet**](VcenterVchaClusterActiveGet.md)|  | 
+ **vcenter_vcha_cluster_active_get** | [**VcenterVchaClusterActiveGet**](VcenterVchaClusterActiveGet.md)|  | [optional] 
 
 ### Return type
 

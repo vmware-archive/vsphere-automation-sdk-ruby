@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NetworkingFirewallInboundApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_networking_firewall_inbound_set)
 
 Set the ordered list of firewall rules to allow or deny traffic from one or more incoming IP addresses. This overwrites the existing firewall rules and creates a new rule list. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. For example, the list of rules can be as follows: <ol> <li> \"address\": \"10.112.0.1\", \"prefix\": 0, \"interface_name\": \"*\",\"policy\": \"REJECT\"<br> \"address\": \"10.112.0.1\", \"prefix\": 0, \"interface_name\": \"nic0\",\"policy\": \"ACCEPT\"<br> </li> </ol> In the above example, the first rule drops all packets originating from 10.112.0.1 and<br> the second rule accepts all packets originating from 10.112.0.1 only on nic0. In effect, the second rule is always ignored which is not desired, hence the order has to be swapped. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
 
@@ -58,13 +58,11 @@ Set the ordered list of firewall rules to allow or deny traffic from one or more
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingFirewallInboundApi.new
-opts = {
-  appliance_networking_firewall_inbound_set: VSphereAutomation::ApplianceNetworkingFirewallInboundSet.new # ApplianceNetworkingFirewallInboundSet | 
-}
+appliance_networking_firewall_inbound_set = VSphereAutomation::ApplianceNetworkingFirewallInboundSet.new # ApplianceNetworkingFirewallInboundSet | 
 
 begin
   #Set the ordered list of firewall rules to allow or deny traffic from one or more incoming IP addresses. This overwrites the existing firewall rules and creates a new rule list. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. For example, the list of rules can be as follows: <ol> <li> \"address\": \"10.112.0.1\", \"prefix\": 0, \"interface_name\": \"*\",\"policy\": \"REJECT\"<br> \"address\": \"10.112.0.1\", \"prefix\": 0, \"interface_name\": \"nic0\",\"policy\": \"ACCEPT\"<br> </li> </ol> In the above example, the first rule drops all packets originating from 10.112.0.1 and<br> the second rule accepts all packets originating from 10.112.0.1 only on nic0. In effect, the second rule is always ignored which is not desired, hence the order has to be swapped. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
-  api_instance.set(opts)
+  api_instance.set(appliance_networking_firewall_inbound_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingFirewallInboundApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_networking_firewall_inbound_set** | [**ApplianceNetworkingFirewallInboundSet**](ApplianceNetworkingFirewallInboundSet.md)|  | [optional] 
+ **appliance_networking_firewall_inbound_set** | [**ApplianceNetworkingFirewallInboundSet**](ApplianceNetworkingFirewallInboundSet.md)|  | 
 
 ### Return type
 

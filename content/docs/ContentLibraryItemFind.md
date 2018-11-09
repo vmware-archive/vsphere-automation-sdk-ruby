@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**ContentLibraryItemFindSpec**](ContentLibraryItemFindSpec.md) |  | [optional] 
+**spec** | [**ContentLibraryItemFindSpec**](ContentLibraryItemFindSpec.md) |  | 
 
 

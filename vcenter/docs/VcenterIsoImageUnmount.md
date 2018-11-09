@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cdrom** | **String** | The device identifier of the CD-ROM. | [optional] 
+**cdrom** | **String** | The device identifier of the CD-ROM. | 
 
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscription_info** | [**ContentLibrarySubscriptionInfo**](ContentLibrarySubscriptionInfo.md) |  | [optional] 
+**subscription_info** | [**ContentLibrarySubscriptionInfo**](ContentLibrarySubscriptionInfo.md) |  | 
 
 

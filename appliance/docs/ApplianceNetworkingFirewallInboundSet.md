@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rules** | [**Array&lt;ApplianceNetworkingFirewallInboundRule&gt;**](ApplianceNetworkingFirewallInboundRule.md) | List of address-based firewall rules. | [optional] 
+**rules** | [**Array&lt;ApplianceNetworkingFirewallInboundRule&gt;**](ApplianceNetworkingFirewallInboundRule.md) | List of address-based firewall rules. | 
 
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryItemUpdateSessionApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -100,7 +100,7 @@ No authorization required
 
 
 # **create**
-> ContentLibraryItemUpdateSessionCreateResult create(opts)
+> ContentLibraryItemUpdateSessionCreateResult create(content_library_item_update_session_create)
 
 Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. <p> Content Library Service allows only one single update session to be active for a specific library item.
 
@@ -110,13 +110,11 @@ Creates a new update session. An update session is used to make modifications to
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdateSessionApi.new
-opts = {
-  content_library_item_update_session_create: VSphereAutomation::ContentLibraryItemUpdateSessionCreate.new # ContentLibraryItemUpdateSessionCreate | 
-}
+content_library_item_update_session_create = VSphereAutomation::ContentLibraryItemUpdateSessionCreate.new # ContentLibraryItemUpdateSessionCreate | 
 
 begin
   #Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. <p> Content Library Service allows only one single update session to be active for a specific library item.
-  result = api_instance.create(opts)
+  result = api_instance.create(content_library_item_update_session_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdateSessionApi->create: #{e}"
@@ -127,7 +125,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_library_item_update_session_create** | [**ContentLibraryItemUpdateSessionCreate**](ContentLibraryItemUpdateSessionCreate.md)|  | [optional] 
+ **content_library_item_update_session_create** | [**ContentLibraryItemUpdateSessionCreate**](ContentLibraryItemUpdateSessionCreate.md)|  | 
 
 ### Return type
 
@@ -187,7 +185,7 @@ No authorization required
 
 
 # **fail**
-> fail(update_session_id, opts)
+> fail(update_session_id, content_library_item_update_session_fail)
 
 Terminates the update session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to access a file) to the server side.
 
@@ -198,13 +196,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdateSessionApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session to fail.
-opts = {
-  content_library_item_update_session_fail: VSphereAutomation::ContentLibraryItemUpdateSessionFail.new # ContentLibraryItemUpdateSessionFail | 
-}
+content_library_item_update_session_fail = VSphereAutomation::ContentLibraryItemUpdateSessionFail.new # ContentLibraryItemUpdateSessionFail | 
 
 begin
   #Terminates the update session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to access a file) to the server side.
-  api_instance.fail(update_session_id, opts)
+  api_instance.fail(update_session_id, content_library_item_update_session_fail)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdateSessionApi->fail: #{e}"
 end
@@ -215,7 +211,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session to fail. | 
- **content_library_item_update_session_fail** | [**ContentLibraryItemUpdateSessionFail**](ContentLibraryItemUpdateSessionFail.md)|  | [optional] 
+ **content_library_item_update_session_fail** | [**ContentLibraryItemUpdateSessionFail**](ContentLibraryItemUpdateSessionFail.md)|  | 
 
 ### Return type
 
@@ -276,7 +272,7 @@ No authorization required
 
 
 # **keep_alive**
-> keep_alive(update_session_id, content_library_item_update_session_keep_alive)
+> keep_alive(update_session_id, opts)
 
 Keeps an update session alive. <p> If there is no activity for an update session after a period of time, the update session will expire, then be deleted. The update session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of the update session.
 
@@ -287,11 +283,13 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdateSessionApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session whose lifetime should be extended.
-content_library_item_update_session_keep_alive = VSphereAutomation::ContentLibraryItemUpdateSessionKeepAlive.new # ContentLibraryItemUpdateSessionKeepAlive | 
+opts = {
+  content_library_item_update_session_keep_alive: VSphereAutomation::ContentLibraryItemUpdateSessionKeepAlive.new # ContentLibraryItemUpdateSessionKeepAlive | 
+}
 
 begin
   #Keeps an update session alive. <p> If there is no activity for an update session after a period of time, the update session will expire, then be deleted. The update session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of the update session.
-  api_instance.keep_alive(update_session_id, content_library_item_update_session_keep_alive)
+  api_instance.keep_alive(update_session_id, opts)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdateSessionApi->keep_alive: #{e}"
 end
@@ -302,7 +300,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session whose lifetime should be extended. | 
- **content_library_item_update_session_keep_alive** | [**ContentLibraryItemUpdateSessionKeepAlive**](ContentLibraryItemUpdateSessionKeepAlive.md)|  | 
+ **content_library_item_update_session_keep_alive** | [**ContentLibraryItemUpdateSessionKeepAlive**](ContentLibraryItemUpdateSessionKeepAlive.md)|  | [optional] 
 
 ### Return type
 
@@ -320,7 +318,7 @@ No authorization required
 
 
 # **list**
-> ContentLibraryItemUpdateSessionListResult list
+> ContentLibraryItemUpdateSessionListResult list(opts)
 
 Lists the identifiers of the update session created by the calling user. Optionally may filter by library item.
 
@@ -330,10 +328,13 @@ Lists the identifiers of the update session created by the calling user. Optiona
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdateSessionApi.new
+opts = {
+  library_item_id: 'library_item_id_example' # String | Optional library item identifier on which to filter results.
+}
 
 begin
   #Lists the identifiers of the update session created by the calling user. Optionally may filter by library item.
-  result = api_instance.list
+  result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdateSessionApi->list: #{e}"
@@ -341,7 +342,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **library_item_id** | **String**| Optional library item identifier on which to filter results. | [optional] 
 
 ### Return type
 
@@ -359,7 +363,7 @@ No authorization required
 
 
 # **update**
-> update(update_session_id, opts)
+> update(update_session_id, content_library_item_update_session_update)
 
 Updates the properties of an update session. <p> This is an incremental update to the update session. Any {@term field} in the {@link UpdateSessionModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the property {@link UpdateSessionModel#warningBehavior} of the update session. This will not, for example, update the {@link UpdateSessionModel#libraryItemId} or {@link UpdateSessionModel#state} of an update session. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state.
 
@@ -370,13 +374,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdateSessionApi.new
 update_session_id = 'update_session_id_example' # String | Identifer of the update session that should be updated.
-opts = {
-  content_library_item_update_session_update: VSphereAutomation::ContentLibraryItemUpdateSessionUpdate.new # ContentLibraryItemUpdateSessionUpdate | 
-}
+content_library_item_update_session_update = VSphereAutomation::ContentLibraryItemUpdateSessionUpdate.new # ContentLibraryItemUpdateSessionUpdate | 
 
 begin
   #Updates the properties of an update session. <p> This is an incremental update to the update session. Any {@term field} in the {@link UpdateSessionModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the property {@link UpdateSessionModel#warningBehavior} of the update session. This will not, for example, update the {@link UpdateSessionModel#libraryItemId} or {@link UpdateSessionModel#state} of an update session. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state.
-  api_instance.update(update_session_id, opts)
+  api_instance.update(update_session_id, content_library_item_update_session_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdateSessionApi->update: #{e}"
 end
@@ -387,7 +389,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifer of the update session that should be updated. | 
- **content_library_item_update_session_update** | [**ContentLibraryItemUpdateSessionUpdate**](ContentLibraryItemUpdateSessionUpdate.md)|  | [optional] 
+ **content_library_item_update_session_update** | [**ContentLibraryItemUpdateSessionUpdate**](ContentLibraryItemUpdateSessionUpdate.md)|  | 
 
 ### Return type
 

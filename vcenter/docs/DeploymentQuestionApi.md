@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::DeploymentQuestionApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **answer**
-> answer(opts)
+> answer(vcenter_deployment_question_answer)
 
 Supply answer to the raised question.
 
@@ -19,13 +19,11 @@ Supply answer to the raised question.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentQuestionApi.new
-opts = {
-  vcenter_deployment_question_answer: VSphereAutomation::VcenterDeploymentQuestionAnswer.new # VcenterDeploymentQuestionAnswer | 
-}
+vcenter_deployment_question_answer = VSphereAutomation::VcenterDeploymentQuestionAnswer.new # VcenterDeploymentQuestionAnswer | 
 
 begin
   #Supply answer to the raised question.
-  api_instance.answer(opts)
+  api_instance.answer(vcenter_deployment_question_answer)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentQuestionApi->answer: #{e}"
 end
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_question_answer** | [**VcenterDeploymentQuestionAnswer**](VcenterDeploymentQuestionAnswer.md)|  | [optional] 
+ **vcenter_deployment_question_answer** | [**VcenterDeploymentQuestionAnswer**](VcenterDeploymentQuestionAnswer.md)|  | 
 
 ### Return type
 

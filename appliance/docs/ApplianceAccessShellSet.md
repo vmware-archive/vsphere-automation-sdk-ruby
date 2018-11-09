@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ApplianceAccessShellShellConfig**](ApplianceAccessShellShellConfig.md) |  | [optional] 
+**config** | [**ApplianceAccessShellShellConfig**](ApplianceAccessShellShellConfig.md) |  | 
 
 

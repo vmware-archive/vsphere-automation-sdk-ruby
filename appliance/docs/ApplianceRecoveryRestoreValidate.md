@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**piece** | [**ApplianceRecoveryRestoreRestoreRequest**](ApplianceRecoveryRestoreRestoreRequest.md) |  | [optional] 
+**piece** | [**ApplianceRecoveryRestoreRestoreRequest**](ApplianceRecoveryRestoreRestoreRequest.md) |  | 
 
 

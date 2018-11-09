@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**identity** | [**VapiMetadataCliNamespaceIdentity**](VapiMetadataCliNamespaceIdentity.md) |  | [optional] 
+**identity** | [**VapiMetadataCliNamespaceIdentity**](VapiMetadataCliNamespaceIdentity.md) |  | 
 
 

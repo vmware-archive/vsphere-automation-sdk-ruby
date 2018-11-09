@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | [**VcenterOvfLibraryItemDeploymentTarget**](VcenterOvfLibraryItemDeploymentTarget.md) |  | [optional] 
+**target** | [**VcenterOvfLibraryItemDeploymentTarget**](VcenterOvfLibraryItemDeploymentTarget.md) |  | 
 
 

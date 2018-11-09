@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NetworkingProxyApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -136,7 +136,7 @@ No authorization required
 
 
 # **set**
-> set(protocol, opts)
+> set(protocol, appliance_networking_proxy_set)
 
 Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
 
@@ -147,13 +147,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 protocol = 'protocol_example' # String | The protocol for which proxy should be set.
-opts = {
-  appliance_networking_proxy_set: VSphereAutomation::ApplianceNetworkingProxySet.new # ApplianceNetworkingProxySet | 
-}
+appliance_networking_proxy_set = VSphereAutomation::ApplianceNetworkingProxySet.new # ApplianceNetworkingProxySet | 
 
 begin
   #Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
-  api_instance.set(protocol, opts)
+  api_instance.set(protocol, appliance_networking_proxy_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingProxyApi->set: #{e}"
 end
@@ -164,7 +162,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **protocol** | **String**| The protocol for which proxy should be set. | 
- **appliance_networking_proxy_set** | [**ApplianceNetworkingProxySet**](ApplianceNetworkingProxySet.md)|  | [optional] 
+ **appliance_networking_proxy_set** | [**ApplianceNetworkingProxySet**](ApplianceNetworkingProxySet.md)|  | 
 
 ### Return type
 
@@ -182,7 +180,7 @@ No authorization required
 
 
 # **test**
-> ApplianceNetworkingProxyTestResult test(protocol, opts)
+> ApplianceNetworkingProxyTestResult test(protocol, appliance_networking_proxy_test)
 
 Tests a proxy configuration by testing the connection to the proxy server and test host.
 
@@ -193,13 +191,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 protocol = 'protocol_example' # String | Protocol whose proxy is to be tested.
-opts = {
-  appliance_networking_proxy_test: VSphereAutomation::ApplianceNetworkingProxyTest.new # ApplianceNetworkingProxyTest | 
-}
+appliance_networking_proxy_test = VSphereAutomation::ApplianceNetworkingProxyTest.new # ApplianceNetworkingProxyTest | 
 
 begin
   #Tests a proxy configuration by testing the connection to the proxy server and test host.
-  result = api_instance.test(protocol, opts)
+  result = api_instance.test(protocol, appliance_networking_proxy_test)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingProxyApi->test: #{e}"
@@ -211,7 +207,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **protocol** | **String**| Protocol whose proxy is to be tested. | 
- **appliance_networking_proxy_test** | [**ApplianceNetworkingProxyTest**](ApplianceNetworkingProxyTest.md)|  | [optional] 
+ **appliance_networking_proxy_test** | [**ApplianceNetworkingProxyTest**](ApplianceNetworkingProxyTest.md)|  | 
 
 ### Return type
 

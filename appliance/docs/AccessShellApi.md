@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::AccessShellApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_access_shell_set)
 
 Set enabled state of BASH, that is, access to BASH from within the controlled CLI.
 
@@ -58,13 +58,11 @@ Set enabled state of BASH, that is, access to BASH from within the controlled CL
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::AccessShellApi.new
-opts = {
-  appliance_access_shell_set: VSphereAutomation::ApplianceAccessShellSet.new # ApplianceAccessShellSet | 
-}
+appliance_access_shell_set = VSphereAutomation::ApplianceAccessShellSet.new # ApplianceAccessShellSet | 
 
 begin
   #Set enabled state of BASH, that is, access to BASH from within the controlled CLI.
-  api_instance.set(opts)
+  api_instance.set(appliance_access_shell_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling AccessShellApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_access_shell_set** | [**ApplianceAccessShellSet**](ApplianceAccessShellSet.md)|  | [optional] 
+ **appliance_access_shell_set** | [**ApplianceAccessShellSet**](ApplianceAccessShellSet.md)|  | 
 
 ### Return type
 

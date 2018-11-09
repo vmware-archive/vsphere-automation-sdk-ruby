@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VMApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterVMCreateResult create(opts)
+> VcenterVMCreateResult create(vcenter_vm_create)
 
 Creates a virtual machine.
 
@@ -21,13 +21,11 @@ Creates a virtual machine.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VMApi.new
-opts = {
-  vcenter_vm_create: VSphereAutomation::VcenterVMCreate.new # VcenterVMCreate | 
-}
+vcenter_vm_create = VSphereAutomation::VcenterVMCreate.new # VcenterVMCreate | 
 
 begin
   #Creates a virtual machine.
-  result = api_instance.create(opts)
+  result = api_instance.create(vcenter_vm_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VMApi->create: #{e}"
@@ -38,7 +36,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vm_create** | [**VcenterVMCreate**](VcenterVMCreate.md)|  | [optional] 
+ **vcenter_vm_create** | [**VcenterVMCreate**](VcenterVMCreate.md)|  | 
 
 ### Return type
 

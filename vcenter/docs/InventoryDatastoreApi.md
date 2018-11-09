@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::InventoryDatastoreApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **find**
-> VcenterInventoryDatastoreFindResult find(opts)
+> VcenterInventoryDatastoreFindResult find(vcenter_inventory_datastore_find)
 
 Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
 
@@ -18,13 +18,11 @@ Returns datastore information for the specified datastores. The key in the {@ter
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::InventoryDatastoreApi.new
-opts = {
-  vcenter_inventory_datastore_find: VSphereAutomation::VcenterInventoryDatastoreFind.new # VcenterInventoryDatastoreFind | 
-}
+vcenter_inventory_datastore_find = VSphereAutomation::VcenterInventoryDatastoreFind.new # VcenterInventoryDatastoreFind | 
 
 begin
   #Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
-  result = api_instance.find(opts)
+  result = api_instance.find(vcenter_inventory_datastore_find)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling InventoryDatastoreApi->find: #{e}"
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_inventory_datastore_find** | [**VcenterInventoryDatastoreFind**](VcenterInventoryDatastoreFind.md)|  | [optional] 
+ **vcenter_inventory_datastore_find** | [**VcenterInventoryDatastoreFind**](VcenterInventoryDatastoreFind.md)|  | 
 
 ### Return type
 

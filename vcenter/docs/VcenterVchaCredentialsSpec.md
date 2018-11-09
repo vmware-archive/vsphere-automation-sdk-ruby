@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active_location** | [**VcenterVchaConnectionSpec**](VcenterVchaConnectionSpec.md) |  | [optional] 
+**active_location** | [**VcenterVchaConnectionSpec**](VcenterVchaConnectionSpec.md) |  | 
 
 

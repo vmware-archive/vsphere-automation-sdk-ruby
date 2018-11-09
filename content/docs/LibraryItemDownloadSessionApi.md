@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LibraryItemDownloadSessionApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -56,7 +56,7 @@ No authorization required
 
 
 # **create**
-> ContentLibraryItemDownloadSessionCreateResult create(opts)
+> ContentLibraryItemDownloadSessionCreateResult create(content_library_item_download_session_create)
 
 Creates a new download session.
 
@@ -66,13 +66,11 @@ Creates a new download session.
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadSessionApi.new
-opts = {
-  content_library_item_download_session_create: VSphereAutomation::ContentLibraryItemDownloadSessionCreate.new # ContentLibraryItemDownloadSessionCreate | 
-}
+content_library_item_download_session_create = VSphereAutomation::ContentLibraryItemDownloadSessionCreate.new # ContentLibraryItemDownloadSessionCreate | 
 
 begin
   #Creates a new download session.
-  result = api_instance.create(opts)
+  result = api_instance.create(content_library_item_download_session_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadSessionApi->create: #{e}"
@@ -83,7 +81,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_library_item_download_session_create** | [**ContentLibraryItemDownloadSessionCreate**](ContentLibraryItemDownloadSessionCreate.md)|  | [optional] 
+ **content_library_item_download_session_create** | [**ContentLibraryItemDownloadSessionCreate**](ContentLibraryItemDownloadSessionCreate.md)|  | 
 
 ### Return type
 
@@ -143,7 +141,7 @@ No authorization required
 
 
 # **fail**
-> fail(download_session_id, opts)
+> fail(download_session_id, content_library_item_download_session_fail)
 
 Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
 
@@ -154,13 +152,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadSessionApi.new
 download_session_id = 'download_session_id_example' # String | Identifier of the download session to fail.
-opts = {
-  content_library_item_download_session_fail: VSphereAutomation::ContentLibraryItemDownloadSessionFail.new # ContentLibraryItemDownloadSessionFail | 
-}
+content_library_item_download_session_fail = VSphereAutomation::ContentLibraryItemDownloadSessionFail.new # ContentLibraryItemDownloadSessionFail | 
 
 begin
   #Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
-  api_instance.fail(download_session_id, opts)
+  api_instance.fail(download_session_id, content_library_item_download_session_fail)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadSessionApi->fail: #{e}"
 end
@@ -171,7 +167,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **download_session_id** | **String**| Identifier of the download session to fail. | 
- **content_library_item_download_session_fail** | [**ContentLibraryItemDownloadSessionFail**](ContentLibraryItemDownloadSessionFail.md)|  | [optional] 
+ **content_library_item_download_session_fail** | [**ContentLibraryItemDownloadSessionFail**](ContentLibraryItemDownloadSessionFail.md)|  | 
 
 ### Return type
 
@@ -232,7 +228,7 @@ No authorization required
 
 
 # **keep_alive**
-> keep_alive(download_session_id, content_library_item_download_session_keep_alive)
+> keep_alive(download_session_id, opts)
 
 Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. <p> If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.
 
@@ -243,11 +239,13 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadSessionApi.new
 download_session_id = 'download_session_id_example' # String | Identifier of the download session whose lifetime should be extended.
-content_library_item_download_session_keep_alive = VSphereAutomation::ContentLibraryItemDownloadSessionKeepAlive.new # ContentLibraryItemDownloadSessionKeepAlive | 
+opts = {
+  content_library_item_download_session_keep_alive: VSphereAutomation::ContentLibraryItemDownloadSessionKeepAlive.new # ContentLibraryItemDownloadSessionKeepAlive | 
+}
 
 begin
   #Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. <p> If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.
-  api_instance.keep_alive(download_session_id, content_library_item_download_session_keep_alive)
+  api_instance.keep_alive(download_session_id, opts)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadSessionApi->keep_alive: #{e}"
 end
@@ -258,7 +256,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **download_session_id** | **String**| Identifier of the download session whose lifetime should be extended. | 
- **content_library_item_download_session_keep_alive** | [**ContentLibraryItemDownloadSessionKeepAlive**](ContentLibraryItemDownloadSessionKeepAlive.md)|  | 
+ **content_library_item_download_session_keep_alive** | [**ContentLibraryItemDownloadSessionKeepAlive**](ContentLibraryItemDownloadSessionKeepAlive.md)|  | [optional] 
 
 ### Return type
 
@@ -276,7 +274,7 @@ No authorization required
 
 
 # **list**
-> ContentLibraryItemDownloadSessionListResult list
+> ContentLibraryItemDownloadSessionListResult list(opts)
 
 Lists the identifiers of the download sessions created by the calling user. Optionally may filter by library item.
 
@@ -286,10 +284,13 @@ Lists the identifiers of the download sessions created by the calling user. Opti
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadSessionApi.new
+opts = {
+  library_item_id: 'library_item_id_example' # String | Library item identifier on which to filter results.
+}
 
 begin
   #Lists the identifiers of the download sessions created by the calling user. Optionally may filter by library item.
-  result = api_instance.list
+  result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadSessionApi->list: #{e}"
@@ -297,7 +298,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **library_item_id** | **String**| Library item identifier on which to filter results. | [optional] 
 
 ### Return type
 

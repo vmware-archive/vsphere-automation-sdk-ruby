@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of the VCHA node to be used for the virtual machine name. | [optional] 
-**folder** | **String** | The identifier of the folder to deploy the VCHA node to. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder:VCenter. | [optional] 
+**name** | **String** | The name of the VCHA node to be used for the virtual machine name. | 
+**folder** | **String** | The identifier of the folder to deploy the VCHA node to. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder:VCenter. | 
 **host** | **String** | The identifier of the host to deploy the VCHA node to. If unset, see vim.vm.RelocateSpec.host. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem:VCenter. | [optional] 
 **resource_pool** | **String** | The identifier of the resource pool to deploy the VCHA node to. If unset, then the active node&#39;s resource pool will be used. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ResourcePool:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ResourcePool:VCenter. | [optional] 
 **ha_network_type** | [**VcenterVchaNetworkType**](VcenterVchaNetworkType.md) |  | [optional] 

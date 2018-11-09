@@ -22,6 +22,22 @@ OptionParser.new do |opts|
   opts.on('-k', '--insecure', 'skip certificate validation') do |k|
     options[:insecure] = k
   end
+
+  opts.on('-c CLUSTER', '--cluster CLUSTER', 'name of cluster to use') do |c|
+    options[:cluster_name] = c
+  end
+
+  opts.on('-d DATASTORE', '--datastore DATASTORE', 'name of datastore to use') do |d|
+    options[:datastore_name] = d
+  end
+
+  opts.on('-f FOLDER', '--folder FOLDER', 'name of folder to use') do |f|
+    options[:folder_name] = f
+  end
+
+  opts.on('-n NAME', '--name NAME', 'name of VM to be created') do |n|
+    options[:vm_name] = n
+  end
 end.parse!
 
 configuration = VSphereAutomation::Configuration.new.tap do |c|
@@ -41,15 +57,36 @@ session_id = session_api.create('').value
 
 api_client.default_headers['vmware-api-session-id'] = session_id
 
+cluster_api = VSphereAutomation::VCenter::ClusterApi.new(api_client)
+datastore_api = VSphereAutomation::VCenter::DatastoreApi.new(api_client)
+folder_api = VSphereAutomation::VCenter::FolderApi.new(api_client)
 vm_api = VSphereAutomation::VCenter::VMApi.new(api_client)
-name = 'My_VM_Name'
-guest_os = VSphereAutomation::VCenter::VcenterVmGuestOS::CENTOS_7
-placement_spec = VSphereAutomation::VCenter::VcenterVMPlacementSpec.new(
 
+puts "Looking for #{options[:cluster_name]}"
+cluster = cluster_api.list(filter_names: options[:cluster_name]).value.first.cluster
+puts "Found #{cluster}"
+
+puts "Looking for #{options[:datastore_name]}"
+datastore = datastore_api.list(filter_names: options[:datastore_name]).value.first.datastore
+puts "Found #{datastore}"
+
+puts "Looking for #{options[:folder_name]}"
+folder = folder_api.list(filter_names: options[:folder_name]).value.first.folder
+puts "Found #{folder}"
+
+guest_os = VSphereAutomation::VCenter::VcenterVmGuestOS::OTHER
+placement_spec = VSphereAutomation::VCenter::VcenterVMPlacementSpec.new(
+  cluster: cluster,
+  datastore: datastore,
+  folder: folder
 )
-# vm_create_spec = VM.CreateSpec(name=self.vm_name,
-#                                        guest_os=guest_os,
-#                                        placement=self.placement_spec,
-#                                        disks=[boot_disk, data_disk],
-#                                        nics=[nic],
-#                                        boot_devices=boot_device_order)
+create_spec = VSphereAutomation::VCenter::VcenterVMCreateSpec.new(
+  guest_OS: guest_os,
+  name: options[:vm_name],
+  placement: placement_spec
+)
+create_model = VSphereAutomation::VCenter::VcenterVMCreate.new(spec: create_spec)
+
+vm = vm_api.create(create_model).value
+
+puts "Created VM: #{vm}"

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**VcenterVmHardwareSerialBackingType**](VcenterVmHardwareSerialBackingType.md) |  | [optional] 
+**type** | [**VcenterVmHardwareSerialBackingType**](VcenterVmHardwareSerialBackingType.md) |  | 
 **file** | **String** | Path of the file backing the virtual serial port. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is FILE. | [optional] 
 **host_device** | **String** | Name of the device backing the virtual serial port.    This field will be unset if Serial.BackingInfo.auto-detect is true and the virtual serial port is not connected or no suitable device is available on the host. | [optional] 
 **auto_detect** | **BOOLEAN** | Flag indicating whether the virtual serial port is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is HOST_DEVICE. | [optional] 

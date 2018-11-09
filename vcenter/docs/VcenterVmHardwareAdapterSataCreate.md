@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareAdapterSataCreateSpec**](VcenterVmHardwareAdapterSataCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareAdapterSataCreateSpec**](VcenterVmHardwareAdapterSataCreateSpec.md) |  | 
 
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**old_size** | **Integer** | Original size of the partition in MB. | [optional] 
-**new_size** | **Integer** | Nedw size of the partition in MB. | [optional] 
+**old_size** | **Integer** | Original size of the partition in MB. | 
+**new_size** | **Integer** | Nedw size of the partition in MB. | 
 
 

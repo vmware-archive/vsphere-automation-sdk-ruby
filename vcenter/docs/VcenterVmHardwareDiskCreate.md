@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareDiskCreateSpec**](VcenterVmHardwareDiskCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareDiskCreateSpec**](VcenterVmHardwareDiskCreateSpec.md) |  | 
 
 

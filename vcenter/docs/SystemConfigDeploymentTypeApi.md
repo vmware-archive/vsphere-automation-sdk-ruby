@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::SystemConfigDeploymentTypeApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **reconfigure**
-> reconfigure(opts)
+> reconfigure(vcenter_system_config_deployment_type_reconfigure)
 
 Reconfigure the type of the vCenter appliance.
 
@@ -58,13 +58,11 @@ Reconfigure the type of the vCenter appliance.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::SystemConfigDeploymentTypeApi.new
-opts = {
-  vcenter_system_config_deployment_type_reconfigure: VSphereAutomation::VcenterSystemConfigDeploymentTypeReconfigure.new # VcenterSystemConfigDeploymentTypeReconfigure | 
-}
+vcenter_system_config_deployment_type_reconfigure = VSphereAutomation::VcenterSystemConfigDeploymentTypeReconfigure.new # VcenterSystemConfigDeploymentTypeReconfigure | 
 
 begin
   #Reconfigure the type of the vCenter appliance.
-  api_instance.reconfigure(opts)
+  api_instance.reconfigure(vcenter_system_config_deployment_type_reconfigure)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SystemConfigDeploymentTypeApi->reconfigure: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_system_config_deployment_type_reconfigure** | [**VcenterSystemConfigDeploymentTypeReconfigure**](VcenterSystemConfigDeploymentTypeReconfigure.md)|  | [optional] 
+ **vcenter_system_config_deployment_type_reconfigure** | [**VcenterSystemConfigDeploymentTypeReconfigure**](VcenterSystemConfigDeploymentTypeReconfigure.md)|  | 
 
 ### Return type
 

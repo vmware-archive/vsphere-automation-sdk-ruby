@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::RecoveryBackupApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **validate**
-> ApplianceRecoveryBackupValidateResult validate(opts)
+> ApplianceRecoveryBackupValidateResult validate(appliance_recovery_backup_validate)
 
 Check for backup errors without starting backup.
 
@@ -18,13 +18,11 @@ Check for backup errors without starting backup.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupApi.new
-opts = {
-  appliance_recovery_backup_validate: VSphereAutomation::ApplianceRecoveryBackupValidate.new # ApplianceRecoveryBackupValidate | 
-}
+appliance_recovery_backup_validate = VSphereAutomation::ApplianceRecoveryBackupValidate.new # ApplianceRecoveryBackupValidate | 
 
 begin
   #Check for backup errors without starting backup.
-  result = api_instance.validate(opts)
+  result = api_instance.validate(appliance_recovery_backup_validate)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupApi->validate: #{e}"
@@ -35,7 +33,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_recovery_backup_validate** | [**ApplianceRecoveryBackupValidate**](ApplianceRecoveryBackupValidate.md)|  | [optional] 
+ **appliance_recovery_backup_validate** | [**ApplianceRecoveryBackupValidate**](ApplianceRecoveryBackupValidate.md)|  | 
 
 ### Return type
 

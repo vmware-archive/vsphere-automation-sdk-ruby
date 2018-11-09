@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::DeploymentInstallInitialConfigRemotePscThumbprintApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult get
+> VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult get(spec)
 
 Gets the SHA1 thumbprint of the remote PSC.
 
@@ -18,10 +18,11 @@ Gets the SHA1 thumbprint of the remote PSC.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallInitialConfigRemotePscThumbprintApi.new
+spec = nil # Object | Information used to connect to the remote PSC.
 
 begin
   #Gets the SHA1 thumbprint of the remote PSC.
-  result = api_instance.get
+  result = api_instance.get(spec)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallInitialConfigRemotePscThumbprintApi->get: #{e}"
@@ -29,7 +30,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **spec** | [**Object**](.md)| Information used to connect to the remote PSC. | 
 
 ### Return type
 

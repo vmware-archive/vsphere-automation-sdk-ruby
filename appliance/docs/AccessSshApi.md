@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::AccessSshApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_access_ssh_set)
 
 Set enabled state of the SSH-based controlled CLI.
 
@@ -58,13 +58,11 @@ Set enabled state of the SSH-based controlled CLI.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::AccessSshApi.new
-opts = {
-  appliance_access_ssh_set: VSphereAutomation::ApplianceAccessSshSet.new # ApplianceAccessSshSet | 
-}
+appliance_access_ssh_set = VSphereAutomation::ApplianceAccessSshSet.new # ApplianceAccessSshSet | 
 
 begin
   #Set enabled state of the SSH-based controlled CLI.
-  api_instance.set(opts)
+  api_instance.set(appliance_access_ssh_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling AccessSshApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_access_ssh_set** | [**ApplianceAccessSshSet**](ApplianceAccessSshSet.md)|  | [optional] 
+ **appliance_access_ssh_set** | [**ApplianceAccessSshSet**](ApplianceAccessSshSet.md)|  | 
 
 ### Return type
 

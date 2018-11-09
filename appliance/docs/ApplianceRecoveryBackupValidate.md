@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**piece** | [**ApplianceRecoveryBackupBackupRequest**](ApplianceRecoveryBackupBackupRequest.md) |  | [optional] 
+**piece** | [**ApplianceRecoveryBackupBackupRequest**](ApplianceRecoveryBackupBackupRequest.md) |  | 
 
 

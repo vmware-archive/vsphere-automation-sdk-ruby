@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::RecoveryBackupSystemNameApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **list**
-> ApplianceRecoveryBackupSystemNameListResult list
+> ApplianceRecoveryBackupSystemNameListResult list(loc_spec)
 
 Returns a list of system names for which backup archives exist under {@param.name locSpec}.
 
@@ -18,10 +18,11 @@ Returns a list of system names for which backup archives exist under {@param.nam
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSystemNameApi.new
+loc_spec = nil # Object | LocationSpec Structure
 
 begin
   #Returns a list of system names for which backup archives exist under {@param.name locSpec}.
-  result = api_instance.list
+  result = api_instance.list(loc_spec)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupSystemNameApi->list: #{e}"
@@ -29,7 +30,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loc_spec** | [**Object**](.md)| LocationSpec Structure | 
 
 ### Return type
 

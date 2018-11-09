@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareParallelUpdateSpec**](VcenterVmHardwareParallelUpdateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareParallelUpdateSpec**](VcenterVmHardwareParallelUpdateSpec.md) |  | 
 
 

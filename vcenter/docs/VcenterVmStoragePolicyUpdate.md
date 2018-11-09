@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmStoragePolicyUpdateSpec**](VcenterVmStoragePolicyUpdateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmStoragePolicyUpdateSpec**](VcenterVmStoragePolicyUpdateSpec.md) |  | 
 
 

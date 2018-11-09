@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**ApplianceRecoveryBackupJobReturnStatus**](ApplianceRecoveryBackupJobReturnStatus.md) |  | [optional] 
-**messages** | [**Array&lt;ApplianceRecoveryBackupJobLocalizableMessage&gt;**](ApplianceRecoveryBackupJobLocalizableMessage.md) | List of messages. | [optional] 
+**status** | [**ApplianceRecoveryBackupJobReturnStatus**](ApplianceRecoveryBackupJobReturnStatus.md) |  | 
+**messages** | [**Array&lt;ApplianceRecoveryBackupJobLocalizableMessage&gt;**](ApplianceRecoveryBackupJobLocalizableMessage.md) | List of messages. | 
 
 

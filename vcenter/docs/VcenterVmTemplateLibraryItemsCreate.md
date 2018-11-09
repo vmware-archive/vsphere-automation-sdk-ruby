@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmTemplateLibraryItemsCreateSpec**](VcenterVmTemplateLibraryItemsCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmTemplateLibraryItemsCreateSpec**](VcenterVmTemplateLibraryItemsCreateSpec.md) |  | 
 
 

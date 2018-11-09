@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**VapiMetadataMetamodelElementValueType**](VapiMetadataMetamodelElementValueType.md) |  | [optional] 
+**type** | [**VapiMetadataMetamodelElementValueType**](VapiMetadataMetamodelElementValueType.md) |  | 
 **long_value** | **Integer** | Long value of the metadata element. | [optional] 
 **string_value** | **String** | String value of the metadata element. | [optional] 
 **list_value** | **Array&lt;String&gt;** | List of strings value of the metadata element. | [optional] 

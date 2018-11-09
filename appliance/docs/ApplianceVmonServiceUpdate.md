@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**ApplianceVmonServiceUpdateSpec**](ApplianceVmonServiceUpdateSpec.md) |  | [optional] 
+**spec** | [**ApplianceVmonServiceUpdateSpec**](ApplianceVmonServiceUpdateSpec.md) |  | 
 
 

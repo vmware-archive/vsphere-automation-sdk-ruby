@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Name of the deployed virtual machine. | [optional] 
+**name** | **String** | Name of the deployed virtual machine. | 
 **description** | **String** | Description of the deployed virtual machine. | [optional] 
 **vm_home_storage** | [**VcenterVmTemplateLibraryItemsDeploySpecVmHomeStorage**](VcenterVmTemplateLibraryItemsDeploySpecVmHomeStorage.md) |  | [optional] 
 **disk_storage** | [**VcenterVmTemplateLibraryItemsDeploySpecDiskStorage**](VcenterVmTemplateLibraryItemsDeploySpecDiskStorage.md) |  | [optional] 

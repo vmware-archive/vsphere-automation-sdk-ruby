@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::DatacenterApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterDatacenterCreateResult create(opts)
+> VcenterDatacenterCreateResult create(vcenter_datacenter_create)
 
 Create a new datacenter in the vCenter inventory
 
@@ -21,13 +21,11 @@ Create a new datacenter in the vCenter inventory
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DatacenterApi.new
-opts = {
-  vcenter_datacenter_create: VSphereAutomation::VcenterDatacenterCreate.new # VcenterDatacenterCreate | 
-}
+vcenter_datacenter_create = VSphereAutomation::VcenterDatacenterCreate.new # VcenterDatacenterCreate | 
 
 begin
   #Create a new datacenter in the vCenter inventory
-  result = api_instance.create(opts)
+  result = api_instance.create(vcenter_datacenter_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DatacenterApi->create: #{e}"
@@ -38,7 +36,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_datacenter_create** | [**VcenterDatacenterCreate**](VcenterDatacenterCreate.md)|  | [optional] 
+ **vcenter_datacenter_create** | [**VcenterDatacenterCreate**](VcenterDatacenterCreate.md)|  | 
 
 ### Return type
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**policy** | [**ApplianceLocalAccountsPolicyInfo**](ApplianceLocalAccountsPolicyInfo.md) |  | [optional] 
+**policy** | [**ApplianceLocalAccountsPolicyInfo**](ApplianceLocalAccountsPolicyInfo.md) |  | 
 
 

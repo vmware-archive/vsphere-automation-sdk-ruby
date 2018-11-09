@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NetworkingNoProxyApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_networking_no_proxy_set)
 
 Sets servers for which no proxy configuration should be applied. This operation sets environment variables. In order for this operation to take effect, a logout from appliance or a service restart is required. If IPv4 is enabled, \"127.0.0.1\" and \"localhost\" will always bypass the proxy (even if they are not explicitly configured).
 
@@ -58,13 +58,11 @@ Sets servers for which no proxy configuration should be applied. This operation 
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingNoProxyApi.new
-opts = {
-  appliance_networking_no_proxy_set: VSphereAutomation::ApplianceNetworkingNoProxySet.new # ApplianceNetworkingNoProxySet | 
-}
+appliance_networking_no_proxy_set = VSphereAutomation::ApplianceNetworkingNoProxySet.new # ApplianceNetworkingNoProxySet | 
 
 begin
   #Sets servers for which no proxy configuration should be applied. This operation sets environment variables. In order for this operation to take effect, a logout from appliance or a service restart is required. If IPv4 is enabled, \"127.0.0.1\" and \"localhost\" will always bypass the proxy (even if they are not explicitly configured).
-  api_instance.set(opts)
+  api_instance.set(appliance_networking_no_proxy_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingNoProxyApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_networking_no_proxy_set** | [**ApplianceNetworkingNoProxySet**](ApplianceNetworkingNoProxySet.md)|  | [optional] 
+ **appliance_networking_no_proxy_set** | [**ApplianceNetworkingNoProxySet**](ApplianceNetworkingNoProxySet.md)|  | 
 
 ### Return type
 

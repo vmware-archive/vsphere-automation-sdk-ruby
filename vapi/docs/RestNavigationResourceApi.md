@@ -1,6 +1,6 @@
 # VSphereAutomation::VAPI::RestNavigationResourceApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> VapiRestNavigationResourceResult get(type_id, instance_id)
+> VapiRestNavigationResourceResult get(type_id, instance_id, opts)
 
 Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
 
@@ -21,10 +21,13 @@ require 'vsphere-automation-vapi'
 api_instance = VSphereAutomation::VAPI::RestNavigationResourceApi.new
 type_id = 'type_id_example' # String | Resource type id.
 instance_id = 'instance_id_example' # String | Resource instance id.
+opts = {
+  base_url: 'base_url_example' # String | Base URL.
+}
 
 begin
   #Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
-  result = api_instance.get(type_id, instance_id)
+  result = api_instance.get(type_id, instance_id, opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RestNavigationResourceApi->get: #{e}"
@@ -37,6 +40,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type_id** | **String**| Resource type id. | 
  **instance_id** | **String**| Resource instance id. | 
+ **base_url** | **String**| Base URL. | [optional] 
 
 ### Return type
 
@@ -54,7 +58,7 @@ No authorization required
 
 
 # **list**
-> VapiRestNavigationResourceListResult list
+> VapiRestNavigationResourceListResult list(opts)
 
 Gets list of all vAPI REST {@link Resource}s.
 
@@ -64,10 +68,13 @@ Gets list of all vAPI REST {@link Resource}s.
 require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::RestNavigationResourceApi.new
+opts = {
+  base_url: 'base_url_example' # String | Base URL.
+}
 
 begin
   #Gets list of all vAPI REST {@link Resource}s.
-  result = api_instance.list
+  result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RestNavigationResourceApi->list: #{e}"
@@ -75,7 +82,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **base_url** | **String**| Base URL. | [optional] 
 
 ### Return type
 

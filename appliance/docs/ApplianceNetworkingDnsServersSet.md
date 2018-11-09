@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ApplianceNetworkingDnsServersDNSServerConfig**](ApplianceNetworkingDnsServersDNSServerConfig.md) |  | [optional] 
+**config** | [**ApplianceNetworkingDnsServersDNSServerConfig**](ApplianceNetworkingDnsServersDNSServerConfig.md) |  | 
 
 

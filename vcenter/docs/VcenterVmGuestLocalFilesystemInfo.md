@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**capacity** | **Integer** | Total capacity of the file system, in bytes. | [optional] 
-**free_space** | **Integer** | Free space on the file system, in bytes. | [optional] 
+**capacity** | **Integer** | Total capacity of the file system, in bytes. | 
+**free_space** | **Integer** | Free space on the file system, in bytes. | 
 
 

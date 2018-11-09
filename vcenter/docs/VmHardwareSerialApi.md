@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareSerialApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -58,7 +58,7 @@ No authorization required
 
 
 # **create**
-> VcenterVmHardwareSerialCreateResult create(vm, opts)
+> VcenterVmHardwareSerialCreateResult create(vm, vcenter_vm_hardware_serial_create)
 
 Adds a virtual serial port to the virtual machine.
 
@@ -69,13 +69,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareSerialApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_serial_create: VSphereAutomation::VcenterVmHardwareSerialCreate.new # VcenterVmHardwareSerialCreate | 
-}
+vcenter_vm_hardware_serial_create = VSphereAutomation::VcenterVmHardwareSerialCreate.new # VcenterVmHardwareSerialCreate | 
 
 begin
   #Adds a virtual serial port to the virtual machine.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_serial_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareSerialApi->create: #{e}"
@@ -87,7 +85,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_serial_create** | [**VcenterVmHardwareSerialCreate**](VcenterVmHardwareSerialCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_serial_create** | [**VcenterVmHardwareSerialCreate**](VcenterVmHardwareSerialCreate.md)|  | 
 
 ### Return type
 
@@ -281,7 +279,7 @@ No authorization required
 
 
 # **update**
-> update(vm, port, opts)
+> update(vm, port, vcenter_vm_hardware_serial_update)
 
 Updates the configuration of a virtual serial port.
 
@@ -293,13 +291,11 @@ require 'vsphere-automation-vcenter'
 api_instance = VSphereAutomation::VCenter::VmHardwareSerialApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 port = 'port_example' # String | Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
-opts = {
-  vcenter_vm_hardware_serial_update: VSphereAutomation::VcenterVmHardwareSerialUpdate.new # VcenterVmHardwareSerialUpdate | 
-}
+vcenter_vm_hardware_serial_update = VSphereAutomation::VcenterVmHardwareSerialUpdate.new # VcenterVmHardwareSerialUpdate | 
 
 begin
   #Updates the configuration of a virtual serial port.
-  api_instance.update(vm, port, opts)
+  api_instance.update(vm, port, vcenter_vm_hardware_serial_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareSerialApi->update: #{e}"
 end
@@ -311,7 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **port** | **String**| Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort. | 
- **vcenter_vm_hardware_serial_update** | [**VcenterVmHardwareSerialUpdate**](VcenterVmHardwareSerialUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_serial_update** | [**VcenterVmHardwareSerialUpdate**](VcenterVmHardwareSerialUpdate.md)|  | 
 
 ### Return type
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**passive** | [**VcenterVchaClusterNodeVmInfo**](VcenterVchaClusterNodeVmInfo.md) |  | [optional] 
-**witness** | [**VcenterVchaClusterNodeVmInfo**](VcenterVchaClusterNodeVmInfo.md) |  | [optional] 
+**passive** | [**VcenterVchaClusterNodeVmInfo**](VcenterVchaClusterNodeVmInfo.md) |  | 
+**witness** | [**VcenterVchaClusterNodeVmInfo**](VcenterVchaClusterNodeVmInfo.md) |  | 
 
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VchaClusterModeApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **settask**
-> VcenterVchaClusterModeSettaskResult settask(opts)
+> VcenterVchaClusterModeSettaskResult settask(vcenter_vcha_cluster_mode_settask)
 
 Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 
@@ -58,13 +58,11 @@ Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed: 
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterModeApi.new
-opts = {
-  vcenter_vcha_cluster_mode_settask: VSphereAutomation::VcenterVchaClusterModeSettask.new # VcenterVchaClusterModeSettask | 
-}
+vcenter_vcha_cluster_mode_settask = VSphereAutomation::VcenterVchaClusterModeSettask.new # VcenterVchaClusterModeSettask | 
 
 begin
   #Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
-  result = api_instance.settask(opts)
+  result = api_instance.settask(vcenter_vcha_cluster_mode_settask)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterModeApi->settask: #{e}"
@@ -75,7 +73,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_mode_settask** | [**VcenterVchaClusterModeSettask**](VcenterVchaClusterModeSettask.md)|  | [optional] 
+ **vcenter_vcha_cluster_mode_settask** | [**VcenterVchaClusterModeSettask**](VcenterVchaClusterModeSettask.md)|  | 
 
 ### Return type
 

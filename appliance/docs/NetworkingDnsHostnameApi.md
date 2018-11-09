@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NetworkingDnsHostnameApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_networking_dns_hostname_set)
 
 Set the Fully Qualified Domain Name.
 
@@ -59,13 +59,11 @@ Set the Fully Qualified Domain Name.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingDnsHostnameApi.new
-opts = {
-  appliance_networking_dns_hostname_set: VSphereAutomation::ApplianceNetworkingDnsHostnameSet.new # ApplianceNetworkingDnsHostnameSet | 
-}
+appliance_networking_dns_hostname_set = VSphereAutomation::ApplianceNetworkingDnsHostnameSet.new # ApplianceNetworkingDnsHostnameSet | 
 
 begin
   #Set the Fully Qualified Domain Name.
-  api_instance.set(opts)
+  api_instance.set(appliance_networking_dns_hostname_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingDnsHostnameApi->set: #{e}"
 end
@@ -75,7 +73,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_networking_dns_hostname_set** | [**ApplianceNetworkingDnsHostnameSet**](ApplianceNetworkingDnsHostnameSet.md)|  | [optional] 
+ **appliance_networking_dns_hostname_set** | [**ApplianceNetworkingDnsHostnameSet**](ApplianceNetworkingDnsHostnameSet.md)|  | 
 
 ### Return type
 
@@ -93,7 +91,7 @@ No authorization required
 
 
 # **test**
-> ApplianceNetworkingDnsHostnameTestResult test(opts)
+> ApplianceNetworkingDnsHostnameTestResult test(appliance_networking_dns_hostname_test)
 
 Test the Fully Qualified Domain Name.
 
@@ -103,13 +101,11 @@ Test the Fully Qualified Domain Name.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NetworkingDnsHostnameApi.new
-opts = {
-  appliance_networking_dns_hostname_test: VSphereAutomation::ApplianceNetworkingDnsHostnameTest.new # ApplianceNetworkingDnsHostnameTest | 
-}
+appliance_networking_dns_hostname_test = VSphereAutomation::ApplianceNetworkingDnsHostnameTest.new # ApplianceNetworkingDnsHostnameTest | 
 
 begin
   #Test the Fully Qualified Domain Name.
-  result = api_instance.test(opts)
+  result = api_instance.test(appliance_networking_dns_hostname_test)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingDnsHostnameApi->test: #{e}"
@@ -120,7 +116,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_networking_dns_hostname_test** | [**ApplianceNetworkingDnsHostnameTest**](ApplianceNetworkingDnsHostnameTest.md)|  | [optional] 
+ **appliance_networking_dns_hostname_test** | [**ApplianceNetworkingDnsHostnameTest**](ApplianceNetworkingDnsHostnameTest.md)|  | 
 
 ### Return type
 

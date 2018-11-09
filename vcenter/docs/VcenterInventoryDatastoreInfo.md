@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Type of the datastore. | [optional] 
+**type** | **String** | Type of the datastore. | 
 
 

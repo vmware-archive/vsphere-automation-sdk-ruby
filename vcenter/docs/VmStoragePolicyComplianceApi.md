@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmStoragePolicyComplianceApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **check**
-> VcenterVmStoragePolicyComplianceCheckResult check(vm, vcenter_vm_storage_policy_compliance_check)
+> VcenterVmStoragePolicyComplianceCheckResult check(vm, opts)
 
 Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
 
@@ -20,11 +20,13 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmStoragePolicyComplianceApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_storage_policy_compliance_check = VSphereAutomation::VcenterVmStoragePolicyComplianceCheck.new # VcenterVmStoragePolicyComplianceCheck | 
+opts = {
+  vcenter_vm_storage_policy_compliance_check: VSphereAutomation::VcenterVmStoragePolicyComplianceCheck.new # VcenterVmStoragePolicyComplianceCheck | 
+}
 
 begin
   #Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
-  result = api_instance.check(vm, vcenter_vm_storage_policy_compliance_check)
+  result = api_instance.check(vm, opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmStoragePolicyComplianceApi->check: #{e}"
@@ -36,7 +38,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_storage_policy_compliance_check** | [**VcenterVmStoragePolicyComplianceCheck**](VcenterVmStoragePolicyComplianceCheck.md)|  | 
+ **vcenter_vm_storage_policy_compliance_check** | [**VcenterVmStoragePolicyComplianceCheck**](VcenterVmStoragePolicyComplianceCheck.md)|  | [optional] 
 
 ### Return type
 

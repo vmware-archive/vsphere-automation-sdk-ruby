@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**ApplianceNetworkingDnsHostnameTestStatus**](ApplianceNetworkingDnsHostnameTestStatus.md) |  | [optional] 
-**messages** | [**Array&lt;ApplianceNetworkingDnsHostnameMessage&gt;**](ApplianceNetworkingDnsHostnameMessage.md) | messages | [optional] 
+**status** | [**ApplianceNetworkingDnsHostnameTestStatus**](ApplianceNetworkingDnsHostnameTestStatus.md) |  | 
+**messages** | [**Array&lt;ApplianceNetworkingDnsHostnameMessage&gt;**](ApplianceNetworkingDnsHostnameMessage.md) | messages | 
 
 

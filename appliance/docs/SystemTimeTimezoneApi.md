@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::SystemTimeTimezoneApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_system_time_timezone_set)
 
 Set time zone.
 
@@ -58,13 +58,11 @@ Set time zone.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::SystemTimeTimezoneApi.new
-opts = {
-  appliance_system_time_timezone_set: VSphereAutomation::ApplianceSystemTimeTimezoneSet.new # ApplianceSystemTimeTimezoneSet | 
-}
+appliance_system_time_timezone_set = VSphereAutomation::ApplianceSystemTimeTimezoneSet.new # ApplianceSystemTimeTimezoneSet | 
 
 begin
   #Set time zone.
-  api_instance.set(opts)
+  api_instance.set(appliance_system_time_timezone_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SystemTimeTimezoneApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_system_time_timezone_set** | [**ApplianceSystemTimeTimezoneSet**](ApplianceSystemTimeTimezoneSet.md)|  | [optional] 
+ **appliance_system_time_timezone_set** | [**ApplianceSystemTimeTimezoneSet**](ApplianceSystemTimeTimezoneSet.md)|  | 
 
 ### Return type
 

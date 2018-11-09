@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::MonitoringApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -92,7 +92,7 @@ No authorization required
 
 
 # **query**
-> ApplianceMonitoringQueryResult query
+> ApplianceMonitoringQueryResult query(item)
 
 Get monitoring data.
 
@@ -102,10 +102,11 @@ Get monitoring data.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::MonitoringApi.new
+item = nil # Object | MonitoredItemDataRequest Structure
 
 begin
   #Get monitoring data.
-  result = api_instance.query
+  result = api_instance.query(item)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MonitoringApi->query: #{e}"
@@ -113,7 +114,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **item** | [**Object**](.md)| MonitoredItemDataRequest Structure | 
 
 ### Return type
 

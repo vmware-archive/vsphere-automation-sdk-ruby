@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::NtpApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_ntp_set)
 
 Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
 
@@ -59,13 +59,11 @@ Set NTP servers. This method updates old NTP servers from configuration and sets
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NtpApi.new
-opts = {
-  appliance_ntp_set: VSphereAutomation::ApplianceNtpSet.new # ApplianceNtpSet | 
-}
+appliance_ntp_set = VSphereAutomation::ApplianceNtpSet.new # ApplianceNtpSet | 
 
 begin
   #Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
-  api_instance.set(opts)
+  api_instance.set(appliance_ntp_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NtpApi->set: #{e}"
 end
@@ -75,7 +73,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_ntp_set** | [**ApplianceNtpSet**](ApplianceNtpSet.md)|  | [optional] 
+ **appliance_ntp_set** | [**ApplianceNtpSet**](ApplianceNtpSet.md)|  | 
 
 ### Return type
 
@@ -93,7 +91,7 @@ No authorization required
 
 
 # **test**
-> ApplianceNtpTestResult test(opts)
+> ApplianceNtpTestResult test(appliance_ntp_test)
 
 Test the connection to a list of ntp servers.
 
@@ -103,13 +101,11 @@ Test the connection to a list of ntp servers.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::NtpApi.new
-opts = {
-  appliance_ntp_test: VSphereAutomation::ApplianceNtpTest.new # ApplianceNtpTest | 
-}
+appliance_ntp_test = VSphereAutomation::ApplianceNtpTest.new # ApplianceNtpTest | 
 
 begin
   #Test the connection to a list of ntp servers.
-  result = api_instance.test(opts)
+  result = api_instance.test(appliance_ntp_test)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NtpApi->test: #{e}"
@@ -120,7 +116,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_ntp_test** | [**ApplianceNtpTest**](ApplianceNtpTest.md)|  | [optional] 
+ **appliance_ntp_test** | [**ApplianceNtpTest**](ApplianceNtpTest.md)|  | 
 
 ### Return type
 

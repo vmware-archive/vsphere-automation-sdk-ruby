@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**path** | **String** | The dot-separated path of the namespace containing the command in the CLI command tree. | [optional] 
-**name** | **String** | Name of the command. | [optional] 
+**path** | **String** | The dot-separated path of the namespace containing the command in the CLI command tree. | 
+**name** | **String** | Name of the command. | 
 
 

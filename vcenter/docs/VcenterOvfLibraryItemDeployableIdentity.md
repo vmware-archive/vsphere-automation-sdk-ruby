@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Type of the deployable resource. | [optional] 
-**id** | **String** | Identifier of the deployable resource. | [optional] 
+**type** | **String** | Type of the deployable resource. | 
+**id** | **String** | Identifier of the deployable resource. | 
 
 

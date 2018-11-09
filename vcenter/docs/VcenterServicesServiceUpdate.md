@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterServicesServiceUpdateSpec**](VcenterServicesServiceUpdateSpec.md) |  | [optional] 
+**spec** | [**VcenterServicesServiceUpdateSpec**](VcenterServicesServiceUpdateSpec.md) |  | 
 
 

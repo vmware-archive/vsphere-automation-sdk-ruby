@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::ShutdownApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -88,7 +88,7 @@ No authorization required
 
 
 # **poweroff**
-> poweroff(opts)
+> poweroff(appliance_shutdown_poweroff)
 
 Power off the appliance.
 
@@ -98,13 +98,11 @@ Power off the appliance.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::ShutdownApi.new
-opts = {
-  appliance_shutdown_poweroff: VSphereAutomation::ApplianceShutdownPoweroff.new # ApplianceShutdownPoweroff | 
-}
+appliance_shutdown_poweroff = VSphereAutomation::ApplianceShutdownPoweroff.new # ApplianceShutdownPoweroff | 
 
 begin
   #Power off the appliance.
-  api_instance.poweroff(opts)
+  api_instance.poweroff(appliance_shutdown_poweroff)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling ShutdownApi->poweroff: #{e}"
 end
@@ -114,7 +112,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_shutdown_poweroff** | [**ApplianceShutdownPoweroff**](ApplianceShutdownPoweroff.md)|  | [optional] 
+ **appliance_shutdown_poweroff** | [**ApplianceShutdownPoweroff**](ApplianceShutdownPoweroff.md)|  | 
 
 ### Return type
 
@@ -132,7 +130,7 @@ No authorization required
 
 
 # **reboot**
-> reboot(opts)
+> reboot(appliance_shutdown_reboot)
 
 Reboot the appliance.
 
@@ -142,13 +140,11 @@ Reboot the appliance.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::ShutdownApi.new
-opts = {
-  appliance_shutdown_reboot: VSphereAutomation::ApplianceShutdownReboot.new # ApplianceShutdownReboot | 
-}
+appliance_shutdown_reboot = VSphereAutomation::ApplianceShutdownReboot.new # ApplianceShutdownReboot | 
 
 begin
   #Reboot the appliance.
-  api_instance.reboot(opts)
+  api_instance.reboot(appliance_shutdown_reboot)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling ShutdownApi->reboot: #{e}"
 end
@@ -158,7 +154,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_shutdown_reboot** | [**ApplianceShutdownReboot**](ApplianceShutdownReboot.md)|  | [optional] 
+ **appliance_shutdown_reboot** | [**ApplianceShutdownReboot**](ApplianceShutdownReboot.md)|  | 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VchaClusterWitnessApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **check**
-> VcenterVchaClusterWitnessCheckResult check(opts)
+> VcenterVchaClusterWitnessCheckResult check(vcenter_vcha_cluster_witness_check)
 
 Validates the specified witness node's placement configuration.
 
@@ -19,13 +19,11 @@ Validates the specified witness node's placement configuration.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterWitnessApi.new
-opts = {
-  vcenter_vcha_cluster_witness_check: VSphereAutomation::VcenterVchaClusterWitnessCheck.new # VcenterVchaClusterWitnessCheck | 
-}
+vcenter_vcha_cluster_witness_check = VSphereAutomation::VcenterVchaClusterWitnessCheck.new # VcenterVchaClusterWitnessCheck | 
 
 begin
   #Validates the specified witness node's placement configuration.
-  result = api_instance.check(opts)
+  result = api_instance.check(vcenter_vcha_cluster_witness_check)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterWitnessApi->check: #{e}"
@@ -36,7 +34,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_witness_check** | [**VcenterVchaClusterWitnessCheck**](VcenterVchaClusterWitnessCheck.md)|  | [optional] 
+ **vcenter_vcha_cluster_witness_check** | [**VcenterVchaClusterWitnessCheck**](VcenterVchaClusterWitnessCheck.md)|  | 
 
 ### Return type
 
@@ -54,7 +52,7 @@ No authorization required
 
 
 # **redeploytask**
-> VcenterVchaClusterWitnessRedeploytaskResult redeploytask(opts)
+> VcenterVchaClusterWitnessRedeploytaskResult redeploytask(vcenter_vcha_cluster_witness_redeploytask)
 
 Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
@@ -64,13 +62,11 @@ Creates the witness node in a degraded cluster with node location information an
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterWitnessApi.new
-opts = {
-  vcenter_vcha_cluster_witness_redeploytask: VSphereAutomation::VcenterVchaClusterWitnessRedeploytask.new # VcenterVchaClusterWitnessRedeploytask | 
-}
+vcenter_vcha_cluster_witness_redeploytask = VSphereAutomation::VcenterVchaClusterWitnessRedeploytask.new # VcenterVchaClusterWitnessRedeploytask | 
 
 begin
   #Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
-  result = api_instance.redeploytask(opts)
+  result = api_instance.redeploytask(vcenter_vcha_cluster_witness_redeploytask)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterWitnessApi->redeploytask: #{e}"
@@ -81,7 +77,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_witness_redeploytask** | [**VcenterVchaClusterWitnessRedeploytask**](VcenterVchaClusterWitnessRedeploytask.md)|  | [optional] 
+ **vcenter_vcha_cluster_witness_redeploytask** | [**VcenterVchaClusterWitnessRedeploytask**](VcenterVchaClusterWitnessRedeploytask.md)|  | 
 
 ### Return type
 

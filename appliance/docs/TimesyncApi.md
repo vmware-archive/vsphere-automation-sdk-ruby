@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::TimesyncApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_timesync_set)
 
 Set time synchronization mode.
 
@@ -58,13 +58,11 @@ Set time synchronization mode.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::TimesyncApi.new
-opts = {
-  appliance_timesync_set: VSphereAutomation::ApplianceTimesyncSet.new # ApplianceTimesyncSet | 
-}
+appliance_timesync_set = VSphereAutomation::ApplianceTimesyncSet.new # ApplianceTimesyncSet | 
 
 begin
   #Set time synchronization mode.
-  api_instance.set(opts)
+  api_instance.set(appliance_timesync_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TimesyncApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_timesync_set** | [**ApplianceTimesyncSet**](ApplianceTimesyncSet.md)|  | [optional] 
+ **appliance_timesync_set** | [**ApplianceTimesyncSet**](ApplianceTimesyncSet.md)|  | 
 
 ### Return type
 

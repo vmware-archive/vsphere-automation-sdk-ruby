@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ApplianceNetworkingInterfacesIpv6Config**](ApplianceNetworkingInterfacesIpv6Config.md) |  | [optional] 
+**config** | [**ApplianceNetworkingInterfacesIpv6Config**](ApplianceNetworkingInterfacesIpv6Config.md) |  | 
 
 

@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::LocalAccountsApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> create(username, opts)
+> create(username, appliance_local_accounts_create)
 
 Create a new local user account.
 
@@ -24,13 +24,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
-opts = {
-  appliance_local_accounts_create: VSphereAutomation::ApplianceLocalAccountsCreate.new # ApplianceLocalAccountsCreate | 
-}
+appliance_local_accounts_create = VSphereAutomation::ApplianceLocalAccountsCreate.new # ApplianceLocalAccountsCreate | 
 
 begin
   #Create a new local user account.
-  api_instance.create(username, opts)
+  api_instance.create(username, appliance_local_accounts_create)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalAccountsApi->create: #{e}"
 end
@@ -41,7 +39,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| User login name | 
- **appliance_local_accounts_create** | [**ApplianceLocalAccountsCreate**](ApplianceLocalAccountsCreate.md)|  | [optional] 
+ **appliance_local_accounts_create** | [**ApplianceLocalAccountsCreate**](ApplianceLocalAccountsCreate.md)|  | 
 
 ### Return type
 
@@ -183,7 +181,7 @@ No authorization required
 
 
 # **set**
-> set(username, opts)
+> set(username, appliance_local_accounts_set)
 
 Set local user account properties.
 
@@ -194,13 +192,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
-opts = {
-  appliance_local_accounts_set: VSphereAutomation::ApplianceLocalAccountsSet.new # ApplianceLocalAccountsSet | 
-}
+appliance_local_accounts_set = VSphereAutomation::ApplianceLocalAccountsSet.new # ApplianceLocalAccountsSet | 
 
 begin
   #Set local user account properties.
-  api_instance.set(username, opts)
+  api_instance.set(username, appliance_local_accounts_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalAccountsApi->set: #{e}"
 end
@@ -211,7 +207,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| User login name | 
- **appliance_local_accounts_set** | [**ApplianceLocalAccountsSet**](ApplianceLocalAccountsSet.md)|  | [optional] 
+ **appliance_local_accounts_set** | [**ApplianceLocalAccountsSet**](ApplianceLocalAccountsSet.md)|  | 
 
 ### Return type
 
@@ -229,7 +225,7 @@ No authorization required
 
 
 # **update**
-> update(username, opts)
+> update(username, appliance_local_accounts_update)
 
 Update selected fields in local user account properties.
 
@@ -240,13 +236,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
-opts = {
-  appliance_local_accounts_update: VSphereAutomation::ApplianceLocalAccountsUpdate.new # ApplianceLocalAccountsUpdate | 
-}
+appliance_local_accounts_update = VSphereAutomation::ApplianceLocalAccountsUpdate.new # ApplianceLocalAccountsUpdate | 
 
 begin
   #Update selected fields in local user account properties.
-  api_instance.update(username, opts)
+  api_instance.update(username, appliance_local_accounts_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalAccountsApi->update: #{e}"
 end
@@ -257,7 +251,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| User login name | 
- **appliance_local_accounts_update** | [**ApplianceLocalAccountsUpdate**](ApplianceLocalAccountsUpdate.md)|  | [optional] 
+ **appliance_local_accounts_update** | [**ApplianceLocalAccountsUpdate**](ApplianceLocalAccountsUpdate.md)|  | 
 
 ### Return type
 

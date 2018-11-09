@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file_spec** | [**ContentLibraryItemUpdatesessionFileAddSpec**](ContentLibraryItemUpdatesessionFileAddSpec.md) |  | [optional] 
+**file_spec** | [**ContentLibraryItemUpdatesessionFileAddSpec**](ContentLibraryItemUpdatesessionFileAddSpec.md) |  | 
 
 

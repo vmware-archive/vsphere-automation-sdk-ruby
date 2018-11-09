@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source_appliance** | [**VcenterDeploymentUpgradeSourceApplianceSpec**](VcenterDeploymentUpgradeSourceApplianceSpec.md) |  | [optional] 
-**source_location** | [**VcenterDeploymentLocationSpec**](VcenterDeploymentLocationSpec.md) |  | [optional] 
+**source_appliance** | [**VcenterDeploymentUpgradeSourceApplianceSpec**](VcenterDeploymentUpgradeSourceApplianceSpec.md) |  | 
+**source_location** | [**VcenterDeploymentLocationSpec**](VcenterDeploymentLocationSpec.md) |  | 
 **history** | [**VcenterDeploymentHistoryMigrationSpec**](VcenterDeploymentHistoryMigrationSpec.md) |  | [optional] 
 **vcsa_embedded** | [**VcenterDeploymentUpgradeVcsaEmbeddedSpec**](VcenterDeploymentUpgradeVcsaEmbeddedSpec.md) |  | [optional] 
 **psc** | [**VcenterDeploymentUpgradePscSpec**](VcenterDeploymentUpgradePscSpec.md) |  | [optional] 

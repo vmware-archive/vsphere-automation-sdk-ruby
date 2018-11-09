@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::AccessConsolecliApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_access_consolecli_set)
 
 Set enabled state of the console-based controlled CLI (TTY1).
 
@@ -58,13 +58,11 @@ Set enabled state of the console-based controlled CLI (TTY1).
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::AccessConsolecliApi.new
-opts = {
-  appliance_access_consolecli_set: VSphereAutomation::ApplianceAccessConsolecliSet.new # ApplianceAccessConsolecliSet | 
-}
+appliance_access_consolecli_set = VSphereAutomation::ApplianceAccessConsolecliSet.new # ApplianceAccessConsolecliSet | 
 
 begin
   #Set enabled state of the console-based controlled CLI (TTY1).
-  api_instance.set(opts)
+  api_instance.set(appliance_access_consolecli_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling AccessConsolecliApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_access_consolecli_set** | [**ApplianceAccessConsolecliSet**](ApplianceAccessConsolecliSet.md)|  | [optional] 
+ **appliance_access_consolecli_set** | [**ApplianceAccessConsolecliSet**](ApplianceAccessConsolecliSet.md)|  | 
 
 ### Return type
 

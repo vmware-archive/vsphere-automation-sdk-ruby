@@ -1,6 +1,6 @@
 # VSphereAutomation::VAPI::MetadataCliCommandApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ No authorization required
 
 
 # **get**
-> VapiMetadataCliCommandResult get(opts)
+> VapiMetadataCliCommandResult get(vapi_metadata_cli_command_get)
 
 Retrieves information about a command including information about how to execute that command.
 
@@ -59,13 +59,11 @@ Retrieves information about a command including information about how to execute
 require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::MetadataCliCommandApi.new
-opts = {
-  vapi_metadata_cli_command_get: VSphereAutomation::VapiMetadataCliCommandGet.new # VapiMetadataCliCommandGet | 
-}
+vapi_metadata_cli_command_get = VSphereAutomation::VapiMetadataCliCommandGet.new # VapiMetadataCliCommandGet | 
 
 begin
   #Retrieves information about a command including information about how to execute that command.
-  result = api_instance.get(opts)
+  result = api_instance.get(vapi_metadata_cli_command_get)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataCliCommandApi->get: #{e}"
@@ -76,7 +74,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vapi_metadata_cli_command_get** | [**VapiMetadataCliCommandGet**](VapiMetadataCliCommandGet.md)|  | [optional] 
+ **vapi_metadata_cli_command_get** | [**VapiMetadataCliCommandGet**](VapiMetadataCliCommandGet.md)|  | 
 
 ### Return type
 
@@ -94,7 +92,7 @@ No authorization required
 
 
 # **list**
-> VapiMetadataCliCommandListResult list
+> VapiMetadataCliCommandListResult list(opts)
 
 Returns the identifiers of all commands, or commands in a specific namespace.
 
@@ -104,10 +102,13 @@ Returns the identifiers of all commands, or commands in a specific namespace.
 require 'vsphere-automation-vapi'
 
 api_instance = VSphereAutomation::VAPI::MetadataCliCommandApi.new
+opts = {
+  path: 'path_example' # String | The dot-separated path of the namespace for which command identifiers should be returned.
+}
 
 begin
   #Returns the identifiers of all commands, or commands in a specific namespace.
-  result = api_instance.list
+  result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataCliCommandApi->list: #{e}"
@@ -115,7 +116,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **String**| The dot-separated path of the namespace for which command identifiers should be returned. | [optional] 
 
 ### Return type
 

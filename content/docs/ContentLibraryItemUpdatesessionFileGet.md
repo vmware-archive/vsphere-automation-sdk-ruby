@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file_name** | **String** | Name of the file. | [optional] 
+**file_name** | **String** | Name of the file. | 
 
 

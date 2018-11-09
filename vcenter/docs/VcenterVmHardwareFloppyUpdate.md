@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareFloppyUpdateSpec**](VcenterVmHardwareFloppyUpdateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareFloppyUpdateSpec**](VcenterVmHardwareFloppyUpdateSpec.md) |  | 
 
 

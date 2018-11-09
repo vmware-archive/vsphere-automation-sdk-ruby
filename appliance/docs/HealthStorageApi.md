@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::HealthStorageApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

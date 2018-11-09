@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deployment_type** | [**VcenterVchaClusterDeploymentTypeType**](VcenterVchaClusterDeploymentTypeType.md) |  | [optional] 
+**deployment_type** | [**VcenterVchaClusterDeploymentTypeType**](VcenterVchaClusterDeploymentTypeType.md) |  | 
 
 

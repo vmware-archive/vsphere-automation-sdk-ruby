@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**piece** | [**ApplianceRecoveryRestoreJobRestoreRequest**](ApplianceRecoveryRestoreJobRestoreRequest.md) |  | [optional] 
+**piece** | [**ApplianceRecoveryRestoreJobRestoreRequest**](ApplianceRecoveryRestoreJobRestoreRequest.md) |  | 
 
 

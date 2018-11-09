@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterDeploymentUpgradeUpgradeSpec**](VcenterDeploymentUpgradeUpgradeSpec.md) |  | [optional] 
+**spec** | [**VcenterDeploymentUpgradeUpgradeSpec**](VcenterDeploymentUpgradeUpgradeSpec.md) |  | 
 
 

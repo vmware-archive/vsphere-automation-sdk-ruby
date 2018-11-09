@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mode** | [**VcenterVchaClusterModeClusterMode**](VcenterVchaClusterModeClusterMode.md) |  | [optional] 
+**mode** | [**VcenterVchaClusterModeClusterMode**](VcenterVchaClusterModeClusterMode.md) |  | 
 
 

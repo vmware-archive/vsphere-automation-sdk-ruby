@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::LocalAccountsPolicyApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,7 +48,7 @@ No authorization required
 
 
 # **set**
-> set(opts)
+> set(appliance_local_accounts_policy_set)
 
 Set the global password policy.
 
@@ -58,13 +58,11 @@ Set the global password policy.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsPolicyApi.new
-opts = {
-  appliance_local_accounts_policy_set: VSphereAutomation::ApplianceLocalAccountsPolicySet.new # ApplianceLocalAccountsPolicySet | 
-}
+appliance_local_accounts_policy_set = VSphereAutomation::ApplianceLocalAccountsPolicySet.new # ApplianceLocalAccountsPolicySet | 
 
 begin
   #Set the global password policy.
-  api_instance.set(opts)
+  api_instance.set(appliance_local_accounts_policy_set)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalAccountsPolicyApi->set: #{e}"
 end
@@ -74,7 +72,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_local_accounts_policy_set** | [**ApplianceLocalAccountsPolicySet**](ApplianceLocalAccountsPolicySet.md)|  | [optional] 
+ **appliance_local_accounts_policy_set** | [**ApplianceLocalAccountsPolicySet**](ApplianceLocalAccountsPolicySet.md)|  | 
 
 ### Return type
 

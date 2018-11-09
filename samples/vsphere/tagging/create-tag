@@ -61,6 +61,6 @@ create_spec =  VSphereAutomation::CIS::CisTaggingTagCreateSpec.new(
 )
 create_model = VSphereAutomation::CIS::CisTaggingTagCreate.new(create_spec: create_spec)
 
-result = api_instance.create(cis_tagging_tag_create: create_model).value
+result = api_instance.create(create_model).value
 
 puts "Tag ID: #{result}"

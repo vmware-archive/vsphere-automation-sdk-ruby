@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVmHardwareParallelCreateSpec**](VcenterVmHardwareParallelCreateSpec.md) |  | [optional] 
+**spec** | [**VcenterVmHardwareParallelCreateSpec**](VcenterVmHardwareParallelCreateSpec.md) |  | 
 
 

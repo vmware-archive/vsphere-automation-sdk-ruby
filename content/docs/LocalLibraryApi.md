@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::LocalLibraryApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> ContentLocalLibraryCreateResult create(opts)
+> ContentLocalLibraryCreateResult create(content_local_library_create)
 
 Creates a new local library.
 
@@ -22,13 +22,11 @@ Creates a new local library.
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LocalLibraryApi.new
-opts = {
-  content_local_library_create: VSphereAutomation::ContentLocalLibraryCreate.new # ContentLocalLibraryCreate | 
-}
+content_local_library_create = VSphereAutomation::ContentLocalLibraryCreate.new # ContentLocalLibraryCreate | 
 
 begin
   #Creates a new local library.
-  result = api_instance.create(opts)
+  result = api_instance.create(content_local_library_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalLibraryApi->create: #{e}"
@@ -39,7 +37,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_local_library_create** | [**ContentLocalLibraryCreate**](ContentLocalLibraryCreate.md)|  | [optional] 
+ **content_local_library_create** | [**ContentLocalLibraryCreate**](ContentLocalLibraryCreate.md)|  | 
 
 ### Return type
 
@@ -181,7 +179,7 @@ No authorization required
 
 
 # **update**
-> update(library_id, opts)
+> update(library_id, content_local_library_update)
 
 Updates the properties of a local library. <p> This is an incremental update to the local library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
 
@@ -192,13 +190,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::LocalLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the local library to update.
-opts = {
-  content_local_library_update: VSphereAutomation::ContentLocalLibraryUpdate.new # ContentLocalLibraryUpdate | 
-}
+content_local_library_update = VSphereAutomation::ContentLocalLibraryUpdate.new # ContentLocalLibraryUpdate | 
 
 begin
   #Updates the properties of a local library. <p> This is an incremental update to the local library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
-  api_instance.update(library_id, opts)
+  api_instance.update(library_id, content_local_library_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalLibraryApi->update: #{e}"
 end
@@ -209,7 +205,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_id** | **String**| Identifier of the local library to update. | 
- **content_local_library_update** | [**ContentLocalLibraryUpdate**](ContentLocalLibraryUpdate.md)|  | [optional] 
+ **content_local_library_update** | [**ContentLocalLibraryUpdate**](ContentLocalLibraryUpdate.md)|  | 
 
 ### Return type
 

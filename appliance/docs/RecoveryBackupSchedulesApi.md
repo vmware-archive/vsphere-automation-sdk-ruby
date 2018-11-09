@@ -1,6 +1,6 @@
 # VSphereAutomation::Appliance::RecoveryBackupSchedulesApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> create(schedule, opts)
+> create(schedule, appliance_recovery_backup_schedules_create)
 
 Creates a schedule
 
@@ -24,13 +24,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
-opts = {
-  appliance_recovery_backup_schedules_create: VSphereAutomation::ApplianceRecoveryBackupSchedulesCreate.new # ApplianceRecoveryBackupSchedulesCreate | 
-}
+appliance_recovery_backup_schedules_create = VSphereAutomation::ApplianceRecoveryBackupSchedulesCreate.new # ApplianceRecoveryBackupSchedulesCreate | 
 
 begin
   #Creates a schedule
-  api_instance.create(schedule, opts)
+  api_instance.create(schedule, appliance_recovery_backup_schedules_create)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupSchedulesApi->create: #{e}"
 end
@@ -41,7 +39,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule** | **String**| Identifier of the schedule | 
- **appliance_recovery_backup_schedules_create** | [**ApplianceRecoveryBackupSchedulesCreate**](ApplianceRecoveryBackupSchedulesCreate.md)|  | [optional] 
+ **appliance_recovery_backup_schedules_create** | [**ApplianceRecoveryBackupSchedulesCreate**](ApplianceRecoveryBackupSchedulesCreate.md)|  | 
 
 ### Return type
 
@@ -183,7 +181,7 @@ No authorization required
 
 
 # **run**
-> ApplianceRecoveryBackupSchedulesRunResult run(schedule, appliance_recovery_backup_schedules_run)
+> ApplianceRecoveryBackupSchedulesRunResult run(schedule, opts)
 
 Initiate backup with the specified schedule
 
@@ -194,11 +192,13 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
-appliance_recovery_backup_schedules_run = VSphereAutomation::ApplianceRecoveryBackupSchedulesRun.new # ApplianceRecoveryBackupSchedulesRun | 
+opts = {
+  appliance_recovery_backup_schedules_run: VSphereAutomation::ApplianceRecoveryBackupSchedulesRun.new # ApplianceRecoveryBackupSchedulesRun | 
+}
 
 begin
   #Initiate backup with the specified schedule
-  result = api_instance.run(schedule, appliance_recovery_backup_schedules_run)
+  result = api_instance.run(schedule, opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupSchedulesApi->run: #{e}"
@@ -210,7 +210,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule** | **String**| Identifier of the schedule | 
- **appliance_recovery_backup_schedules_run** | [**ApplianceRecoveryBackupSchedulesRun**](ApplianceRecoveryBackupSchedulesRun.md)|  | 
+ **appliance_recovery_backup_schedules_run** | [**ApplianceRecoveryBackupSchedulesRun**](ApplianceRecoveryBackupSchedulesRun.md)|  | [optional] 
 
 ### Return type
 
@@ -228,7 +228,7 @@ No authorization required
 
 
 # **update**
-> update(schedule, opts)
+> update(schedule, appliance_recovery_backup_schedules_update)
 
 Updates a schedule
 
@@ -239,13 +239,11 @@ require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
-opts = {
-  appliance_recovery_backup_schedules_update: VSphereAutomation::ApplianceRecoveryBackupSchedulesUpdate.new # ApplianceRecoveryBackupSchedulesUpdate | 
-}
+appliance_recovery_backup_schedules_update = VSphereAutomation::ApplianceRecoveryBackupSchedulesUpdate.new # ApplianceRecoveryBackupSchedulesUpdate | 
 
 begin
   #Updates a schedule
-  api_instance.update(schedule, opts)
+  api_instance.update(schedule, appliance_recovery_backup_schedules_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupSchedulesApi->update: #{e}"
 end
@@ -256,7 +254,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule** | **String**| Identifier of the schedule | 
- **appliance_recovery_backup_schedules_update** | [**ApplianceRecoveryBackupSchedulesUpdate**](ApplianceRecoveryBackupSchedulesUpdate.md)|  | [optional] 
+ **appliance_recovery_backup_schedules_update** | [**ApplianceRecoveryBackupSchedulesUpdate**](ApplianceRecoveryBackupSchedulesUpdate.md)|  | 
 
 ### Return type
 

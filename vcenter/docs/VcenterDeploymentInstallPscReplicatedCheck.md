@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterDeploymentReplicatedPscSpec**](VcenterDeploymentReplicatedPscSpec.md) |  | [optional] 
+**spec** | [**VcenterDeploymentReplicatedPscSpec**](VcenterDeploymentReplicatedPscSpec.md) |  | 
 
 

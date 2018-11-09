@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**VcenterVmHardwareBootDeviceType**](VcenterVmHardwareBootDeviceType.md) |  | [optional] 
+**type** | [**VcenterVmHardwareBootDeviceType**](VcenterVmHardwareBootDeviceType.md) |  | 
 
 

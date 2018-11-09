@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareFloppyApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -58,7 +58,7 @@ No authorization required
 
 
 # **create**
-> VcenterVmHardwareFloppyCreateResult create(vm, opts)
+> VcenterVmHardwareFloppyCreateResult create(vm, vcenter_vm_hardware_floppy_create)
 
 Adds a virtual floppy drive to the virtual machine.
 
@@ -69,13 +69,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareFloppyApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_floppy_create: VSphereAutomation::VcenterVmHardwareFloppyCreate.new # VcenterVmHardwareFloppyCreate | 
-}
+vcenter_vm_hardware_floppy_create = VSphereAutomation::VcenterVmHardwareFloppyCreate.new # VcenterVmHardwareFloppyCreate | 
 
 begin
   #Adds a virtual floppy drive to the virtual machine.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_floppy_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareFloppyApi->create: #{e}"
@@ -87,7 +85,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_floppy_create** | [**VcenterVmHardwareFloppyCreate**](VcenterVmHardwareFloppyCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_floppy_create** | [**VcenterVmHardwareFloppyCreate**](VcenterVmHardwareFloppyCreate.md)|  | 
 
 ### Return type
 
@@ -281,7 +279,7 @@ No authorization required
 
 
 # **update**
-> update(vm, floppy, opts)
+> update(vm, floppy, vcenter_vm_hardware_floppy_update)
 
 Updates the configuration of a virtual floppy drive.
 
@@ -293,13 +291,11 @@ require 'vsphere-automation-vcenter'
 api_instance = VSphereAutomation::VCenter::VmHardwareFloppyApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 floppy = 'floppy_example' # String | Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
-opts = {
-  vcenter_vm_hardware_floppy_update: VSphereAutomation::VcenterVmHardwareFloppyUpdate.new # VcenterVmHardwareFloppyUpdate | 
-}
+vcenter_vm_hardware_floppy_update = VSphereAutomation::VcenterVmHardwareFloppyUpdate.new # VcenterVmHardwareFloppyUpdate | 
 
 begin
   #Updates the configuration of a virtual floppy drive.
-  api_instance.update(vm, floppy, opts)
+  api_instance.update(vm, floppy, vcenter_vm_hardware_floppy_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareFloppyApi->update: #{e}"
 end
@@ -311,7 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **floppy** | **String**| Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy. | 
- **vcenter_vm_hardware_floppy_update** | [**VcenterVmHardwareFloppyUpdate**](VcenterVmHardwareFloppyUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_floppy_update** | [**VcenterVmHardwareFloppyUpdate**](VcenterVmHardwareFloppyUpdate.md)|  | 
 
 ### Return type
 

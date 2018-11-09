@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**policy** | [**ApplianceUpdatePolicyConfig**](ApplianceUpdatePolicyConfig.md) |  | [optional] 
+**policy** | [**ApplianceUpdatePolicyConfig**](ApplianceUpdatePolicyConfig.md) |  | 
 
 

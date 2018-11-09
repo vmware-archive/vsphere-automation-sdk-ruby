@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**ApplianceRecoveryBackupSchedulesCreateSpec**](ApplianceRecoveryBackupSchedulesCreateSpec.md) |  | [optional] 
+**spec** | [**ApplianceRecoveryBackupSchedulesCreateSpec**](ApplianceRecoveryBackupSchedulesCreateSpec.md) |  | 
 
 

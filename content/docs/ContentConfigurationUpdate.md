@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model** | [**ContentConfigurationModel**](ContentConfigurationModel.md) |  | [optional] 
+**model** | [**ContentConfigurationModel**](ContentConfigurationModel.md) |  | 
 
 

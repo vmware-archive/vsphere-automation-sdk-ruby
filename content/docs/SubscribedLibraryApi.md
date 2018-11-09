@@ -1,6 +1,6 @@
 # VSphereAutomation::Content::SubscribedLibraryApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> ContentSubscribedLibraryCreateResult create(opts)
+> ContentSubscribedLibraryCreateResult create(content_subscribed_library_create)
 
 Creates a new subscribed library. <p> Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
 
@@ -25,13 +25,11 @@ Creates a new subscribed library. <p> Once created, the subscribed library will 
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
-opts = {
-  content_subscribed_library_create: VSphereAutomation::ContentSubscribedLibraryCreate.new # ContentSubscribedLibraryCreate | 
-}
+content_subscribed_library_create = VSphereAutomation::ContentSubscribedLibraryCreate.new # ContentSubscribedLibraryCreate | 
 
 begin
   #Creates a new subscribed library. <p> Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
-  result = api_instance.create(opts)
+  result = api_instance.create(content_subscribed_library_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->create: #{e}"
@@ -42,7 +40,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_subscribed_library_create** | [**ContentSubscribedLibraryCreate**](ContentSubscribedLibraryCreate.md)|  | [optional] 
+ **content_subscribed_library_create** | [**ContentSubscribedLibraryCreate**](ContentSubscribedLibraryCreate.md)|  | 
 
 ### Return type
 
@@ -226,7 +224,7 @@ No authorization required
 
 
 # **probe**
-> ContentSubscribedLibraryProbeResult probe(opts)
+> ContentSubscribedLibraryProbeResult probe(content_subscribed_library_probe)
 
 Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
 
@@ -236,13 +234,11 @@ Probes remote library subscription information, including URL, SSL certificate a
 require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
-opts = {
-  content_subscribed_library_probe: VSphereAutomation::ContentSubscribedLibraryProbe.new # ContentSubscribedLibraryProbe | 
-}
+content_subscribed_library_probe = VSphereAutomation::ContentSubscribedLibraryProbe.new # ContentSubscribedLibraryProbe | 
 
 begin
   #Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
-  result = api_instance.probe(opts)
+  result = api_instance.probe(content_subscribed_library_probe)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->probe: #{e}"
@@ -253,7 +249,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_subscribed_library_probe** | [**ContentSubscribedLibraryProbe**](ContentSubscribedLibraryProbe.md)|  | [optional] 
+ **content_subscribed_library_probe** | [**ContentSubscribedLibraryProbe**](ContentSubscribedLibraryProbe.md)|  | 
 
 ### Return type
 
@@ -313,7 +309,7 @@ No authorization required
 
 
 # **update**
-> update(library_id, opts)
+> update(library_id, content_subscribed_library_update)
 
 Updates the properties of a subscribed library. <p> This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
 
@@ -324,13 +320,11 @@ require 'vsphere-automation-content'
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the subscribed library to update.
-opts = {
-  content_subscribed_library_update: VSphereAutomation::ContentSubscribedLibraryUpdate.new # ContentSubscribedLibraryUpdate | 
-}
+content_subscribed_library_update = VSphereAutomation::ContentSubscribedLibraryUpdate.new # ContentSubscribedLibraryUpdate | 
 
 begin
   #Updates the properties of a subscribed library. <p> This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
-  api_instance.update(library_id, opts)
+  api_instance.update(library_id, content_subscribed_library_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->update: #{e}"
 end
@@ -341,7 +335,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_id** | **String**| Identifier of the subscribed library to update. | 
- **content_subscribed_library_update** | [**ContentSubscribedLibraryUpdate**](ContentSubscribedLibraryUpdate.md)|  | [optional] 
+ **content_subscribed_library_update** | [**ContentSubscribedLibraryUpdate**](ContentSubscribedLibraryUpdate.md)|  | 
 
 ### Return type
 

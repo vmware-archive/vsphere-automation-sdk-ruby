@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**VcenterDeploymentApplianceType**](VcenterDeploymentApplianceType.md) |  | [optional] 
+**type** | [**VcenterDeploymentApplianceType**](VcenterDeploymentApplianceType.md) |  | 
 
 

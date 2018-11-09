@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareAdapterScsiApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterVmHardwareAdapterScsiCreateResult create(vm, opts)
+> VcenterVmHardwareAdapterScsiCreateResult create(vm, vcenter_vm_hardware_adapter_scsi_create)
 
 Adds a virtual SCSI adapter to the virtual machine.
 
@@ -23,13 +23,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareAdapterScsiApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_adapter_scsi_create: VSphereAutomation::VcenterVmHardwareAdapterScsiCreate.new # VcenterVmHardwareAdapterScsiCreate | 
-}
+vcenter_vm_hardware_adapter_scsi_create = VSphereAutomation::VcenterVmHardwareAdapterScsiCreate.new # VcenterVmHardwareAdapterScsiCreate | 
 
 begin
   #Adds a virtual SCSI adapter to the virtual machine.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_adapter_scsi_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareAdapterScsiApi->create: #{e}"
@@ -41,7 +39,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_adapter_scsi_create** | [**VcenterVmHardwareAdapterScsiCreate**](VcenterVmHardwareAdapterScsiCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_adapter_scsi_create** | [**VcenterVmHardwareAdapterScsiCreate**](VcenterVmHardwareAdapterScsiCreate.md)|  | 
 
 ### Return type
 
@@ -191,7 +189,7 @@ No authorization required
 
 
 # **update**
-> update(vm, adapter, opts)
+> update(vm, adapter, vcenter_vm_hardware_adapter_scsi_update)
 
 Updates the configuration of a virtual SCSI adapter.
 
@@ -203,13 +201,11 @@ require 'vsphere-automation-vcenter'
 api_instance = VSphereAutomation::VCenter::VmHardwareAdapterScsiApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 adapter = 'adapter_example' # String | Virtual SCSI adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter.
-opts = {
-  vcenter_vm_hardware_adapter_scsi_update: VSphereAutomation::VcenterVmHardwareAdapterScsiUpdate.new # VcenterVmHardwareAdapterScsiUpdate | 
-}
+vcenter_vm_hardware_adapter_scsi_update = VSphereAutomation::VcenterVmHardwareAdapterScsiUpdate.new # VcenterVmHardwareAdapterScsiUpdate | 
 
 begin
   #Updates the configuration of a virtual SCSI adapter.
-  api_instance.update(vm, adapter, opts)
+  api_instance.update(vm, adapter, vcenter_vm_hardware_adapter_scsi_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareAdapterScsiApi->update: #{e}"
 end
@@ -221,7 +217,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **adapter** | **String**| Virtual SCSI adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter. | 
- **vcenter_vm_hardware_adapter_scsi_update** | [**VcenterVmHardwareAdapterScsiUpdate**](VcenterVmHardwareAdapterScsiUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_adapter_scsi_update** | [**VcenterVmHardwareAdapterScsiUpdate**](VcenterVmHardwareAdapterScsiUpdate.md)|  | 
 
 ### Return type
 

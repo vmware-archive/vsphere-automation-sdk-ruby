@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::VmHardwareEthernetApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -58,7 +58,7 @@ No authorization required
 
 
 # **create**
-> VcenterVmHardwareEthernetCreateResult create(vm, opts)
+> VcenterVmHardwareEthernetCreateResult create(vm, vcenter_vm_hardware_ethernet_create)
 
 Adds a virtual Ethernet adapter to the virtual machine.
 
@@ -69,13 +69,11 @@ require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-opts = {
-  vcenter_vm_hardware_ethernet_create: VSphereAutomation::VcenterVmHardwareEthernetCreate.new # VcenterVmHardwareEthernetCreate | 
-}
+vcenter_vm_hardware_ethernet_create = VSphereAutomation::VcenterVmHardwareEthernetCreate.new # VcenterVmHardwareEthernetCreate | 
 
 begin
   #Adds a virtual Ethernet adapter to the virtual machine.
-  result = api_instance.create(vm, opts)
+  result = api_instance.create(vm, vcenter_vm_hardware_ethernet_create)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareEthernetApi->create: #{e}"
@@ -87,7 +85,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_ethernet_create** | [**VcenterVmHardwareEthernetCreate**](VcenterVmHardwareEthernetCreate.md)|  | [optional] 
+ **vcenter_vm_hardware_ethernet_create** | [**VcenterVmHardwareEthernetCreate**](VcenterVmHardwareEthernetCreate.md)|  | 
 
 ### Return type
 
@@ -281,7 +279,7 @@ No authorization required
 
 
 # **update**
-> update(vm, nic, opts)
+> update(vm, nic, vcenter_vm_hardware_ethernet_update)
 
 Updates the configuration of a virtual Ethernet adapter.
 
@@ -293,13 +291,11 @@ require 'vsphere-automation-vcenter'
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 nic = 'nic_example' # String | Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
-opts = {
-  vcenter_vm_hardware_ethernet_update: VSphereAutomation::VcenterVmHardwareEthernetUpdate.new # VcenterVmHardwareEthernetUpdate | 
-}
+vcenter_vm_hardware_ethernet_update = VSphereAutomation::VcenterVmHardwareEthernetUpdate.new # VcenterVmHardwareEthernetUpdate | 
 
 begin
   #Updates the configuration of a virtual Ethernet adapter.
-  api_instance.update(vm, nic, opts)
+  api_instance.update(vm, nic, vcenter_vm_hardware_ethernet_update)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareEthernetApi->update: #{e}"
 end
@@ -311,7 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **nic** | **String**| Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet. | 
- **vcenter_vm_hardware_ethernet_update** | [**VcenterVmHardwareEthernetUpdate**](VcenterVmHardwareEthernetUpdate.md)|  | [optional] 
+ **vcenter_vm_hardware_ethernet_update** | [**VcenterVmHardwareEthernetUpdate**](VcenterVmHardwareEthernetUpdate.md)|  | 
 
 ### Return type
 

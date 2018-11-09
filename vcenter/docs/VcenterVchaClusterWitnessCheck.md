@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVchaClusterWitnessCheckSpec**](VcenterVchaClusterWitnessCheckSpec.md) |  | [optional] 
+**spec** | [**VcenterVchaClusterWitnessCheckSpec**](VcenterVchaClusterWitnessCheckSpec.md) |  | 
 
 

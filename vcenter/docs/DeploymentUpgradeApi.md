@@ -1,6 +1,6 @@
 # VSphereAutomation::VCenter::DeploymentUpgradeApi
 
-All URIs are relative to *http:///rest*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -49,7 +49,7 @@ No authorization required
 
 
 # **check**
-> VcenterDeploymentUpgradeCheckResult check(opts)
+> VcenterDeploymentUpgradeCheckResult check(vcenter_deployment_upgrade_check)
 
 Run sanity checks using the UpgradeSpec parameters passed.
 
@@ -59,13 +59,11 @@ Run sanity checks using the UpgradeSpec parameters passed.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentUpgradeApi.new
-opts = {
-  vcenter_deployment_upgrade_check: VSphereAutomation::VcenterDeploymentUpgradeCheck.new # VcenterDeploymentUpgradeCheck | 
-}
+vcenter_deployment_upgrade_check = VSphereAutomation::VcenterDeploymentUpgradeCheck.new # VcenterDeploymentUpgradeCheck | 
 
 begin
   #Run sanity checks using the UpgradeSpec parameters passed.
-  result = api_instance.check(opts)
+  result = api_instance.check(vcenter_deployment_upgrade_check)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentUpgradeApi->check: #{e}"
@@ -76,7 +74,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_upgrade_check** | [**VcenterDeploymentUpgradeCheck**](VcenterDeploymentUpgradeCheck.md)|  | [optional] 
+ **vcenter_deployment_upgrade_check** | [**VcenterDeploymentUpgradeCheck**](VcenterDeploymentUpgradeCheck.md)|  | 
 
 ### Return type
 
@@ -133,7 +131,7 @@ No authorization required
 
 
 # **start**
-> start(opts)
+> start(vcenter_deployment_upgrade_start)
 
 Start the appliance installation.
 
@@ -143,13 +141,11 @@ Start the appliance installation.
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::DeploymentUpgradeApi.new
-opts = {
-  vcenter_deployment_upgrade_start: VSphereAutomation::VcenterDeploymentUpgradeStart.new # VcenterDeploymentUpgradeStart | 
-}
+vcenter_deployment_upgrade_start = VSphereAutomation::VcenterDeploymentUpgradeStart.new # VcenterDeploymentUpgradeStart | 
 
 begin
   #Start the appliance installation.
-  api_instance.start(opts)
+  api_instance.start(vcenter_deployment_upgrade_start)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentUpgradeApi->start: #{e}"
 end
@@ -159,7 +155,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_upgrade_start** | [**VcenterDeploymentUpgradeStart**](VcenterDeploymentUpgradeStart.md)|  | [optional] 
+ **vcenter_deployment_upgrade_start** | [**VcenterDeploymentUpgradeStart**](VcenterDeploymentUpgradeStart.md)|  | 
 
 ### Return type
 

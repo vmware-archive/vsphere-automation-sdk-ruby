@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | [**VcenterVchaClusterPassiveCheckSpec**](VcenterVchaClusterPassiveCheckSpec.md) |  | [optional] 
+**spec** | [**VcenterVchaClusterPassiveCheckSpec**](VcenterVchaClusterPassiveCheckSpec.md) |  | 
 
 
