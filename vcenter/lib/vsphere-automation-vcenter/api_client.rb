@@ -54,7 +54,7 @@ module VSphereAutomation
         @config.logger.debug "HTTP response body ~BEGIN~\n#{response.body}\n~END~\n"
       end
 
-      unless opts.fetch(:return_type, {}).keys.include?(response.code.to_s)
+      unless opts.fetch(:return_type, {}).keys.include?(response.code.to_s) || response.success?
         if response.timed_out?
           fail ApiError.new('Connection timed out')
         elsif response.code == 0
