@@ -1,4 +1,4 @@
-**NOTE:** (Updated Nov 19, 2018) In the near futur we will be transitioning this SDK to a Swagger based binding which will not be backwards compatible which will allow us to provide faster updates for API changes. The new binding is available in the openapi branch [here](https://github.com/vmware/vsphere-automation-sdk-ruby/tree/openapi). Please have a look at let us know your thoughts.
+**NOTE:** (Updated Nov 19, 2018) In the near future we will be transitioning this SDK to a Swagger based binding which will not be backwards compatible which will allow us to provide faster updates for API changes. The new binding is available in the openapi branch [here](https://github.com/vmware/vsphere-automation-sdk-ruby/tree/openapi). Please have a look at let us know your thoughts.
 
 # VMware vSphere Automation SDK for Ruby
 ## Table of Contents
