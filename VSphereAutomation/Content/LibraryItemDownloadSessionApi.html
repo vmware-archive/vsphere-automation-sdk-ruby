@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: VSphereAutomation::Content::LibraryItemDownloadSessionApi
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "VSphereAutomation::Content::LibraryItemDownloadSessionApi";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (L)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../VSphereAutomation.html" title="VSphereAutomation (module)">VSphereAutomation</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Content.html" title="VSphereAutomation::Content (module)">Content</a></span></span>
+     &raquo; 
+    <span class="title">LibraryItemDownloadSessionApi</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: VSphereAutomation::Content::LibraryItemDownloadSessionApi
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">VSphereAutomation::Content::LibraryItemDownloadSessionApi</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>content/lib/vsphere-automation-content/api/library_item_download_session_api.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#api_client-instance_method" title="#api_client (instance method)">#<strong>api_client</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute api_client.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cancel-instance_method" title="#cancel (instance method)">#<strong>cancel</strong>(download_session_id, opts = {})  &#x21d2; |VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Cancels the download session.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">#<strong>create</strong>(content_library_item_download_session_create, opts = {})  &#x21d2; ContentLibraryItemDownloadSessionCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError| </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new download session.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>(download_session_id, opts = {})  &#x21d2; |VapiStdErrorsNotFoundError|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes a download session.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fail-instance_method" title="#fail (instance method)">#<strong>fail</strong>(download_session_id, content_library_item_download_session_fail, opts = {})  &#x21d2; |VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Terminates the download session with a client specified error message.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(download_session_id, opts = {})  &#x21d2; ContentLibraryItemDownloadSessionResult|VapiStdErrorsNotFoundError| </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the download session with the specified identifier, including the most
+up-to-date status information for the session.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(api_client = ApiClient.default)  &#x21d2; LibraryItemDownloadSessionApi </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of LibraryItemDownloadSessionApi.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#keep_alive-instance_method" title="#keep_alive (instance method)">#<strong>keep_alive</strong>(download_session_id, opts = {})  &#x21d2; |VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Keeps a download session alive.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list-instance_method" title="#list (instance method)">#<strong>list</strong>(opts = {})  &#x21d2; ContentLibraryItemDownloadSessionListResult|VapiStdErrorsNotFoundError| </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Lists the identifiers of the download sessions created by the calling user.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(api_client = ApiClient.default)  &#x21d2; <tt><span class='object_link'><a href="" title="VSphereAutomation::Content::LibraryItemDownloadSessionApi (class)">LibraryItemDownloadSessionApi</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of LibraryItemDownloadSessionApi</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_api_client'>api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ApiClient.html" title="VSphereAutomation::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="../ApiClient.html#default-class_method" title="VSphereAutomation::ApiClient.default (method)">default</a></span></span><span class='rparen'>)</span>
+  <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='id identifier rubyid_api_client'>api_client</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="api_client=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="api_client-instance_method">
+  
+    #<strong>api_client</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute api_client</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
+  <span class='ivar'>@api_client</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="cancel-instance_method">
+  
+    #<strong>cancel</strong>(download_session_id, opts = {})  &#x21d2; <tt>|<span class='object_link'><a href="VapiStdErrorsNotAllowedInCurrentStateError.html" title="VSphereAutomation::Content::VapiStdErrorsNotAllowedInCurrentStateError (class)">VapiStdErrorsNotAllowedInCurrentStateError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Cancels the download session. This operation will abort any ongoing
+transfers and invalidate transfer urls that the client may be downloading
+from.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>download_session_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifer of the download session that should be canceled.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>|<span class='object_link'><a href="VapiStdErrorsNotAllowedInCurrentStateError.html" title="VSphereAutomation::Content::VapiStdErrorsNotAllowedInCurrentStateError (class)">VapiStdErrorsNotAllowedInCurrentStateError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cancel'>cancel</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_cancel_with_http_info'>cancel_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    #<strong>create</strong>(content_library_item_download_session_create, opts = {})  &#x21d2; <tt><span class='object_link'><a href="ContentLibraryItemDownloadSessionCreateResult.html" title="VSphereAutomation::Content::ContentLibraryItemDownloadSessionCreateResult (class)">ContentLibraryItemDownloadSessionCreateResult</a></span>|<span class='object_link'><a href="VapiStdErrorsInvalidArgumentError.html" title="VSphereAutomation::Content::VapiStdErrorsInvalidArgumentError (class)">VapiStdErrorsInvalidArgumentError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new download session.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>content_library_item_download_session_create</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ContentLibraryItemDownloadSessionCreateResult.html" title="VSphereAutomation::Content::ContentLibraryItemDownloadSessionCreateResult (class)">ContentLibraryItemDownloadSessionCreateResult</a></span>|<span class='object_link'><a href="VapiStdErrorsInvalidArgumentError.html" title="VSphereAutomation::Content::VapiStdErrorsInvalidArgumentError (class)">VapiStdErrorsInvalidArgumentError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_content_library_item_download_session_create'>content_library_item_download_session_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_create_with_http_info'>create_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_content_library_item_download_session_create'>content_library_item_download_session_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    #<strong>delete</strong>(download_session_id, opts = {})  &#x21d2; <tt>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes a download session. This removes the session and all information
+associated with it. &lt;p&gt; Removing a download session leaves any
+current transfers for that session in an indeterminate state (there is no
+guarantee that the transfers will be able to complete). However there will
+no longer be a means of inspecting the status of those downloads except by
+seeing the effect on the library item. &lt;p&gt; Download sessions for
+which there is no download activity or which are complete will
+automatically be expired and then deleted after a period of time.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>download_session_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifier of the download session to be deleted.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_delete_with_http_info'>delete_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fail-instance_method">
+  
+    #<strong>fail</strong>(download_session_id, content_library_item_download_session_fail, opts = {})  &#x21d2; <tt>|<span class='object_link'><a href="VapiStdErrorsNotAllowedInCurrentStateError.html" title="VSphereAutomation::Content::VapiStdErrorsNotAllowedInCurrentStateError (class)">VapiStdErrorsNotAllowedInCurrentStateError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Terminates the download session with a client specified error message.
+&lt;p&gt; This is useful in transmitting client side failures (for example,
+not being able to download a file) to the server side.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>download_session_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifier of the download session to fail.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>content_library_item_download_session_fail</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>|<span class='object_link'><a href="VapiStdErrorsNotAllowedInCurrentStateError.html" title="VSphereAutomation::Content::VapiStdErrorsNotAllowedInCurrentStateError (class)">VapiStdErrorsNotAllowedInCurrentStateError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+182
+183
+184
+185</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 182</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fail'>fail</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_download_session_fail'>content_library_item_download_session_fail</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fail_with_http_info'>fail_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_download_session_fail'>content_library_item_download_session_fail</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    #<strong>get</strong>(download_session_id, opts = {})  &#x21d2; <tt><span class='object_link'><a href="ContentLibraryItemDownloadSessionResult.html" title="VSphereAutomation::Content::ContentLibraryItemDownloadSessionResult (class)">ContentLibraryItemDownloadSessionResult</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the download session with the specified identifier, including the most
+up-to-date status information for the session.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>download_session_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifier of the download session to retrieve.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ContentLibraryItemDownloadSessionResult.html" title="VSphereAutomation::Content::ContentLibraryItemDownloadSessionResult (class)">ContentLibraryItemDownloadSessionResult</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240
+241</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_get_with_http_info'>get_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="keep_alive-instance_method">
+  
+    #<strong>keep_alive</strong>(download_session_id, opts = {})  &#x21d2; <tt>|<span class='object_link'><a href="VapiStdErrorsNotAllowedInCurrentStateError.html" title="VSphereAutomation::Content::VapiStdErrorsNotAllowedInCurrentStateError (class)">VapiStdErrorsNotAllowedInCurrentStateError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Keeps a download session alive. This operation is allowed only if the
+session is in the DownloadSessionModel.State#ACTIVE state.
+&lt;p&gt; If there is no activity for a download session for a certain
+period of time, the download session will expire. The download session
+expiration timeout is configurable in the Content Library Service system
+configuration. The default is five minutes. Invoking this operation
+enables a client to specifically extend the lifetime of an active download
+session.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>download_session_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifier of the download session whose lifetime should be extended.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:content_library_item_download_session_keep_alive</span>
+          <span class="type">(<tt><span class='object_link'><a href="ContentLibraryItemDownloadSessionKeepAlive.html" title="VSphereAutomation::Content::ContentLibraryItemDownloadSessionKeepAlive (class)">ContentLibraryItemDownloadSessionKeepAlive</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>|<span class='object_link'><a href="VapiStdErrorsNotAllowedInCurrentStateError.html" title="VSphereAutomation::Content::VapiStdErrorsNotAllowedInCurrentStateError (class)">VapiStdErrorsNotAllowedInCurrentStateError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+292
+293
+294
+295</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 292</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_keep_alive'>keep_alive</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_keep_alive_with_http_info'>keep_alive_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list-instance_method">
+  
+    #<strong>list</strong>(opts = {})  &#x21d2; <tt><span class='object_link'><a href="ContentLibraryItemDownloadSessionListResult.html" title="VSphereAutomation::Content::ContentLibraryItemDownloadSessionListResult (class)">ContentLibraryItemDownloadSessionListResult</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Lists the identifiers of the download sessions created by the calling user.
+Optionally may filter by library item.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:library_item_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Library item identifier on which to filter results.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ContentLibraryItemDownloadSessionListResult.html" title="VSphereAutomation::Content::ContentLibraryItemDownloadSessionListResult (class)">ContentLibraryItemDownloadSessionListResult</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::Content::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+344
+345
+346
+347</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 344</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_with_http_info'>list_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Dec 10 12:50:48 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.3).
+</div>
+
+    </div>
+  </body>
+</html>

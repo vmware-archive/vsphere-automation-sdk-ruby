@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: VSphereAutomation::VCenter::HostApi
+  
+    &mdash; Documentation by YARD 0.9.16
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "VSphereAutomation::VCenter::HostApi";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../VSphereAutomation.html" title="VSphereAutomation (module)">VSphereAutomation</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../VCenter.html" title="VSphereAutomation::VCenter (module)">VCenter</a></span></span>
+     &raquo; 
+    <span class="title">HostApi</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: VSphereAutomation::VCenter::HostApi
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">VSphereAutomation::VCenter::HostApi</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>vcenter/lib/vsphere-automation-vcenter/api/host_api.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#api_client-instance_method" title="#api_client (instance method)">#<strong>api_client</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute api_client.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#connect-instance_method" title="#connect (instance method)">#<strong>connect</strong>(host, opts = {})  &#x21d2; |VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Connect to the host corresponding to host previously added to the vCenter
+server.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">#<strong>create</strong>(vcenter_host_create, opts = {})  &#x21d2; VcenterHostCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError| </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add a new standalone host in the vCenter inventory.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>(host, opts = {})  &#x21d2; |VapiStdErrorsResourceInUseError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remove a standalone host from the vCenter Server.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#disconnect-instance_method" title="#disconnect (instance method)">#<strong>disconnect</strong>(host, opts = {})  &#x21d2; |VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disconnect the host corresponding to host from the vCenter server.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(api_client = ApiClient.default)  &#x21d2; HostApi </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of HostApi.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list-instance_method" title="#list (instance method)">#<strong>list</strong>(opts = {})  &#x21d2; VcenterHostListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError| </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns information about at most 1000 visible (subject to permission
+checks) hosts in vCenter matching the Host.FilterSpec.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(api_client = ApiClient.default)  &#x21d2; <tt><span class='object_link'><a href="" title="VSphereAutomation::VCenter::HostApi (class)">HostApi</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of HostApi</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/host_api.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_api_client'>api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ApiClient.html" title="VSphereAutomation::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="../ApiClient.html#default-class_method" title="VSphereAutomation::ApiClient.default (method)">default</a></span></span><span class='rparen'>)</span>
+  <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='id identifier rubyid_api_client'>api_client</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="api_client=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="api_client-instance_method">
+  
+    #<strong>api_client</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute api_client</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/host_api.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
+  <span class='ivar'>@api_client</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="connect-instance_method">
+  
+    #<strong>connect</strong>(host, opts = {})  &#x21d2; <tt>|<span class='object_link'><a href="VapiStdErrorsErrorError.html" title="VSphereAutomation::VCenter::VapiStdErrorsErrorError (class)">VapiStdErrorsErrorError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Connect to the host corresponding to host previously added to the vCenter
+server.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifier of the host to be reconnected. The parameter must be an
+identifier for the resource type: HostSystem.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>|<span class='object_link'><a href="VapiStdErrorsErrorError.html" title="VSphereAutomation::VCenter::VapiStdErrorsErrorError (class)">VapiStdErrorsErrorError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/host_api.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_connect'>connect</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_connect_with_http_info'>connect_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    #<strong>create</strong>(vcenter_host_create, opts = {})  &#x21d2; <tt><span class='object_link'><a href="VcenterHostCreateResult.html" title="VSphereAutomation::VCenter::VcenterHostCreateResult (class)">VcenterHostCreateResult</a></span>|<span class='object_link'><a href="VapiStdErrorsUnsupportedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnsupportedError (class)">VapiStdErrorsUnsupportedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a new standalone host in the vCenter inventory. The newly connected
+host will be in connected state. The vCenter Server will verify the SSL
+certificate before adding the host to its inventory. In the case where the
+SSL certificate cannot be verified because the Certificate Authority is not
+recognized or the certificate is self signed, the vCenter Server will fall
+back to thumbprint verification mode as defined by
+Host.CreateSpec.ThumbprintVerification.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>vcenter_host_create</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="VcenterHostCreateResult.html" title="VSphereAutomation::VCenter::VcenterHostCreateResult (class)">VcenterHostCreateResult</a></span>|<span class='object_link'><a href="VapiStdErrorsUnsupportedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnsupportedError (class)">VapiStdErrorsUnsupportedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/host_api.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_host_create'>vcenter_host_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_create_with_http_info'>create_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_vcenter_host_create'>vcenter_host_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    #<strong>delete</strong>(host, opts = {})  &#x21d2; <tt>|<span class='object_link'><a href="VapiStdErrorsResourceInUseError.html" title="VSphereAutomation::VCenter::VapiStdErrorsResourceInUseError (class)">VapiStdErrorsResourceInUseError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remove a standalone host from the vCenter Server.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifier of the host to be deleted. The parameter must be an identifier
+for the resource type: HostSystem.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>|<span class='object_link'><a href="VapiStdErrorsResourceInUseError.html" title="VSphereAutomation::VCenter::VapiStdErrorsResourceInUseError (class)">VapiStdErrorsResourceInUseError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/host_api.rb', line 135</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_delete_with_http_info'>delete_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="disconnect-instance_method">
+  
+    #<strong>disconnect</strong>(host, opts = {})  &#x21d2; <tt>|<span class='object_link'><a href="VapiStdErrorsErrorError.html" title="VSphereAutomation::VCenter::VapiStdErrorsErrorError (class)">VapiStdErrorsErrorError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Disconnect the host corresponding to host from the vCenter server</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Identifier of the host to be disconnected. The parameter must be an
+identifier for the resource type: HostSystem.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>|<span class='object_link'><a href="VapiStdErrorsErrorError.html" title="VSphereAutomation::VCenter::VapiStdErrorsErrorError (class)">VapiStdErrorsErrorError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsNotFoundError.html" title="VSphereAutomation::VCenter::VapiStdErrorsNotFoundError (class)">VapiStdErrorsNotFoundError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+184
+185
+186
+187</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/host_api.rb', line 184</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_disconnect'>disconnect</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_disconnect_with_http_info'>disconnect_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="list-instance_method">
+  
+    #<strong>list</strong>(opts = {})  &#x21d2; <tt><span class='object_link'><a href="VcenterHostListResult.html" title="VSphereAutomation::VCenter::VcenterHostListResult (class)">VcenterHostListResult</a></span>|<span class='object_link'><a href="VapiStdErrorsUnableToAllocateResourceError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnableToAllocateResourceError (class)">VapiStdErrorsUnableToAllocateResourceError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns information about at most 1000 visible (subject to permission
+checks) hosts in vCenter matching the Host.FilterSpec.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the optional parameters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:filter_hosts</span>
+          <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Identifiers of hosts that can match the filter. If unset or empty, hosts
+with any identifier match the filter. When clients pass a value of this
+structure as a parameter, the field must contain identifiers for the
+resource type: HostSystem. When operations return a value of this structure
+as a result, the field will contain identifiers for the resource type:
+HostSystem.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:filter_names</span>
+          <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Names that hosts must have to match the filter (see Host.Summary.name). If
+unset or empty, hosts with any name match the filter.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:filter_folders</span>
+          <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Folders that must contain the hosts for the hosts to match the filter. If
+unset or empty, hosts in any folder match the filter. When clients pass a
+value of this structure as a parameter, the field must contain identifiers
+for the resource type: Folder. When operations return a value of this
+structure as a result, the field will contain identifiers for the resource
+type: Folder.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:filter_datacenters</span>
+          <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Datacenters that must contain the hosts for the hosts to match the filter.
+If unset or empty, hosts in any datacenter match the filter. When clients
+pass a value of this structure as a parameter, the field must contain
+identifiers for the resource type: Datacenter. When operations return a
+value of this structure as a result, the field will contain identifiers for
+the resource type: Datacenter.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:filter_standalone</span>
+          <span class="type">(<tt>BOOLEAN</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>If true, only hosts that are not part of a cluster can match the filter,
+and if false, only hosts that are are part of a cluster can match the
+filter. If unset Hosts can match filter independent of whether they are
+part of a cluster or not. If this field is true and
+Host.FilterSpec.clusters os not empty, no hosts will match the filter.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:filter_clusters</span>
+          <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Clusters that must contain the hosts for the hosts to match the filter. If
+unset or empty, hosts in any cluster and hosts that are not in a cluster
+match the filter. If this field is not empty and Host.FilterSpec.standalone
+is true, no hosts will match the filter. When clients pass a value of this
+structure as a parameter, the field must contain identifiers for the
+resource type: ClusterComputeResource. When operations return a value of
+this structure as a result, the field will contain identifiers for the
+resource type: ClusterComputeResource.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:filter_connection_states</span>
+          <span class="type">(<tt>Array&lt;String&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Connection states that a host must be in to match the filter (see
+Host.Summary.connection-state. If unset or empty, hosts in any connection
+state match the filter.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="VcenterHostListResult.html" title="VSphereAutomation::VCenter::VcenterHostListResult (class)">VcenterHostListResult</a></span>|<span class='object_link'><a href="VapiStdErrorsUnableToAllocateResourceError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnableToAllocateResourceError (class)">VapiStdErrorsUnableToAllocateResourceError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthenticatedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthenticatedError (class)">VapiStdErrorsUnauthenticatedError</a></span>|<span class='object_link'><a href="VapiStdErrorsUnauthorizedError.html" title="VSphereAutomation::VCenter::VapiStdErrorsUnauthorizedError (class)">VapiStdErrorsUnauthorizedError</a></span>|<span class='object_link'><a href="VapiStdErrorsServiceUnavailableError.html" title="VSphereAutomation::VCenter::VapiStdErrorsServiceUnavailableError (class)">VapiStdErrorsServiceUnavailableError</a></span>|</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+239
+240
+241
+242</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/host_api.rb', line 239</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_with_http_info'>list_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Dec 10 12:50:13 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.16 (ruby-2.5.3).
+</div>
+
+    </div>
+  </body>
+</html>
