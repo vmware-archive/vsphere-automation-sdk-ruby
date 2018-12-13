@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Stop an enabled SNMP agent.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def disable_with_http_info(opts = {})
+    def disable_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.disable ...'
       end
@@ -72,9 +73,10 @@ module VSphereAutomation
     end
 
     # Start a disabled SNMP agent.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def enable_with_http_info(opts = {})
+    def enable_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.enable ...'
       end
@@ -115,9 +117,10 @@ module VSphereAutomation
     end
 
     # Return an SNMP agent configuration.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTechpreviewMonitoringSnmpResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.get ...'
       end
@@ -163,10 +166,11 @@ module VSphereAutomation
     end
 
     # Generate localized keys for secure SNMPv3 communications.
+    # @api private
     # @param appliance_techpreview_monitoring_snmp_hash 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTechpreviewMonitoringSnmpHashResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def hash_with_http_info(appliance_techpreview_monitoring_snmp_hash, opts = {})
+    def hash_with_http_info(appliance_techpreview_monitoring_snmp_hash, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.hash ...'
       end
@@ -217,9 +221,10 @@ module VSphereAutomation
     end
 
     # Get SNMP limits information.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTechpreviewMonitoringSnmpLimitsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def limits_with_http_info(opts = {})
+    def limits_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.limits ...'
       end
@@ -264,9 +269,10 @@ module VSphereAutomation
     end
 
     # Restore settings to factory defaults.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def reset_with_http_info(opts = {})
+    def reset_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.reset ...'
       end
@@ -308,10 +314,11 @@ module VSphereAutomation
     end
 
     # Set SNMP configuration.
+    # @api private
     # @param appliance_techpreview_monitoring_snmp_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_techpreview_monitoring_snmp_set, opts = {})
+    def set_with_http_info(appliance_techpreview_monitoring_snmp_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.set ...'
       end
@@ -358,9 +365,10 @@ module VSphereAutomation
     end
 
     # Generate diagnostics report for snmp agent.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTechpreviewMonitoringSnmpStatsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def stats_with_http_info(opts = {})
+    def stats_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.stats ...'
       end
@@ -405,9 +413,10 @@ module VSphereAutomation
     end
 
     # Send a warmStart notification to all configured traps and inform destinations (see RFC 3418).
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTechpreviewMonitoringSnmpTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def test_with_http_info(opts = {})
+    def test_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.test ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Creates a virtual machine.
+    # @api private
     # @param vcenter_vm_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVMCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vcenter_vm_create, opts = {})
+    def create_with_http_info(vcenter_vm_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VMApi.create ...'
       end
@@ -89,10 +90,11 @@ module VSphereAutomation
     end
 
     # Deletes a virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(vm, opts = {})
+    def delete_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VMApi.delete ...'
       end
@@ -138,10 +140,11 @@ module VSphereAutomation
     end
 
     # Returns information about a virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVMResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, opts = {})
+    def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VMApi.get ...'
       end
@@ -202,6 +205,7 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_vms Identifiers of virtual machines that can match the filter. If unset or empty, virtual machines with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: VirtualMachine.
     # @option opts [Array<String>] :filter_names Names that virtual machines must have to match the filter (see VM.Info.name). If unset or empty, virtual machines with any name match the filter.
@@ -212,7 +216,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_resource_pools Resource pools that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any resource pool match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ResourcePool.
     # @option opts [Array<String>] :filter_power_states Power states that a virtual machine must be in to match the filter (see Power.Info.state. If unset or empty, virtual machines in any power state match the filter.
     # @return [Array<(VcenterVMListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VMApi.list ...'
       end

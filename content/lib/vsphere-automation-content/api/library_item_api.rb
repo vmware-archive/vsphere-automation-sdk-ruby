@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Copies a library item. &lt;p&gt; Copying a library item allows a duplicate to be made within the same or different library. The copy occurs by first creating a new library item, whose identifier is returned. The content of the library item is then copied asynchronously. This copy can be tracked as a task. &lt;p&gt; If the copy fails, Content Library Service will roll back the copy by deleting any content that was already copied, and removing the new library item. A failure during rollback may require manual cleanup by an administrator. &lt;p&gt; A library item cannot be copied into a subscribed library.
+    # @api private
     # @param source_library_item_id Identifier of the existing library item from which the content will be copied.
     # @param content_library_item_copy 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemCopyResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def copy_with_http_info(source_library_item_id, content_library_item_copy, opts = {})
+    def copy_with_http_info(source_library_item_id, content_library_item_copy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemApi.copy ...'
       end
@@ -92,10 +93,11 @@ module VSphereAutomation
     end
 
     # Creates a new library item. &lt;p&gt; A new library item is created without any content. After creation, content can be added through the {@link UpdateSession} and {@link File} {@term services}. &lt;p&gt; A library item cannot be created in a subscribed library.
+    # @api private
     # @param content_library_item_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemCreateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(content_library_item_create, opts = {})
+    def create_with_http_info(content_library_item_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemApi.create ...'
       end
@@ -148,10 +150,11 @@ module VSphereAutomation
     end
 
     # Deletes a library item. &lt;p&gt; This {@term operation} will immediately remove the item from the library that owns it. The content of the item will be asynchronously removed from the storage backings. The content deletion can be tracked with a task. In the event that the task fails, an administrator may need to manually remove the files from the storage backing. &lt;p&gt; This {@term operation} cannot be used to delete a library item that is a member of a subscribed library. Removing an item from a subscribed library requires deleting the item from the original published local library and syncing the subscribed library.
+    # @api private
     # @param library_item_id Identifier of the library item to delete.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(library_item_id, opts = {})
+    def delete_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemApi.delete ...'
       end
@@ -197,10 +200,11 @@ module VSphereAutomation
     end
 
     # Returns identifiers of all the visible (as determined by authorization policy) library items matching the requested {@link Item.FindSpec}.
+    # @api private
     # @param content_library_item_find 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemFindResult|VapiStdErrorsInvalidArgumentError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def find_with_http_info(content_library_item_find, opts = {})
+    def find_with_http_info(content_library_item_find, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemApi.find ...'
       end
@@ -252,10 +256,11 @@ module VSphereAutomation
     end
 
     # Returns the {@link ItemModel} with the given identifier.
+    # @api private
     # @param library_item_id Identifier of the library item to return.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(library_item_id, opts = {})
+    def get_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemApi.get ...'
       end
@@ -305,10 +310,11 @@ module VSphereAutomation
     end
 
     # Returns the identifiers of all items in the given library.
+    # @api private
     # @param library_id Identifier of the library whose items should be returned.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(library_id, opts = {})
+    def list_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemApi.list ...'
       end
@@ -360,11 +366,12 @@ module VSphereAutomation
     end
 
     # Updates the specified properties of a library item. &lt;p&gt; This is an incremental update to the library item. {@term Fields} that are {@term unset} in the update specification are left unchanged. &lt;p&gt; This {@term operation} cannot update a library item that is a member of a subscribed library. Those items must be updated in the source published library and synchronized to the subscribed library.
+    # @api private
     # @param library_item_id Identifier of the library item to update.
     # @param content_library_item_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(library_item_id, content_library_item_update, opts = {})
+    def update_with_http_info(library_item_id, content_library_item_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemApi.update ...'
       end

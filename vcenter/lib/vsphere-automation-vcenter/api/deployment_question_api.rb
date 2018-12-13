@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Supply answer to the raised question.
+    # @api private
     # @param vcenter_deployment_question_answer 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def answer_with_http_info(vcenter_deployment_question_answer, opts = {})
+    def answer_with_http_info(vcenter_deployment_question_answer, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentQuestionApi.answer ...'
       end
@@ -80,9 +81,10 @@ module VSphereAutomation
     end
 
     # Get the question that was raised during the configuration.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentQuestionResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentQuestionApi.get ...'
       end

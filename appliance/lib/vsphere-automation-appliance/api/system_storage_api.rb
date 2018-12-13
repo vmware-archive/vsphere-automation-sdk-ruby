@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get disk to partition mapping.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceSystemStorageListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemStorageApi.list ...'
       end
@@ -76,9 +77,10 @@ module VSphereAutomation
     end
 
     # Resize all partitions to 100 percent of disk size.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def resize_with_http_info(opts = {})
+    def resize_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemStorageApi.resize ...'
       end
@@ -119,9 +121,10 @@ module VSphereAutomation
     end
 
     # Resize all partitions to 100 percent of disk size.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceSystemStorageResizeExResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def resize_ex_with_http_info(opts = {})
+    def resize_ex_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemStorageApi.resize_ex ...'
       end

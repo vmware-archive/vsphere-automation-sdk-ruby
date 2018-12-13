@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Returns the set of resource types present across all the service elements contained in all the package elements.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelResourceListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelResourceApi.list ...'
       end

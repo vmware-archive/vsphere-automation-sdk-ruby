@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Returns servers for which no proxy configuration will be applied.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingNoProxyResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingNoProxyApi.get ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Sets servers for which no proxy configuration should be applied. This operation sets environment variables. In order for this operation to take effect, a logout from appliance or a service restart is required. If IPv4 is enabled, \&quot;127.0.0.1\&quot; and \&quot;localhost\&quot; will always bypass the proxy (even if they are not explicitly configured).
+    # @api private
     # @param appliance_networking_no_proxy_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_networking_no_proxy_set, opts = {})
+    def set_with_http_info(appliance_networking_no_proxy_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingNoProxyApi.set ...'
       end

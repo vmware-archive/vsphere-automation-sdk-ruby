@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Get information about a particular network interface.
+    # @api private
     # @param interface_name Network interface, for example, \&quot;nic0\&quot;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingInterfacesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(interface_name, opts = {})
+    def get_with_http_info(interface_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesApi.get ...'
       end
@@ -83,9 +84,10 @@ module VSphereAutomation
     end
 
     # Get list of available network interfaces, including those that are not yet configured.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingInterfacesListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesApi.list ...'
       end

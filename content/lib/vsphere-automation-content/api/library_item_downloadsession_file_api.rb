@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Retrieves file download information for a specific file.
+    # @api private
     # @param download_session_id Identifier of the download session.
     # @param content_library_item_downloadsession_file_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemDownloadsessionFileResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(download_session_id, content_library_item_downloadsession_file_get, opts = {})
+    def get_with_http_info(download_session_id, content_library_item_downloadsession_file_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadsessionFileApi.get ...'
       end
@@ -92,10 +93,11 @@ module VSphereAutomation
     end
 
     # Lists the information of all the files in the library item associated with the download session.
+    # @api private
     # @param download_session_id Identifier of the download session.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemDownloadsessionFileListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(download_session_id, opts = {})
+    def list_with_http_info(download_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadsessionFileApi.list ...'
       end
@@ -147,11 +149,12 @@ module VSphereAutomation
     end
 
     # Requests a file to be prepared for download.
+    # @api private
     # @param download_session_id Identifier of the download session.
     # @param content_library_item_downloadsession_file_prepare 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemDownloadsessionFilePrepareResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def prepare_with_http_info(download_session_id, content_library_item_downloadsession_file_prepare, opts = {})
+    def prepare_with_http_info(download_session_id, content_library_item_downloadsession_file_prepare, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadsessionFileApi.prepare ...'
       end

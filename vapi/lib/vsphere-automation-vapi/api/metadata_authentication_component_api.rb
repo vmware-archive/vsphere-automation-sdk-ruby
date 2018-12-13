@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves the fingerprint computed from the authentication metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.authentication.Component#get}.
+    # @api private
     # @param component_id Identifier of the component element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationComponentFingerprintResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def fingerprint_with_http_info(component_id, opts = {})
+    def fingerprint_with_http_info(component_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationComponentApi.fingerprint ...'
       end
@@ -83,10 +84,11 @@ module VSphereAutomation
     end
 
     # Retrieves authentication information about the component element corresponding to {@param.name componentId}. &lt;p&gt; The {@link ComponentData} contains the authentication information about the component element and it&#39;s fingerprint. It contains information about all the package elements that belong to this component element.
+    # @api private
     # @param component_id Identifier of the component element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationComponentResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(component_id, opts = {})
+    def get_with_http_info(component_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationComponentApi.get ...'
       end
@@ -135,9 +137,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the component elements that have authentication information.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationComponentListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationComponentApi.list ...'
       end

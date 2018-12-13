@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Cancels the download session. This {@term operation} will abort any ongoing transfers and invalidate transfer urls that the client may be downloading from.
+    # @api private
     # @param download_session_id Identifer of the download session that should be canceled.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def cancel_with_http_info(download_session_id, opts = {})
+    def cancel_with_http_info(download_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.cancel ...'
       end
@@ -79,10 +80,11 @@ module VSphereAutomation
     end
 
     # Creates a new download session.
+    # @api private
     # @param content_library_item_download_session_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemDownloadSessionCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(content_library_item_download_session_create, opts = {})
+    def create_with_http_info(content_library_item_download_session_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.create ...'
       end
@@ -135,10 +137,11 @@ module VSphereAutomation
     end
 
     # Deletes a download session. This removes the session and all information associated with it. &lt;p&gt; Removing a download session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the transfers will be able to complete). However there will no longer be a means of inspecting the status of those downloads except by seeing the effect on the library item. &lt;p&gt; Download sessions for which there is no download activity or which are complete will automatically be expired and then deleted after a period of time.
+    # @api private
     # @param download_session_id Identifier of the download session to be deleted.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(download_session_id, opts = {})
+    def delete_with_http_info(download_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.delete ...'
       end
@@ -185,11 +188,12 @@ module VSphereAutomation
     end
 
     # Terminates the download session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
+    # @api private
     # @param download_session_id Identifier of the download session to fail.
     # @param content_library_item_download_session_fail 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def fail_with_http_info(download_session_id, content_library_item_download_session_fail, opts = {})
+    def fail_with_http_info(download_session_id, content_library_item_download_session_fail, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.fail ...'
       end
@@ -241,10 +245,11 @@ module VSphereAutomation
     end
 
     # Gets the download session with the specified identifier, including the most up-to-date status information for the session.
+    # @api private
     # @param download_session_id Identifier of the download session to retrieve.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemDownloadSessionResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(download_session_id, opts = {})
+    def get_with_http_info(download_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.get ...'
       end
@@ -295,11 +300,12 @@ module VSphereAutomation
     end
 
     # Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. &lt;p&gt; If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.
+    # @api private
     # @param download_session_id Identifier of the download session whose lifetime should be extended.
     # @param [Hash] opts the optional parameters
     # @option opts [ContentLibraryItemDownloadSessionKeepAlive] :content_library_item_download_session_keep_alive 
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def keep_alive_with_http_info(download_session_id, opts = {})
+    def keep_alive_with_http_info(download_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.keep_alive ...'
       end
@@ -347,10 +353,11 @@ module VSphereAutomation
     end
 
     # Lists the identifiers of the download sessions created by the calling user. Optionally may filter by library item.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [String] :library_item_id Library item identifier on which to filter results.
     # @return [Array<(ContentLibraryItemDownloadSessionListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.list ...'
       end

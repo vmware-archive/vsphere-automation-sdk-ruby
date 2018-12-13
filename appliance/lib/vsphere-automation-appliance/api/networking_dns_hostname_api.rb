@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get the Fully Qualified Doman Name.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingDnsHostnameResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsHostnameApi.get ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Set the Fully Qualified Domain Name.
+    # @api private
     # @param appliance_networking_dns_hostname_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_networking_dns_hostname_set, opts = {})
+    def set_with_http_info(appliance_networking_dns_hostname_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsHostnameApi.set ...'
       end
@@ -128,10 +130,11 @@ module VSphereAutomation
     end
 
     # Test the Fully Qualified Domain Name.
+    # @api private
     # @param appliance_networking_dns_hostname_test 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingDnsHostnameTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def test_with_http_info(appliance_networking_dns_hostname_test, opts = {})
+    def test_with_http_info(appliance_networking_dns_hostname_test, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsHostnameApi.test ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns the state of a service.
+    # @api private
     # @param service identifier of the service whose state is being queried. The parameter must be an identifier for the resource type: appliance.vmon.Service.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceVmonServiceResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(service, opts = {})
+    def get_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.get ...'
       end
@@ -83,9 +84,10 @@ module VSphereAutomation
     end
 
     # Lists details of services managed by vMon.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceVmonServiceListDetailsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_details_with_http_info(opts = {})
+    def list_details_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.list_details ...'
       end
@@ -131,10 +133,11 @@ module VSphereAutomation
     end
 
     # Restarts a service
+    # @api private
     # @param service identifier of the service to restart The parameter must be an identifier for the resource type: appliance.vmon.Service.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsTimedOutError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def restart_with_http_info(service, opts = {})
+    def restart_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.restart ...'
       end
@@ -180,10 +183,11 @@ module VSphereAutomation
     end
 
     # Starts a service
+    # @api private
     # @param service identifier of the service to start The parameter must be an identifier for the resource type: appliance.vmon.Service.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsTimedOutError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def start_with_http_info(service, opts = {})
+    def start_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.start ...'
       end
@@ -229,10 +233,11 @@ module VSphereAutomation
     end
 
     # Stops a service
+    # @api private
     # @param service identifier of the service to stop The parameter must be an identifier for the resource type: appliance.vmon.Service.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def stop_with_http_info(service, opts = {})
+    def stop_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.stop ...'
       end
@@ -279,11 +284,12 @@ module VSphereAutomation
     end
 
     # Updates the properties of a service.
+    # @api private
     # @param service identifier of the service whose properties are being updated. The parameter must be an identifier for the resource type: appliance.vmon.Service.
     # @param appliance_vmon_service_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(service, appliance_vmon_service_update, opts = {})
+    def update_with_http_info(service, appliance_vmon_service_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.update ...'
       end

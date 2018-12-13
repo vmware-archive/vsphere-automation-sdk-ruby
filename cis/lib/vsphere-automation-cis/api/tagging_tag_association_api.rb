@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Attaches the given tag to the input object. The tag needs to meet the cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) criteria in order to be eligible for attachment. If the tag is already attached to the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param cis_tagging_tag_association_attach 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def attach_with_http_info(tag_id, cis_tagging_tag_association_attach, opts = {})
+    def attach_with_http_info(tag_id, cis_tagging_tag_association_attach, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.attach ...'
       end
@@ -87,10 +88,11 @@ module VSphereAutomation
     end
 
     # Attaches the given tags to the input object. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege on each tag.
+    # @api private
     # @param cis_tagging_tag_association_attach_multiple_tags_to_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationAttachMultipleTagsToObjectResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def attach_multiple_tags_to_object_with_http_info(cis_tagging_tag_association_attach_multiple_tags_to_object, opts = {})
+    def attach_multiple_tags_to_object_with_http_info(cis_tagging_tag_association_attach_multiple_tags_to_object, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.attach_multiple_tags_to_object ...'
       end
@@ -143,11 +145,12 @@ module VSphereAutomation
     end
 
     # Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param cis_tagging_tag_association_attach_tag_to_multiple_objects 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationAttachTagToMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def attach_tag_to_multiple_objects_with_http_info(tag_id, cis_tagging_tag_association_attach_tag_to_multiple_objects, opts = {})
+    def attach_tag_to_multiple_objects_with_http_info(tag_id, cis_tagging_tag_association_attach_tag_to_multiple_objects, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.attach_tag_to_multiple_objects ...'
       end
@@ -205,11 +208,12 @@ module VSphereAutomation
     end
 
     # Detaches the tag from the given object. If the tag is already removed from the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param cis_tagging_tag_association_detach 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def detach_with_http_info(tag_id, cis_tagging_tag_association_detach, opts = {})
+    def detach_with_http_info(tag_id, cis_tagging_tag_association_detach, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.detach ...'
       end
@@ -261,10 +265,11 @@ module VSphereAutomation
     end
 
     # Detaches the given tags from the input object. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege each tag.
+    # @api private
     # @param cis_tagging_tag_association_detach_multiple_tags_from_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationDetachMultipleTagsFromObjectResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def detach_multiple_tags_from_object_with_http_info(cis_tagging_tag_association_detach_multiple_tags_from_object, opts = {})
+    def detach_multiple_tags_from_object_with_http_info(cis_tagging_tag_association_detach_multiple_tags_from_object, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.detach_multiple_tags_from_object ...'
       end
@@ -317,11 +322,12 @@ module VSphereAutomation
     end
 
     # Detaches the given tag from the input objects. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param cis_tagging_tag_association_detach_tag_from_multiple_objects 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationDetachTagFromMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def detach_tag_from_multiple_objects_with_http_info(tag_id, cis_tagging_tag_association_detach_tag_from_multiple_objects, opts = {})
+    def detach_tag_from_multiple_objects_with_http_info(tag_id, cis_tagging_tag_association_detach_tag_from_multiple_objects, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.detach_tag_from_multiple_objects ...'
       end
@@ -378,10 +384,11 @@ module VSphereAutomation
     end
 
     # Fetches the {@term list} of attachable tags for the given object, omitting the tags that have already been attached. Criteria for attachability is calculated based on tagging cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) constructs. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have read privileges.
+    # @api private
     # @param cis_tagging_tag_association_list_attachable_tags 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationListAttachableTagsResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_attachable_tags_with_http_info(cis_tagging_tag_association_list_attachable_tags, opts = {})
+    def list_attachable_tags_with_http_info(cis_tagging_tag_association_list_attachable_tags, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attachable_tags ...'
       end
@@ -433,10 +440,11 @@ module VSphereAutomation
     end
 
     # Fetches the {@term list} of attached objects for the given tag. To invoke this {@term operation}, you need the read privilege on the input tag. Only those objects for which you have the read privilege will be returned.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationListAttachedObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_attached_objects_with_http_info(tag_id, opts = {})
+    def list_attached_objects_with_http_info(tag_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_objects ...'
       end
@@ -487,10 +495,11 @@ module VSphereAutomation
     end
 
     # Fetches the {@term list} of {@link TagToObjects} describing the input tag identifiers and the objects they are attached to. To invoke this {@term operation}, you need the read privilege on each input tag. The {@link TagToObjects#objectIds} will only contain those objects for which you have the read privilege.
+    # @api private
     # @param cis_tagging_tag_association_list_attached_objects_on_tags 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationListAttachedObjectsOnTagsResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_attached_objects_on_tags_with_http_info(cis_tagging_tag_association_list_attached_objects_on_tags, opts = {})
+    def list_attached_objects_on_tags_with_http_info(cis_tagging_tag_association_list_attached_objects_on_tags, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_objects_on_tags ...'
       end
@@ -541,10 +550,11 @@ module VSphereAutomation
     end
 
     # Fetches the {@term list} of tags attached to the given object. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have the read privileges.
+    # @api private
     # @param cis_tagging_tag_association_list_attached_tags 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationListAttachedTagsResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_attached_tags_with_http_info(cis_tagging_tag_association_list_attached_tags, opts = {})
+    def list_attached_tags_with_http_info(cis_tagging_tag_association_list_attached_tags, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_tags ...'
       end
@@ -596,10 +606,11 @@ module VSphereAutomation
     end
 
     # Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
+    # @api private
     # @param cis_tagging_tag_association_list_attached_tags_on_objects 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationListAttachedTagsOnObjectsResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_attached_tags_on_objects_with_http_info(cis_tagging_tag_association_list_attached_tags_on_objects, opts = {})
+    def list_attached_tags_on_objects_with_http_info(cis_tagging_tag_association_list_attached_tags_on_objects, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_tags_on_objects ...'
       end

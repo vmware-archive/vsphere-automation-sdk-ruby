@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param vcenter_vm_hardware_disk_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareDiskCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vm, vcenter_vm_hardware_disk_create, opts = {})
+    def create_with_http_info(vm, vcenter_vm_hardware_disk_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.create ...'
       end
@@ -96,11 +97,12 @@ module VSphereAutomation
     end
 
     # Removes a virtual disk from the virtual machine. This operation does not destroy the VMDK file that backs the virtual disk. It only detaches the VMDK file from the virtual machine. Once detached, the VMDK file will not be destroyed when the virtual machine to which it was associated is deleted.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param disk Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(vm, disk, opts = {})
+    def delete_with_http_info(vm, disk, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.delete ...'
       end
@@ -151,11 +153,12 @@ module VSphereAutomation
     end
 
     # Returns information about a virtual disk.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param disk Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareDiskResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, disk, opts = {})
+    def get_with_http_info(vm, disk, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.get ...'
       end
@@ -213,10 +216,11 @@ module VSphereAutomation
     end
 
     # Returns commonly used information about the virtual disks belonging to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareDiskListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(vm, opts = {})
+    def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.list ...'
       end
@@ -272,12 +276,13 @@ module VSphereAutomation
     end
 
     # Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param disk Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
     # @param vcenter_vm_hardware_disk_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(vm, disk, vcenter_vm_hardware_disk_update, opts = {})
+    def update_with_http_info(vm, disk, vcenter_vm_hardware_disk_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.update ...'
       end

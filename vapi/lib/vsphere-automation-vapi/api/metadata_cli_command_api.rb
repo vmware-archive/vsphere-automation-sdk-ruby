@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Returns the aggregate fingerprint of all the command metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for commands has been modified on the server.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliCommandFingerprintResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def fingerprint_with_http_info(opts = {})
+    def fingerprint_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliCommandApi.fingerprint ...'
       end
@@ -76,10 +77,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about a command including information about how to execute that command.
+    # @api private
     # @param vapi_metadata_cli_command_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliCommandResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vapi_metadata_cli_command_get, opts = {})
+    def get_with_http_info(vapi_metadata_cli_command_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliCommandApi.get ...'
       end
@@ -131,10 +133,11 @@ module VSphereAutomation
     end
 
     # Returns the identifiers of all commands, or commands in a specific namespace.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [String] :path The dot-separated path of the namespace for which command identifiers should be returned.
     # @return [Array<(VapiMetadataCliCommandListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliCommandApi.list ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
+    # @api private
     # @param vcenter_inventory_network_find 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterInventoryNetworkFindResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def find_with_http_info(vcenter_inventory_network_find, opts = {})
+    def find_with_http_info(vcenter_inventory_network_find, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InventoryNetworkApi.find ...'
       end

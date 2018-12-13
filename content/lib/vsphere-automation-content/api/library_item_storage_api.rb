@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Retrieves the storage information for a specific file in a library item.
+    # @api private
     # @param library_item_id Identifier of the library item whose storage information should be retrieved.
     # @param content_library_item_storage_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemStorageResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(library_item_id, content_library_item_storage_get, opts = {})
+    def get_with_http_info(library_item_id, content_library_item_storage_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemStorageApi.get ...'
       end
@@ -91,10 +92,11 @@ module VSphereAutomation
     end
 
     # Lists all storage items for a given library item.
+    # @api private
     # @param library_item_id Identifier of the library item whose storage information should be listed.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemStorageListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(library_item_id, opts = {})
+    def list_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemStorageApi.list ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Checks that the information to configure a non-replicated PSC satisfies the requirements.
+    # @api private
     # @param vcenter_deployment_install_psc_standalone_check 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentInstallPscStandaloneCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def check_with_http_info(vcenter_deployment_install_psc_standalone_check, opts = {})
+    def check_with_http_info(vcenter_deployment_install_psc_standalone_check, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallPscStandaloneApi.check ...'
       end

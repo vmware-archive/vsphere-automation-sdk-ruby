@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get time synchronization mode.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTimesyncResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TimesyncApi.get ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Set time synchronization mode.
+    # @api private
     # @param appliance_timesync_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_timesync_set, opts = {})
+    def set_with_http_info(appliance_timesync_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TimesyncApi.set ...'
       end

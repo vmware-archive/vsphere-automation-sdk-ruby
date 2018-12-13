@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Returns the configuration for forwarding log messages to remote logging servers.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceLoggingForwardingResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoggingForwardingApi.get ...'
       end
@@ -76,10 +77,11 @@ module VSphereAutomation
     end
 
     # Sets the configuration for forwarding log messages to remote log servers.
+    # @api private
     # @param appliance_logging_forwarding_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_logging_forwarding_set, opts = {})
+    def set_with_http_info(appliance_logging_forwarding_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoggingForwardingApi.set ...'
       end
@@ -127,10 +129,11 @@ module VSphereAutomation
     end
 
     # Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \&quot;This is a diagnostic log test message from vCenter Server.\&quot;
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceLoggingForwardingTest] :appliance_logging_forwarding_test 
     # @return [Array<(ApplianceLoggingForwardingTestResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def test_with_http_info(opts = {})
+    def test_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoggingForwardingApi.test ...'
       end

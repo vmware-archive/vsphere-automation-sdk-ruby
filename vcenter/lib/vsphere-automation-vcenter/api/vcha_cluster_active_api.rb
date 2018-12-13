@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the active node of a VCHA cluster.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVchaClusterActiveGet] :vcenter_vcha_cluster_active_get 
     # @return [Array<(VcenterVchaClusterActiveResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterActiveApi.get ...'
       end

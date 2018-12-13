@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Returns compliance information about at most 1000 virtual machines matching the filter VM.FilterSpec. If there are no virtual machines matching the VM.FilterSpec an empty List is returned. Virtual machines without storage policy association are not returned.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_status Compliance Status that a virtual machine must have to match the filter. Atleast one status must be specified.
     # @option opts [Array<String>] :filter_vms Identifiers of virtual machines that can match the filter If unset or empty, virtual machines with any identifier matches the filter When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: VirtualMachine.
     # @return [Array<(VcenterStoragePoliciesComplianceVMListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesComplianceVMApi.list ...'
       end

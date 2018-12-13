@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Retrieves the current active and disabled operations of a VCHA cluster.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaOperationsResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaOperationsApi.get ...'
       end

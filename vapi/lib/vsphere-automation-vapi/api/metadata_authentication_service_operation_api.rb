@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
+    # @api private
     # @param service_id Identifier of the service element.
     # @param vapi_metadata_authentication_service_operation_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationServiceOperationResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(service_id, vapi_metadata_authentication_service_operation_get, opts = {})
+    def get_with_http_info(service_id, vapi_metadata_authentication_service_operation_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationServiceOperationApi.get ...'
       end
@@ -91,10 +92,11 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have authentication information.
+    # @api private
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationServiceOperationListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(service_id, opts = {})
+    def list_with_http_info(service_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationServiceOperationApi.list ...'
       end

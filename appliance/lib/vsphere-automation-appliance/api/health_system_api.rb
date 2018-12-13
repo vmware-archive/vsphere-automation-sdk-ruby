@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get overall health of system.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceHealthSystemResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthSystemApi.get ...'
       end
@@ -76,9 +77,10 @@ module VSphereAutomation
     end
 
     # Get last check timestamp of the health of the system.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceHealthSystemLastcheckResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def lastcheck_with_http_info(opts = {})
+    def lastcheck_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthSystemApi.lastcheck ...'
       end

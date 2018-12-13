@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Cancels the task for importing vCenter historical data.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def cancel_with_http_info(opts = {})
+    def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.cancel ...'
       end
@@ -72,9 +73,10 @@ module VSphereAutomation
     end
 
     # Get the current status of the vCenter historical data import.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentImportHistoryResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.get ...'
       end
@@ -121,9 +123,10 @@ module VSphereAutomation
     end
 
     # Pauses the task for importing vCenter historical data.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def pause_with_http_info(opts = {})
+    def pause_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.pause ...'
       end
@@ -164,9 +167,10 @@ module VSphereAutomation
     end
 
     # Resumes the task for importing vCenter historical data.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def resume_with_http_info(opts = {})
+    def resume_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.resume ...'
       end
@@ -208,10 +212,11 @@ module VSphereAutomation
     end
 
     # Creates and starts task for importing vCenter historical data.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterDeploymentImportHistoryStart] :vcenter_deployment_import_history_start 
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def start_with_http_info(opts = {})
+    def start_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.start ...'
       end

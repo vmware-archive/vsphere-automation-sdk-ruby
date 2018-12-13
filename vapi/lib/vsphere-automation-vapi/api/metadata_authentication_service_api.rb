@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves authentication information about the service element corresponding to {@param.name serviceId}.
+    # @api private
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationServiceResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(service_id, opts = {})
+    def get_with_http_info(service_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationServiceApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the service elements that have authentication information.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationServiceListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationServiceApi.list ...'
       end

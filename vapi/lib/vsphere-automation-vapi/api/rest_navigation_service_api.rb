@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Gets list of all vAPI REST {@link Service}s for a vAPI REST {@link Component}.
+    # @api private
     # @param component_id Component identifier.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :base_url Base URL.
     # @return [Array<(VapiRestNavigationServiceListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(component_id, opts = {})
+    def list_with_http_info(component_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationServiceApi.list ...'
       end

@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Retrieves the deployment type of a VCHA cluster.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterDeploymentTypeResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterDeploymentTypeApi.get ...'
       end

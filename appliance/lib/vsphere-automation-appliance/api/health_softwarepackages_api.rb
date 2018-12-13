@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get information on available software updates available in the remote vSphere Update Manager repository. Red indicates that security updates are available. Orange indicates that non-security updates are available. Green indicates that there are no updates available. Gray indicates that there was an error retreiving information on software updates.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceHealthSoftwarepackagesResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthSoftwarepackagesApi.get ...'
       end

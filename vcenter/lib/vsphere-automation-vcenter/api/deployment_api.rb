@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get the current status of the appliance deployment.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentApi.get ...'
       end
@@ -77,9 +78,10 @@ module VSphereAutomation
     end
 
     # Rollback a failed appliance so it can be configured once again.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def rollback_with_http_info(opts = {})
+    def rollback_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentApi.rollback ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Cancel the backup job.
+    # @api private
     # @param id ID (ID of job)
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupJobCancelResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def cancel_with_http_info(id, opts = {})
+    def cancel_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupJobApi.cancel ...'
       end
@@ -84,10 +85,11 @@ module VSphereAutomation
     end
 
     # Initiate backup.
+    # @api private
     # @param appliance_recovery_backup_job_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupJobCreateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(appliance_recovery_backup_job_create, opts = {})
+    def create_with_http_info(appliance_recovery_backup_job_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupJobApi.create ...'
       end
@@ -139,10 +141,11 @@ module VSphereAutomation
     end
 
     # See backup job progress/result.
+    # @api private
     # @param id ID (ID of job)
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupJobResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(id, opts = {})
+    def get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupJobApi.get ...'
       end
@@ -192,9 +195,10 @@ module VSphereAutomation
     end
 
     # Get list of backup jobs
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupJobListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupJobApi.list ...'
       end

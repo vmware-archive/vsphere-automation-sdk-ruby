@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns the set of identifiers for the structure elements that are models for the resource type corresponding to {@param.name resourceId}. &lt;p&gt; The {@link vapi.metadata.metamodel.Structure} {@term service} provides {@term operations} to retrieve more details about the structure elements corresponding to the identifiers returned by this {@term operation}.
+    # @api private
     # @param resource_id Identifier of the resource type.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelResourceModelListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(resource_id, opts = {})
+    def list_with_http_info(resource_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelResourceModelApi.list ...'
       end

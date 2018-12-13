@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Retrieves the current configuration values.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentConfigurationResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ConfigurationApi.get ...'
       end
@@ -76,10 +77,11 @@ module VSphereAutomation
     end
 
     # Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn&#39;t guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
+    # @api private
     # @param content_configuration_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(content_configuration_update, opts = {})
+    def update_with_http_info(content_configuration_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ConfigurationApi.update ...'
       end

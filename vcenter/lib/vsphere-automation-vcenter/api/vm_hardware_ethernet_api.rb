@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Connects a virtual Ethernet adapter of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Ethernet.update operation may be used to configure the virtual Ethernet adapter to start in the connected state when the virtual machine is powered on. 
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def connect_with_http_info(vm, nic, opts = {})
+    def connect_with_http_info(vm, nic, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.connect ...'
       end
@@ -86,11 +87,12 @@ module VSphereAutomation
     end
 
     # Adds a virtual Ethernet adapter to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param vcenter_vm_hardware_ethernet_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareEthernetCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vm, vcenter_vm_hardware_ethernet_create, opts = {})
+    def create_with_http_info(vm, vcenter_vm_hardware_ethernet_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.create ...'
       end
@@ -151,11 +153,12 @@ module VSphereAutomation
     end
 
     # Removes a virtual Ethernet adapter from the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(vm, nic, opts = {})
+    def delete_with_http_info(vm, nic, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.delete ...'
       end
@@ -206,11 +209,12 @@ module VSphereAutomation
     end
 
     # Disconnects a virtual Ethernet adapter of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the Ethernet adapter is not connected to its backing resource.   For a powered-off virtual machine, the Ethernet.update operation may be used to configure the virtual Ethernet adapter to start in the disconnected state when the virtual machine is powered on. 
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def disconnect_with_http_info(vm, nic, opts = {})
+    def disconnect_with_http_info(vm, nic, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.disconnect ...'
       end
@@ -261,11 +265,12 @@ module VSphereAutomation
     end
 
     # Returns information about a virtual Ethernet adapter.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareEthernetResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, nic, opts = {})
+    def get_with_http_info(vm, nic, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.get ...'
       end
@@ -323,10 +328,11 @@ module VSphereAutomation
     end
 
     # Returns commonly used information about the virtual Ethernet adapters belonging to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareEthernetListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(vm, opts = {})
+    def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.list ...'
       end
@@ -382,12 +388,13 @@ module VSphereAutomation
     end
 
     # Updates the configuration of a virtual Ethernet adapter.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     # @param vcenter_vm_hardware_ethernet_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(vm, nic, vcenter_vm_hardware_ethernet_update, opts = {})
+    def update_with_http_info(vm, nic, vcenter_vm_hardware_ethernet_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.update ...'
       end

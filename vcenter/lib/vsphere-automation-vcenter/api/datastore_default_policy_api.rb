@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns the identifier of the current default storage policy associated with the specified datastore.
+    # @api private
     # @param datastore Identifier of the datastore for which the default policy is requested. The parameter must be an identifier for the resource type: Datastore.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDatastoreDefaultPolicyResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(datastore, opts = {})
+    def get_with_http_info(datastore, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatastoreDefaultPolicyApi.get ...'
       end

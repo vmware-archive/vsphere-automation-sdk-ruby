@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Get IPv4 network configuration for specific NIC.
+    # @api private
     # @param interface_name The Network interface to query, for example, \&quot;nic0\&quot;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingInterfacesIpv4Result|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(interface_name, opts = {})
+    def get_with_http_info(interface_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesIpv4Api.get ...'
       end
@@ -85,11 +86,12 @@ module VSphereAutomation
     end
 
     # Set IPv4 network configuration for specific network interface.
+    # @api private
     # @param interface_name Network interface to update, for example, \&quot;nic0\&quot;.
     # @param appliance_networking_interfaces_ipv4_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(interface_name, appliance_networking_interfaces_ipv4_set, opts = {})
+    def set_with_http_info(interface_name, appliance_networking_interfaces_ipv4_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesIpv4Api.set ...'
       end

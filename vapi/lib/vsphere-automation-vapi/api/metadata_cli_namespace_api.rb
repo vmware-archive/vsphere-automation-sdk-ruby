@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliNamespaceFingerprintResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def fingerprint_with_http_info(opts = {})
+    def fingerprint_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.fingerprint ...'
       end
@@ -76,10 +77,11 @@ module VSphereAutomation
     end
 
     # Retreives information about a namespace including information about children of that namespace.
+    # @api private
     # @param vapi_metadata_cli_namespace_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliNamespaceResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vapi_metadata_cli_namespace_get, opts = {})
+    def get_with_http_info(vapi_metadata_cli_namespace_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.get ...'
       end
@@ -130,9 +132,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers of all namespaces registered with the infrastructure.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliNamespaceListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.list ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the service element corresponding to {@param.name serviceId}. &lt;p&gt; The {@link ServiceInfo} contains the metamodel information for the operation elements, structure elements and enumeration elements contained in the service element.
+    # @api private
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelServiceResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(service_id, opts = {})
+    def get_with_http_info(service_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelServiceApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the service elements that are currently registered with the infrastructure. &lt;p&gt; The list of service elements is an aggregate list of all the service elements contained in all the package elements.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelServiceListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelServiceApi.list ...'
       end

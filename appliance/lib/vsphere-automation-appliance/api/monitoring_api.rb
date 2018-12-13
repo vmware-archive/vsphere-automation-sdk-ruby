@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Get monitored item info
+    # @api private
     # @param stat_id statistic item id
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceMonitoringResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(stat_id, opts = {})
+    def get_with_http_info(stat_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MonitoringApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Get monitored items list
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceMonitoringListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MonitoringApi.list ...'
       end
@@ -134,6 +136,7 @@ module VSphereAutomation
     end
 
     # Get monitoring data.
+    # @api private
     # @param item_names monitored item IDs Ex: CPU, MEMORY
     # @param item_interval {@name IntervalType} {@term enumerated type} Defines interval between the values in hours and mins,                    for which aggregation will apply
     # @param item_function {@name FunctionType} {@term enumerated type} Defines aggregation function
@@ -141,7 +144,7 @@ module VSphereAutomation
     # @param item_end_time End time in UTC
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceMonitoringQueryResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def query_with_http_info(item_names, item_interval, item_function, item_start_time, item_end_time, opts = {})
+    def query_with_http_info(item_names, item_interval, item_function, item_start_time, item_end_time, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MonitoringApi.query ...'
       end

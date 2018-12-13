@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
+    # @api private
     # @param category_id The identifier of the input category.
     # @param cis_tagging_category_add_to_used_by 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def add_to_used_by_with_http_info(category_id, cis_tagging_category_add_to_used_by, opts = {})
+    def add_to_used_by_with_http_info(category_id, cis_tagging_category_add_to_used_by, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.add_to_used_by ...'
       end
@@ -87,10 +88,11 @@ module VSphereAutomation
     end
 
     # Creates a category. To invoke this {@term operation}, you need the create category privilege.
+    # @api private
     # @param cis_tagging_category_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingCategoryCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(cis_tagging_category_create, opts = {})
+    def create_with_http_info(cis_tagging_category_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.create ...'
       end
@@ -143,10 +145,11 @@ module VSphereAutomation
     end
 
     # Deletes an existing category. To invoke this {@term operation}, you need the delete privilege on the category.
+    # @api private
     # @param category_id The identifier of category to be deleted.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(category_id, opts = {})
+    def delete_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.delete ...'
       end
@@ -192,10 +195,11 @@ module VSphereAutomation
     end
 
     # Fetches the category information for the given category identifier. In order to view the category information, you need the read privilege on the category.
+    # @api private
     # @param category_id The identifier of the input category.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(category_id, opts = {})
+    def get_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.get ...'
       end
@@ -245,9 +249,10 @@ module VSphereAutomation
     end
 
     # Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingCategoryListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.list ...'
       end
@@ -292,10 +297,11 @@ module VSphereAutomation
     end
 
     # Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
+    # @api private
     # @param cis_tagging_category_list_used_categories 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingCategoryListUsedCategoriesResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_used_categories_with_http_info(cis_tagging_category_list_used_categories, opts = {})
+    def list_used_categories_with_http_info(cis_tagging_category_list_used_categories, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.list_used_categories ...'
       end
@@ -347,11 +353,12 @@ module VSphereAutomation
     end
 
     # Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
+    # @api private
     # @param category_id The identifier of the input category.
     # @param cis_tagging_category_remove_from_used_by 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def remove_from_used_by_with_http_info(category_id, cis_tagging_category_remove_from_used_by, opts = {})
+    def remove_from_used_by_with_http_info(category_id, cis_tagging_category_remove_from_used_by, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.remove_from_used_by ...'
       end
@@ -403,10 +410,11 @@ module VSphereAutomation
     end
 
     # Revokes all propagating permissions on the given category. You should then attach a direct permission with tagging privileges on the given category. To invoke this {@term operation}, you need category related privileges (direct or propagating) on the concerned category.
+    # @api private
     # @param category_id The identifier of the input category.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def revoke_propagating_permissions_with_http_info(category_id, opts = {})
+    def revoke_propagating_permissions_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.revoke_propagating_permissions ...'
       end
@@ -453,11 +461,12 @@ module VSphereAutomation
     end
 
     # Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
+    # @api private
     # @param category_id The identifier of the category to be updated.
     # @param cis_tagging_category_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(category_id, cis_tagging_category_update, opts = {})
+    def update_with_http_info(category_id, cis_tagging_category_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.update ...'
       end

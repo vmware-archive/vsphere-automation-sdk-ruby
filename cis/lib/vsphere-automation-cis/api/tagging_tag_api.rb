@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param cis_tagging_tag_add_to_used_by 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def add_to_used_by_with_http_info(tag_id, cis_tagging_tag_add_to_used_by, opts = {})
+    def add_to_used_by_with_http_info(tag_id, cis_tagging_tag_add_to_used_by, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.add_to_used_by ...'
       end
@@ -87,10 +88,11 @@ module VSphereAutomation
     end
 
     # Creates a tag. To invoke this {@term operation}, you need the create tag privilege on the input category.
+    # @api private
     # @param cis_tagging_tag_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(cis_tagging_tag_create, opts = {})
+    def create_with_http_info(cis_tagging_tag_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.create ...'
       end
@@ -144,10 +146,11 @@ module VSphereAutomation
     end
 
     # Deletes an existing tag. To invoke this {@term operation}, you need the delete privilege on the tag.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(tag_id, opts = {})
+    def delete_with_http_info(tag_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.delete ...'
       end
@@ -193,10 +196,11 @@ module VSphereAutomation
     end
 
     # Fetches the tag information for the given tag identifier. To invoke this {@term operation}, you need the read privilege on the tag in order to view the tag info.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(tag_id, opts = {})
+    def get_with_http_info(tag_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.get ...'
       end
@@ -246,9 +250,10 @@ module VSphereAutomation
     end
 
     # Enumerates the tags in the system. To invoke this {@term operation}, you need read privilege on the individual tags. The {@term list} will only contain tags for which you have read privileges.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.list ...'
       end
@@ -293,10 +298,11 @@ module VSphereAutomation
     end
 
     # Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
+    # @api private
     # @param category_id The identifier of the input category.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagListTagsForCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_tags_for_category_with_http_info(category_id, opts = {})
+    def list_tags_for_category_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.list_tags_for_category ...'
       end
@@ -347,10 +353,11 @@ module VSphereAutomation
     end
 
     # Enumerates all tags for which the {@param.name usedByEntity} is part of the {@link TagModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual tags.
+    # @api private
     # @param cis_tagging_tag_list_used_tags 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagListUsedTagsResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_used_tags_with_http_info(cis_tagging_tag_list_used_tags, opts = {})
+    def list_used_tags_with_http_info(cis_tagging_tag_list_used_tags, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.list_used_tags ...'
       end
@@ -402,11 +409,12 @@ module VSphereAutomation
     end
 
     # Removes the {@param.name usedByEntity} from the {@link TagModel#usedBy} subscribers set. If the {@param.name usedByEntity} is not using this tag, then this becomes a no-op. To invoke this {@term operation}, you need modify {@link TagModel#usedBy} privilege on the tag.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param cis_tagging_tag_remove_from_used_by 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def remove_from_used_by_with_http_info(tag_id, cis_tagging_tag_remove_from_used_by, opts = {})
+    def remove_from_used_by_with_http_info(tag_id, cis_tagging_tag_remove_from_used_by, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.remove_from_used_by ...'
       end
@@ -458,10 +466,11 @@ module VSphereAutomation
     end
 
     # Revokes all propagating permissions on the given tag. You should then attach a direct permission with tagging privileges on the given tag. To invoke this {@term operation}, you need tag related privileges (direct or propagating) on the concerned tag.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def revoke_propagating_permissions_with_http_info(tag_id, opts = {})
+    def revoke_propagating_permissions_with_http_info(tag_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.revoke_propagating_permissions ...'
       end
@@ -508,11 +517,12 @@ module VSphereAutomation
     end
 
     # Updates an existing tag. To invoke this {@term operation}, you need the edit privilege on the tag.
+    # @api private
     # @param tag_id The identifier of the input tag.
     # @param cis_tagging_tag_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(tag_id, cis_tagging_tag_update, opts = {})
+    def update_with_http_info(tag_id, cis_tagging_tag_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.update ...'
       end

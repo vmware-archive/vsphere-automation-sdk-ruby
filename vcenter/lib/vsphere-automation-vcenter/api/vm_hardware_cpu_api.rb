@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns the CPU-related settings of a virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareCpuResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, opts = {})
+    def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareCpuApi.get ...'
       end
@@ -88,11 +89,12 @@ module VSphereAutomation
     end
 
     # Updates the CPU-related settings of a virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param vcenter_vm_hardware_cpu_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(vm, vcenter_vm_hardware_cpu_update, opts = {})
+    def update_with_http_info(vm, vcenter_vm_hardware_cpu_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareCpuApi.update ...'
       end

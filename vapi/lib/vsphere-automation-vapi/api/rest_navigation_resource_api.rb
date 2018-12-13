@@ -32,12 +32,13 @@ module VSphereAutomation
     end
 
     # Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
+    # @api private
     # @param type_id Resource type id.
     # @param instance_id Resource instance id.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :base_url Base URL.
     # @return [Array<(VapiRestNavigationResourceResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(type_id, instance_id, opts = {})
+    def get_with_http_info(type_id, instance_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationResourceApi.get ...'
       end
@@ -91,10 +92,11 @@ module VSphereAutomation
     end
 
     # Gets list of all vAPI REST {@link Resource}s.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [String] :base_url Base URL.
     # @return [Array<(VapiRestNavigationResourceListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationResourceApi.list ...'
       end

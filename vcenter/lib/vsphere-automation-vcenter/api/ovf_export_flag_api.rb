@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Returns information about the supported export flags by the server. &lt;p&gt; The supported flags are: &lt;dl&gt; &lt;dt&gt;PRESERVE_MAC&lt;/dt&gt; &lt;dd&gt;Include MAC addresses for network adapters.&lt;/dd&gt; &lt;dt&gt;EXTRA_CONFIG&lt;/dt&gt; &lt;dd&gt;Include extra configuration in OVF export.&lt;/dd&gt; &lt;/dl&gt; &lt;p&gt; Future server versions might support additional flags.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterOvfExportFlagListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfExportFlagApi.list ...'
       end

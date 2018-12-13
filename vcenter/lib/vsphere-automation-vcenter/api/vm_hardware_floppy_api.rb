@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Connects a virtual floppy drive of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Floppy.update operation may be used to configure the virtual floppy drive to start in the connected state when the virtual machine is powered on. 
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def connect_with_http_info(vm, floppy, opts = {})
+    def connect_with_http_info(vm, floppy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.connect ...'
       end
@@ -86,11 +87,12 @@ module VSphereAutomation
     end
 
     # Adds a virtual floppy drive to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param vcenter_vm_hardware_floppy_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareFloppyCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vm, vcenter_vm_hardware_floppy_create, opts = {})
+    def create_with_http_info(vm, vcenter_vm_hardware_floppy_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.create ...'
       end
@@ -151,11 +153,12 @@ module VSphereAutomation
     end
 
     # Removes a virtual floppy drive from the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(vm, floppy, opts = {})
+    def delete_with_http_info(vm, floppy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.delete ...'
       end
@@ -206,11 +209,12 @@ module VSphereAutomation
     end
 
     # Disconnects a virtual floppy drive of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the floppy drive is not connected to its backing resource.   For a powered-off virtual machine, the Floppy.update operation may be used to configure the virtual floppy floppy to start in the disconnected state when the virtual machine is powered on. 
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def disconnect_with_http_info(vm, floppy, opts = {})
+    def disconnect_with_http_info(vm, floppy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.disconnect ...'
       end
@@ -261,11 +265,12 @@ module VSphereAutomation
     end
 
     # Returns information about a virtual floppy drive.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareFloppyResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, floppy, opts = {})
+    def get_with_http_info(vm, floppy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.get ...'
       end
@@ -323,10 +328,11 @@ module VSphereAutomation
     end
 
     # Returns commonly used information about the virtual floppy drives belonging to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareFloppyListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(vm, opts = {})
+    def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.list ...'
       end
@@ -382,12 +388,13 @@ module VSphereAutomation
     end
 
     # Updates the configuration of a virtual floppy drive.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
     # @param vcenter_vm_hardware_floppy_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(vm, floppy, vcenter_vm_hardware_floppy_update, opts = {})
+    def update_with_http_info(vm, floppy, vcenter_vm_hardware_floppy_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.update ...'
       end

@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Retrieves the current mode of a VCHA cluster.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterModeResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterModeApi.get ...'
       end
@@ -78,10 +79,11 @@ module VSphereAutomation
     end
 
     # Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -&gt; disabled - Allowed only in healthy and degraded states.  enabled -&gt; maintenance - Allowed only in healthy state.  disabled -&gt; enabled - Allowed only in healthy state.  maintenance -&gt; enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -&gt; disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
+    # @api private
     # @param vcenter_vcha_cluster_mode_set_task 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterModeSetTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def settask_with_http_info(vcenter_vcha_cluster_mode_set_task, opts = {})
+    def settask_with_http_info(vcenter_vcha_cluster_mode_set_task, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterModeApi.settask ...'
       end

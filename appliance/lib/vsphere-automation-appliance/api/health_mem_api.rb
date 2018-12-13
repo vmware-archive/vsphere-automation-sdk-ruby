@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get memory health.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceHealthMemResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthMemApi.get ...'
       end

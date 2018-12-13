@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves operations for specific URL.
+    # @api private
     # @param vapi_rest_navigation_options_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiRestNavigationOptionsResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vapi_rest_navigation_options_get, opts = {})
+    def get_with_http_info(vapi_rest_navigation_options_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationOptionsApi.get ...'
       end

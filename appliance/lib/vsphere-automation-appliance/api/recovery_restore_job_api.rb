@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Cancel the restore job
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryRestoreJobCancelResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def cancel_with_http_info(opts = {})
+    def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreJobApi.cancel ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Initiate restore.
+    # @api private
     # @param appliance_recovery_restore_job_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryRestoreJobCreateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(appliance_recovery_restore_job_create, opts = {})
+    def create_with_http_info(appliance_recovery_restore_job_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreJobApi.create ...'
       end
@@ -131,9 +133,10 @@ module VSphereAutomation
     end
 
     # See restore job progress/result.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryRestoreJobResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreJobApi.get ...'
       end

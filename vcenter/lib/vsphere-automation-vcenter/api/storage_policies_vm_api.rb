@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns information about the virtual machines and/or their virtual disks that are associated with the given storage policy.
+    # @api private
     # @param policy storage policy identifier. The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterStoragePoliciesVMListResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(policy, opts = {})
+    def list_with_http_info(policy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesVMApi.list ...'
       end

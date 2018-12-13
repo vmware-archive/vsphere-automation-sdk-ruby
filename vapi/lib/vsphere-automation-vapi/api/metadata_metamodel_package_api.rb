@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the package element corresponding to {@param.name packageId}.
+    # @api private
     # @param package_id Identifier of the package element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelPackageResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(package_id, opts = {})
+    def get_with_http_info(package_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelPackageApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the packages elements that are contained in all the registered component elements.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelPackageListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelPackageApi.list ...'
       end

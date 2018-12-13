@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves authentication information about the package element corresponding to {@param.name packageId}.
+    # @api private
     # @param package_id Identifier of the package element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationPackageResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(package_id, opts = {})
+    def get_with_http_info(package_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationPackageApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the package elements that have authentication information.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationPackageListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationPackageApi.list ...'
       end

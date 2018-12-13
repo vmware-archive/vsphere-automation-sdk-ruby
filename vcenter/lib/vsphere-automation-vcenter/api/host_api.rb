@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Connect to the host corresponding to host previously added to the vCenter server.
+    # @api private
     # @param host Identifier of the host to be reconnected. The parameter must be an identifier for the resource type: HostSystem.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def connect_with_http_info(host, opts = {})
+    def connect_with_http_info(host, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HostApi.connect ...'
       end
@@ -79,10 +80,11 @@ module VSphereAutomation
     end
 
     # Add a new standalone host in the vCenter inventory. The newly connected host will be in connected state. The vCenter Server will verify the SSL certificate before adding the host to its inventory. In the case where the SSL certificate cannot be verified because the Certificate Authority is not recognized or the certificate is self signed, the vCenter Server will fall back to thumbprint verification mode as defined by Host.CreateSpec.ThumbprintVerification.
+    # @api private
     # @param vcenter_host_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterHostCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vcenter_host_create, opts = {})
+    def create_with_http_info(vcenter_host_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HostApi.create ...'
       end
@@ -138,10 +140,11 @@ module VSphereAutomation
     end
 
     # Remove a standalone host from the vCenter Server.
+    # @api private
     # @param host Identifier of the host to be deleted. The parameter must be an identifier for the resource type: HostSystem.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInUseError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(host, opts = {})
+    def delete_with_http_info(host, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HostApi.delete ...'
       end
@@ -187,10 +190,11 @@ module VSphereAutomation
     end
 
     # Disconnect the host corresponding to host from the vCenter server
+    # @api private
     # @param host Identifier of the host to be disconnected. The parameter must be an identifier for the resource type: HostSystem.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def disconnect_with_http_info(host, opts = {})
+    def disconnect_with_http_info(host, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HostApi.disconnect ...'
       end
@@ -242,6 +246,7 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1000 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_hosts Identifiers of hosts that can match the filter. If unset or empty, hosts with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
     # @option opts [Array<String>] :filter_names Names that hosts must have to match the filter (see Host.Summary.name). If unset or empty, hosts with any name match the filter.
@@ -251,7 +256,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_clusters Clusters that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any cluster and hosts that are not in a cluster match the filter. If this field is not empty and Host.FilterSpec.standalone is true, no hosts will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
     # @option opts [Array<String>] :filter_connection_states Connection states that a host must be in to match the filter (see Host.Summary.connection-state. If unset or empty, hosts in any connection state match the filter.
     # @return [Array<(VcenterHostListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HostApi.list ...'
       end

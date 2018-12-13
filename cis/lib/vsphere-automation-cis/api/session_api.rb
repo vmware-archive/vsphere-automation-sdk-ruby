@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Creates a session with the API. This is the equivalent of login. This operation exchanges user credentials supplied in the security context for a session identifier that is to be used for authenticating subsequent calls. To authenticate subsequent calls clients are expected to include the session key.
+    # @api private
     # @param vmware_use_header_authn Custom header to protect against CSRF attacks in browser based clients
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisSessionCreateResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vmware_use_header_authn, opts = {})
+    def create_with_http_info(vmware_use_header_authn, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SessionApi.create ...'
       end
@@ -84,9 +85,10 @@ module VSphereAutomation
     end
 
     # Terminates the validity of a session token. This is the equivalent of log out.   A session identifier is expected as part of the request.    
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(opts = {})
+    def delete_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SessionApi.delete ...'
       end
@@ -127,9 +129,10 @@ module VSphereAutomation
     end
 
     # Returns information about the current session. This operation expects a valid session identifier to be supplied.   A side effect of invoking this operation may be a change to the session&#39;s last accessed time to the current time if this is supported by the session implementation. Invoking any other operation in the API will also update the session&#39;s last accessed time.    This API is meant to serve the needs of various front end projects that may want to display the name of the user. Examples of this include various web based user interfaces and logging facilities. 
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisSessionResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SessionApi.get ...'
       end

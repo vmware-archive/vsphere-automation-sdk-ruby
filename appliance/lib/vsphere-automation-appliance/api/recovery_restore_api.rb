@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Get metadata before restore
+    # @api private
     # @param appliance_recovery_restore_validate 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryRestoreValidateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def validate_with_http_info(appliance_recovery_restore_validate, opts = {})
+    def validate_with_http_info(appliance_recovery_restore_validate, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreApi.validate ...'
       end

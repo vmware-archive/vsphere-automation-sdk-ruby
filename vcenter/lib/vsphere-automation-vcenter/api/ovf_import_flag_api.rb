@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns information about the import flags supported by the deployment platform. &lt;p&gt; The supported flags are: &lt;dl&gt; &lt;dt&gt;LAX&lt;/dt&gt; &lt;dd&gt;Lax mode parsing of the OVF descriptor.&lt;/dd&gt; &lt;/dl&gt; &lt;p&gt; Future server versions might support additional flags.
+    # @api private
     # @param rp The identifier of resource pool target for retrieving the import flag(s).
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterOvfImportFlagListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(rp, opts = {})
+    def list_with_http_info(rp, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfImportFlagApi.list ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Add domain to DNS search domains.
+    # @api private
     # @param appliance_networking_dns_domains_add 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def add_with_http_info(appliance_networking_dns_domains_add, opts = {})
+    def add_with_http_info(appliance_networking_dns_domains_add, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsDomainsApi.add ...'
       end
@@ -80,9 +81,10 @@ module VSphereAutomation
     end
 
     # Get list of DNS search domains.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingDnsDomainsListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsDomainsApi.list ...'
       end
@@ -128,10 +130,11 @@ module VSphereAutomation
     end
 
     # Set DNS search domains.
+    # @api private
     # @param appliance_networking_dns_domains_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_networking_dns_domains_set, opts = {})
+    def set_with_http_info(appliance_networking_dns_domains_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsDomainsApi.set ...'
       end

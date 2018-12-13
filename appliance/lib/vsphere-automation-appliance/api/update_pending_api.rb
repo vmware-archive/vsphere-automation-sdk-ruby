@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Gets update information
+    # @api private
     # @param version Update version
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdatePendingResult|VapiStdErrorsAlreadyInDesiredStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(version, opts = {})
+    def get_with_http_info(version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.get ...'
       end
@@ -87,11 +88,12 @@ module VSphereAutomation
     end
 
     # Starts operation of installing the appliance update. Will fail is the update is not staged
+    # @api private
     # @param version Update version
     # @param appliance_update_pending_install 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def install_with_http_info(version, appliance_update_pending_install, opts = {})
+    def install_with_http_info(version, appliance_update_pending_install, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.install ...'
       end
@@ -144,11 +146,12 @@ module VSphereAutomation
     end
 
     # Checks if new updates are available.
+    # @api private
     # @param source_type The {@name SourceType} {@term enumerated type} defines the supported types of sources of updates.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :url specific URL to check at
     # @return [Array<(ApplianceUpdatePendingListResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(source_type, opts = {})
+    def list_with_http_info(source_type, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.list ...'
       end
@@ -207,10 +210,11 @@ module VSphereAutomation
     end
 
     # Runs update precheck
+    # @api private
     # @param version Update version
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdatePendingPrecheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def precheck_with_http_info(version, opts = {})
+    def precheck_with_http_info(version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.precheck ...'
       end
@@ -263,10 +267,11 @@ module VSphereAutomation
     end
 
     # Starts staging the appliance update. The updates are searched for in the following order: staged, CDROM, URL
+    # @api private
     # @param version Update version
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def stage_with_http_info(version, opts = {})
+    def stage_with_http_info(version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.stage ...'
       end
@@ -313,11 +318,12 @@ module VSphereAutomation
     end
 
     # Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
+    # @api private
     # @param version Update version
     # @param appliance_update_pending_stage_and_install 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def stage_and_install_with_http_info(version, appliance_update_pending_stage_and_install, opts = {})
+    def stage_and_install_with_http_info(version, appliance_update_pending_stage_and_install, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.stage_and_install ...'
       end
@@ -370,11 +376,12 @@ module VSphereAutomation
     end
 
     # Validates the user provided data before the update installation.
+    # @api private
     # @param version Update version
     # @param appliance_update_pending_validate 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdatePendingValidateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def validate_with_http_info(version, appliance_update_pending_validate, opts = {})
+    def validate_with_http_info(version, appliance_update_pending_validate, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.validate ...'
       end

@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Connects a virtual serial port of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Serial.update operation may be used to configure the virtual serial port to start in the connected state when the virtual machine is powered on. 
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def connect_with_http_info(vm, port, opts = {})
+    def connect_with_http_info(vm, port, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.connect ...'
       end
@@ -86,11 +87,12 @@ module VSphereAutomation
     end
 
     # Adds a virtual serial port to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param vcenter_vm_hardware_serial_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareSerialCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vm, vcenter_vm_hardware_serial_create, opts = {})
+    def create_with_http_info(vm, vcenter_vm_hardware_serial_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.create ...'
       end
@@ -151,11 +153,12 @@ module VSphereAutomation
     end
 
     # Removes a virtual serial port from the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(vm, port, opts = {})
+    def delete_with_http_info(vm, port, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.delete ...'
       end
@@ -206,11 +209,12 @@ module VSphereAutomation
     end
 
     # Disconnects a virtual serial port of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the serial port is not connected to its backing.   For a powered-off virtual machine, the Serial.update operation may be used to configure the virtual serial port to start in the disconnected state when the virtual machine is powered on. 
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def disconnect_with_http_info(vm, port, opts = {})
+    def disconnect_with_http_info(vm, port, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.disconnect ...'
       end
@@ -261,11 +265,12 @@ module VSphereAutomation
     end
 
     # Returns information about a virtual serial port.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareSerialResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, port, opts = {})
+    def get_with_http_info(vm, port, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.get ...'
       end
@@ -323,10 +328,11 @@ module VSphereAutomation
     end
 
     # Returns commonly used information about the virtual serial ports belonging to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareSerialListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(vm, opts = {})
+    def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.list ...'
       end
@@ -382,12 +388,13 @@ module VSphereAutomation
     end
 
     # Updates the configuration of a virtual serial port.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
     # @param vcenter_vm_hardware_serial_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(vm, port, vcenter_vm_hardware_serial_update, opts = {})
+    def update_with_http_info(vm, port, vcenter_vm_hardware_serial_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.update ...'
       end

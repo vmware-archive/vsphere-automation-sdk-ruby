@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Adds a virtual SCSI adapter to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param vcenter_vm_hardware_adapter_scsi_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareAdapterScsiCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vm, vcenter_vm_hardware_adapter_scsi_create, opts = {})
+    def create_with_http_info(vm, vcenter_vm_hardware_adapter_scsi_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterScsiApi.create ...'
       end
@@ -96,11 +97,12 @@ module VSphereAutomation
     end
 
     # Removes a virtual SCSI adapter from the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param adapter Virtual SCSI adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(vm, adapter, opts = {})
+    def delete_with_http_info(vm, adapter, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterScsiApi.delete ...'
       end
@@ -151,11 +153,12 @@ module VSphereAutomation
     end
 
     # Returns information about a virtual SCSI adapter.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param adapter Virtual SCSI adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareAdapterScsiResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, adapter, opts = {})
+    def get_with_http_info(vm, adapter, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterScsiApi.get ...'
       end
@@ -213,10 +216,11 @@ module VSphereAutomation
     end
 
     # Returns commonly used information about the virtual SCSI adapters belonging to the virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareAdapterScsiListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(vm, opts = {})
+    def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterScsiApi.list ...'
       end
@@ -272,12 +276,13 @@ module VSphereAutomation
     end
 
     # Updates the configuration of a virtual SCSI adapter.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param adapter Virtual SCSI adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter.
     # @param vcenter_vm_hardware_adapter_scsi_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(vm, adapter, vcenter_vm_hardware_adapter_scsi_update, opts = {})
+    def update_with_http_info(vm, adapter, vcenter_vm_hardware_adapter_scsi_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterScsiApi.update ...'
       end

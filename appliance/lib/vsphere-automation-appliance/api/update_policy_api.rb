@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Gets the automatic update checking and staging policy.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdatePolicyResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePolicyApi.get ...'
       end
@@ -79,10 +80,11 @@ module VSphereAutomation
     end
 
     # Sets the automatic update checking and staging policy.
+    # @api private
     # @param appliance_update_policy_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_update_policy_set, opts = {})
+    def set_with_http_info(appliance_update_policy_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePolicyApi.set ...'
       end

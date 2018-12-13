@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Create a new datacenter in the vCenter inventory
+    # @api private
     # @param vcenter_datacenter_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDatacenterCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vcenter_datacenter_create, opts = {})
+    def create_with_http_info(vcenter_datacenter_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatacenterApi.create ...'
       end
@@ -90,11 +91,12 @@ module VSphereAutomation
     end
 
     # Delete an empty datacenter from the vCenter Server
+    # @api private
     # @param datacenter Identifier of the datacenter to be deleted. The parameter must be an identifier for the resource type: Datacenter.
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :force If true, delete the datacenter even if it is not empty. If unset a ResourceInUse error will be reported if the datacenter is not empty. This is the equivalent of passing the value false.
     # @return [Array<(|VapiStdErrorsResourceInUseError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(datacenter, opts = {})
+    def delete_with_http_info(datacenter, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatacenterApi.delete ...'
       end
@@ -141,10 +143,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the datacenter corresponding to datacenter.
+    # @api private
     # @param datacenter Identifier of the datacenter. The parameter must be an identifier for the resource type: Datacenter.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDatacenterResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(datacenter, opts = {})
+    def get_with_http_info(datacenter, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatacenterApi.get ...'
       end
@@ -200,12 +203,13 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1000 visible (subject to permission checks) datacenters in vCenter matching the Datacenter.FilterSpec.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_datacenters Identifiers of datacenters that can match the filter. If unset or empty, datacenters with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
     # @option opts [Array<String>] :filter_names Names that datacenters must have to match the filter (see Datacenter.Info.name). If unset or empty, datacenters with any name match the filter.
     # @option opts [Array<String>] :filter_folders Folders that must contain the datacenters for the datacenter to match the filter. If unset or empty, datacenters in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @return [Array<(VcenterDatacenterListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatacenterApi.list ...'
       end

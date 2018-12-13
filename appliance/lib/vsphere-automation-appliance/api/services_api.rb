@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns the state of a service.
+    # @api private
     # @param service identifier of the service whose state is being queried.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceServicesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(service, opts = {})
+    def get_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ServicesApi.get ...'
       end
@@ -83,9 +84,10 @@ module VSphereAutomation
     end
 
     # Lists details of vCenter services.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceServicesListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ServicesApi.list ...'
       end
@@ -131,10 +133,11 @@ module VSphereAutomation
     end
 
     # Restarts a service
+    # @api private
     # @param service identifier of the service to restart
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsTimedOutError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def restart_with_http_info(service, opts = {})
+    def restart_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ServicesApi.restart ...'
       end
@@ -180,10 +183,11 @@ module VSphereAutomation
     end
 
     # Starts a service
+    # @api private
     # @param service identifier of the service to start
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsTimedOutError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def start_with_http_info(service, opts = {})
+    def start_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ServicesApi.start ...'
       end
@@ -229,10 +233,11 @@ module VSphereAutomation
     end
 
     # Stops a service
+    # @api private
     # @param service identifier of the service to stop
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def stop_with_http_info(service, opts = {})
+    def stop_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ServicesApi.stop ...'
       end

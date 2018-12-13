@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Creates a schedule
+    # @api private
     # @param schedule Identifier of the schedule
     # @param appliance_recovery_backup_schedules_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def create_with_http_info(schedule, appliance_recovery_backup_schedules_create, opts = {})
+    def create_with_http_info(schedule, appliance_recovery_backup_schedules_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.create ...'
       end
@@ -87,10 +88,11 @@ module VSphereAutomation
     end
 
     # Deletes an existing schedule
+    # @api private
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(schedule, opts = {})
+    def delete_with_http_info(schedule, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.delete ...'
       end
@@ -136,10 +138,11 @@ module VSphereAutomation
     end
 
     # Returns an existing schedule information based on id
+    # @api private
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupSchedulesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(schedule, opts = {})
+    def get_with_http_info(schedule, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.get ...'
       end
@@ -189,9 +192,10 @@ module VSphereAutomation
     end
 
     # Returns a list of existing schedules with details
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupSchedulesListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.list ...'
       end
@@ -238,11 +242,12 @@ module VSphereAutomation
     end
 
     # Initiate backup with the specified schedule
+    # @api private
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceRecoveryBackupSchedulesRun] :appliance_recovery_backup_schedules_run 
     # @return [Array<(ApplianceRecoveryBackupSchedulesRunResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def run_with_http_info(schedule, opts = {})
+    def run_with_http_info(schedule, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.run ...'
       end
@@ -296,11 +301,12 @@ module VSphereAutomation
     end
 
     # Updates a schedule
+    # @api private
     # @param schedule Identifier of the schedule
     # @param appliance_recovery_backup_schedules_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(schedule, appliance_recovery_backup_schedules_update, opts = {})
+    def update_with_http_info(schedule, appliance_recovery_backup_schedules_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.update ...'
       end

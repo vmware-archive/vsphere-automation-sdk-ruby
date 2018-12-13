@@ -32,12 +32,13 @@ module VSphereAutomation
     end
 
     # Returns a list of system names for which backup archives exist under {@param.name locSpec}.
+    # @api private
     # @param loc_spec_location Backup location URL.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :loc_spec_location_user Username for the given location.
     # @option opts [String] :loc_spec_location_password Password for the given location.
     # @return [Array<(ApplianceRecoveryBackupSystemNameListResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(loc_spec_location, opts = {})
+    def list_with_http_info(loc_spec_location, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSystemNameApi.list ...'
       end

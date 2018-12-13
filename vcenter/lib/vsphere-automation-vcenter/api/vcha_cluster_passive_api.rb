@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Validates the specified passive node&#39;s placement configuration.
+    # @api private
     # @param vcenter_vcha_cluster_passive_check 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterPassiveCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def check_with_http_info(vcenter_vcha_cluster_passive_check, opts = {})
+    def check_with_http_info(vcenter_vcha_cluster_passive_check, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterPassiveApi.check ...'
       end
@@ -87,10 +88,11 @@ module VSphereAutomation
     end
 
     # Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
+    # @api private
     # @param vcenter_vcha_cluster_passive_redeploy_task 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterPassiveRedeployTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def redeploytask_with_http_info(vcenter_vcha_cluster_passive_redeploy_task, opts = {})
+    def redeploytask_with_http_info(vcenter_vcha_cluster_passive_redeploy_task, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterPassiveApi.redeploytask ...'
       end

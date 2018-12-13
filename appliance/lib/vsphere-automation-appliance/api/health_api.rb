@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Get health messages.
+    # @api private
     # @param item ID of the data item
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceHealthMessagesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def messages_with_http_info(item, opts = {})
+    def messages_with_http_info(item, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthApi.messages ...'
       end

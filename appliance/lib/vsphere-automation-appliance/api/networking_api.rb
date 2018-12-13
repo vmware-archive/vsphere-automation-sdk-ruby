@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get Networking information for all configured interfaces.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingApi.get ...'
       end
@@ -76,9 +77,10 @@ module VSphereAutomation
     end
 
     # Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def reset_with_http_info(opts = {})
+    def reset_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingApi.reset ...'
       end
@@ -120,10 +122,11 @@ module VSphereAutomation
     end
 
     # Enable or Disable ipv6 on all interfaces
+    # @api private
     # @param appliance_networking_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(appliance_networking_update, opts = {})
+    def update_with_http_info(appliance_networking_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingApi.update ...'
       end

@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Cancel pending shutdown action.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def cancel_with_http_info(opts = {})
+    def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ShutdownApi.cancel ...'
       end
@@ -72,9 +73,10 @@ module VSphereAutomation
     end
 
     # Get details about the pending shutdown action.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceShutdownResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ShutdownApi.get ...'
       end
@@ -120,10 +122,11 @@ module VSphereAutomation
     end
 
     # Power off the appliance.
+    # @api private
     # @param appliance_shutdown_poweroff 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def poweroff_with_http_info(appliance_shutdown_poweroff, opts = {})
+    def poweroff_with_http_info(appliance_shutdown_poweroff, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ShutdownApi.poweroff ...'
       end
@@ -171,10 +174,11 @@ module VSphereAutomation
     end
 
     # Reboot the appliance.
+    # @api private
     # @param appliance_shutdown_reboot 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def reboot_with_http_info(appliance_shutdown_reboot, opts = {})
+    def reboot_with_http_info(appliance_shutdown_reboot, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ShutdownApi.reboot ...'
       end

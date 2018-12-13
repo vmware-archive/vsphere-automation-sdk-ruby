@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get time zone.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceSystemTimeTimezoneResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemTimeTimezoneApi.get ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Set time zone.
+    # @api private
     # @param appliance_system_time_timezone_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_system_time_timezone_set, opts = {})
+    def set_with_http_info(appliance_system_time_timezone_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemTimeTimezoneApi.set ...'
       end

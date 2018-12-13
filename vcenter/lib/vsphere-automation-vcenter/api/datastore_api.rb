@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the datastore indicated by datastore.
+    # @api private
     # @param datastore Identifier of the datastore for which information should be retrieved. The parameter must be an identifier for the resource type: Datastore.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDatastoreResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(datastore, opts = {})
+    def get_with_http_info(datastore, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatastoreApi.get ...'
       end
@@ -90,6 +91,7 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1000 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_datastores Identifiers of datastores that can match the filter. If unset or empty, datastores with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datastore. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datastore.
     # @option opts [Array<String>] :filter_names Names that datastores must have to match the filter (see Datastore.Info.name). If unset or empty, datastores with any name match the filter.
@@ -97,7 +99,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_folders Folders that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_datacenters Datacenters that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
     # @return [Array<(VcenterDatastoreListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatastoreApi.list ...'
       end

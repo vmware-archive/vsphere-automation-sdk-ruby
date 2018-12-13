@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns information about the guest operating system power state.
+    # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmGuestPowerResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, opts = {})
+    def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestPowerApi.get ...'
       end
@@ -84,10 +85,11 @@ module VSphereAutomation
     end
 
     # Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
+    # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnsupportedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def reboot_with_http_info(vm, opts = {})
+    def reboot_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestPowerApi.reboot ...'
       end
@@ -133,10 +135,11 @@ module VSphereAutomation
     end
 
     # Issues a request to the guest operating system asking it to perform a clean shutdown of all services. This request returns immediately and does not wait for the guest operating system to complete the operation.
+    # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnsupportedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def shutdown_with_http_info(vm, opts = {})
+    def shutdown_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestPowerApi.shutdown ...'
       end
@@ -182,10 +185,11 @@ module VSphereAutomation
     end
 
     # Issues a request to the guest operating system asking it to perform a suspend operation.
+    # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnsupportedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def standby_with_http_info(vm, opts = {})
+    def standby_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestPowerApi.standby ...'
       end

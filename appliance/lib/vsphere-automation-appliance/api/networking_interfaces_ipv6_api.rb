@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Get IPv6 network configuration for specific interface.
+    # @api private
     # @param interface_name Network interface to query, for example, \&quot;nic0\&quot;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingInterfacesIpv6Result|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(interface_name, opts = {})
+    def get_with_http_info(interface_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesIpv6Api.get ...'
       end
@@ -85,11 +86,12 @@ module VSphereAutomation
     end
 
     # Set IPv6 network configuration for specific interface.
+    # @api private
     # @param interface_name Network interface to update, for example, \&quot;nic0\&quot;.
     # @param appliance_networking_interfaces_ipv6_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(interface_name, appliance_networking_interfaces_ipv6_set, opts = {})
+    def set_with_http_info(interface_name, appliance_networking_interfaces_ipv6_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesIpv6Api.set ...'
       end

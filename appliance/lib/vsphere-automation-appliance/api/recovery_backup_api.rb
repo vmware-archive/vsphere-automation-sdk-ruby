@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Check for backup errors without starting backup.
+    # @api private
     # @param appliance_recovery_backup_validate 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupValidateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def validate_with_http_info(appliance_recovery_backup_validate, opts = {})
+    def validate_with_http_info(appliance_recovery_backup_validate, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupApi.validate ...'
       end

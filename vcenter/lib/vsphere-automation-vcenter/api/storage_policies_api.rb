@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Returns datastore compatibility summary about a specific storage policy.
+    # @api private
     # @param policy The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
     # @param vcenter_storage_policies_check_compatibility 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterStoragePoliciesCheckCompatibilityResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def check_compatibility_with_http_info(policy, vcenter_storage_policies_check_compatibility, opts = {})
+    def check_compatibility_with_http_info(policy, vcenter_storage_policies_check_compatibility, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesApi.check_compatibility ...'
       end
@@ -95,10 +96,11 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_policies Identifiers of storage policies that can match the filter. If unset or empty, storage policies with any identifiers match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.StoragePolicy. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.StoragePolicy.
     # @return [Array<(VcenterStoragePoliciesListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesApi.list ...'
       end

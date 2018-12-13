@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
+    # @api private
     # @param vcenter_vcha_vc_credentials_validate 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def validate_with_http_info(vcenter_vcha_vc_credentials_validate, opts = {})
+    def validate_with_http_info(vcenter_vcha_vc_credentials_validate, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaVcCredentialsApi.validate ...'
       end

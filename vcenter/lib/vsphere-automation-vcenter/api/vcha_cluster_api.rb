@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Prepares, clones, and configures a VCHA cluster.
+    # @api private
     # @param vcenter_vcha_cluster_deploy_task 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterDeployTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def deploytask_with_http_info(vcenter_vcha_cluster_deploy_task, opts = {})
+    def deploytask_with_http_info(vcenter_vcha_cluster_deploy_task, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterApi.deploytask ...'
       end
@@ -86,10 +87,11 @@ module VSphereAutomation
     end
 
     # Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
+    # @api private
     # @param vcenter_vcha_cluster_failover_task 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterFailoverTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def failovertask_with_http_info(vcenter_vcha_cluster_failover_task, opts = {})
+    def failovertask_with_http_info(vcenter_vcha_cluster_failover_task, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterApi.failovertask ...'
       end
@@ -142,10 +144,11 @@ module VSphereAutomation
     end
 
     # Retrieves the status of a VCHA cluster.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVchaClusterGet] :vcenter_vcha_cluster_get 
     # @return [Array<(VcenterVchaClusterResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterApi.get ...'
       end
@@ -194,10 +197,11 @@ module VSphereAutomation
     end
 
     # Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
+    # @api private
     # @param vcenter_vcha_cluster_undeploy_task 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterUndeployTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def undeploytask_with_http_info(vcenter_vcha_cluster_undeploy_task, opts = {})
+    def undeploytask_with_http_info(vcenter_vcha_cluster_undeploy_task, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterApi.undeploytask ...'
       end

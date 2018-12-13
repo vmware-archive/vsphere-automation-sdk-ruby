@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get information of the PSC that this appliance is registered with.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterSystemConfigPscRegistrationResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemConfigPscRegistrationApi.get ...'
       end
@@ -78,10 +79,11 @@ module VSphereAutomation
     end
 
     # Repoint this vCenter Server appliance to a different external PSC.
+    # @api private
     # @param vcenter_system_config_psc_registration_repoint 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def repoint_with_http_info(vcenter_system_config_psc_registration_repoint, opts = {})
+    def repoint_with_http_info(vcenter_system_config_psc_registration_repoint, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemConfigPscRegistrationApi.repoint ...'
       end

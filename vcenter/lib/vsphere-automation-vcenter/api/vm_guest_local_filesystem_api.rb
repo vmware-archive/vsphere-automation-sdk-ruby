@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns details of the local file systems in the guest operating system.
+    # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmGuestLocalFilesystemResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, opts = {})
+    def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestLocalFilesystemApi.get ...'
       end

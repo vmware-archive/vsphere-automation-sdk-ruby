@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Add a DNS server. This method fails if mode argument is \&quot;dhcp\&quot;
+    # @api private
     # @param appliance_networking_dns_servers_add 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def add_with_http_info(appliance_networking_dns_servers_add, opts = {})
+    def add_with_http_info(appliance_networking_dns_servers_add, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsServersApi.add ...'
       end
@@ -80,9 +81,10 @@ module VSphereAutomation
     end
 
     # Get DNS server configuration.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingDnsServersResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsServersApi.get ...'
       end
@@ -128,10 +130,11 @@ module VSphereAutomation
     end
 
     # Set the DNS server configuration. If you set the mode argument to \&quot;DHCP\&quot;, a DHCP refresh is forced.
+    # @api private
     # @param appliance_networking_dns_servers_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_networking_dns_servers_set, opts = {})
+    def set_with_http_info(appliance_networking_dns_servers_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsServersApi.set ...'
       end
@@ -179,10 +182,11 @@ module VSphereAutomation
     end
 
     # Test if dns servers are reachable.
+    # @api private
     # @param appliance_networking_dns_servers_test 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingDnsServersTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def test_with_http_info(appliance_networking_dns_servers_test, opts = {})
+    def test_with_http_info(appliance_networking_dns_servers_test, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsServersApi.test ...'
       end

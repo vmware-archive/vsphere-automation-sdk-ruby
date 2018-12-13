@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get enabled state of the SSH-based controlled CLI.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceAccessSshResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AccessSshApi.get ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Set enabled state of the SSH-based controlled CLI.
+    # @api private
     # @param appliance_access_ssh_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_access_ssh_set, opts = {})
+    def set_with_http_info(appliance_access_ssh_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AccessSshApi.set ...'
       end

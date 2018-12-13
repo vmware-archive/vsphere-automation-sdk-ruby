@@ -34,6 +34,7 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1000 visible (subject to permission checks) folders in vCenter matching the Folder.FilterSpec.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_folders Identifiers of folders that can match the filter. If unset or empty, folders with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_names Names that folders must have to match the filter (see Folder.Summary.name). If unset or empty, folders with any name match the filter.
@@ -41,7 +42,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_parent_folders Folders that must contain the folder for the folder to match the filter. If unset or empty, folder in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_datacenters Datacenters that must contain the folder for the folder to match the filter. If unset or empty, folder in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
     # @return [Array<(VcenterFolderListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FolderApi.list ...'
       end

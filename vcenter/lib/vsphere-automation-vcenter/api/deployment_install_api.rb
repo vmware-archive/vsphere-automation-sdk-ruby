@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Cancel the appliance installation that is in progress.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def cancel_with_http_info(opts = {})
+    def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.cancel ...'
       end
@@ -73,10 +74,11 @@ module VSphereAutomation
     end
 
     # Run sanity checks using the InstallSpec parameters passed.
+    # @api private
     # @param vcenter_deployment_install_check 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentInstallCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def check_with_http_info(vcenter_deployment_install_check, opts = {})
+    def check_with_http_info(vcenter_deployment_install_check, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.check ...'
       end
@@ -128,9 +130,10 @@ module VSphereAutomation
     end
 
     # Get the parameters used to configure the ongoing appliance installation.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentInstallResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.get ...'
       end
@@ -177,10 +180,11 @@ module VSphereAutomation
     end
 
     # Start the appliance installation.
+    # @api private
     # @param vcenter_deployment_install_start 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def start_with_http_info(vcenter_deployment_install_start, opts = {})
+    def start_with_http_info(vcenter_deployment_install_start, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.start ...'
       end

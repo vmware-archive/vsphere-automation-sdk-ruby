@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the resource pool indicated by resourcePool.
+    # @api private
     # @param resource_pool Identifier of the resource pool for which information should be retrieved. The parameter must be an identifier for the resource type: ResourcePool.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterResourcePoolResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(resource_pool, opts = {})
+    def get_with_http_info(resource_pool, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ResourcePoolApi.get ...'
       end
@@ -91,6 +92,7 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1000 visible (subject to permission checks) resource pools in vCenter matching the ResourcePool.FilterSpec.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_resource_pools Identifiers of resource pools that can match the filter. If unset or empty, resource pools with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ResourcePool.
     # @option opts [Array<String>] :filter_names Names that resource pools must have to match the filter (see ResourcePool.Info.name). If unset or empty, resource pools with any name match the filter.
@@ -99,7 +101,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_hosts Hosts that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any host match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
     # @option opts [Array<String>] :filter_clusters Clusters that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any cluster match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
     # @return [Array<(VcenterResourcePoolListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ResourcePoolApi.list ...'
       end

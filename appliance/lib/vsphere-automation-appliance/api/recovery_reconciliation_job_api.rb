@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Initiate reconciliation.
+    # @api private
     # @param appliance_recovery_reconciliation_job_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryReconciliationJobCreateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(appliance_recovery_reconciliation_job_create, opts = {})
+    def create_with_http_info(appliance_recovery_reconciliation_job_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryReconciliationJobApi.create ...'
       end
@@ -84,9 +85,10 @@ module VSphereAutomation
     end
 
     # Get reconciliation job progress/result.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryReconciliationJobResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryReconciliationJobApi.get ...'
       end

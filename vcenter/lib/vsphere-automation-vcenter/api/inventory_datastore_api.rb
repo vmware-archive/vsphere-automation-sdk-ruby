@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
+    # @api private
     # @param vcenter_inventory_datastore_find 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterInventoryDatastoreFindResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def find_with_http_info(vcenter_inventory_datastore_find, opts = {})
+    def find_with_http_info(vcenter_inventory_datastore_find, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InventoryDatastoreApi.find ...'
       end

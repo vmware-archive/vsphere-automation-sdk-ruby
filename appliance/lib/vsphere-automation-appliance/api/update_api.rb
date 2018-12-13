@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Request the cancellation the update operation that is currently in progress.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def cancel_with_http_info(opts = {})
+    def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdateApi.cancel ...'
       end
@@ -72,9 +73,10 @@ module VSphereAutomation
     end
 
     # Gets the current status of the appliance update.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdateResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdateApi.get ...'
       end

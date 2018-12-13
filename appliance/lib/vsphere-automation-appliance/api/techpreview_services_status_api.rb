@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Get status of a service.
+    # @api private
     # @param appliance_techpreview_services_status_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTechpreviewServicesStatusResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(appliance_techpreview_services_status_get, opts = {})
+    def get_with_http_info(appliance_techpreview_services_status_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewServicesStatusApi.get ...'
       end

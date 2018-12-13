@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Gets the SHA1 thumbprint of the remote PSC.
+    # @api private
     # @param spec_address The IP address or DNS resolvable name of the remote PSC.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :spec_https_port The HTTPS port of the remote PSC.
     # @return [Array<(VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(spec_address, opts = {})
+    def get_with_http_info(spec_address, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallInitialConfigRemotePscThumbprintApi.get ...'
       end

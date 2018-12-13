@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Creates a new subscribed library. &lt;p&gt; Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
+    # @api private
     # @param content_subscribed_library_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentSubscribedLibraryCreateResult|VapiStdErrorsResourceInaccessibleError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(content_subscribed_library_create, opts = {})
+    def create_with_http_info(content_subscribed_library_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.create ...'
       end
@@ -85,10 +86,11 @@ module VSphereAutomation
     end
 
     # Deletes the specified subscribed library. &lt;p&gt; Deleting a subscribed library will remove the entry immediately and begin an asynchronous task to remove all cached content for the library. If the asynchronous task fails, file content may remain on the storage backing. This content will require manual removal.
+    # @api private
     # @param library_id Identifier of the subscribed library to delete.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(library_id, opts = {})
+    def delete_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.delete ...'
       end
@@ -134,10 +136,11 @@ module VSphereAutomation
     end
 
     # Evicts the cached content of an on-demand subscribed library. &lt;p&gt; This {@term operation} allows the cached content of a subscribed library to be removed to free up storage capacity. This {@term operation} will only work when a subscribed library is synchronized on-demand.
+    # @api private
     # @param library_id Identifier of the subscribed library whose content should be evicted.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def evict_with_http_info(library_id, opts = {})
+    def evict_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.evict ...'
       end
@@ -183,10 +186,11 @@ module VSphereAutomation
     end
 
     # Returns a given subscribed library.
+    # @api private
     # @param library_id Identifier of the subscribed library to return.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentSubscribedLibraryResult|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(library_id, opts = {})
+    def get_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.get ...'
       end
@@ -236,9 +240,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers of all subscribed libraries in the Content Library.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentSubscribedLibraryListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.list ...'
       end
@@ -283,10 +288,11 @@ module VSphereAutomation
     end
 
     # Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
+    # @api private
     # @param content_subscribed_library_probe 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentSubscribedLibraryProbeResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def probe_with_http_info(content_subscribed_library_probe, opts = {})
+    def probe_with_http_info(content_subscribed_library_probe, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.probe ...'
       end
@@ -337,10 +343,11 @@ module VSphereAutomation
     end
 
     # Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
+    # @api private
     # @param library_id Identifier of the subscribed library to synchronize.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def sync_with_http_info(library_id, opts = {})
+    def sync_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.sync ...'
       end
@@ -387,11 +394,12 @@ module VSphereAutomation
     end
 
     # Updates the properties of a subscribed library. &lt;p&gt; This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
+    # @api private
     # @param library_id Identifier of the subscribed library to update.
     # @param content_subscribed_library_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsConcurrentChangeError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(library_id, content_subscribed_library_update, opts = {})
+    def update_with_http_info(library_id, content_subscribed_library_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.update ...'
       end

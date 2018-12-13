@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Return information about the guest.
+    # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmGuestIdentityResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, opts = {})
+    def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestIdentityApi.get ...'
       end

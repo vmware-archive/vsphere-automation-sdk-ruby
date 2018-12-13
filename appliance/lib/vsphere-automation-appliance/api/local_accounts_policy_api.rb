@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get the global password policy.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceLocalAccountsPolicyResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsPolicyApi.get ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Set the global password policy.
+    # @api private
     # @param appliance_local_accounts_policy_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_local_accounts_policy_set, opts = {})
+    def set_with_http_info(appliance_local_accounts_policy_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsPolicyApi.set ...'
       end

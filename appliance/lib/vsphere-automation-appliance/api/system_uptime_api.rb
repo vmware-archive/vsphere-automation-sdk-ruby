@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get the system uptime.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceSystemUptimeResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemUptimeApi.get ...'
       end

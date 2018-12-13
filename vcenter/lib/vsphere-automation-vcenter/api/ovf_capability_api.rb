@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns information about the capability of the given vCenter server.
+    # @api private
     # @param server_guid Target vCenter server GUID
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterOvfCapabilityResult|VapiStdErrorsInvalidArgumentError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(server_guid, opts = {})
+    def get_with_http_info(server_guid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfCapabilityApi.get ...'
       end

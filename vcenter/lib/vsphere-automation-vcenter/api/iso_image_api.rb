@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Mounts an ISO image from a content library on a virtual machine.
+    # @api private
     # @param library_item The identifier of the library item having the ISO image to mount on the virtual machine.
     # @param vcenter_iso_image_mount 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterIsoImageMountResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def mount_with_http_info(library_item, vcenter_iso_image_mount, opts = {})
+    def mount_with_http_info(library_item, vcenter_iso_image_mount, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IsoImageApi.mount ...'
       end
@@ -93,11 +94,12 @@ module VSphereAutomation
     end
 
     # Unmounts a previously mounted CD-ROM using an ISO image as a backing.
+    # @api private
     # @param vm The identifier of the virtual machine from which to unmount the virtual CD-ROM.
     # @param vcenter_iso_image_unmount 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def unmount_with_http_info(vm, vcenter_iso_image_unmount, opts = {})
+    def unmount_with_http_info(vm, vcenter_iso_image_unmount, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IsoImageApi.unmount ...'
       end

@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Deletes the staged update
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(opts = {})
+    def delete_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdateStagedApi.delete ...'
       end
@@ -72,9 +73,10 @@ module VSphereAutomation
     end
 
     # Gets the current status of the staged update
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdateStagedResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdateStagedApi.get ...'
       end

@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVmStoragePolicyComplianceCheck] :vcenter_vm_storage_policy_compliance_check 
     # @return [Array<(VcenterVmStoragePolicyComplianceCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def check_with_http_info(vm, opts = {})
+    def check_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmStoragePolicyComplianceApi.check ...'
       end
@@ -90,10 +91,11 @@ module VSphereAutomation
     end
 
     # Returns the cached storage policy compliance information of a virtual machine.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmStoragePolicyComplianceResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, opts = {})
+    def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmStoragePolicyComplianceApi.get ...'
       end

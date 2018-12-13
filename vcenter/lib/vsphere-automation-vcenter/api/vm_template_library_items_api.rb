@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
+    # @api private
     # @param vcenter_vm_template_library_items_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmTemplateLibraryItemsCreateResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vcenter_vm_template_library_items_create, opts = {})
+    def create_with_http_info(vcenter_vm_template_library_items_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.create ...'
       end
@@ -90,11 +91,12 @@ module VSphereAutomation
     end
 
     # Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
+    # @api private
     # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
     # @param vcenter_vm_template_library_items_deploy 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmTemplateLibraryItemsDeployResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def deploy_with_http_info(template_library_item, vcenter_vm_template_library_items_deploy, opts = {})
+    def deploy_with_http_info(template_library_item, vcenter_vm_template_library_items_deploy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.deploy ...'
       end
@@ -154,10 +156,11 @@ module VSphereAutomation
     end
 
     # Returns information about a virtual machine template contained in the library item specified by {@param.name templateLibraryItem}
+    # @api private
     # @param template_library_item identifier of the library item containing the virtual machine template.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmTemplateLibraryItemsResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(template_library_item, opts = {})
+    def get_with_http_info(template_library_item, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.get ...'
       end

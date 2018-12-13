@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Retrieves the information for a single file in a library item by its name.
+    # @api private
     # @param library_item_id Identifier of the library item whose file information should be returned.
     # @param content_library_item_file_get 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemFileResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(library_item_id, content_library_item_file_get, opts = {})
+    def get_with_http_info(library_item_id, content_library_item_file_get, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemFileApi.get ...'
       end
@@ -91,10 +92,11 @@ module VSphereAutomation
     end
 
     # Lists all of the files that are stored within a given library item.
+    # @api private
     # @param library_item_id Identifier of the library item whose files should be listed.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemFileListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(library_item_id, opts = {})
+    def list_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemFileApi.list ...'
       end

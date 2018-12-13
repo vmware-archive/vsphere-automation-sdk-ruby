@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get the type of the vCenter appliance.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterSystemConfigDeploymentTypeResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemConfigDeploymentTypeApi.get ...'
       end
@@ -78,10 +79,11 @@ module VSphereAutomation
     end
 
     # Reconfigure the type of the vCenter appliance.
+    # @api private
     # @param vcenter_system_config_deployment_type_reconfigure 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def reconfigure_with_http_info(vcenter_system_config_deployment_type_reconfigure, opts = {})
+    def reconfigure_with_http_info(vcenter_system_config_deployment_type_reconfigure, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemConfigDeploymentTypeApi.reconfigure ...'
       end

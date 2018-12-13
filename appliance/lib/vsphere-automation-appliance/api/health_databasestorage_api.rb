@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get database storage health.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceHealthDatabasestorageResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthDatabasestorageApi.get ...'
       end

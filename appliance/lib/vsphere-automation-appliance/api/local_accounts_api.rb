@@ -31,11 +31,12 @@ module VSphereAutomation
     end
 
     # Create a new local user account.
+    # @api private
     # @param username User login name
     # @param appliance_local_accounts_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def create_with_http_info(username, appliance_local_accounts_create, opts = {})
+    def create_with_http_info(username, appliance_local_accounts_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.create ...'
       end
@@ -87,10 +88,11 @@ module VSphereAutomation
     end
 
     # Delete a local user account.
+    # @api private
     # @param username User login name
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(username, opts = {})
+    def delete_with_http_info(username, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.delete ...'
       end
@@ -136,10 +138,11 @@ module VSphereAutomation
     end
 
     # Get the local user account information.
+    # @api private
     # @param username User login name
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceLocalAccountsResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(username, opts = {})
+    def get_with_http_info(username, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.get ...'
       end
@@ -189,9 +192,10 @@ module VSphereAutomation
     end
 
     # Get a list of the local user accounts.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceLocalAccountsListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.list ...'
       end
@@ -238,11 +242,12 @@ module VSphereAutomation
     end
 
     # Set local user account properties.
+    # @api private
     # @param username User login name
     # @param appliance_local_accounts_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(username, appliance_local_accounts_set, opts = {})
+    def set_with_http_info(username, appliance_local_accounts_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.set ...'
       end
@@ -295,11 +300,12 @@ module VSphereAutomation
     end
 
     # Update selected fields in local user account properties.
+    # @api private
     # @param username User login name
     # @param appliance_local_accounts_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(username, appliance_local_accounts_update, opts = {})
+    def update_with_http_info(username, appliance_local_accounts_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.update ...'
       end

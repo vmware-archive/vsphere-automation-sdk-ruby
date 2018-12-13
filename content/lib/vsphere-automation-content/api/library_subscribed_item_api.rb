@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Evicts the cached content of a library item in a subscribed library. &lt;p&gt; This {@term operation} allows the cached content of a library item to be removed to free up storage capacity. This {@term operation} will only work when a library item is synchronized on-demand. When a library is not synchronized on-demand, it always attempts to keep its cache up-to-date with the published source. Evicting the library item will set {@link ItemModel#cached} to false.
+    # @api private
     # @param library_item_id Identifier of the library item whose content should be evicted.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def evict_with_http_info(library_item_id, opts = {})
+    def evict_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscribedItemApi.evict ...'
       end
@@ -80,11 +81,12 @@ module VSphereAutomation
     end
 
     # Forces the synchronization of an individual library item in a subscribed library. &lt;p&gt; Synchronizing an individual item will update that item&#39;s metadata from the remote source. If the source library item on the remote library has been deleted, this {@term operation} will delete the library item from the subscribed library as well. &lt;p&gt; The default behavior of the synchronization is determined by the {@link SubscriptionInfo} of the library which owns the library item. &lt;ul&gt; &lt;li&gt;If {@link SubscriptionInfo#onDemand} is true, then the file content is not synchronized by default. In this case, only the library item metadata is synchronized. The file content may still be forcefully synchronized by passing true for the {@param.name forceSyncContent} {@term parameter}.&lt;/li&gt; &lt;li&gt;If {@link SubscriptionInfo#onDemand} is false, then this call will always synchronize the file content. The {@param.name forceSyncContent} {@term parameter} is ignored when the subscription is not on-demand.&lt;/li&gt; &lt;/ul&gt; When the file content has been synchronized, the {@link ItemModel#cached} {@term field} will be true. &lt;p&gt; This {@term operation} will return immediately and create an asynchronous task to perform the synchronization.
+    # @api private
     # @param library_item_id Identifier of the library item to synchronize.
     # @param content_library_subscribed_item_sync 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def sync_with_http_info(library_item_id, content_library_subscribed_item_sync, opts = {})
+    def sync_with_http_info(library_item_id, content_library_subscribed_item_sync, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscribedItemApi.sync ...'
       end

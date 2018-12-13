@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the enumeration element corresponding to {@param.name enumerationId}. &lt;p&gt; The {@link EnumerationInfo} contains the metamodel information about the enumeration value element contained in the enumeration element.
+    # @api private
     # @param enumeration_id Identifier of the enumeration element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelEnumerationResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(enumeration_id, opts = {})
+    def get_with_http_info(enumeration_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelEnumerationApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the enumeration elements that are contained in all the package elements, service elements and structure elements.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelEnumerationListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelEnumerationApi.list ...'
       end

@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns detailed information about the current and historical backup jobs.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_jobs Identifiers of backup jobs that can match the filter.
     # @return [Array<(ApplianceRecoveryBackupJobDetailsListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupJobDetailsApi.list ...'
       end

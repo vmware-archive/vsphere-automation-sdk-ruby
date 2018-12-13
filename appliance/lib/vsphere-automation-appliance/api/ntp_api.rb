@@ -29,9 +29,10 @@ module VSphereAutomation
     end
 
     # Get the NTP configuration status. If you run the &#39;timesync.get&#39; command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The &#39;ntp&#39; command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNtpResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NtpApi.get ...'
       end
@@ -77,10 +78,11 @@ module VSphereAutomation
     end
 
     # Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
+    # @api private
     # @param appliance_ntp_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(appliance_ntp_set, opts = {})
+    def set_with_http_info(appliance_ntp_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NtpApi.set ...'
       end
@@ -128,10 +130,11 @@ module VSphereAutomation
     end
 
     # Test the connection to a list of ntp servers.
+    # @api private
     # @param appliance_ntp_test 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNtpTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def test_with_http_info(appliance_ntp_test, opts = {})
+    def test_with_http_info(appliance_ntp_test, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NtpApi.test ...'
       end

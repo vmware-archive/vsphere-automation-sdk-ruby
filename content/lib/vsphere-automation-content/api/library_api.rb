@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
+    # @api private
     # @param content_library_find 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryFindResult|VapiStdErrorsInvalidArgumentError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def find_with_http_info(content_library_find, opts = {})
+    def find_with_http_info(content_library_find, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryApi.find ...'
       end
@@ -85,10 +86,11 @@ module VSphereAutomation
     end
 
     # Returns a given {@link LibraryModel}.
+    # @api private
     # @param library_id Identifier of the library to return.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(library_id, opts = {})
+    def get_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryApi.get ...'
       end
@@ -137,9 +139,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers of all libraries of any type in the Content Library.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryApi.list ...'
       end
@@ -185,11 +188,12 @@ module VSphereAutomation
     end
 
     # Updates the properties of a library. &lt;p&gt; This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
+    # @api private
     # @param library_id Identifier of the library to update.
     # @param content_library_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(library_id, content_library_update, opts = {})
+    def update_with_http_info(library_id, content_library_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryApi.update ...'
       end

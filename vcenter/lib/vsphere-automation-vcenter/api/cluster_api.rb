@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the cluster corresponding to cluster.
+    # @api private
     # @param cluster Identifier of the cluster. The parameter must be an identifier for the resource type: ClusterComputeResource.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterClusterResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(cluster, opts = {})
+    def get_with_http_info(cluster, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ClusterApi.get ...'
       end
@@ -89,13 +90,14 @@ module VSphereAutomation
     end
 
     # Returns information about at most 1000 visible (subject to permission checks) clusters in vCenter matching the Cluster.FilterSpec.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_clusters Identifiers of clusters that can match the filter. If unset or empty, clusters with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
     # @option opts [Array<String>] :filter_names Names that clusters must have to match the filter (see Cluster.Info.name). If unset or empty, clusters with any name match the filter.
     # @option opts [Array<String>] :filter_folders Folders that must contain the cluster for the cluster to match the filter. If unset or empty, clusters in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_datacenters Datacenters that must contain the cluster for the cluster to match the filter. If unset or empty, clusters in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
     # @return [Array<(VcenterClusterListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ClusterApi.list ...'
       end

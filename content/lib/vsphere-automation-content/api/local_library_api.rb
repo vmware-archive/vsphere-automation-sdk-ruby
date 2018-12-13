@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Creates a new local library.
+    # @api private
     # @param content_local_library_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLocalLibraryCreateResult|VapiStdErrorsUnsupportedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(content_local_library_create, opts = {})
+    def create_with_http_info(content_local_library_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.create ...'
       end
@@ -85,10 +86,11 @@ module VSphereAutomation
     end
 
     # Deletes the specified local library. &lt;p&gt; Deleting a local library will remove the entry immediately and begin an asynchronous task to remove all cached content for the library. If the asynchronous task fails, file content may remain on the storage backing. This content will require manual removal.
+    # @api private
     # @param library_id Identifier of the local library to delete.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(library_id, opts = {})
+    def delete_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.delete ...'
       end
@@ -134,10 +136,11 @@ module VSphereAutomation
     end
 
     # Returns a given local library.
+    # @api private
     # @param library_id Identifier of the local library to return.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLocalLibraryResult|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(library_id, opts = {})
+    def get_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.get ...'
       end
@@ -187,9 +190,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers of all local libraries in the Content Library.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLocalLibraryListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.list ...'
       end
@@ -235,11 +239,12 @@ module VSphereAutomation
     end
 
     # Updates the properties of a local library. &lt;p&gt; This is an incremental update to the local library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
+    # @api private
     # @param library_id Identifier of the local library to update.
     # @param content_local_library_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsConcurrentChangeError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(library_id, content_local_library_update, opts = {})
+    def update_with_http_info(library_id, content_local_library_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.update ...'
       end

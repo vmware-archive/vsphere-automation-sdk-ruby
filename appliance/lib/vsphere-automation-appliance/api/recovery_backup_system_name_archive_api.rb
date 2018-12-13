@@ -34,6 +34,7 @@ module VSphereAutomation
     end
 
     # Returns the information for backup corresponding to given backup location and system name.
+    # @api private
     # @param system_name System name identifier.
     # @param spec_location Backup location URL.
     # @param archive Archive identifier.
@@ -41,7 +42,7 @@ module VSphereAutomation
     # @option opts [String] :spec_location_user Username for the given location.
     # @option opts [String] :spec_location_password Password for the given location.
     # @return [Array<(ApplianceRecoveryBackupSystemNameArchiveResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(system_name, spec_location, archive, opts = {})
+    def get_with_http_info(system_name, spec_location, archive, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSystemNameArchiveApi.get ...'
       end
@@ -110,6 +111,7 @@ module VSphereAutomation
     end
 
     # Returns information about backup archives corresponding to given backup location and system name, which match the {@link FilterSpec}.
+    # @api private
     # @param system_name System name identifier.
     # @param loc_spec_location Backup location URL.
     # @param [Hash] opts the optional parameters
@@ -120,7 +122,7 @@ module VSphereAutomation
     # @option opts [String] :loc_spec_location_user Username for the given location.
     # @option opts [String] :loc_spec_location_password Password for the given location.
     # @return [Array<(ApplianceRecoveryBackupSystemNameArchiveListResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(system_name, loc_spec_location, opts = {})
+    def list_with_http_info(system_name, loc_spec_location, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSystemNameArchiveApi.list ...'
       end

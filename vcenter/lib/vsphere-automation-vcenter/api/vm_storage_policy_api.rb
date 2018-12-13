@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Returns Information about Storage Policy associated with a virtual machine&#39;s home directory and/or its virtual hard disks.
+    # @api private
     # @param vm Virtual machine identifier The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmStoragePolicyResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(vm, opts = {})
+    def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmStoragePolicyApi.get ...'
       end
@@ -87,11 +88,12 @@ module VSphereAutomation
     end
 
     # Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
+    # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param vcenter_vm_storage_policy_update 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def update_with_http_info(vm, vcenter_vm_storage_policy_update, opts = {})
+    def update_with_http_info(vm, vcenter_vm_storage_policy_update, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmStoragePolicyApi.update ...'
       end

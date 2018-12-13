@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Retrieves information about the structure element corresponding to {@param.name structureId}. &lt;p&gt; The {@link StructureInfo} contains the metamodel information about the structure element. It contains information about all the field elements and enumeration elements contained in this structure element.
+    # @api private
     # @param structure_id Identifier of the structure element.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelStructureResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(structure_id, opts = {})
+    def get_with_http_info(structure_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelStructureApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Returns the identifiers for the structure elements that are contained in all the package elements and service elements.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataMetamodelStructureListResult|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelStructureApi.list ...'
       end

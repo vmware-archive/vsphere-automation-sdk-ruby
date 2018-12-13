@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Gets the size (in MB) of the part.
+    # @api private
     # @param id Identifier of the part.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupPartsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(id, opts = {})
+    def get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupPartsApi.get ...'
       end
@@ -82,9 +83,10 @@ module VSphereAutomation
     end
 
     # Gets a list of the backup parts.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryBackupPartsListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupPartsApi.list ...'
       end

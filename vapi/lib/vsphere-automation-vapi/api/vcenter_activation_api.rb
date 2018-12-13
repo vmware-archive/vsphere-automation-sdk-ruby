@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Sends a request to cancel the task associated with the provided {@param.name activationId}.
+    # @api private
     # @param activation_id the {@param.name activationId} associated with a vCenter Server task to be canceled.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def cancel_with_http_info(activation_id, opts = {})
+    def cancel_with_http_info(activation_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VcenterActivationApi.cancel ...'
       end

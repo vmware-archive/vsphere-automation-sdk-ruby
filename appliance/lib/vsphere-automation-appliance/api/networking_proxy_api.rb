@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Deletes a proxy configuration for a specific protocol.
+    # @api private
     # @param protocol ID whose proxy is to be deleted.
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def delete_with_http_info(protocol, opts = {})
+    def delete_with_http_info(protocol, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.delete ...'
       end
@@ -79,10 +80,11 @@ module VSphereAutomation
     end
 
     # Gets the proxy configuration for a specific protocol.
+    # @api private
     # @param protocol The protocol whose proxy configuration is requested.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingProxyResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def get_with_http_info(protocol, opts = {})
+    def get_with_http_info(protocol, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.get ...'
       end
@@ -131,9 +133,10 @@ module VSphereAutomation
     end
 
     # Gets proxy configuration for all configured protocols.
+    # @api private
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingProxyListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def list_with_http_info(opts = {})
+    def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.list ...'
       end
@@ -180,11 +183,12 @@ module VSphereAutomation
     end
 
     # Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
+    # @api private
     # @param protocol The protocol for which proxy should be set.
     # @param appliance_networking_proxy_set 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    private def set_with_http_info(protocol, appliance_networking_proxy_set, opts = {})
+    def set_with_http_info(protocol, appliance_networking_proxy_set, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.set ...'
       end
@@ -237,11 +241,12 @@ module VSphereAutomation
     end
 
     # Tests a proxy configuration by testing the connection to the proxy server and test host.
+    # @api private
     # @param protocol Protocol whose proxy is to be tested.
     # @param appliance_networking_proxy_test 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingProxyTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def test_with_http_info(protocol, appliance_networking_proxy_test, opts = {})
+    def test_with_http_info(protocol, appliance_networking_proxy_test, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.test ...'
       end

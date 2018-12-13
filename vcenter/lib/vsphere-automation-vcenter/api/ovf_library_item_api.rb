@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Creates a library item in content library from a virtual machine or virtual appliance. &lt;p&gt; This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. &lt;/p&gt;
+    # @api private
     # @param vcenter_ovf_library_item_create 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterOvfLibraryItemCreateResult|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def create_with_http_info(vcenter_ovf_library_item_create, opts = {})
+    def create_with_http_info(vcenter_ovf_library_item_create, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfLibraryItemApi.create ...'
       end
@@ -87,11 +88,12 @@ module VSphereAutomation
     end
 
     # Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. &lt;p&gt; This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. &lt;/p&gt;
+    # @api private
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to be deployed.
     # @param vcenter_ovf_library_item_deploy 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterOvfLibraryItemDeployResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def deploy_with_http_info(ovf_library_item_id, vcenter_ovf_library_item_deploy, opts = {})
+    def deploy_with_http_info(ovf_library_item_id, vcenter_ovf_library_item_deploy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfLibraryItemApi.deploy ...'
       end
@@ -150,11 +152,12 @@ module VSphereAutomation
     end
 
     # Queries an OVF package stored in content library to retrieve information to use when deploying the package. See {@link #deploy}. &lt;p&gt; This {@term operation} retrieves information from the descriptor of the OVF package stored in the library item specified by {@param.name ovfLibraryItemId}. The information returned by the {@term operation} can be used to populate the deployment specification (see {@link ResourcePoolDeploymentSpec} when deploying the OVF package to the deployment target specified by {@param.name target}. &lt;/p&gt;
+    # @api private
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to query.
     # @param vcenter_ovf_library_item_filter 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterOvfLibraryItemFilterResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def filter_with_http_info(ovf_library_item_id, vcenter_ovf_library_item_filter, opts = {})
+    def filter_with_http_info(ovf_library_item_id, vcenter_ovf_library_item_filter, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfLibraryItemApi.filter ...'
       end

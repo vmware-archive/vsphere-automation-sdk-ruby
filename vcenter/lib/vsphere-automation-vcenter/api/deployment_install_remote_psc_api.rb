@@ -30,10 +30,11 @@ module VSphereAutomation
     end
 
     # Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
+    # @api private
     # @param vcenter_deployment_install_remote_psc_check 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentInstallRemotePscCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    private def check_with_http_info(vcenter_deployment_install_remote_psc_check, opts = {})
+    def check_with_http_info(vcenter_deployment_install_remote_psc_check, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallRemotePscApi.check ...'
       end
