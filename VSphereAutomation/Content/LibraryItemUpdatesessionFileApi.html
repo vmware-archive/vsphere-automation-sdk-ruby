@@ -326,12 +326,12 @@ and ensures all necessary files are received.</p>
       <pre class="lines">
 
 
-20
-21
-22</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_api_client'>api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ApiClient.html" title="VSphereAutomation::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="../ApiClient.html#default-class_method" title="VSphereAutomation::ApiClient.default (method)">default</a></span></span><span class='rparen'>)</span>
   <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='id identifier rubyid_api_client'>api_client</span>
@@ -374,12 +374,12 @@ and ensures all necessary files are received.</p>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
   <span class='ivar'>@api_client</span>
@@ -496,13 +496,13 @@ move.</p>
       <pre class="lines">
 
 
+26
+27
 28
-29
-30
-31</pre>
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_updatesession_file_add'>content_library_item_updatesession_file_add</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_add_with_http_info'>add_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_updatesession_file_add'>content_library_item_updatesession_file_add</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -602,13 +602,13 @@ item at the time when the update session was created.</p>
       <pre class="lines">
 
 
+90
 91
 92
-93
-94</pre>
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_updatesession_file_get'>content_library_item_updatesession_file_get</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_get_with_http_info'>get_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_updatesession_file_get'>content_library_item_updatesession_file_get</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -802,13 +802,13 @@ when the update session is completed.</p>
       <pre class="lines">
 
 
-207
 208
 209
-210</pre>
+210
+211</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 208</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_updatesession_file_remove'>content_library_item_updatesession_file_remove</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_remove_with_http_info'>remove_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_updatesession_file_remove'>content_library_item_updatesession_file_remove</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -899,13 +899,13 @@ try re-validating. For other type of errors, ValidationResult#invalidFiles will 
       <pre class="lines">
 
 
-263
-264
 265
-266</pre>
+266
+267
+268</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_updatesession_file_api.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_validate_with_http_info'>validate_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_update_session_id'>update_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -921,7 +921,7 @@ try re-validating. For other type of errors, ValidationResult#invalidFiles will 
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:50:57 2018 by
+  Generated on Fri Dec 14 17:43:13 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>

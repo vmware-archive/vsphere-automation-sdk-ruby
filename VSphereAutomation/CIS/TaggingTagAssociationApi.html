@@ -471,12 +471,12 @@ object identifiers and the tags attached to each object.</p>
       <pre class="lines">
 
 
-20
-21
-22</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_api_client'>api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ApiClient.html" title="VSphereAutomation::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="../ApiClient.html#default-class_method" title="VSphereAutomation::ApiClient.default (method)">default</a></span></span><span class='rparen'>)</span>
   <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='id identifier rubyid_api_client'>api_client</span>
@@ -519,12 +519,12 @@ object identifiers and the tags attached to each object.</p>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
   <span class='ivar'>@api_client</span>
@@ -633,13 +633,13 @@ read privilege on the object.</p>
       <pre class="lines">
 
 
+26
+27
 28
-29
-30
-31</pre>
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attach'>attach</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_cis_tagging_tag_association_attach'>cis_tagging_tag_association_attach</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_attach_with_http_info'>attach_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_cis_tagging_tag_association_attach'>cis_tagging_tag_association_attach</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -726,13 +726,13 @@ attach tag privilege on each tag.</p>
       <pre class="lines">
 
 
+83
 84
 85
-86
-87</pre>
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attach_multiple_tags_to_object'>attach_multiple_tags_to_object</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_attach_multiple_tags_to_object'>cis_tagging_tag_association_attach_multiple_tags_to_object</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_attach_multiple_tags_to_object_with_http_info'>attach_multiple_tags_to_object_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_attach_multiple_tags_to_object'>cis_tagging_tag_association_attach_multiple_tags_to_object</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -943,13 +943,13 @@ on the tag and the read privilege on the object.</p>
       <pre class="lines">
 
 
-202
 203
 204
-205</pre>
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 202</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 203</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_detach'>detach</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_cis_tagging_tag_association_detach'>cis_tagging_tag_association_detach</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_detach_with_http_info'>detach_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_cis_tagging_tag_association_detach'>cis_tagging_tag_association_detach</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1036,13 +1036,13 @@ attach tag privilege each tag.</p>
       <pre class="lines">
 
 
-258
-259
 260
-261</pre>
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 258</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 260</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_detach_multiple_tags_from_object'>detach_multiple_tags_from_object</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_detach_multiple_tags_from_object'>cis_tagging_tag_association_detach_multiple_tags_from_object</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_detach_multiple_tags_from_object_with_http_info'>detach_multiple_tags_from_object_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_detach_multiple_tags_from_object'>cis_tagging_tag_association_detach_multiple_tags_from_object</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1145,13 +1145,13 @@ the read privilege on each object.</p>
       <pre class="lines">
 
 
-314
-315
-316
-317</pre>
+317
+318
+319
+320</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 314</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 317</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_detach_tag_from_multiple_objects'>detach_tag_from_multiple_objects</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_cis_tagging_tag_association_detach_tag_from_multiple_objects'>cis_tagging_tag_association_detach_tag_from_multiple_objects</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_detach_tag_from_multiple_objects_with_http_info'>detach_tag_from_multiple_objects_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_cis_tagging_tag_association_detach_tag_from_multiple_objects'>cis_tagging_tag_association_detach_tag_from_multiple_objects</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1240,13 +1240,13 @@ read privileges.</p>
       <pre class="lines">
 
 
-375
-376
-377
-378</pre>
+379
+380
+381
+382</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 375</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 379</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attachable_tags'>list_attachable_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attachable_tags'>cis_tagging_tag_association_list_attachable_tags</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_attachable_tags_with_http_info'>list_attachable_tags_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attachable_tags'>cis_tagging_tag_association_list_attachable_tags</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1336,13 +1336,13 @@ those objects for which you have the read privilege will be returned.</p>
       <pre class="lines">
 
 
-430
-431
-432
-433</pre>
+435
+436
+437
+438</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 430</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 435</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_objects'>list_attached_objects</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_attached_objects_with_http_info'>list_attached_objects_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_tag_id'>tag_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1427,13 +1427,13 @@ the read privilege.</p>
       <pre class="lines">
 
 
-484
-485
-486
-487</pre>
+490
+491
+492
+493</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 484</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 490</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_objects_on_tags'>list_attached_objects_on_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attached_objects_on_tags'>cis_tagging_tag_association_list_attached_objects_on_tags</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_attached_objects_on_tags_with_http_info'>list_attached_objects_on_tags_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attached_objects_on_tags'>cis_tagging_tag_association_list_attached_objects_on_tags</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1519,13 +1519,13 @@ privileges.</p>
       <pre class="lines">
 
 
-538
-539
-540
-541</pre>
+545
+546
+547
+548</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 538</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 545</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_tags'>list_attached_tags</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attached_tags'>cis_tagging_tag_association_list_attached_tags</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_attached_tags_with_http_info'>list_attached_tags_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attached_tags'>cis_tagging_tag_association_list_attached_tags</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1612,13 +1612,13 @@ the read privilege.</p>
       <pre class="lines">
 
 
-593
-594
-595
-596</pre>
+601
+602
+603
+604</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 593</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api/tagging_tag_association_api.rb', line 601</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_attached_tags_on_objects'>list_attached_tags_on_objects</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attached_tags_on_objects'>cis_tagging_tag_association_list_attached_tags_on_objects</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_attached_tags_on_objects_with_http_info'>list_attached_tags_on_objects_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_cis_tagging_tag_association_list_attached_tags_on_objects'>cis_tagging_tag_association_list_attached_tags_on_objects</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1634,7 +1634,7 @@ the read privilege.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:50:17 2018 by
+  Generated on Fri Dec 14 17:42:35 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>

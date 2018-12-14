@@ -397,12 +397,12 @@ certificate and password.</p>
       <pre class="lines">
 
 
-20
-21
-22</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_api_client'>api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ApiClient.html" title="VSphereAutomation::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="../ApiClient.html#default-class_method" title="VSphereAutomation::ApiClient.default (method)">default</a></span></span><span class='rparen'>)</span>
   <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='id identifier rubyid_api_client'>api_client</span>
@@ -445,12 +445,12 @@ certificate and password.</p>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
   <span class='ivar'>@api_client</span>
@@ -543,13 +543,13 @@ published library may not immediately appear.</p>
       <pre class="lines">
 
 
+25
+26
 27
-28
-29
-30</pre>
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_content_subscribed_library_create'>content_subscribed_library_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_create_with_http_info'>create_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_content_subscribed_library_create'>content_subscribed_library_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -641,13 +641,13 @@ manual removal.</p>
       <pre class="lines">
 
 
+81
 82
 83
-84
-85</pre>
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_delete_with_http_info'>delete_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -832,13 +832,13 @@ work when a subscribed library is synchronized on-demand.</p>
       <pre class="lines">
 
 
-180
 181
 182
-183</pre>
+183
+184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 181</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_get_with_http_info'>get_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -910,13 +910,13 @@ work when a subscribed library is synchronized on-demand.</p>
       <pre class="lines">
 
 
-233
-234
 235
-236</pre>
+236
+237
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 235</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_with_http_info'>list_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1001,13 +1001,13 @@ successful.</p>
       <pre class="lines">
 
 
-280
-281
-282
-283</pre>
+283
+284
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 280</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 283</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_probe'>probe</span><span class='lparen'>(</span><span class='id identifier rubyid_content_subscribed_library_probe'>content_subscribed_library_probe</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_probe_with_http_info'>probe_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_content_subscribed_library_probe'>content_subscribed_library_probe</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1100,13 +1100,13 @@ the process of synchronizing will have no effect.</p>
       <pre class="lines">
 
 
-334
-335
-336
-337</pre>
+338
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 334</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 338</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync'>sync</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_sync_with_http_info'>sync_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1207,13 +1207,13 @@ unset in the update specification will be left unchanged.</p>
       <pre class="lines">
 
 
-384
-385
-386
-387</pre>
+389
+390
+391
+392</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 384</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/subscribed_library_api.rb', line 389</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_subscribed_library_update'>content_subscribed_library_update</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_update_with_http_info'>update_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_library_id'>library_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_subscribed_library_update'>content_subscribed_library_update</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1229,7 +1229,7 @@ unset in the update specification will be left unchanged.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:50:20 2018 by
+  Generated on Fri Dec 14 17:42:38 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>

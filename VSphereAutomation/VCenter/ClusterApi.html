@@ -253,12 +253,12 @@ checks) clusters in vCenter matching the Cluster.FilterSpec.</p>
       <pre class="lines">
 
 
-20
-21
-22</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_api_client'>api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ApiClient.html" title="VSphereAutomation::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="../ApiClient.html#default-class_method" title="VSphereAutomation::ApiClient.default (method)">default</a></span></span><span class='rparen'>)</span>
   <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='id identifier rubyid_api_client'>api_client</span>
@@ -301,12 +301,12 @@ checks) clusters in vCenter matching the Cluster.FilterSpec.</p>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
   <span class='ivar'>@api_client</span>
@@ -401,13 +401,13 @@ resource type: ClusterComputeResource.</p>
       <pre class="lines">
 
 
+25
+26
 27
-28
-29
-30</pre>
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_cluster'>cluster</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_get_with_http_info'>get_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_cluster'>cluster</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -557,13 +557,13 @@ identifiers for the resource type: Datacenter.</p>
       <pre class="lines">
 
 
+85
 86
 87
-88
-89</pre>
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/api/cluster_api.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_with_http_info'>list_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -579,7 +579,7 @@ identifiers for the resource type: Datacenter.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:50:14 2018 by
+  Generated on Fri Dec 14 17:42:32 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>

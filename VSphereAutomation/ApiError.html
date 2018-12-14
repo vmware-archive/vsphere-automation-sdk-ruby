@@ -277,6 +277,8 @@ ApiError.new(:code =&gt; 500, :response_headers =&gt; {}, :response_body
       <pre class="lines">
 
 
+20
+21
 22
 23
 24
@@ -289,12 +291,10 @@ ApiError.new(:code =&gt; 500, :response_headers =&gt; {}, :response_body
 31
 32
 33
-34
-35
-36</pre>
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_arg'>arg</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_arg'>arg</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Hash</span>
@@ -349,12 +349,12 @@ ApiError.new(:code =&gt; 500, :response_headers =&gt; {}, :response_body
       <pre class="lines">
 
 
-15
-16
-17</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_code'>code</span>
   <span class='ivar'>@code</span>
@@ -392,12 +392,12 @@ ApiError.new(:code =&gt; 500, :response_headers =&gt; {}, :response_body
       <pre class="lines">
 
 
-15
-16
-17</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_response_body'>response_body</span>
   <span class='ivar'>@response_body</span>
@@ -435,12 +435,12 @@ ApiError.new(:code =&gt; 500, :response_headers =&gt; {}, :response_body
       <pre class="lines">
 
 
-15
-16
-17</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'cis/lib/vsphere-automation-cis/api_error.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_response_headers'>response_headers</span>
   <span class='ivar'>@response_headers</span>
@@ -456,7 +456,7 @@ ApiError.new(:code =&gt; 500, :response_headers =&gt; {}, :response_body
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:50:13 2018 by
+  Generated on Fri Dec 14 17:42:31 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>

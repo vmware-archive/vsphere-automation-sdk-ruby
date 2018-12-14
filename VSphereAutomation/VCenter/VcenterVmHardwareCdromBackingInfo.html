@@ -654,6 +654,8 @@ automatically detect a suitable host device.</p>
       <pre class="lines">
 
 
+53
+54
 55
 56
 57
@@ -677,12 +679,10 @@ automatically detect a suitable host device.</p>
 75
 76
 77
-78
-79
-80</pre>
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
@@ -750,12 +750,12 @@ is only relevant when the value of Cdrom.BackingInfo.type is HOST_DEVICE.</p>
       <pre class="lines">
 
 
-27
-28
-29</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auto_detect'>auto_detect</span>
   <span class='ivar'>@auto_detect</span>
@@ -793,12 +793,12 @@ is only relevant when the value of Cdrom.BackingInfo.type is HOST_DEVICE.</p>
       <pre class="lines">
 
 
-29
-30
-31</pre>
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_device_access_type'>device_access_type</span>
   <span class='ivar'>@device_access_type</span>
@@ -839,12 +839,12 @@ host.</p>
       <pre class="lines">
 
 
-24
-25
-26</pre>
+22
+23
+24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_host_device'>host_device</span>
   <span class='ivar'>@host_device</span>
@@ -884,12 +884,12 @@ is ISO_FILE.</p>
       <pre class="lines">
 
 
-21
-22
-23</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_iso_file'>iso_file</span>
   <span class='ivar'>@iso_file</span>
@@ -927,12 +927,12 @@ is ISO_FILE.</p>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
   <span class='ivar'>@type</span>
@@ -975,18 +975,18 @@ is ISO_FILE.</p>
       <pre class="lines">
 
 
+30
+31
 32
 33
 34
 35
 36
 37
-38
-39
-40</pre>
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attribute_map'>attribute_map</span>
   <span class='lbrace'>{</span>
@@ -1028,18 +1028,18 @@ is ISO_FILE.</p>
       <pre class="lines">
 
 
+41
+42
 43
 44
 45
 46
 47
 48
-49
-50
-51</pre>
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_openapi_types'>openapi_types</span>
   <span class='lbrace'>{</span>
@@ -1107,18 +1107,18 @@ is ISO_FILE.</p>
       <pre class="lines">
 
 
+100
+101
 102
 103
 104
 105
 106
 107
-108
-109
-110</pre>
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_equal?'>equal?</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='rparen'>)</span>
@@ -1214,6 +1214,8 @@ is ISO_FILE.</p>
       <pre class="lines">
 
 
+146
+147
 148
 149
 150
@@ -1248,12 +1250,10 @@ is ISO_FILE.</p>
 179
 180
 181
-182
-183
-184</pre>
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 146</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__deserialize'>_deserialize</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
@@ -1362,6 +1362,8 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+212
+213
 214
 215
 216
@@ -1372,12 +1374,10 @@ Otherwise, just return the value</p>
 221
 222
 223
-224
-225
-226</pre>
+224</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 214</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 212</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__to_hash'>_to_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
@@ -1461,6 +1461,8 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+125
+126
 127
 128
 129
@@ -1474,12 +1476,10 @@ Otherwise, just return the value</p>
 137
 138
 139
-140
-141
-142</pre>
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build_from_hash'>build_from_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
@@ -1566,12 +1566,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-114
-115
-116</pre>
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='rparen'>)</span>
   <span class='kw'>self</span> <span class='op'>==</span> <span class='id identifier rubyid_o'>o</span>
@@ -1625,12 +1625,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-120
-121
-122</pre>
+118
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 120</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 118</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span>
   <span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_iso_file'>iso_file</span><span class='comma'>,</span> <span class='id identifier rubyid_host_device'>host_device</span><span class='comma'>,</span> <span class='id identifier rubyid_auto_detect'>auto_detect</span><span class='comma'>,</span> <span class='id identifier rubyid_device_access_type'>device_access_type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_hash'>hash</span>
@@ -1684,17 +1684,17 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+82
+83
 84
 85
 86
 87
 88
-89
-90
-91</pre>
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_invalid_properties'>list_invalid_properties</span>
   <span class='id identifier rubyid_invalid_properties'>invalid_properties</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -1753,12 +1753,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-194
-195
-196</pre>
+192
+193
+194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 192</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_body'>to_body</span>
   <span class='id identifier rubyid_to_hash'>to_hash</span>
@@ -1812,18 +1812,18 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+198
+199
 200
 201
 202
 203
 204
 205
-206
-207
-208</pre>
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hash'>to_hash</span>
   <span class='id identifier rubyid_hash'>hash</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -1883,12 +1883,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-188
-189
-190</pre>
+186
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 186</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='id identifier rubyid_to_hash'>to_hash</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -1942,13 +1942,13 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+93
+94
 95
-96
-97
-98</pre>
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_cdrom_backing_info.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_valid?'>valid?</span>
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='ivar'>@type</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1964,7 +1964,7 @@ Otherwise, just return the value</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:51:26 2018 by
+  Generated on Fri Dec 14 17:43:41 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>

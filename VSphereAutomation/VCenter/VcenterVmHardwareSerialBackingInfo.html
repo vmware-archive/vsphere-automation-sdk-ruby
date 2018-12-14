@@ -736,6 +736,8 @@ serial port.</p>
       <pre class="lines">
 
 
+69
+70
 71
 72
 73
@@ -771,12 +773,10 @@ serial port.</p>
 103
 104
 105
-106
-107
-108</pre>
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
@@ -856,12 +856,12 @@ is only relevant when the value of Serial.BackingInfo.type is HOST_DEVICE.</p>
       <pre class="lines">
 
 
-27
-28
-29</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auto_detect'>auto_detect</span>
   <span class='ivar'>@auto_detect</span>
@@ -900,12 +900,12 @@ and it is only relevant when the value of Serial.BackingInfo.type is FILE.</p>
       <pre class="lines">
 
 
-21
-22
-23</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_file'>file</span>
   <span class='ivar'>@file</span>
@@ -945,12 +945,12 @@ is not connected or no suitable device is available on the host.</p>
       <pre class="lines">
 
 
-24
-25
-26</pre>
+22
+23
+24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_host_device'>host_device</span>
   <span class='ivar'>@host_device</span>
@@ -996,12 +996,12 @@ is one of NETWORK_SERVER or NETWORK_CLIENT.</p>
       <pre class="lines">
 
 
-36
-37
-38</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_network_location'>network_location</span>
   <span class='ivar'>@network_location</span>
@@ -1043,12 +1043,12 @@ Serial.BackingInfo.type is one of PIPE_SERVER or PIPE_CLIENT.</p>
       <pre class="lines">
 
 
-33
-34
-35</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_no_rx_loss'>no_rx_loss</span>
   <span class='ivar'>@no_rx_loss</span>
@@ -1088,12 +1088,12 @@ PIPE_SERVER or PIPE_CLIENT.</p>
       <pre class="lines">
 
 
-30
-31
-32</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pipe'>pipe</span>
   <span class='ivar'>@pipe</span>
@@ -1134,12 +1134,12 @@ configured.</p>
       <pre class="lines">
 
 
-39
-40
-41</pre>
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_proxy'>proxy</span>
   <span class='ivar'>@proxy</span>
@@ -1177,12 +1177,12 @@ configured.</p>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
   <span class='ivar'>@type</span>
@@ -1225,6 +1225,8 @@ configured.</p>
       <pre class="lines">
 
 
+40
+41
 42
 43
 44
@@ -1234,12 +1236,10 @@ configured.</p>
 48
 49
 50
-51
-52
-53</pre>
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attribute_map'>attribute_map</span>
   <span class='lbrace'>{</span>
@@ -1284,6 +1284,8 @@ configured.</p>
       <pre class="lines">
 
 
+54
+55
 56
 57
 58
@@ -1293,12 +1295,10 @@ configured.</p>
 62
 63
 64
-65
-66
-67</pre>
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_openapi_types'>openapi_types</span>
   <span class='lbrace'>{</span>
@@ -1369,6 +1369,8 @@ configured.</p>
       <pre class="lines">
 
 
+128
+129
 130
 131
 132
@@ -1378,12 +1380,10 @@ configured.</p>
 136
 137
 138
-139
-140
-141</pre>
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_equal?'>equal?</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='rparen'>)</span>
@@ -1482,6 +1482,8 @@ configured.</p>
       <pre class="lines">
 
 
+177
+178
 179
 180
 181
@@ -1516,12 +1518,10 @@ configured.</p>
 210
 211
 212
-213
-214
-215</pre>
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 179</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 177</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__deserialize'>_deserialize</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
@@ -1630,6 +1630,8 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+243
+244
 245
 246
 247
@@ -1640,12 +1642,10 @@ Otherwise, just return the value</p>
 252
 253
 254
-255
-256
-257</pre>
+255</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 243</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__to_hash'>_to_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
@@ -1729,6 +1729,8 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+156
+157
 158
 159
 160
@@ -1742,12 +1744,10 @@ Otherwise, just return the value</p>
 168
 169
 170
-171
-172
-173</pre>
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 158</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 156</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build_from_hash'>build_from_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
@@ -1834,12 +1834,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-145
-146
-147</pre>
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 143</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='rparen'>)</span>
   <span class='kw'>self</span> <span class='op'>==</span> <span class='id identifier rubyid_o'>o</span>
@@ -1893,12 +1893,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-151
-152
-153</pre>
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span>
   <span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_host_device'>host_device</span><span class='comma'>,</span> <span class='id identifier rubyid_auto_detect'>auto_detect</span><span class='comma'>,</span> <span class='id identifier rubyid_pipe'>pipe</span><span class='comma'>,</span> <span class='id identifier rubyid_no_rx_loss'>no_rx_loss</span><span class='comma'>,</span> <span class='id identifier rubyid_network_location'>network_location</span><span class='comma'>,</span> <span class='id identifier rubyid_proxy'>proxy</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_hash'>hash</span>
@@ -1952,17 +1952,17 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+110
+111
 112
 113
 114
 115
 116
-117
-118
-119</pre>
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 110</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_invalid_properties'>list_invalid_properties</span>
   <span class='id identifier rubyid_invalid_properties'>invalid_properties</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -2021,12 +2021,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-225
-226
-227</pre>
+223
+224
+225</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 225</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 223</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_body'>to_body</span>
   <span class='id identifier rubyid_to_hash'>to_hash</span>
@@ -2080,18 +2080,18 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+229
+230
 231
 232
 233
 234
 235
 236
-237
-238
-239</pre>
+237</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 231</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hash'>to_hash</span>
   <span class='id identifier rubyid_hash'>hash</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -2151,12 +2151,12 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
-219
-220
-221</pre>
+217
+218
+219</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 219</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 217</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='id identifier rubyid_to_hash'>to_hash</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -2210,13 +2210,13 @@ Otherwise, just return the value</p>
       <pre class="lines">
 
 
+121
+122
 123
-124
-125
-126</pre>
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'vcenter/lib/vsphere-automation-vcenter/models/vcenter_vm_hardware_serial_backing_info.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_valid?'>valid?</span>
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='ivar'>@type</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -2232,7 +2232,7 @@ Otherwise, just return the value</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:51:31 2018 by
+  Generated on Fri Dec 14 17:43:47 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>

@@ -373,12 +373,12 @@ up-to-date status information for the session.</p>
       <pre class="lines">
 
 
-20
-21
-22</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_api_client'>api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ApiClient.html" title="VSphereAutomation::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="../ApiClient.html#default-class_method" title="VSphereAutomation::ApiClient.default (method)">default</a></span></span><span class='rparen'>)</span>
   <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='id identifier rubyid_api_client'>api_client</span>
@@ -421,12 +421,12 @@ up-to-date status information for the session.</p>
       <pre class="lines">
 
 
-18
-19
-20</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
   <span class='ivar'>@api_client</span>
@@ -522,13 +522,13 @@ from.</p>
       <pre class="lines">
 
 
+25
+26
 27
-28
-29
-30</pre>
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cancel'>cancel</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cancel_with_http_info'>cancel_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -611,13 +611,13 @@ from.</p>
       <pre class="lines">
 
 
+75
 76
 77
-78
-79</pre>
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_content_library_item_download_session_create'>content_library_item_download_session_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_create_with_http_info'>create_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_content_library_item_download_session_create'>content_library_item_download_session_create</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -819,13 +819,13 @@ not being able to download a file) to the server side.</p>
       <pre class="lines">
 
 
-182
 183
 184
-185</pre>
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 182</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 183</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fail'>fail</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_download_session_fail'>content_library_item_download_session_fail</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_fail_with_http_info'>fail_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_library_item_download_session_fail'>content_library_item_download_session_fail</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -914,13 +914,13 @@ up-to-date status information for the session.</p>
       <pre class="lines">
 
 
-238
-239
 240
-241</pre>
+241
+242
+243</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 238</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 240</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_get_with_http_info'>get_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1035,13 +1035,13 @@ session.</p>
       <pre class="lines">
 
 
-292
-293
-294
-295</pre>
+295
+296
+297
+298</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 292</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 295</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_keep_alive'>keep_alive</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_keep_alive_with_http_info'>keep_alive_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_download_session_id'>download_session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1136,13 +1136,13 @@ Optionally may filter by library item.</p>
       <pre class="lines">
 
 
-344
-345
-346
-347</pre>
+348
+349
+350
+351</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 344</span>
+      <pre class="code"><span class="info file"># File 'content/lib/vsphere-automation-content/api/library_item_download_session_api.rb', line 348</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid__status_code'>_status_code</span><span class='comma'>,</span> <span class='id identifier rubyid__headers'>_headers</span> <span class='op'>=</span> <span class='id identifier rubyid_list_with_http_info'>list_with_http_info</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -1158,7 +1158,7 @@ Optionally may filter by library item.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Dec 10 12:50:48 2018 by
+  Generated on Fri Dec 14 17:43:04 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.3).
 </div>
