@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'pry'
-gem 'vsphere-automation-cis', path: '../cis'
-gem 'vsphere-automation-content', path: '../content'
-gem 'vsphere-automation-vcenter', path: '../vcenter'
+gem 'vsphere-automation-cis', '~> 0.1.0'
+gem 'vsphere-automation-content', '~> 0.1.0'
+gem 'vsphere-automation-vcenter',  '~> 0.1.0'
