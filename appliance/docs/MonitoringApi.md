@@ -92,7 +92,7 @@ No authorization required
 
 
 # **query**
-> ApplianceMonitoringQueryResult query(item)
+> ApplianceMonitoringQueryResult query(item_names, item_interval, item_function, item_start_time, item_end_time)
 
 Get monitoring data.
 
@@ -102,11 +102,15 @@ Get monitoring data.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::MonitoringApi.new
-item = nil # Object | MonitoredItemDataRequest Structure
+item_names = ['item_names_example'] # Array<String> | monitored item IDs Ex: CPU, MEMORY
+item_interval = 'item_interval_example' # String | {@name IntervalType} {@term enumerated type} Defines interval between the values in hours and mins,                    for which aggregation will apply
+item_function = 'item_function_example' # String | {@name FunctionType} {@term enumerated type} Defines aggregation function
+item_start_time = 'item_start_time_example' # String | Start time in UTC
+item_end_time = 'item_end_time_example' # String | End time in UTC
 
 begin
   #Get monitoring data.
-  result = api_instance.query(item)
+  result = api_instance.query(item_names, item_interval, item_function, item_start_time, item_end_time)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MonitoringApi->query: #{e}"
@@ -117,7 +121,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item** | [**Object**](.md)| MonitoredItemDataRequest Structure | 
+ **item_names** | [**Array&lt;String&gt;**](String.md)| monitored item IDs Ex: CPU, MEMORY | 
+ **item_interval** | **String**| {@name IntervalType} {@term enumerated type} Defines interval between the values in hours and mins,                    for which aggregation will apply | 
+ **item_function** | **String**| {@name FunctionType} {@term enumerated type} Defines aggregation function | 
+ **item_start_time** | **String**| Start time in UTC | 
+ **item_end_time** | **String**| End time in UTC | 
 
 ### Return type
 

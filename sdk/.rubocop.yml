@@ -136,7 +136,7 @@ Style/UnneededPercentQ:
 
 # Align `end` with the matching keyword or starting expression except for
 # assignments, where it should be aligned with the LHS.
-Layout/EndAlignment:
+Lint/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: variable
   AutoCorrect: true

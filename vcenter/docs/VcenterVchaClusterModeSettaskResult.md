@@ -1,4 +1,4 @@
-# VSphereAutomation::VCenter::VcenterVchaClusterModeSettaskResult
+# VSphereAutomation::VCenter::VcenterVchaClusterModeSetTaskResult
 
 ## Properties
 Name | Type | Description | Notes

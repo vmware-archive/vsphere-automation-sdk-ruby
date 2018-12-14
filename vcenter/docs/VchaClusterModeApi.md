@@ -48,7 +48,7 @@ No authorization required
 
 
 # **settask**
-> VcenterVchaClusterModeSettaskResult settask(vcenter_vcha_cluster_mode_settask)
+> VcenterVchaClusterModeSetTaskResult settask(vcenter_vcha_cluster_mode_set_task)
 
 Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 
@@ -58,11 +58,11 @@ Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed: 
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterModeApi.new
-vcenter_vcha_cluster_mode_settask = VSphereAutomation::VcenterVchaClusterModeSettask.new # VcenterVchaClusterModeSettask | 
+vcenter_vcha_cluster_mode_set_task = VSphereAutomation::VcenterVchaClusterModeSetTask.new # VcenterVchaClusterModeSetTask | 
 
 begin
   #Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
-  result = api_instance.settask(vcenter_vcha_cluster_mode_settask)
+  result = api_instance.settask(vcenter_vcha_cluster_mode_set_task)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterModeApi->settask: #{e}"
@@ -73,11 +73,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_mode_settask** | [**VcenterVchaClusterModeSettask**](VcenterVchaClusterModeSettask.md)|  | 
+ **vcenter_vcha_cluster_mode_set_task** | [**VcenterVchaClusterModeSetTask**](VcenterVchaClusterModeSetTask.md)|  | 
 
 ### Return type
 
-[**VcenterVchaClusterModeSettaskResult**](VcenterVchaClusterModeSettaskResult.md)
+[**VcenterVchaClusterModeSetTaskResult**](VcenterVchaClusterModeSetTaskResult.md)
 
 ### Authorization
 

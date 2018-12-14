@@ -1,4 +1,4 @@
-# VSphereAutomation::VCenter::VcenterVchaClusterUndeploytaskResult
+# VSphereAutomation::VCenter::VcenterVchaClusterUndeployTaskResult
 
 ## Properties
 Name | Type | Description | Notes

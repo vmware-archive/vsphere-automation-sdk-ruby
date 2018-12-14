@@ -111,7 +111,7 @@ Checks if new updates are available.
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
-source_type = nil # Object | type of the source
+source_type = 'source_type_example' # String | The {@name SourceType} {@term enumerated type} defines the supported types of sources of updates.
 opts = {
   url: 'url_example' # String | specific URL to check at
 }
@@ -129,7 +129,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source_type** | [**Object**](.md)| type of the source | 
+ **source_type** | **String**| The {@name SourceType} {@term enumerated type} defines the supported types of sources of updates. | 
  **url** | **String**| specific URL to check at | [optional] 
 
 ### Return type

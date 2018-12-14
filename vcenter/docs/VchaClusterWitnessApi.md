@@ -52,7 +52,7 @@ No authorization required
 
 
 # **redeploytask**
-> VcenterVchaClusterWitnessRedeploytaskResult redeploytask(vcenter_vcha_cluster_witness_redeploytask)
+> VcenterVchaClusterWitnessRedeployTaskResult redeploytask(vcenter_vcha_cluster_witness_redeploy_task)
 
 Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
@@ -62,11 +62,11 @@ Creates the witness node in a degraded cluster with node location information an
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterWitnessApi.new
-vcenter_vcha_cluster_witness_redeploytask = VSphereAutomation::VcenterVchaClusterWitnessRedeploytask.new # VcenterVchaClusterWitnessRedeploytask | 
+vcenter_vcha_cluster_witness_redeploy_task = VSphereAutomation::VcenterVchaClusterWitnessRedeployTask.new # VcenterVchaClusterWitnessRedeployTask | 
 
 begin
   #Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
-  result = api_instance.redeploytask(vcenter_vcha_cluster_witness_redeploytask)
+  result = api_instance.redeploytask(vcenter_vcha_cluster_witness_redeploy_task)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterWitnessApi->redeploytask: #{e}"
@@ -77,11 +77,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_witness_redeploytask** | [**VcenterVchaClusterWitnessRedeploytask**](VcenterVchaClusterWitnessRedeploytask.md)|  | 
+ **vcenter_vcha_cluster_witness_redeploy_task** | [**VcenterVchaClusterWitnessRedeployTask**](VcenterVchaClusterWitnessRedeployTask.md)|  | 
 
 ### Return type
 
-[**VcenterVchaClusterWitnessRedeploytaskResult**](VcenterVchaClusterWitnessRedeploytaskResult.md)
+[**VcenterVchaClusterWitnessRedeployTaskResult**](VcenterVchaClusterWitnessRedeployTaskResult.md)
 
 ### Authorization
 

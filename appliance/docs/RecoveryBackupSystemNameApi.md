@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **list**
-> ApplianceRecoveryBackupSystemNameListResult list(loc_spec)
+> ApplianceRecoveryBackupSystemNameListResult list(loc_spec_location, opts)
 
 Returns a list of system names for which backup archives exist under {@param.name locSpec}.
 
@@ -18,11 +18,15 @@ Returns a list of system names for which backup archives exist under {@param.nam
 require 'vsphere-automation-appliance'
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSystemNameApi.new
-loc_spec = nil # Object | LocationSpec Structure
+loc_spec_location = 'loc_spec_location_example' # String | Backup location URL.
+opts = {
+  loc_spec_location_user: 'loc_spec_location_user_example', # String | Username for the given location.
+  loc_spec_location_password: 'loc_spec_location_password_example' # String | Password for the given location.
+}
 
 begin
   #Returns a list of system names for which backup archives exist under {@param.name locSpec}.
-  result = api_instance.list(loc_spec)
+  result = api_instance.list(loc_spec_location, opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupSystemNameApi->list: #{e}"
@@ -33,7 +37,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loc_spec** | [**Object**](.md)| LocationSpec Structure | 
+ **loc_spec_location** | **String**| Backup location URL. | 
+ **loc_spec_location_user** | **String**| Username for the given location. | [optional] 
+ **loc_spec_location_password** | **String**| Password for the given location. | [optional] 
 
 ### Return type
 

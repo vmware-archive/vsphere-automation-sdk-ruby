@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **name** | **String** | The name of input parameter. | [optional] 
 **value** | **String** | The value of input parameter. | [optional] 
 **message** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | [optional] 
-**error** | **Object** | Represents a server {@link Error}. | [optional] 
+**error** | [**Object**](.md) | Represents a server {@link Error}. | [optional] 
 
 

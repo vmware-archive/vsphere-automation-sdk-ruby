@@ -1,4 +1,4 @@
-# VSphereAutomation::VCenter::VcenterVchaClusterFailovertaskResult
+# VSphereAutomation::VCenter::VcenterVchaClusterFailoverTaskResult
 
 ## Properties
 Name | Type | Description | Notes

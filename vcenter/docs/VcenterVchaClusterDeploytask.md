@@ -1,4 +1,4 @@
-# VSphereAutomation::VCenter::VcenterVchaClusterDeploytask
+# VSphereAutomation::VCenter::VcenterVchaClusterDeployTask
 
 ## Properties
 Name | Type | Description | Notes

@@ -64,7 +64,8 @@ require 'vsphere-automation-cis'
 api_instance = VSphereAutomation::CIS::TasksApi.new
 task = 'task_example' # String | Task identifier. The parameter must be an identifier for the resource type: cis.task.
 opts = {
-  spec: nil # Object | Specification on what to get for a task. If unset, the behavior is equivalent to a Tasks.GetSpec with all fields unset which means only the data described in Info will be returned and the result of the operation will be return.
+  spec_return_all: true, # BOOLEAN | If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+  spec_exclude_result: true # BOOLEAN | If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
 }
 
 begin
@@ -81,7 +82,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **task** | **String**| Task identifier. The parameter must be an identifier for the resource type: cis.task. | 
- **spec** | [**Object**](.md)| Specification on what to get for a task. If unset, the behavior is equivalent to a Tasks.GetSpec with all fields unset which means only the data described in Info will be returned and the result of the operation will be return. | [optional] 
+ **spec_return_all** | **BOOLEAN**| If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned. | [optional] 
+ **spec_exclude_result** | **BOOLEAN**| If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information. | [optional] 
 
 ### Return type
 
@@ -110,8 +112,13 @@ require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TasksApi.new
 opts = {
-  filter_spec: nil, # Object | Specification of matching tasks. This is currently required. In the future, if it is unset, the behavior is equivalent to a Tasks.FilterSpec with all fields unset which means all tasks match the filter.
-  result_spec: nil # Object | Specification of what to return for a task. If unset, the behavior is equivalent to a Tasks.GetSpec with all fields unset which means only the data describe in Info will be returned and the result of the operation will be return.
+  filter_spec_tasks: ['filter_spec_tasks_example'], # Array<String> | Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task.
+  result_spec_return_all: true, # BOOLEAN | If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+  result_spec_exclude_result: true, # BOOLEAN | If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+  filter_spec_services: ['filter_spec_services_example'], # Array<String> | Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
+  filter_spec_status: ['filter_spec_status_example'], # Array<String> | Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter.
+  filter_spec_targets: nil, # Array<Object> | Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
+  filter_spec_users: ['filter_spec_users_example'] # Array<String> | Users who must have initiated the operation for the associated task to match the filter (see CommonInfo.user). If unset or empty, tasks associated with operations initiated by any user match the filter.
 }
 
 begin
@@ -127,8 +134,13 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_spec** | [**Object**](.md)| Specification of matching tasks. This is currently required. In the future, if it is unset, the behavior is equivalent to a Tasks.FilterSpec with all fields unset which means all tasks match the filter. | [optional] 
- **result_spec** | [**Object**](.md)| Specification of what to return for a task. If unset, the behavior is equivalent to a Tasks.GetSpec with all fields unset which means only the data describe in Info will be returned and the result of the operation will be return. | [optional] 
+ **filter_spec_tasks** | [**Array&lt;String&gt;**](String.md)| Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task. | [optional] 
+ **result_spec_return_all** | **BOOLEAN**| If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned. | [optional] 
+ **result_spec_exclude_result** | **BOOLEAN**| If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information. | [optional] 
+ **filter_spec_services** | [**Array&lt;String&gt;**](String.md)| Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service. | [optional] 
+ **filter_spec_status** | [**Array&lt;String&gt;**](String.md)| Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter. | [optional] 
+ **filter_spec_targets** | [**Array&lt;Object&gt;**](Object.md)| Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter. | [optional] 
+ **filter_spec_users** | [**Array&lt;String&gt;**](String.md)| Users who must have initiated the operation for the associated task to match the filter (see CommonInfo.user). If unset or empty, tasks associated with operations initiated by any user match the filter. | [optional] 
 
 ### Return type
 

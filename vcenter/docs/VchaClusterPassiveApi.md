@@ -52,7 +52,7 @@ No authorization required
 
 
 # **redeploytask**
-> VcenterVchaClusterPassiveRedeploytaskResult redeploytask(vcenter_vcha_cluster_passive_redeploytask)
+> VcenterVchaClusterPassiveRedeployTaskResult redeploytask(vcenter_vcha_cluster_passive_redeploy_task)
 
 Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
@@ -62,11 +62,11 @@ Creates the passive node in a degraded cluster with node location information an
 require 'vsphere-automation-vcenter'
 
 api_instance = VSphereAutomation::VCenter::VchaClusterPassiveApi.new
-vcenter_vcha_cluster_passive_redeploytask = VSphereAutomation::VcenterVchaClusterPassiveRedeploytask.new # VcenterVchaClusterPassiveRedeploytask | 
+vcenter_vcha_cluster_passive_redeploy_task = VSphereAutomation::VcenterVchaClusterPassiveRedeployTask.new # VcenterVchaClusterPassiveRedeployTask | 
 
 begin
   #Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
-  result = api_instance.redeploytask(vcenter_vcha_cluster_passive_redeploytask)
+  result = api_instance.redeploytask(vcenter_vcha_cluster_passive_redeploy_task)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterPassiveApi->redeploytask: #{e}"
@@ -77,11 +77,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_passive_redeploytask** | [**VcenterVchaClusterPassiveRedeploytask**](VcenterVchaClusterPassiveRedeploytask.md)|  | 
+ **vcenter_vcha_cluster_passive_redeploy_task** | [**VcenterVchaClusterPassiveRedeployTask**](VcenterVchaClusterPassiveRedeployTask.md)|  | 
 
 ### Return type
 
-[**VcenterVchaClusterPassiveRedeploytaskResult**](VcenterVchaClusterPassiveRedeploytaskResult.md)
+[**VcenterVchaClusterPassiveRedeployTaskResult**](VcenterVchaClusterPassiveRedeployTaskResult.md)
 
 ### Authorization
 

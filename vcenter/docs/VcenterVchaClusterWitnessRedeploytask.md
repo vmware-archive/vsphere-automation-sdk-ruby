@@ -1,4 +1,4 @@
-# VSphereAutomation::VCenter::VcenterVchaClusterWitnessRedeploytask
+# VSphereAutomation::VCenter::VcenterVchaClusterWitnessRedeployTask
 
 ## Properties
 Name | Type | Description | Notes

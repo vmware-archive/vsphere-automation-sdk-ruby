@@ -1,4 +1,4 @@
-# VSphereAutomation::VCenter::VcenterVchaClusterPassiveRedeploytaskResult
+# VSphereAutomation::VCenter::VcenterVchaClusterPassiveRedeployTaskResult
 
 ## Properties
 Name | Type | Description | Notes
