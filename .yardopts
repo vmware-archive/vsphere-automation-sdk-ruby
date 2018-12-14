@@ -1,0 +1,4 @@
+--no-private
+--output-dir docs
+--hide-api private
+{appliance,cis,content,vapi,vcenter}/**/*.rb

@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["J.R. Garcia"]
   s.email       = ["jrg@vmware.com"]
-  s.homepage    = "https://openapi-generator.tech"
+  s.homepage    = "https://github.com/vmware/vsphere-automation-sdk-ruby"
   s.summary     = "A Ruby SDK for the vSphere APIs"
   s.description = "A Ruby SDK for the vSphere APIs"
   s.license     = 'MIT'
