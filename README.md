@@ -25,6 +25,10 @@ If you used a prior iteration of this SDK (_with a version 6.x.y_), you had to b
 
 This version is _not_ backwards compatible with the previous versions (_version 6.x.y_).
 
+## Documentation
+
+The documentation for the vSphere Automation SDK for Ruby API can be viewed [here](https://vmware.github.io/vsphere-automation-sdk-ruby). The documentation for the REST APIs used by this SDK can be viewed [here](https://vmware.github.io/vsphere-automation-sdk-rest). To try the APIs interactively, you can use the API Explorer. You can view it by going to `https://<your vCenter>/apiexplorer`.
+
 ## Examples
 
 You can view samples of how to use this SDK within the [sample folder](samples/). If you would like to see a sample, feel free to [create an issue](https://github.com/vmware/vsphere-automation-sdk-ruby/issues) describing what you would like to see. If you would like to modify, extend, or contribute a sample, see the [contributing guidelines](CONTRIBUTING.md).
