@@ -1,0 +1,77 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'optparse'
+require 'vsphere-automation-vcenter'
+require 'vsphere-automation-cis'
+
+options = { insecure: false, associable_types: [] }
+OptionParser.new do |opts|
+  opts.on('-s SERVER', '--server SERVER', 'vCenter server to use') do |s|
+    options[:server] = s
+  end
+  opts.on('-u USERNAME', '--username USERNAME', 'username to use') do |u|
+    options[:username] = u
+  end
+  opts.on('-p PASSWORD', '--password PASSWORD', 'password to use') do |p|
+    options[:password] = p
+  end
+  opts.on('-k', '--insecure', 'skip certificate validation') do |k|
+    options[:insecure] = k
+  end
+  opts.on('-n NAME', '--name NAME', 'name to use') do |n|
+    options[:name] = n
+  end
+  opts.on('-d DESCRIPTION', '--description DESCRIPTION', 'description to use') do |d|
+    options[:description] = d
+  end
+
+  opts.on('-a ', '--associable-types ASSOCIABLE_TYPES1,ASSOCIABLE_TYPES2,ASSOCIABLE_TYPES3', Array, 'associable types to use like [Folder],[Datacenter]') do |a|
+    options[:associable_types] = a.map(&:strip)
+  end
+
+  opts.on('-c CARDINALITY', '--cardinality CARDINALITY', 'cardinality: single or multiple') do |c|
+    begin
+      options[:cardinality] = VSphereAutomation::CIS::CisTaggingCategoryModelCardinality.const_get(c.upcase)
+    rescue NameError
+      puts "ERROR: 'cardinality' must be 'single' or 'multiple'"
+      exit(1)
+    end
+  end
+
+  opts.on('-i CATEGORY_ID', '--category-id CATEGORY_ID', 'category id to use') do |i|
+    if i =~ /^urn:vmomi:InventoryServiceCategory:.*:GLOBAL$/
+      options[:category_id] = i
+    else
+      puts "ERROR: 'category_id' must be of the form 'urn:vmomi:InventoryServiceCategory:<your_id_here>:GLOBAL'"
+      exit(1)
+    end
+  end
+end.parse!
+configuration = VSphereAutomation::Configuration.new.tap do |c|
+  c.host = options[:server]
+  c.username = options[:username]
+  c.password = options[:password]
+  c.scheme = 'https'
+  c.verify_ssl = !options[:insecure]
+  c.verify_ssl_host = !options[:insecure]
+end
+api_client = VSphereAutomation::ApiClient.new(configuration)
+api_client.default_headers['Authorization'] = configuration.basic_auth_token
+session_api = VSphereAutomation::CIS::SessionApi.new(api_client)
+session_id = session_api.create('').value
+api_client.default_headers['vmware-api-session-id'] = session_id
+api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new(api_client)
+
+create_spec =  VSphereAutomation::CIS::CisTaggingCategoryCreateSpec.new(
+  name: options[:name],
+  description: options[:description],
+  associable_types: options[:associable_types],
+  cardinality: options[:cardinality],
+  category_id: options[:category_id]
+)
+create_model = VSphereAutomation::CIS::CisTaggingCategoryCreate.new(create_spec: create_spec)
+
+result = api_instance.create(create_model).value
+
+puts "CATEGORY_ID: #{result}"
