@@ -2,6 +2,7 @@
 name: Feature request
 about: Proposal for a new feature or enhancement
 labels: enhancement
+assignees: jrgarcia
 ---
 
 ## Summary

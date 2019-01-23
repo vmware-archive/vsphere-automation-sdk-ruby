@@ -2,6 +2,7 @@
 name: Bug report
 about: Create a report to help us fix or improve an issue
 labels: bug
+assignees: jrgarcia
 ---
 
 ## Describe the bug
