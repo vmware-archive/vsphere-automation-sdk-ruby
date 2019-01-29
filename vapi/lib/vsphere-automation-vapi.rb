@@ -1,12 +1,10 @@
-=begin
+# Copyright (c) 2018-2019 VMware, Inc.  All Rights Reserved.
+# SPDX-License-Identifier: MIT
+
 # DO NOT MODIFY. THIS CODE IS GENERATED. CHANGES WILL BE OVERWRITTEN.
 
-# vapi
+# vapi - vAPI is an extensible API Platform for modelling and delivering APIs/SDKs/CLIs.
 
-# vAPI is an extensible API Platform for modelling and delivering APIs/SDKs/CLIs.
-
-
-=end
 
 # Common files
 require 'vsphere-automation-vapi/api_client'

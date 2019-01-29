@@ -1,14 +1,12 @@
 # -*- encoding: utf-8 -*-
 
-=begin
+# Copyright (c) 2018-2019 VMware, Inc.  All Rights Reserved.
+# SPDX-License-Identifier: MIT
+
 # DO NOT MODIFY. THIS CODE IS GENERATED. CHANGES WILL BE OVERWRITTEN.
 
-# vapi
+# vapi - vAPI is an extensible API Platform for modelling and delivering APIs/SDKs/CLIs.
 
-# vAPI is an extensible API Platform for modelling and delivering APIs/SDKs/CLIs.
-
-
-=end
 
 $:.push File.expand_path("../lib", __FILE__)
 require "vsphere-automation-vapi/version"
@@ -27,7 +25,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'typhoeus', '~> 1.3'
   s.add_runtime_dependency 'json', '~> 2.1'
-  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.1'
+  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.1.0'
 
   s.add_development_dependency 'bundler', '~> 1.16'
   s.add_development_dependency 'pry', '~> 0.11.3'

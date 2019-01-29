@@ -1,10 +1,10 @@
 =begin
+# Copyright (c) 2018-2019 VMware, Inc.  All Rights Reserved.
+# SPDX-License-Identifier: MIT
+
 # DO NOT MODIFY. THIS CODE IS GENERATED. CHANGES WILL BE OVERWRITTEN.
 
-# vapi
-
-# vAPI is an extensible API Platform for modelling and delivering APIs/SDKs/CLIs.
-
+# vapi - vAPI is an extensible API Platform for modelling and delivering APIs/SDKs/CLIs.
 
 =end
 
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "OpenAPI-Generator/#{VAPI::VERSION}/ruby"
+      @user_agent = "SDK/0.1.0 Ruby/#{RUBY_VERSION} (#{Gem::Platform.local.os}; #{Gem::Platform.local.version}; #{Gem::Platform.local.cpu})"
       @default_headers = {
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent
