@@ -1,12 +1,10 @@
-=begin
+# Copyright (c) 2018-2019 VMware, Inc.  All Rights Reserved.
+# SPDX-License-Identifier: MIT
+
 # DO NOT MODIFY. THIS CODE IS GENERATED. CHANGES WILL BE OVERWRITTEN.
 
-# vcenter
+# vcenter - VMware vCenter Server provides a centralized platform for managing your VMware vSphere environments
 
-# VMware vCenter Server provides a centralized platform for managing your VMware vSphere environments
-
-
-=end
 
 # load the gem
 require 'vsphere-automation-vcenter'

@@ -1,12 +1,10 @@
-=begin
+# Copyright (c) 2018-2019 VMware, Inc.  All Rights Reserved.
+# SPDX-License-Identifier: MIT
+
 # DO NOT MODIFY. THIS CODE IS GENERATED. CHANGES WILL BE OVERWRITTEN.
 
-# vSphere Automation
+# vSphere Automation - VMware vSphere Automation does fantastic things.
 
-# VMware vSphere Automation does fantastic things.
-
-
-=end
 
 require 'uri'
 
