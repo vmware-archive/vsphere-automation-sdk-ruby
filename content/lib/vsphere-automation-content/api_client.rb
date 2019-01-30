@@ -29,7 +29,7 @@ module VSphereAutomation
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "OpenAPI-Generator/#{Content::VERSION}/ruby"
+      @user_agent = "SDK/0.1.0 Ruby/#{RUBY_VERSION} (#{Gem::Platform.local.os}; #{Gem::Platform.local.version}; #{Gem::Platform.local.cpu})"
       @default_headers = {
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent
