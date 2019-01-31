@@ -1,0 +1,12 @@
+{
+  "gemAuthor": "J.R. Garcia",
+  "gemAuthorEmail": "jrg@vmware.com",
+  "gemDescription": "A Ruby SDK for the vSphere APIs (VAPI)",
+  "gemHomepage": "https://github.com/vmware/vsphere-automation-sdk-ruby",
+  "gemLicense": "MIT",
+  "gemName": "vsphere-automation-vapi",
+  "gemRequiredRubyVersion": ">= 2.3",
+  "gemSummary": "A Ruby SDK for the vSphere APIs (VAPI)",
+  "gemVersion": "0.1.0",
+  "moduleName": "VAPI"
+}
