@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+ENV_VARS = { 'RUBY_POST_PROCESS_FILE' => 'rubocop -a' }.freeze
+
+def root_dir
+  File.expand_path('..', __dir__)
+end
+
+def config_dir
+  root_dir << '/configurations'
+end
+
+def spec_dir
+  root_dir << '/specs'
+end
+
+def template_dir
+  root_dir << '/templates'
+end
+
+def files_to_generate(component)
+  return ' -DsupportingFiles' if component == :runtime
+
+  " -Dapis,models,supportingFiles=vsphere-automation-#{component}.rb"
+end
+
+def generate_gem(component, output_dir)
+  puts "\n\nGenerating #{component}\n\n"
+  generate_command = 'openapi-generator generate '\
+                     '-g ruby '\
+                     "-i #{spec_dir}/#{component}.json "\
+                     "-c #{config_dir}/#{component}.json "\
+                     "-t #{template_dir} "\
+                     "-o #{output_dir}/#{component} "\
+                     '--skip-validate-spec'
+  generate_command << files_to_generate(component)
+  system(ENV_VARS, generate_command)
+end
+
+def generate_gems(output_dir)
+  %i[appliance cis content runtime vapi vcenter].map do |c|
+    generate_gem(c, output_dir)
+  end
+end
+
+options = {}
+OptionParser.new do |opts|
+  opts.on('-oOUTPUTDIR', '--output=OUTPUTDIR', 'Output directory') do |o|
+    options[:output_dir] = o
+  end
+end.parse!
+
+output_dir = options.fetch(:output_dir, root_dir)
+puts "Outputting generated files to #{output_dir}"
+
+generate_gems(output_dir)

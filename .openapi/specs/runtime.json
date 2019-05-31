@@ -1,0 +1,35 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "runtime",
+        "version": "2.0.0"
+    },
+    "host": "<vcenter>",
+    "basePath": "/rest",
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {},
+    "securityDefinitions": {
+        "basic_auth": {
+            "type": "basic"
+        },
+        "api_key": {
+            "type": "apiKey",
+            "name": "vmware-api-session-id",
+            "in": "header"
+        }
+    },
+    "security": [
+        {
+            "api_key": []
+        }
+    ]
+}

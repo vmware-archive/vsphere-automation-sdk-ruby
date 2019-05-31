@@ -65,6 +65,9 @@ module VSphereAutomation
 
       if opts[:return_type]
         data = deserialize(response, opts[:return_type][response.code.to_s])
+        if path == '/com/vmware/cis/session'
+          @config.api_key['vmware-api-session-id'] = data.value
+        end
       else
         data = nil
       end
