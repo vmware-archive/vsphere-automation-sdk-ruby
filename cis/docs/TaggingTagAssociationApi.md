@@ -29,7 +29,7 @@ require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
 tag_id = 'tag_id_example' # String | The identifier of the input tag.
-cis_tagging_tag_association_attach = VSphereAutomation::CisTaggingTagAssociationAttach.new # CisTaggingTagAssociationAttach | 
+cis_tagging_tag_association_attach = VSphereAutomation::CIS::CisTaggingTagAssociationAttach.new # CisTaggingTagAssociationAttach |
 
 begin
   #Attaches the given tag to the input object. The tag needs to meet the cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) criteria in order to be eligible for attachment. If the tag is already attached to the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
@@ -72,7 +72,7 @@ Attaches the given tags to the input object. If a tag is already attached to the
 require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
-cis_tagging_tag_association_attach_multiple_tags_to_object = VSphereAutomation::CisTaggingTagAssociationAttachMultipleTagsToObject.new # CisTaggingTagAssociationAttachMultipleTagsToObject | 
+cis_tagging_tag_association_attach_multiple_tags_to_object = VSphereAutomation::CIS::CisTaggingTagAssociationAttachMultipleTagsToObject.new # CisTaggingTagAssociationAttachMultipleTagsToObject |
 
 begin
   #Attaches the given tags to the input object. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege on each tag.
@@ -116,7 +116,7 @@ require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
 tag_id = 'tag_id_example' # String | The identifier of the input tag.
-cis_tagging_tag_association_attach_tag_to_multiple_objects = VSphereAutomation::CisTaggingTagAssociationAttachTagToMultipleObjects.new # CisTaggingTagAssociationAttachTagToMultipleObjects | 
+cis_tagging_tag_association_attach_tag_to_multiple_objects = VSphereAutomation::CIS::CisTaggingTagAssociationAttachTagToMultipleObjects.new # CisTaggingTagAssociationAttachTagToMultipleObjects |
 
 begin
   #Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
@@ -161,7 +161,7 @@ require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
 tag_id = 'tag_id_example' # String | The identifier of the input tag.
-cis_tagging_tag_association_detach = VSphereAutomation::CisTaggingTagAssociationDetach.new # CisTaggingTagAssociationDetach | 
+cis_tagging_tag_association_detach = VSphereAutomation::CIS::CisTaggingTagAssociationDetach.new # CisTaggingTagAssociationDetach |
 
 begin
   #Detaches the tag from the given object. If the tag is already removed from the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
@@ -204,7 +204,7 @@ Detaches the given tags from the input object. If a tag is already removed from 
 require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
-cis_tagging_tag_association_detach_multiple_tags_from_object = VSphereAutomation::CisTaggingTagAssociationDetachMultipleTagsFromObject.new # CisTaggingTagAssociationDetachMultipleTagsFromObject | 
+cis_tagging_tag_association_detach_multiple_tags_from_object = VSphereAutomation::CIS::CisTaggingTagAssociationDetachMultipleTagsFromObject.new # CisTaggingTagAssociationDetachMultipleTagsFromObject |
 
 begin
   #Detaches the given tags from the input object. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege each tag.
@@ -248,7 +248,7 @@ require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
 tag_id = 'tag_id_example' # String | The identifier of the input tag.
-cis_tagging_tag_association_detach_tag_from_multiple_objects = VSphereAutomation::CisTaggingTagAssociationDetachTagFromMultipleObjects.new # CisTaggingTagAssociationDetachTagFromMultipleObjects | 
+cis_tagging_tag_association_detach_tag_from_multiple_objects = VSphereAutomation::CIS::CisTaggingTagAssociationDetachTagFromMultipleObjects.new # CisTaggingTagAssociationDetachTagFromMultipleObjects |
 
 begin
   #Detaches the given tag from the input objects. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
@@ -292,7 +292,7 @@ Fetches the {@term list} of attachable tags for the given object, omitting the t
 require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
-cis_tagging_tag_association_list_attachable_tags = VSphereAutomation::CisTaggingTagAssociationListAttachableTags.new # CisTaggingTagAssociationListAttachableTags | 
+cis_tagging_tag_association_list_attachable_tags = VSphereAutomation::CIS::CisTaggingTagAssociationListAttachableTags.new # CisTaggingTagAssociationListAttachableTags |
 
 begin
   #Fetches the {@term list} of attachable tags for the given object, omitting the tags that have already been attached. Criteria for attachability is calculated based on tagging cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) constructs. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have read privileges.
@@ -378,7 +378,7 @@ Fetches the {@term list} of {@link TagToObjects} describing the input tag identi
 require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
-cis_tagging_tag_association_list_attached_objects_on_tags = VSphereAutomation::CisTaggingTagAssociationListAttachedObjectsOnTags.new # CisTaggingTagAssociationListAttachedObjectsOnTags | 
+cis_tagging_tag_association_list_attached_objects_on_tags = VSphereAutomation::CIS::CisTaggingTagAssociationListAttachedObjectsOnTags.new # CisTaggingTagAssociationListAttachedObjectsOnTags |
 
 begin
   #Fetches the {@term list} of {@link TagToObjects} describing the input tag identifiers and the objects they are attached to. To invoke this {@term operation}, you need the read privilege on each input tag. The {@link TagToObjects#objectIds} will only contain those objects for which you have the read privilege.
@@ -421,7 +421,7 @@ Fetches the {@term list} of tags attached to the given object. To invoke this {@
 require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
-cis_tagging_tag_association_list_attached_tags = VSphereAutomation::CisTaggingTagAssociationListAttachedTags.new # CisTaggingTagAssociationListAttachedTags | 
+cis_tagging_tag_association_list_attached_tags = VSphereAutomation::CIS::CisTaggingTagAssociationListAttachedTags.new # CisTaggingTagAssociationListAttachedTags |
 
 begin
   #Fetches the {@term list} of tags attached to the given object. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have the read privileges.
@@ -464,7 +464,7 @@ Fetches the {@term list} of {@link ObjectToTags} describing the input object ide
 require 'vsphere-automation-cis'
 
 api_instance = VSphereAutomation::CIS::TaggingTagAssociationApi.new
-cis_tagging_tag_association_list_attached_tags_on_objects = VSphereAutomation::CisTaggingTagAssociationListAttachedTagsOnObjects.new # CisTaggingTagAssociationListAttachedTagsOnObjects | 
+cis_tagging_tag_association_list_attached_tags_on_objects = VSphereAutomation::CIS::CisTaggingTagAssociationListAttachedTagsOnObjects.new # CisTaggingTagAssociationListAttachedTagsOnObjects |
 
 begin
   #Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
