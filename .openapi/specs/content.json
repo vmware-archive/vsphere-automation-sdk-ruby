@@ -607,6 +607,65 @@
                 "tags": [
                     "library_item_downloadsession_file"
                 ],
+                "summary": "Retrieves file download information for a specific file.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "download_session_id",
+                        "description": "Identifier of the download session."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item.downloadsession.file_get"
+                        }
+                    },
+                    {
+                        "name": "~action",
+                        "in": "query",
+                        "description": "~action=get",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "get"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The {@link Info} instance containing the status of the file and its download link if available.",
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item.downloadsession.file_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if the download session associated with {@param.name downloadSessionId} does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if there is no file with the specified {@param.name fileName}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "get"
+            }
+        },
+        "/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action=prepare": {
+            "post": {
+                "tags": [
+                    "library_item_downloadsession_file"
+                ],
                 "summary": "Requests a file to be prepared for download.",
                 "parameters": [
                     {
@@ -623,16 +682,6 @@
                         "schema": {
                             "$ref": "#/definitions/content.library.item.downloadsession.file_prepare"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=prepare",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "prepare"
-                        ]
                     }
                 ],
                 "responses": {
@@ -665,55 +714,6 @@
                     "application/json"
                 ],
                 "operationId": "prepare"
-            }
-        },
-        "/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action=get": {
-            "post": {
-                "tags": [
-                    "library_item_downloadsession_file"
-                ],
-                "summary": "Retrieves file download information for a specific file.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "download_session_id",
-                        "description": "Identifier of the download session."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item.downloadsession.file_get"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The {@link Info} instance containing the status of the file and its download link if available.",
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item.downloadsession.file_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if the download session associated with {@param.name downloadSessionId} does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if there is no file with the specified {@param.name fileName}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "get"
             }
         },
         "/com/vmware/content/library/item/file": {
@@ -1197,23 +1197,23 @@
                 "tags": [
                     "library_item_update_session"
                 ],
-                "summary": "Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.",
+                "summary": "Cancels the update session and sets its state to {@link UpdateSessionModel.State#CANCELED}. This {@term operation} will free up any temporary resources currently associated with the session. <p> This {@term operation} is not allowed if the session has been already completed. <p> Cancelling an update session will cancel any in progress transfers (either uploaded by the client or pulled by the server). Any content that has been already received will be scheduled for deletion.",
                 "parameters": [
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
                         "name": "update_session_id",
-                        "description": "Identifier of the update session that should be completed."
+                        "description": "Identifier of the update session that should be canceled."
                     },
                     {
                         "name": "~action",
                         "in": "query",
-                        "description": "~action=complete",
+                        "description": "~action=cancel",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "complete"
+                            "cancel"
                         ]
                     }
                 ],
@@ -1228,7 +1228,7 @@
                         }
                     },
                     "400": {
-                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state, or if some of the files that will be uploaded by the client aren't received correctly.",
+                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state.",
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
                         }
@@ -1237,7 +1237,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "complete"
+                "operationId": "cancel"
             },
             "get": {
                 "tags": [
@@ -1268,39 +1268,6 @@
                     }
                 },
                 "operationId": "get"
-            },
-            "delete": {
-                "tags": [
-                    "library_item_update_session"
-                ],
-                "summary": "Deletes an update session. This removes the session and all information associated with it. <p> Removing an update session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the server will terminate the transfers, or that the transfers can be completed). However there will no longer be a means of inspecting the status of those uploads except by seeing the effect on the library item. <p> Update sessions for which there is no upload activity or which are complete will automatically be deleted after a period of time.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "update_session_id",
-                        "description": "Identifer of the update session to delete."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "404": {
-                        "description": "if the update session does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if the update session is in the {@link UpdateSessionModel.State#ACTIVE} state.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    }
-                },
-                "operationId": "delete"
             },
             "patch": {
                 "tags": [
@@ -1345,21 +1312,54 @@
                     "application/json"
                 ],
                 "operationId": "update"
-            }
-        },
-        "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=cancel": {
-            "post": {
+            },
+            "delete": {
                 "tags": [
                     "library_item_update_session"
                 ],
-                "summary": "Cancels the update session and sets its state to {@link UpdateSessionModel.State#CANCELED}. This {@term operation} will free up any temporary resources currently associated with the session. <p> This {@term operation} is not allowed if the session has been already completed. <p> Cancelling an update session will cancel any in progress transfers (either uploaded by the client or pulled by the server). Any content that has been already received will be scheduled for deletion.",
+                "summary": "Deletes an update session. This removes the session and all information associated with it. <p> Removing an update session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the server will terminate the transfers, or that the transfers can be completed). However there will no longer be a means of inspecting the status of those uploads except by seeing the effect on the library item. <p> Update sessions for which there is no upload activity or which are complete will automatically be deleted after a period of time.",
                 "parameters": [
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
                         "name": "update_session_id",
-                        "description": "Identifier of the update session that should be canceled."
+                        "description": "Identifer of the update session to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": "if the update session does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if the update session is in the {@link UpdateSessionModel.State#ACTIVE} state.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    }
+                },
+                "operationId": "delete"
+            }
+        },
+        "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=complete": {
+            "post": {
+                "tags": [
+                    "library_item_update_session"
+                ],
+                "summary": "Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "update_session_id",
+                        "description": "Identifier of the update session that should be completed."
                     }
                 ],
                 "responses": {
@@ -1373,7 +1373,7 @@
                         }
                     },
                     "400": {
-                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state.",
+                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state, or if some of the files that will be uploaded by the client aren't received correctly.",
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
                         }
@@ -1382,7 +1382,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "cancel"
+                "operationId": "complete"
             }
         },
         "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=fail": {
@@ -1890,6 +1890,62 @@
             }
         },
         "/com/vmware/content/library/subscriptions/id:{library}": {
+            "patch": {
+                "tags": [
+                    "library_subscriptions"
+                ],
+                "summary": "Updates the specified subscription of the published library. <p> This is an incremental update to the subscription. Except for the {@link UpdateSpecPlacement} {@term structure}, {@term fields} that are {@term unset} in the update specification will be left unchanged. If {@param.name spec#subscribedLibraryPlacement} is specified, all {@term fields} of the current subscribed library placement will be replaced by this placement.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "library",
+                        "description": "Identifier of the published library."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library.subscriptions_update"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "If the library specified by {@param.name library} is not a published library.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    },
+                    "404": {
+                        "description": "If the library specified by {@param.name library} does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "401": {
+                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update"
+            },
             "post": {
                 "tags": [
                     "library_subscriptions"
@@ -1948,62 +2004,6 @@
                     "application/json"
                 ],
                 "operationId": "create"
-            },
-            "patch": {
-                "tags": [
-                    "library_subscriptions"
-                ],
-                "summary": "Updates the specified subscription of the published library. <p> This is an incremental update to the subscription. Except for the {@link UpdateSpecPlacement} {@term structure}, {@term fields} that are {@term unset} in the update specification will be left unchanged. If {@param.name spec#subscribedLibraryPlacement} is specified, all {@term fields} of the current subscribed library placement will be replaced by this placement.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "library",
-                        "description": "Identifier of the published library."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library.subscriptions_update"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "If the library specified by {@param.name library} is not a published library.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    },
-                    "404": {
-                        "description": "If the library specified by {@param.name library} does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "401": {
-                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "update"
             }
         },
         "/com/vmware/content/library/subscriptions/id:{library}?~action=delete": {

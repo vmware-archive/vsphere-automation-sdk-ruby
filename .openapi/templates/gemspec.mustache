@@ -24,7 +24,12 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'json', '~> 2.2'
   s.add_runtime_dependency 'typhoeus', '~> 1.3'
-  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.1.0'
+  {{^is-runtime}}
+  s.add_runtime_dependency 'vsphere-automation-runtime', '~> {{gemVersion}}'
+  {{^is-cis}}
+  s.add_runtime_dependency 'vsphere-automation-cis', '~> {{gemVersion}}'
+  {{/is-cis}}
+  {{/is-runtime}}
 
   s.add_development_dependency 'bundler', '~> 2.0'
   s.add_development_dependency 'pry', '~> 0.12.2'

@@ -34,7 +34,8 @@ def generate_gem(component, output_dir)
                      "-c #{config_dir}/#{component}.json "\
                      "-t #{template_dir} "\
                      "-o #{output_dir}/#{component} "\
-                     '--skip-validate-spec'
+                     '--skip-validate-spec'\
+                     " --additional-properties='is-#{component}=true'"
   generate_command << files_to_generate(component)
   system(ENV_VARS, generate_command)
 end

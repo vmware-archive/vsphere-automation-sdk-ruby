@@ -1412,16 +1412,16 @@
                 "tags": [
                     "deployment_import_history"
                 ],
-                "summary": "Resumes the task for importing vCenter historical data.",
+                "summary": "Cancels the task for importing vCenter historical data.",
                 "parameters": [
                     {
                         "name": "action",
                         "in": "query",
-                        "description": "action=resume",
+                        "description": "action=cancel",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "resume"
+                            "cancel"
                         ]
                     }
                 ],
@@ -1451,7 +1451,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "resume"
+                "operationId": "cancel"
             },
             "get": {
                 "tags": [
@@ -1488,42 +1488,6 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/deployment/history?action=cancel": {
-            "post": {
-                "tags": [
-                    "deployment_import_history"
-                ],
-                "summary": "Cancels the task for importing vCenter historical data.",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "401": {
-                        "description": "if the caller is not authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if the caller is not authorized to perform the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    },
-                    "400": {
-                        "description": "Generic error.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "cancel"
-            }
-        },
         "/vcenter/deployment/history?action=pause": {
             "post": {
                 "tags": [
@@ -1558,6 +1522,42 @@
                     "application/json"
                 ],
                 "operationId": "pause"
+            }
+        },
+        "/vcenter/deployment/history?action=resume": {
+            "post": {
+                "tags": [
+                    "deployment_import_history"
+                ],
+                "summary": "Resumes the task for importing vCenter historical data.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "401": {
+                        "description": "if the caller is not authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if the caller is not authorized to perform the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    },
+                    "400": {
+                        "description": "Generic error.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "resume"
             }
         },
         "/vcenter/deployment/history?action=start": {
@@ -3556,7 +3556,7 @@
                 "operationId": "reconfigure"
             }
         },
-        "/vcenter/system-config/deployment-type?action=convert-to-vcsa-embedded": {
+        "/vcenter/system-config/deployment-type?action=convert-to-vcsa-embedded&vmw-task=true": {
             "post": {
                 "tags": [
                     "system_config_deployment_type"
@@ -3690,11 +3690,11 @@
                     {
                         "name": "action",
                         "in": "query",
-                        "description": "action=decommission",
+                        "description": "action=decommission&vmw-task",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "decommission"
+                            "decommission&vmw-task"
                         ]
                     }
                 ],
@@ -3772,11 +3772,11 @@
                     {
                         "name": "action",
                         "in": "query",
-                        "description": "action=failover",
+                        "description": "action=failover&vmw-task",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "failover"
+                            "failover&vmw-task"
                         ]
                     }
                 ],
@@ -3894,6 +3894,56 @@
             }
         },
         "/vcenter/vcha/cluster/mode": {
+            "put": {
+                "tags": [
+                    "vcha_cluster_mode"
+                ],
+                "summary": "Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:\n enabled -> disabled - Allowed only in healthy and degraded states.\n enabled -> maintenance - Allowed only in healthy state.\n disabled -> enabled - Allowed only in healthy state.\n maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.\n maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.\n All other transitions are not allowed. \n VCHA Cluster configuration remains intact in any of the cluster modes.\n",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vcha.cluster.mode_set_task"
+                        }
+                    },
+                    {
+                        "name": "vmw-task",
+                        "in": "query",
+                        "description": "vmw-task=true",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "true"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vcha.cluster.mode.set_task_result"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user has insufficient privilege to perform the operation. Operation execution requires the Global.VCServer privilege.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    },
+                    "400": {
+                        "description": "If any other error occurs.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "set$task"
+            },
             "get": {
                 "tags": [
                     "vcha_cluster_mode"
@@ -3921,46 +3971,6 @@
                     }
                 },
                 "operationId": "get"
-            },
-            "put": {
-                "tags": [
-                    "vcha_cluster_mode"
-                ],
-                "summary": "Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:\n enabled -> disabled - Allowed only in healthy and degraded states.\n enabled -> maintenance - Allowed only in healthy state.\n disabled -> enabled - Allowed only in healthy state.\n maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.\n maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.\n All other transitions are not allowed. \n VCHA Cluster configuration remains intact in any of the cluster modes.\n",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.mode_set_task"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.mode.set_task_result"
-                        }
-                    },
-                    "403": {
-                        "description": "If the user has insufficient privilege to perform the operation. Operation execution requires the Global.VCServer privilege.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    },
-                    "400": {
-                        "description": "If any other error occurs.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "set$task"
             }
         },
         "/vcenter/vcha/cluster/passive": {
@@ -3981,11 +3991,11 @@
                     {
                         "name": "action",
                         "in": "query",
-                        "description": "action=redeploy",
+                        "description": "action=redeploy&vmw-task",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "redeploy"
+                            "redeploy&vmw-task"
                         ]
                     }
                 ],
@@ -4081,11 +4091,11 @@
                     {
                         "name": "action",
                         "in": "query",
-                        "description": "action=redeploy",
+                        "description": "action=redeploy&vmw-task",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "redeploy"
+                            "redeploy&vmw-task"
                         ]
                     }
                 ],
@@ -4163,7 +4173,7 @@
                 "operationId": "check"
             }
         },
-        "/vcenter/vcha/cluster?action=deploy": {
+        "/vcenter/vcha/cluster?action=deploy&vmw-task=true": {
             "post": {
                 "tags": [
                     "vcha_cluster"
@@ -4246,7 +4256,7 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/vcha/cluster?action=undeploy": {
+        "/vcenter/vcha/cluster?action=undeploy&vmw-task=true": {
             "post": {
                 "tags": [
                     "vcha_cluster"

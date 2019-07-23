@@ -1,7 +1,7 @@
 {
     "gemAuthor": "J.R. Garcia",
     "gemAuthorEmail": "jrg@vmware.com",
-    "gemDescription": "A Ruby SDK for the vSphere APIs (Appliance)",
+    "gemDescription": "A Ruby SDK for the vSphere APIs (Runtime)",
     "gemHomepage": "https://github.com/vmware/vsphere-automation-sdk-ruby",
     "gemLicense": "MIT",
     "gemName": "vsphere-automation-runtime",
