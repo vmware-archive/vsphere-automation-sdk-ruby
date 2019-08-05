@@ -30,8 +30,9 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'vsphere-automation-vapi', '~> 0.2.0'
   s.add_runtime_dependency 'vsphere-automation-vcenter', '~> 0.2.0'
 
+  s.add_development_dependency 'rake', '~> 12.3'
+
   s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
-  s.test_files    = `find spec/*`.split("\n")
   s.executables   = []
   s.require_paths = ["lib"]
 end
