@@ -30,7 +30,8 @@ describe 'DeploymentInstallPscReplicatedApi' do
 
   # unit tests for check
   # Checks whether the provided remote PSC is reachable and can be replicated.
-  # @param vcenter_deployment_install_psc_replicated_check 
+  # @param action action&#x3D;check
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterDeploymentInstallPscReplicatedCheckResult]
   describe 'check test' do

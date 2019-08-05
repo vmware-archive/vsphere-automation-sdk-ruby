@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceUpdatePendingQuestionInputType
     
-    PLAIN_TEXT = 'PLAIN_TEXT'.freeze
-    BOOLEAN = 'BOOLEAN'.freeze
-    PASSWORD = 'PASSWORD'.freeze
+    PLAIN_TEXT = "PLAIN_TEXT".freeze
+    BOOLEAN = "BOOLEAN".freeze
+    PASSWORD = "PASSWORD".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

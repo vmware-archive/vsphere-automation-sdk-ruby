@@ -12,8 +12,8 @@ module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPv3Notfication
     
-    INFORM = 'inform'.freeze
-    TRAP = 'trap'.freeze
+    INFORM = "inform".freeze
+    TRAP = "trap".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

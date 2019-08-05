@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](DeploymentApi.md#get) | **GET** /vcenter/deployment | Get the current status of the appliance deployment.
-[**rollback**](DeploymentApi.md#rollback) | **POST** /vcenter/deployment?action&#x3D;rollback | Rollback a failed appliance so it can be configured once again.
+[**rollback**](DeploymentApi.md#rollback) | **POST** /vcenter/deployment | Rollback a failed appliance so it can be configured once again.
 
 
 # **get**
@@ -17,6 +17,13 @@ Get the current status of the appliance deployment.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentApi.new
 
@@ -38,17 +45,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **rollback**
-> rollback
+> rollback(action)
 
 Rollback a failed appliance so it can be configured once again.
 
@@ -56,19 +63,30 @@ Rollback a failed appliance so it can be configured once again.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentApi.new
+action = 'action_example' # String | action=rollback
 
 begin
   #Rollback a failed appliance so it can be configured once again.
-  api_instance.rollback
+  api_instance.rollback(action)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentApi->rollback: #{e}"
 end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **action** | **String**| action&#x3D;rollback | 
 
 ### Return type
 
@@ -76,12 +94,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

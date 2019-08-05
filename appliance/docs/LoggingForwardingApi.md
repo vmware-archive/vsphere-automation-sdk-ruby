@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](LoggingForwardingApi.md#get) | **GET** /appliance/logging/forwarding | Returns the configuration for forwarding log messages to remote logging servers.
 [**set**](LoggingForwardingApi.md#set) | **PUT** /appliance/logging/forwarding | Sets the configuration for forwarding log messages to remote log servers.
-[**test**](LoggingForwardingApi.md#test) | **POST** /appliance/logging/forwarding?action&#x3D;test | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \&quot;This is a diagnostic log test message from vCenter Server.\&quot;
+[**test**](LoggingForwardingApi.md#test) | **POST** /appliance/logging/forwarding | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \&quot;This is a diagnostic log test message from vCenter Server.\&quot;
 
 
 # **get**
@@ -18,6 +18,13 @@ Returns the configuration for forwarding log messages to remote logging servers.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LoggingForwardingApi.new
 
@@ -39,17 +46,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(appliance_logging_forwarding_set)
+> set(request_body)
 
 Sets the configuration for forwarding log messages to remote log servers.
 
@@ -57,13 +64,20 @@ Sets the configuration for forwarding log messages to remote log servers.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LoggingForwardingApi.new
-appliance_logging_forwarding_set = VSphereAutomation::ApplianceLoggingForwardingSet.new # ApplianceLoggingForwardingSet | 
+request_body = Appliance::ApplianceLoggingForwardingSet.new # ApplianceLoggingForwardingSet | 
 
 begin
   #Sets the configuration for forwarding log messages to remote log servers.
-  api_instance.set(appliance_logging_forwarding_set)
+  api_instance.set(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LoggingForwardingApi->set: #{e}"
 end
@@ -73,7 +87,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_logging_forwarding_set** | [**ApplianceLoggingForwardingSet**](ApplianceLoggingForwardingSet.md)|  | 
+ **request_body** | [**ApplianceLoggingForwardingSet**](ApplianceLoggingForwardingSet.md)|  | 
 
 ### Return type
 
@@ -81,17 +95,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **test**
-> ApplianceLoggingForwardingTestResult test(opts)
+> ApplianceLoggingForwardingTestResult test(action, opts)
 
 Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
 
@@ -99,15 +113,23 @@ Validates the current log forwarding configuration by checking the liveness of t
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LoggingForwardingApi.new
+action = 'action_example' # String | action=test
 opts = {
-  appliance_logging_forwarding_test: VSphereAutomation::ApplianceLoggingForwardingTest.new # ApplianceLoggingForwardingTest | 
+  request_body: Appliance::ApplianceLoggingForwardingTest.new # ApplianceLoggingForwardingTest | 
 }
 
 begin
   #Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
-  result = api_instance.test(opts)
+  result = api_instance.test(action, opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LoggingForwardingApi->test: #{e}"
@@ -118,7 +140,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_logging_forwarding_test** | [**ApplianceLoggingForwardingTest**](ApplianceLoggingForwardingTest.md)|  | [optional] 
+ **action** | **String**| action&#x3D;test | 
+ **request_body** | [**ApplianceLoggingForwardingTest**](ApplianceLoggingForwardingTest.md)|  | [optional] 
 
 ### Return type
 
@@ -126,12 +149,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

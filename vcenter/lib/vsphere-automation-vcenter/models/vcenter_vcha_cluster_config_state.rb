@@ -12,10 +12,10 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaClusterConfigState
     
-    CONFIGURED = 'CONFIGURED'.freeze
-    NOTCONFIGURED = 'NOTCONFIGURED'.freeze
-    INVALID = 'INVALID'.freeze
-    PREPARED = 'PREPARED'.freeze
+    CONFIGURED = "CONFIGURED".freeze
+    NOTCONFIGURED = "NOTCONFIGURED".freeze
+    INVALID = "INVALID".freeze
+    PREPARED = "PREPARED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

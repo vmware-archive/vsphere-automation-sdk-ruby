@@ -40,7 +40,7 @@ describe 'AccessConsolecliApi' do
 
   # unit tests for set
   # Set enabled state of the console-based controlled CLI (TTY1).
-  # @param appliance_access_consolecli_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

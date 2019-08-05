@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **location** | **String** | URL of the backup location. | 
 **location_user** | **String** | Username for the given location. | [optional] 
 **location_password** | **String** | Password for the given location. | [optional] 
-**enable** | **BOOLEAN** | Enable or disable a schedule. | [optional] 
+**enable** | **Boolean** | Enable or disable a schedule. | [optional] 
 **recurrence_info** | [**ApplianceRecoveryBackupSchedulesRecurrenceInfo**](ApplianceRecoveryBackupSchedulesRecurrenceInfo.md) |  | [optional] 
 **retention_info** | [**ApplianceRecoveryBackupSchedulesRetentionInfo**](ApplianceRecoveryBackupSchedulesRetentionInfo.md) |  | [optional] 
 

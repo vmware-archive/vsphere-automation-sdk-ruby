@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaClusterClusterState
     
-    HEALTHY = 'HEALTHY'.freeze
-    DEGRADED = 'DEGRADED'.freeze
-    ISOLATED = 'ISOLATED'.freeze
+    HEALTHY = "HEALTHY".freeze
+    DEGRADED = "DEGRADED".freeze
+    ISOLATED = "ISOLATED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

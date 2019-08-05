@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VcenterVmHardwareFloppyInfo**](VcenterVmHardwareFloppyInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VcenterVmHardwareFloppyInfo**](VcenterVmHardwareFloppyInfo.md) |  | [optional] 
 
 

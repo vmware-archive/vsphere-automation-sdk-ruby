@@ -31,7 +31,7 @@ describe 'VmHardwareAdapterScsiApi' do
   # unit tests for create
   # Adds a virtual SCSI adapter to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_adapter_scsi_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareAdapterScsiCreateResult]
   describe 'create test' do
@@ -79,7 +79,7 @@ describe 'VmHardwareAdapterScsiApi' do
   # Updates the configuration of a virtual SCSI adapter.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param adapter Virtual SCSI adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter.
-  # @param vcenter_vm_hardware_adapter_scsi_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

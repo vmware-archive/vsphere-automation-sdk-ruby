@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesIpv4Mode
     
-    DHCP = 'DHCP'.freeze
-    STATIC = 'STATIC'.freeze
-    UNCONFIGURED = 'UNCONFIGURED'.freeze
+    DHCP = "DHCP".freeze
+    STATIC = "STATIC".freeze
+    UNCONFIGURED = "UNCONFIGURED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

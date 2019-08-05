@@ -47,14 +47,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -73,21 +73,21 @@ module VSphereAutomation
     end
     # Set IPv4 network configuration for specific network interface.
     # @param interface_name Network interface to update, for example, \&quot;nic0\&quot;.
-    # @param appliance_networking_interfaces_ipv4_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil]
-    def set(interface_name, appliance_networking_interfaces_ipv4_set, opts = {})
-      set_with_http_info(interface_name, appliance_networking_interfaces_ipv4_set, opts)
+    def set(interface_name, request_body, opts = {})
+      set_with_http_info(interface_name, request_body, opts)
       nil
     end
 
     # Set IPv4 network configuration for specific network interface.
     # @api private
     # @param interface_name Network interface to update, for example, \&quot;nic0\&quot;.
-    # @param appliance_networking_interfaces_ipv4_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def set_with_http_info(interface_name, appliance_networking_interfaces_ipv4_set, opts = {})
+    def set_with_http_info(interface_name, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesIpv4Api.set ...'
       end
@@ -95,9 +95,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && interface_name.nil?
         fail ArgumentError, "Missing the required parameter 'interface_name' when calling NetworkingInterfacesIpv4Api.set"
       end
-      # verify the required parameter 'appliance_networking_interfaces_ipv4_set' is set
-      if @api_client.config.client_side_validation && appliance_networking_interfaces_ipv4_set.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_networking_interfaces_ipv4_set' when calling NetworkingInterfacesIpv4Api.set"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingInterfacesIpv4Api.set"
       end
       # resource path
       local_var_path = '/appliance/networking/interfaces/{interface_name}/ipv4'.sub('{' + 'interface_name' + '}', interface_name.to_s)
@@ -108,7 +108,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -116,8 +116,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_networking_interfaces_ipv4_set)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

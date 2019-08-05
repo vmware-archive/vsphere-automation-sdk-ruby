@@ -12,8 +12,8 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataAuthenticationAuthenticationInfoSchemeType
     
-    SESSIONLESS = 'SESSIONLESS'.freeze
-    SESSION_AWARE = 'SESSION_AWARE'.freeze
+    SESSIONLESS = "SESSIONLESS".freeze
+    SESSION_AWARE = "SESSION_AWARE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

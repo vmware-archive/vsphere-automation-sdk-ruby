@@ -22,6 +22,13 @@ Connects a virtual CD-ROM device of a powered-on virtual machine to its backing.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -48,17 +55,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **create**
-> VcenterVmHardwareCdromCreateResult create(vm, vcenter_vm_hardware_cdrom_create)
+> VcenterVmHardwareCdromCreateResult create(vm, request_body)
 
 Adds a virtual CD-ROM device to the virtual machine.
 
@@ -66,14 +73,21 @@ Adds a virtual CD-ROM device to the virtual machine.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_hardware_cdrom_create = VSphereAutomation::VcenterVmHardwareCdromCreate.new # VcenterVmHardwareCdromCreate | 
+request_body = VCenter::VcenterVmHardwareCdromCreate.new # VcenterVmHardwareCdromCreate | 
 
 begin
   #Adds a virtual CD-ROM device to the virtual machine.
-  result = api_instance.create(vm, vcenter_vm_hardware_cdrom_create)
+  result = api_instance.create(vm, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareCdromApi->create: #{e}"
@@ -85,7 +99,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_cdrom_create** | [**VcenterVmHardwareCdromCreate**](VcenterVmHardwareCdromCreate.md)|  | 
+ **request_body** | [**VcenterVmHardwareCdromCreate**](VcenterVmHardwareCdromCreate.md)|  | 
 
 ### Return type
 
@@ -93,12 +107,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -111,6 +125,13 @@ Removes a virtual CD-ROM device from the virtual machine.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -137,12 +158,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -155,6 +176,13 @@ Disconnects a virtual CD-ROM device of a powered-on virtual machine from its bac
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -181,12 +209,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -199,6 +227,13 @@ Returns information about a virtual CD-ROM device.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -226,12 +261,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -244,6 +279,13 @@ Returns commonly used information about the virtual CD-ROM devices belonging to 
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -269,17 +311,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(vm, cdrom, vcenter_vm_hardware_cdrom_update)
+> update(vm, cdrom, request_body)
 
 Updates the configuration of a virtual CD-ROM device.
 
@@ -287,15 +329,22 @@ Updates the configuration of a virtual CD-ROM device.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareCdromApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 cdrom = 'cdrom_example' # String | Virtual CD-ROM device identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Cdrom.
-vcenter_vm_hardware_cdrom_update = VSphereAutomation::VcenterVmHardwareCdromUpdate.new # VcenterVmHardwareCdromUpdate | 
+request_body = VCenter::VcenterVmHardwareCdromUpdate.new # VcenterVmHardwareCdromUpdate | 
 
 begin
   #Updates the configuration of a virtual CD-ROM device.
-  api_instance.update(vm, cdrom, vcenter_vm_hardware_cdrom_update)
+  api_instance.update(vm, cdrom, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareCdromApi->update: #{e}"
 end
@@ -307,7 +356,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **cdrom** | **String**| Virtual CD-ROM device identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Cdrom. | 
- **vcenter_vm_hardware_cdrom_update** | [**VcenterVmHardwareCdromUpdate**](VcenterVmHardwareCdromUpdate.md)|  | 
+ **request_body** | [**VcenterVmHardwareCdromUpdate**](VcenterVmHardwareCdromUpdate.md)|  | 
 
 ### Return type
 
@@ -315,12 +364,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere VCenter API
 
 - API version: 2.0.0
-- Package version: 0.1.0
+- Package version: 0.2.0
 
 ## Installation
 
@@ -29,15 +29,22 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'vsphere-automation-vcenter'
 
-api_instance = VSphereAutomation::VCenter::ClusterApi.new
-cluster = 'cluster_example' # String | Identifier of the cluster. The parameter must be an identifier for the resource type: ClusterComputeResource.
+# Setup authorization
+VSphereAutomation.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::CertificateManagementVcenterTlsApi.new
 
 begin
-  #Retrieves information about the cluster corresponding to cluster.
-  result = api_instance.get(cluster)
+  #Returns the rhttpproxy TLS certificate.
+  result = api_instance.get
   p result
 rescue VSphereAutomation::ApiError => e
-  puts "Exception when calling ClusterApi->get: #{e}"
+  puts "Exception when calling CertificateManagementVcenterTlsApi->get: #{e}"
 end
 
 ```
@@ -48,6 +55,14 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+`VSphereAutomation::VCenter::CertificateManagementVcenterTlsApi` | [**get**](docs/CertificateManagementVcenterTlsApi.md#get) | **GET** /vcenter/certificate-management/vcenter/tls | Returns the rhttpproxy TLS certificate.
+`VSphereAutomation::VCenter::CertificateManagementVcenterTlsApi` | [**renew**](docs/CertificateManagementVcenterTlsApi.md#renew) | **POST** /vcenter/certificate-management/vcenter/tls | Renews the TLS certificate for the given duration period.
+`VSphereAutomation::VCenter::CertificateManagementVcenterTlsApi` | [**set**](docs/CertificateManagementVcenterTlsApi.md#set) | **PUT** /vcenter/certificate-management/vcenter/tls | Replaces the rhttpproxy TLS certificate with the specified certificate.
+`VSphereAutomation::VCenter::CertificateManagementVcenterTlsCsrApi` | [**create**](docs/CertificateManagementVcenterTlsCsrApi.md#create) | **POST** /vcenter/certificate-management/vcenter/tls-csr | Generates a CSR with the given Spec.
+`VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRootChainsApi` | [**create**](docs/CertificateManagementVcenterTrustedRootChainsApi.md#create) | **POST** /vcenter/certificate-management/vcenter/trusted-root-chains | Creates a new trusted root certificate chain from the CreateSpec.
+`VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRootChainsApi` | [**delete**](docs/CertificateManagementVcenterTrustedRootChainsApi.md#delete) | **DELETE** /vcenter/certificate-management/vcenter/trusted-root-chains/{chain} | Deletes trusted root certificate chain for a given identifier.
+`VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRootChainsApi` | [**get**](docs/CertificateManagementVcenterTrustedRootChainsApi.md#get) | **GET** /vcenter/certificate-management/vcenter/trusted-root-chains/{chain} | Retrieve a trusted root certificate chain for a given identifier.
+`VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRootChainsApi` | [**list**](docs/CertificateManagementVcenterTrustedRootChainsApi.md#list) | **GET** /vcenter/certificate-management/vcenter/trusted-root-chains | Returns summary information for each trusted root certificate chain.
 `VSphereAutomation::VCenter::ClusterApi` | [**get**](docs/ClusterApi.md#get) | **GET** /vcenter/cluster/{cluster} | Retrieves information about the cluster corresponding to cluster.
 `VSphereAutomation::VCenter::ClusterApi` | [**list**](docs/ClusterApi.md#list) | **GET** /vcenter/cluster | Returns information about at most 1000 visible (subject to permission checks) clusters in vCenter matching the Cluster.FilterSpec.
 `VSphereAutomation::VCenter::DatacenterApi` | [**create**](docs/DatacenterApi.md#create) | **POST** /vcenter/datacenter | Create a new datacenter in the vCenter inventory
@@ -58,23 +73,23 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::VCenter::DatastoreApi` | [**list**](docs/DatastoreApi.md#list) | **GET** /vcenter/datastore | Returns information about at most 1000 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
 `VSphereAutomation::VCenter::DatastoreDefaultPolicyApi` | [**get**](docs/DatastoreDefaultPolicyApi.md#get) | **GET** /vcenter/datastore/{datastore}/default-policy | Returns the identifier of the current default storage policy associated with the specified datastore.
 `VSphereAutomation::VCenter::DeploymentApi` | [**get**](docs/DeploymentApi.md#get) | **GET** /vcenter/deployment | Get the current status of the appliance deployment.
-`VSphereAutomation::VCenter::DeploymentApi` | [**rollback**](docs/DeploymentApi.md#rollback) | **POST** /vcenter/deployment?action&#x3D;rollback | Rollback a failed appliance so it can be configured once again.
-`VSphereAutomation::VCenter::DeploymentImportHistoryApi` | [**cancel**](docs/DeploymentImportHistoryApi.md#cancel) | **POST** /vcenter/deployment/history?action&#x3D;cancel | Cancels the task for importing vCenter historical data.
+`VSphereAutomation::VCenter::DeploymentApi` | [**rollback**](docs/DeploymentApi.md#rollback) | **POST** /vcenter/deployment | Rollback a failed appliance so it can be configured once again.
+`VSphereAutomation::VCenter::DeploymentImportHistoryApi` | [**cancel**](docs/DeploymentImportHistoryApi.md#cancel) | **POST** /vcenter/deployment/history | Cancels the task for importing vCenter historical data.
 `VSphereAutomation::VCenter::DeploymentImportHistoryApi` | [**get**](docs/DeploymentImportHistoryApi.md#get) | **GET** /vcenter/deployment/history | Get the current status of the vCenter historical data import.
 `VSphereAutomation::VCenter::DeploymentImportHistoryApi` | [**pause**](docs/DeploymentImportHistoryApi.md#pause) | **POST** /vcenter/deployment/history?action&#x3D;pause | Pauses the task for importing vCenter historical data.
 `VSphereAutomation::VCenter::DeploymentImportHistoryApi` | [**resume**](docs/DeploymentImportHistoryApi.md#resume) | **POST** /vcenter/deployment/history?action&#x3D;resume | Resumes the task for importing vCenter historical data.
 `VSphereAutomation::VCenter::DeploymentImportHistoryApi` | [**start**](docs/DeploymentImportHistoryApi.md#start) | **POST** /vcenter/deployment/history?action&#x3D;start | Creates and starts task for importing vCenter historical data.
-`VSphereAutomation::VCenter::DeploymentInstallApi` | [**cancel**](docs/DeploymentInstallApi.md#cancel) | **POST** /vcenter/deployment/install?action&#x3D;cancel | Cancel the appliance installation that is in progress.
+`VSphereAutomation::VCenter::DeploymentInstallApi` | [**cancel**](docs/DeploymentInstallApi.md#cancel) | **POST** /vcenter/deployment/install | Cancel the appliance installation that is in progress.
 `VSphereAutomation::VCenter::DeploymentInstallApi` | [**check**](docs/DeploymentInstallApi.md#check) | **POST** /vcenter/deployment/install?action&#x3D;check | Run sanity checks using the InstallSpec parameters passed.
 `VSphereAutomation::VCenter::DeploymentInstallApi` | [**get**](docs/DeploymentInstallApi.md#get) | **GET** /vcenter/deployment/install | Get the parameters used to configure the ongoing appliance installation.
 `VSphereAutomation::VCenter::DeploymentInstallApi` | [**start**](docs/DeploymentInstallApi.md#start) | **POST** /vcenter/deployment/install?action&#x3D;start | Start the appliance installation.
 `VSphereAutomation::VCenter::DeploymentInstallInitialConfigRemotePscThumbprintApi` | [**get**](docs/DeploymentInstallInitialConfigRemotePscThumbprintApi.md#get) | **GET** /vcenter/deployment/install/initial-config/remote-psc/thumbprint | Gets the SHA1 thumbprint of the remote PSC.
-`VSphereAutomation::VCenter::DeploymentInstallPscReplicatedApi` | [**check**](docs/DeploymentInstallPscReplicatedApi.md#check) | **POST** /vcenter/deployment/install/psc/replicated?action&#x3D;check | Checks whether the provided remote PSC is reachable and can be replicated.
-`VSphereAutomation::VCenter::DeploymentInstallPscStandaloneApi` | [**check**](docs/DeploymentInstallPscStandaloneApi.md#check) | **POST** /vcenter/deployment/install/psc/standalone?action&#x3D;check | Checks that the information to configure a non-replicated PSC satisfies the requirements.
-`VSphereAutomation::VCenter::DeploymentInstallRemotePscApi` | [**check**](docs/DeploymentInstallRemotePscApi.md#check) | **POST** /vcenter/deployment/install/remote-psc?action&#x3D;check | Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
-`VSphereAutomation::VCenter::DeploymentQuestionApi` | [**answer**](docs/DeploymentQuestionApi.md#answer) | **POST** /vcenter/deployment/question?action&#x3D;answer | Supply answer to the raised question.
+`VSphereAutomation::VCenter::DeploymentInstallPscReplicatedApi` | [**check**](docs/DeploymentInstallPscReplicatedApi.md#check) | **POST** /vcenter/deployment/install/psc/replicated | Checks whether the provided remote PSC is reachable and can be replicated.
+`VSphereAutomation::VCenter::DeploymentInstallPscStandaloneApi` | [**check**](docs/DeploymentInstallPscStandaloneApi.md#check) | **POST** /vcenter/deployment/install/psc/standalone | Checks that the information to configure a non-replicated PSC satisfies the requirements.
+`VSphereAutomation::VCenter::DeploymentInstallRemotePscApi` | [**check**](docs/DeploymentInstallRemotePscApi.md#check) | **POST** /vcenter/deployment/install/remote-psc | Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
+`VSphereAutomation::VCenter::DeploymentQuestionApi` | [**answer**](docs/DeploymentQuestionApi.md#answer) | **POST** /vcenter/deployment/question | Supply answer to the raised question.
 `VSphereAutomation::VCenter::DeploymentQuestionApi` | [**get**](docs/DeploymentQuestionApi.md#get) | **GET** /vcenter/deployment/question | Get the question that was raised during the configuration.
-`VSphereAutomation::VCenter::DeploymentUpgradeApi` | [**cancel**](docs/DeploymentUpgradeApi.md#cancel) | **POST** /vcenter/deployment/upgrade?action&#x3D;cancel | Cancel the appliance upgrade that is in progress.
+`VSphereAutomation::VCenter::DeploymentUpgradeApi` | [**cancel**](docs/DeploymentUpgradeApi.md#cancel) | **POST** /vcenter/deployment/upgrade | Cancel the appliance upgrade that is in progress.
 `VSphereAutomation::VCenter::DeploymentUpgradeApi` | [**check**](docs/DeploymentUpgradeApi.md#check) | **POST** /vcenter/deployment/upgrade?action&#x3D;check | Run sanity checks using the UpgradeSpec parameters passed.
 `VSphereAutomation::VCenter::DeploymentUpgradeApi` | [**get**](docs/DeploymentUpgradeApi.md#get) | **GET** /vcenter/deployment/upgrade | Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
 `VSphereAutomation::VCenter::DeploymentUpgradeApi` | [**start**](docs/DeploymentUpgradeApi.md#start) | **POST** /vcenter/deployment/upgrade?action&#x3D;start | Start the appliance installation.
@@ -85,16 +100,16 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::VCenter::HostApi` | [**delete**](docs/HostApi.md#delete) | **DELETE** /vcenter/host/{host} | Remove a standalone host from the vCenter Server.
 `VSphereAutomation::VCenter::HostApi` | [**disconnect**](docs/HostApi.md#disconnect) | **POST** /vcenter/host/{host}/disconnect | Disconnect the host corresponding to host from the vCenter server
 `VSphereAutomation::VCenter::HostApi` | [**list**](docs/HostApi.md#list) | **GET** /vcenter/host | Returns information about at most 1000 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
-`VSphereAutomation::VCenter::InventoryDatastoreApi` | [**find**](docs/InventoryDatastoreApi.md#find) | **POST** /com/vmware/vcenter/inventory/datastore?~action&#x3D;find | Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
-`VSphereAutomation::VCenter::InventoryNetworkApi` | [**find**](docs/InventoryNetworkApi.md#find) | **POST** /com/vmware/vcenter/inventory/network?~action&#x3D;find | Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
-`VSphereAutomation::VCenter::IsoImageApi` | [**mount**](docs/IsoImageApi.md#mount) | **POST** /com/vmware/vcenter/iso/image/id:{library_item}?~action&#x3D;mount | Mounts an ISO image from a content library on a virtual machine.
-`VSphereAutomation::VCenter::IsoImageApi` | [**unmount**](docs/IsoImageApi.md#unmount) | **POST** /com/vmware/vcenter/iso/image/id:{vm}?~action&#x3D;unmount | Unmounts a previously mounted CD-ROM using an ISO image as a backing.
+`VSphereAutomation::VCenter::InventoryDatastoreApi` | [**find**](docs/InventoryDatastoreApi.md#find) | **POST** /com/vmware/vcenter/inventory/datastore | Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
+`VSphereAutomation::VCenter::InventoryNetworkApi` | [**find**](docs/InventoryNetworkApi.md#find) | **POST** /com/vmware/vcenter/inventory/network | Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
+`VSphereAutomation::VCenter::IsoImageApi` | [**mount**](docs/IsoImageApi.md#mount) | **POST** /com/vmware/vcenter/iso/image/id:{library_item} | Mounts an ISO image from a content library on a virtual machine.
+`VSphereAutomation::VCenter::IsoImageApi` | [**unmount**](docs/IsoImageApi.md#unmount) | **POST** /com/vmware/vcenter/iso/image/id:{vm} | Unmounts a previously mounted CD-ROM using an ISO image as a backing.
 `VSphereAutomation::VCenter::NetworkApi` | [**list**](docs/NetworkApi.md#list) | **GET** /vcenter/network | Returns information about at most 1000 visible (subject to permission checks) networks in vCenter matching the Network.FilterSpec.
 `VSphereAutomation::VCenter::OvfCapabilityApi` | [**get**](docs/OvfCapabilityApi.md#get) | **GET** /com/vmware/vcenter/ovf/capability/id:{server_guid} | Returns information about the capability of the given vCenter server.
 `VSphereAutomation::VCenter::OvfExportFlagApi` | [**list**](docs/OvfExportFlagApi.md#list) | **GET** /com/vmware/vcenter/ovf/export-flag | Returns information about the supported export flags by the server. <p> The supported flags are: <dl> <dt>PRESERVE_MAC</dt> <dd>Include MAC addresses for network adapters.</dd> <dt>EXTRA_CONFIG</dt> <dd>Include extra configuration in OVF export.</dd> </dl> <p> Future server versions might support additional flags.
 `VSphereAutomation::VCenter::OvfImportFlagApi` | [**list**](docs/OvfImportFlagApi.md#list) | **GET** /com/vmware/vcenter/ovf/import-flag | Returns information about the import flags supported by the deployment platform. <p> The supported flags are: <dl> <dt>LAX</dt> <dd>Lax mode parsing of the OVF descriptor.</dd> </dl> <p> Future server versions might support additional flags.
 `VSphereAutomation::VCenter::OvfLibraryItemApi` | [**create**](docs/OvfLibraryItemApi.md#create) | **POST** /com/vmware/vcenter/ovf/library-item | Creates a library item in content library from a virtual machine or virtual appliance. <p> This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. </p>
-`VSphereAutomation::VCenter::OvfLibraryItemApi` | [**deploy**](docs/OvfLibraryItemApi.md#deploy) | **POST** /com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action&#x3D;deploy | Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. <p> This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. </p>
+`VSphereAutomation::VCenter::OvfLibraryItemApi` | [**deploy**](docs/OvfLibraryItemApi.md#deploy) | **POST** /com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id} | Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. <p> This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. </p>
 `VSphereAutomation::VCenter::OvfLibraryItemApi` | [**filter**](docs/OvfLibraryItemApi.md#filter) | **POST** /com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action&#x3D;filter | Queries an OVF package stored in content library to retrieve information to use when deploying the package. See {@link #deploy}. <p> This {@term operation} retrieves information from the descriptor of the OVF package stored in the library item specified by {@param.name ovfLibraryItemId}. The information returned by the {@term operation} can be used to populate the deployment specification (see {@link ResourcePoolDeploymentSpec} when deploying the OVF package to the deployment target specified by {@param.name target}. </p>
 `VSphereAutomation::VCenter::ResourcePoolApi` | [**get**](docs/ResourcePoolApi.md#get) | **GET** /vcenter/resource-pool/{resource_pool} | Retrieves information about the resource pool indicated by resourcePool.
 `VSphereAutomation::VCenter::ResourcePoolApi` | [**list**](docs/ResourcePoolApi.md#list) | **GET** /vcenter/resource-pool | Returns information about at most 1000 visible (subject to permission checks) resource pools in vCenter matching the ResourcePool.FilterSpec.
@@ -104,38 +119,40 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::VCenter::ServicesServiceApi` | [**start**](docs/ServicesServiceApi.md#start) | **POST** /vcenter/services/{service}/start | Starts a service
 `VSphereAutomation::VCenter::ServicesServiceApi` | [**stop**](docs/ServicesServiceApi.md#stop) | **POST** /vcenter/services/{service}/stop | Stops a service
 `VSphereAutomation::VCenter::ServicesServiceApi` | [**update**](docs/ServicesServiceApi.md#update) | **PATCH** /vcenter/services/{service} | Updates the properties of a service.
-`VSphereAutomation::VCenter::StoragePoliciesApi` | [**check_compatibility**](docs/StoragePoliciesApi.md#check_compatibility) | **POST** /vcenter/storage/policies/{policy}?action&#x3D;check-compatibility | Returns datastore compatibility summary about a specific storage policy.
+`VSphereAutomation::VCenter::StoragePoliciesApi` | [**check_compatibility**](docs/StoragePoliciesApi.md#check_compatibility) | **POST** /vcenter/storage/policies/{policy} | Returns datastore compatibility summary about a specific storage policy.
 `VSphereAutomation::VCenter::StoragePoliciesApi` | [**list**](docs/StoragePoliciesApi.md#list) | **GET** /vcenter/storage/policies | Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
 `VSphereAutomation::VCenter::StoragePoliciesComplianceApi` | [**list**](docs/StoragePoliciesComplianceApi.md#list) | **GET** /vcenter/storage/policies/entities/compliance | Returns compliance information about entities matching the filter Compliance.FilterSpec. Entities without storage policy association are not returned.
 `VSphereAutomation::VCenter::StoragePoliciesComplianceVMApi` | [**list**](docs/StoragePoliciesComplianceVMApi.md#list) | **GET** /vcenter/storage/policies/compliance/vm | Returns compliance information about at most 1000 virtual machines matching the filter VM.FilterSpec. If there are no virtual machines matching the VM.FilterSpec an empty List is returned. Virtual machines without storage policy association are not returned.
 `VSphereAutomation::VCenter::StoragePoliciesVMApi` | [**list**](docs/StoragePoliciesVMApi.md#list) | **GET** /vcenter/storage/policies/{policy}/vm | Returns information about the virtual machines and/or their virtual disks that are associated with the given storage policy.
+`VSphereAutomation::VCenter::SystemConfigDeploymentTypeApi` | [**convert_to_vcsa_embeddedtask**](docs/SystemConfigDeploymentTypeApi.md#convert_to_vcsa_embeddedtask) | **POST** /vcenter/system-config/deployment-type?action&#x3D;convert-to-vcsa-embedded&amp;vmw-task&#x3D;true | Convert the type of the vCenter appliance to vCSA embedded.
 `VSphereAutomation::VCenter::SystemConfigDeploymentTypeApi` | [**get**](docs/SystemConfigDeploymentTypeApi.md#get) | **GET** /vcenter/system-config/deployment-type | Get the type of the vCenter appliance.
 `VSphereAutomation::VCenter::SystemConfigDeploymentTypeApi` | [**reconfigure**](docs/SystemConfigDeploymentTypeApi.md#reconfigure) | **POST** /vcenter/system-config/deployment-type | Reconfigure the type of the vCenter appliance.
 `VSphereAutomation::VCenter::SystemConfigPscRegistrationApi` | [**get**](docs/SystemConfigPscRegistrationApi.md#get) | **GET** /vcenter/system-config/psc-registration | Get information of the PSC that this appliance is registered with.
 `VSphereAutomation::VCenter::SystemConfigPscRegistrationApi` | [**repoint**](docs/SystemConfigPscRegistrationApi.md#repoint) | **POST** /vcenter/system-config/psc-registration | Repoint this vCenter Server appliance to a different external PSC.
+`VSphereAutomation::VCenter::TopologyPscsApi` | [**decommissiontask**](docs/TopologyPscsApi.md#decommissiontask) | **POST** /vcenter/topology/pscs/{hostname} | Decommission the external Platform Services Controller node.
 `VSphereAutomation::VCenter::VMApi` | [**create**](docs/VMApi.md#create) | **POST** /vcenter/vm | Creates a virtual machine.
 `VSphereAutomation::VCenter::VMApi` | [**delete**](docs/VMApi.md#delete) | **DELETE** /vcenter/vm/{vm} | Deletes a virtual machine.
 `VSphereAutomation::VCenter::VMApi` | [**get**](docs/VMApi.md#get) | **GET** /vcenter/vm/{vm} | Returns information about a virtual machine.
 `VSphereAutomation::VCenter::VMApi` | [**list**](docs/VMApi.md#list) | **GET** /vcenter/vm | Returns information about at most 1000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
 `VSphereAutomation::VCenter::VchaCapabilitiesApi` | [**get**](docs/VchaCapabilitiesApi.md#get) | **GET** /vcenter/vcha/capabilities | Gets the capabilities of the active node of a VCHA cluster.
-`VSphereAutomation::VCenter::VchaClusterApi` | [**deploytask**](docs/VchaClusterApi.md#deploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;deploy | Prepares, clones, and configures a VCHA cluster.
-`VSphereAutomation::VCenter::VchaClusterApi` | [**failovertask**](docs/VchaClusterApi.md#failovertask) | **POST** /vcenter/vcha/cluster?action&#x3D;failover | Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
+`VSphereAutomation::VCenter::VchaClusterApi` | [**deploytask**](docs/VchaClusterApi.md#deploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;deploy&amp;vmw-task&#x3D;true | Prepares, clones, and configures a VCHA cluster.
+`VSphereAutomation::VCenter::VchaClusterApi` | [**failovertask**](docs/VchaClusterApi.md#failovertask) | **POST** /vcenter/vcha/cluster | Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
 `VSphereAutomation::VCenter::VchaClusterApi` | [**get**](docs/VchaClusterApi.md#get) | **POST** /vcenter/vcha/cluster?action&#x3D;get | Retrieves the status of a VCHA cluster.
-`VSphereAutomation::VCenter::VchaClusterApi` | [**undeploytask**](docs/VchaClusterApi.md#undeploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;undeploy | Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
-`VSphereAutomation::VCenter::VchaClusterActiveApi` | [**get**](docs/VchaClusterActiveApi.md#get) | **POST** /vcenter/vcha/cluster/active?action&#x3D;get | Retrieves information about the active node of a VCHA cluster.
+`VSphereAutomation::VCenter::VchaClusterApi` | [**undeploytask**](docs/VchaClusterApi.md#undeploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;undeploy&amp;vmw-task&#x3D;true | Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
+`VSphereAutomation::VCenter::VchaClusterActiveApi` | [**get**](docs/VchaClusterActiveApi.md#get) | **POST** /vcenter/vcha/cluster/active | Retrieves information about the active node of a VCHA cluster.
 `VSphereAutomation::VCenter::VchaClusterDeploymentTypeApi` | [**get**](docs/VchaClusterDeploymentTypeApi.md#get) | **GET** /vcenter/vcha/cluster/deployment-type | Retrieves the deployment type of a VCHA cluster.
 `VSphereAutomation::VCenter::VchaClusterModeApi` | [**get**](docs/VchaClusterModeApi.md#get) | **GET** /vcenter/vcha/cluster/mode | Retrieves the current mode of a VCHA cluster.
 `VSphereAutomation::VCenter::VchaClusterModeApi` | [**settask**](docs/VchaClusterModeApi.md#settask) | **PUT** /vcenter/vcha/cluster/mode | Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 `VSphereAutomation::VCenter::VchaClusterPassiveApi` | [**check**](docs/VchaClusterPassiveApi.md#check) | **POST** /vcenter/vcha/cluster/passive?action&#x3D;check | Validates the specified passive node's placement configuration.
-`VSphereAutomation::VCenter::VchaClusterPassiveApi` | [**redeploytask**](docs/VchaClusterPassiveApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/passive?action&#x3D;redeploy | Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
+`VSphereAutomation::VCenter::VchaClusterPassiveApi` | [**redeploytask**](docs/VchaClusterPassiveApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/passive | Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 `VSphereAutomation::VCenter::VchaClusterWitnessApi` | [**check**](docs/VchaClusterWitnessApi.md#check) | **POST** /vcenter/vcha/cluster/witness?action&#x3D;check | Validates the specified witness node's placement configuration.
-`VSphereAutomation::VCenter::VchaClusterWitnessApi` | [**redeploytask**](docs/VchaClusterWitnessApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/witness?action&#x3D;redeploy | Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
+`VSphereAutomation::VCenter::VchaClusterWitnessApi` | [**redeploytask**](docs/VchaClusterWitnessApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/witness | Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 `VSphereAutomation::VCenter::VchaOperationsApi` | [**get**](docs/VchaOperationsApi.md#get) | **GET** /vcenter/vcha/operations | Retrieves the current active and disabled operations of a VCHA cluster.
-`VSphereAutomation::VCenter::VchaVcCredentialsApi` | [**validate**](docs/VchaVcCredentialsApi.md#validate) | **POST** /vcenter/vcha/vc-credentials?action&#x3D;validate | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
+`VSphereAutomation::VCenter::VchaVcCredentialsApi` | [**validate**](docs/VchaVcCredentialsApi.md#validate) | **POST** /vcenter/vcha/vc-credentials | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
 `VSphereAutomation::VCenter::VmGuestIdentityApi` | [**get**](docs/VmGuestIdentityApi.md#get) | **GET** /vcenter/vm/{vm}/guest/identity | Return information about the guest.
 `VSphereAutomation::VCenter::VmGuestLocalFilesystemApi` | [**get**](docs/VmGuestLocalFilesystemApi.md#get) | **GET** /vcenter/vm/{vm}/guest/local-filesystem | Returns details of the local file systems in the guest operating system.
 `VSphereAutomation::VCenter::VmGuestPowerApi` | [**get**](docs/VmGuestPowerApi.md#get) | **GET** /vcenter/vm/{vm}/guest/power | Returns information about the guest operating system power state.
-`VSphereAutomation::VCenter::VmGuestPowerApi` | [**reboot**](docs/VmGuestPowerApi.md#reboot) | **POST** /vcenter/vm/{vm}/guest/power?action&#x3D;reboot | Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
+`VSphereAutomation::VCenter::VmGuestPowerApi` | [**reboot**](docs/VmGuestPowerApi.md#reboot) | **POST** /vcenter/vm/{vm}/guest/power | Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
 `VSphereAutomation::VCenter::VmGuestPowerApi` | [**shutdown**](docs/VmGuestPowerApi.md#shutdown) | **POST** /vcenter/vm/{vm}/guest/power?action&#x3D;shutdown | Issues a request to the guest operating system asking it to perform a clean shutdown of all services. This request returns immediately and does not wait for the guest operating system to complete the operation.
 `VSphereAutomation::VCenter::VmGuestPowerApi` | [**standby**](docs/VmGuestPowerApi.md#standby) | **POST** /vcenter/vm/{vm}/guest/power?action&#x3D;standby | Issues a request to the guest operating system asking it to perform a suspend operation.
 `VSphereAutomation::VCenter::VmHardwareApi` | [**get**](docs/VmHardwareApi.md#get) | **GET** /vcenter/vm/{vm}/hardware | Returns the virtual hardware settings of a virtual machine.
@@ -205,10 +222,10 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::VCenter::VmPowerApi` | [**suspend**](docs/VmPowerApi.md#suspend) | **POST** /vcenter/vm/{vm}/power/suspend | Suspends a powered-on virtual machine.
 `VSphereAutomation::VCenter::VmStoragePolicyApi` | [**get**](docs/VmStoragePolicyApi.md#get) | **GET** /vcenter/vm/{vm}/storage/policy | Returns Information about Storage Policy associated with a virtual machine's home directory and/or its virtual hard disks.
 `VSphereAutomation::VCenter::VmStoragePolicyApi` | [**update**](docs/VmStoragePolicyApi.md#update) | **PATCH** /vcenter/vm/{vm}/storage/policy | Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
-`VSphereAutomation::VCenter::VmStoragePolicyComplianceApi` | [**check**](docs/VmStoragePolicyComplianceApi.md#check) | **POST** /vcenter/vm/{vm}/storage/policy/compliance?action&#x3D;check | Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
+`VSphereAutomation::VCenter::VmStoragePolicyComplianceApi` | [**check**](docs/VmStoragePolicyComplianceApi.md#check) | **POST** /vcenter/vm/{vm}/storage/policy/compliance | Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
 `VSphereAutomation::VCenter::VmStoragePolicyComplianceApi` | [**get**](docs/VmStoragePolicyComplianceApi.md#get) | **GET** /vcenter/vm/{vm}/storage/policy/compliance | Returns the cached storage policy compliance information of a virtual machine.
 `VSphereAutomation::VCenter::VmTemplateLibraryItemsApi` | [**create**](docs/VmTemplateLibraryItemsApi.md#create) | **POST** /vcenter/vm-template/library-items | Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
-`VSphereAutomation::VCenter::VmTemplateLibraryItemsApi` | [**deploy**](docs/VmTemplateLibraryItemsApi.md#deploy) | **POST** /vcenter/vm-template/library-items/{template_library_item}?action&#x3D;deploy | Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
+`VSphereAutomation::VCenter::VmTemplateLibraryItemsApi` | [**deploy**](docs/VmTemplateLibraryItemsApi.md#deploy) | **POST** /vcenter/vm-template/library-items/{template_library_item} | Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
 `VSphereAutomation::VCenter::VmTemplateLibraryItemsApi` | [**get**](docs/VmTemplateLibraryItemsApi.md#get) | **GET** /vcenter/vm-template/library-items/{template_library_item} | Returns information about a virtual machine template contained in the library item specified by {@param.name templateLibraryItem}
 
 
@@ -256,6 +273,23 @@ Class | Method | HTTP request | Description
  - [VSphereAutomation::VCenter::VapiStdErrorsUnverifiedPeer](docs/VapiStdErrorsUnverifiedPeer.md)
  - [VSphereAutomation::VCenter::VapiStdErrorsUnverifiedPeerError](docs/VapiStdErrorsUnverifiedPeerError.md)
  - [VSphereAutomation::VCenter::VapiStdLocalizableMessage](docs/VapiStdLocalizableMessage.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsCsrCreate](docs/VcenterCertificateManagementVcenterTlsCsrCreate.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsCsrCreateResult](docs/VcenterCertificateManagementVcenterTlsCsrCreateResult.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsCsrInfo](docs/VcenterCertificateManagementVcenterTlsCsrInfo.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsCsrSpec](docs/VcenterCertificateManagementVcenterTlsCsrSpec.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsInfo](docs/VcenterCertificateManagementVcenterTlsInfo.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsRenew](docs/VcenterCertificateManagementVcenterTlsRenew.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsResult](docs/VcenterCertificateManagementVcenterTlsResult.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsSet](docs/VcenterCertificateManagementVcenterTlsSet.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTlsSpec](docs/VcenterCertificateManagementVcenterTlsSpec.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTrustedRootChainsCreate](docs/VcenterCertificateManagementVcenterTrustedRootChainsCreate.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTrustedRootChainsCreateResult](docs/VcenterCertificateManagementVcenterTrustedRootChainsCreateResult.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTrustedRootChainsCreateSpec](docs/VcenterCertificateManagementVcenterTrustedRootChainsCreateSpec.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTrustedRootChainsInfo](docs/VcenterCertificateManagementVcenterTrustedRootChainsInfo.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTrustedRootChainsListResult](docs/VcenterCertificateManagementVcenterTrustedRootChainsListResult.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTrustedRootChainsResult](docs/VcenterCertificateManagementVcenterTrustedRootChainsResult.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementVcenterTrustedRootChainsSummary](docs/VcenterCertificateManagementVcenterTrustedRootChainsSummary.md)
+ - [VSphereAutomation::VCenter::VcenterCertificateManagementX509CertChain](docs/VcenterCertificateManagementX509CertChain.md)
  - [VSphereAutomation::VCenter::VcenterClusterFilterSpec](docs/VcenterClusterFilterSpec.md)
  - [VSphereAutomation::VCenter::VcenterClusterInfo](docs/VcenterClusterInfo.md)
  - [VSphereAutomation::VCenter::VcenterClusterListResult](docs/VcenterClusterListResult.md)
@@ -379,6 +413,7 @@ Class | Method | HTTP request | Description
  - [VSphereAutomation::VCenter::VcenterOvfLibraryItemFilterResult](docs/VcenterOvfLibraryItemFilterResult.md)
  - [VSphereAutomation::VCenter::VcenterOvfLibraryItemOvfSummary](docs/VcenterOvfLibraryItemOvfSummary.md)
  - [VSphereAutomation::VCenter::VcenterOvfLibraryItemResourcePoolDeploymentSpec](docs/VcenterOvfLibraryItemResourcePoolDeploymentSpec.md)
+ - [VSphereAutomation::VCenter::VcenterOvfLibraryItemResourcePoolDeploymentSpecNetworkMappings](docs/VcenterOvfLibraryItemResourcePoolDeploymentSpecNetworkMappings.md)
  - [VSphereAutomation::VCenter::VcenterOvfLibraryItemResourcePoolDeploymentSpecStorageMappings](docs/VcenterOvfLibraryItemResourcePoolDeploymentSpecStorageMappings.md)
  - [VSphereAutomation::VCenter::VcenterOvfLibraryItemResultInfo](docs/VcenterOvfLibraryItemResultInfo.md)
  - [VSphereAutomation::VCenter::VcenterOvfLibraryItemStorageGroupMapping](docs/VcenterOvfLibraryItemStorageGroupMapping.md)
@@ -424,13 +459,21 @@ Class | Method | HTTP request | Description
  - [VSphereAutomation::VCenter::VcenterStoragePoliciesVMInfo](docs/VcenterStoragePoliciesVMInfo.md)
  - [VSphereAutomation::VCenter::VcenterStoragePoliciesVMListResult](docs/VcenterStoragePoliciesVMListResult.md)
  - [VSphereAutomation::VCenter::VcenterStoragePoliciesVMListResultValue](docs/VcenterStoragePoliciesVMListResultValue.md)
+ - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeConvergenceSpec](docs/VcenterSystemConfigDeploymentTypeConvergenceSpec.md)
+ - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeConvertToVcsaEmbeddedTask](docs/VcenterSystemConfigDeploymentTypeConvertToVcsaEmbeddedTask.md)
+ - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeConvertToVcsaEmbeddedTaskResult](docs/VcenterSystemConfigDeploymentTypeConvertToVcsaEmbeddedTaskResult.md)
+ - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeDomainInfo](docs/VcenterSystemConfigDeploymentTypeDomainInfo.md)
  - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeInfo](docs/VcenterSystemConfigDeploymentTypeInfo.md)
+ - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypePscInfo](docs/VcenterSystemConfigDeploymentTypePscInfo.md)
  - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeReconfigure](docs/VcenterSystemConfigDeploymentTypeReconfigure.md)
  - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeReconfigureSpec](docs/VcenterSystemConfigDeploymentTypeReconfigureSpec.md)
  - [VSphereAutomation::VCenter::VcenterSystemConfigDeploymentTypeResult](docs/VcenterSystemConfigDeploymentTypeResult.md)
  - [VSphereAutomation::VCenter::VcenterSystemConfigPscRegistrationInfo](docs/VcenterSystemConfigPscRegistrationInfo.md)
  - [VSphereAutomation::VCenter::VcenterSystemConfigPscRegistrationRepoint](docs/VcenterSystemConfigPscRegistrationRepoint.md)
  - [VSphereAutomation::VCenter::VcenterSystemConfigPscRegistrationResult](docs/VcenterSystemConfigPscRegistrationResult.md)
+ - [VSphereAutomation::VCenter::VcenterTopologyPscsDecommissionSpec](docs/VcenterTopologyPscsDecommissionSpec.md)
+ - [VSphereAutomation::VCenter::VcenterTopologyPscsDecommissionTask](docs/VcenterTopologyPscsDecommissionTask.md)
+ - [VSphereAutomation::VCenter::VcenterTopologyPscsDecommissionTaskResult](docs/VcenterTopologyPscsDecommissionTaskResult.md)
  - [VSphereAutomation::VCenter::VcenterVMCreate](docs/VcenterVMCreate.md)
  - [VSphereAutomation::VCenter::VcenterVMCreateResult](docs/VcenterVMCreateResult.md)
  - [VSphereAutomation::VCenter::VcenterVMCreateSpec](docs/VcenterVMCreateSpec.md)
@@ -675,7 +718,6 @@ Class | Method | HTTP request | Description
  - [VSphereAutomation::VCenter::VcenterVmStoragePolicyDiskPolicySpec](docs/VcenterVmStoragePolicyDiskPolicySpec.md)
  - [VSphereAutomation::VCenter::VcenterVmStoragePolicyDiskPolicySpecPolicyType](docs/VcenterVmStoragePolicyDiskPolicySpecPolicyType.md)
  - [VSphereAutomation::VCenter::VcenterVmStoragePolicyInfo](docs/VcenterVmStoragePolicyInfo.md)
- - [VSphereAutomation::VCenter::VcenterVmStoragePolicyInfoDisks](docs/VcenterVmStoragePolicyInfoDisks.md)
  - [VSphereAutomation::VCenter::VcenterVmStoragePolicyResult](docs/VcenterVmStoragePolicyResult.md)
  - [VSphereAutomation::VCenter::VcenterVmStoragePolicyUpdate](docs/VcenterVmStoragePolicyUpdate.md)
  - [VSphereAutomation::VCenter::VcenterVmStoragePolicyUpdateSpec](docs/VcenterVmStoragePolicyUpdateSpec.md)

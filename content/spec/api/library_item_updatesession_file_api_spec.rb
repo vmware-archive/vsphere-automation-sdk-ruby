@@ -31,7 +31,8 @@ describe 'LibraryItemUpdatesessionFileApi' do
   # unit tests for add
   # Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. &lt;p&gt; When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
   # @param update_session_id Identifier of the update session to be modified.
-  # @param content_library_item_updatesession_file_add 
+  # @param action ~action&#x3D;add
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemUpdatesessionFileAddResult]
   describe 'add test' do
@@ -43,7 +44,7 @@ describe 'LibraryItemUpdatesessionFileApi' do
   # unit tests for get
   # Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
   # @param update_session_id Identifier of the update session.
-  # @param content_library_item_updatesession_file_get 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemUpdatesessionFileResult]
   describe 'get test' do
@@ -66,7 +67,7 @@ describe 'LibraryItemUpdatesessionFileApi' do
   # unit tests for remove
   # Requests a file to be removed. The file will only be effectively removed when the update session is completed.
   # @param update_session_id Identifier of the update session.
-  # @param content_library_item_updatesession_file_remove 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'remove test' do

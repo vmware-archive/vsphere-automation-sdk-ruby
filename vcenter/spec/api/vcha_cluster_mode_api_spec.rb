@@ -40,7 +40,8 @@ describe 'VchaClusterModeApi' do
 
   # unit tests for settask
   # Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -&gt; disabled - Allowed only in healthy and degraded states.  enabled -&gt; maintenance - Allowed only in healthy state.  disabled -&gt; enabled - Allowed only in healthy state.  maintenance -&gt; enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -&gt; disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
-  # @param vcenter_vcha_cluster_mode_set_task 
+  # @param vmw_task vmw-task&#x3D;true
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVchaClusterModeSetTaskResult]
   describe 'settask test' do

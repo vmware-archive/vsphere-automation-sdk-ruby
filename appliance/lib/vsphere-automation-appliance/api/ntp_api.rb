@@ -41,14 +41,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -65,26 +65,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
-    # @param appliance_ntp_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def set(appliance_ntp_set, opts = {})
-      set_with_http_info(appliance_ntp_set, opts)
+    def set(request_body, opts = {})
+      set_with_http_info(request_body, opts)
       nil
     end
 
     # Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
     # @api private
-    # @param appliance_ntp_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def set_with_http_info(appliance_ntp_set, opts = {})
+    def set_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NtpApi.set ...'
       end
-      # verify the required parameter 'appliance_ntp_set' is set
-      if @api_client.config.client_side_validation && appliance_ntp_set.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_ntp_set' when calling NtpApi.set"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling NtpApi.set"
       end
       # resource path
       local_var_path = '/appliance/ntp'
@@ -95,7 +95,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -103,8 +103,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_ntp_set)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -117,26 +117,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Test the connection to a list of ntp servers.
-    # @param appliance_ntp_test 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ApplianceNtpTestResult|VapiStdErrorsErrorError|]
-    def test(appliance_ntp_test, opts = {})
-      data, _status_code, _headers = test_with_http_info(appliance_ntp_test, opts)
+    def test(request_body, opts = {})
+      data, _status_code, _headers = test_with_http_info(request_body, opts)
       data
     end
 
     # Test the connection to a list of ntp servers.
     # @api private
-    # @param appliance_ntp_test 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNtpTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    def test_with_http_info(appliance_ntp_test, opts = {})
+    def test_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NtpApi.test ...'
       end
-      # verify the required parameter 'appliance_ntp_test' is set
-      if @api_client.config.client_side_validation && appliance_ntp_test.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_ntp_test' when calling NtpApi.test"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling NtpApi.test"
       end
       # resource path
       local_var_path = '/appliance/ntp/test'
@@ -147,7 +147,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -155,8 +155,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_ntp_test)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

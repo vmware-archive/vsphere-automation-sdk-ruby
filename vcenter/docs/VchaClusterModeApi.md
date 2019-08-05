@@ -17,6 +17,13 @@ Retrieves the current mode of a VCHA cluster.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterModeApi.new
 
@@ -38,17 +45,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **settask**
-> VcenterVchaClusterModeSetTaskResult settask(vcenter_vcha_cluster_mode_set_task)
+> VcenterVchaClusterModeSetTaskResult settask(vmw_task, request_body)
 
 Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 
@@ -56,13 +63,21 @@ Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed: 
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterModeApi.new
-vcenter_vcha_cluster_mode_set_task = VSphereAutomation::VcenterVchaClusterModeSetTask.new # VcenterVchaClusterModeSetTask | 
+vmw_task = 'vmw_task_example' # String | vmw-task=true
+request_body = VCenter::VcenterVchaClusterModeSetTask.new # VcenterVchaClusterModeSetTask | 
 
 begin
   #Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
-  result = api_instance.settask(vcenter_vcha_cluster_mode_set_task)
+  result = api_instance.settask(vmw_task, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterModeApi->settask: #{e}"
@@ -73,7 +88,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_mode_set_task** | [**VcenterVchaClusterModeSetTask**](VcenterVchaClusterModeSetTask.md)|  | 
+ **vmw_task** | **String**| vmw-task&#x3D;true | 
+ **request_body** | [**VcenterVchaClusterModeSetTask**](VcenterVchaClusterModeSetTask.md)|  | 
 
 ### Return type
 
@@ -81,12 +97,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

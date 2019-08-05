@@ -17,6 +17,13 @@ Get time zone.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::SystemTimeTimezoneApi.new
 
@@ -38,17 +45,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(appliance_system_time_timezone_set)
+> set(request_body)
 
 Set time zone.
 
@@ -56,13 +63,20 @@ Set time zone.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::SystemTimeTimezoneApi.new
-appliance_system_time_timezone_set = VSphereAutomation::ApplianceSystemTimeTimezoneSet.new # ApplianceSystemTimeTimezoneSet | 
+request_body = Appliance::ApplianceSystemTimeTimezoneSet.new # ApplianceSystemTimeTimezoneSet | 
 
 begin
   #Set time zone.
-  api_instance.set(appliance_system_time_timezone_set)
+  api_instance.set(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SystemTimeTimezoneApi->set: #{e}"
 end
@@ -72,7 +86,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_system_time_timezone_set** | [**ApplianceSystemTimeTimezoneSet**](ApplianceSystemTimeTimezoneSet.md)|  | 
+ **request_body** | [**ApplianceSystemTimeTimezoneSet**](ApplianceSystemTimeTimezoneSet.md)|  | 
 
 ### Return type
 
@@ -80,12 +94,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

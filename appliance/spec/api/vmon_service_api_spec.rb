@@ -85,7 +85,7 @@ describe 'VmonServiceApi' do
   # unit tests for update
   # Updates the properties of a service.
   # @param service identifier of the service whose properties are being updated. The parameter must be an identifier for the resource type: appliance.vmon.Service.
-  # @param appliance_vmon_service_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

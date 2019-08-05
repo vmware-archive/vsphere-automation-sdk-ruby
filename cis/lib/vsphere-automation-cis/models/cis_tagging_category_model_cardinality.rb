@@ -12,8 +12,8 @@ module VSphereAutomation
   module CIS
     class CisTaggingCategoryModelCardinality
     
-    SINGLE = 'SINGLE'.freeze
-    MULTIPLE = 'MULTIPLE'.freeze
+    SINGLE = "SINGLE".freeze
+    MULTIPLE = "MULTIPLE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

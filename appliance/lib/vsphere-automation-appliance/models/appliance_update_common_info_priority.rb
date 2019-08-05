@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceUpdateCommonInfoPriority
     
-    HIGH = 'HIGH'.freeze
-    MEDIUM = 'MEDIUM'.freeze
-    LOW = 'LOW'.freeze
+    HIGH = "HIGH".freeze
+    MEDIUM = "MEDIUM".freeze
+    LOW = "LOW".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

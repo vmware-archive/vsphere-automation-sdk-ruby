@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**ApplianceSystemStorageStorageChange**](ApplianceSystemStorageStorageChange.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**ApplianceSystemStorageStorageChange**](ApplianceSystemStorageStorageChange.md) |  | [optional] 
 
 

@@ -30,7 +30,7 @@ describe 'LocalLibraryApi' do
 
   # unit tests for create
   # Creates a new local library.
-  # @param content_local_library_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLocalLibraryCreateResult]
   describe 'create test' do
@@ -71,10 +71,23 @@ describe 'LocalLibraryApi' do
     end
   end
 
+  # unit tests for publish
+  # Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.
+  # @param library_id Identifier of the published library.
+  # @param action ~action&#x3D;publish
+  # @param [Hash] opts the optional parameters
+  # @option opts [ContentLocalLibraryPublish] :request_body 
+  # @return [nil]
+  describe 'publish test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for update
   # Updates the properties of a local library. &lt;p&gt; This is an incremental update to the local library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
   # @param library_id Identifier of the local library to update.
-  # @param content_local_library_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

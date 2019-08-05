@@ -12,8 +12,8 @@ module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPPrivProto
     
-    AES128 = 'AES128'.freeze
-    NONE = 'none'.freeze
+    AES128 = "AES128".freeze
+    NONE = "none".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

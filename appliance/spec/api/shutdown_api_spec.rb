@@ -50,7 +50,7 @@ describe 'ShutdownApi' do
 
   # unit tests for poweroff
   # Power off the appliance.
-  # @param appliance_shutdown_poweroff 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'poweroff test' do
@@ -61,7 +61,7 @@ describe 'ShutdownApi' do
 
   # unit tests for reboot
   # Reboot the appliance.
-  # @param appliance_shutdown_reboot 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'reboot test' do

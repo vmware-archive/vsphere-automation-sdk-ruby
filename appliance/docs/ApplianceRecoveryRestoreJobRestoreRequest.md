@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **location_password** | **String** | password for location | [optional] 
 **sso_admin_user_name** | **String** | Administrators Username for SSO. | [optional] 
 **sso_admin_user_password** | **String** | The password for SSO admin user. | [optional] 
-**ignore_warnings** | **BOOLEAN** | The flag to ignore warnings during restore | [optional] 
+**ignore_warnings** | **Boolean** | The flag to ignore warnings during restore | [optional] 
 
 

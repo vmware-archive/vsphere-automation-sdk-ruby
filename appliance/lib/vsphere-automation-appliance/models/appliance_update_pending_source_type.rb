@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceUpdatePendingSourceType
     
-    LAST_CHECK = 'LAST_CHECK'.freeze
-    LOCAL = 'LOCAL'.freeze
-    LOCAL_AND_ONLINE = 'LOCAL_AND_ONLINE'.freeze
+    LAST_CHECK = "LAST_CHECK".freeze
+    LOCAL = "LOCAL".freeze
+    LOCAL_AND_ONLINE = "LOCAL_AND_ONLINE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deploytask**](VchaClusterApi.md#deploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;deploy | Prepares, clones, and configures a VCHA cluster.
-[**failovertask**](VchaClusterApi.md#failovertask) | **POST** /vcenter/vcha/cluster?action&#x3D;failover | Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
+[**deploytask**](VchaClusterApi.md#deploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;deploy&amp;vmw-task&#x3D;true | Prepares, clones, and configures a VCHA cluster.
+[**failovertask**](VchaClusterApi.md#failovertask) | **POST** /vcenter/vcha/cluster | Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
 [**get**](VchaClusterApi.md#get) | **POST** /vcenter/vcha/cluster?action&#x3D;get | Retrieves the status of a VCHA cluster.
-[**undeploytask**](VchaClusterApi.md#undeploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;undeploy | Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
+[**undeploytask**](VchaClusterApi.md#undeploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;undeploy&amp;vmw-task&#x3D;true | Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
 
 
 # **deploytask**
-> VcenterVchaClusterDeployTaskResult deploytask(vcenter_vcha_cluster_deploy_task)
+> VcenterVchaClusterDeployTaskResult deploytask(request_body)
 
 Prepares, clones, and configures a VCHA cluster.
 
@@ -19,13 +19,20 @@ Prepares, clones, and configures a VCHA cluster.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-vcenter_vcha_cluster_deploy_task = VSphereAutomation::VcenterVchaClusterDeployTask.new # VcenterVchaClusterDeployTask | 
+request_body = VCenter::VcenterVchaClusterDeployTask.new # VcenterVchaClusterDeployTask | 
 
 begin
   #Prepares, clones, and configures a VCHA cluster.
-  result = api_instance.deploytask(vcenter_vcha_cluster_deploy_task)
+  result = api_instance.deploytask(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->deploytask: #{e}"
@@ -36,7 +43,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_deploy_task** | [**VcenterVchaClusterDeployTask**](VcenterVchaClusterDeployTask.md)|  | 
+ **request_body** | [**VcenterVchaClusterDeployTask**](VcenterVchaClusterDeployTask.md)|  | 
 
 ### Return type
 
@@ -44,17 +51,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **failovertask**
-> VcenterVchaClusterFailoverTaskResult failovertask(vcenter_vcha_cluster_failover_task)
+> VcenterVchaClusterFailoverTaskResult failovertask(action, request_body)
 
 Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
 
@@ -62,13 +69,21 @@ Initiates failover from the active vCenter node to the passive node.   For force
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-vcenter_vcha_cluster_failover_task = VSphereAutomation::VcenterVchaClusterFailoverTask.new # VcenterVchaClusterFailoverTask | 
+action = 'action_example' # String | action=failover&vmw-task
+request_body = VCenter::VcenterVchaClusterFailoverTask.new # VcenterVchaClusterFailoverTask | 
 
 begin
   #Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
-  result = api_instance.failovertask(vcenter_vcha_cluster_failover_task)
+  result = api_instance.failovertask(action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->failovertask: #{e}"
@@ -79,7 +94,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_failover_task** | [**VcenterVchaClusterFailoverTask**](VcenterVchaClusterFailoverTask.md)|  | 
+ **action** | **String**| action&#x3D;failover&amp;vmw-task | 
+ **request_body** | [**VcenterVchaClusterFailoverTask**](VcenterVchaClusterFailoverTask.md)|  | 
 
 ### Return type
 
@@ -87,12 +103,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -105,10 +121,17 @@ Retrieves the status of a VCHA cluster.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
 opts = {
-  vcenter_vcha_cluster_get: VSphereAutomation::VcenterVchaClusterGet.new # VcenterVchaClusterGet | 
+  request_body: VCenter::VcenterVchaClusterGet.new # VcenterVchaClusterGet | 
 }
 
 begin
@@ -124,7 +147,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_get** | [**VcenterVchaClusterGet**](VcenterVchaClusterGet.md)|  | [optional] 
+ **request_body** | [**VcenterVchaClusterGet**](VcenterVchaClusterGet.md)|  | [optional] 
 
 ### Return type
 
@@ -132,17 +155,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **undeploytask**
-> VcenterVchaClusterUndeployTaskResult undeploytask(vcenter_vcha_cluster_undeploy_task)
+> VcenterVchaClusterUndeployTaskResult undeploytask(request_body)
 
 Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
 
@@ -150,13 +173,20 @@ Destroys the VCHA cluster and removes all VCHA specific information from the VCV
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-vcenter_vcha_cluster_undeploy_task = VSphereAutomation::VcenterVchaClusterUndeployTask.new # VcenterVchaClusterUndeployTask | 
+request_body = VCenter::VcenterVchaClusterUndeployTask.new # VcenterVchaClusterUndeployTask | 
 
 begin
   #Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
-  result = api_instance.undeploytask(vcenter_vcha_cluster_undeploy_task)
+  result = api_instance.undeploytask(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->undeploytask: #{e}"
@@ -167,7 +197,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_cluster_undeploy_task** | [**VcenterVchaClusterUndeployTask**](VcenterVchaClusterUndeployTask.md)|  | 
+ **request_body** | [**VcenterVchaClusterUndeployTask**](VcenterVchaClusterUndeployTask.md)|  | 
 
 ### Return type
 
@@ -175,12 +205,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

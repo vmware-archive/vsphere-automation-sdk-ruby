@@ -12,8 +12,8 @@ module VSphereAutomation
   module Content
     class ContentLibraryStorageBackingType
     
-    DATASTORE = 'DATASTORE'.freeze
-    OTHER = 'OTHER'.freeze
+    DATASTORE = "DATASTORE".freeze
+    OTHER = "OTHER".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -17,6 +17,13 @@ Returns Information about Storage Policy associated with a virtual machine's hom
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmStoragePolicyApi.new
 vm = 'vm_example' # String | Virtual machine identifier The parameter must be an identifier for the resource type: VirtualMachine.
@@ -42,17 +49,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(vm, vcenter_vm_storage_policy_update)
+> update(vm, request_body)
 
 Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
 
@@ -60,14 +67,21 @@ Updates the storage policy configuration of a virtual machine and/or its associa
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmStoragePolicyApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_storage_policy_update = VSphereAutomation::VcenterVmStoragePolicyUpdate.new # VcenterVmStoragePolicyUpdate | 
+request_body = VCenter::VcenterVmStoragePolicyUpdate.new # VcenterVmStoragePolicyUpdate | 
 
 begin
   #Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
-  api_instance.update(vm, vcenter_vm_storage_policy_update)
+  api_instance.update(vm, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmStoragePolicyApi->update: #{e}"
 end
@@ -78,7 +92,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_storage_policy_update** | [**VcenterVmStoragePolicyUpdate**](VcenterVmStoragePolicyUpdate.md)|  | 
+ **request_body** | [**VcenterVmStoragePolicyUpdate**](VcenterVmStoragePolicyUpdate.md)|  | 
 
 ### Return type
 
@@ -86,12 +100,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

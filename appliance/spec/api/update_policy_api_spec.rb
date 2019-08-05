@@ -40,7 +40,7 @@ describe 'UpdatePolicyApi' do
 
   # unit tests for set
   # Sets the automatic update checking and staging policy.
-  # @param appliance_update_policy_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

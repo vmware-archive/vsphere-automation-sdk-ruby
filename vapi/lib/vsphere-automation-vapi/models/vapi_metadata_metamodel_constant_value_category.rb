@@ -12,8 +12,8 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelConstantValueCategory
     
-    PRIMITIVE = 'PRIMITIVE'.freeze
-    LIST = 'LIST'.freeze
+    PRIMITIVE = "PRIMITIVE".freeze
+    LIST = "LIST".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

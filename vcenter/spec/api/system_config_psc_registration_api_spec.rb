@@ -40,7 +40,7 @@ describe 'SystemConfigPscRegistrationApi' do
 
   # unit tests for repoint
   # Repoint this vCenter Server appliance to a different external PSC.
-  # @param vcenter_system_config_psc_registration_repoint 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'repoint test' do

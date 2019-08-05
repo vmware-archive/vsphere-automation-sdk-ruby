@@ -12,10 +12,10 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelGenericInstantiationGenericType
     
-    LIST = 'LIST'.freeze
-    MAP = 'MAP'.freeze
-    OPTIONAL = 'OPTIONAL'.freeze
-    SET = 'SET'.freeze
+    LIST = "LIST".freeze
+    MAP = "MAP".freeze
+    OPTIONAL = "OPTIONAL".freeze
+    SET = "SET".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

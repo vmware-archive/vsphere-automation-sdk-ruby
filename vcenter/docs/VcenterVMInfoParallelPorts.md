@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VcenterVmHardwareParallelInfo**](VcenterVmHardwareParallelInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VcenterVmHardwareParallelInfo**](VcenterVmHardwareParallelInfo.md) |  | [optional] 
 
 

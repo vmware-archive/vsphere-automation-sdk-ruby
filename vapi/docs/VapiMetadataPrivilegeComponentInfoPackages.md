@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VapiMetadataPrivilegePackageInfo**](VapiMetadataPrivilegePackageInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VapiMetadataPrivilegePackageInfo**](VapiMetadataPrivilegePackageInfo.md) |  | [optional] 
 
 

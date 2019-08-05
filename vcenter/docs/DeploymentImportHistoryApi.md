@@ -4,7 +4,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](DeploymentImportHistoryApi.md#cancel) | **POST** /vcenter/deployment/history?action&#x3D;cancel | Cancels the task for importing vCenter historical data.
+[**cancel**](DeploymentImportHistoryApi.md#cancel) | **POST** /vcenter/deployment/history | Cancels the task for importing vCenter historical data.
 [**get**](DeploymentImportHistoryApi.md#get) | **GET** /vcenter/deployment/history | Get the current status of the vCenter historical data import.
 [**pause**](DeploymentImportHistoryApi.md#pause) | **POST** /vcenter/deployment/history?action&#x3D;pause | Pauses the task for importing vCenter historical data.
 [**resume**](DeploymentImportHistoryApi.md#resume) | **POST** /vcenter/deployment/history?action&#x3D;resume | Resumes the task for importing vCenter historical data.
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **cancel**
-> cancel
+> cancel(action)
 
 Cancels the task for importing vCenter historical data.
 
@@ -20,19 +20,30 @@ Cancels the task for importing vCenter historical data.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentImportHistoryApi.new
+action = 'action_example' # String | action=cancel
 
 begin
   #Cancels the task for importing vCenter historical data.
-  api_instance.cancel
+  api_instance.cancel(action)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentImportHistoryApi->cancel: #{e}"
 end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **action** | **String**| action&#x3D;cancel | 
 
 ### Return type
 
@@ -40,12 +51,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -58,6 +69,13 @@ Get the current status of the vCenter historical data import.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentImportHistoryApi.new
 
@@ -79,12 +97,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -97,6 +115,13 @@ Pauses the task for importing vCenter historical data.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentImportHistoryApi.new
 
@@ -117,12 +142,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -135,6 +160,13 @@ Resumes the task for importing vCenter historical data.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentImportHistoryApi.new
 
@@ -155,12 +187,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -173,10 +205,17 @@ Creates and starts task for importing vCenter historical data.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentImportHistoryApi.new
 opts = {
-  vcenter_deployment_import_history_start: VSphereAutomation::VcenterDeploymentImportHistoryStart.new # VcenterDeploymentImportHistoryStart | 
+  request_body: VCenter::VcenterDeploymentImportHistoryStart.new # VcenterDeploymentImportHistoryStart | 
 }
 
 begin
@@ -191,7 +230,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_import_history_start** | [**VcenterDeploymentImportHistoryStart**](VcenterDeploymentImportHistoryStart.md)|  | [optional] 
+ **request_body** | [**VcenterDeploymentImportHistoryStart**](VcenterDeploymentImportHistoryStart.md)|  | [optional] 
 
 ### Return type
 
@@ -199,12 +238,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

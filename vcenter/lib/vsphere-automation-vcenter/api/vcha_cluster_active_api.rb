@@ -17,33 +17,44 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Retrieves information about the active node of a VCHA cluster.
+    # @param action action&#x3D;get
     # @param [Hash] opts the optional parameters
-    # @option opts [VcenterVchaClusterActiveGet] :vcenter_vcha_cluster_active_get 
+    # @option opts [VcenterVchaClusterActiveGet] :request_body 
     # @return [VcenterVchaClusterActiveResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def get(opts = {})
-      data, _status_code, _headers = get_with_http_info(opts)
+    def get(action, opts = {})
+      data, _status_code, _headers = get_with_http_info(action, opts)
       data
     end
 
     # Retrieves information about the active node of a VCHA cluster.
     # @api private
+    # @param action action&#x3D;get
     # @param [Hash] opts the optional parameters
-    # @option opts [VcenterVchaClusterActiveGet] :vcenter_vcha_cluster_active_get 
+    # @option opts [VcenterVchaClusterActiveGet] :request_body 
     # @return [Array<(VcenterVchaClusterActiveResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(opts = {})
+    def get_with_http_info(action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterActiveApi.get ...'
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling VchaClusterActiveApi.get"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['get'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of get"
+      end
       # resource path
-      local_var_path = '/vcenter/vcha/cluster/active?action=get'
+      local_var_path = '/vcenter/vcha/cluster/active'
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -51,8 +62,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'vcenter_vcha_cluster_active_get'])
-      auth_names = []
+      post_body = @api_client.object_to_http_body(opts[:'request_body'])
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

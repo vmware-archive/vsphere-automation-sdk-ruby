@@ -43,7 +43,7 @@ describe 'VmHardwareCdromApi' do
   # unit tests for create
   # Adds a virtual CD-ROM device to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_cdrom_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareCdromCreateResult]
   describe 'create test' do
@@ -103,7 +103,7 @@ describe 'VmHardwareCdromApi' do
   # Updates the configuration of a virtual CD-ROM device.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param cdrom Virtual CD-ROM device identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Cdrom.
-  # @param vcenter_vm_hardware_cdrom_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

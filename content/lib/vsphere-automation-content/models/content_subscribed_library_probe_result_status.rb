@@ -12,14 +12,14 @@ module VSphereAutomation
   module Content
     class ContentSubscribedLibraryProbeResultStatus
     
-    SUCCESS = 'SUCCESS'.freeze
-    INVALID_URL = 'INVALID_URL'.freeze
-    TIMED_OUT = 'TIMED_OUT'.freeze
-    HOST_NOT_FOUND = 'HOST_NOT_FOUND'.freeze
-    RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND'.freeze
-    INVALID_CREDENTIALS = 'INVALID_CREDENTIALS'.freeze
-    CERTIFICATE_ERROR = 'CERTIFICATE_ERROR'.freeze
-    UNKNOWN_ERROR = 'UNKNOWN_ERROR'.freeze
+    SUCCESS = "SUCCESS".freeze
+    INVALID_URL = "INVALID_URL".freeze
+    TIMED_OUT = "TIMED_OUT".freeze
+    HOST_NOT_FOUND = "HOST_NOT_FOUND".freeze
+    RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".freeze
+    INVALID_CREDENTIALS = "INVALID_CREDENTIALS".freeze
+    CERTIFICATE_ERROR = "CERTIFICATE_ERROR".freeze
+    UNKNOWN_ERROR = "UNKNOWN_ERROR".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

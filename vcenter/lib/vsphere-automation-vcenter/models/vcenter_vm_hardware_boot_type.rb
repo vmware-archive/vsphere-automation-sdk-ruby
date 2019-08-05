@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareBootType
     
-    BIOS = 'BIOS'.freeze
-    EFI = 'EFI'.freeze
+    BIOS = "BIOS".freeze
+    EFI = "EFI".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

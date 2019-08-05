@@ -31,6 +31,7 @@ describe 'MetadataAuthenticationComponentApi' do
   # unit tests for fingerprint
   # Retrieves the fingerprint computed from the authentication metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.authentication.Component#get}.
   # @param component_id Identifier of the component element.
+  # @param action ~action&#x3D;fingerprint
   # @param [Hash] opts the optional parameters
   # @return [VapiMetadataAuthenticationComponentFingerprintResult]
   describe 'fingerprint test' do

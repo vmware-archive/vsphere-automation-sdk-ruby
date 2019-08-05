@@ -12,11 +12,11 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareConnectionState
     
-    CONNECTED = 'CONNECTED'.freeze
-    RECOVERABLE_ERROR = 'RECOVERABLE_ERROR'.freeze
-    UNRECOVERABLE_ERROR = 'UNRECOVERABLE_ERROR'.freeze
-    NOT_CONNECTED = 'NOT_CONNECTED'.freeze
-    UNKNOWN = 'UNKNOWN'.freeze
+    CONNECTED = "CONNECTED".freeze
+    RECOVERABLE_ERROR = "RECOVERABLE_ERROR".freeze
+    UNRECOVERABLE_ERROR = "UNRECOVERABLE_ERROR".freeze
+    NOT_CONNECTED = "NOT_CONNECTED".freeze
+    UNKNOWN = "UNKNOWN".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

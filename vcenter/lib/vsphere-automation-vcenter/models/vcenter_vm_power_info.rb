@@ -28,7 +28,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'state' => :'VcenterVmPowerState',
-        :'clean_power_off' => :'BOOLEAN'
+        :'clean_power_off' => :'Boolean'
       }
     end
 

@@ -24,7 +24,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'force_sync_content' => :'BOOLEAN'
+        :'force_sync_content' => :'Boolean'
       }
     end
 

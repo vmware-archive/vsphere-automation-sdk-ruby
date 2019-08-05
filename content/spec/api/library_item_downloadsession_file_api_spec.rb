@@ -31,7 +31,7 @@ describe 'LibraryItemDownloadsessionFileApi' do
   # unit tests for get
   # Retrieves file download information for a specific file.
   # @param download_session_id Identifier of the download session.
-  # @param content_library_item_downloadsession_file_get 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemDownloadsessionFileResult]
   describe 'get test' do
@@ -54,7 +54,8 @@ describe 'LibraryItemDownloadsessionFileApi' do
   # unit tests for prepare
   # Requests a file to be prepared for download.
   # @param download_session_id Identifier of the download session.
-  # @param content_library_item_downloadsession_file_prepare 
+  # @param action ~action&#x3D;prepare
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemDownloadsessionFilePrepareResult]
   describe 'prepare test' do

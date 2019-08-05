@@ -12,10 +12,10 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemFileChecksumAlgorithm
     
-    SHA1 = 'SHA1'.freeze
-    MD5 = 'MD5'.freeze
-    SHA256 = 'SHA256'.freeze
-    SHA512 = 'SHA512'.freeze
+    SHA1 = "SHA1".freeze
+    MD5 = "MD5".freeze
+    SHA256 = "SHA256".freeze
+    SHA512 = "SHA512".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

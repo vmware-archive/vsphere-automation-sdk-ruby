@@ -85,7 +85,7 @@ module VSphereAutomation
         :'last_sync_time' => :'DateTime',
         :'metadata_version' => :'String',
         :'name' => :'String',
-        :'cached' => :'BOOLEAN',
+        :'cached' => :'Boolean',
         :'size' => :'Integer',
         :'type' => :'String',
         :'version' => :'String',

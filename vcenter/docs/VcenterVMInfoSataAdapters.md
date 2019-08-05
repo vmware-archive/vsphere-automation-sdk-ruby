@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VcenterVmHardwareAdapterSataInfo**](VcenterVmHardwareAdapterSataInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VcenterVmHardwareAdapterSataInfo**](VcenterVmHardwareAdapterSataInfo.md) |  | [optional] 
 
 

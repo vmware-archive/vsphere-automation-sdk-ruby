@@ -12,19 +12,19 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelTypeBuiltinType
     
-    VOID = 'VOID'.freeze
-    BOOLEAN = 'BOOLEAN'.freeze
-    LONG = 'LONG'.freeze
-    DOUBLE = 'DOUBLE'.freeze
-    STRING = 'STRING'.freeze
-    BINARY = 'BINARY'.freeze
-    SECRET = 'SECRET'.freeze
-    DATE_TIME = 'DATE_TIME'.freeze
-    ID = 'ID'.freeze
-    URI = 'URI'.freeze
-    ANY_ERROR = 'ANY_ERROR'.freeze
-    DYNAMIC_STRUCTURE = 'DYNAMIC_STRUCTURE'.freeze
-    OPAQUE = 'OPAQUE'.freeze
+    VOID = "VOID".freeze
+    BOOLEAN = "BOOLEAN".freeze
+    LONG = "LONG".freeze
+    DOUBLE = "DOUBLE".freeze
+    STRING = "STRING".freeze
+    BINARY = "BINARY".freeze
+    SECRET = "SECRET".freeze
+    DATE_TIME = "DATE_TIME".freeze
+    ID = "ID".freeze
+    URI = "URI".freeze
+    ANY_ERROR = "ANY_ERROR".freeze
+    DYNAMIC_STRUCTURE = "DYNAMIC_STRUCTURE".freeze
+    OPAQUE = "OPAQUE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -40,7 +40,7 @@ describe 'AccessSshApi' do
 
   # unit tests for set
   # Set enabled state of the SSH-based controlled CLI.
-  # @param appliance_access_ssh_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

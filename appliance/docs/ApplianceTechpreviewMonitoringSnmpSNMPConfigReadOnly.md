@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authentication** | [**ApplianceTechpreviewMonitoringSnmpSNMPAuthProto**](ApplianceTechpreviewMonitoringSnmpSNMPAuthProto.md) |  | 
 **communities** | **Array&lt;String&gt;** | Set up to ten communities, each of no more than 64 characters long. The format is: community1[,community2,...]. This setting overwrites any previous settings. | 
-**enable** | **BOOLEAN** | Set enable to true/false | 
+**enable** | **Boolean** | Set enable to true/false | 
 **engineid** | **String** | Set SNMPv3 engine ID. | 
 **loglevel** | **String** | System Agent syslog logging level: debug|info|warning|error. | 
 **notraps** | **Array&lt;String&gt;** | Comma-separated list of trap OIDs (object identifiers) for traps not to be sent by the agent. Use &#39;reset&#39; to clear the setting. | 

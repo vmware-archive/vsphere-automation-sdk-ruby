@@ -18,19 +18,21 @@ module VSphereAutomation
     end
     # Cancel a running operation associated with the task. This is the best effort attempt. Operation may not be cancelled anymore once it reaches certain stage.
     # @param task Task identifier. The parameter must be an identifier for the resource type: cis.task.
+    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
-    def cancel(task, opts = {})
-      cancel_with_http_info(task, opts)
+    def cancel(task, action, opts = {})
+      cancel_with_http_info(task, action, opts)
       nil
     end
 
     # Cancel a running operation associated with the task. This is the best effort attempt. Operation may not be cancelled anymore once it reaches certain stage.
     # @api private
     # @param task Task identifier. The parameter must be an identifier for the resource type: cis.task.
+    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def cancel_with_http_info(task, opts = {})
+    def cancel_with_http_info(task, action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TasksApi.cancel ...'
       end
@@ -38,23 +40,32 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && task.nil?
         fail ArgumentError, "Missing the required parameter 'task' when calling TasksApi.cancel"
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling TasksApi.cancel"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['cancel'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of cancel"
+      end
       # resource path
-      local_var_path = '/cis/tasks/{task}?action=cancel'.sub('{' + 'task' + '}', task.to_s)
+      local_var_path = '/cis/tasks/{task}'.sub('{' + 'task' + '}', task.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -69,8 +80,8 @@ module VSphereAutomation
     # Returns information about a task.
     # @param task Task identifier. The parameter must be an identifier for the resource type: cis.task.
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
-    # @option opts [BOOLEAN] :spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+    # @option opts [Boolean] :spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+    # @option opts [Boolean] :spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
     # @return [CisTasksResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(task, opts = {})
       data, _status_code, _headers = get_with_http_info(task, opts)
@@ -81,8 +92,8 @@ module VSphereAutomation
     # @api private
     # @param task Task identifier. The parameter must be an identifier for the resource type: cis.task.
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
-    # @option opts [BOOLEAN] :spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+    # @option opts [Boolean] :spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+    # @option opts [Boolean] :spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
     # @return [Array<(CisTasksResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(task, opts = {})
       if @api_client.config.debugging
@@ -103,14 +114,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -133,8 +144,8 @@ module VSphereAutomation
     # Returns information about at most 1000 visible (subject to permission checks) tasks matching the Tasks.FilterSpec. All tasks must be in the same provider.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_spec_tasks Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task.
-    # @option opts [BOOLEAN] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
-    # @option opts [BOOLEAN] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+    # @option opts [Boolean] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+    # @option opts [Boolean] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
     # @option opts [Array<String>] :filter_spec_services Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
     # @option opts [Array<String>] :filter_spec_status Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter.
     # @option opts [Array<Object>] :filter_spec_targets Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
@@ -149,8 +160,8 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_spec_tasks Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task.
-    # @option opts [BOOLEAN] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
-    # @option opts [BOOLEAN] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+    # @option opts [Boolean] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+    # @option opts [Boolean] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
     # @option opts [Array<String>] :filter_spec_services Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
     # @option opts [Array<String>] :filter_spec_status Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter.
     # @option opts [Array<Object>] :filter_spec_targets Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
@@ -179,14 +190,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

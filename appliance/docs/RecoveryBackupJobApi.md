@@ -19,6 +19,13 @@ Cancel the backup job.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupJobApi.new
 id = 'id_example' # String | ID (ID of job)
@@ -44,17 +51,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **create**
-> ApplianceRecoveryBackupJobCreateResult create(appliance_recovery_backup_job_create)
+> ApplianceRecoveryBackupJobCreateResult create(request_body)
 
 Initiate backup.
 
@@ -62,13 +69,20 @@ Initiate backup.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupJobApi.new
-appliance_recovery_backup_job_create = VSphereAutomation::ApplianceRecoveryBackupJobCreate.new # ApplianceRecoveryBackupJobCreate | 
+request_body = Appliance::ApplianceRecoveryBackupJobCreate.new # ApplianceRecoveryBackupJobCreate | 
 
 begin
   #Initiate backup.
-  result = api_instance.create(appliance_recovery_backup_job_create)
+  result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupJobApi->create: #{e}"
@@ -79,7 +93,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_recovery_backup_job_create** | [**ApplianceRecoveryBackupJobCreate**](ApplianceRecoveryBackupJobCreate.md)|  | 
+ **request_body** | [**ApplianceRecoveryBackupJobCreate**](ApplianceRecoveryBackupJobCreate.md)|  | 
 
 ### Return type
 
@@ -87,12 +101,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -105,6 +119,13 @@ See backup job progress/result.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupJobApi.new
 id = 'id_example' # String | ID (ID of job)
@@ -130,12 +151,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -148,6 +169,13 @@ Get list of backup jobs
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupJobApi.new
 
@@ -169,12 +197,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

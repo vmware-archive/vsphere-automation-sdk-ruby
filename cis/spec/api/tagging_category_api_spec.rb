@@ -31,7 +31,7 @@ describe 'TaggingCategoryApi' do
   # unit tests for add_to_used_by
   # Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
   # @param category_id The identifier of the input category.
-  # @param cis_tagging_category_add_to_used_by 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'add_to_used_by test' do
@@ -42,7 +42,7 @@ describe 'TaggingCategoryApi' do
 
   # unit tests for create
   # Creates a category. To invoke this {@term operation}, you need the create category privilege.
-  # @param cis_tagging_category_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [CisTaggingCategoryCreateResult]
   describe 'create test' do
@@ -85,7 +85,7 @@ describe 'TaggingCategoryApi' do
 
   # unit tests for list_used_categories
   # Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
-  # @param cis_tagging_category_list_used_categories 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [CisTaggingCategoryListUsedCategoriesResult]
   describe 'list_used_categories test' do
@@ -97,7 +97,8 @@ describe 'TaggingCategoryApi' do
   # unit tests for remove_from_used_by
   # Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
   # @param category_id The identifier of the input category.
-  # @param cis_tagging_category_remove_from_used_by 
+  # @param action ~action&#x3D;remove-from-used-by
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'remove_from_used_by test' do
@@ -120,7 +121,7 @@ describe 'TaggingCategoryApi' do
   # unit tests for update
   # Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
   # @param category_id The identifier of the category to be updated.
-  # @param cis_tagging_category_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

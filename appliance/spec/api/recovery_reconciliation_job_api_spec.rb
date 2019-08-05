@@ -30,7 +30,7 @@ describe 'RecoveryReconciliationJobApi' do
 
   # unit tests for create
   # Initiate reconciliation.
-  # @param appliance_recovery_reconciliation_job_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceRecoveryReconciliationJobCreateResult]
   describe 'create test' do

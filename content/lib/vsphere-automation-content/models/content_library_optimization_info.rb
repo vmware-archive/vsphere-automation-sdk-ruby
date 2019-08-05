@@ -24,7 +24,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'optimize_remote_publishing' => :'BOOLEAN'
+        :'optimize_remote_publishing' => :'Boolean'
       }
     end
 

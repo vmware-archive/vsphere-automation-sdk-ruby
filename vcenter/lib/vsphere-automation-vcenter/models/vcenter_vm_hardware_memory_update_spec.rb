@@ -29,7 +29,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'size_mi_b' => :'Integer',
-        :'hot_add_enabled' => :'BOOLEAN'
+        :'hot_add_enabled' => :'Boolean'
       }
     end
 

@@ -40,7 +40,7 @@ describe 'NetworkingDnsHostnameApi' do
 
   # unit tests for set
   # Set the Fully Qualified Domain Name.
-  # @param appliance_networking_dns_hostname_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do
@@ -51,7 +51,7 @@ describe 'NetworkingDnsHostnameApi' do
 
   # unit tests for test
   # Test the Fully Qualified Domain Name.
-  # @param appliance_networking_dns_hostname_test 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceNetworkingDnsHostnameTestResult]
   describe 'test test' do

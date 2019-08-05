@@ -17,26 +17,26 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Creates a new subscribed library. <p> Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
-    # @param content_subscribed_library_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentSubscribedLibraryCreateResult|VapiStdErrorsResourceInaccessibleError|]
-    def create(content_subscribed_library_create, opts = {})
-      data, _status_code, _headers = create_with_http_info(content_subscribed_library_create, opts)
+    def create(request_body, opts = {})
+      data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
     # Creates a new subscribed library. &lt;p&gt; Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
     # @api private
-    # @param content_subscribed_library_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentSubscribedLibraryCreateResult|VapiStdErrorsResourceInaccessibleError|, Fixnum, Hash)>]  data, response status code and response headers
-    def create_with_http_info(content_subscribed_library_create, opts = {})
+    def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.create ...'
       end
-      # verify the required parameter 'content_subscribed_library_create' is set
-      if @api_client.config.client_side_validation && content_subscribed_library_create.nil?
-        fail ArgumentError, "Missing the required parameter 'content_subscribed_library_create' when calling SubscribedLibraryApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling SubscribedLibraryApi.create"
       end
       # resource path
       local_var_path = '/com/vmware/content/subscribed-library'
@@ -47,7 +47,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -55,8 +55,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_subscribed_library_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -103,14 +103,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -153,14 +153,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -203,14 +203,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -252,14 +252,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -275,26 +275,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
-    # @param content_subscribed_library_probe 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentSubscribedLibraryProbeResult|]
-    def probe(content_subscribed_library_probe, opts = {})
-      data, _status_code, _headers = probe_with_http_info(content_subscribed_library_probe, opts)
+    def probe(request_body, opts = {})
+      data, _status_code, _headers = probe_with_http_info(request_body, opts)
       data
     end
 
     # Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
     # @api private
-    # @param content_subscribed_library_probe 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentSubscribedLibraryProbeResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def probe_with_http_info(content_subscribed_library_probe, opts = {})
+    def probe_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.probe ...'
       end
-      # verify the required parameter 'content_subscribed_library_probe' is set
-      if @api_client.config.client_side_validation && content_subscribed_library_probe.nil?
-        fail ArgumentError, "Missing the required parameter 'content_subscribed_library_probe' when calling SubscribedLibraryApi.probe"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling SubscribedLibraryApi.probe"
       end
       # resource path
       local_var_path = '/com/vmware/content/subscribed-library?~action=probe'
@@ -305,7 +305,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -313,8 +313,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_subscribed_library_probe)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -331,19 +331,21 @@ module VSphereAutomation
     end
     # Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
     # @param library_id Identifier of the subscribed library to synchronize.
+    # @param action ~action&#x3D;sync
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|nil]
-    def sync(library_id, opts = {})
-      sync_with_http_info(library_id, opts)
+    def sync(library_id, action, opts = {})
+      sync_with_http_info(library_id, action, opts)
       nil
     end
 
     # Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
     # @api private
     # @param library_id Identifier of the subscribed library to synchronize.
+    # @param action ~action&#x3D;sync
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def sync_with_http_info(library_id, opts = {})
+    def sync_with_http_info(library_id, action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.sync ...'
       end
@@ -351,23 +353,32 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_id' when calling SubscribedLibraryApi.sync"
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling SubscribedLibraryApi.sync"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['sync'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of sync"
+      end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}?~action=sync'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -381,21 +392,21 @@ module VSphereAutomation
     end
     # Updates the properties of a subscribed library. <p> This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
     # @param library_id Identifier of the subscribed library to update.
-    # @param content_subscribed_library_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsConcurrentChangeError|VapiStdErrorsNotFoundError|nil]
-    def update(library_id, content_subscribed_library_update, opts = {})
-      update_with_http_info(library_id, content_subscribed_library_update, opts)
+    def update(library_id, request_body, opts = {})
+      update_with_http_info(library_id, request_body, opts)
       nil
     end
 
     # Updates the properties of a subscribed library. &lt;p&gt; This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
     # @api private
     # @param library_id Identifier of the subscribed library to update.
-    # @param content_subscribed_library_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsConcurrentChangeError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(library_id, content_subscribed_library_update, opts = {})
+    def update_with_http_info(library_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.update ...'
       end
@@ -403,9 +414,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_id' when calling SubscribedLibraryApi.update"
       end
-      # verify the required parameter 'content_subscribed_library_update' is set
-      if @api_client.config.client_side_validation && content_subscribed_library_update.nil?
-        fail ArgumentError, "Missing the required parameter 'content_subscribed_library_update' when calling SubscribedLibraryApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling SubscribedLibraryApi.update"
       end
       # resource path
       local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
@@ -416,7 +427,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -424,8 +435,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_subscribed_library_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

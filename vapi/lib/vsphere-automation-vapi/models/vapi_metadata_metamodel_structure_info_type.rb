@@ -12,8 +12,8 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelStructureInfoType
     
-    STRUCTURE = 'STRUCTURE'.freeze
-    ERROR = 'ERROR'.freeze
+    STRUCTURE = "STRUCTURE".freeze
+    ERROR = "ERROR".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

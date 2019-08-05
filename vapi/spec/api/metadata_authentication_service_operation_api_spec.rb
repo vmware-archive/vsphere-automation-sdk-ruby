@@ -31,7 +31,8 @@ describe 'MetadataAuthenticationServiceOperationApi' do
   # unit tests for get
   # Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
   # @param service_id Identifier of the service element.
-  # @param vapi_metadata_authentication_service_operation_get 
+  # @param action ~action&#x3D;get
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VapiMetadataAuthenticationServiceOperationResult]
   describe 'get test' do

@@ -21,6 +21,13 @@ Returns the state of a service.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::VmonServiceApi.new
 service = 'service_example' # String | identifier of the service whose state is being queried. The parameter must be an identifier for the resource type: appliance.vmon.Service.
@@ -46,12 +53,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -64,6 +71,13 @@ Lists details of services managed by vMon.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::VmonServiceApi.new
 
@@ -85,12 +99,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -103,6 +117,13 @@ Restarts a service
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::VmonServiceApi.new
 service = 'service_example' # String | identifier of the service to restart The parameter must be an identifier for the resource type: appliance.vmon.Service.
@@ -127,12 +148,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -145,6 +166,13 @@ Starts a service
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::VmonServiceApi.new
 service = 'service_example' # String | identifier of the service to start The parameter must be an identifier for the resource type: appliance.vmon.Service.
@@ -169,12 +197,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -187,6 +215,13 @@ Stops a service
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::VmonServiceApi.new
 service = 'service_example' # String | identifier of the service to stop The parameter must be an identifier for the resource type: appliance.vmon.Service.
@@ -211,17 +246,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(service, appliance_vmon_service_update)
+> update(service, request_body)
 
 Updates the properties of a service.
 
@@ -229,14 +264,21 @@ Updates the properties of a service.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::VmonServiceApi.new
 service = 'service_example' # String | identifier of the service whose properties are being updated. The parameter must be an identifier for the resource type: appliance.vmon.Service.
-appliance_vmon_service_update = VSphereAutomation::ApplianceVmonServiceUpdate.new # ApplianceVmonServiceUpdate | 
+request_body = Appliance::ApplianceVmonServiceUpdate.new # ApplianceVmonServiceUpdate | 
 
 begin
   #Updates the properties of a service.
-  api_instance.update(service, appliance_vmon_service_update)
+  api_instance.update(service, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmonServiceApi->update: #{e}"
 end
@@ -247,7 +289,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **String**| identifier of the service whose properties are being updated. The parameter must be an identifier for the resource type: appliance.vmon.Service. | 
- **appliance_vmon_service_update** | [**ApplianceVmonServiceUpdate**](ApplianceVmonServiceUpdate.md)|  | 
+ **request_body** | [**ApplianceVmonServiceUpdate**](ApplianceVmonServiceUpdate.md)|  | 
 
 ### Return type
 
@@ -255,12 +297,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

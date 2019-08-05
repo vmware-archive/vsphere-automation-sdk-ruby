@@ -17,37 +17,48 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Supply answer to the raised question.
-    # @param vcenter_deployment_question_answer 
+    # @param action action&#x3D;answer
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|nil]
-    def answer(vcenter_deployment_question_answer, opts = {})
-      answer_with_http_info(vcenter_deployment_question_answer, opts)
+    def answer(action, request_body, opts = {})
+      answer_with_http_info(action, request_body, opts)
       nil
     end
 
     # Supply answer to the raised question.
     # @api private
-    # @param vcenter_deployment_question_answer 
+    # @param action action&#x3D;answer
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def answer_with_http_info(vcenter_deployment_question_answer, opts = {})
+    def answer_with_http_info(action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentQuestionApi.answer ...'
       end
-      # verify the required parameter 'vcenter_deployment_question_answer' is set
-      if @api_client.config.client_side_validation && vcenter_deployment_question_answer.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_deployment_question_answer' when calling DeploymentQuestionApi.answer"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentQuestionApi.answer"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['answer'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of answer"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentQuestionApi.answer"
       end
       # resource path
-      local_var_path = '/vcenter/deployment/question?action=answer'
+      local_var_path = '/vcenter/deployment/question'
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -55,8 +66,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_deployment_question_answer)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -93,14 +104,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

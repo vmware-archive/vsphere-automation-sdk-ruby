@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VapiMetadataMetamodelElementValue**](VapiMetadataMetamodelElementValue.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VapiMetadataMetamodelElementValue**](VapiMetadataMetamodelElementValue.md) |  | [optional] 
 
 

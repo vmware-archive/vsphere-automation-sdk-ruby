@@ -30,7 +30,8 @@ describe 'DeploymentQuestionApi' do
 
   # unit tests for answer
   # Supply answer to the raised question.
-  # @param vcenter_deployment_question_answer 
+  # @param action action&#x3D;answer
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'answer test' do

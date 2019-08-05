@@ -47,7 +47,7 @@ module VSphereAutomation
         :'hostname' => :'String',
         :'https_port' => :'Integer',
         :'ssl_thumbprint' => :'String',
-        :'ssl_verify' => :'BOOLEAN',
+        :'ssl_verify' => :'Boolean',
         :'username' => :'String',
         :'password' => :'String'
       }

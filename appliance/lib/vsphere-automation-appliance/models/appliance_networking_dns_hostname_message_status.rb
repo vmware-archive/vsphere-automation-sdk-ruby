@@ -12,8 +12,8 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingDnsHostnameMessageStatus
     
-    FAILURE = 'failure'.freeze
-    SUCCESS = 'success'.freeze
+    FAILURE = "failure".freeze
+    SUCCESS = "success".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

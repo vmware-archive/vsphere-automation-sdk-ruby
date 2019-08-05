@@ -28,7 +28,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'success' => :'BOOLEAN',
+        :'success' => :'Boolean',
         :'error_messages' => :'Array<VapiStdLocalizableMessage>'
       }
     end

@@ -192,6 +192,20 @@ module VSphereAutomation
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
+        'api_key' =>
+          {
+            type: 'api_key',
+            in: 'header',
+            key: 'vmware-api-session-id',
+            value: api_key_with_prefix('vmware-api-session-id')
+          },
+        'basic_auth' =>
+          {
+            type: 'basic',
+            in: 'header',
+            key: 'Authorization',
+            value: basic_auth_token
+          },
       }
     end
   end

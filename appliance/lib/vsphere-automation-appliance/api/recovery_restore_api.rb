@@ -17,26 +17,26 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Get metadata before restore
-    # @param appliance_recovery_restore_validate 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ApplianceRecoveryRestoreValidateResult|VapiStdErrorsErrorError|]
-    def validate(appliance_recovery_restore_validate, opts = {})
-      data, _status_code, _headers = validate_with_http_info(appliance_recovery_restore_validate, opts)
+    def validate(request_body, opts = {})
+      data, _status_code, _headers = validate_with_http_info(request_body, opts)
       data
     end
 
     # Get metadata before restore
     # @api private
-    # @param appliance_recovery_restore_validate 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceRecoveryRestoreValidateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    def validate_with_http_info(appliance_recovery_restore_validate, opts = {})
+    def validate_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreApi.validate ...'
       end
-      # verify the required parameter 'appliance_recovery_restore_validate' is set
-      if @api_client.config.client_side_validation && appliance_recovery_restore_validate.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_recovery_restore_validate' when calling RecoveryRestoreApi.validate"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryRestoreApi.validate"
       end
       # resource path
       local_var_path = '/appliance/recovery/restore/validate'
@@ -47,7 +47,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -55,8 +55,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_recovery_restore_validate)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

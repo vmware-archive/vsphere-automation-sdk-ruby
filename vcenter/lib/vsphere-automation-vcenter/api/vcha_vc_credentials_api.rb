@@ -17,37 +17,48 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
-    # @param vcenter_vcha_vc_credentials_validate 
+    # @param action action&#x3D;validate
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def validate(vcenter_vcha_vc_credentials_validate, opts = {})
-      validate_with_http_info(vcenter_vcha_vc_credentials_validate, opts)
+    def validate(action, request_body, opts = {})
+      validate_with_http_info(action, request_body, opts)
       nil
     end
 
     # Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
     # @api private
-    # @param vcenter_vcha_vc_credentials_validate 
+    # @param action action&#x3D;validate
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def validate_with_http_info(vcenter_vcha_vc_credentials_validate, opts = {})
+    def validate_with_http_info(action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaVcCredentialsApi.validate ...'
       end
-      # verify the required parameter 'vcenter_vcha_vc_credentials_validate' is set
-      if @api_client.config.client_side_validation && vcenter_vcha_vc_credentials_validate.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_vcha_vc_credentials_validate' when calling VchaVcCredentialsApi.validate"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling VchaVcCredentialsApi.validate"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['validate'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of validate"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaVcCredentialsApi.validate"
       end
       # resource path
-      local_var_path = '/vcenter/vcha/vc-credentials?action=validate'
+      local_var_path = '/vcenter/vcha/vc-credentials'
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -55,8 +66,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_vcha_vc_credentials_validate)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

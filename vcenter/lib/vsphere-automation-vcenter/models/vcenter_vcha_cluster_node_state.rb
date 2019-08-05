@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaClusterNodeState
     
-    UP = 'UP'.freeze
-    DOWN = 'DOWN'.freeze
+    UP = "UP".freeze
+    DOWN = "DOWN".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

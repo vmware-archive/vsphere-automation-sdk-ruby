@@ -30,7 +30,8 @@ describe 'DeploymentInstallRemotePscApi' do
 
   # unit tests for check
   # Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
-  # @param vcenter_deployment_install_remote_psc_check 
+  # @param action action&#x3D;check
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterDeploymentInstallRemotePscCheckResult]
   describe 'check test' do

@@ -17,6 +17,13 @@ Get IPv6 network configuration for specific interface.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NetworkingInterfacesIpv6Api.new
 interface_name = 'interface_name_example' # String | Network interface to query, for example, \"nic0\".
@@ -42,17 +49,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(interface_name, appliance_networking_interfaces_ipv6_set)
+> set(interface_name, request_body)
 
 Set IPv6 network configuration for specific interface.
 
@@ -60,14 +67,21 @@ Set IPv6 network configuration for specific interface.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NetworkingInterfacesIpv6Api.new
 interface_name = 'interface_name_example' # String | Network interface to update, for example, \"nic0\".
-appliance_networking_interfaces_ipv6_set = VSphereAutomation::ApplianceNetworkingInterfacesIpv6Set.new # ApplianceNetworkingInterfacesIpv6Set | 
+request_body = Appliance::ApplianceNetworkingInterfacesIpv6Set.new # ApplianceNetworkingInterfacesIpv6Set | 
 
 begin
   #Set IPv6 network configuration for specific interface.
-  api_instance.set(interface_name, appliance_networking_interfaces_ipv6_set)
+  api_instance.set(interface_name, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingInterfacesIpv6Api->set: #{e}"
 end
@@ -78,7 +92,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **interface_name** | **String**| Network interface to update, for example, \&quot;nic0\&quot;. | 
- **appliance_networking_interfaces_ipv6_set** | [**ApplianceNetworkingInterfacesIpv6Set**](ApplianceNetworkingInterfacesIpv6Set.md)|  | 
+ **request_body** | [**ApplianceNetworkingInterfacesIpv6Set**](ApplianceNetworkingInterfacesIpv6Set.md)|  | 
 
 ### Return type
 
@@ -86,12 +100,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

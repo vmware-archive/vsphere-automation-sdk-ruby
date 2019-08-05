@@ -28,7 +28,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'type' => :'ContentLibraryItemUpdatesessionWarningType',
-        :'ignored' => :'BOOLEAN'
+        :'ignored' => :'Boolean'
       }
     end
 

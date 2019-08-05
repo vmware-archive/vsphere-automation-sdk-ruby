@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](DeploymentUpgradeApi.md#cancel) | **POST** /vcenter/deployment/upgrade?action&#x3D;cancel | Cancel the appliance upgrade that is in progress.
+[**cancel**](DeploymentUpgradeApi.md#cancel) | **POST** /vcenter/deployment/upgrade | Cancel the appliance upgrade that is in progress.
 [**check**](DeploymentUpgradeApi.md#check) | **POST** /vcenter/deployment/upgrade?action&#x3D;check | Run sanity checks using the UpgradeSpec parameters passed.
 [**get**](DeploymentUpgradeApi.md#get) | **GET** /vcenter/deployment/upgrade | Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
 [**start**](DeploymentUpgradeApi.md#start) | **POST** /vcenter/deployment/upgrade?action&#x3D;start | Start the appliance installation.
 
 
 # **cancel**
-> cancel
+> cancel(action)
 
 Cancel the appliance upgrade that is in progress.
 
@@ -19,19 +19,30 @@ Cancel the appliance upgrade that is in progress.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentUpgradeApi.new
+action = 'action_example' # String | action=cancel
 
 begin
   #Cancel the appliance upgrade that is in progress.
-  api_instance.cancel
+  api_instance.cancel(action)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentUpgradeApi->cancel: #{e}"
 end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **action** | **String**| action&#x3D;cancel | 
 
 ### Return type
 
@@ -39,17 +50,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **check**
-> VcenterDeploymentUpgradeCheckResult check(vcenter_deployment_upgrade_check)
+> VcenterDeploymentUpgradeCheckResult check(request_body)
 
 Run sanity checks using the UpgradeSpec parameters passed.
 
@@ -57,13 +68,20 @@ Run sanity checks using the UpgradeSpec parameters passed.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentUpgradeApi.new
-vcenter_deployment_upgrade_check = VSphereAutomation::VcenterDeploymentUpgradeCheck.new # VcenterDeploymentUpgradeCheck | 
+request_body = VCenter::VcenterDeploymentUpgradeCheck.new # VcenterDeploymentUpgradeCheck | 
 
 begin
   #Run sanity checks using the UpgradeSpec parameters passed.
-  result = api_instance.check(vcenter_deployment_upgrade_check)
+  result = api_instance.check(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentUpgradeApi->check: #{e}"
@@ -74,7 +92,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_upgrade_check** | [**VcenterDeploymentUpgradeCheck**](VcenterDeploymentUpgradeCheck.md)|  | 
+ **request_body** | [**VcenterDeploymentUpgradeCheck**](VcenterDeploymentUpgradeCheck.md)|  | 
 
 ### Return type
 
@@ -82,12 +100,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -100,6 +118,13 @@ Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentUpgradeApi.new
 
@@ -121,17 +146,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **start**
-> start(vcenter_deployment_upgrade_start)
+> start(request_body)
 
 Start the appliance installation.
 
@@ -139,13 +164,20 @@ Start the appliance installation.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentUpgradeApi.new
-vcenter_deployment_upgrade_start = VSphereAutomation::VcenterDeploymentUpgradeStart.new # VcenterDeploymentUpgradeStart | 
+request_body = VCenter::VcenterDeploymentUpgradeStart.new # VcenterDeploymentUpgradeStart | 
 
 begin
   #Start the appliance installation.
-  api_instance.start(vcenter_deployment_upgrade_start)
+  api_instance.start(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentUpgradeApi->start: #{e}"
 end
@@ -155,7 +187,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_upgrade_start** | [**VcenterDeploymentUpgradeStart**](VcenterDeploymentUpgradeStart.md)|  | 
+ **request_body** | [**VcenterDeploymentUpgradeStart**](VcenterDeploymentUpgradeStart.md)|  | 
 
 ### Return type
 
@@ -163,12 +195,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

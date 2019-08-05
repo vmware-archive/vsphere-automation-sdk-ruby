@@ -12,8 +12,8 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingDNSInfoDNSMode
     
-    DHCP = 'DHCP'.freeze
-    STATIC = 'STATIC'.freeze
+    DHCP = "DHCP".freeze
+    STATIC = "STATIC".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

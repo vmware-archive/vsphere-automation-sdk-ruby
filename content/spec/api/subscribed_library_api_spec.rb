@@ -30,7 +30,7 @@ describe 'SubscribedLibraryApi' do
 
   # unit tests for create
   # Creates a new subscribed library. &lt;p&gt; Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
-  # @param content_subscribed_library_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentSubscribedLibraryCreateResult]
   describe 'create test' do
@@ -84,7 +84,7 @@ describe 'SubscribedLibraryApi' do
 
   # unit tests for probe
   # Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
-  # @param content_subscribed_library_probe 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentSubscribedLibraryProbeResult]
   describe 'probe test' do
@@ -96,6 +96,7 @@ describe 'SubscribedLibraryApi' do
   # unit tests for sync
   # Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
   # @param library_id Identifier of the subscribed library to synchronize.
+  # @param action ~action&#x3D;sync
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'sync test' do
@@ -107,7 +108,7 @@ describe 'SubscribedLibraryApi' do
   # unit tests for update
   # Updates the properties of a subscribed library. &lt;p&gt; This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
   # @param library_id Identifier of the subscribed library to update.
-  # @param content_subscribed_library_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

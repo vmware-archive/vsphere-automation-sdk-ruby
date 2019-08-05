@@ -17,38 +17,49 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Cancel the appliance installation that is in progress.
+    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil]
-    def cancel(opts = {})
-      cancel_with_http_info(opts)
+    def cancel(action, opts = {})
+      cancel_with_http_info(action, opts)
       nil
     end
 
     # Cancel the appliance installation that is in progress.
     # @api private
+    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def cancel_with_http_info(opts = {})
+    def cancel_with_http_info(action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.cancel ...'
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentInstallApi.cancel"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['cancel'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of cancel"
+      end
       # resource path
-      local_var_path = '/vcenter/deployment/install?action=cancel'
+      local_var_path = '/vcenter/deployment/install'
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -61,26 +72,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Run sanity checks using the InstallSpec parameters passed.
-    # @param vcenter_deployment_install_check 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterDeploymentInstallCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
-    def check(vcenter_deployment_install_check, opts = {})
-      data, _status_code, _headers = check_with_http_info(vcenter_deployment_install_check, opts)
+    def check(request_body, opts = {})
+      data, _status_code, _headers = check_with_http_info(request_body, opts)
       data
     end
 
     # Run sanity checks using the InstallSpec parameters passed.
     # @api private
-    # @param vcenter_deployment_install_check 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentInstallCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def check_with_http_info(vcenter_deployment_install_check, opts = {})
+    def check_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.check ...'
       end
-      # verify the required parameter 'vcenter_deployment_install_check' is set
-      if @api_client.config.client_side_validation && vcenter_deployment_install_check.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_deployment_install_check' when calling DeploymentInstallApi.check"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentInstallApi.check"
       end
       # resource path
       local_var_path = '/vcenter/deployment/install?action=check'
@@ -91,7 +102,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -99,8 +110,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_deployment_install_check)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -142,14 +153,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -167,26 +178,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Start the appliance installation.
-    # @param vcenter_deployment_install_start 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil]
-    def start(vcenter_deployment_install_start, opts = {})
-      start_with_http_info(vcenter_deployment_install_start, opts)
+    def start(request_body, opts = {})
+      start_with_http_info(request_body, opts)
       nil
     end
 
     # Start the appliance installation.
     # @api private
-    # @param vcenter_deployment_install_start 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def start_with_http_info(vcenter_deployment_install_start, opts = {})
+    def start_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.start ...'
       end
-      # verify the required parameter 'vcenter_deployment_install_start' is set
-      if @api_client.config.client_side_validation && vcenter_deployment_install_start.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_deployment_install_start' when calling DeploymentInstallApi.start"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentInstallApi.start"
       end
       # resource path
       local_var_path = '/vcenter/deployment/install?action=start'
@@ -197,7 +208,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -205,8 +216,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_deployment_install_start)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

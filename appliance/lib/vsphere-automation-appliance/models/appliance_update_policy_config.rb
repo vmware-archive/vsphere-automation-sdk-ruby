@@ -44,7 +44,7 @@ module VSphereAutomation
         :'username' => :'String',
         :'password' => :'String',
         :'check_schedule' => :'Array<ApplianceUpdatePolicyTime>',
-        :'auto_stage' => :'BOOLEAN'
+        :'auto_stage' => :'Boolean'
       }
     end
 

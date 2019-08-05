@@ -56,9 +56,9 @@ module VSphereAutomation
         :'parts' => :'Array<String>',
         :'version' => :'String',
         :'boxname' => :'String',
-        :'sso_login_required' => :'BOOLEAN',
+        :'sso_login_required' => :'Boolean',
         :'comment' => :'String',
-        :'applicable' => :'BOOLEAN',
+        :'applicable' => :'Boolean',
         :'messages' => :'Array<ApplianceRecoveryRestoreLocalizableMessage>'
       }
     end

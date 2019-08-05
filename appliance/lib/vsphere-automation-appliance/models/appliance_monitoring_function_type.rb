@@ -12,10 +12,10 @@ module VSphereAutomation
   module Appliance
     class ApplianceMonitoringFunctionType
     
-    COUNT = 'COUNT'.freeze
-    MAX = 'MAX'.freeze
-    AVG = 'AVG'.freeze
-    MIN = 'MIN'.freeze
+    COUNT = "COUNT".freeze
+    MAX = "MAX".freeze
+    AVG = "AVG".freeze
+    MIN = "MIN".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

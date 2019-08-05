@@ -18,6 +18,13 @@ Get the NTP configuration status. If you run the 'timesync.get' command, you can
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NtpApi.new
 
@@ -39,17 +46,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(appliance_ntp_set)
+> set(request_body)
 
 Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
 
@@ -57,13 +64,20 @@ Set NTP servers. This method updates old NTP servers from configuration and sets
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NtpApi.new
-appliance_ntp_set = VSphereAutomation::ApplianceNtpSet.new # ApplianceNtpSet | 
+request_body = Appliance::ApplianceNtpSet.new # ApplianceNtpSet | 
 
 begin
   #Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
-  api_instance.set(appliance_ntp_set)
+  api_instance.set(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NtpApi->set: #{e}"
 end
@@ -73,7 +87,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_ntp_set** | [**ApplianceNtpSet**](ApplianceNtpSet.md)|  | 
+ **request_body** | [**ApplianceNtpSet**](ApplianceNtpSet.md)|  | 
 
 ### Return type
 
@@ -81,17 +95,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **test**
-> ApplianceNtpTestResult test(appliance_ntp_test)
+> ApplianceNtpTestResult test(request_body)
 
 Test the connection to a list of ntp servers.
 
@@ -99,13 +113,20 @@ Test the connection to a list of ntp servers.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NtpApi.new
-appliance_ntp_test = VSphereAutomation::ApplianceNtpTest.new # ApplianceNtpTest | 
+request_body = Appliance::ApplianceNtpTest.new # ApplianceNtpTest | 
 
 begin
   #Test the connection to a list of ntp servers.
-  result = api_instance.test(appliance_ntp_test)
+  result = api_instance.test(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NtpApi->test: #{e}"
@@ -116,7 +137,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_ntp_test** | [**ApplianceNtpTest**](ApplianceNtpTest.md)|  | 
+ **request_body** | [**ApplianceNtpTest**](ApplianceNtpTest.md)|  | 
 
 ### Return type
 
@@ -124,12 +145,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

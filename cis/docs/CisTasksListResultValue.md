@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**CisTaskInfo**](CisTaskInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**CisTaskInfo**](CisTaskInfo.md) |  | [optional] 
 
 

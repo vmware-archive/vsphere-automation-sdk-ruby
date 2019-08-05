@@ -8,4 +8,7 @@
 
 source 'https://rubygems.org'
 
+gem 'vsphere-automation-runtime', path: '../runtime'
+gem 'vsphere-automation-cis', path: '../cis'
+
 gemspec

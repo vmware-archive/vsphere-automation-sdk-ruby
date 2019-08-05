@@ -12,10 +12,10 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionWarningType
     
-    SELF_SIGNED_CERTIFICATE = 'SELF_SIGNED_CERTIFICATE'.freeze
-    EXPIRED_CERTIFICATE = 'EXPIRED_CERTIFICATE'.freeze
-    NOT_YET_VALID_CERTIFICATE = 'NOT_YET_VALID_CERTIFICATE'.freeze
-    UNTRUSTED_CERTIFICATE = 'UNTRUSTED_CERTIFICATE'.freeze
+    SELF_SIGNED_CERTIFICATE = "SELF_SIGNED_CERTIFICATE".freeze
+    EXPIRED_CERTIFICATE = "EXPIRED_CERTIFICATE".freeze
+    NOT_YET_VALID_CERTIFICATE = "NOT_YET_VALID_CERTIFICATE".freeze
+    UNTRUSTED_CERTIFICATE = "UNTRUSTED_CERTIFICATE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

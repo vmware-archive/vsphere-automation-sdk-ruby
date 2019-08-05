@@ -57,7 +57,7 @@ module VSphereAutomation
         :'disk_storage' => :'VcenterVmTemplateLibraryItemsDeploySpecDiskStorage',
         :'disk_storage_overrides' => :'Array<Object>',
         :'placement' => :'VcenterVmTemplateLibraryItemsDeployPlacementSpec',
-        :'powered_on' => :'BOOLEAN',
+        :'powered_on' => :'Boolean',
         :'guest_customization' => :'VcenterVmTemplateLibraryItemsGuestCustomizationSpec',
         :'hardware_customization' => :'VcenterVmTemplateLibraryItemsHardwareCustomizationSpec'
       }

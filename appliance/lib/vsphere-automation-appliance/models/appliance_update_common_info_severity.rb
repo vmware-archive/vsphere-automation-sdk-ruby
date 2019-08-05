@@ -12,10 +12,10 @@ module VSphereAutomation
   module Appliance
     class ApplianceUpdateCommonInfoSeverity
     
-    CRITICAL = 'CRITICAL'.freeze
-    IMPORTANT = 'IMPORTANT'.freeze
-    MODERATE = 'MODERATE'.freeze
-    LOW = 'LOW'.freeze
+    CRITICAL = "CRITICAL".freeze
+    IMPORTANT = "IMPORTANT".freeze
+    MODERATE = "MODERATE".freeze
+    LOW = "LOW".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

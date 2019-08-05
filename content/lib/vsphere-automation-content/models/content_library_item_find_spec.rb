@@ -44,7 +44,7 @@ module VSphereAutomation
         :'library_id' => :'String',
         :'source_id' => :'String',
         :'type' => :'String',
-        :'cached' => :'BOOLEAN'
+        :'cached' => :'Boolean'
       }
     end
 

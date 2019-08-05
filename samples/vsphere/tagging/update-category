@@ -48,6 +48,7 @@ OptionParser.new do |opts|
     end
   end
 end.parse!
+
 configuration = VSphereAutomation::Configuration.new.tap do |c|
   c.host = options[:server]
   c.username = options[:username]
@@ -57,21 +58,18 @@ configuration = VSphereAutomation::Configuration.new.tap do |c|
   c.verify_ssl_host = !options[:insecure]
 end
 api_client = VSphereAutomation::ApiClient.new(configuration)
-api_client.default_headers['Authorization'] = configuration.basic_auth_token
-session_api = VSphereAutomation::CIS::SessionApi.new(api_client)
-session_id = session_api.create('').value
-api_client.default_headers['vmware-api-session-id'] = session_id
-api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new(api_client)
+VSphereAutomation::CIS::SessionApi.new(api_client).create('')
 
 puts "Finding tag category with id #{options[:category_id]}"
+api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new(api_client)
 category = api_instance.get(options[:category_id]).value
 puts "Found category '#{category.name}' matching #{category.id}"
 
 update_spec =  VSphereAutomation::CIS::CisTaggingCategoryUpdateSpec.new(
-  name: options[:name] || category.name,
-  description: options[:description] || category.description,
-  associable_types: options[:associable_types] || category.associable_types,
-  cardinality: options[:cardinality] || category.cardinality,
+  name: options.fetch(:name, category.name),
+  description: options.fetch(:description, category.description),
+  associable_types: options.fetch(:associable_types, category.associable_types),
+  cardinality: options.fetch(:cardinality, category.cardinality),
 )
 update_model = VSphereAutomation::CIS::CisTaggingCategoryUpdate.new(update_spec: update_spec)
 

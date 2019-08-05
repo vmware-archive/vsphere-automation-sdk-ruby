@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **severity** | [**ApplianceUpdateCommonInfoSeverity**](ApplianceUpdateCommonInfoSeverity.md) |  | 
 **update_type** | [**ApplianceUpdateCommonInfoCategory**](ApplianceUpdateCommonInfoCategory.md) |  | 
 **release_date** | **DateTime** | Update release date. | 
-**reboot_required** | **BOOLEAN** | Flag indicating whether reboot is required after update. | 
+**reboot_required** | **Boolean** | Flag indicating whether reboot is required after update. | 
 **size** | **Integer** | Download Size of update in Megabytes. | 
 
 

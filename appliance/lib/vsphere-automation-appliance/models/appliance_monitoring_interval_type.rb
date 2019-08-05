@@ -12,11 +12,11 @@ module VSphereAutomation
   module Appliance
     class ApplianceMonitoringIntervalType
     
-    MINUTES30 = 'MINUTES30'.freeze
-    HOURS2 = 'HOURS2'.freeze
-    MINUTES5 = 'MINUTES5'.freeze
-    DAY1 = 'DAY1'.freeze
-    HOURS6 = 'HOURS6'.freeze
+    MINUTES30 = "MINUTES30".freeze
+    HOURS2 = "HOURS2".freeze
+    MINUTES5 = "MINUTES5".freeze
+    DAY1 = "DAY1".freeze
+    HOURS6 = "HOURS6".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

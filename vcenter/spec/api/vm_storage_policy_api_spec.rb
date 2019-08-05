@@ -42,7 +42,7 @@ describe 'VmStoragePolicyApi' do
   # unit tests for update
   # Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_storage_policy_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

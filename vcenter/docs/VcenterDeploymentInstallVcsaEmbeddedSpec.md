@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **standalone** | [**VcenterDeploymentStandaloneSpec**](VcenterDeploymentStandaloneSpec.md) |  | [optional] 
 **replicated** | [**VcenterDeploymentReplicatedSpec**](VcenterDeploymentReplicatedSpec.md) |  | [optional] 
-**ceip_enabled** | **BOOLEAN** | Whether CEIP should be enabled or disabled. | 
+**ceip_enabled** | **Boolean** | Whether CEIP should be enabled or disabled. | 
 
 

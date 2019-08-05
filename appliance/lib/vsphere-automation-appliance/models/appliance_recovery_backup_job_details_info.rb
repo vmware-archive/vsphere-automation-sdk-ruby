@@ -30,6 +30,8 @@ module VSphereAutomation
     # List of any info/warning/error messages returned by the backup job.
     attr_accessor :messages
 
+    attr_accessor :build
+
     attr_accessor :description
 
     # Identifier of the service containing the operation.
@@ -70,6 +72,7 @@ module VSphereAutomation
         :'location_user' => :'location_user',
         :'type' => :'type',
         :'messages' => :'messages',
+        :'build' => :'build',
         :'description' => :'description',
         :'service' => :'service',
         :'operation' => :'operation',
@@ -94,13 +97,14 @@ module VSphereAutomation
         :'location_user' => :'String',
         :'type' => :'ApplianceRecoveryBackupJobDetailsType',
         :'messages' => :'Array<VapiStdLocalizableMessage>',
+        :'build' => :'ApplianceRecoveryBackupJobDetailsBuildInfo',
         :'description' => :'VapiStdLocalizableMessage',
         :'service' => :'String',
         :'operation' => :'String',
         :'parent' => :'String',
         :'target' => :'VapiStdDynamicID',
         :'status' => :'CisTaskStatus',
-        :'cancelable' => :'BOOLEAN',
+        :'cancelable' => :'Boolean',
         :'error' => :'String',
         :'start_time' => :'DateTime',
         :'end_time' => :'DateTime',
@@ -144,6 +148,10 @@ module VSphereAutomation
         if (value = attributes[:'messages']).is_a?(Array)
           self.messages = value
         end
+      end
+
+      if attributes.has_key?(:'build')
+        self.build = attributes[:'build']
       end
 
       if attributes.has_key?(:'description')
@@ -261,6 +269,7 @@ module VSphereAutomation
           location_user == o.location_user &&
           type == o.type &&
           messages == o.messages &&
+          build == o.build &&
           description == o.description &&
           service == o.service &&
           operation == o.operation &&
@@ -283,7 +292,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [location, duration, size, progress, location_user, type, messages, description, service, operation, parent, target, status, cancelable, error, start_time, end_time, user].hash
+      [location, duration, size, progress, location_user, type, messages, build, description, service, operation, parent, target, status, cancelable, error, start_time, end_time, user].hash
     end
 
     # Builds the object from hash

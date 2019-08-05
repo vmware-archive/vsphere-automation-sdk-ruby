@@ -43,7 +43,7 @@ describe 'VmHardwareParallelApi' do
   # unit tests for create
   # Adds a virtual parallel port to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_parallel_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareParallelCreateResult]
   describe 'create test' do
@@ -103,7 +103,7 @@ describe 'VmHardwareParallelApi' do
   # Updates the configuration of a virtual parallel port.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param port Virtual parallel port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ParallelPort.
-  # @param vcenter_vm_hardware_parallel_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

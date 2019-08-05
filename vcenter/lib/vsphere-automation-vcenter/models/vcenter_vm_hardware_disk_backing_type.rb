@@ -12,7 +12,7 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareDiskBackingType
     
-    VMDK_FILE = 'VMDK_FILE'.freeze
+    VMDK_FILE = "VMDK_FILE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

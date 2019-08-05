@@ -24,6 +24,13 @@ Stop an enabled SNMP agent.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
 
@@ -44,12 +51,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -62,6 +69,13 @@ Start a disabled SNMP agent.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
 
@@ -82,12 +96,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -100,6 +114,13 @@ Return an SNMP agent configuration.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
 
@@ -121,17 +142,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **hash**
-> ApplianceTechpreviewMonitoringSnmpHashResult hash(appliance_techpreview_monitoring_snmp_hash)
+> ApplianceTechpreviewMonitoringSnmpHashResult hash(request_body)
 
 Generate localized keys for secure SNMPv3 communications.
 
@@ -139,13 +160,20 @@ Generate localized keys for secure SNMPv3 communications.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
-appliance_techpreview_monitoring_snmp_hash = VSphereAutomation::ApplianceTechpreviewMonitoringSnmpHash.new # ApplianceTechpreviewMonitoringSnmpHash | 
+request_body = Appliance::ApplianceTechpreviewMonitoringSnmpHash.new # ApplianceTechpreviewMonitoringSnmpHash | 
 
 begin
   #Generate localized keys for secure SNMPv3 communications.
-  result = api_instance.hash(appliance_techpreview_monitoring_snmp_hash)
+  result = api_instance.hash(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TechpreviewMonitoringSnmpApi->hash: #{e}"
@@ -156,7 +184,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_techpreview_monitoring_snmp_hash** | [**ApplianceTechpreviewMonitoringSnmpHash**](ApplianceTechpreviewMonitoringSnmpHash.md)|  | 
+ **request_body** | [**ApplianceTechpreviewMonitoringSnmpHash**](ApplianceTechpreviewMonitoringSnmpHash.md)|  | 
 
 ### Return type
 
@@ -164,12 +192,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -182,6 +210,13 @@ Get SNMP limits information.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
 
@@ -203,12 +238,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -221,6 +256,13 @@ Restore settings to factory defaults.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
 
@@ -241,17 +283,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(appliance_techpreview_monitoring_snmp_set)
+> set(request_body)
 
 Set SNMP configuration.
 
@@ -259,13 +301,20 @@ Set SNMP configuration.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
-appliance_techpreview_monitoring_snmp_set = VSphereAutomation::ApplianceTechpreviewMonitoringSnmpSet.new # ApplianceTechpreviewMonitoringSnmpSet | 
+request_body = Appliance::ApplianceTechpreviewMonitoringSnmpSet.new # ApplianceTechpreviewMonitoringSnmpSet | 
 
 begin
   #Set SNMP configuration.
-  api_instance.set(appliance_techpreview_monitoring_snmp_set)
+  api_instance.set(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TechpreviewMonitoringSnmpApi->set: #{e}"
 end
@@ -275,7 +324,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_techpreview_monitoring_snmp_set** | [**ApplianceTechpreviewMonitoringSnmpSet**](ApplianceTechpreviewMonitoringSnmpSet.md)|  | 
+ **request_body** | [**ApplianceTechpreviewMonitoringSnmpSet**](ApplianceTechpreviewMonitoringSnmpSet.md)|  | 
 
 ### Return type
 
@@ -283,12 +332,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -301,6 +350,13 @@ Generate diagnostics report for snmp agent.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
 
@@ -322,12 +378,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -340,6 +396,13 @@ Send a warmStart notification to all configured traps and inform destinations (s
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi.new
 
@@ -361,12 +424,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

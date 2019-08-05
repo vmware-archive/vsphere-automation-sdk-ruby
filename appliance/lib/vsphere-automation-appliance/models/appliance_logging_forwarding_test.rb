@@ -24,7 +24,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'send_test_message' => :'BOOLEAN'
+        :'send_test_message' => :'Boolean'
       }
     end
 

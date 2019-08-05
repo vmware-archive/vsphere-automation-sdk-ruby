@@ -44,7 +44,7 @@ module VSphereAutomation
         :'https_port' => :'Integer',
         :'sso_admin_password' => :'String',
         :'ssl_thumbprint' => :'String',
-        :'ssl_verify' => :'BOOLEAN'
+        :'ssl_verify' => :'Boolean'
       }
     end
 

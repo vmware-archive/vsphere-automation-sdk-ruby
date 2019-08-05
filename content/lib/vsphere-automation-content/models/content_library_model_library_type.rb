@@ -12,8 +12,8 @@ module VSphereAutomation
   module Content
     class ContentLibraryModelLibraryType
     
-    LOCAL = 'LOCAL'.freeze
-    SUBSCRIBED = 'SUBSCRIBED'.freeze
+    LOCAL = "LOCAL".freeze
+    SUBSCRIBED = "SUBSCRIBED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

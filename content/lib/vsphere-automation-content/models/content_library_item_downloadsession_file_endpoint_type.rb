@@ -12,8 +12,8 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemDownloadsessionFileEndpointType
     
-    HTTPS = 'HTTPS'.freeze
-    DIRECT = 'DIRECT'.freeze
+    HTTPS = "HTTPS".freeze
+    DIRECT = "DIRECT".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

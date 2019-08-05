@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterOvfOvfMessageCategory
     
-    VALIDATION = 'VALIDATION'.freeze
-    INPUT = 'INPUT'.freeze
-    SERVER = 'SERVER'.freeze
+    VALIDATION = "VALIDATION".freeze
+    INPUT = "INPUT".freeze
+    SERVER = "SERVER".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

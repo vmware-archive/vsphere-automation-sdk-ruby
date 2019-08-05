@@ -7,6 +7,6 @@
   "gemName": "vsphere-automation-vcenter",
   "gemRequiredRubyVersion": ">= 2.3",
   "gemSummary": "A Ruby SDK for the vSphere APIs (vCenter)",
-  "gemVersion": "0.1.0",
+  "gemVersion": "0.2.0",
   "moduleName": "VCenter"
 }

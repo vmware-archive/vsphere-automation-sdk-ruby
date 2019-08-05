@@ -17,37 +17,48 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Checks that the information to configure a non-replicated PSC satisfies the requirements.
-    # @param vcenter_deployment_install_psc_standalone_check 
+    # @param action action&#x3D;check
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterDeploymentInstallPscStandaloneCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
-    def check(vcenter_deployment_install_psc_standalone_check, opts = {})
-      data, _status_code, _headers = check_with_http_info(vcenter_deployment_install_psc_standalone_check, opts)
+    def check(action, request_body, opts = {})
+      data, _status_code, _headers = check_with_http_info(action, request_body, opts)
       data
     end
 
     # Checks that the information to configure a non-replicated PSC satisfies the requirements.
     # @api private
-    # @param vcenter_deployment_install_psc_standalone_check 
+    # @param action action&#x3D;check
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentInstallPscStandaloneCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def check_with_http_info(vcenter_deployment_install_psc_standalone_check, opts = {})
+    def check_with_http_info(action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallPscStandaloneApi.check ...'
       end
-      # verify the required parameter 'vcenter_deployment_install_psc_standalone_check' is set
-      if @api_client.config.client_side_validation && vcenter_deployment_install_psc_standalone_check.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_deployment_install_psc_standalone_check' when calling DeploymentInstallPscStandaloneApi.check"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentInstallPscStandaloneApi.check"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['check'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of check"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentInstallPscStandaloneApi.check"
       end
       # resource path
-      local_var_path = '/vcenter/deployment/install/psc/standalone?action=check'
+      local_var_path = '/vcenter/deployment/install/psc/standalone'
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -55,8 +66,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_deployment_install_psc_standalone_check)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

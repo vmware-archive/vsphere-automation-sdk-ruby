@@ -52,7 +52,7 @@ module VSphereAutomation
         :'names' => :'Array<String>',
         :'folders' => :'Array<String>',
         :'datacenters' => :'Array<String>',
-        :'standalone' => :'BOOLEAN',
+        :'standalone' => :'Boolean',
         :'clusters' => :'Array<String>',
         :'connection_states' => :'Array<VcenterHostConnectionState>'
       }

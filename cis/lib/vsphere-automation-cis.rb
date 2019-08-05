@@ -7,10 +7,10 @@
 
 
 # Common files
-require 'vsphere-automation-cis/api_client'
-require 'vsphere-automation-cis/api_error'
+require 'vsphere-automation-runtime/api_client'
+require 'vsphere-automation-runtime/api_error'
+require 'vsphere-automation-runtime/configuration'
 require 'vsphere-automation-cis/version'
-require 'vsphere-automation-cis/configuration'
 
 # Models
 require 'vsphere-automation-cis/models/cis_session_create_result'

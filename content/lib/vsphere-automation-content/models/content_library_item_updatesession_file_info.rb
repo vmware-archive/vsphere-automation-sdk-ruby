@@ -63,7 +63,7 @@ module VSphereAutomation
         :'bytes_transferred' => :'Integer',
         :'status' => :'ContentLibraryItemTransferStatus',
         :'error_message' => :'VapiStdLocalizableMessage',
-        :'keep_in_storage' => :'BOOLEAN'
+        :'keep_in_storage' => :'Boolean'
       }
     end
 

@@ -54,9 +54,9 @@ module VSphereAutomation
         :'type' => :'VcenterVmHardwareSerialBackingType',
         :'file' => :'String',
         :'host_device' => :'String',
-        :'auto_detect' => :'BOOLEAN',
+        :'auto_detect' => :'Boolean',
         :'pipe' => :'String',
-        :'no_rx_loss' => :'BOOLEAN',
+        :'no_rx_loss' => :'Boolean',
         :'network_location' => :'String',
         :'proxy' => :'String'
       }

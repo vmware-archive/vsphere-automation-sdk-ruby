@@ -51,7 +51,7 @@ module VSphereAutomation
         :'file' => :'String',
         :'host_device' => :'String',
         :'pipe' => :'String',
-        :'no_rx_loss' => :'BOOLEAN',
+        :'no_rx_loss' => :'Boolean',
         :'network_location' => :'String',
         :'proxy' => :'String'
       }

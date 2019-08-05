@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check_compatibility**](StoragePoliciesApi.md#check_compatibility) | **POST** /vcenter/storage/policies/{policy}?action&#x3D;check-compatibility | Returns datastore compatibility summary about a specific storage policy.
+[**check_compatibility**](StoragePoliciesApi.md#check_compatibility) | **POST** /vcenter/storage/policies/{policy} | Returns datastore compatibility summary about a specific storage policy.
 [**list**](StoragePoliciesApi.md#list) | **GET** /vcenter/storage/policies | Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
 
 
 # **check_compatibility**
-> VcenterStoragePoliciesCheckCompatibilityResult check_compatibility(policy, vcenter_storage_policies_check_compatibility)
+> VcenterStoragePoliciesCheckCompatibilityResult check_compatibility(policy, action, request_body)
 
 Returns datastore compatibility summary about a specific storage policy.
 
@@ -17,14 +17,22 @@ Returns datastore compatibility summary about a specific storage policy.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::StoragePoliciesApi.new
 policy = 'policy_example' # String | The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
-vcenter_storage_policies_check_compatibility = VSphereAutomation::VcenterStoragePoliciesCheckCompatibility.new # VcenterStoragePoliciesCheckCompatibility | 
+action = 'action_example' # String | action=check-compatibility
+request_body = VCenter::VcenterStoragePoliciesCheckCompatibility.new # VcenterStoragePoliciesCheckCompatibility | 
 
 begin
   #Returns datastore compatibility summary about a specific storage policy.
-  result = api_instance.check_compatibility(policy, vcenter_storage_policies_check_compatibility)
+  result = api_instance.check_compatibility(policy, action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling StoragePoliciesApi->check_compatibility: #{e}"
@@ -36,7 +44,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy** | **String**| The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy. | 
- **vcenter_storage_policies_check_compatibility** | [**VcenterStoragePoliciesCheckCompatibility**](VcenterStoragePoliciesCheckCompatibility.md)|  | 
+ **action** | **String**| action&#x3D;check-compatibility | 
+ **request_body** | [**VcenterStoragePoliciesCheckCompatibility**](VcenterStoragePoliciesCheckCompatibility.md)|  | 
 
 ### Return type
 
@@ -44,12 +53,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -62,6 +71,13 @@ Returns information about at most 1024 visible (subject to permission checks) st
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::StoragePoliciesApi.new
 opts = {
@@ -89,12 +105,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

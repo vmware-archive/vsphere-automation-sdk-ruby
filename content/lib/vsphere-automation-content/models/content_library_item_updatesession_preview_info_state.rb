@@ -12,10 +12,10 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionPreviewInfoState
     
-    UNAVAILABLE = 'UNAVAILABLE'.freeze
-    NOT_APPLICABLE = 'NOT_APPLICABLE'.freeze
-    PREPARING = 'PREPARING'.freeze
-    AVAILABLE = 'AVAILABLE'.freeze
+    UNAVAILABLE = "UNAVAILABLE".freeze
+    NOT_APPLICABLE = "NOT_APPLICABLE".freeze
+    PREPARING = "PREPARING".freeze
+    AVAILABLE = "AVAILABLE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

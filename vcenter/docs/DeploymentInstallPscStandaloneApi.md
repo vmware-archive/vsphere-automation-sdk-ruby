@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](DeploymentInstallPscStandaloneApi.md#check) | **POST** /vcenter/deployment/install/psc/standalone?action&#x3D;check | Checks that the information to configure a non-replicated PSC satisfies the requirements.
+[**check**](DeploymentInstallPscStandaloneApi.md#check) | **POST** /vcenter/deployment/install/psc/standalone | Checks that the information to configure a non-replicated PSC satisfies the requirements.
 
 
 # **check**
-> VcenterDeploymentInstallPscStandaloneCheckResult check(vcenter_deployment_install_psc_standalone_check)
+> VcenterDeploymentInstallPscStandaloneCheckResult check(action, request_body)
 
 Checks that the information to configure a non-replicated PSC satisfies the requirements.
 
@@ -16,13 +16,21 @@ Checks that the information to configure a non-replicated PSC satisfies the requ
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallPscStandaloneApi.new
-vcenter_deployment_install_psc_standalone_check = VSphereAutomation::VcenterDeploymentInstallPscStandaloneCheck.new # VcenterDeploymentInstallPscStandaloneCheck | 
+action = 'action_example' # String | action=check
+request_body = VCenter::VcenterDeploymentInstallPscStandaloneCheck.new # VcenterDeploymentInstallPscStandaloneCheck | 
 
 begin
   #Checks that the information to configure a non-replicated PSC satisfies the requirements.
-  result = api_instance.check(vcenter_deployment_install_psc_standalone_check)
+  result = api_instance.check(action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallPscStandaloneApi->check: #{e}"
@@ -33,7 +41,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_install_psc_standalone_check** | [**VcenterDeploymentInstallPscStandaloneCheck**](VcenterDeploymentInstallPscStandaloneCheck.md)|  | 
+ **action** | **String**| action&#x3D;check | 
+ **request_body** | [**VcenterDeploymentInstallPscStandaloneCheck**](VcenterDeploymentInstallPscStandaloneCheck.md)|  | 
 
 ### Return type
 
@@ -41,12 +50,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

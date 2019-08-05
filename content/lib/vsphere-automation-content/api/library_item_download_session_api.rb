@@ -47,14 +47,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -67,26 +67,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Creates a new download session.
-    # @param content_library_item_download_session_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentLibraryItemDownloadSessionCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|]
-    def create(content_library_item_download_session_create, opts = {})
-      data, _status_code, _headers = create_with_http_info(content_library_item_download_session_create, opts)
+    def create(request_body, opts = {})
+      data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
     # Creates a new download session.
     # @api private
-    # @param content_library_item_download_session_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemDownloadSessionCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def create_with_http_info(content_library_item_download_session_create, opts = {})
+    def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.create ...'
       end
-      # verify the required parameter 'content_library_item_download_session_create' is set
-      if @api_client.config.client_side_validation && content_library_item_download_session_create.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_item_download_session_create' when calling LibraryItemDownloadSessionApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemDownloadSessionApi.create"
       end
       # resource path
       local_var_path = '/com/vmware/content/library/item/download-session'
@@ -97,7 +97,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -105,8 +105,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_item_download_session_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -154,14 +154,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -175,21 +175,23 @@ module VSphereAutomation
     end
     # Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
     # @param download_session_id Identifier of the download session to fail.
-    # @param content_library_item_download_session_fail 
+    # @param action ~action&#x3D;fail
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def fail(download_session_id, content_library_item_download_session_fail, opts = {})
-      fail_with_http_info(download_session_id, content_library_item_download_session_fail, opts)
+    def fail(download_session_id, action, request_body, opts = {})
+      fail_with_http_info(download_session_id, action, request_body, opts)
       nil
     end
 
     # Terminates the download session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
     # @api private
     # @param download_session_id Identifier of the download session to fail.
-    # @param content_library_item_download_session_fail 
+    # @param action ~action&#x3D;fail
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def fail_with_http_info(download_session_id, content_library_item_download_session_fail, opts = {})
+    def fail_with_http_info(download_session_id, action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.fail ...'
       end
@@ -197,20 +199,29 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && download_session_id.nil?
         fail ArgumentError, "Missing the required parameter 'download_session_id' when calling LibraryItemDownloadSessionApi.fail"
       end
-      # verify the required parameter 'content_library_item_download_session_fail' is set
-      if @api_client.config.client_side_validation && content_library_item_download_session_fail.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_item_download_session_fail' when calling LibraryItemDownloadSessionApi.fail"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryItemDownloadSessionApi.fail"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['fail'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of fail"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemDownloadSessionApi.fail"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=fail'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -218,8 +229,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_item_download_session_fail)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -262,14 +273,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -288,7 +299,7 @@ module VSphereAutomation
     # Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. <p> If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.
     # @param download_session_id Identifier of the download session whose lifetime should be extended.
     # @param [Hash] opts the optional parameters
-    # @option opts [ContentLibraryItemDownloadSessionKeepAlive] :content_library_item_download_session_keep_alive 
+    # @option opts [ContentLibraryItemDownloadSessionKeepAlive] :request_body 
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
     def keep_alive(download_session_id, opts = {})
       keep_alive_with_http_info(download_session_id, opts)
@@ -299,7 +310,7 @@ module VSphereAutomation
     # @api private
     # @param download_session_id Identifier of the download session whose lifetime should be extended.
     # @param [Hash] opts the optional parameters
-    # @option opts [ContentLibraryItemDownloadSessionKeepAlive] :content_library_item_download_session_keep_alive 
+    # @option opts [ContentLibraryItemDownloadSessionKeepAlive] :request_body 
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def keep_alive_with_http_info(download_session_id, opts = {})
       if @api_client.config.debugging
@@ -318,7 +329,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -326,8 +337,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'content_library_item_download_session_keep_alive'])
-      auth_names = []
+      post_body = @api_client.object_to_http_body(opts[:'request_body'])
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -367,14 +378,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

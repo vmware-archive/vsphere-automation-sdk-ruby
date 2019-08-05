@@ -30,6 +30,7 @@ describe 'DeploymentUpgradeApi' do
 
   # unit tests for cancel
   # Cancel the appliance upgrade that is in progress.
+  # @param action action&#x3D;cancel
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel test' do
@@ -40,7 +41,7 @@ describe 'DeploymentUpgradeApi' do
 
   # unit tests for check
   # Run sanity checks using the UpgradeSpec parameters passed.
-  # @param vcenter_deployment_upgrade_check 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterDeploymentUpgradeCheckResult]
   describe 'check test' do
@@ -61,7 +62,7 @@ describe 'DeploymentUpgradeApi' do
 
   # unit tests for start
   # Start the appliance installation.
-  # @param vcenter_deployment_upgrade_start 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'start test' do

@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareCdromDeviceAccessType
     
-    EMULATION = 'EMULATION'.freeze
-    PASSTHRU = 'PASSTHRU'.freeze
-    PASSTHRU_EXCLUSIVE = 'PASSTHRU_EXCLUSIVE'.freeze
+    EMULATION = "EMULATION".freeze
+    PASSTHRU = "PASSTHRU".freeze
+    PASSTHRU_EXCLUSIVE = "PASSTHRU_EXCLUSIVE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

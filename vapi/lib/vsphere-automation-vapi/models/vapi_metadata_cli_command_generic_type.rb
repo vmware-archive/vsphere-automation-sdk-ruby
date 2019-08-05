@@ -12,11 +12,11 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataCliCommandGenericType
     
-    NONE = 'NONE'.freeze
-    OPTIONAL = 'OPTIONAL'.freeze
-    LIST = 'LIST'.freeze
-    OPTIONAL_LIST = 'OPTIONAL_LIST'.freeze
-    LIST_OPTIONAL = 'LIST_OPTIONAL'.freeze
+    NONE = "NONE".freeze
+    OPTIONAL = "OPTIONAL".freeze
+    LIST = "LIST".freeze
+    OPTIONAL_LIST = "OPTIONAL_LIST".freeze
+    LIST_OPTIONAL = "LIST_OPTIONAL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

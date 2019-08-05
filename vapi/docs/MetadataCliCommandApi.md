@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**fingerprint**](MetadataCliCommandApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/cli/command?~action&#x3D;fingerprint | Returns the aggregate fingerprint of all the command metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for commands has been modified on the server.
-[**get**](MetadataCliCommandApi.md#get) | **POST** /com/vmware/vapi/metadata/cli/command?~action&#x3D;get | Retrieves information about a command including information about how to execute that command.
+[**get**](MetadataCliCommandApi.md#get) | **POST** /com/vmware/vapi/metadata/cli/command | Retrieves information about a command including information about how to execute that command.
 [**list**](MetadataCliCommandApi.md#list) | **GET** /com/vmware/vapi/metadata/cli/command | Returns the identifiers of all commands, or commands in a specific namespace.
 
 
@@ -18,6 +18,13 @@ Returns the aggregate fingerprint of all the command metadata from all the metad
 ```ruby
 # load the gem
 require 'vsphere-automation-vapi'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VAPI::MetadataCliCommandApi.new
 
@@ -39,17 +46,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **get**
-> VapiMetadataCliCommandResult get(vapi_metadata_cli_command_get)
+> VapiMetadataCliCommandResult get(action, request_body)
 
 Retrieves information about a command including information about how to execute that command.
 
@@ -57,13 +64,21 @@ Retrieves information about a command including information about how to execute
 ```ruby
 # load the gem
 require 'vsphere-automation-vapi'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VAPI::MetadataCliCommandApi.new
-vapi_metadata_cli_command_get = VSphereAutomation::VapiMetadataCliCommandGet.new # VapiMetadataCliCommandGet | 
+action = 'action_example' # String | ~action=get
+request_body = VAPI::VapiMetadataCliCommandGet.new # VapiMetadataCliCommandGet | 
 
 begin
   #Retrieves information about a command including information about how to execute that command.
-  result = api_instance.get(vapi_metadata_cli_command_get)
+  result = api_instance.get(action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataCliCommandApi->get: #{e}"
@@ -74,7 +89,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vapi_metadata_cli_command_get** | [**VapiMetadataCliCommandGet**](VapiMetadataCliCommandGet.md)|  | 
+ **action** | **String**| ~action&#x3D;get | 
+ **request_body** | [**VapiMetadataCliCommandGet**](VapiMetadataCliCommandGet.md)|  | 
 
 ### Return type
 
@@ -82,12 +98,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -100,6 +116,13 @@ Returns the identifiers of all commands, or commands in a specific namespace.
 ```ruby
 # load the gem
 require 'vsphere-automation-vapi'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VAPI::MetadataCliCommandApi.new
 opts = {
@@ -127,12 +150,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

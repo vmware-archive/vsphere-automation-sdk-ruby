@@ -23,21 +23,12 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.3"
 
-  s.add_runtime_dependency 'typhoeus', '~> 1.3'
-  s.add_runtime_dependency 'json', '~> 2.1'
-  s.add_runtime_dependency 'vsphere-automation-appliance', '~> 0.1.0'
-  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.1.0'
-  s.add_runtime_dependency 'vsphere-automation-content', '~> 0.1.0'
-  s.add_runtime_dependency 'vsphere-automation-vapi', '~> 0.1.0'
-  s.add_runtime_dependency 'vsphere-automation-vcenter', '~> 0.1.0'
-
-  s.add_development_dependency 'bundler', '~> 1.16'
-  s.add_development_dependency 'pry', '~> 0.11.3'
-  s.add_development_dependency 'rake', '~> 12.3'
-  s.add_development_dependency 'rspec', '~> 3.7'
-  s.add_development_dependency 'rubocop', '~> 0.58.2'
-  s.add_development_dependency 'vcr', '~> 4.0'
-  s.add_development_dependency 'webmock', '~> 3.4'
+  s.add_runtime_dependency 'vsphere-automation-appliance', '~> 0.2.0'
+  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.2.0'
+  s.add_runtime_dependency 'vsphere-automation-content', '~> 0.2.0'
+  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.2.0'
+  s.add_runtime_dependency 'vsphere-automation-vapi', '~> 0.2.0'
+  s.add_runtime_dependency 'vsphere-automation-vcenter', '~> 0.2.0'
 
   s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
   s.test_files    = `find spec/*`.split("\n")

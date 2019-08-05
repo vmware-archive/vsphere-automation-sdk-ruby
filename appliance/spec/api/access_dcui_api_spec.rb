@@ -40,7 +40,7 @@ describe 'AccessDcuiApi' do
 
   # unit tests for set
   # Set enabled state of Direct Console User Interface (DCUI TTY2).
-  # @param appliance_access_dcui_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

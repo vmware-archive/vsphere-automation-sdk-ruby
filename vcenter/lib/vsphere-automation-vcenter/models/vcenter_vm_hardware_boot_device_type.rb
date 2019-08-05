@@ -12,10 +12,10 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareBootDeviceType
     
-    CDROM = 'CDROM'.freeze
-    DISK = 'DISK'.freeze
-    ETHERNET = 'ETHERNET'.freeze
-    FLOPPY = 'FLOPPY'.freeze
+    CDROM = "CDROM".freeze
+    DISK = "DISK".freeze
+    ETHERNET = "ETHERNET".freeze
+    FLOPPY = "FLOPPY".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

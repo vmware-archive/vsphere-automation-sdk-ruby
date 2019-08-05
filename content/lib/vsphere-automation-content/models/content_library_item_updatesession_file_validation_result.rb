@@ -32,7 +32,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'has_errors' => :'BOOLEAN',
+        :'has_errors' => :'Boolean',
         :'missing_files' => :'Array<String>',
         :'invalid_files' => :'Array<ContentLibraryItemUpdatesessionFileValidationError>'
       }

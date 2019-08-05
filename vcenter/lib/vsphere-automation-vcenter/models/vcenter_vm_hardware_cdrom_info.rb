@@ -53,8 +53,8 @@ module VSphereAutomation
         :'sata' => :'VcenterVmHardwareSataAddressInfo',
         :'backing' => :'VcenterVmHardwareCdromBackingInfo',
         :'state' => :'VcenterVmHardwareConnectionState',
-        :'start_connected' => :'BOOLEAN',
-        :'allow_guest_control' => :'BOOLEAN'
+        :'start_connected' => :'Boolean',
+        :'allow_guest_control' => :'Boolean'
       }
     end
 

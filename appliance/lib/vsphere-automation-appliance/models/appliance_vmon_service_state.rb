@@ -12,10 +12,10 @@ module VSphereAutomation
   module Appliance
     class ApplianceVmonServiceState
     
-    STARTING = 'STARTING'.freeze
-    STOPPING = 'STOPPING'.freeze
-    STARTED = 'STARTED'.freeze
-    STOPPED = 'STOPPED'.freeze
+    STARTING = "STARTING".freeze
+    STOPPING = "STOPPING".freeze
+    STARTED = "STARTED".freeze
+    STOPPED = "STOPPED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

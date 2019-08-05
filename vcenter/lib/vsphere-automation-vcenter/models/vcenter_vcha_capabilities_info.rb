@@ -32,9 +32,9 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'management_vcenter_credentials_required' => :'BOOLEAN',
-        :'vcha_licensed' => :'BOOLEAN',
-        :'failover_ip_mode_valid' => :'BOOLEAN'
+        :'management_vcenter_credentials_required' => :'Boolean',
+        :'vcha_licensed' => :'Boolean',
+        :'failover_ip_mode_valid' => :'Boolean'
       }
     end
 

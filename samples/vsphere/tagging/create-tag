@@ -37,22 +37,15 @@ OptionParser.new do |opts|
 end.parse!
  
 configuration = VSphereAutomation::Configuration.new.tap do |c|
-    c.host = options[:server]
-    c.username = options[:username]
-    c.password = options[:password]
-    c.scheme = 'https'
-    c.verify_ssl = !options[:insecure]
-    c.verify_ssl_host = !options[:insecure]
-  end
+  c.host = options[:server]
+  c.username = options[:username]
+  c.password = options[:password]
+  c.scheme = 'https'
+  c.verify_ssl = !options[:insecure]
+  c.verify_ssl_host = !options[:insecure]
+end
 api_client = VSphereAutomation::ApiClient.new(configuration)
-api_client.default_headers['Authorization'] = configuration.basic_auth_token
- 
-session_api = VSphereAutomation::CIS::SessionApi.new(api_client)
-session_id = session_api.create('').value
- 
-api_client.default_headers['vmware-api-session-id'] = session_id
- 
-api_instance = VSphereAutomation::CIS::TaggingTagApi.new(api_client)
+VSphereAutomation::CIS::SessionApi.new(api_client).create('')
 
 create_spec =  VSphereAutomation::CIS::CisTaggingTagCreateSpec.new(
   name: options[:name],
@@ -61,6 +54,7 @@ create_spec =  VSphereAutomation::CIS::CisTaggingTagCreateSpec.new(
 )
 create_model = VSphereAutomation::CIS::CisTaggingTagCreate.new(create_spec: create_spec)
 
+api_instance = VSphereAutomation::CIS::TaggingTagApi.new(api_client)
 result = api_instance.create(create_model).value
 
 puts "Tag ID: #{result}"

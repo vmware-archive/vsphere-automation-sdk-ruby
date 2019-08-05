@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterVmHardwareDiskCreateResult create(vm, vcenter_vm_hardware_disk_create)
+> VcenterVmHardwareDiskCreateResult create(vm, request_body)
 
 Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
 
@@ -20,14 +20,21 @@ Adds a virtual disk to the virtual machine. While adding the virtual disk, a new
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareDiskApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_hardware_disk_create = VSphereAutomation::VcenterVmHardwareDiskCreate.new # VcenterVmHardwareDiskCreate | 
+request_body = VCenter::VcenterVmHardwareDiskCreate.new # VcenterVmHardwareDiskCreate | 
 
 begin
   #Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
-  result = api_instance.create(vm, vcenter_vm_hardware_disk_create)
+  result = api_instance.create(vm, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareDiskApi->create: #{e}"
@@ -39,7 +46,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_disk_create** | [**VcenterVmHardwareDiskCreate**](VcenterVmHardwareDiskCreate.md)|  | 
+ **request_body** | [**VcenterVmHardwareDiskCreate**](VcenterVmHardwareDiskCreate.md)|  | 
 
 ### Return type
 
@@ -47,12 +54,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -65,6 +72,13 @@ Removes a virtual disk from the virtual machine. This operation does not destroy
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareDiskApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -91,12 +105,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -109,6 +123,13 @@ Returns information about a virtual disk.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareDiskApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -136,12 +157,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -154,6 +175,13 @@ Returns commonly used information about the virtual disks belonging to the virtu
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareDiskApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -179,17 +207,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(vm, disk, vcenter_vm_hardware_disk_update)
+> update(vm, disk, request_body)
 
 Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
 
@@ -197,15 +225,22 @@ Updates the configuration of a virtual disk. An update operation can be used to 
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareDiskApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 disk = 'disk_example' # String | Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
-vcenter_vm_hardware_disk_update = VSphereAutomation::VcenterVmHardwareDiskUpdate.new # VcenterVmHardwareDiskUpdate | 
+request_body = VCenter::VcenterVmHardwareDiskUpdate.new # VcenterVmHardwareDiskUpdate | 
 
 begin
   #Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
-  api_instance.update(vm, disk, vcenter_vm_hardware_disk_update)
+  api_instance.update(vm, disk, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareDiskApi->update: #{e}"
 end
@@ -217,7 +252,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **disk** | **String**| Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk. | 
- **vcenter_vm_hardware_disk_update** | [**VcenterVmHardwareDiskUpdate**](VcenterVmHardwareDiskUpdate.md)|  | 
+ **request_body** | [**VcenterVmHardwareDiskUpdate**](VcenterVmHardwareDiskUpdate.md)|  | 
 
 ### Return type
 
@@ -225,12 +260,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

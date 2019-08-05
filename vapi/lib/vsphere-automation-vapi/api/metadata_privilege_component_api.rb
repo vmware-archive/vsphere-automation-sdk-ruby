@@ -18,19 +18,21 @@ module VSphereAutomation
     end
     # Retrieves the fingerprint computed from the privilege metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.privilege.Component#get}.
     # @param component_id Identifier of the component element.
+    # @param action ~action&#x3D;fingerprint
     # @param [Hash] opts the optional parameters
     # @return [VapiMetadataPrivilegeComponentFingerprintResult|VapiStdErrorsNotFoundError|]
-    def fingerprint(component_id, opts = {})
-      data, _status_code, _headers = fingerprint_with_http_info(component_id, opts)
+    def fingerprint(component_id, action, opts = {})
+      data, _status_code, _headers = fingerprint_with_http_info(component_id, action, opts)
       data
     end
 
     # Retrieves the fingerprint computed from the privilege metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.privilege.Component#get}.
     # @api private
     # @param component_id Identifier of the component element.
+    # @param action ~action&#x3D;fingerprint
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataPrivilegeComponentFingerprintResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def fingerprint_with_http_info(component_id, opts = {})
+    def fingerprint_with_http_info(component_id, action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataPrivilegeComponentApi.fingerprint ...'
       end
@@ -38,23 +40,32 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && component_id.nil?
         fail ArgumentError, "Missing the required parameter 'component_id' when calling MetadataPrivilegeComponentApi.fingerprint"
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling MetadataPrivilegeComponentApi.fingerprint"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['fingerprint'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of fingerprint"
+      end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/privilege/component/id:{component_id}?~action=fingerprint'.sub('{' + 'component_id' + '}', component_id.to_s)
+      local_var_path = '/com/vmware/vapi/metadata/privilege/component/id:{component_id}'.sub('{' + 'component_id' + '}', component_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -101,14 +112,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -149,14 +160,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

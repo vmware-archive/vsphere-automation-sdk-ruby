@@ -32,7 +32,7 @@ module VSphereAutomation
       {
         :'standalone' => :'VcenterDeploymentStandaloneSpec',
         :'replicated' => :'VcenterDeploymentReplicatedSpec',
-        :'ceip_enabled' => :'BOOLEAN'
+        :'ceip_enabled' => :'Boolean'
       }
     end
 

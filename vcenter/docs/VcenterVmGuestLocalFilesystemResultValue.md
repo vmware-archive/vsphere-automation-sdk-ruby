@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VcenterVmGuestLocalFilesystemInfo**](VcenterVmGuestLocalFilesystemInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VcenterVmGuestLocalFilesystemInfo**](VcenterVmGuestLocalFilesystemInfo.md) |  | [optional] 
 
 

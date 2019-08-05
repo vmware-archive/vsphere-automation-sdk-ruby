@@ -65,7 +65,7 @@ module VSphereAutomation
       {
         :'name' => :'String',
         :'annotation' => :'String',
-        :'accept_all_eula' => :'BOOLEAN',
+        :'accept_all_eula' => :'Boolean',
         :'network_mappings' => :'Array<Object>',
         :'storage_mappings' => :'Array<Object>',
         :'storage_provisioning' => :'VcenterOvfDiskProvisioningType',

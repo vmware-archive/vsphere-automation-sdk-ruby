@@ -10,13 +10,13 @@ Method | HTTP request | Description
 [**get**](TaggingCategoryApi.md#get) | **GET** /com/vmware/cis/tagging/category/id:{category_id} | Fetches the category information for the given category identifier. In order to view the category information, you need the read privilege on the category.
 [**list**](TaggingCategoryApi.md#list) | **GET** /com/vmware/cis/tagging/category | Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
 [**list_used_categories**](TaggingCategoryApi.md#list_used_categories) | **POST** /com/vmware/cis/tagging/category?~action&#x3D;list-used-categories | Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
-[**remove_from_used_by**](TaggingCategoryApi.md#remove_from_used_by) | **POST** /com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;remove-from-used-by | Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
+[**remove_from_used_by**](TaggingCategoryApi.md#remove_from_used_by) | **POST** /com/vmware/cis/tagging/category/id:{category_id} | Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
 [**revoke_propagating_permissions**](TaggingCategoryApi.md#revoke_propagating_permissions) | **POST** /com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;revoke-propagating-permissions | Revokes all propagating permissions on the given category. You should then attach a direct permission with tagging privileges on the given category. To invoke this {@term operation}, you need category related privileges (direct or propagating) on the concerned category.
 [**update**](TaggingCategoryApi.md#update) | **PATCH** /com/vmware/cis/tagging/category/id:{category_id} | Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
 
 
 # **add_to_used_by**
-> add_to_used_by(category_id, cis_tagging_category_add_to_used_by)
+> add_to_used_by(category_id, request_body)
 
 Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
 
@@ -24,14 +24,21 @@ Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscrib
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 category_id = 'category_id_example' # String | The identifier of the input category.
-cis_tagging_category_add_to_used_by = VSphereAutomation::CisTaggingCategoryAddToUsedBy.new # CisTaggingCategoryAddToUsedBy | 
+request_body = CIS::CisTaggingCategoryAddToUsedBy.new # CisTaggingCategoryAddToUsedBy | 
 
 begin
   #Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
-  api_instance.add_to_used_by(category_id, cis_tagging_category_add_to_used_by)
+  api_instance.add_to_used_by(category_id, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TaggingCategoryApi->add_to_used_by: #{e}"
 end
@@ -42,7 +49,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **String**| The identifier of the input category. | 
- **cis_tagging_category_add_to_used_by** | [**CisTaggingCategoryAddToUsedBy**](CisTaggingCategoryAddToUsedBy.md)|  | 
+ **request_body** | [**CisTaggingCategoryAddToUsedBy**](CisTaggingCategoryAddToUsedBy.md)|  | 
 
 ### Return type
 
@@ -50,17 +57,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **create**
-> CisTaggingCategoryCreateResult create(cis_tagging_category_create)
+> CisTaggingCategoryCreateResult create(request_body)
 
 Creates a category. To invoke this {@term operation}, you need the create category privilege.
 
@@ -68,13 +75,20 @@ Creates a category. To invoke this {@term operation}, you need the create catego
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
-cis_tagging_category_create = VSphereAutomation::CisTaggingCategoryCreate.new # CisTaggingCategoryCreate | 
+request_body = CIS::CisTaggingCategoryCreate.new # CisTaggingCategoryCreate | 
 
 begin
   #Creates a category. To invoke this {@term operation}, you need the create category privilege.
-  result = api_instance.create(cis_tagging_category_create)
+  result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TaggingCategoryApi->create: #{e}"
@@ -85,7 +99,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cis_tagging_category_create** | [**CisTaggingCategoryCreate**](CisTaggingCategoryCreate.md)|  | 
+ **request_body** | [**CisTaggingCategoryCreate**](CisTaggingCategoryCreate.md)|  | 
 
 ### Return type
 
@@ -93,12 +107,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -111,6 +125,13 @@ Deletes an existing category. To invoke this {@term operation}, you need the del
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 category_id = 'category_id_example' # String | The identifier of category to be deleted.
@@ -135,12 +156,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -153,6 +174,13 @@ Fetches the category information for the given category identifier. In order to 
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 category_id = 'category_id_example' # String | The identifier of the input category.
@@ -178,12 +206,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -196,6 +224,13 @@ Enumerates the categories in the system. To invoke this {@term operation}, you n
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 
@@ -217,17 +252,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **list_used_categories**
-> CisTaggingCategoryListUsedCategoriesResult list_used_categories(cis_tagging_category_list_used_categories)
+> CisTaggingCategoryListUsedCategoriesResult list_used_categories(request_body)
 
 Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
 
@@ -235,13 +270,20 @@ Enumerates all categories for which the {@param.name usedByEntity} is part of th
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
-cis_tagging_category_list_used_categories = VSphereAutomation::CisTaggingCategoryListUsedCategories.new # CisTaggingCategoryListUsedCategories | 
+request_body = CIS::CisTaggingCategoryListUsedCategories.new # CisTaggingCategoryListUsedCategories | 
 
 begin
   #Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
-  result = api_instance.list_used_categories(cis_tagging_category_list_used_categories)
+  result = api_instance.list_used_categories(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TaggingCategoryApi->list_used_categories: #{e}"
@@ -252,7 +294,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cis_tagging_category_list_used_categories** | [**CisTaggingCategoryListUsedCategories**](CisTaggingCategoryListUsedCategories.md)|  | 
+ **request_body** | [**CisTaggingCategoryListUsedCategories**](CisTaggingCategoryListUsedCategories.md)|  | 
 
 ### Return type
 
@@ -260,17 +302,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **remove_from_used_by**
-> remove_from_used_by(category_id, cis_tagging_category_remove_from_used_by)
+> remove_from_used_by(category_id, action, request_body)
 
 Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
 
@@ -278,14 +320,22 @@ Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} sub
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 category_id = 'category_id_example' # String | The identifier of the input category.
-cis_tagging_category_remove_from_used_by = VSphereAutomation::CisTaggingCategoryRemoveFromUsedBy.new # CisTaggingCategoryRemoveFromUsedBy | 
+action = 'action_example' # String | ~action=remove-from-used-by
+request_body = CIS::CisTaggingCategoryRemoveFromUsedBy.new # CisTaggingCategoryRemoveFromUsedBy | 
 
 begin
   #Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
-  api_instance.remove_from_used_by(category_id, cis_tagging_category_remove_from_used_by)
+  api_instance.remove_from_used_by(category_id, action, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TaggingCategoryApi->remove_from_used_by: #{e}"
 end
@@ -296,7 +346,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **String**| The identifier of the input category. | 
- **cis_tagging_category_remove_from_used_by** | [**CisTaggingCategoryRemoveFromUsedBy**](CisTaggingCategoryRemoveFromUsedBy.md)|  | 
+ **action** | **String**| ~action&#x3D;remove-from-used-by | 
+ **request_body** | [**CisTaggingCategoryRemoveFromUsedBy**](CisTaggingCategoryRemoveFromUsedBy.md)|  | 
 
 ### Return type
 
@@ -304,12 +355,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -322,6 +373,13 @@ Revokes all propagating permissions on the given category. You should then attac
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 category_id = 'category_id_example' # String | The identifier of the input category.
@@ -346,17 +404,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(category_id, cis_tagging_category_update)
+> update(category_id, request_body)
 
 Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
 
@@ -364,14 +422,21 @@ Updates an existing category. To invoke this {@term operation}, you need the edi
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 category_id = 'category_id_example' # String | The identifier of the category to be updated.
-cis_tagging_category_update = VSphereAutomation::CisTaggingCategoryUpdate.new # CisTaggingCategoryUpdate | 
+request_body = CIS::CisTaggingCategoryUpdate.new # CisTaggingCategoryUpdate | 
 
 begin
   #Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
-  api_instance.update(category_id, cis_tagging_category_update)
+  api_instance.update(category_id, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TaggingCategoryApi->update: #{e}"
 end
@@ -382,7 +447,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **String**| The identifier of the category to be updated. | 
- **cis_tagging_category_update** | [**CisTaggingCategoryUpdate**](CisTaggingCategoryUpdate.md)|  | 
+ **request_body** | [**CisTaggingCategoryUpdate**](CisTaggingCategoryUpdate.md)|  | 
 
 ### Return type
 
@@ -390,12 +455,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

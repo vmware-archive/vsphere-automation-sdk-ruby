@@ -12,13 +12,13 @@ module VSphereAutomation
   module VCenter
     class VcenterDatastoreType
     
-    VMFS = 'VMFS'.freeze
-    NFS = 'NFS'.freeze
-    NFS41 = 'NFS41'.freeze
-    CIFS = 'CIFS'.freeze
-    VSAN = 'VSAN'.freeze
-    VFFS = 'VFFS'.freeze
-    VVOL = 'VVOL'.freeze
+    VMFS = "VMFS".freeze
+    NFS = "NFS".freeze
+    NFS41 = "NFS41".freeze
+    CIFS = "CIFS".freeze
+    VSAN = "VSAN".freeze
+    VFFS = "VFFS".freeze
+    VVOL = "VVOL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

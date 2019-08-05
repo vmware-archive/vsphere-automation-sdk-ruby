@@ -41,14 +41,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -85,14 +85,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -109,26 +109,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Power off the appliance.
-    # @param appliance_shutdown_poweroff 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def poweroff(appliance_shutdown_poweroff, opts = {})
-      poweroff_with_http_info(appliance_shutdown_poweroff, opts)
+    def poweroff(request_body, opts = {})
+      poweroff_with_http_info(request_body, opts)
       nil
     end
 
     # Power off the appliance.
     # @api private
-    # @param appliance_shutdown_poweroff 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def poweroff_with_http_info(appliance_shutdown_poweroff, opts = {})
+    def poweroff_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ShutdownApi.poweroff ...'
       end
-      # verify the required parameter 'appliance_shutdown_poweroff' is set
-      if @api_client.config.client_side_validation && appliance_shutdown_poweroff.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_shutdown_poweroff' when calling ShutdownApi.poweroff"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling ShutdownApi.poweroff"
       end
       # resource path
       local_var_path = '/appliance/shutdown/poweroff'
@@ -139,7 +139,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -147,8 +147,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_shutdown_poweroff)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -161,26 +161,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Reboot the appliance.
-    # @param appliance_shutdown_reboot 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def reboot(appliance_shutdown_reboot, opts = {})
-      reboot_with_http_info(appliance_shutdown_reboot, opts)
+    def reboot(request_body, opts = {})
+      reboot_with_http_info(request_body, opts)
       nil
     end
 
     # Reboot the appliance.
     # @api private
-    # @param appliance_shutdown_reboot 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def reboot_with_http_info(appliance_shutdown_reboot, opts = {})
+    def reboot_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ShutdownApi.reboot ...'
       end
-      # verify the required parameter 'appliance_shutdown_reboot' is set
-      if @api_client.config.client_side_validation && appliance_shutdown_reboot.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_shutdown_reboot' when calling ShutdownApi.reboot"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling ShutdownApi.reboot"
       end
       # resource path
       local_var_path = '/appliance/shutdown/reboot'
@@ -191,7 +191,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -199,8 +199,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_shutdown_reboot)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

@@ -18,6 +18,13 @@ Cancel the restore job
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryRestoreJobApi.new
 
@@ -39,17 +46,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **create**
-> ApplianceRecoveryRestoreJobCreateResult create(appliance_recovery_restore_job_create)
+> ApplianceRecoveryRestoreJobCreateResult create(request_body)
 
 Initiate restore.
 
@@ -57,13 +64,20 @@ Initiate restore.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryRestoreJobApi.new
-appliance_recovery_restore_job_create = VSphereAutomation::ApplianceRecoveryRestoreJobCreate.new # ApplianceRecoveryRestoreJobCreate | 
+request_body = Appliance::ApplianceRecoveryRestoreJobCreate.new # ApplianceRecoveryRestoreJobCreate | 
 
 begin
   #Initiate restore.
-  result = api_instance.create(appliance_recovery_restore_job_create)
+  result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryRestoreJobApi->create: #{e}"
@@ -74,7 +88,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_recovery_restore_job_create** | [**ApplianceRecoveryRestoreJobCreate**](ApplianceRecoveryRestoreJobCreate.md)|  | 
+ **request_body** | [**ApplianceRecoveryRestoreJobCreate**](ApplianceRecoveryRestoreJobCreate.md)|  | 
 
 ### Return type
 
@@ -82,12 +96,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -100,6 +114,13 @@ See restore job progress/result.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryRestoreJobApi.new
 
@@ -121,12 +142,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

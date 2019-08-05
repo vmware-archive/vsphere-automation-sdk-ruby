@@ -28,8 +28,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'return_all' => :'BOOLEAN',
-        :'exclude_result' => :'BOOLEAN'
+        :'return_all' => :'Boolean',
+        :'exclude_result' => :'Boolean'
       }
     end
 

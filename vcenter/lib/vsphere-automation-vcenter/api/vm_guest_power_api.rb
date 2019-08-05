@@ -47,14 +47,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -73,19 +73,21 @@ module VSphereAutomation
     end
     # Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
+    # @param action action&#x3D;reboot
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnsupportedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
-    def reboot(vm, opts = {})
-      reboot_with_http_info(vm, opts)
+    def reboot(vm, action, opts = {})
+      reboot_with_http_info(vm, action, opts)
       nil
     end
 
     # Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
     # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
+    # @param action action&#x3D;reboot
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnsupportedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def reboot_with_http_info(vm, opts = {})
+    def reboot_with_http_info(vm, action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestPowerApi.reboot ...'
       end
@@ -93,23 +95,32 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && vm.nil?
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmGuestPowerApi.reboot"
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling VmGuestPowerApi.reboot"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['reboot'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of reboot"
+      end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/guest/power?action=reboot'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/guest/power'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -152,14 +163,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -202,14 +213,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

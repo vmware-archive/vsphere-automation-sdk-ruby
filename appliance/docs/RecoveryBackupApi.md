@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **validate**
-> ApplianceRecoveryBackupValidateResult validate(appliance_recovery_backup_validate)
+> ApplianceRecoveryBackupValidateResult validate(request_body)
 
 Check for backup errors without starting backup.
 
@@ -16,13 +16,20 @@ Check for backup errors without starting backup.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupApi.new
-appliance_recovery_backup_validate = VSphereAutomation::ApplianceRecoveryBackupValidate.new # ApplianceRecoveryBackupValidate | 
+request_body = Appliance::ApplianceRecoveryBackupValidate.new # ApplianceRecoveryBackupValidate | 
 
 begin
   #Check for backup errors without starting backup.
-  result = api_instance.validate(appliance_recovery_backup_validate)
+  result = api_instance.validate(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupApi->validate: #{e}"
@@ -33,7 +40,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_recovery_backup_validate** | [**ApplianceRecoveryBackupValidate**](ApplianceRecoveryBackupValidate.md)|  | 
+ **request_body** | [**ApplianceRecoveryBackupValidate**](ApplianceRecoveryBackupValidate.md)|  | 
 
 ### Return type
 
@@ -41,12 +48,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

@@ -12,8 +12,8 @@ module VSphereAutomation
   module Content
     class ContentLibraryPublishInfoAuthenticationMethod
     
-    BASIC = 'BASIC'.freeze
-    NONE = 'NONE'.freeze
+    BASIC = "BASIC".freeze
+    NONE = "NONE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

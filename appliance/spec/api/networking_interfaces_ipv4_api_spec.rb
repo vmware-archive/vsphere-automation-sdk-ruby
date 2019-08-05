@@ -42,7 +42,7 @@ describe 'NetworkingInterfacesIpv4Api' do
   # unit tests for set
   # Set IPv4 network configuration for specific network interface.
   # @param interface_name Network interface to update, for example, \&quot;nic0\&quot;.
-  # @param appliance_networking_interfaces_ipv4_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

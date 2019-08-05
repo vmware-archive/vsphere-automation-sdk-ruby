@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareAdapterScsiSharing
     
-    NONE = 'NONE'.freeze
-    VIRTUAL = 'VIRTUAL'.freeze
-    PHYSICAL = 'PHYSICAL'.freeze
+    NONE = "NONE".freeze
+    VIRTUAL = "VIRTUAL".freeze
+    PHYSICAL = "PHYSICAL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

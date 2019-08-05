@@ -43,7 +43,7 @@ describe 'VmHardwareFloppyApi' do
   # unit tests for create
   # Adds a virtual floppy drive to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_floppy_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareFloppyCreateResult]
   describe 'create test' do
@@ -103,7 +103,7 @@ describe 'VmHardwareFloppyApi' do
   # Updates the configuration of a virtual floppy drive.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
-  # @param vcenter_vm_hardware_floppy_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

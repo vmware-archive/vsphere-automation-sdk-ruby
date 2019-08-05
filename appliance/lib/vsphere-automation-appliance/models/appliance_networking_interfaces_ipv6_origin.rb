@@ -12,11 +12,11 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesIpv6Origin
     
-    DHCP = 'DHCP'.freeze
-    RANDOM = 'RANDOM'.freeze
-    MANUAL = 'MANUAL'.freeze
-    LINKLAYER = 'LINKLAYER'.freeze
-    OTHER = 'OTHER'.freeze
+    DHCP = "DHCP".freeze
+    RANDOM = "RANDOM".freeze
+    MANUAL = "MANUAL".freeze
+    LINKLAYER = "LINKLAYER".freeze
+    OTHER = "OTHER".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

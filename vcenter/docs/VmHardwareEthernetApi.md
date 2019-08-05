@@ -22,6 +22,13 @@ Connects a virtual Ethernet adapter of a powered-on virtual machine to its backi
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -48,17 +55,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **create**
-> VcenterVmHardwareEthernetCreateResult create(vm, vcenter_vm_hardware_ethernet_create)
+> VcenterVmHardwareEthernetCreateResult create(vm, request_body)
 
 Adds a virtual Ethernet adapter to the virtual machine.
 
@@ -66,14 +73,21 @@ Adds a virtual Ethernet adapter to the virtual machine.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_hardware_ethernet_create = VSphereAutomation::VcenterVmHardwareEthernetCreate.new # VcenterVmHardwareEthernetCreate | 
+request_body = VCenter::VcenterVmHardwareEthernetCreate.new # VcenterVmHardwareEthernetCreate | 
 
 begin
   #Adds a virtual Ethernet adapter to the virtual machine.
-  result = api_instance.create(vm, vcenter_vm_hardware_ethernet_create)
+  result = api_instance.create(vm, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareEthernetApi->create: #{e}"
@@ -85,7 +99,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_ethernet_create** | [**VcenterVmHardwareEthernetCreate**](VcenterVmHardwareEthernetCreate.md)|  | 
+ **request_body** | [**VcenterVmHardwareEthernetCreate**](VcenterVmHardwareEthernetCreate.md)|  | 
 
 ### Return type
 
@@ -93,12 +107,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -111,6 +125,13 @@ Removes a virtual Ethernet adapter from the virtual machine.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -137,12 +158,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -155,6 +176,13 @@ Disconnects a virtual Ethernet adapter of a powered-on virtual machine from its 
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -181,12 +209,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -199,6 +227,13 @@ Returns information about a virtual Ethernet adapter.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -226,12 +261,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -244,6 +279,13 @@ Returns commonly used information about the virtual Ethernet adapters belonging 
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -269,17 +311,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(vm, nic, vcenter_vm_hardware_ethernet_update)
+> update(vm, nic, request_body)
 
 Updates the configuration of a virtual Ethernet adapter.
 
@@ -287,15 +329,22 @@ Updates the configuration of a virtual Ethernet adapter.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareEthernetApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 nic = 'nic_example' # String | Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
-vcenter_vm_hardware_ethernet_update = VSphereAutomation::VcenterVmHardwareEthernetUpdate.new # VcenterVmHardwareEthernetUpdate | 
+request_body = VCenter::VcenterVmHardwareEthernetUpdate.new # VcenterVmHardwareEthernetUpdate | 
 
 begin
   #Updates the configuration of a virtual Ethernet adapter.
-  api_instance.update(vm, nic, vcenter_vm_hardware_ethernet_update)
+  api_instance.update(vm, nic, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareEthernetApi->update: #{e}"
 end
@@ -307,7 +356,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
  **nic** | **String**| Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet. | 
- **vcenter_vm_hardware_ethernet_update** | [**VcenterVmHardwareEthernetUpdate**](VcenterVmHardwareEthernetUpdate.md)|  | 
+ **request_body** | [**VcenterVmHardwareEthernetUpdate**](VcenterVmHardwareEthernetUpdate.md)|  | 
 
 ### Return type
 
@@ -315,12 +364,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

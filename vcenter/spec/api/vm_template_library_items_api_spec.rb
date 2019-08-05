@@ -30,7 +30,7 @@ describe 'VmTemplateLibraryItemsApi' do
 
   # unit tests for create
   # Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
-  # @param vcenter_vm_template_library_items_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmTemplateLibraryItemsCreateResult]
   describe 'create test' do
@@ -42,7 +42,8 @@ describe 'VmTemplateLibraryItemsApi' do
   # unit tests for deploy
   # Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
   # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
-  # @param vcenter_vm_template_library_items_deploy 
+  # @param action action&#x3D;deploy
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmTemplateLibraryItemsDeployResult]
   describe 'deploy test' do

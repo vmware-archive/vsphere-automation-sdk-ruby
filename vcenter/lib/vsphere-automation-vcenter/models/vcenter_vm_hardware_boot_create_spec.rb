@@ -47,12 +47,12 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'type' => :'VcenterVmHardwareBootType',
-        :'efi_legacy_boot' => :'BOOLEAN',
+        :'efi_legacy_boot' => :'Boolean',
         :'network_protocol' => :'VcenterVmHardwareBootNetworkProtocol',
         :'delay' => :'Integer',
-        :'_retry' => :'BOOLEAN',
+        :'_retry' => :'Boolean',
         :'retry_delay' => :'Integer',
-        :'enter_setup_mode' => :'BOOLEAN'
+        :'enter_setup_mode' => :'Boolean'
       }
     end
 

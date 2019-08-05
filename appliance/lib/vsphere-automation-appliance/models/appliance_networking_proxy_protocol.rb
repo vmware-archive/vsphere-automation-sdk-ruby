@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingProxyProtocol
     
-    HTTP = 'HTTP'.freeze
-    HTTPS = 'HTTPS'.freeze
-    FTP = 'FTP'.freeze
+    HTTP = "HTTP".freeze
+    HTTPS = "HTTPS".freeze
+    FTP = "FTP".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

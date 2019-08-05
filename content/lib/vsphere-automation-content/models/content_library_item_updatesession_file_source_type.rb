@@ -12,9 +12,9 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionFileSourceType
     
-    NONE = 'NONE'.freeze
-    PUSH = 'PUSH'.freeze
-    PULL = 'PULL'.freeze
+    NONE = "NONE".freeze
+    PUSH = "PUSH".freeze
+    PULL = "PULL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

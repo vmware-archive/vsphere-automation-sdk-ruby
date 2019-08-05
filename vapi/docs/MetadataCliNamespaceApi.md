@@ -4,13 +4,13 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fingerprint**](MetadataCliNamespaceApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/cli/namespace?~action&#x3D;fingerprint | Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
+[**fingerprint**](MetadataCliNamespaceApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/cli/namespace | Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
 [**get**](MetadataCliNamespaceApi.md#get) | **POST** /com/vmware/vapi/metadata/cli/namespace?~action&#x3D;get | Retreives information about a namespace including information about children of that namespace.
 [**list**](MetadataCliNamespaceApi.md#list) | **GET** /com/vmware/vapi/metadata/cli/namespace | Returns the identifiers of all namespaces registered with the infrastructure.
 
 
 # **fingerprint**
-> VapiMetadataCliNamespaceFingerprintResult fingerprint
+> VapiMetadataCliNamespaceFingerprintResult fingerprint(action)
 
 Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
 
@@ -18,12 +18,20 @@ Returns the aggregate fingerprint of all the namespace metadata from all the met
 ```ruby
 # load the gem
 require 'vsphere-automation-vapi'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VAPI::MetadataCliNamespaceApi.new
+action = 'action_example' # String | ~action=fingerprint
 
 begin
   #Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
-  result = api_instance.fingerprint
+  result = api_instance.fingerprint(action)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataCliNamespaceApi->fingerprint: #{e}"
@@ -31,7 +39,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **action** | **String**| ~action&#x3D;fingerprint | 
 
 ### Return type
 
@@ -39,17 +50,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **get**
-> VapiMetadataCliNamespaceResult get(vapi_metadata_cli_namespace_get)
+> VapiMetadataCliNamespaceResult get(request_body)
 
 Retreives information about a namespace including information about children of that namespace.
 
@@ -57,13 +68,20 @@ Retreives information about a namespace including information about children of 
 ```ruby
 # load the gem
 require 'vsphere-automation-vapi'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VAPI::MetadataCliNamespaceApi.new
-vapi_metadata_cli_namespace_get = VSphereAutomation::VapiMetadataCliNamespaceGet.new # VapiMetadataCliNamespaceGet | 
+request_body = VAPI::VapiMetadataCliNamespaceGet.new # VapiMetadataCliNamespaceGet | 
 
 begin
   #Retreives information about a namespace including information about children of that namespace.
-  result = api_instance.get(vapi_metadata_cli_namespace_get)
+  result = api_instance.get(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataCliNamespaceApi->get: #{e}"
@@ -74,7 +92,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vapi_metadata_cli_namespace_get** | [**VapiMetadataCliNamespaceGet**](VapiMetadataCliNamespaceGet.md)|  | 
+ **request_body** | [**VapiMetadataCliNamespaceGet**](VapiMetadataCliNamespaceGet.md)|  | 
 
 ### Return type
 
@@ -82,12 +100,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -100,6 +118,13 @@ Returns the identifiers of all namespaces registered with the infrastructure.
 ```ruby
 # load the gem
 require 'vsphere-automation-vapi'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VAPI::MetadataCliNamespaceApi.new
 
@@ -121,12 +146,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

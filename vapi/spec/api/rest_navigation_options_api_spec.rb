@@ -30,7 +30,8 @@ describe 'RestNavigationOptionsApi' do
 
   # unit tests for get
   # Retrieves operations for specific URL.
-  # @param vapi_rest_navigation_options_get 
+  # @param action ~action&#x3D;get
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VapiRestNavigationOptionsResult]
   describe 'get test' do

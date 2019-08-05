@@ -42,7 +42,7 @@ module VSphereAutomation
         :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
         :'name' => :'String',
         :'size' => :'Integer',
-        :'cached' => :'BOOLEAN',
+        :'cached' => :'Boolean',
         :'version' => :'String'
       }
     end

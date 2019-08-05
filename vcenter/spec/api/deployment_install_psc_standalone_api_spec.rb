@@ -30,7 +30,8 @@ describe 'DeploymentInstallPscStandaloneApi' do
 
   # unit tests for check
   # Checks that the information to configure a non-replicated PSC satisfies the requirements.
-  # @param vcenter_deployment_install_psc_standalone_check 
+  # @param action action&#x3D;check
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterDeploymentInstallPscStandaloneCheckResult]
   describe 'check test' do

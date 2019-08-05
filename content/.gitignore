@@ -37,3 +37,10 @@ build/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+# Prevent runtime files in each non-runtime gem
+api_client.rb
+api_client_spec.rb
+api_error.rb
+configuration.rb
+configuration_spec.rb

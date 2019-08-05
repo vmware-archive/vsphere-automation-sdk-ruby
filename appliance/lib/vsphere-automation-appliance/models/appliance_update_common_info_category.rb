@@ -12,10 +12,10 @@ module VSphereAutomation
   module Appliance
     class ApplianceUpdateCommonInfoCategory
     
-    SECURITY = 'SECURITY'.freeze
-    FIX = 'FIX'.freeze
-    UPDATE = 'UPDATE'.freeze
-    UPGRADE = 'UPGRADE'.freeze
+    SECURITY = "SECURITY".freeze
+    FIX = "FIX".freeze
+    UPDATE = "UPDATE".freeze
+    UPGRADE = "UPGRADE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -31,7 +31,8 @@ describe 'MetadataPrivilegeServiceOperationApi' do
   # unit tests for get
   # Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
   # @param service_id Identifier of the service element.
-  # @param vapi_metadata_privilege_service_operation_get 
+  # @param action ~action&#x3D;get
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VapiMetadataPrivilegeServiceOperationResult]
   describe 'get test' do

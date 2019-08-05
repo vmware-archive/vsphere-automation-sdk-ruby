@@ -12,12 +12,12 @@ module VSphereAutomation
   module Appliance
     class ApplianceUpdateState
     
-    UP_TO_DATE = 'UP_TO_DATE'.freeze
-    UPDATES_PENDING = 'UPDATES_PENDING'.freeze
-    STAGE_IN_PROGRESS = 'STAGE_IN_PROGRESS'.freeze
-    INSTALL_IN_PROGRESS = 'INSTALL_IN_PROGRESS'.freeze
-    INSTALL_FAILED = 'INSTALL_FAILED'.freeze
-    ROLLBACK_IN_PROGRESS = 'ROLLBACK_IN_PROGRESS'.freeze
+    UP_TO_DATE = "UP_TO_DATE".freeze
+    UPDATES_PENDING = "UPDATES_PENDING".freeze
+    STAGE_IN_PROGRESS = "STAGE_IN_PROGRESS".freeze
+    INSTALL_IN_PROGRESS = "INSTALL_IN_PROGRESS".freeze
+    INSTALL_FAILED = "INSTALL_FAILED".freeze
+    ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

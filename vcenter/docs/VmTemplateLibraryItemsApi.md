@@ -5,12 +5,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create**](VmTemplateLibraryItemsApi.md#create) | **POST** /vcenter/vm-template/library-items | Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
-[**deploy**](VmTemplateLibraryItemsApi.md#deploy) | **POST** /vcenter/vm-template/library-items/{template_library_item}?action&#x3D;deploy | Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
+[**deploy**](VmTemplateLibraryItemsApi.md#deploy) | **POST** /vcenter/vm-template/library-items/{template_library_item} | Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
 [**get**](VmTemplateLibraryItemsApi.md#get) | **GET** /vcenter/vm-template/library-items/{template_library_item} | Returns information about a virtual machine template contained in the library item specified by {@param.name templateLibraryItem}
 
 
 # **create**
-> VcenterVmTemplateLibraryItemsCreateResult create(vcenter_vm_template_library_items_create)
+> VcenterVmTemplateLibraryItemsCreateResult create(request_body)
 
 Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
 
@@ -18,13 +18,20 @@ Creates a library item in content library from a virtual machine. This {@term op
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmTemplateLibraryItemsApi.new
-vcenter_vm_template_library_items_create = VSphereAutomation::VcenterVmTemplateLibraryItemsCreate.new # VcenterVmTemplateLibraryItemsCreate | 
+request_body = VCenter::VcenterVmTemplateLibraryItemsCreate.new # VcenterVmTemplateLibraryItemsCreate | 
 
 begin
   #Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
-  result = api_instance.create(vcenter_vm_template_library_items_create)
+  result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmTemplateLibraryItemsApi->create: #{e}"
@@ -35,7 +42,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vm_template_library_items_create** | [**VcenterVmTemplateLibraryItemsCreate**](VcenterVmTemplateLibraryItemsCreate.md)|  | 
+ **request_body** | [**VcenterVmTemplateLibraryItemsCreate**](VcenterVmTemplateLibraryItemsCreate.md)|  | 
 
 ### Return type
 
@@ -43,17 +50,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **deploy**
-> VcenterVmTemplateLibraryItemsDeployResult deploy(template_library_item, vcenter_vm_template_library_items_deploy)
+> VcenterVmTemplateLibraryItemsDeployResult deploy(template_library_item, action, request_body)
 
 Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
 
@@ -61,14 +68,22 @@ Deploys a virtual machine as a copy of the source virtual machine template conta
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmTemplateLibraryItemsApi.new
 template_library_item = 'template_library_item_example' # String | identifier of the content library item containing the source virtual machine template to be deployed.
-vcenter_vm_template_library_items_deploy = VSphereAutomation::VcenterVmTemplateLibraryItemsDeploy.new # VcenterVmTemplateLibraryItemsDeploy | 
+action = 'action_example' # String | action=deploy
+request_body = VCenter::VcenterVmTemplateLibraryItemsDeploy.new # VcenterVmTemplateLibraryItemsDeploy | 
 
 begin
   #Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
-  result = api_instance.deploy(template_library_item, vcenter_vm_template_library_items_deploy)
+  result = api_instance.deploy(template_library_item, action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmTemplateLibraryItemsApi->deploy: #{e}"
@@ -80,7 +95,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_library_item** | **String**| identifier of the content library item containing the source virtual machine template to be deployed. | 
- **vcenter_vm_template_library_items_deploy** | [**VcenterVmTemplateLibraryItemsDeploy**](VcenterVmTemplateLibraryItemsDeploy.md)|  | 
+ **action** | **String**| action&#x3D;deploy | 
+ **request_body** | [**VcenterVmTemplateLibraryItemsDeploy**](VcenterVmTemplateLibraryItemsDeploy.md)|  | 
 
 ### Return type
 
@@ -88,12 +104,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -106,6 +122,13 @@ Returns information about a virtual machine template contained in the library it
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmTemplateLibraryItemsApi.new
 template_library_item = 'template_library_item_example' # String | identifier of the library item containing the virtual machine template.
@@ -131,12 +154,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

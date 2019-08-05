@@ -12,12 +12,12 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareSerialBackingType
     
-    FILE = 'FILE'.freeze
-    HOST_DEVICE = 'HOST_DEVICE'.freeze
-    PIPE_SERVER = 'PIPE_SERVER'.freeze
-    PIPE_CLIENT = 'PIPE_CLIENT'.freeze
-    NETWORK_SERVER = 'NETWORK_SERVER'.freeze
-    NETWORK_CLIENT = 'NETWORK_CLIENT'.freeze
+    FILE = "FILE".freeze
+    HOST_DEVICE = "HOST_DEVICE".freeze
+    PIPE_SERVER = "PIPE_SERVER".freeze
+    PIPE_CLIENT = "PIPE_CLIENT".freeze
+    NETWORK_SERVER = "NETWORK_SERVER".freeze
+    NETWORK_CLIENT = "NETWORK_CLIENT".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

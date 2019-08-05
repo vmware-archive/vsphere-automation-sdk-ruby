@@ -48,12 +48,12 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'authentication_method' => :'ContentLibraryPublishInfoAuthenticationMethod',
-        :'published' => :'BOOLEAN',
+        :'published' => :'Boolean',
         :'publish_url' => :'String',
         :'user_name' => :'String',
         :'password' => :'String',
         :'current_password' => :'String',
-        :'persist_json_enabled' => :'BOOLEAN'
+        :'persist_json_enabled' => :'Boolean'
       }
     end
 

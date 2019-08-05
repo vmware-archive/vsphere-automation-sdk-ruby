@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enabled** | **BOOLEAN** | SSH-based controlled CLI is enabled. | 
+**enabled** | **Boolean** | SSH-based controlled CLI is enabled. | 
 
 

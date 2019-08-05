@@ -12,11 +12,11 @@ module VSphereAutomation
   module CIS
     class CisTaskStatus
     
-    PENDING = 'PENDING'.freeze
-    RUNNING = 'RUNNING'.freeze
-    BLOCKED = 'BLOCKED'.freeze
-    SUCCEEDED = 'SUCCEEDED'.freeze
-    FAILED = 'FAILED'.freeze
+    PENDING = "PENDING".freeze
+    RUNNING = "RUNNING".freeze
+    BLOCKED = "BLOCKED".freeze
+    SUCCEEDED = "SUCCEEDED".freeze
+    FAILED = "FAILED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

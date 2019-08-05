@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaIpFamily
     
-    IPV4 = 'IPV4'.freeze
-    IPV6 = 'IPV6'.freeze
+    IPV4 = "IPV4".freeze
+    IPV6 = "IPV6".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

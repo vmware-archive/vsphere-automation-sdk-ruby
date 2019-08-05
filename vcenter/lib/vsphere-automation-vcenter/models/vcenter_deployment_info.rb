@@ -85,7 +85,7 @@ module VSphereAutomation
         :'parent' => :'String',
         :'target' => :'VapiStdDynamicID',
         :'status' => :'CisTaskStatus',
-        :'cancelable' => :'BOOLEAN',
+        :'cancelable' => :'Boolean',
         :'error' => :'String',
         :'start_time' => :'DateTime',
         :'end_time' => :'DateTime',

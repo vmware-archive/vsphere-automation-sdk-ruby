@@ -18,21 +18,21 @@ module VSphereAutomation
     end
     # Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
     # @param category_id The identifier of the input category.
-    # @param cis_tagging_category_add_to_used_by 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def add_to_used_by(category_id, cis_tagging_category_add_to_used_by, opts = {})
-      add_to_used_by_with_http_info(category_id, cis_tagging_category_add_to_used_by, opts)
+    def add_to_used_by(category_id, request_body, opts = {})
+      add_to_used_by_with_http_info(category_id, request_body, opts)
       nil
     end
 
     # Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
     # @api private
     # @param category_id The identifier of the input category.
-    # @param cis_tagging_category_add_to_used_by 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def add_to_used_by_with_http_info(category_id, cis_tagging_category_add_to_used_by, opts = {})
+    def add_to_used_by_with_http_info(category_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.add_to_used_by ...'
       end
@@ -40,9 +40,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && category_id.nil?
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingCategoryApi.add_to_used_by"
       end
-      # verify the required parameter 'cis_tagging_category_add_to_used_by' is set
-      if @api_client.config.client_side_validation && cis_tagging_category_add_to_used_by.nil?
-        fail ArgumentError, "Missing the required parameter 'cis_tagging_category_add_to_used_by' when calling TaggingCategoryApi.add_to_used_by"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.add_to_used_by"
       end
       # resource path
       local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}?~action=add-to-used-by'.sub('{' + 'category_id' + '}', category_id.to_s)
@@ -53,7 +53,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -61,8 +61,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(cis_tagging_category_add_to_used_by)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -75,26 +75,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Creates a category. To invoke this {@term operation}, you need the create category privilege.
-    # @param cis_tagging_category_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [CisTaggingCategoryCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|]
-    def create(cis_tagging_category_create, opts = {})
-      data, _status_code, _headers = create_with_http_info(cis_tagging_category_create, opts)
+    def create(request_body, opts = {})
+      data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
     # Creates a category. To invoke this {@term operation}, you need the create category privilege.
     # @api private
-    # @param cis_tagging_category_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingCategoryCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def create_with_http_info(cis_tagging_category_create, opts = {})
+    def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.create ...'
       end
-      # verify the required parameter 'cis_tagging_category_create' is set
-      if @api_client.config.client_side_validation && cis_tagging_category_create.nil?
-        fail ArgumentError, "Missing the required parameter 'cis_tagging_category_create' when calling TaggingCategoryApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.create"
       end
       # resource path
       local_var_path = '/com/vmware/cis/tagging/category'
@@ -105,7 +105,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -113,8 +113,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(cis_tagging_category_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -162,14 +162,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -212,14 +212,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -261,14 +261,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -284,26 +284,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
-    # @param cis_tagging_category_list_used_categories 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [CisTaggingCategoryListUsedCategoriesResult|]
-    def list_used_categories(cis_tagging_category_list_used_categories, opts = {})
-      data, _status_code, _headers = list_used_categories_with_http_info(cis_tagging_category_list_used_categories, opts)
+    def list_used_categories(request_body, opts = {})
+      data, _status_code, _headers = list_used_categories_with_http_info(request_body, opts)
       data
     end
 
     # Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
     # @api private
-    # @param cis_tagging_category_list_used_categories 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingCategoryListUsedCategoriesResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def list_used_categories_with_http_info(cis_tagging_category_list_used_categories, opts = {})
+    def list_used_categories_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.list_used_categories ...'
       end
-      # verify the required parameter 'cis_tagging_category_list_used_categories' is set
-      if @api_client.config.client_side_validation && cis_tagging_category_list_used_categories.nil?
-        fail ArgumentError, "Missing the required parameter 'cis_tagging_category_list_used_categories' when calling TaggingCategoryApi.list_used_categories"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.list_used_categories"
       end
       # resource path
       local_var_path = '/com/vmware/cis/tagging/category?~action=list-used-categories'
@@ -314,7 +314,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -322,8 +322,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(cis_tagging_category_list_used_categories)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -340,21 +340,23 @@ module VSphereAutomation
     end
     # Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
     # @param category_id The identifier of the input category.
-    # @param cis_tagging_category_remove_from_used_by 
+    # @param action ~action&#x3D;remove-from-used-by
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def remove_from_used_by(category_id, cis_tagging_category_remove_from_used_by, opts = {})
-      remove_from_used_by_with_http_info(category_id, cis_tagging_category_remove_from_used_by, opts)
+    def remove_from_used_by(category_id, action, request_body, opts = {})
+      remove_from_used_by_with_http_info(category_id, action, request_body, opts)
       nil
     end
 
     # Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
     # @api private
     # @param category_id The identifier of the input category.
-    # @param cis_tagging_category_remove_from_used_by 
+    # @param action ~action&#x3D;remove-from-used-by
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def remove_from_used_by_with_http_info(category_id, cis_tagging_category_remove_from_used_by, opts = {})
+    def remove_from_used_by_with_http_info(category_id, action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.remove_from_used_by ...'
       end
@@ -362,20 +364,29 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && category_id.nil?
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingCategoryApi.remove_from_used_by"
       end
-      # verify the required parameter 'cis_tagging_category_remove_from_used_by' is set
-      if @api_client.config.client_side_validation && cis_tagging_category_remove_from_used_by.nil?
-        fail ArgumentError, "Missing the required parameter 'cis_tagging_category_remove_from_used_by' when calling TaggingCategoryApi.remove_from_used_by"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling TaggingCategoryApi.remove_from_used_by"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['remove-from-used-by'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of remove-from-used-by"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.remove_from_used_by"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}?~action=remove-from-used-by'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -383,8 +394,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(cis_tagging_category_remove_from_used_by)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -427,14 +438,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -448,21 +459,21 @@ module VSphereAutomation
     end
     # Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
     # @param category_id The identifier of the category to be updated.
-    # @param cis_tagging_category_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def update(category_id, cis_tagging_category_update, opts = {})
-      update_with_http_info(category_id, cis_tagging_category_update, opts)
+    def update(category_id, request_body, opts = {})
+      update_with_http_info(category_id, request_body, opts)
       nil
     end
 
     # Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
     # @api private
     # @param category_id The identifier of the category to be updated.
-    # @param cis_tagging_category_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(category_id, cis_tagging_category_update, opts = {})
+    def update_with_http_info(category_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.update ...'
       end
@@ -470,9 +481,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && category_id.nil?
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingCategoryApi.update"
       end
-      # verify the required parameter 'cis_tagging_category_update' is set
-      if @api_client.config.client_side_validation && cis_tagging_category_update.nil?
-        fail ArgumentError, "Missing the required parameter 'cis_tagging_category_update' when calling TaggingCategoryApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.update"
       end
       # resource path
       local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
@@ -483,7 +494,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -491,8 +502,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(cis_tagging_category_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

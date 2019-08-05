@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**ApplianceServicesInfo**](ApplianceServicesInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**ApplianceServicesInfo**](ApplianceServicesInfo.md) |  | [optional] 
 
 

@@ -22,6 +22,12 @@
             "api_key": []
         }
     ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
     "basePath": "/rest",
     "tags": [],
     "schemes": [

@@ -28,13 +28,13 @@ describe 'CisTasksListResultValue' do
       expect(@instance).to be_instance_of(VSphereAutomation::CIS::CisTasksListResultValue)
     end
   end
-  describe 'test attribute "value"' do
+  describe 'test attribute "key"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "key"' do
+  describe 'test attribute "value"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

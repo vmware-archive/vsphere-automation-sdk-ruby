@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaClusterModeClusterMode
     
-    ENABLED = 'ENABLED'.freeze
-    DISABLED = 'DISABLED'.freeze
-    MAINTENANCE = 'MAINTENANCE'.freeze
+    ENABLED = "ENABLED".freeze
+    DISABLED = "DISABLED".freeze
+    MAINTENANCE = "MAINTENANCE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

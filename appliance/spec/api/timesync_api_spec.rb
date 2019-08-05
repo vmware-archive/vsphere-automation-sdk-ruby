@@ -40,7 +40,7 @@ describe 'TimesyncApi' do
 
   # unit tests for set
   # Set time synchronization mode.
-  # @param appliance_timesync_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

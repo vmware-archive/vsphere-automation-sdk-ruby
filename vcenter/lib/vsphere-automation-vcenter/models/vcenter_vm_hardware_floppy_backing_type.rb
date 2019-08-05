@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareFloppyBackingType
     
-    IMAGE_FILE = 'IMAGE_FILE'.freeze
-    HOST_DEVICE = 'HOST_DEVICE'.freeze
-    CLIENT_DEVICE = 'CLIENT_DEVICE'.freeze
+    IMAGE_FILE = "IMAGE_FILE".freeze
+    HOST_DEVICE = "HOST_DEVICE".freeze
+    CLIENT_DEVICE = "CLIENT_DEVICE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

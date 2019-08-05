@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **parent** | **String** | Parent of the current task. | [optional] 
 **target** | [**VapiStdDynamicID**](VapiStdDynamicID.md) |  | [optional] 
 **status** | [**CisTaskStatus**](CisTaskStatus.md) |  | 
-**cancelable** | **BOOLEAN** | Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses. | 
+**cancelable** | **Boolean** | Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses. | 
 **error** | **String** | Description of the error if the operation status is \&quot;FAILED\&quot;. | [optional] 
 **start_time** | **DateTime** | Time when the operation is started. | [optional] 
 **end_time** | **DateTime** | Time when the operation is completed. | [optional] 

@@ -36,8 +36,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'dhcp' => :'BOOLEAN',
-        :'autoconf' => :'BOOLEAN',
+        :'dhcp' => :'Boolean',
+        :'autoconf' => :'Boolean',
         :'addresses' => :'Array<ApplianceNetworkingInterfacesIpv6Address>',
         :'default_gateway' => :'String'
       }

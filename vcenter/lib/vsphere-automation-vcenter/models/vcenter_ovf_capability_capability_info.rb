@@ -28,8 +28,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'import_ova' => :'BOOLEAN',
-        :'export_ova' => :'BOOLEAN'
+        :'import_ova' => :'Boolean',
+        :'export_ova' => :'Boolean'
       }
     end
 

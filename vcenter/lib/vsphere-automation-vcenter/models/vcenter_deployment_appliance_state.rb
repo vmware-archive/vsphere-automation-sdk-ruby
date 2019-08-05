@@ -12,12 +12,12 @@ module VSphereAutomation
   module VCenter
     class VcenterDeploymentApplianceState
     
-    NOT_INITIALIZED = 'NOT_INITIALIZED'.freeze
-    INITIALIZED = 'INITIALIZED'.freeze
-    CONFIG_IN_PROGRESS = 'CONFIG_IN_PROGRESS'.freeze
-    QUESTION_RAISED = 'QUESTION_RAISED'.freeze
-    FAILED = 'FAILED'.freeze
-    CONFIGURED = 'CONFIGURED'.freeze
+    NOT_INITIALIZED = "NOT_INITIALIZED".freeze
+    INITIALIZED = "INITIALIZED".freeze
+    CONFIG_IN_PROGRESS = "CONFIG_IN_PROGRESS".freeze
+    QUESTION_RAISED = "QUESTION_RAISED".freeze
+    FAILED = "FAILED".freeze
+    CONFIGURED = "CONFIGURED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

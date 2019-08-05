@@ -11,23 +11,23 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelPackageInfoStructures
-    attr_accessor :value
-
     attr_accessor :key
+
+    attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'value' => :'value',
-        :'key' => :'key'
+        :'key' => :'key',
+        :'value' => :'value'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'value' => :'VapiMetadataMetamodelStructureInfo',
-        :'key' => :'String'
+        :'key' => :'String',
+        :'value' => :'VapiMetadataMetamodelStructureInfo'
       }
     end
 
@@ -39,12 +39,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-
       if attributes.has_key?(:'key')
         self.key = attributes[:'key']
+      end
+
+      if attributes.has_key?(:'value')
+        self.value = attributes[:'value']
       end
     end
 
@@ -66,8 +66,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          value == o.value &&
-          key == o.key
+          key == o.key &&
+          value == o.value
     end
 
     # @see the `==` method
@@ -79,7 +79,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value, key].hash
+      [key, value].hash
     end
 
     # Builds the object from hash

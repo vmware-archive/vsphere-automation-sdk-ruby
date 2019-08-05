@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VapiMetadataMetamodelOperationInfo**](VapiMetadataMetamodelOperationInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VapiMetadataMetamodelOperationInfo**](VapiMetadataMetamodelOperationInfo.md) |  | [optional] 
 
 

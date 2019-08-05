@@ -28,7 +28,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'data_set' => :'VcenterDeploymentHistoryMigrationOption',
-        :'defer_import' => :'BOOLEAN'
+        :'defer_import' => :'Boolean'
       }
     end
 

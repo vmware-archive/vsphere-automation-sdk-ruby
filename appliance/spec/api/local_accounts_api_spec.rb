@@ -31,7 +31,7 @@ describe 'LocalAccountsApi' do
   # unit tests for create
   # Create a new local user account.
   # @param username User login name
-  # @param appliance_local_accounts_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'create test' do
@@ -75,7 +75,7 @@ describe 'LocalAccountsApi' do
   # unit tests for set
   # Set local user account properties.
   # @param username User login name
-  # @param appliance_local_accounts_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do
@@ -87,7 +87,7 @@ describe 'LocalAccountsApi' do
   # unit tests for update
   # Update selected fields in local user account properties.
   # @param username User login name
-  # @param appliance_local_accounts_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

@@ -52,9 +52,9 @@ module VSphereAutomation
         :'default_url' => :'String',
         :'username' => :'String',
         :'check_schedule' => :'Array<ApplianceUpdatePolicyTime>',
-        :'auto_stage' => :'BOOLEAN',
-        :'auto_update' => :'BOOLEAN',
-        :'manual_control' => :'BOOLEAN'
+        :'auto_stage' => :'Boolean',
+        :'auto_update' => :'Boolean',
+        :'manual_control' => :'Boolean'
       }
     end
 

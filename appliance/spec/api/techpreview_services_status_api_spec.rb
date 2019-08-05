@@ -30,7 +30,7 @@ describe 'TechpreviewServicesStatusApi' do
 
   # unit tests for get
   # Get status of a service.
-  # @param appliance_techpreview_services_status_get 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceTechpreviewServicesStatusResult]
   describe 'get test' do

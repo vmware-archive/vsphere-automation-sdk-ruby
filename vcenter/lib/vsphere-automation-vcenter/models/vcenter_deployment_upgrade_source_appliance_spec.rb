@@ -59,11 +59,11 @@ module VSphereAutomation
         :'hostname' => :'String',
         :'https_port' => :'Integer',
         :'ssl_thumbprint' => :'String',
-        :'ssl_verify' => :'BOOLEAN',
+        :'ssl_verify' => :'Boolean',
         :'sso_admin_username' => :'String',
         :'sso_admin_password' => :'String',
         :'root_password' => :'String',
-        :'ssh_verify' => :'BOOLEAN',
+        :'ssh_verify' => :'Boolean',
         :'ssh_thumbprint' => :'String'
       }
     end

@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validate**](VchaVcCredentialsApi.md#validate) | **POST** /vcenter/vcha/vc-credentials?action&#x3D;validate | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
+[**validate**](VchaVcCredentialsApi.md#validate) | **POST** /vcenter/vcha/vc-credentials | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
 
 
 # **validate**
-> validate(vcenter_vcha_vc_credentials_validate)
+> validate(action, request_body)
 
 Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
 
@@ -16,13 +16,21 @@ Validates the credentials of the management vCenter server of the active node of
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VchaVcCredentialsApi.new
-vcenter_vcha_vc_credentials_validate = VSphereAutomation::VcenterVchaVcCredentialsValidate.new # VcenterVchaVcCredentialsValidate | 
+action = 'action_example' # String | action=validate
+request_body = VCenter::VcenterVchaVcCredentialsValidate.new # VcenterVchaVcCredentialsValidate | 
 
 begin
   #Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
-  api_instance.validate(vcenter_vcha_vc_credentials_validate)
+  api_instance.validate(action, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaVcCredentialsApi->validate: #{e}"
 end
@@ -32,7 +40,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_vcha_vc_credentials_validate** | [**VcenterVchaVcCredentialsValidate**](VcenterVchaVcCredentialsValidate.md)|  | 
+ **action** | **String**| action&#x3D;validate | 
+ **request_body** | [**VcenterVchaVcCredentialsValidate**](VcenterVchaVcCredentialsValidate.md)|  | 
 
 ### Return type
 
@@ -40,12 +49,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

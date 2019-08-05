@@ -40,7 +40,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'type' => :'VapiMetadataMetamodelPrimitiveValueType',
-        :'boolean_value' => :'BOOLEAN',
+        :'boolean_value' => :'Boolean',
         :'double_value' => :'Float',
         :'long_value' => :'Integer',
         :'string_value' => :'String'

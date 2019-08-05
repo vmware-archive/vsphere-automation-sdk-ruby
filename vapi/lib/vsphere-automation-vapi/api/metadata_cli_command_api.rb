@@ -41,14 +41,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -64,37 +64,48 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Retrieves information about a command including information about how to execute that command.
-    # @param vapi_metadata_cli_command_get 
+    # @param action ~action&#x3D;get
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VapiMetadataCliCommandResult|VapiStdErrorsNotFoundError|]
-    def get(vapi_metadata_cli_command_get, opts = {})
-      data, _status_code, _headers = get_with_http_info(vapi_metadata_cli_command_get, opts)
+    def get(action, request_body, opts = {})
+      data, _status_code, _headers = get_with_http_info(action, request_body, opts)
       data
     end
 
     # Retrieves information about a command including information about how to execute that command.
     # @api private
-    # @param vapi_metadata_cli_command_get 
+    # @param action ~action&#x3D;get
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliCommandResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(vapi_metadata_cli_command_get, opts = {})
+    def get_with_http_info(action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliCommandApi.get ...'
       end
-      # verify the required parameter 'vapi_metadata_cli_command_get' is set
-      if @api_client.config.client_side_validation && vapi_metadata_cli_command_get.nil?
-        fail ArgumentError, "Missing the required parameter 'vapi_metadata_cli_command_get' when calling MetadataCliCommandApi.get"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling MetadataCliCommandApi.get"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['get'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of get"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling MetadataCliCommandApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/cli/command?~action=get'
+      local_var_path = '/com/vmware/vapi/metadata/cli/command'
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -102,8 +113,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vapi_metadata_cli_command_get)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -147,14 +158,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

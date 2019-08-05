@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere Appliance API
 
 - API version: 2.0.0
-- Package version: 0.1.0
+- Package version: 0.2.0
 
 ## Installation
 
@@ -28,6 +28,14 @@ Please follow the [installation](#installation) procedure and then run the follo
 ```ruby
 # Load the gem
 require 'vsphere-automation-appliance'
+
+# Setup authorization
+VSphereAutomation.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::AccessConsolecliApi.new
 
@@ -75,12 +83,12 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::LocalAccountsPolicyApi` | [**set**](docs/LocalAccountsPolicyApi.md#set) | **PUT** /appliance/local-accounts/global-policy | Set the global password policy.
 `VSphereAutomation::Appliance::LoggingForwardingApi` | [**get**](docs/LoggingForwardingApi.md#get) | **GET** /appliance/logging/forwarding | Returns the configuration for forwarding log messages to remote logging servers.
 `VSphereAutomation::Appliance::LoggingForwardingApi` | [**set**](docs/LoggingForwardingApi.md#set) | **PUT** /appliance/logging/forwarding | Sets the configuration for forwarding log messages to remote log servers.
-`VSphereAutomation::Appliance::LoggingForwardingApi` | [**test**](docs/LoggingForwardingApi.md#test) | **POST** /appliance/logging/forwarding?action&#x3D;test | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
+`VSphereAutomation::Appliance::LoggingForwardingApi` | [**test**](docs/LoggingForwardingApi.md#test) | **POST** /appliance/logging/forwarding | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
 `VSphereAutomation::Appliance::MonitoringApi` | [**get**](docs/MonitoringApi.md#get) | **GET** /appliance/monitoring/{stat_id} | Get monitored item info
 `VSphereAutomation::Appliance::MonitoringApi` | [**list**](docs/MonitoringApi.md#list) | **GET** /appliance/monitoring | Get monitored items list
 `VSphereAutomation::Appliance::MonitoringApi` | [**query**](docs/MonitoringApi.md#query) | **GET** /appliance/monitoring/query | Get monitoring data.
 `VSphereAutomation::Appliance::NetworkingApi` | [**get**](docs/NetworkingApi.md#get) | **GET** /appliance/networking | Get Networking information for all configured interfaces.
-`VSphereAutomation::Appliance::NetworkingApi` | [**reset**](docs/NetworkingApi.md#reset) | **POST** /appliance/networking?action&#x3D;reset | Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
+`VSphereAutomation::Appliance::NetworkingApi` | [**reset**](docs/NetworkingApi.md#reset) | **POST** /appliance/networking | Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
 `VSphereAutomation::Appliance::NetworkingApi` | [**update**](docs/NetworkingApi.md#update) | **PATCH** /appliance/networking | Enable or Disable ipv6 on all interfaces
 `VSphereAutomation::Appliance::NetworkingDnsDomainsApi` | [**add**](docs/NetworkingDnsDomainsApi.md#add) | **POST** /appliance/networking/dns/domains | Add domain to DNS search domains.
 `VSphereAutomation::Appliance::NetworkingDnsDomainsApi` | [**list**](docs/NetworkingDnsDomainsApi.md#list) | **GET** /appliance/networking/dns/domains | Get list of DNS search domains.
@@ -93,7 +101,7 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::NetworkingDnsServersApi` | [**set**](docs/NetworkingDnsServersApi.md#set) | **PUT** /appliance/networking/dns/servers | Set the DNS server configuration. If you set the mode argument to \"DHCP\", a DHCP refresh is forced.
 `VSphereAutomation::Appliance::NetworkingDnsServersApi` | [**test**](docs/NetworkingDnsServersApi.md#test) | **POST** /appliance/networking/dns/servers/test | Test if dns servers are reachable.
 `VSphereAutomation::Appliance::NetworkingFirewallInboundApi` | [**get**](docs/NetworkingFirewallInboundApi.md#get) | **GET** /appliance/networking/firewall/inbound | Get the ordered list of firewall rules. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
-`VSphereAutomation::Appliance::NetworkingFirewallInboundApi` | [**set**](docs/NetworkingFirewallInboundApi.md#set) | **PUT** /appliance/networking/firewall/inbound | Set the ordered list of firewall rules to allow or deny traffic from one or more incoming IP addresses. This overwrites the existing firewall rules and creates a new rule list. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. For example, the list of rules can be as follows: <ol> <li> \"address\": \"10.112.0.1\", \"prefix\": 0, \"interface_name\": \"*\",\"policy\": \"REJECT\"<br> \"address\": \"10.112.0.1\", \"prefix\": 0, \"interface_name\": \"nic0\",\"policy\": \"ACCEPT\"<br> </li> </ol> In the above example, the first rule drops all packets originating from 10.112.0.1 and<br> the second rule accepts all packets originating from 10.112.0.1 only on nic0. In effect, the second rule is always ignored which is not desired, hence the order has to be swapped. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
+`VSphereAutomation::Appliance::NetworkingFirewallInboundApi` | [**set**](docs/NetworkingFirewallInboundApi.md#set) | **PUT** /appliance/networking/firewall/inbound | Set the ordered list of firewall rules to allow or deny traffic from one or more incoming IP addresses. This overwrites the existing firewall rules and creates a new rule list. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. For example, the list of rules can be as follows: <table> <tr> <th>Address</th><th>Prefix</th><th>Interface Name</th><th>Policy</th> </tr> <tr> <td>10.112.0.1</td><td>0</td><td>*</td><td>REJECT</td> </tr> <tr> <td>10.112.0.1</td><td>0</td><td>nic0</td><td>ACCEPT</td> </tr> </table> In the above example, the first rule drops all packets originating from 10.112.0.1 and<br> the second rule accepts all packets originating from 10.112.0.1 only on nic0. In effect, the second rule is always ignored which is not desired, hence the order has to be swapped. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
 `VSphereAutomation::Appliance::NetworkingInterfacesApi` | [**get**](docs/NetworkingInterfacesApi.md#get) | **GET** /appliance/networking/interfaces/{interface_name} | Get information about a particular network interface.
 `VSphereAutomation::Appliance::NetworkingInterfacesApi` | [**list**](docs/NetworkingInterfacesApi.md#list) | **GET** /appliance/networking/interfaces | Get list of available network interfaces, including those that are not yet configured.
 `VSphereAutomation::Appliance::NetworkingInterfacesIpv4Api` | [**get**](docs/NetworkingInterfacesIpv4Api.md#get) | **GET** /appliance/networking/interfaces/{interface_name}/ipv4 | Get IPv4 network configuration for specific NIC.
@@ -106,7 +114,7 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::NetworkingProxyApi` | [**get**](docs/NetworkingProxyApi.md#get) | **GET** /appliance/networking/proxy/{protocol} | Gets the proxy configuration for a specific protocol.
 `VSphereAutomation::Appliance::NetworkingProxyApi` | [**list**](docs/NetworkingProxyApi.md#list) | **GET** /appliance/networking/proxy | Gets proxy configuration for all configured protocols.
 `VSphereAutomation::Appliance::NetworkingProxyApi` | [**set**](docs/NetworkingProxyApi.md#set) | **PUT** /appliance/networking/proxy/{protocol} | Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
-`VSphereAutomation::Appliance::NetworkingProxyApi` | [**test**](docs/NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol}?action&#x3D;test | Tests a proxy configuration by testing the connection to the proxy server and test host.
+`VSphereAutomation::Appliance::NetworkingProxyApi` | [**test**](docs/NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol} | Tests a proxy configuration by testing the connection to the proxy server and test host.
 `VSphereAutomation::Appliance::NtpApi` | [**get**](docs/NtpApi.md#get) | **GET** /appliance/ntp | Get the NTP configuration status. If you run the 'timesync.get' command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The 'ntp' command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
 `VSphereAutomation::Appliance::NtpApi` | [**set**](docs/NtpApi.md#set) | **PUT** /appliance/ntp | Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
 `VSphereAutomation::Appliance::NtpApi` | [**test**](docs/NtpApi.md#test) | **POST** /appliance/ntp/test | Test the connection to a list of ntp servers.
@@ -145,7 +153,7 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::ShutdownApi` | [**reboot**](docs/ShutdownApi.md#reboot) | **POST** /appliance/shutdown/reboot | Reboot the appliance.
 `VSphereAutomation::Appliance::SystemStorageApi` | [**list**](docs/SystemStorageApi.md#list) | **GET** /appliance/system/storage | Get disk to partition mapping.
 `VSphereAutomation::Appliance::SystemStorageApi` | [**resize**](docs/SystemStorageApi.md#resize) | **POST** /appliance/system/storage/resize | Resize all partitions to 100 percent of disk size.
-`VSphereAutomation::Appliance::SystemStorageApi` | [**resize_ex**](docs/SystemStorageApi.md#resize_ex) | **POST** /appliance/system/storage?action&#x3D;resize-ex | Resize all partitions to 100 percent of disk size.
+`VSphereAutomation::Appliance::SystemStorageApi` | [**resize_ex**](docs/SystemStorageApi.md#resize_ex) | **POST** /appliance/system/storage | Resize all partitions to 100 percent of disk size.
 `VSphereAutomation::Appliance::SystemTimeApi` | [**get**](docs/SystemTimeApi.md#get) | **GET** /appliance/system/time | Get system time.
 `VSphereAutomation::Appliance::SystemTimeTimezoneApi` | [**get**](docs/SystemTimeTimezoneApi.md#get) | **GET** /appliance/system/time/timezone | Get time zone.
 `VSphereAutomation::Appliance::SystemTimeTimezoneApi` | [**set**](docs/SystemTimeTimezoneApi.md#set) | **PUT** /appliance/system/time/timezone | Set time zone.
@@ -163,12 +171,12 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::TechpreviewServicesStatusApi` | [**get**](docs/TechpreviewServicesStatusApi.md#get) | **POST** /appliance/techpreview/services/status/get | Get status of a service.
 `VSphereAutomation::Appliance::TimesyncApi` | [**get**](docs/TimesyncApi.md#get) | **GET** /appliance/timesync | Get time synchronization mode.
 `VSphereAutomation::Appliance::TimesyncApi` | [**set**](docs/TimesyncApi.md#set) | **PUT** /appliance/timesync | Set time synchronization mode.
-`VSphereAutomation::Appliance::UpdateApi` | [**cancel**](docs/UpdateApi.md#cancel) | **POST** /appliance/update?action&#x3D;cancel | Request the cancellation the update operation that is currently in progress.
+`VSphereAutomation::Appliance::UpdateApi` | [**cancel**](docs/UpdateApi.md#cancel) | **POST** /appliance/update | Request the cancellation the update operation that is currently in progress.
 `VSphereAutomation::Appliance::UpdateApi` | [**get**](docs/UpdateApi.md#get) | **GET** /appliance/update | Gets the current status of the appliance update.
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**get**](docs/UpdatePendingApi.md#get) | **GET** /appliance/update/pending/{version} | Gets update information
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**install**](docs/UpdatePendingApi.md#install) | **POST** /appliance/update/pending/{version}?action&#x3D;install | Starts operation of installing the appliance update. Will fail is the update is not staged
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**list**](docs/UpdatePendingApi.md#list) | **GET** /appliance/update/pending | Checks if new updates are available.
-`VSphereAutomation::Appliance::UpdatePendingApi` | [**precheck**](docs/UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version}?action&#x3D;precheck | Runs update precheck
+`VSphereAutomation::Appliance::UpdatePendingApi` | [**precheck**](docs/UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version} | Runs update precheck
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**stage**](docs/UpdatePendingApi.md#stage) | **POST** /appliance/update/pending/{version}?action&#x3D;stage | Starts staging the appliance update. The updates are searched for in the following order: staged, CDROM, URL
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**stage_and_install**](docs/UpdatePendingApi.md#stage_and_install) | **POST** /appliance/update/pending/{version}?action&#x3D;stage-and-install | Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**validate**](docs/UpdatePendingApi.md#validate) | **POST** /appliance/update/pending/{version}?action&#x3D;validate | Validates the user provided data before the update installation.
@@ -316,6 +324,7 @@ Class | Method | HTTP request | Description
  - [VSphereAutomation::Appliance::ApplianceRecoveryBackupJobCancelResult](docs/ApplianceRecoveryBackupJobCancelResult.md)
  - [VSphereAutomation::Appliance::ApplianceRecoveryBackupJobCreate](docs/ApplianceRecoveryBackupJobCreate.md)
  - [VSphereAutomation::Appliance::ApplianceRecoveryBackupJobCreateResult](docs/ApplianceRecoveryBackupJobCreateResult.md)
+ - [VSphereAutomation::Appliance::ApplianceRecoveryBackupJobDetailsBuildInfo](docs/ApplianceRecoveryBackupJobDetailsBuildInfo.md)
  - [VSphereAutomation::Appliance::ApplianceRecoveryBackupJobDetailsFilterSpec](docs/ApplianceRecoveryBackupJobDetailsFilterSpec.md)
  - [VSphereAutomation::Appliance::ApplianceRecoveryBackupJobDetailsInfo](docs/ApplianceRecoveryBackupJobDetailsInfo.md)
  - [VSphereAutomation::Appliance::ApplianceRecoveryBackupJobDetailsListResult](docs/ApplianceRecoveryBackupJobDetailsListResult.md)
@@ -440,6 +449,7 @@ Class | Method | HTTP request | Description
  - [VSphereAutomation::Appliance::ApplianceUpdateInfo](docs/ApplianceUpdateInfo.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingInfo](docs/ApplianceUpdatePendingInfo.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingInstall](docs/ApplianceUpdatePendingInstall.md)
+ - [VSphereAutomation::Appliance::ApplianceUpdatePendingInstallUserData](docs/ApplianceUpdatePendingInstallUserData.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingListResult](docs/ApplianceUpdatePendingListResult.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingPrecheckResult](docs/ApplianceUpdatePendingPrecheckResult.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingQuestion](docs/ApplianceUpdatePendingQuestion.md)
@@ -449,7 +459,6 @@ Class | Method | HTTP request | Description
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingStageAndInstall](docs/ApplianceUpdatePendingStageAndInstall.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingValidate](docs/ApplianceUpdatePendingValidate.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePendingValidateResult](docs/ApplianceUpdatePendingValidateResult.md)
- - [VSphereAutomation::Appliance::ApplianceUpdatePendingValidateUserData](docs/ApplianceUpdatePendingValidateUserData.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePolicyConfig](docs/ApplianceUpdatePolicyConfig.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePolicyDayOfWeek](docs/ApplianceUpdatePolicyDayOfWeek.md)
  - [VSphereAutomation::Appliance::ApplianceUpdatePolicyInfo](docs/ApplianceUpdatePolicyInfo.md)

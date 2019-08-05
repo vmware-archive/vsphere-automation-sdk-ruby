@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> VcenterDatacenterCreateResult create(vcenter_datacenter_create)
+> VcenterDatacenterCreateResult create(request_body)
 
 Create a new datacenter in the vCenter inventory
 
@@ -19,13 +19,20 @@ Create a new datacenter in the vCenter inventory
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DatacenterApi.new
-vcenter_datacenter_create = VSphereAutomation::VcenterDatacenterCreate.new # VcenterDatacenterCreate | 
+request_body = VCenter::VcenterDatacenterCreate.new # VcenterDatacenterCreate | 
 
 begin
   #Create a new datacenter in the vCenter inventory
-  result = api_instance.create(vcenter_datacenter_create)
+  result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DatacenterApi->create: #{e}"
@@ -36,7 +43,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_datacenter_create** | [**VcenterDatacenterCreate**](VcenterDatacenterCreate.md)|  | 
+ **request_body** | [**VcenterDatacenterCreate**](VcenterDatacenterCreate.md)|  | 
 
 ### Return type
 
@@ -44,12 +51,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -62,11 +69,18 @@ Delete an empty datacenter from the vCenter Server
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DatacenterApi.new
 datacenter = 'datacenter_example' # String | Identifier of the datacenter to be deleted. The parameter must be an identifier for the resource type: Datacenter.
 opts = {
-  force: true # BOOLEAN | If true, delete the datacenter even if it is not empty. If unset a ResourceInUse error will be reported if the datacenter is not empty. This is the equivalent of passing the value false.
+  force: true # Boolean | If true, delete the datacenter even if it is not empty. If unset a ResourceInUse error will be reported if the datacenter is not empty. This is the equivalent of passing the value false.
 }
 
 begin
@@ -82,7 +96,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datacenter** | **String**| Identifier of the datacenter to be deleted. The parameter must be an identifier for the resource type: Datacenter. | 
- **force** | **BOOLEAN**| If true, delete the datacenter even if it is not empty. If unset a ResourceInUse error will be reported if the datacenter is not empty. This is the equivalent of passing the value false. | [optional] 
+ **force** | **Boolean**| If true, delete the datacenter even if it is not empty. If unset a ResourceInUse error will be reported if the datacenter is not empty. This is the equivalent of passing the value false. | [optional] 
 
 ### Return type
 
@@ -90,12 +104,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -108,6 +122,13 @@ Retrieves information about the datacenter corresponding to datacenter.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DatacenterApi.new
 datacenter = 'datacenter_example' # String | Identifier of the datacenter. The parameter must be an identifier for the resource type: Datacenter.
@@ -133,12 +154,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -151,6 +172,13 @@ Returns information about at most 1000 visible (subject to permission checks) da
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DatacenterApi.new
 opts = {
@@ -182,12 +210,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

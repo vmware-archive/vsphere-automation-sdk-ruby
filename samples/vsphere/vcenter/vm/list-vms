@@ -22,26 +22,30 @@ OptionParser.new do |opts|
   opts.on('-k', '--insecure', 'skip certificate validation') do |k|
     options[:insecure] = k
   end
+
+  opts.on('--scheme SCHEME', 'URL scheme to use') do |scheme|
+    options[:scheme] = scheme
+  end
 end.parse!
 
 configuration = VSphereAutomation::Configuration.new.tap do |c|
   c.host = options[:server]
   c.username = options[:username]
   c.password = options[:password]
-  c.scheme = 'https'
+  c.scheme = options.fetch(:scheme, 'https')
   c.verify_ssl = !options[:insecure]
   c.verify_ssl_host = !options[:insecure]
 end
 
 api_client = VSphereAutomation::ApiClient.new(configuration)
-api_client.default_headers['Authorization'] = configuration.basic_auth_token
-
-session_api = VSphereAutomation::CIS::SessionApi.new(api_client)
-session_id = session_api.create('').value
-
-api_client.default_headers['vmware-api-session-id'] = session_id
+VSphereAutomation::CIS::SessionApi.new(api_client).create('')
 
 vm_api = VSphereAutomation::VCenter::VMApi.new(api_client)
+vms = vm_api.list
+
 puts 'List of VMs'
-puts
-vm_api.list.value.each { |vm| puts "#{vm.name} (#{vm.vm})" }
+puts '-----------'
+
+vms.value.each do |vm|
+  puts "#{vm.name} (#{vm.vm})"
+end

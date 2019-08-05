@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareEthernetMacAddressType
     
-    MANUAL = 'MANUAL'.freeze
-    GENERATED = 'GENERATED'.freeze
-    ASSIGNED = 'ASSIGNED'.freeze
+    MANUAL = "MANUAL".freeze
+    GENERATED = "GENERATED".freeze
+    ASSIGNED = "ASSIGNED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

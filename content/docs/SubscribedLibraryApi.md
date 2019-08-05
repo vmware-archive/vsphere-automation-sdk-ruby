@@ -10,12 +10,12 @@ Method | HTTP request | Description
 [**get**](SubscribedLibraryApi.md#get) | **GET** /com/vmware/content/subscribed-library/id:{library_id} | Returns a given subscribed library.
 [**list**](SubscribedLibraryApi.md#list) | **GET** /com/vmware/content/subscribed-library | Returns the identifiers of all subscribed libraries in the Content Library.
 [**probe**](SubscribedLibraryApi.md#probe) | **POST** /com/vmware/content/subscribed-library?~action&#x3D;probe | Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
-[**sync**](SubscribedLibraryApi.md#sync) | **POST** /com/vmware/content/subscribed-library/id:{library_id}?~action&#x3D;sync | Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
+[**sync**](SubscribedLibraryApi.md#sync) | **POST** /com/vmware/content/subscribed-library/id:{library_id} | Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
 [**update**](SubscribedLibraryApi.md#update) | **PATCH** /com/vmware/content/subscribed-library/id:{library_id} | Updates the properties of a subscribed library. &lt;p&gt; This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
 
 
 # **create**
-> ContentSubscribedLibraryCreateResult create(content_subscribed_library_create)
+> ContentSubscribedLibraryCreateResult create(request_body)
 
 Creates a new subscribed library. <p> Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
 
@@ -23,13 +23,20 @@ Creates a new subscribed library. <p> Once created, the subscribed library will 
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
-content_subscribed_library_create = VSphereAutomation::ContentSubscribedLibraryCreate.new # ContentSubscribedLibraryCreate | 
+request_body = Content::ContentSubscribedLibraryCreate.new # ContentSubscribedLibraryCreate | 
 
 begin
   #Creates a new subscribed library. <p> Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
-  result = api_instance.create(content_subscribed_library_create)
+  result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->create: #{e}"
@@ -40,7 +47,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_subscribed_library_create** | [**ContentSubscribedLibraryCreate**](ContentSubscribedLibraryCreate.md)|  | 
+ **request_body** | [**ContentSubscribedLibraryCreate**](ContentSubscribedLibraryCreate.md)|  | 
 
 ### Return type
 
@@ -48,12 +55,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -66,6 +73,13 @@ Deletes the specified subscribed library. <p> Deleting a subscribed library will
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the subscribed library to delete.
@@ -90,12 +104,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -108,6 +122,13 @@ Evicts the cached content of an on-demand subscribed library. <p> This {@term op
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the subscribed library whose content should be evicted.
@@ -132,12 +153,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -150,6 +171,13 @@ Returns a given subscribed library.
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the subscribed library to return.
@@ -175,12 +203,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -193,6 +221,13 @@ Returns the identifiers of all subscribed libraries in the Content Library.
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 
@@ -214,17 +249,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **probe**
-> ContentSubscribedLibraryProbeResult probe(content_subscribed_library_probe)
+> ContentSubscribedLibraryProbeResult probe(request_body)
 
 Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
 
@@ -232,13 +267,20 @@ Probes remote library subscription information, including URL, SSL certificate a
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
-content_subscribed_library_probe = VSphereAutomation::ContentSubscribedLibraryProbe.new # ContentSubscribedLibraryProbe | 
+request_body = Content::ContentSubscribedLibraryProbe.new # ContentSubscribedLibraryProbe | 
 
 begin
   #Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
-  result = api_instance.probe(content_subscribed_library_probe)
+  result = api_instance.probe(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->probe: #{e}"
@@ -249,7 +291,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_subscribed_library_probe** | [**ContentSubscribedLibraryProbe**](ContentSubscribedLibraryProbe.md)|  | 
+ **request_body** | [**ContentSubscribedLibraryProbe**](ContentSubscribedLibraryProbe.md)|  | 
 
 ### Return type
 
@@ -257,17 +299,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **sync**
-> sync(library_id)
+> sync(library_id, action)
 
 Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
 
@@ -275,13 +317,21 @@ Forces the synchronization of the subscribed library. <p> Synchronizing a subscr
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the subscribed library to synchronize.
+action = 'action_example' # String | ~action=sync
 
 begin
   #Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
-  api_instance.sync(library_id)
+  api_instance.sync(library_id, action)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->sync: #{e}"
 end
@@ -292,6 +342,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_id** | **String**| Identifier of the subscribed library to synchronize. | 
+ **action** | **String**| ~action&#x3D;sync | 
 
 ### Return type
 
@@ -299,17 +350,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(library_id, content_subscribed_library_update)
+> update(library_id, request_body)
 
 Updates the properties of a subscribed library. <p> This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
 
@@ -317,14 +368,21 @@ Updates the properties of a subscribed library. <p> This is an incremental updat
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the subscribed library to update.
-content_subscribed_library_update = VSphereAutomation::ContentSubscribedLibraryUpdate.new # ContentSubscribedLibraryUpdate | 
+request_body = Content::ContentSubscribedLibraryUpdate.new # ContentSubscribedLibraryUpdate | 
 
 begin
   #Updates the properties of a subscribed library. <p> This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
-  api_instance.update(library_id, content_subscribed_library_update)
+  api_instance.update(library_id, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->update: #{e}"
 end
@@ -335,7 +393,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_id** | **String**| Identifier of the subscribed library to update. | 
- **content_subscribed_library_update** | [**ContentSubscribedLibraryUpdate**](ContentSubscribedLibraryUpdate.md)|  | 
+ **request_body** | [**ContentSubscribedLibraryUpdate**](ContentSubscribedLibraryUpdate.md)|  | 
 
 ### Return type
 
@@ -343,12 +401,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

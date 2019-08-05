@@ -43,13 +43,7 @@ configuration = VSphereAutomation::Configuration.new.tap do |c|
 end
 
 api_client = VSphereAutomation::ApiClient.new(configuration)
-api_client.default_headers['Authorization'] = configuration.basic_auth_token
-
-session_api = VSphereAutomation::CIS::SessionApi.new(api_client)
-session_id = session_api.create('').value
-
-api_client.default_headers['vmware-api-session-id'] = session_id
-
+VSphereAutomation::CIS::SessionApi.new(api_client).create('')
 datastore_api = VSphereAutomation::VCenter::DatastoreApi.new(api_client)
 datastore = datastore_api.list(filter_name: options[:datastore]).value.first
 

@@ -46,7 +46,7 @@ module VSphereAutomation
         :'check_time' => :'DateTime',
         :'estimated_time_to_install' => :'Integer',
         :'estimated_time_to_rollback' => :'Integer',
-        :'reboot_required' => :'BOOLEAN',
+        :'reboot_required' => :'Boolean',
         :'issues' => :'ApplianceNotifications',
         :'questions' => :'Array<ApplianceUpdatePendingQuestion>'
       }

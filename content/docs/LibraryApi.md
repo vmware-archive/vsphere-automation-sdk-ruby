@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find**](LibraryApi.md#find) | **POST** /com/vmware/content/library?~action&#x3D;find | Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
+[**find**](LibraryApi.md#find) | **POST** /com/vmware/content/library | Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
 [**get**](LibraryApi.md#get) | **GET** /com/vmware/content/library/id:{library_id} | Returns a given {@link LibraryModel}.
 [**list**](LibraryApi.md#list) | **GET** /com/vmware/content/library | Returns the identifiers of all libraries of any type in the Content Library.
 [**update**](LibraryApi.md#update) | **PATCH** /com/vmware/content/library/id:{library_id} | Updates the properties of a library. &lt;p&gt; This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
 
 
 # **find**
-> ContentLibraryFindResult find(content_library_find)
+> ContentLibraryFindResult find(action, request_body)
 
 Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
 
@@ -19,13 +19,21 @@ Returns a list of all the visible (as determined by authorization policy) librar
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryApi.new
-content_library_find = VSphereAutomation::ContentLibraryFind.new # ContentLibraryFind | 
+action = 'action_example' # String | ~action=find
+request_body = Content::ContentLibraryFind.new # ContentLibraryFind | 
 
 begin
   #Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-  result = api_instance.find(content_library_find)
+  result = api_instance.find(action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryApi->find: #{e}"
@@ -36,7 +44,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_library_find** | [**ContentLibraryFind**](ContentLibraryFind.md)|  | 
+ **action** | **String**| ~action&#x3D;find | 
+ **request_body** | [**ContentLibraryFind**](ContentLibraryFind.md)|  | 
 
 ### Return type
 
@@ -44,12 +53,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -62,6 +71,13 @@ Returns a given {@link LibraryModel}.
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the library to return.
@@ -87,12 +103,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -105,6 +121,13 @@ Returns the identifiers of all libraries of any type in the Content Library.
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryApi.new
 
@@ -126,17 +149,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(library_id, content_library_update)
+> update(library_id, request_body)
 
 Updates the properties of a library. <p> This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
 
@@ -144,14 +167,21 @@ Updates the properties of a library. <p> This is an incremental update to the li
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the library to update.
-content_library_update = VSphereAutomation::ContentLibraryUpdate.new # ContentLibraryUpdate | 
+request_body = Content::ContentLibraryUpdate.new # ContentLibraryUpdate | 
 
 begin
   #Updates the properties of a library. <p> This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
-  api_instance.update(library_id, content_library_update)
+  api_instance.update(library_id, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryApi->update: #{e}"
 end
@@ -162,7 +192,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_id** | **String**| Identifier of the library to update. | 
- **content_library_update** | [**ContentLibraryUpdate**](ContentLibraryUpdate.md)|  | 
+ **request_body** | [**ContentLibraryUpdate**](ContentLibraryUpdate.md)|  | 
 
 ### Return type
 
@@ -170,12 +200,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

@@ -42,7 +42,7 @@ describe 'UpdatePendingApi' do
   # unit tests for install
   # Starts operation of installing the appliance update. Will fail is the update is not staged
   # @param version Update version
-  # @param appliance_update_pending_install 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'install test' do
@@ -66,6 +66,7 @@ describe 'UpdatePendingApi' do
   # unit tests for precheck
   # Runs update precheck
   # @param version Update version
+  # @param action action&#x3D;precheck
   # @param [Hash] opts the optional parameters
   # @return [ApplianceUpdatePendingPrecheckResult]
   describe 'precheck test' do
@@ -88,7 +89,7 @@ describe 'UpdatePendingApi' do
   # unit tests for stage_and_install
   # Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
   # @param version Update version
-  # @param appliance_update_pending_stage_and_install 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'stage_and_install test' do
@@ -100,7 +101,7 @@ describe 'UpdatePendingApi' do
   # unit tests for validate
   # Validates the user provided data before the update installation.
   # @param version Update version
-  # @param appliance_update_pending_validate 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceUpdatePendingValidateResult]
   describe 'validate test' do

@@ -12,11 +12,11 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelElementValueType
     
-    LONG = 'LONG'.freeze
-    STRING = 'STRING'.freeze
-    STRING_LIST = 'STRING_LIST'.freeze
-    STRUCTURE_REFERENCE = 'STRUCTURE_REFERENCE'.freeze
-    STRUCTURE_REFERENCE_LIST = 'STRUCTURE_REFERENCE_LIST'.freeze
+    LONG = "LONG".freeze
+    STRING = "STRING".freeze
+    STRING_LIST = "STRING_LIST".freeze
+    STRUCTURE_REFERENCE = "STRUCTURE_REFERENCE".freeze
+    STRUCTURE_REFERENCE_LIST = "STRUCTURE_REFERENCE_LIST".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

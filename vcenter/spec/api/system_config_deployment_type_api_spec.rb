@@ -28,6 +28,17 @@ describe 'SystemConfigDeploymentTypeApi' do
     end
   end
 
+  # unit tests for convert_to_vcsa_embeddedtask
+  # Convert the type of the vCenter appliance to vCSA embedded.
+  # @param request_body 
+  # @param [Hash] opts the optional parameters
+  # @return [VcenterSystemConfigDeploymentTypeConvertToVcsaEmbeddedTaskResult]
+  describe 'convert_to_vcsa_embeddedtask test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get
   # Get the type of the vCenter appliance.
   # @param [Hash] opts the optional parameters
@@ -40,7 +51,7 @@ describe 'SystemConfigDeploymentTypeApi' do
 
   # unit tests for reconfigure
   # Reconfigure the type of the vCenter appliance.
-  # @param vcenter_system_config_deployment_type_reconfigure 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'reconfigure test' do

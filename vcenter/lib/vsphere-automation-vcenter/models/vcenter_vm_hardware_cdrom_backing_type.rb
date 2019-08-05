@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareCdromBackingType
     
-    ISO_FILE = 'ISO_FILE'.freeze
-    HOST_DEVICE = 'HOST_DEVICE'.freeze
-    CLIENT_DEVICE = 'CLIENT_DEVICE'.freeze
+    ISO_FILE = "ISO_FILE".freeze
+    HOST_DEVICE = "HOST_DEVICE".freeze
+    CLIENT_DEVICE = "CLIENT_DEVICE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

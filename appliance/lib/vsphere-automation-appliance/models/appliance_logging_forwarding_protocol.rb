@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceLoggingForwardingProtocol
     
-    TLS = 'TLS'.freeze
-    UDP = 'UDP'.freeze
-    TCP = 'TCP'.freeze
+    TLS = "TLS".freeze
+    UDP = "UDP".freeze
+    TCP = "TCP".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

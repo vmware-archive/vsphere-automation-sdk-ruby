@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**ContentLibraryItemUpdatesessionWarningType**](ContentLibraryItemUpdatesessionWarningType.md) |  | 
 **message** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | 
-**ignored** | **BOOLEAN** | Indicates if this warning will be ignored during session complete operation. | 
+**ignored** | **Boolean** | Indicates if this warning will be ignored during session complete operation. | 
 
 

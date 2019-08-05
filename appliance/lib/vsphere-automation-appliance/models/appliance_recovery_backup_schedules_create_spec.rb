@@ -55,7 +55,7 @@ module VSphereAutomation
         :'location' => :'String',
         :'location_user' => :'String',
         :'location_password' => :'String',
-        :'enable' => :'BOOLEAN',
+        :'enable' => :'Boolean',
         :'recurrence_info' => :'ApplianceRecoveryBackupSchedulesRecurrenceInfo',
         :'retention_info' => :'ApplianceRecoveryBackupSchedulesRetentionInfo'
       }

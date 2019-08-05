@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VapiMetadataAuthenticationOperationInfo**](VapiMetadataAuthenticationOperationInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VapiMetadataAuthenticationOperationInfo**](VapiMetadataAuthenticationOperationInfo.md) |  | [optional] 
 
 

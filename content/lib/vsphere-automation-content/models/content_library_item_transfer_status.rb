@@ -12,11 +12,11 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemTransferStatus
     
-    WAITING_FOR_TRANSFER = 'WAITING_FOR_TRANSFER'.freeze
-    TRANSFERRING = 'TRANSFERRING'.freeze
-    READY = 'READY'.freeze
-    VALIDATING = 'VALIDATING'.freeze
-    ERROR = 'ERROR'.freeze
+    WAITING_FOR_TRANSFER = "WAITING_FOR_TRANSFER".freeze
+    TRANSFERRING = "TRANSFERRING".freeze
+    READY = "READY".freeze
+    VALIDATING = "VALIDATING".freeze
+    ERROR = "ERROR".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

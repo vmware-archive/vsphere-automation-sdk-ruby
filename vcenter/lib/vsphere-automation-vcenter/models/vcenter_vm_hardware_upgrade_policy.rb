@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareUpgradePolicy
     
-    NEVER = 'NEVER'.freeze
-    AFTER_CLEAN_SHUTDOWN = 'AFTER_CLEAN_SHUTDOWN'.freeze
-    ALWAYS = 'ALWAYS'.freeze
+    NEVER = "NEVER".freeze
+    AFTER_CLEAN_SHUTDOWN = "AFTER_CLEAN_SHUTDOWN".freeze
+    ALWAYS = "ALWAYS".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

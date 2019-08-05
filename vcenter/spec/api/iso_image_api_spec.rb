@@ -31,7 +31,8 @@ describe 'IsoImageApi' do
   # unit tests for mount
   # Mounts an ISO image from a content library on a virtual machine.
   # @param library_item The identifier of the library item having the ISO image to mount on the virtual machine.
-  # @param vcenter_iso_image_mount 
+  # @param action ~action&#x3D;mount
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterIsoImageMountResult]
   describe 'mount test' do
@@ -43,7 +44,8 @@ describe 'IsoImageApi' do
   # unit tests for unmount
   # Unmounts a previously mounted CD-ROM using an ISO image as a backing.
   # @param vm The identifier of the virtual machine from which to unmount the virtual CD-ROM.
-  # @param vcenter_iso_image_unmount 
+  # @param action ~action&#x3D;unmount
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'unmount test' do

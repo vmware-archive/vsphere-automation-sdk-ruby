@@ -18,21 +18,21 @@ module VSphereAutomation
     end
     # Creates a schedule
     # @param schedule Identifier of the schedule
-    # @param appliance_recovery_backup_schedules_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def create(schedule, appliance_recovery_backup_schedules_create, opts = {})
-      create_with_http_info(schedule, appliance_recovery_backup_schedules_create, opts)
+    def create(schedule, request_body, opts = {})
+      create_with_http_info(schedule, request_body, opts)
       nil
     end
 
     # Creates a schedule
     # @api private
     # @param schedule Identifier of the schedule
-    # @param appliance_recovery_backup_schedules_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def create_with_http_info(schedule, appliance_recovery_backup_schedules_create, opts = {})
+    def create_with_http_info(schedule, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.create ...'
       end
@@ -40,9 +40,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && schedule.nil?
         fail ArgumentError, "Missing the required parameter 'schedule' when calling RecoveryBackupSchedulesApi.create"
       end
-      # verify the required parameter 'appliance_recovery_backup_schedules_create' is set
-      if @api_client.config.client_side_validation && appliance_recovery_backup_schedules_create.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_recovery_backup_schedules_create' when calling RecoveryBackupSchedulesApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryBackupSchedulesApi.create"
       end
       # resource path
       local_var_path = '/appliance/recovery/backup/schedules/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
@@ -53,7 +53,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -61,8 +61,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_recovery_backup_schedules_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -105,14 +105,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -155,14 +155,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -204,14 +204,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -230,7 +230,7 @@ module VSphereAutomation
     # Initiate backup with the specified schedule
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
-    # @option opts [ApplianceRecoveryBackupSchedulesRun] :appliance_recovery_backup_schedules_run 
+    # @option opts [ApplianceRecoveryBackupSchedulesRun] :request_body 
     # @return [ApplianceRecoveryBackupSchedulesRunResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def run(schedule, opts = {})
       data, _status_code, _headers = run_with_http_info(schedule, opts)
@@ -241,7 +241,7 @@ module VSphereAutomation
     # @api private
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
-    # @option opts [ApplianceRecoveryBackupSchedulesRun] :appliance_recovery_backup_schedules_run 
+    # @option opts [ApplianceRecoveryBackupSchedulesRun] :request_body 
     # @return [Array<(ApplianceRecoveryBackupSchedulesRunResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def run_with_http_info(schedule, opts = {})
       if @api_client.config.debugging
@@ -260,7 +260,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -268,8 +268,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'appliance_recovery_backup_schedules_run'])
-      auth_names = []
+      post_body = @api_client.object_to_http_body(opts[:'request_body'])
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -288,21 +288,21 @@ module VSphereAutomation
     end
     # Updates a schedule
     # @param schedule Identifier of the schedule
-    # @param appliance_recovery_backup_schedules_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil]
-    def update(schedule, appliance_recovery_backup_schedules_update, opts = {})
-      update_with_http_info(schedule, appliance_recovery_backup_schedules_update, opts)
+    def update(schedule, request_body, opts = {})
+      update_with_http_info(schedule, request_body, opts)
       nil
     end
 
     # Updates a schedule
     # @api private
     # @param schedule Identifier of the schedule
-    # @param appliance_recovery_backup_schedules_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(schedule, appliance_recovery_backup_schedules_update, opts = {})
+    def update_with_http_info(schedule, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.update ...'
       end
@@ -310,9 +310,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && schedule.nil?
         fail ArgumentError, "Missing the required parameter 'schedule' when calling RecoveryBackupSchedulesApi.update"
       end
-      # verify the required parameter 'appliance_recovery_backup_schedules_update' is set
-      if @api_client.config.client_side_validation && appliance_recovery_backup_schedules_update.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_recovery_backup_schedules_update' when calling RecoveryBackupSchedulesApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryBackupSchedulesApi.update"
       end
       # resource path
       local_var_path = '/appliance/recovery/backup/schedules/update/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
@@ -323,7 +323,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -331,8 +331,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_recovery_backup_schedules_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

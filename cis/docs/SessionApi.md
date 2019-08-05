@@ -18,6 +18,12 @@ Creates a session with the API. This is the equivalent of login. This operation 
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = VSphereAutomation::CIS::SessionApi.new
 vmware_use_header_authn = 'vmware_use_header_authn_example' # String | Custom header to protect against CSRF attacks in browser based clients
@@ -43,12 +49,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -61,6 +67,13 @@ Terminates the validity of a session token. This is the equivalent of log out.  
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::SessionApi.new
 
@@ -81,12 +94,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -99,6 +112,13 @@ Returns information about the current session. This operation expects a valid se
 ```ruby
 # load the gem
 require 'vsphere-automation-cis'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::CIS::SessionApi.new
 
@@ -120,12 +140,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

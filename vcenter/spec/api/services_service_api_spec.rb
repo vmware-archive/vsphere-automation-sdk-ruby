@@ -85,7 +85,7 @@ describe 'ServicesServiceApi' do
   # unit tests for update
   # Updates the properties of a service.
   # @param service identifier of the service whose properties are being updated.
-  # @param vcenter_services_service_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

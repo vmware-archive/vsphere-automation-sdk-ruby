@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterHostConnectionState
     
-    CONNECTED = 'CONNECTED'.freeze
-    DISCONNECTED = 'DISCONNECTED'.freeze
-    NOT_RESPONDING = 'NOT_RESPONDING'.freeze
+    CONNECTED = "CONNECTED".freeze
+    DISCONNECTED = "DISCONNECTED".freeze
+    NOT_RESPONDING = "NOT_RESPONDING".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

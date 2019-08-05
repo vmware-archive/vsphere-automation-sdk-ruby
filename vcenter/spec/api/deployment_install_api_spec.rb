@@ -30,6 +30,7 @@ describe 'DeploymentInstallApi' do
 
   # unit tests for cancel
   # Cancel the appliance installation that is in progress.
+  # @param action action&#x3D;cancel
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel test' do
@@ -40,7 +41,7 @@ describe 'DeploymentInstallApi' do
 
   # unit tests for check
   # Run sanity checks using the InstallSpec parameters passed.
-  # @param vcenter_deployment_install_check 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterDeploymentInstallCheckResult]
   describe 'check test' do
@@ -61,7 +62,7 @@ describe 'DeploymentInstallApi' do
 
   # unit tests for start
   # Start the appliance installation.
-  # @param vcenter_deployment_install_start 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'start test' do

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**get**](NetworkingProxyApi.md#get) | **GET** /appliance/networking/proxy/{protocol} | Gets the proxy configuration for a specific protocol.
 [**list**](NetworkingProxyApi.md#list) | **GET** /appliance/networking/proxy | Gets proxy configuration for all configured protocols.
 [**set**](NetworkingProxyApi.md#set) | **PUT** /appliance/networking/proxy/{protocol} | Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
-[**test**](NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol}?action&#x3D;test | Tests a proxy configuration by testing the connection to the proxy server and test host.
+[**test**](NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol} | Tests a proxy configuration by testing the connection to the proxy server and test host.
 
 
 # **delete**
@@ -20,6 +20,13 @@ Deletes a proxy configuration for a specific protocol.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 protocol = 'protocol_example' # String | ID whose proxy is to be deleted.
@@ -44,12 +51,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -62,6 +69,13 @@ Gets the proxy configuration for a specific protocol.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 protocol = 'protocol_example' # String | The protocol whose proxy configuration is requested.
@@ -87,12 +101,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -105,6 +119,13 @@ Gets proxy configuration for all configured protocols.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 
@@ -126,17 +147,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(protocol, appliance_networking_proxy_set)
+> set(protocol, request_body)
 
 Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
 
@@ -144,14 +165,21 @@ Configures which proxy server to use for the specified protocol. This operation 
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 protocol = 'protocol_example' # String | The protocol for which proxy should be set.
-appliance_networking_proxy_set = VSphereAutomation::ApplianceNetworkingProxySet.new # ApplianceNetworkingProxySet | 
+request_body = Appliance::ApplianceNetworkingProxySet.new # ApplianceNetworkingProxySet | 
 
 begin
   #Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
-  api_instance.set(protocol, appliance_networking_proxy_set)
+  api_instance.set(protocol, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingProxyApi->set: #{e}"
 end
@@ -162,7 +190,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **protocol** | **String**| The protocol for which proxy should be set. | 
- **appliance_networking_proxy_set** | [**ApplianceNetworkingProxySet**](ApplianceNetworkingProxySet.md)|  | 
+ **request_body** | [**ApplianceNetworkingProxySet**](ApplianceNetworkingProxySet.md)|  | 
 
 ### Return type
 
@@ -170,17 +198,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **test**
-> ApplianceNetworkingProxyTestResult test(protocol, appliance_networking_proxy_test)
+> ApplianceNetworkingProxyTestResult test(protocol, action, request_body)
 
 Tests a proxy configuration by testing the connection to the proxy server and test host.
 
@@ -188,14 +216,22 @@ Tests a proxy configuration by testing the connection to the proxy server and te
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 protocol = 'protocol_example' # String | Protocol whose proxy is to be tested.
-appliance_networking_proxy_test = VSphereAutomation::ApplianceNetworkingProxyTest.new # ApplianceNetworkingProxyTest | 
+action = 'action_example' # String | action=test
+request_body = Appliance::ApplianceNetworkingProxyTest.new # ApplianceNetworkingProxyTest | 
 
 begin
   #Tests a proxy configuration by testing the connection to the proxy server and test host.
-  result = api_instance.test(protocol, appliance_networking_proxy_test)
+  result = api_instance.test(protocol, action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingProxyApi->test: #{e}"
@@ -207,7 +243,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **protocol** | **String**| Protocol whose proxy is to be tested. | 
- **appliance_networking_proxy_test** | [**ApplianceNetworkingProxyTest**](ApplianceNetworkingProxyTest.md)|  | 
+ **action** | **String**| action&#x3D;test | 
+ **request_body** | [**ApplianceNetworkingProxyTest**](ApplianceNetworkingProxyTest.md)|  | 
 
 ### Return type
 
@@ -215,12 +252,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

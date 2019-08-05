@@ -8,4 +8,8 @@
 
 source 'https://rubygems.org'
 
+%i[appliance cis content runtime vapi vcenter].each do |component|
+  gem "vsphere-automation-#{component}", path: "../#{component}"
+end
+  
 gemspec

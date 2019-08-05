@@ -17,37 +17,48 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-    # @param content_library_find 
+    # @param action ~action&#x3D;find
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentLibraryFindResult|VapiStdErrorsInvalidArgumentError|]
-    def find(content_library_find, opts = {})
-      data, _status_code, _headers = find_with_http_info(content_library_find, opts)
+    def find(action, request_body, opts = {})
+      data, _status_code, _headers = find_with_http_info(action, request_body, opts)
       data
     end
 
     # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
     # @api private
-    # @param content_library_find 
+    # @param action ~action&#x3D;find
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryFindResult|VapiStdErrorsInvalidArgumentError|, Fixnum, Hash)>]  data, response status code and response headers
-    def find_with_http_info(content_library_find, opts = {})
+    def find_with_http_info(action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryApi.find ...'
       end
-      # verify the required parameter 'content_library_find' is set
-      if @api_client.config.client_side_validation && content_library_find.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_find' when calling LibraryApi.find"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryApi.find"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['find'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of find"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryApi.find"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library?~action=find'
+      local_var_path = '/com/vmware/content/library'
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -55,8 +66,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_find)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -103,14 +114,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -151,14 +162,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -175,21 +186,21 @@ module VSphereAutomation
     end
     # Updates the properties of a library. <p> This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
     # @param library_id Identifier of the library to update.
-    # @param content_library_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|nil]
-    def update(library_id, content_library_update, opts = {})
-      update_with_http_info(library_id, content_library_update, opts)
+    def update(library_id, request_body, opts = {})
+      update_with_http_info(library_id, request_body, opts)
       nil
     end
 
     # Updates the properties of a library. &lt;p&gt; This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
     # @api private
     # @param library_id Identifier of the library to update.
-    # @param content_library_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(library_id, content_library_update, opts = {})
+    def update_with_http_info(library_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryApi.update ...'
       end
@@ -197,9 +208,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_id' when calling LibraryApi.update"
       end
-      # verify the required parameter 'content_library_update' is set
-      if @api_client.config.client_side_validation && content_library_update.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_update' when calling LibraryApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryApi.update"
       end
       # resource path
       local_var_path = '/com/vmware/content/library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
@@ -210,7 +221,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -218,8 +229,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

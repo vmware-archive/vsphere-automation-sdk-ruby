@@ -58,7 +58,7 @@ module VSphereAutomation
         :'folder' => :'String',
         :'thumbprint_verification' => :'VcenterHostCreateSpecThumbprintVerification',
         :'thumbprint' => :'String',
-        :'force_add' => :'BOOLEAN'
+        :'force_add' => :'Boolean'
       }
     end
 

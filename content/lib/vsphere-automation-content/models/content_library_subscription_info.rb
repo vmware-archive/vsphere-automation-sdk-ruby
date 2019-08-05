@@ -31,6 +31,8 @@ module VSphereAutomation
     # The username to use when authenticating. <p> The username must be set when using a password-based authentication method. Empty strings are allowed for usernames.
     attr_accessor :user_name
 
+    attr_accessor :source_info
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,7 +42,8 @@ module VSphereAutomation
         :'password' => :'password',
         :'ssl_thumbprint' => :'ssl_thumbprint',
         :'subscription_url' => :'subscription_url',
-        :'user_name' => :'user_name'
+        :'user_name' => :'user_name',
+        :'source_info' => :'source_info'
       }
     end
 
@@ -48,12 +51,13 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'authentication_method' => :'ContentLibrarySubscriptionInfoAuthenticationMethod',
-        :'automatic_sync_enabled' => :'BOOLEAN',
-        :'on_demand' => :'BOOLEAN',
+        :'automatic_sync_enabled' => :'Boolean',
+        :'on_demand' => :'Boolean',
         :'password' => :'String',
         :'ssl_thumbprint' => :'String',
         :'subscription_url' => :'String',
-        :'user_name' => :'String'
+        :'user_name' => :'String',
+        :'source_info' => :'ContentLibrarySourceInfo'
       }
     end
 
@@ -92,6 +96,10 @@ module VSphereAutomation
       if attributes.has_key?(:'user_name')
         self.user_name = attributes[:'user_name']
       end
+
+      if attributes.has_key?(:'source_info')
+        self.source_info = attributes[:'source_info']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -118,7 +126,8 @@ module VSphereAutomation
           password == o.password &&
           ssl_thumbprint == o.ssl_thumbprint &&
           subscription_url == o.subscription_url &&
-          user_name == o.user_name
+          user_name == o.user_name &&
+          source_info == o.source_info
     end
 
     # @see the `==` method
@@ -130,7 +139,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authentication_method, automatic_sync_enabled, on_demand, password, ssl_thumbprint, subscription_url, user_name].hash
+      [authentication_method, automatic_sync_enabled, on_demand, password, ssl_thumbprint, subscription_url, user_name, source_info].hash
     end
 
     # Builds the object from hash

@@ -18,6 +18,13 @@ Returns the virtual hardware settings of a virtual machine.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -43,17 +50,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(vm, vcenter_vm_hardware_update)
+> update(vm, request_body)
 
 Updates the virtual hardware settings of a virtual machine.
 
@@ -61,14 +68,21 @@ Updates the virtual hardware settings of a virtual machine.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_hardware_update = VSphereAutomation::VcenterVmHardwareUpdate.new # VcenterVmHardwareUpdate | 
+request_body = VCenter::VcenterVmHardwareUpdate.new # VcenterVmHardwareUpdate | 
 
 begin
   #Updates the virtual hardware settings of a virtual machine.
-  api_instance.update(vm, vcenter_vm_hardware_update)
+  api_instance.update(vm, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareApi->update: #{e}"
 end
@@ -79,7 +93,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_update** | [**VcenterVmHardwareUpdate**](VcenterVmHardwareUpdate.md)|  | 
+ **request_body** | [**VcenterVmHardwareUpdate**](VcenterVmHardwareUpdate.md)|  | 
 
 ### Return type
 
@@ -87,12 +101,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -105,11 +119,18 @@ Upgrades the virtual machine to a newer virtual hardware version.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 opts = {
-  vcenter_vm_hardware_upgrade: VSphereAutomation::VcenterVmHardwareUpgrade.new # VcenterVmHardwareUpgrade | 
+  request_body: VCenter::VcenterVmHardwareUpgrade.new # VcenterVmHardwareUpgrade | 
 }
 
 begin
@@ -125,7 +146,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_upgrade** | [**VcenterVmHardwareUpgrade**](VcenterVmHardwareUpgrade.md)|  | [optional] 
+ **request_body** | [**VcenterVmHardwareUpgrade**](VcenterVmHardwareUpgrade.md)|  | [optional] 
 
 ### Return type
 
@@ -133,12 +154,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

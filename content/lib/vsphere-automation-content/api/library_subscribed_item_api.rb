@@ -18,19 +18,21 @@ module VSphereAutomation
     end
     # Evicts the cached content of a library item in a subscribed library. <p> This {@term operation} allows the cached content of a library item to be removed to free up storage capacity. This {@term operation} will only work when a library item is synchronized on-demand. When a library is not synchronized on-demand, it always attempts to keep its cache up-to-date with the published source. Evicting the library item will set {@link ItemModel#cached} to false.
     # @param library_item_id Identifier of the library item whose content should be evicted.
+    # @param action ~action&#x3D;evict
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def evict(library_item_id, opts = {})
-      evict_with_http_info(library_item_id, opts)
+    def evict(library_item_id, action, opts = {})
+      evict_with_http_info(library_item_id, action, opts)
       nil
     end
 
     # Evicts the cached content of a library item in a subscribed library. &lt;p&gt; This {@term operation} allows the cached content of a library item to be removed to free up storage capacity. This {@term operation} will only work when a library item is synchronized on-demand. When a library is not synchronized on-demand, it always attempts to keep its cache up-to-date with the published source. Evicting the library item will set {@link ItemModel#cached} to false.
     # @api private
     # @param library_item_id Identifier of the library item whose content should be evicted.
+    # @param action ~action&#x3D;evict
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def evict_with_http_info(library_item_id, opts = {})
+    def evict_with_http_info(library_item_id, action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscribedItemApi.evict ...'
       end
@@ -38,23 +40,32 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_item_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_item_id' when calling LibrarySubscribedItemApi.evict"
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling LibrarySubscribedItemApi.evict"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['evict'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of evict"
+      end
       # resource path
-      local_var_path = '/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=evict'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
+      local_var_path = '/com/vmware/content/library/subscribed-item/id:{library_item_id}'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -68,21 +79,21 @@ module VSphereAutomation
     end
     # Forces the synchronization of an individual library item in a subscribed library. <p> Synchronizing an individual item will update that item's metadata from the remote source. If the source library item on the remote library has been deleted, this {@term operation} will delete the library item from the subscribed library as well. <p> The default behavior of the synchronization is determined by the {@link SubscriptionInfo} of the library which owns the library item. <ul> <li>If {@link SubscriptionInfo#onDemand} is true, then the file content is not synchronized by default. In this case, only the library item metadata is synchronized. The file content may still be forcefully synchronized by passing true for the {@param.name forceSyncContent} {@term parameter}.</li> <li>If {@link SubscriptionInfo#onDemand} is false, then this call will always synchronize the file content. The {@param.name forceSyncContent} {@term parameter} is ignored when the subscription is not on-demand.</li> </ul> When the file content has been synchronized, the {@link ItemModel#cached} {@term field} will be true. <p> This {@term operation} will return immediately and create an asynchronous task to perform the synchronization.
     # @param library_item_id Identifier of the library item to synchronize.
-    # @param content_library_subscribed_item_sync 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def sync(library_item_id, content_library_subscribed_item_sync, opts = {})
-      sync_with_http_info(library_item_id, content_library_subscribed_item_sync, opts)
+    def sync(library_item_id, request_body, opts = {})
+      sync_with_http_info(library_item_id, request_body, opts)
       nil
     end
 
     # Forces the synchronization of an individual library item in a subscribed library. &lt;p&gt; Synchronizing an individual item will update that item&#39;s metadata from the remote source. If the source library item on the remote library has been deleted, this {@term operation} will delete the library item from the subscribed library as well. &lt;p&gt; The default behavior of the synchronization is determined by the {@link SubscriptionInfo} of the library which owns the library item. &lt;ul&gt; &lt;li&gt;If {@link SubscriptionInfo#onDemand} is true, then the file content is not synchronized by default. In this case, only the library item metadata is synchronized. The file content may still be forcefully synchronized by passing true for the {@param.name forceSyncContent} {@term parameter}.&lt;/li&gt; &lt;li&gt;If {@link SubscriptionInfo#onDemand} is false, then this call will always synchronize the file content. The {@param.name forceSyncContent} {@term parameter} is ignored when the subscription is not on-demand.&lt;/li&gt; &lt;/ul&gt; When the file content has been synchronized, the {@link ItemModel#cached} {@term field} will be true. &lt;p&gt; This {@term operation} will return immediately and create an asynchronous task to perform the synchronization.
     # @api private
     # @param library_item_id Identifier of the library item to synchronize.
-    # @param content_library_subscribed_item_sync 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def sync_with_http_info(library_item_id, content_library_subscribed_item_sync, opts = {})
+    def sync_with_http_info(library_item_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscribedItemApi.sync ...'
       end
@@ -90,9 +101,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_item_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_item_id' when calling LibrarySubscribedItemApi.sync"
       end
-      # verify the required parameter 'content_library_subscribed_item_sync' is set
-      if @api_client.config.client_side_validation && content_library_subscribed_item_sync.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_subscribed_item_sync' when calling LibrarySubscribedItemApi.sync"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibrarySubscribedItemApi.sync"
       end
       # resource path
       local_var_path = '/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=sync'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
@@ -103,7 +114,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -111,8 +122,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_subscribed_item_sync)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

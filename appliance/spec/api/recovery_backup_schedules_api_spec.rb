@@ -31,7 +31,7 @@ describe 'RecoveryBackupSchedulesApi' do
   # unit tests for create
   # Creates a schedule
   # @param schedule Identifier of the schedule
-  # @param appliance_recovery_backup_schedules_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'create test' do
@@ -76,7 +76,7 @@ describe 'RecoveryBackupSchedulesApi' do
   # Initiate backup with the specified schedule
   # @param schedule Identifier of the schedule
   # @param [Hash] opts the optional parameters
-  # @option opts [ApplianceRecoveryBackupSchedulesRun] :appliance_recovery_backup_schedules_run 
+  # @option opts [ApplianceRecoveryBackupSchedulesRun] :request_body 
   # @return [ApplianceRecoveryBackupSchedulesRunResult]
   describe 'run test' do
     it 'should work' do
@@ -87,7 +87,7 @@ describe 'RecoveryBackupSchedulesApi' do
   # unit tests for update
   # Updates a schedule
   # @param schedule Identifier of the schedule
-  # @param appliance_recovery_backup_schedules_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

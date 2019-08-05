@@ -31,7 +31,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'vc_spec' => :'VcenterVchaCredentialsSpec',
-        :'force_delete' => :'BOOLEAN',
+        :'force_delete' => :'Boolean',
         :'vms' => :'VcenterVchaClusterVmInfo'
       }
     end

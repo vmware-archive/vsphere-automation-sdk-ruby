@@ -12,12 +12,12 @@ module VSphereAutomation
   module VCenter
     class VcenterVmGuestOSFamily
     
-    WINDOWS = 'WINDOWS'.freeze
-    LINUX = 'LINUX'.freeze
-    NETWARE = 'NETWARE'.freeze
-    SOLARIS = 'SOLARIS'.freeze
-    DARWIN = 'DARWIN'.freeze
-    OTHER = 'OTHER'.freeze
+    WINDOWS = "WINDOWS".freeze
+    LINUX = "LINUX".freeze
+    NETWARE = "NETWARE".freeze
+    SOLARIS = "SOLARIS".freeze
+    DARWIN = "DARWIN".freeze
+    OTHER = "OTHER".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterDeploymentHistoryMigrationOption
     
-    EVENTS_TASKS = 'EVENTS_TASKS'.freeze
-    ALL = 'ALL'.freeze
+    EVENTS_TASKS = "EVENTS_TASKS".freeze
+    ALL = "ALL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

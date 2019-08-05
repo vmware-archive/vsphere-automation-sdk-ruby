@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterDeploymentApplianceType
     
-    VCSA_EMBEDDED = 'VCSA_EMBEDDED'.freeze
-    VCSA_EXTERNAL = 'VCSA_EXTERNAL'.freeze
-    PSC_EXTERNAL = 'PSC_EXTERNAL'.freeze
+    VCSA_EMBEDDED = "VCSA_EMBEDDED".freeze
+    VCSA_EXTERNAL = "VCSA_EXTERNAL".freeze
+    PSC_EXTERNAL = "PSC_EXTERNAL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

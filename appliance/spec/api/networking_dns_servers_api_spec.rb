@@ -30,7 +30,7 @@ describe 'NetworkingDnsServersApi' do
 
   # unit tests for add
   # Add a DNS server. This method fails if mode argument is \&quot;dhcp\&quot;
-  # @param appliance_networking_dns_servers_add 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'add test' do
@@ -51,7 +51,7 @@ describe 'NetworkingDnsServersApi' do
 
   # unit tests for set
   # Set the DNS server configuration. If you set the mode argument to \&quot;DHCP\&quot;, a DHCP refresh is forced.
-  # @param appliance_networking_dns_servers_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do
@@ -62,7 +62,7 @@ describe 'NetworkingDnsServersApi' do
 
   # unit tests for test
   # Test if dns servers are reachable.
-  # @param appliance_networking_dns_servers_test 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceNetworkingDnsServersTestResult]
   describe 'test test' do

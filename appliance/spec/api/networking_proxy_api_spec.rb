@@ -63,7 +63,7 @@ describe 'NetworkingProxyApi' do
   # unit tests for set
   # Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
   # @param protocol The protocol for which proxy should be set.
-  # @param appliance_networking_proxy_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do
@@ -75,7 +75,8 @@ describe 'NetworkingProxyApi' do
   # unit tests for test
   # Tests a proxy configuration by testing the connection to the proxy server and test host.
   # @param protocol Protocol whose proxy is to be tested.
-  # @param appliance_networking_proxy_test 
+  # @param action action&#x3D;test
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceNetworkingProxyTestResult]
   describe 'test test' do

@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterDeploymentQuestionQuestionType
     
-    YES_NO = 'YES_NO'.freeze
-    OK_CANCEL = 'OK_CANCEL'.freeze
-    ABORT_RETRY_IGNORE = 'ABORT_RETRY_IGNORE'.freeze
+    YES_NO = "YES_NO".freeze
+    OK_CANCEL = "OK_CANCEL".freeze
+    ABORT_RETRY_IGNORE = "ABORT_RETRY_IGNORE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

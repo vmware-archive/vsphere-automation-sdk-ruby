@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **fullname** | **String** | Full name of the user | [optional] 
 **email** | **String** | Email address of the local account | [optional] 
 **roles** | **Array&lt;String&gt;** | User roles | 
-**enabled** | **BOOLEAN** | Flag indicating if the account is enabled | 
-**has_password** | **BOOLEAN** | Is the user password set. | 
+**enabled** | **Boolean** | Flag indicating if the account is enabled | 
+**has_password** | **Boolean** | Is the user password set. | 
 **last_password_change** | **DateTime** | Date and time password was changed. | [optional] 
 **password_expires_at** | **DateTime** | Date when the account&#39;s password will expire | [optional] 
 **inactive_at** | **DateTime** | Date and time account will be locked after password expiration. | [optional] 

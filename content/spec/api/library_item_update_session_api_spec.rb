@@ -42,6 +42,7 @@ describe 'LibraryItemUpdateSessionApi' do
   # unit tests for complete
   # Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. &lt;p&gt; Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. &lt;p&gt; Modifications are not visible to other clients unless the session is completed and all necessary files have been received.
   # @param update_session_id Identifier of the update session that should be completed.
+  # @param action ~action&#x3D;complete
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'complete test' do
@@ -52,7 +53,7 @@ describe 'LibraryItemUpdateSessionApi' do
 
   # unit tests for create
   # Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. &lt;p&gt; Content Library Service allows only one single update session to be active for a specific library item.
-  # @param content_library_item_update_session_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemUpdateSessionCreateResult]
   describe 'create test' do
@@ -75,7 +76,7 @@ describe 'LibraryItemUpdateSessionApi' do
   # unit tests for fail
   # Terminates the update session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to access a file) to the server side.
   # @param update_session_id Identifier of the update session to fail.
-  # @param content_library_item_update_session_fail 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'fail test' do
@@ -99,7 +100,7 @@ describe 'LibraryItemUpdateSessionApi' do
   # Keeps an update session alive. &lt;p&gt; If there is no activity for an update session after a period of time, the update session will expire, then be deleted. The update session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of the update session.
   # @param update_session_id Identifier of the update session whose lifetime should be extended.
   # @param [Hash] opts the optional parameters
-  # @option opts [ContentLibraryItemUpdateSessionKeepAlive] :content_library_item_update_session_keep_alive 
+  # @option opts [ContentLibraryItemUpdateSessionKeepAlive] :request_body 
   # @return [nil]
   describe 'keep_alive test' do
     it 'should work' do
@@ -121,7 +122,7 @@ describe 'LibraryItemUpdateSessionApi' do
   # unit tests for update
   # Updates the properties of an update session. &lt;p&gt; This is an incremental update to the update session. Any {@term field} in the {@link UpdateSessionModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the property {@link UpdateSessionModel#warningBehavior} of the update session. This will not, for example, update the {@link UpdateSessionModel#libraryItemId} or {@link UpdateSessionModel#state} of an update session. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state.
   # @param update_session_id Identifer of the update session that should be updated.
-  # @param content_library_item_update_session_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

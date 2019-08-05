@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enabled** | **BOOLEAN** | DCUI is enabled. | 
+**enabled** | **Boolean** | DCUI is enabled. | 
 
 

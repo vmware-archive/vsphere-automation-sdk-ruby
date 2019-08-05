@@ -12,10 +12,10 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareAdapterScsiType
     
-    BUSLOGIC = 'BUSLOGIC'.freeze
-    LSILOGIC = 'LSILOGIC'.freeze
-    LSILOGICSAS = 'LSILOGICSAS'.freeze
-    PVSCSI = 'PVSCSI'.freeze
+    BUSLOGIC = "BUSLOGIC".freeze
+    LSILOGIC = "LSILOGIC".freeze
+    LSILOGICSAS = "LSILOGICSAS".freeze
+    PVSCSI = "PVSCSI".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

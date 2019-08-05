@@ -17,38 +17,49 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Retrieves the current configuration values.
+    # @param action ~action&#x3D;get
     # @param [Hash] opts the optional parameters
     # @return [ContentConfigurationResult|]
-    def get(opts = {})
-      data, _status_code, _headers = get_with_http_info(opts)
+    def get(action, opts = {})
+      data, _status_code, _headers = get_with_http_info(action, opts)
       data
     end
 
     # Retrieves the current configuration values.
     # @api private
+    # @param action ~action&#x3D;get
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentConfigurationResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(opts = {})
+    def get_with_http_info(action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ConfigurationApi.get ...'
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling ConfigurationApi.get"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['get'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of get"
+      end
       # resource path
-      local_var_path = '/com/vmware/content/configuration?~action=get'
+      local_var_path = '/com/vmware/content/configuration'
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -64,26 +75,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn't guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
-    # @param content_configuration_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsInvalidArgumentError|nil]
-    def update(content_configuration_update, opts = {})
-      update_with_http_info(content_configuration_update, opts)
+    def update(request_body, opts = {})
+      update_with_http_info(request_body, opts)
       nil
     end
 
     # Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn&#39;t guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
     # @api private
-    # @param content_configuration_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(content_configuration_update, opts = {})
+    def update_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ConfigurationApi.update ...'
       end
-      # verify the required parameter 'content_configuration_update' is set
-      if @api_client.config.client_side_validation && content_configuration_update.nil?
-        fail ArgumentError, "Missing the required parameter 'content_configuration_update' when calling ConfigurationApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling ConfigurationApi.update"
       end
       # resource path
       local_var_path = '/com/vmware/content/configuration'
@@ -94,7 +105,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -102,8 +113,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_configuration_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

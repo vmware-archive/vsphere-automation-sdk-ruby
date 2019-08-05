@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**supported** | **BOOLEAN** | Is recovery supported in this appliance. | 
+**supported** | **Boolean** | Is recovery supported in this appliance. | 
 
 

@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaClusterType
     
-    AUTO = 'AUTO'.freeze
-    MANUAL = 'MANUAL'.freeze
+    AUTO = "AUTO".freeze
+    MANUAL = "MANUAL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -18,21 +18,21 @@ module VSphereAutomation
     end
     # Create a new local user account.
     # @param username User login name
-    # @param appliance_local_accounts_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def create(username, appliance_local_accounts_create, opts = {})
-      create_with_http_info(username, appliance_local_accounts_create, opts)
+    def create(username, request_body, opts = {})
+      create_with_http_info(username, request_body, opts)
       nil
     end
 
     # Create a new local user account.
     # @api private
     # @param username User login name
-    # @param appliance_local_accounts_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def create_with_http_info(username, appliance_local_accounts_create, opts = {})
+    def create_with_http_info(username, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.create ...'
       end
@@ -40,9 +40,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && username.nil?
         fail ArgumentError, "Missing the required parameter 'username' when calling LocalAccountsApi.create"
       end
-      # verify the required parameter 'appliance_local_accounts_create' is set
-      if @api_client.config.client_side_validation && appliance_local_accounts_create.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_local_accounts_create' when calling LocalAccountsApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalAccountsApi.create"
       end
       # resource path
       local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
@@ -53,7 +53,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -61,8 +61,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_local_accounts_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -105,14 +105,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -155,14 +155,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -204,14 +204,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -229,21 +229,21 @@ module VSphereAutomation
     end
     # Set local user account properties.
     # @param username User login name
-    # @param appliance_local_accounts_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil]
-    def set(username, appliance_local_accounts_set, opts = {})
-      set_with_http_info(username, appliance_local_accounts_set, opts)
+    def set(username, request_body, opts = {})
+      set_with_http_info(username, request_body, opts)
       nil
     end
 
     # Set local user account properties.
     # @api private
     # @param username User login name
-    # @param appliance_local_accounts_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def set_with_http_info(username, appliance_local_accounts_set, opts = {})
+    def set_with_http_info(username, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.set ...'
       end
@@ -251,9 +251,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && username.nil?
         fail ArgumentError, "Missing the required parameter 'username' when calling LocalAccountsApi.set"
       end
-      # verify the required parameter 'appliance_local_accounts_set' is set
-      if @api_client.config.client_side_validation && appliance_local_accounts_set.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_local_accounts_set' when calling LocalAccountsApi.set"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalAccountsApi.set"
       end
       # resource path
       local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
@@ -264,7 +264,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -272,8 +272,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_local_accounts_set)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -287,21 +287,21 @@ module VSphereAutomation
     end
     # Update selected fields in local user account properties.
     # @param username User login name
-    # @param appliance_local_accounts_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil]
-    def update(username, appliance_local_accounts_update, opts = {})
-      update_with_http_info(username, appliance_local_accounts_update, opts)
+    def update(username, request_body, opts = {})
+      update_with_http_info(username, request_body, opts)
       nil
     end
 
     # Update selected fields in local user account properties.
     # @api private
     # @param username User login name
-    # @param appliance_local_accounts_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(username, appliance_local_accounts_update, opts = {})
+    def update_with_http_info(username, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.update ...'
       end
@@ -309,9 +309,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && username.nil?
         fail ArgumentError, "Missing the required parameter 'username' when calling LocalAccountsApi.update"
       end
-      # verify the required parameter 'appliance_local_accounts_update' is set
-      if @api_client.config.client_side_validation && appliance_local_accounts_update.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_local_accounts_update' when calling LocalAccountsApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalAccountsApi.update"
       end
       # resource path
       local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
@@ -322,7 +322,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -330,8 +330,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_local_accounts_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

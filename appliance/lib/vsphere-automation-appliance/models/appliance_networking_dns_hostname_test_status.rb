@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingDnsHostnameTestStatus
     
-    ORANGE = 'orange'.freeze
-    GREEN = 'green'.freeze
-    RED = 'red'.freeze
+    ORANGE = "orange".freeze
+    GREEN = "green".freeze
+    RED = "red".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

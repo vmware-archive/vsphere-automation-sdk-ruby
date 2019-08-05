@@ -43,7 +43,7 @@ describe 'VmHardwareEthernetApi' do
   # unit tests for create
   # Adds a virtual Ethernet adapter to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_ethernet_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareEthernetCreateResult]
   describe 'create test' do
@@ -103,7 +103,7 @@ describe 'VmHardwareEthernetApi' do
   # Updates the configuration of a virtual Ethernet adapter.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
-  # @param vcenter_vm_hardware_ethernet_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

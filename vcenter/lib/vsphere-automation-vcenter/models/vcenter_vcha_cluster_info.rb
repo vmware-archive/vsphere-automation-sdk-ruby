@@ -62,8 +62,8 @@ module VSphereAutomation
         :'health_state' => :'VcenterVchaClusterClusterState',
         :'health_exception' => :'Array<VapiStdLocalizableMessage>',
         :'health_warnings' => :'Array<VcenterVchaClusterErrorCondition>',
-        :'manual_failover_allowed' => :'BOOLEAN',
-        :'auto_failover_allowed' => :'BOOLEAN'
+        :'manual_failover_allowed' => :'Boolean',
+        :'auto_failover_allowed' => :'Boolean'
       }
     end
 

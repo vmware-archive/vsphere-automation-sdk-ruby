@@ -31,7 +31,7 @@ describe 'VmHardwareAdapterSataApi' do
   # unit tests for create
   # Adds a virtual SATA adapter to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_adapter_sata_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareAdapterSataCreateResult]
   describe 'create test' do

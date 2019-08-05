@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterServicesServiceStartupType
     
-    MANUAL = 'MANUAL'.freeze
-    AUTOMATIC = 'AUTOMATIC'.freeze
-    DISABLED = 'DISABLED'.freeze
+    MANUAL = "MANUAL".freeze
+    AUTOMATIC = "AUTOMATIC".freeze
+    DISABLED = "DISABLED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

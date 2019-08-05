@@ -71,7 +71,7 @@ module VSphereAutomation
         :'parent' => :'String',
         :'target' => :'VapiStdDynamicID',
         :'status' => :'ApplianceRecoveryReconciliationJobStatus',
-        :'cancelable' => :'BOOLEAN',
+        :'cancelable' => :'Boolean',
         :'error' => :'String',
         :'start_time' => :'DateTime',
         :'end_time' => :'DateTime',

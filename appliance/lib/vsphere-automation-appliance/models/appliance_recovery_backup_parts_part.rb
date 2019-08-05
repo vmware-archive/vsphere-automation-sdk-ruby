@@ -41,8 +41,8 @@ module VSphereAutomation
         :'id' => :'String',
         :'name' => :'ApplianceRecoveryBackupPartsLocalizableMessage',
         :'description' => :'ApplianceRecoveryBackupPartsLocalizableMessage',
-        :'selected_by_default' => :'BOOLEAN',
-        :'optional' => :'BOOLEAN'
+        :'selected_by_default' => :'Boolean',
+        :'optional' => :'Boolean'
       }
     end
 

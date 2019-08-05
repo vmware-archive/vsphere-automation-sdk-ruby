@@ -30,6 +30,7 @@ describe 'UpdateApi' do
 
   # unit tests for cancel
   # Request the cancellation the update operation that is currently in progress.
+  # @param action action&#x3D;cancel
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel test' do

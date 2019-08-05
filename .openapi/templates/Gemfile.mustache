@@ -2,4 +2,11 @@
 
 source 'https://rubygems.org'
 
+{{^is-runtime}}
+gem 'vsphere-automation-runtime', path: '../runtime'
+{{^is-cis}}
+gem 'vsphere-automation-cis', path: '../cis'
+{{/is-cis}}
+{{/is-runtime}}
+
 gemspec

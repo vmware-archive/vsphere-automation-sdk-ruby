@@ -40,7 +40,7 @@ describe 'RecoveryRestoreJobApi' do
 
   # unit tests for create
   # Initiate restore.
-  # @param appliance_recovery_restore_job_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceRecoveryRestoreJobCreateResult]
   describe 'create test' do

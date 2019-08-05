@@ -12,9 +12,9 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelTypeCategory
     
-    BUILTIN = 'BUILTIN'.freeze
-    USER_DEFINED = 'USER_DEFINED'.freeze
-    GENERIC = 'GENERIC'.freeze
+    BUILTIN = "BUILTIN".freeze
+    USER_DEFINED = "USER_DEFINED".freeze
+    GENERIC = "GENERIC".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

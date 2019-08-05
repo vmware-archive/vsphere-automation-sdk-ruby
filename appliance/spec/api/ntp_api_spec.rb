@@ -40,7 +40,7 @@ describe 'NtpApi' do
 
   # unit tests for set
   # Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
-  # @param appliance_ntp_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do
@@ -51,7 +51,7 @@ describe 'NtpApi' do
 
   # unit tests for test
   # Test the connection to a list of ntp servers.
-  # @param appliance_ntp_test 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceNtpTestResult]
   describe 'test test' do

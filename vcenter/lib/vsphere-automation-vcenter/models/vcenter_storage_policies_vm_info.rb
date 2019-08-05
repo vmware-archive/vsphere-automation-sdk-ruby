@@ -28,7 +28,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'vm_home' => :'BOOLEAN',
+        :'vm_home' => :'Boolean',
         :'disks' => :'Array<String>'
       }
     end

@@ -30,7 +30,7 @@ describe 'NetworkingDnsDomainsApi' do
 
   # unit tests for add
   # Add domain to DNS search domains.
-  # @param appliance_networking_dns_domains_add 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'add test' do
@@ -51,7 +51,7 @@ describe 'NetworkingDnsDomainsApi' do
 
   # unit tests for set
   # Set DNS search domains.
-  # @param appliance_networking_dns_domains_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

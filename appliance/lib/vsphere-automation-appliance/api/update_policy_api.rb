@@ -41,14 +41,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -67,26 +67,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Sets the automatic update checking and staging policy.
-    # @param appliance_update_policy_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil]
-    def set(appliance_update_policy_set, opts = {})
-      set_with_http_info(appliance_update_policy_set, opts)
+    def set(request_body, opts = {})
+      set_with_http_info(request_body, opts)
       nil
     end
 
     # Sets the automatic update checking and staging policy.
     # @api private
-    # @param appliance_update_policy_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def set_with_http_info(appliance_update_policy_set, opts = {})
+    def set_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePolicyApi.set ...'
       end
-      # verify the required parameter 'appliance_update_policy_set' is set
-      if @api_client.config.client_side_validation && appliance_update_policy_set.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_update_policy_set' when calling UpdatePolicyApi.set"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePolicyApi.set"
       end
       # resource path
       local_var_path = '/appliance/update/policy'
@@ -97,7 +97,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -105,8 +105,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_update_policy_set)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

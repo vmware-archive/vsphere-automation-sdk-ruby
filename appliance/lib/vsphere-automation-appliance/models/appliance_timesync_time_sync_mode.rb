@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceTimesyncTimeSyncMode
     
-    DISABLED = 'DISABLED'.freeze
-    NTP = 'NTP'.freeze
-    HOST = 'HOST'.freeze
+    DISABLED = "DISABLED".freeze
+    NTP = "NTP".freeze
+    HOST = "HOST".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

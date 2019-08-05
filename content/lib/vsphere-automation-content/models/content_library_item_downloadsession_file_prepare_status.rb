@@ -12,11 +12,11 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemDownloadsessionFilePrepareStatus
     
-    UNPREPARED = 'UNPREPARED'.freeze
-    PREPARE_REQUESTED = 'PREPARE_REQUESTED'.freeze
-    PREPARING = 'PREPARING'.freeze
-    PREPARED = 'PREPARED'.freeze
-    ERROR = 'ERROR'.freeze
+    UNPREPARED = "UNPREPARED".freeze
+    PREPARE_REQUESTED = "PREPARE_REQUESTED".freeze
+    PREPARING = "PREPARING".freeze
+    PREPARED = "PREPARED".freeze
+    ERROR = "ERROR".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

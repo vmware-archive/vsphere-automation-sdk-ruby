@@ -40,7 +40,7 @@ describe 'LocalAccountsPolicyApi' do
 
   # unit tests for set
   # Set the global password policy.
-  # @param appliance_local_accounts_policy_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

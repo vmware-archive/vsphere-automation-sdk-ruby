@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VcenterServicesServiceInfo**](VcenterServicesServiceInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VcenterServicesServiceInfo**](VcenterServicesServiceInfo.md) |  | [optional] 
 
 

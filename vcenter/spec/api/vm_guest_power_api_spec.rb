@@ -42,6 +42,7 @@ describe 'VmGuestPowerApi' do
   # unit tests for reboot
   # Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
   # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
+  # @param action action&#x3D;reboot
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'reboot test' do

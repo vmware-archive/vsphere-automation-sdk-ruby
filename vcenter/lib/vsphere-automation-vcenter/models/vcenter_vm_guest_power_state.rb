@@ -12,12 +12,12 @@ module VSphereAutomation
   module VCenter
     class VcenterVmGuestPowerState
     
-    RUNNING = 'RUNNING'.freeze
-    SHUTTING_DOWN = 'SHUTTING_DOWN'.freeze
-    RESETTING = 'RESETTING'.freeze
-    STANDBY = 'STANDBY'.freeze
-    NOT_RUNNING = 'NOT_RUNNING'.freeze
-    UNAVAILABLE = 'UNAVAILABLE'.freeze
+    RUNNING = "RUNNING".freeze
+    SHUTTING_DOWN = "SHUTTING_DOWN".freeze
+    RESETTING = "RESETTING".freeze
+    STANDBY = "STANDBY".freeze
+    NOT_RUNNING = "NOT_RUNNING".freeze
+    UNAVAILABLE = "UNAVAILABLE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -47,14 +47,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -68,19 +68,21 @@ module VSphereAutomation
     end
     # Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.
     # @param update_session_id Identifier of the update session that should be completed.
+    # @param action ~action&#x3D;complete
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def complete(update_session_id, opts = {})
-      complete_with_http_info(update_session_id, opts)
+    def complete(update_session_id, action, opts = {})
+      complete_with_http_info(update_session_id, action, opts)
       nil
     end
 
     # Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. &lt;p&gt; Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. &lt;p&gt; Modifications are not visible to other clients unless the session is completed and all necessary files have been received.
     # @api private
     # @param update_session_id Identifier of the update session that should be completed.
+    # @param action ~action&#x3D;complete
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def complete_with_http_info(update_session_id, opts = {})
+    def complete_with_http_info(update_session_id, action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.complete ...'
       end
@@ -88,23 +90,32 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && update_session_id.nil?
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.complete"
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryItemUpdateSessionApi.complete"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['complete'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of complete"
+      end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=complete'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -117,26 +128,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. <p> Content Library Service allows only one single update session to be active for a specific library item.
-    # @param content_library_item_update_session_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentLibraryItemUpdateSessionCreateResult|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|]
-    def create(content_library_item_update_session_create, opts = {})
-      data, _status_code, _headers = create_with_http_info(content_library_item_update_session_create, opts)
+    def create(request_body, opts = {})
+      data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
     # Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. &lt;p&gt; Content Library Service allows only one single update session to be active for a specific library item.
     # @api private
-    # @param content_library_item_update_session_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemUpdateSessionCreateResult|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def create_with_http_info(content_library_item_update_session_create, opts = {})
+    def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.create ...'
       end
-      # verify the required parameter 'content_library_item_update_session_create' is set
-      if @api_client.config.client_side_validation && content_library_item_update_session_create.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_item_update_session_create' when calling LibraryItemUpdateSessionApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemUpdateSessionApi.create"
       end
       # resource path
       local_var_path = '/com/vmware/content/library/item/update-session'
@@ -147,7 +158,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -155,8 +166,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_item_update_session_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -204,14 +215,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -225,21 +236,21 @@ module VSphereAutomation
     end
     # Terminates the update session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to access a file) to the server side.
     # @param update_session_id Identifier of the update session to fail.
-    # @param content_library_item_update_session_fail 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def fail(update_session_id, content_library_item_update_session_fail, opts = {})
-      fail_with_http_info(update_session_id, content_library_item_update_session_fail, opts)
+    def fail(update_session_id, request_body, opts = {})
+      fail_with_http_info(update_session_id, request_body, opts)
       nil
     end
 
     # Terminates the update session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to access a file) to the server side.
     # @api private
     # @param update_session_id Identifier of the update session to fail.
-    # @param content_library_item_update_session_fail 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def fail_with_http_info(update_session_id, content_library_item_update_session_fail, opts = {})
+    def fail_with_http_info(update_session_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.fail ...'
       end
@@ -247,9 +258,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && update_session_id.nil?
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.fail"
       end
-      # verify the required parameter 'content_library_item_update_session_fail' is set
-      if @api_client.config.client_side_validation && content_library_item_update_session_fail.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_item_update_session_fail' when calling LibraryItemUpdateSessionApi.fail"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemUpdateSessionApi.fail"
       end
       # resource path
       local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=fail'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
@@ -260,7 +271,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -268,8 +279,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_item_update_session_fail)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -312,14 +323,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -338,7 +349,7 @@ module VSphereAutomation
     # Keeps an update session alive. <p> If there is no activity for an update session after a period of time, the update session will expire, then be deleted. The update session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of the update session.
     # @param update_session_id Identifier of the update session whose lifetime should be extended.
     # @param [Hash] opts the optional parameters
-    # @option opts [ContentLibraryItemUpdateSessionKeepAlive] :content_library_item_update_session_keep_alive 
+    # @option opts [ContentLibraryItemUpdateSessionKeepAlive] :request_body 
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
     def keep_alive(update_session_id, opts = {})
       keep_alive_with_http_info(update_session_id, opts)
@@ -349,7 +360,7 @@ module VSphereAutomation
     # @api private
     # @param update_session_id Identifier of the update session whose lifetime should be extended.
     # @param [Hash] opts the optional parameters
-    # @option opts [ContentLibraryItemUpdateSessionKeepAlive] :content_library_item_update_session_keep_alive 
+    # @option opts [ContentLibraryItemUpdateSessionKeepAlive] :request_body 
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def keep_alive_with_http_info(update_session_id, opts = {})
       if @api_client.config.debugging
@@ -368,7 +379,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -376,8 +387,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'content_library_item_update_session_keep_alive'])
-      auth_names = []
+      post_body = @api_client.object_to_http_body(opts[:'request_body'])
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -417,14 +428,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -442,21 +453,21 @@ module VSphereAutomation
     end
     # Updates the properties of an update session. <p> This is an incremental update to the update session. Any {@term field} in the {@link UpdateSessionModel} {@term structure} that is {@term unset} will not be modified. <p> This {@term operation} will only update the property {@link UpdateSessionModel#warningBehavior} of the update session. This will not, for example, update the {@link UpdateSessionModel#libraryItemId} or {@link UpdateSessionModel#state} of an update session. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state.
     # @param update_session_id Identifer of the update session that should be updated.
-    # @param content_library_item_update_session_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|nil]
-    def update(update_session_id, content_library_item_update_session_update, opts = {})
-      update_with_http_info(update_session_id, content_library_item_update_session_update, opts)
+    def update(update_session_id, request_body, opts = {})
+      update_with_http_info(update_session_id, request_body, opts)
       nil
     end
 
     # Updates the properties of an update session. &lt;p&gt; This is an incremental update to the update session. Any {@term field} in the {@link UpdateSessionModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the property {@link UpdateSessionModel#warningBehavior} of the update session. This will not, for example, update the {@link UpdateSessionModel#libraryItemId} or {@link UpdateSessionModel#state} of an update session. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state.
     # @api private
     # @param update_session_id Identifer of the update session that should be updated.
-    # @param content_library_item_update_session_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(update_session_id, content_library_item_update_session_update, opts = {})
+    def update_with_http_info(update_session_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.update ...'
       end
@@ -464,9 +475,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && update_session_id.nil?
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.update"
       end
-      # verify the required parameter 'content_library_item_update_session_update' is set
-      if @api_client.config.client_side_validation && content_library_item_update_session_update.nil?
-        fail ArgumentError, "Missing the required parameter 'content_library_item_update_session_update' when calling LibraryItemUpdateSessionApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemUpdateSessionApi.update"
       end
       # resource path
       local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
@@ -477,7 +488,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -485,8 +496,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(content_library_item_update_session_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

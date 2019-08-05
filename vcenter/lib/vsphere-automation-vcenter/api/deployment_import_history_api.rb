@@ -17,38 +17,49 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Cancels the task for importing vCenter historical data.
+    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil]
-    def cancel(opts = {})
-      cancel_with_http_info(opts)
+    def cancel(action, opts = {})
+      cancel_with_http_info(action, opts)
       nil
     end
 
     # Cancels the task for importing vCenter historical data.
     # @api private
+    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def cancel_with_http_info(opts = {})
+    def cancel_with_http_info(action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.cancel ...'
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentImportHistoryApi.cancel"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['cancel'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of cancel"
+      end
       # resource path
-      local_var_path = '/vcenter/deployment/history?action=cancel'
+      local_var_path = '/vcenter/deployment/history'
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -85,14 +96,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -135,14 +146,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -179,14 +190,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -200,7 +211,7 @@ module VSphereAutomation
     end
     # Creates and starts task for importing vCenter historical data.
     # @param [Hash] opts the optional parameters
-    # @option opts [VcenterDeploymentImportHistoryStart] :vcenter_deployment_import_history_start 
+    # @option opts [VcenterDeploymentImportHistoryStart] :request_body 
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil]
     def start(opts = {})
       start_with_http_info(opts)
@@ -210,7 +221,7 @@ module VSphereAutomation
     # Creates and starts task for importing vCenter historical data.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @option opts [VcenterDeploymentImportHistoryStart] :vcenter_deployment_import_history_start 
+    # @option opts [VcenterDeploymentImportHistoryStart] :request_body 
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def start_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -225,7 +236,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -233,8 +244,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'vcenter_deployment_import_history_start'])
-      auth_names = []
+      post_body = @api_client.object_to_http_body(opts[:'request_body'])
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

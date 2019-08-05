@@ -29,7 +29,7 @@ module VSphereAutomation
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "SDK/0.1.0 Ruby/#{RUBY_VERSION} (#{Gem::Platform.local.os}; #{Gem::Platform.local.version}; #{Gem::Platform.local.cpu})"
+      @user_agent = "SDK/0.2.0 Ruby/#{RUBY_VERSION} (#{Gem::Platform.local.os}; #{Gem::Platform.local.version}; #{Gem::Platform.local.cpu})"
       @default_headers = {
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent
@@ -69,6 +69,9 @@ module VSphereAutomation
 
       if opts[:return_type]
         data = deserialize(response, opts[:return_type][response.code.to_s])
+        if path == '/com/vmware/cis/session'
+          @config.api_key['vmware-api-session-id'] = data.value
+        end
       else
         data = nil
       end
@@ -92,6 +95,7 @@ module VSphereAutomation
       query_params = opts[:query_params] || {}
       form_params = opts[:form_params] || {}
 
+      update_params_for_auth! header_params, query_params, opts[:auth_names]
 
       # set ssl_verifyhosts option based on @config.verify_ssl_host (true/false)
       _verify_ssl_host = @config.verify_ssl_host ? 2 : 0

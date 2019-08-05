@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceVmonServiceHealth
     
-    DEGRADED = 'DEGRADED'.freeze
-    HEALTHY = 'HEALTHY'.freeze
-    HEALTHY_WITH_WARNINGS = 'HEALTHY_WITH_WARNINGS'.freeze
+    DEGRADED = "DEGRADED".freeze
+    HEALTHY = "HEALTHY".freeze
+    HEALTHY_WITH_WARNINGS = "HEALTHY_WITH_WARNINGS".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

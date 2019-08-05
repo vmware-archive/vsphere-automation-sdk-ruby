@@ -38,7 +38,7 @@ module VSphereAutomation
         :'type' => :'VcenterVmHardwareParallelBackingType',
         :'file' => :'String',
         :'host_device' => :'String',
-        :'auto_detect' => :'BOOLEAN'
+        :'auto_detect' => :'Boolean'
       }
     end
 

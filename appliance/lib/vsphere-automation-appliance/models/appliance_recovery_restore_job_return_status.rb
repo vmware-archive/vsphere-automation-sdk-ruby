@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceRecoveryRestoreJobReturnStatus
     
-    FAIL = 'FAIL'.freeze
-    WARNING = 'WARNING'.freeze
-    OK = 'OK'.freeze
+    FAIL = "FAIL".freeze
+    WARNING = "WARNING".freeze
+    OK = "OK".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

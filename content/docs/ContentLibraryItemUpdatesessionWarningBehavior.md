@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**ContentLibraryItemUpdatesessionWarningType**](ContentLibraryItemUpdatesessionWarningType.md) |  | 
-**ignored** | **BOOLEAN** | Indicates if this warning will be ignored during session complete operation. | 
+**ignored** | **Boolean** | Indicates if this warning will be ignored during session complete operation. | 
 
 

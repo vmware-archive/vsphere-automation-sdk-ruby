@@ -41,7 +41,7 @@ describe 'LibraryItemDownloadSessionApi' do
 
   # unit tests for create
   # Creates a new download session.
-  # @param content_library_item_download_session_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemDownloadSessionCreateResult]
   describe 'create test' do
@@ -64,7 +64,8 @@ describe 'LibraryItemDownloadSessionApi' do
   # unit tests for fail
   # Terminates the download session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
   # @param download_session_id Identifier of the download session to fail.
-  # @param content_library_item_download_session_fail 
+  # @param action ~action&#x3D;fail
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'fail test' do
@@ -88,7 +89,7 @@ describe 'LibraryItemDownloadSessionApi' do
   # Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. &lt;p&gt; If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.
   # @param download_session_id Identifier of the download session whose lifetime should be extended.
   # @param [Hash] opts the optional parameters
-  # @option opts [ContentLibraryItemDownloadSessionKeepAlive] :content_library_item_download_session_keep_alive 
+  # @option opts [ContentLibraryItemDownloadSessionKeepAlive] :request_body 
   # @return [nil]
   describe 'keep_alive test' do
     it 'should work' do

@@ -30,7 +30,7 @@ describe 'DatacenterApi' do
 
   # unit tests for create
   # Create a new datacenter in the vCenter inventory
-  # @param vcenter_datacenter_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterDatacenterCreateResult]
   describe 'create test' do
@@ -43,7 +43,7 @@ describe 'DatacenterApi' do
   # Delete an empty datacenter from the vCenter Server
   # @param datacenter Identifier of the datacenter to be deleted. The parameter must be an identifier for the resource type: Datacenter.
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :force If true, delete the datacenter even if it is not empty. If unset a ResourceInUse error will be reported if the datacenter is not empty. This is the equivalent of passing the value false.
+  # @option opts [Boolean] :force If true, delete the datacenter even if it is not empty. If unset a ResourceInUse error will be reported if the datacenter is not empty. This is the equivalent of passing the value false.
   # @return [nil]
   describe 'delete test' do
     it 'should work' do

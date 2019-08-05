@@ -12,10 +12,10 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelPrimitiveValueType
     
-    BOOLEAN = 'BOOLEAN'.freeze
-    DOUBLE = 'DOUBLE'.freeze
-    LONG = 'LONG'.freeze
-    STRING = 'STRING'.freeze
+    BOOLEAN = "BOOLEAN".freeze
+    DOUBLE = "DOUBLE".freeze
+    LONG = "LONG".freeze
+    STRING = "STRING".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -30,7 +30,8 @@ describe 'LibraryApi' do
 
   # unit tests for find
   # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-  # @param content_library_find 
+  # @param action ~action&#x3D;find
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryFindResult]
   describe 'find test' do
@@ -63,7 +64,7 @@ describe 'LibraryApi' do
   # unit tests for update
   # Updates the properties of a library. &lt;p&gt; This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
   # @param library_id Identifier of the library to update.
-  # @param content_library_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

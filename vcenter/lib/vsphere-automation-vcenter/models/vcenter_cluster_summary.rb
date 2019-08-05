@@ -38,8 +38,8 @@ module VSphereAutomation
       {
         :'cluster' => :'String',
         :'name' => :'String',
-        :'ha_enabled' => :'BOOLEAN',
-        :'drs_enabled' => :'BOOLEAN'
+        :'ha_enabled' => :'Boolean',
+        :'drs_enabled' => :'Boolean'
       }
     end
 

@@ -12,11 +12,11 @@ module VSphereAutomation
   module VCenter
     class VcenterVmStoragePolicyComplianceStatus
     
-    COMPLIANT = 'COMPLIANT'.freeze
-    NON_COMPLIANT = 'NON_COMPLIANT'.freeze
-    UNKNOWN_COMPLIANCE = 'UNKNOWN_COMPLIANCE'.freeze
-    NOT_APPLICABLE = 'NOT_APPLICABLE'.freeze
-    OUT_OF_DATE = 'OUT_OF_DATE'.freeze
+    COMPLIANT = "COMPLIANT".freeze
+    NON_COMPLIANT = "NON_COMPLIANT".freeze
+    UNKNOWN_COMPLIANCE = "UNKNOWN_COMPLIANCE".freeze
+    NOT_APPLICABLE = "NOT_APPLICABLE".freeze
+    OUT_OF_DATE = "OUT_OF_DATE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

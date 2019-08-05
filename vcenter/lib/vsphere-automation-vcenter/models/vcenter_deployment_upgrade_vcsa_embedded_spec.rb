@@ -24,7 +24,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'ceip_enabled' => :'BOOLEAN'
+        :'ceip_enabled' => :'Boolean'
       }
     end
 

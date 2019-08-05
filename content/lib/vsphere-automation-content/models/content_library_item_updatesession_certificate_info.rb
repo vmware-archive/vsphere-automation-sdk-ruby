@@ -38,7 +38,7 @@ module VSphereAutomation
       {
         :'issuer' => :'String',
         :'subject' => :'String',
-        :'self_signed' => :'BOOLEAN',
+        :'self_signed' => :'Boolean',
         :'x509' => :'String'
       }
     end

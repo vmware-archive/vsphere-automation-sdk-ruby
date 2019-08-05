@@ -12,12 +12,12 @@ module VSphereAutomation
   module VAPI
     class VapiMetadataCliCommandFormatterType
     
-    SIMPLE = 'SIMPLE'.freeze
-    TABLE = 'TABLE'.freeze
-    JSON = 'JSON'.freeze
-    XML = 'XML'.freeze
-    CSV = 'CSV'.freeze
-    HTML = 'HTML'.freeze
+    SIMPLE = "SIMPLE".freeze
+    TABLE = "TABLE".freeze
+    JSON = "JSON".freeze
+    XML = "XML".freeze
+    CSV = "CSV".freeze
+    HTML = "HTML".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

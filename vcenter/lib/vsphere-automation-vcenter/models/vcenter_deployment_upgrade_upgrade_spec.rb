@@ -44,7 +44,7 @@ module VSphereAutomation
         :'history' => :'VcenterDeploymentHistoryMigrationSpec',
         :'vcsa_embedded' => :'VcenterDeploymentUpgradeVcsaEmbeddedSpec',
         :'psc' => :'VcenterDeploymentUpgradePscSpec',
-        :'auto_answer' => :'BOOLEAN'
+        :'auto_answer' => :'Boolean'
       }
     end
 

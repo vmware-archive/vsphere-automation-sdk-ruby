@@ -12,8 +12,8 @@ module VSphereAutomation
   module Appliance
     class ApplianceNtpServerStatus
     
-    REACHABLE = 'SERVER_REACHABLE'.freeze
-    UNREACHABLE = 'SERVER_UNREACHABLE'.freeze
+    REACHABLE = "SERVER_REACHABLE".freeze
+    UNREACHABLE = "SERVER_UNREACHABLE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

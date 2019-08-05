@@ -12,14 +12,14 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesIpv6Status
     
-    TENTATIVE = 'TENTATIVE'.freeze
-    UNKNOWN = 'UNKNOWN'.freeze
-    INACCESSIBLE = 'INACCESSIBLE'.freeze
-    INVALID = 'INVALID'.freeze
-    DUPLICATE = 'DUPLICATE'.freeze
-    PREFERRED = 'PREFERRED'.freeze
-    DEPRECATED = 'DEPRECATED'.freeze
-    OPTIMISTIC = 'OPTIMISTIC'.freeze
+    TENTATIVE = "TENTATIVE".freeze
+    UNKNOWN = "UNKNOWN".freeze
+    INACCESSIBLE = "INACCESSIBLE".freeze
+    INVALID = "INVALID".freeze
+    DUPLICATE = "DUPLICATE".freeze
+    PREFERRED = "PREFERRED".freeze
+    DEPRECATED = "DEPRECATED".freeze
+    OPTIMISTIC = "OPTIMISTIC".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -12,8 +12,8 @@ module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupJobDetailsType
     
-    SCHEDULED = 'SCHEDULED'.freeze
-    MANUAL = 'MANUAL'.freeze
+    SCHEDULED = "SCHEDULED".freeze
+    MANUAL = "MANUAL".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

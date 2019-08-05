@@ -17,38 +17,49 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
+    # @param action ~action&#x3D;fingerprint
     # @param [Hash] opts the optional parameters
     # @return [VapiMetadataCliNamespaceFingerprintResult|]
-    def fingerprint(opts = {})
-      data, _status_code, _headers = fingerprint_with_http_info(opts)
+    def fingerprint(action, opts = {})
+      data, _status_code, _headers = fingerprint_with_http_info(action, opts)
       data
     end
 
     # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
     # @api private
+    # @param action ~action&#x3D;fingerprint
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliNamespaceFingerprintResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def fingerprint_with_http_info(opts = {})
+    def fingerprint_with_http_info(action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.fingerprint ...'
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling MetadataCliNamespaceApi.fingerprint"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['fingerprint'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of fingerprint"
+      end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/cli/namespace?~action=fingerprint'
+      local_var_path = '/com/vmware/vapi/metadata/cli/namespace'
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -64,26 +75,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Retreives information about a namespace including information about children of that namespace.
-    # @param vapi_metadata_cli_namespace_get 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VapiMetadataCliNamespaceResult|VapiStdErrorsNotFoundError|]
-    def get(vapi_metadata_cli_namespace_get, opts = {})
-      data, _status_code, _headers = get_with_http_info(vapi_metadata_cli_namespace_get, opts)
+    def get(request_body, opts = {})
+      data, _status_code, _headers = get_with_http_info(request_body, opts)
       data
     end
 
     # Retreives information about a namespace including information about children of that namespace.
     # @api private
-    # @param vapi_metadata_cli_namespace_get 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliNamespaceResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(vapi_metadata_cli_namespace_get, opts = {})
+    def get_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.get ...'
       end
-      # verify the required parameter 'vapi_metadata_cli_namespace_get' is set
-      if @api_client.config.client_side_validation && vapi_metadata_cli_namespace_get.nil?
-        fail ArgumentError, "Missing the required parameter 'vapi_metadata_cli_namespace_get' when calling MetadataCliNamespaceApi.get"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling MetadataCliNamespaceApi.get"
       end
       # resource path
       local_var_path = '/com/vmware/vapi/metadata/cli/namespace?~action=get'
@@ -94,7 +105,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -102,8 +113,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vapi_metadata_cli_namespace_get)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -144,14 +155,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

@@ -38,8 +38,8 @@ module VSphereAutomation
       {
         :'count' => :'Integer',
         :'cores_per_socket' => :'Integer',
-        :'hot_add_enabled' => :'BOOLEAN',
-        :'hot_remove_enabled' => :'BOOLEAN'
+        :'hot_add_enabled' => :'Boolean',
+        :'hot_remove_enabled' => :'Boolean'
       }
     end
 

@@ -30,7 +30,7 @@ describe 'RecoveryBackupApi' do
 
   # unit tests for validate
   # Check for backup errors without starting backup.
-  # @param appliance_recovery_backup_validate 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceRecoveryBackupValidateResult]
   describe 'validate test' do

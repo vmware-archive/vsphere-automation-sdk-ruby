@@ -35,10 +35,10 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'yield_on_poll' => :'BOOLEAN',
+        :'yield_on_poll' => :'Boolean',
         :'backing' => :'VcenterVmHardwareSerialBackingSpec',
-        :'start_connected' => :'BOOLEAN',
-        :'allow_guest_control' => :'BOOLEAN'
+        :'start_connected' => :'Boolean',
+        :'allow_guest_control' => :'Boolean'
       }
     end
 

@@ -43,7 +43,7 @@ describe 'VmHardwareSerialApi' do
   # unit tests for create
   # Adds a virtual serial port to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_serial_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareSerialCreateResult]
   describe 'create test' do
@@ -103,7 +103,7 @@ describe 'VmHardwareSerialApi' do
   # Updates the configuration of a virtual serial port.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
-  # @param vcenter_vm_hardware_serial_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

@@ -41,14 +41,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -85,14 +85,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -129,14 +129,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -153,26 +153,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Generate localized keys for secure SNMPv3 communications.
-    # @param appliance_techpreview_monitoring_snmp_hash 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ApplianceTechpreviewMonitoringSnmpHashResult|VapiStdErrorsErrorError|]
-    def hash(appliance_techpreview_monitoring_snmp_hash, opts = {})
-      data, _status_code, _headers = hash_with_http_info(appliance_techpreview_monitoring_snmp_hash, opts)
+    def hash(request_body, opts = {})
+      data, _status_code, _headers = hash_with_http_info(request_body, opts)
       data
     end
 
     # Generate localized keys for secure SNMPv3 communications.
     # @api private
-    # @param appliance_techpreview_monitoring_snmp_hash 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceTechpreviewMonitoringSnmpHashResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    def hash_with_http_info(appliance_techpreview_monitoring_snmp_hash, opts = {})
+    def hash_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.hash ...'
       end
-      # verify the required parameter 'appliance_techpreview_monitoring_snmp_hash' is set
-      if @api_client.config.client_side_validation && appliance_techpreview_monitoring_snmp_hash.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_techpreview_monitoring_snmp_hash' when calling TechpreviewMonitoringSnmpApi.hash"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling TechpreviewMonitoringSnmpApi.hash"
       end
       # resource path
       local_var_path = '/appliance/techpreview/monitoring/snmp/hash'
@@ -183,7 +183,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -191,8 +191,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_techpreview_monitoring_snmp_hash)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -233,14 +233,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -281,14 +281,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -301,26 +301,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Set SNMP configuration.
-    # @param appliance_techpreview_monitoring_snmp_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def set(appliance_techpreview_monitoring_snmp_set, opts = {})
-      set_with_http_info(appliance_techpreview_monitoring_snmp_set, opts)
+    def set(request_body, opts = {})
+      set_with_http_info(request_body, opts)
       nil
     end
 
     # Set SNMP configuration.
     # @api private
-    # @param appliance_techpreview_monitoring_snmp_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def set_with_http_info(appliance_techpreview_monitoring_snmp_set, opts = {})
+    def set_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.set ...'
       end
-      # verify the required parameter 'appliance_techpreview_monitoring_snmp_set' is set
-      if @api_client.config.client_side_validation && appliance_techpreview_monitoring_snmp_set.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_techpreview_monitoring_snmp_set' when calling TechpreviewMonitoringSnmpApi.set"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling TechpreviewMonitoringSnmpApi.set"
       end
       # resource path
       local_var_path = '/appliance/techpreview/monitoring/snmp'
@@ -331,7 +331,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -339,8 +339,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_techpreview_monitoring_snmp_set)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -377,14 +377,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -425,14 +425,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

@@ -12,10 +12,10 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingFirewallInboundPolicy
     
-    IGNORE = 'IGNORE'.freeze
-    ACCEPT = 'ACCEPT'.freeze
-    REJECT = 'REJECT'.freeze
-    RETURN = 'RETURN'.freeze
+    IGNORE = "IGNORE".freeze
+    ACCEPT = "ACCEPT".freeze
+    REJECT = "REJECT".freeze
+    RETURN = "RETURN".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

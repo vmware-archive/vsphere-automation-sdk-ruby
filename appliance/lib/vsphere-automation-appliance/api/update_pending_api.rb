@@ -47,14 +47,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -75,21 +75,21 @@ module VSphereAutomation
     end
     # Starts operation of installing the appliance update. Will fail is the update is not staged
     # @param version Update version
-    # @param appliance_update_pending_install 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def install(version, appliance_update_pending_install, opts = {})
-      install_with_http_info(version, appliance_update_pending_install, opts)
+    def install(version, request_body, opts = {})
+      install_with_http_info(version, request_body, opts)
       nil
     end
 
     # Starts operation of installing the appliance update. Will fail is the update is not staged
     # @api private
     # @param version Update version
-    # @param appliance_update_pending_install 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def install_with_http_info(version, appliance_update_pending_install, opts = {})
+    def install_with_http_info(version, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.install ...'
       end
@@ -97,9 +97,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && version.nil?
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.install"
       end
-      # verify the required parameter 'appliance_update_pending_install' is set
-      if @api_client.config.client_side_validation && appliance_update_pending_install.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_update_pending_install' when calling UpdatePendingApi.install"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePendingApi.install"
       end
       # resource path
       local_var_path = '/appliance/update/pending/{version}?action=install'.sub('{' + 'version' + '}', version.to_s)
@@ -110,7 +110,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -118,8 +118,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_update_pending_install)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -170,14 +170,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -198,19 +198,21 @@ module VSphereAutomation
     end
     # Runs update precheck
     # @param version Update version
+    # @param action action&#x3D;precheck
     # @param [Hash] opts the optional parameters
     # @return [ApplianceUpdatePendingPrecheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def precheck(version, opts = {})
-      data, _status_code, _headers = precheck_with_http_info(version, opts)
+    def precheck(version, action, opts = {})
+      data, _status_code, _headers = precheck_with_http_info(version, action, opts)
       data
     end
 
     # Runs update precheck
     # @api private
     # @param version Update version
+    # @param action action&#x3D;precheck
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdatePendingPrecheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def precheck_with_http_info(version, opts = {})
+    def precheck_with_http_info(version, action, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.precheck ...'
       end
@@ -218,23 +220,32 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && version.nil?
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.precheck"
       end
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling UpdatePendingApi.precheck"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['precheck'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of precheck"
+      end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}?action=precheck'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/appliance/update/pending/{version}'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -284,14 +295,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -305,21 +316,21 @@ module VSphereAutomation
     end
     # Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
     # @param version Update version
-    # @param appliance_update_pending_stage_and_install 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def stage_and_install(version, appliance_update_pending_stage_and_install, opts = {})
-      stage_and_install_with_http_info(version, appliance_update_pending_stage_and_install, opts)
+    def stage_and_install(version, request_body, opts = {})
+      stage_and_install_with_http_info(version, request_body, opts)
       nil
     end
 
     # Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
     # @api private
     # @param version Update version
-    # @param appliance_update_pending_stage_and_install 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def stage_and_install_with_http_info(version, appliance_update_pending_stage_and_install, opts = {})
+    def stage_and_install_with_http_info(version, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.stage_and_install ...'
       end
@@ -327,9 +338,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && version.nil?
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.stage_and_install"
       end
-      # verify the required parameter 'appliance_update_pending_stage_and_install' is set
-      if @api_client.config.client_side_validation && appliance_update_pending_stage_and_install.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_update_pending_stage_and_install' when calling UpdatePendingApi.stage_and_install"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePendingApi.stage_and_install"
       end
       # resource path
       local_var_path = '/appliance/update/pending/{version}?action=stage-and-install'.sub('{' + 'version' + '}', version.to_s)
@@ -340,7 +351,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -348,8 +359,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_update_pending_stage_and_install)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -363,21 +374,21 @@ module VSphereAutomation
     end
     # Validates the user provided data before the update installation.
     # @param version Update version
-    # @param appliance_update_pending_validate 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ApplianceUpdatePendingValidateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def validate(version, appliance_update_pending_validate, opts = {})
-      data, _status_code, _headers = validate_with_http_info(version, appliance_update_pending_validate, opts)
+    def validate(version, request_body, opts = {})
+      data, _status_code, _headers = validate_with_http_info(version, request_body, opts)
       data
     end
 
     # Validates the user provided data before the update installation.
     # @api private
     # @param version Update version
-    # @param appliance_update_pending_validate 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdatePendingValidateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def validate_with_http_info(version, appliance_update_pending_validate, opts = {})
+    def validate_with_http_info(version, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.validate ...'
       end
@@ -385,9 +396,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && version.nil?
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.validate"
       end
-      # verify the required parameter 'appliance_update_pending_validate' is set
-      if @api_client.config.client_side_validation && appliance_update_pending_validate.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_update_pending_validate' when calling UpdatePendingApi.validate"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePendingApi.validate"
       end
       # resource path
       local_var_path = '/appliance/update/pending/{version}?action=validate'.sub('{' + 'version' + '}', version.to_s)
@@ -398,7 +409,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -406,8 +417,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_update_pending_validate)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

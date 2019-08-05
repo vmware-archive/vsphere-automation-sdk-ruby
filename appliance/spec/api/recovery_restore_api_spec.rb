@@ -30,7 +30,7 @@ describe 'RecoveryRestoreApi' do
 
   # unit tests for validate
   # Get metadata before restore
-  # @param appliance_recovery_restore_validate 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceRecoveryRestoreValidateResult]
   describe 'validate test' do

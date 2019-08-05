@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaClusterNodeRole
     
-    ACTIVE = 'ACTIVE'.freeze
-    PASSIVE = 'PASSIVE'.freeze
-    WITNESS = 'WITNESS'.freeze
+    ACTIVE = "ACTIVE".freeze
+    PASSIVE = "PASSIVE".freeze
+    WITNESS = "WITNESS".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

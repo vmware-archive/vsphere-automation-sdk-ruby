@@ -18,21 +18,23 @@ module VSphereAutomation
     end
     # Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
     # @param service_id Identifier of the service element.
-    # @param vapi_metadata_privilege_service_operation_get 
+    # @param action ~action&#x3D;get
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VapiMetadataPrivilegeServiceOperationResult|VapiStdErrorsNotFoundError|]
-    def get(service_id, vapi_metadata_privilege_service_operation_get, opts = {})
-      data, _status_code, _headers = get_with_http_info(service_id, vapi_metadata_privilege_service_operation_get, opts)
+    def get(service_id, action, request_body, opts = {})
+      data, _status_code, _headers = get_with_http_info(service_id, action, request_body, opts)
       data
     end
 
     # Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
     # @api private
     # @param service_id Identifier of the service element.
-    # @param vapi_metadata_privilege_service_operation_get 
+    # @param action ~action&#x3D;get
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataPrivilegeServiceOperationResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(service_id, vapi_metadata_privilege_service_operation_get, opts = {})
+    def get_with_http_info(service_id, action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataPrivilegeServiceOperationApi.get ...'
       end
@@ -40,20 +42,29 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && service_id.nil?
         fail ArgumentError, "Missing the required parameter 'service_id' when calling MetadataPrivilegeServiceOperationApi.get"
       end
-      # verify the required parameter 'vapi_metadata_privilege_service_operation_get' is set
-      if @api_client.config.client_side_validation && vapi_metadata_privilege_service_operation_get.nil?
-        fail ArgumentError, "Missing the required parameter 'vapi_metadata_privilege_service_operation_get' when calling MetadataPrivilegeServiceOperationApi.get"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling MetadataPrivilegeServiceOperationApi.get"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['get'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of get"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling MetadataPrivilegeServiceOperationApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}?~action=get'.sub('{' + 'service_id' + '}', service_id.to_s)
+      local_var_path = '/com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}'.sub('{' + 'service_id' + '}', service_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -61,8 +72,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vapi_metadata_privilege_service_operation_get)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -110,14 +121,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

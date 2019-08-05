@@ -41,7 +41,7 @@ describe 'RecoveryBackupJobApi' do
 
   # unit tests for create
   # Initiate backup.
-  # @param appliance_recovery_backup_job_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceRecoveryBackupJobCreateResult]
   describe 'create test' do

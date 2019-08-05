@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceLoggingForwardingConnectionStatusState
     
-    UP = 'UP'.freeze
-    DOWN = 'DOWN'.freeze
-    UNKNOWN = 'UNKNOWN'.freeze
+    UP = "UP".freeze
+    DOWN = "DOWN".freeze
+    UNKNOWN = "UNKNOWN".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -22,6 +22,12 @@
             "api_key": []
         }
     ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
     "basePath": "/rest",
     "tags": [],
     "schemes": [
@@ -379,30 +385,31 @@
                 "tags": [
                     "library_item_download_session"
                 ],
-                "summary": "Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. <p> If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.",
+                "summary": "Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.",
                 "parameters": [
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
                         "name": "download_session_id",
-                        "description": "Identifier of the download session whose lifetime should be extended."
+                        "description": "Identifier of the download session to fail."
                     },
                     {
                         "in": "body",
                         "name": "request_body",
+                        "required": true,
                         "schema": {
-                            "$ref": "#/definitions/content.library.item.download_session_keep_alive"
+                            "$ref": "#/definitions/content.library.item.download_session_fail"
                         }
                     },
                     {
                         "name": "~action",
                         "in": "query",
-                        "description": "~action=keep-alive",
+                        "description": "~action=fail",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "keep-alive"
+                            "fail"
                         ]
                     }
                 ],
@@ -411,7 +418,7 @@
                         "description": ""
                     },
                     "404": {
-                        "description": "if no download session with the given identifier exists.",
+                        "description": "if the download session does not exist.",
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.not_found_error"
                         }
@@ -426,7 +433,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "keep_alive"
+                "operationId": "fail"
             },
             "delete": {
                 "tags": [
@@ -524,26 +531,25 @@
                 "operationId": "cancel"
             }
         },
-        "/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=fail": {
+        "/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=keep-alive": {
             "post": {
                 "tags": [
                     "library_item_download_session"
                 ],
-                "summary": "Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.",
+                "summary": "Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. <p> If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.",
                 "parameters": [
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
                         "name": "download_session_id",
-                        "description": "Identifier of the download session to fail."
+                        "description": "Identifier of the download session whose lifetime should be extended."
                     },
                     {
                         "in": "body",
                         "name": "request_body",
-                        "required": true,
                         "schema": {
-                            "$ref": "#/definitions/content.library.item.download_session_fail"
+                            "$ref": "#/definitions/content.library.item.download_session_keep_alive"
                         }
                     }
                 ],
@@ -552,7 +558,7 @@
                         "description": ""
                     },
                     "404": {
-                        "description": "if the download session does not exist.",
+                        "description": "if no download session with the given identifier exists.",
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.not_found_error"
                         }
@@ -567,7 +573,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "fail"
+                "operationId": "keep_alive"
             }
         },
         "/com/vmware/content/library/item/downloadsession/file": {
@@ -607,65 +613,6 @@
                 "tags": [
                     "library_item_downloadsession_file"
                 ],
-                "summary": "Retrieves file download information for a specific file.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "download_session_id",
-                        "description": "Identifier of the download session."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item.downloadsession.file_get"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The {@link Info} instance containing the status of the file and its download link if available.",
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item.downloadsession.file_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if the download session associated with {@param.name downloadSessionId} does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if there is no file with the specified {@param.name fileName}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "get"
-            }
-        },
-        "/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action=prepare": {
-            "post": {
-                "tags": [
-                    "library_item_downloadsession_file"
-                ],
                 "summary": "Requests a file to be prepared for download.",
                 "parameters": [
                     {
@@ -682,6 +629,16 @@
                         "schema": {
                             "$ref": "#/definitions/content.library.item.downloadsession.file_prepare"
                         }
+                    },
+                    {
+                        "name": "~action",
+                        "in": "query",
+                        "description": "~action=prepare",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "prepare"
+                        ]
                     }
                 ],
                 "responses": {
@@ -714,6 +671,55 @@
                     "application/json"
                 ],
                 "operationId": "prepare"
+            }
+        },
+        "/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action=get": {
+            "post": {
+                "tags": [
+                    "library_item_downloadsession_file"
+                ],
+                "summary": "Retrieves file download information for a specific file.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "download_session_id",
+                        "description": "Identifier of the download session."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item.downloadsession.file_get"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The {@link Info} instance containing the status of the file and its download link if available.",
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item.downloadsession.file_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if the download session associated with {@param.name downloadSessionId} does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if there is no file with the specified {@param.name fileName}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "get"
             }
         },
         "/com/vmware/content/library/item/file": {
@@ -1197,23 +1203,23 @@
                 "tags": [
                     "library_item_update_session"
                 ],
-                "summary": "Cancels the update session and sets its state to {@link UpdateSessionModel.State#CANCELED}. This {@term operation} will free up any temporary resources currently associated with the session. <p> This {@term operation} is not allowed if the session has been already completed. <p> Cancelling an update session will cancel any in progress transfers (either uploaded by the client or pulled by the server). Any content that has been already received will be scheduled for deletion.",
+                "summary": "Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.",
                 "parameters": [
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
                         "name": "update_session_id",
-                        "description": "Identifier of the update session that should be canceled."
+                        "description": "Identifier of the update session that should be completed."
                     },
                     {
                         "name": "~action",
                         "in": "query",
-                        "description": "~action=cancel",
+                        "description": "~action=complete",
                         "required": true,
                         "type": "string",
                         "enum": [
-                            "cancel"
+                            "complete"
                         ]
                     }
                 ],
@@ -1228,7 +1234,7 @@
                         }
                     },
                     "400": {
-                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state.",
+                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state, or if some of the files that will be uploaded by the client aren't received correctly.",
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
                         }
@@ -1237,7 +1243,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "cancel"
+                "operationId": "complete"
             },
             "get": {
                 "tags": [
@@ -1268,6 +1274,39 @@
                     }
                 },
                 "operationId": "get"
+            },
+            "delete": {
+                "tags": [
+                    "library_item_update_session"
+                ],
+                "summary": "Deletes an update session. This removes the session and all information associated with it. <p> Removing an update session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the server will terminate the transfers, or that the transfers can be completed). However there will no longer be a means of inspecting the status of those uploads except by seeing the effect on the library item. <p> Update sessions for which there is no upload activity or which are complete will automatically be deleted after a period of time.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "update_session_id",
+                        "description": "Identifer of the update session to delete."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": "if the update session does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if the update session is in the {@link UpdateSessionModel.State#ACTIVE} state.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    }
+                },
+                "operationId": "delete"
             },
             "patch": {
                 "tags": [
@@ -1312,54 +1351,21 @@
                     "application/json"
                 ],
                 "operationId": "update"
-            },
-            "delete": {
-                "tags": [
-                    "library_item_update_session"
-                ],
-                "summary": "Deletes an update session. This removes the session and all information associated with it. <p> Removing an update session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the server will terminate the transfers, or that the transfers can be completed). However there will no longer be a means of inspecting the status of those uploads except by seeing the effect on the library item. <p> Update sessions for which there is no upload activity or which are complete will automatically be deleted after a period of time.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "update_session_id",
-                        "description": "Identifer of the update session to delete."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "404": {
-                        "description": "if the update session does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if the update session is in the {@link UpdateSessionModel.State#ACTIVE} state.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    }
-                },
-                "operationId": "delete"
             }
         },
-        "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=complete": {
+        "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=cancel": {
             "post": {
                 "tags": [
                     "library_item_update_session"
                 ],
-                "summary": "Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.",
+                "summary": "Cancels the update session and sets its state to {@link UpdateSessionModel.State#CANCELED}. This {@term operation} will free up any temporary resources currently associated with the session. <p> This {@term operation} is not allowed if the session has been already completed. <p> Cancelling an update session will cancel any in progress transfers (either uploaded by the client or pulled by the server). Any content that has been already received will be scheduled for deletion.",
                 "parameters": [
                     {
                         "type": "string",
                         "required": true,
                         "in": "path",
                         "name": "update_session_id",
-                        "description": "Identifier of the update session that should be completed."
+                        "description": "Identifier of the update session that should be canceled."
                     }
                 ],
                 "responses": {
@@ -1373,7 +1379,7 @@
                         }
                     },
                     "400": {
-                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state, or if some of the files that will be uploaded by the client aren't received correctly.",
+                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state.",
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
                         }
@@ -1382,7 +1388,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "complete"
+                "operationId": "cancel"
             }
         },
         "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=fail": {

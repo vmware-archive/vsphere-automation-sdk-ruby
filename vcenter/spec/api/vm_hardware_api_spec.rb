@@ -42,7 +42,7 @@ describe 'VmHardwareApi' do
   # unit tests for update
   # Updates the virtual hardware settings of a virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do
@@ -55,7 +55,7 @@ describe 'VmHardwareApi' do
   # Upgrades the virtual machine to a newer virtual hardware version.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param [Hash] opts the optional parameters
-  # @option opts [VcenterVmHardwareUpgrade] :vcenter_vm_hardware_upgrade 
+  # @option opts [VcenterVmHardwareUpgrade] :request_body 
   # @return [nil]
   describe 'upgrade test' do
     it 'should work' do

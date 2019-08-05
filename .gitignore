@@ -13,3 +13,17 @@
 Gemfile.lock
 .ruby-version
 .ruby-gemset
+
+# Prevent runtime files in each non-runtime gem
+api_client.rb
+api_client_spec.rb
+api_error.rb
+configuration.rb
+configuration_spec.rb
+
+# Allow these files in the runtime gem
+!runtime/lib/vsphere-automation-runtime/api_client.rb
+!runtime/lib/vsphere-automation-runtime/api_error.rb
+!runtime/lib/vsphere-automation-runtime/configuration.rb
+!runtime/spec/api_client_spec.rb
+!runtime/spec/configuration_spec.rb

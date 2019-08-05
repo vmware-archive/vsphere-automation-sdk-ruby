@@ -12,8 +12,8 @@ module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesInterfaceStatus
     
-    DOWN = 'down'.freeze
-    UP = 'up'.freeze
+    DOWN = "down".freeze
+    UP = "up".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

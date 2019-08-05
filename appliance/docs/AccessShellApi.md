@@ -17,6 +17,13 @@ Get enabled state of BASH, that is, access to BASH from within the controlled CL
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::AccessShellApi.new
 
@@ -38,17 +45,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(appliance_access_shell_set)
+> set(request_body)
 
 Set enabled state of BASH, that is, access to BASH from within the controlled CLI.
 
@@ -56,13 +63,20 @@ Set enabled state of BASH, that is, access to BASH from within the controlled CL
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::AccessShellApi.new
-appliance_access_shell_set = VSphereAutomation::ApplianceAccessShellSet.new # ApplianceAccessShellSet | 
+request_body = Appliance::ApplianceAccessShellSet.new # ApplianceAccessShellSet | 
 
 begin
   #Set enabled state of BASH, that is, access to BASH from within the controlled CLI.
-  api_instance.set(appliance_access_shell_set)
+  api_instance.set(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling AccessShellApi->set: #{e}"
 end
@@ -72,7 +86,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appliance_access_shell_set** | [**ApplianceAccessShellSet**](ApplianceAccessShellSet.md)|  | 
+ **request_body** | [**ApplianceAccessShellSet**](ApplianceAccessShellSet.md)|  | 
 
 ### Return type
 
@@ -80,12 +94,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

@@ -12,9 +12,9 @@ module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPAuthProto
     
-    NONE = 'none'.freeze
-    SHA1 = 'SHA1'.freeze
-    MD5 = 'MD5'.freeze
+    NONE = "none".freeze
+    SHA1 = "SHA1".freeze
+    MD5 = "MD5".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -7,10 +7,10 @@
 
 
 # Common files
-require 'vsphere-automation-appliance/api_client'
-require 'vsphere-automation-appliance/api_error'
+require 'vsphere-automation-runtime/api_client'
+require 'vsphere-automation-runtime/api_error'
+require 'vsphere-automation-runtime/configuration'
 require 'vsphere-automation-appliance/version'
-require 'vsphere-automation-appliance/configuration'
 
 # Models
 require 'vsphere-automation-appliance/models/appliance_access_consolecli_result'
@@ -143,6 +143,7 @@ require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_backu
 require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_cancel_result'
 require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_create'
 require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_create_result'
+require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_details_build_info'
 require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_details_filter_spec'
 require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_details_info'
 require 'vsphere-automation-appliance/models/appliance_recovery_backup_job_details_list_result'
@@ -267,6 +268,7 @@ require 'vsphere-automation-appliance/models/appliance_update_common_info_severi
 require 'vsphere-automation-appliance/models/appliance_update_info'
 require 'vsphere-automation-appliance/models/appliance_update_pending_info'
 require 'vsphere-automation-appliance/models/appliance_update_pending_install'
+require 'vsphere-automation-appliance/models/appliance_update_pending_install_user_data'
 require 'vsphere-automation-appliance/models/appliance_update_pending_list_result'
 require 'vsphere-automation-appliance/models/appliance_update_pending_precheck_result'
 require 'vsphere-automation-appliance/models/appliance_update_pending_question'
@@ -276,7 +278,6 @@ require 'vsphere-automation-appliance/models/appliance_update_pending_source_typ
 require 'vsphere-automation-appliance/models/appliance_update_pending_stage_and_install'
 require 'vsphere-automation-appliance/models/appliance_update_pending_validate'
 require 'vsphere-automation-appliance/models/appliance_update_pending_validate_result'
-require 'vsphere-automation-appliance/models/appliance_update_pending_validate_user_data'
 require 'vsphere-automation-appliance/models/appliance_update_policy_config'
 require 'vsphere-automation-appliance/models/appliance_update_policy_day_of_week'
 require 'vsphere-automation-appliance/models/appliance_update_policy_info'

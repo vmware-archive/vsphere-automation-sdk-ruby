@@ -24,7 +24,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'ipv6_enabled' => :'BOOLEAN'
+        :'ipv6_enabled' => :'Boolean'
       }
     end
 

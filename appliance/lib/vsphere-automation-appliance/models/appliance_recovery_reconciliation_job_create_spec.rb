@@ -34,7 +34,7 @@ module VSphereAutomation
       {
         :'sso_admin_user_name' => :'String',
         :'sso_admin_user_password' => :'String',
-        :'ignore_warnings' => :'BOOLEAN'
+        :'ignore_warnings' => :'Boolean'
       }
     end
 

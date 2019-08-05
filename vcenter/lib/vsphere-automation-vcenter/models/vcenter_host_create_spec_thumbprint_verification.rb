@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterHostCreateSpecThumbprintVerification
     
-    NONE = 'NONE'.freeze
-    THUMBPRINT = 'THUMBPRINT'.freeze
+    NONE = "NONE".freeze
+    THUMBPRINT = "THUMBPRINT".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

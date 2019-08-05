@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterVchaNetworkType
     
-    STANDARD_PORTGROUP = 'STANDARD_PORTGROUP'.freeze
-    DISTRIBUTED_PORTGROUP = 'DISTRIBUTED_PORTGROUP'.freeze
+    STANDARD_PORTGROUP = "STANDARD_PORTGROUP".freeze
+    DISTRIBUTED_PORTGROUP = "DISTRIBUTED_PORTGROUP".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

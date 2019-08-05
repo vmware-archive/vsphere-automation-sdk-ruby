@@ -63,13 +63,13 @@ module VSphereAutomation
         :'contents' => :'Array<VapiStdLocalizableMessage>',
         :'services_will_be_stopped' => :'Array<ApplianceUpdateServiceInfo>',
         :'eulas' => :'Array<VapiStdLocalizableMessage>',
-        :'staged' => :'BOOLEAN',
+        :'staged' => :'Boolean',
         :'description' => :'VapiStdLocalizableMessage',
         :'priority' => :'ApplianceUpdateCommonInfoPriority',
         :'severity' => :'ApplianceUpdateCommonInfoSeverity',
         :'update_type' => :'ApplianceUpdateCommonInfoCategory',
         :'release_date' => :'DateTime',
-        :'reboot_required' => :'BOOLEAN',
+        :'reboot_required' => :'Boolean',
         :'size' => :'Integer'
       }
     end

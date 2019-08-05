@@ -30,7 +30,7 @@ describe 'VMApi' do
 
   # unit tests for create
   # Creates a virtual machine.
-  # @param vcenter_vm_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVMCreateResult]
   describe 'create test' do

@@ -42,7 +42,7 @@ describe 'VmHardwareCpuApi' do
   # unit tests for update
   # Updates the CPU-related settings of a virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_cpu_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

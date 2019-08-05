@@ -17,26 +17,26 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
-    # @param vcenter_vm_template_library_items_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterVmTemplateLibraryItemsCreateResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
-    def create(vcenter_vm_template_library_items_create, opts = {})
-      data, _status_code, _headers = create_with_http_info(vcenter_vm_template_library_items_create, opts)
+    def create(request_body, opts = {})
+      data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
     # Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
     # @api private
-    # @param vcenter_vm_template_library_items_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmTemplateLibraryItemsCreateResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    def create_with_http_info(vcenter_vm_template_library_items_create, opts = {})
+    def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.create ...'
       end
-      # verify the required parameter 'vcenter_vm_template_library_items_create' is set
-      if @api_client.config.client_side_validation && vcenter_vm_template_library_items_create.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_vm_template_library_items_create' when calling VmTemplateLibraryItemsApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VmTemplateLibraryItemsApi.create"
       end
       # resource path
       local_var_path = '/vcenter/vm-template/library-items'
@@ -47,7 +47,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -55,8 +55,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_vm_template_library_items_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -78,21 +78,23 @@ module VSphereAutomation
     end
     # Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
     # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
-    # @param vcenter_vm_template_library_items_deploy 
+    # @param action action&#x3D;deploy
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterVmTemplateLibraryItemsDeployResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
-    def deploy(template_library_item, vcenter_vm_template_library_items_deploy, opts = {})
-      data, _status_code, _headers = deploy_with_http_info(template_library_item, vcenter_vm_template_library_items_deploy, opts)
+    def deploy(template_library_item, action, request_body, opts = {})
+      data, _status_code, _headers = deploy_with_http_info(template_library_item, action, request_body, opts)
       data
     end
 
     # Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
     # @api private
     # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
-    # @param vcenter_vm_template_library_items_deploy 
+    # @param action action&#x3D;deploy
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmTemplateLibraryItemsDeployResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    def deploy_with_http_info(template_library_item, vcenter_vm_template_library_items_deploy, opts = {})
+    def deploy_with_http_info(template_library_item, action, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.deploy ...'
       end
@@ -100,20 +102,29 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && template_library_item.nil?
         fail ArgumentError, "Missing the required parameter 'template_library_item' when calling VmTemplateLibraryItemsApi.deploy"
       end
-      # verify the required parameter 'vcenter_vm_template_library_items_deploy' is set
-      if @api_client.config.client_side_validation && vcenter_vm_template_library_items_deploy.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_vm_template_library_items_deploy' when calling VmTemplateLibraryItemsApi.deploy"
+      # verify the required parameter 'action' is set
+      if @api_client.config.client_side_validation && action.nil?
+        fail ArgumentError, "Missing the required parameter 'action' when calling VmTemplateLibraryItemsApi.deploy"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['deploy'].include?(action)
+        fail ArgumentError, "invalid value for 'action', must be one of deploy"
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VmTemplateLibraryItemsApi.deploy"
       end
       # resource path
-      local_var_path = '/vcenter/vm-template/library-items/{template_library_item}?action=deploy'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
+      local_var_path = '/vcenter/vm-template/library-items/{template_library_item}'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'action'] = action
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -121,8 +132,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_vm_template_library_items_deploy)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -173,14 +184,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

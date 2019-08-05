@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**VcenterStoragePoliciesComplianceVMInfo**](VcenterStoragePoliciesComplianceVMInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**VcenterStoragePoliciesComplianceVMInfo**](VcenterStoragePoliciesComplianceVMInfo.md) |  | [optional] 
 
 

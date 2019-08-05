@@ -34,7 +34,7 @@ module VSphereAutomation
       {
         :'auth_hash' => :'String',
         :'priv_hash' => :'String',
-        :'raw_secret' => :'BOOLEAN'
+        :'raw_secret' => :'Boolean'
       }
     end
 

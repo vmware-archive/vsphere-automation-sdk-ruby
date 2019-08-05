@@ -41,7 +41,7 @@ module VSphereAutomation
         :'type' => :'VcenterVmHardwareCdromBackingType',
         :'iso_file' => :'String',
         :'host_device' => :'String',
-        :'auto_detect' => :'BOOLEAN',
+        :'auto_detect' => :'Boolean',
         :'device_access_type' => :'VcenterVmHardwareCdromDeviceAccessType'
       }
     end

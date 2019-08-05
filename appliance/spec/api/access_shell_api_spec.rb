@@ -40,7 +40,7 @@ describe 'AccessShellApi' do
 
   # unit tests for set
   # Set enabled state of BASH, that is, access to BASH from within the controlled CLI.
-  # @param appliance_access_shell_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

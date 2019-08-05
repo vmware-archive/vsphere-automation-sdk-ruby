@@ -46,13 +46,13 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'upt_compatibility_enabled' => :'BOOLEAN',
+        :'upt_compatibility_enabled' => :'Boolean',
         :'mac_type' => :'VcenterVmHardwareEthernetMacAddressType',
         :'mac_address' => :'String',
-        :'wake_on_lan_enabled' => :'BOOLEAN',
+        :'wake_on_lan_enabled' => :'Boolean',
         :'backing' => :'VcenterVmHardwareEthernetBackingSpec',
-        :'start_connected' => :'BOOLEAN',
-        :'allow_guest_control' => :'BOOLEAN'
+        :'start_connected' => :'Boolean',
+        :'allow_guest_control' => :'Boolean'
       }
     end
 

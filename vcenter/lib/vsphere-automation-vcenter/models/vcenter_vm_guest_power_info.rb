@@ -28,7 +28,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'state' => :'VcenterVmGuestPowerState',
-        :'operations_ready' => :'BOOLEAN'
+        :'operations_ready' => :'Boolean'
       }
     end
 

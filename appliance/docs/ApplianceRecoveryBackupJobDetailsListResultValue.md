@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**ApplianceRecoveryBackupJobDetailsInfo**](ApplianceRecoveryBackupJobDetailsInfo.md) |  | [optional] 
 **key** | **String** |  | [optional] 
+**value** | [**ApplianceRecoveryBackupJobDetailsInfo**](ApplianceRecoveryBackupJobDetailsInfo.md) |  | [optional] 
 
 

@@ -52,14 +52,14 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'staging_complete' => :'BOOLEAN',
+        :'staging_complete' => :'Boolean',
         :'version' => :'String',
         :'description' => :'VapiStdLocalizableMessage',
         :'priority' => :'ApplianceUpdateCommonInfoPriority',
         :'severity' => :'ApplianceUpdateCommonInfoSeverity',
         :'update_type' => :'ApplianceUpdateCommonInfoCategory',
         :'release_date' => :'DateTime',
-        :'reboot_required' => :'BOOLEAN',
+        :'reboot_required' => :'Boolean',
         :'size' => :'Integer'
       }
     end

@@ -12,13 +12,13 @@ module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupSchedulesDayOfWeek
     
-    MONDAY = 'MONDAY'.freeze
-    TUESDAY = 'TUESDAY'.freeze
-    WEDNESDAY = 'WEDNESDAY'.freeze
-    THURSDAY = 'THURSDAY'.freeze
-    FRIDAY = 'FRIDAY'.freeze
-    SATURDAY = 'SATURDAY'.freeze
-    SUNDAY = 'SUNDAY'.freeze
+    MONDAY = "MONDAY".freeze
+    TUESDAY = "TUESDAY".freeze
+    WEDNESDAY = "WEDNESDAY".freeze
+    THURSDAY = "THURSDAY".freeze
+    FRIDAY = "FRIDAY".freeze
+    SATURDAY = "SATURDAY".freeze
+    SUNDAY = "SUNDAY".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

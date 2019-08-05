@@ -20,14 +20,7 @@ def template_dir
   root_dir << '/templates'
 end
 
-def files_to_generate(component)
-  return ' -DsupportingFiles' if component == :runtime
-
-  " -Dapis,models,supportingFiles=vsphere-automation-#{component}.rb"
-end
-
 def generate_gem(component, output_dir)
-  puts "\n\nGenerating #{component}\n\n"
   generate_command = 'openapi-generator generate '\
                      '-g ruby '\
                      "-i #{spec_dir}/#{component}.json "\
@@ -36,12 +29,13 @@ def generate_gem(component, output_dir)
                      "-o #{output_dir}/#{component} "\
                      '--skip-validate-spec'\
                      " --additional-properties='is-#{component}=true'"
-  generate_command << files_to_generate(component)
+  generate_command << ' -DsupportingFiles' if component == :runtime
   system(ENV_VARS, generate_command)
 end
 
 def generate_gems(output_dir)
   %i[appliance cis content runtime vapi vcenter].map do |c|
+    puts "\n\nGenerating #{c} gem\n\n"
     generate_gem(c, output_dir)
   end
 end

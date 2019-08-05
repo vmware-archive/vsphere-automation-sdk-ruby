@@ -31,7 +31,8 @@ describe 'LibraryItemApi' do
   # unit tests for copy
   # Copies a library item. &lt;p&gt; Copying a library item allows a duplicate to be made within the same or different library. The copy occurs by first creating a new library item, whose identifier is returned. The content of the library item is then copied asynchronously. This copy can be tracked as a task. &lt;p&gt; If the copy fails, Content Library Service will roll back the copy by deleting any content that was already copied, and removing the new library item. A failure during rollback may require manual cleanup by an administrator. &lt;p&gt; A library item cannot be copied into a subscribed library.
   # @param source_library_item_id Identifier of the existing library item from which the content will be copied.
-  # @param content_library_item_copy 
+  # @param action ~action&#x3D;copy
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemCopyResult]
   describe 'copy test' do
@@ -42,7 +43,7 @@ describe 'LibraryItemApi' do
 
   # unit tests for create
   # Creates a new library item. &lt;p&gt; A new library item is created without any content. After creation, content can be added through the {@link UpdateSession} and {@link File} {@term services}. &lt;p&gt; A library item cannot be created in a subscribed library.
-  # @param content_library_item_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemCreateResult]
   describe 'create test' do
@@ -64,7 +65,7 @@ describe 'LibraryItemApi' do
 
   # unit tests for find
   # Returns identifiers of all the visible (as determined by authorization policy) library items matching the requested {@link Item.FindSpec}.
-  # @param content_library_item_find 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemFindResult]
   describe 'find test' do
@@ -95,10 +96,23 @@ describe 'LibraryItemApi' do
     end
   end
 
+  # unit tests for publish
+  # Publishes the library item to specified subscriptions of the library. If no subscriptions are specified, then publishes the library item to all subscriptions of the library.
+  # @param library_item_id Library item identifier.
+  # @param action ~action&#x3D;publish
+  # @param request_body 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'publish test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for update
   # Updates the specified properties of a library item. &lt;p&gt; This is an incremental update to the library item. {@term Fields} that are {@term unset} in the update specification are left unchanged. &lt;p&gt; This {@term operation} cannot update a library item that is a member of a subscribed library. Those items must be updated in the source published library and synchronized to the subscribed library.
   # @param library_item_id Identifier of the library item to update.
-  # @param content_library_item_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

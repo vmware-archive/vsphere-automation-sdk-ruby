@@ -30,7 +30,8 @@ describe 'InventoryDatastoreApi' do
 
   # unit tests for find
   # Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
-  # @param vcenter_inventory_datastore_find 
+  # @param action ~action&#x3D;find
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterInventoryDatastoreFindResult]
   describe 'find test' do

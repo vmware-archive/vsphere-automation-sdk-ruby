@@ -23,7 +23,7 @@ Method | HTTP request | Description
 require '{{{gemName}}}'
 {{#hasAuthMethods}}
 # setup authorization
-{{{moduleName}}}.configure do |config|{{#authMethods}}{{#isBasic}}
+VSphereAutomation::Configuration.new.tap do |config|{{#authMethods}}{{#isBasic}}
   # Configure HTTP basic authorization: {{{name}}}
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'{{/isBasic}}{{#isApiKey}}

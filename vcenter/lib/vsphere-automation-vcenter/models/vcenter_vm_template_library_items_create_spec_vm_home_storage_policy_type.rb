@@ -12,7 +12,7 @@ module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsCreateSpecVmHomeStoragePolicyType
     
-    USE_SPECIFIED_POLICY = 'USE_SPECIFIED_POLICY'.freeze
+    USE_SPECIFIED_POLICY = "USE_SPECIFIED_POLICY".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

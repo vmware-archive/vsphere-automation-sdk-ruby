@@ -12,10 +12,10 @@ module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupJobBackupRestoreProcessState
     
-    FAILED = 'FAILED'.freeze
-    INPROGRESS = 'INPROGRESS'.freeze
-    NONE = 'NONE'.freeze
-    SUCCEEDED = 'SUCCEEDED'.freeze
+    FAILED = "FAILED".freeze
+    INPROGRESS = "INPROGRESS".freeze
+    NONE = "NONE".freeze
+    SUCCEEDED = "SUCCEEDED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

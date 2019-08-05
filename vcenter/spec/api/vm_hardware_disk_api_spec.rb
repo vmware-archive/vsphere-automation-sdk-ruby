@@ -31,7 +31,7 @@ describe 'VmHardwareDiskApi' do
   # unit tests for create
   # Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param vcenter_vm_hardware_disk_create 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmHardwareDiskCreateResult]
   describe 'create test' do
@@ -79,7 +79,7 @@ describe 'VmHardwareDiskApi' do
   # Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
   # @param disk Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
-  # @param vcenter_vm_hardware_disk_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

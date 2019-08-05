@@ -30,7 +30,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'succeeded' => :'BOOLEAN',
+        :'succeeded' => :'Boolean',
         :'resource_id' => :'VcenterOvfLibraryItemDeployableIdentity',
         :'error' => :'VcenterOvfLibraryItemResultInfo'
       }

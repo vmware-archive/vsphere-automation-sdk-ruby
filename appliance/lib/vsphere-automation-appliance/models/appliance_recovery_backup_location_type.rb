@@ -12,11 +12,13 @@ module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupLocationType
     
-    FTP = 'FTP'.freeze
-    HTTP = 'HTTP'.freeze
-    FTPS = 'FTPS'.freeze
-    HTTPS = 'HTTPS'.freeze
-    SCP = 'SCP'.freeze
+    FTP = "FTP".freeze
+    HTTP = "HTTP".freeze
+    FTPS = "FTPS".freeze
+    HTTPS = "HTTPS".freeze
+    SCP = "SCP".freeze
+    NFS = "NFS".freeze
+    SMB = "SMB".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

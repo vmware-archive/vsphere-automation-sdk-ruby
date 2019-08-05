@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**answer**](DeploymentQuestionApi.md#answer) | **POST** /vcenter/deployment/question?action&#x3D;answer | Supply answer to the raised question.
+[**answer**](DeploymentQuestionApi.md#answer) | **POST** /vcenter/deployment/question | Supply answer to the raised question.
 [**get**](DeploymentQuestionApi.md#get) | **GET** /vcenter/deployment/question | Get the question that was raised during the configuration.
 
 
 # **answer**
-> answer(vcenter_deployment_question_answer)
+> answer(action, request_body)
 
 Supply answer to the raised question.
 
@@ -17,13 +17,21 @@ Supply answer to the raised question.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentQuestionApi.new
-vcenter_deployment_question_answer = VSphereAutomation::VcenterDeploymentQuestionAnswer.new # VcenterDeploymentQuestionAnswer | 
+action = 'action_example' # String | action=answer
+request_body = VCenter::VcenterDeploymentQuestionAnswer.new # VcenterDeploymentQuestionAnswer | 
 
 begin
   #Supply answer to the raised question.
-  api_instance.answer(vcenter_deployment_question_answer)
+  api_instance.answer(action, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentQuestionApi->answer: #{e}"
 end
@@ -33,7 +41,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcenter_deployment_question_answer** | [**VcenterDeploymentQuestionAnswer**](VcenterDeploymentQuestionAnswer.md)|  | 
+ **action** | **String**| action&#x3D;answer | 
+ **request_body** | [**VcenterDeploymentQuestionAnswer**](VcenterDeploymentQuestionAnswer.md)|  | 
 
 ### Return type
 
@@ -41,12 +50,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -59,6 +68,13 @@ Get the question that was raised during the configuration.
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::DeploymentQuestionApi.new
 
@@ -80,12 +96,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

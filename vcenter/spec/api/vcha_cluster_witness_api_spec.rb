@@ -30,7 +30,7 @@ describe 'VchaClusterWitnessApi' do
 
   # unit tests for check
   # Validates the specified witness node&#39;s placement configuration.
-  # @param vcenter_vcha_cluster_witness_check 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVchaClusterWitnessCheckResult]
   describe 'check test' do
@@ -41,7 +41,8 @@ describe 'VchaClusterWitnessApi' do
 
   # unit tests for redeploytask
   # Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
-  # @param vcenter_vcha_cluster_witness_redeploy_task 
+  # @param action action&#x3D;redeploy&amp;vmw-task
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVchaClusterWitnessRedeployTaskResult]
   describe 'redeploytask test' do

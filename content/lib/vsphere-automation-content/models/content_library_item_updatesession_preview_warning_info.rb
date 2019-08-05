@@ -32,7 +32,7 @@ module VSphereAutomation
       {
         :'type' => :'ContentLibraryItemUpdatesessionWarningType',
         :'message' => :'VapiStdLocalizableMessage',
-        :'ignored' => :'BOOLEAN'
+        :'ignored' => :'Boolean'
       }
     end
 

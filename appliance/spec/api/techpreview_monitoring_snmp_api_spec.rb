@@ -60,7 +60,7 @@ describe 'TechpreviewMonitoringSnmpApi' do
 
   # unit tests for hash
   # Generate localized keys for secure SNMPv3 communications.
-  # @param appliance_techpreview_monitoring_snmp_hash 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceTechpreviewMonitoringSnmpHashResult]
   describe 'hash test' do
@@ -91,7 +91,7 @@ describe 'TechpreviewMonitoringSnmpApi' do
 
   # unit tests for set
   # Set SNMP configuration.
-  # @param appliance_techpreview_monitoring_snmp_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

@@ -45,10 +45,10 @@ module VSphereAutomation
       {
         :'name' => :'String',
         :'type' => :'VcenterDatastoreType',
-        :'accessible' => :'BOOLEAN',
+        :'accessible' => :'Boolean',
         :'free_space' => :'Integer',
-        :'multiple_host_access' => :'BOOLEAN',
-        :'thin_provisioning_supported' => :'BOOLEAN'
+        :'multiple_host_access' => :'Boolean',
+        :'thin_provisioning_supported' => :'Boolean'
       }
     end
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> create(schedule, appliance_recovery_backup_schedules_create)
+> create(schedule, request_body)
 
 Creates a schedule
 
@@ -21,14 +21,21 @@ Creates a schedule
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
-appliance_recovery_backup_schedules_create = VSphereAutomation::ApplianceRecoveryBackupSchedulesCreate.new # ApplianceRecoveryBackupSchedulesCreate | 
+request_body = Appliance::ApplianceRecoveryBackupSchedulesCreate.new # ApplianceRecoveryBackupSchedulesCreate | 
 
 begin
   #Creates a schedule
-  api_instance.create(schedule, appliance_recovery_backup_schedules_create)
+  api_instance.create(schedule, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupSchedulesApi->create: #{e}"
 end
@@ -39,7 +46,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule** | **String**| Identifier of the schedule | 
- **appliance_recovery_backup_schedules_create** | [**ApplianceRecoveryBackupSchedulesCreate**](ApplianceRecoveryBackupSchedulesCreate.md)|  | 
+ **request_body** | [**ApplianceRecoveryBackupSchedulesCreate**](ApplianceRecoveryBackupSchedulesCreate.md)|  | 
 
 ### Return type
 
@@ -47,12 +54,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -65,6 +72,13 @@ Deletes an existing schedule
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
@@ -89,12 +103,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -107,6 +121,13 @@ Returns an existing schedule information based on id
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
@@ -132,12 +153,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -150,6 +171,13 @@ Returns a list of existing schedules with details
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 
@@ -171,12 +199,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -189,11 +217,18 @@ Initiate backup with the specified schedule
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
 opts = {
-  appliance_recovery_backup_schedules_run: VSphereAutomation::ApplianceRecoveryBackupSchedulesRun.new # ApplianceRecoveryBackupSchedulesRun | 
+  request_body: Appliance::ApplianceRecoveryBackupSchedulesRun.new # ApplianceRecoveryBackupSchedulesRun | 
 }
 
 begin
@@ -210,7 +245,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule** | **String**| Identifier of the schedule | 
- **appliance_recovery_backup_schedules_run** | [**ApplianceRecoveryBackupSchedulesRun**](ApplianceRecoveryBackupSchedulesRun.md)|  | [optional] 
+ **request_body** | [**ApplianceRecoveryBackupSchedulesRun**](ApplianceRecoveryBackupSchedulesRun.md)|  | [optional] 
 
 ### Return type
 
@@ -218,17 +253,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(schedule, appliance_recovery_backup_schedules_update)
+> update(schedule, request_body)
 
 Updates a schedule
 
@@ -236,14 +271,21 @@ Updates a schedule
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::RecoveryBackupSchedulesApi.new
 schedule = 'schedule_example' # String | Identifier of the schedule
-appliance_recovery_backup_schedules_update = VSphereAutomation::ApplianceRecoveryBackupSchedulesUpdate.new # ApplianceRecoveryBackupSchedulesUpdate | 
+request_body = Appliance::ApplianceRecoveryBackupSchedulesUpdate.new # ApplianceRecoveryBackupSchedulesUpdate | 
 
 begin
   #Updates a schedule
-  api_instance.update(schedule, appliance_recovery_backup_schedules_update)
+  api_instance.update(schedule, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RecoveryBackupSchedulesApi->update: #{e}"
 end
@@ -254,7 +296,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **schedule** | **String**| Identifier of the schedule | 
- **appliance_recovery_backup_schedules_update** | [**ApplianceRecoveryBackupSchedulesUpdate**](ApplianceRecoveryBackupSchedulesUpdate.md)|  | 
+ **request_body** | [**ApplianceRecoveryBackupSchedulesUpdate**](ApplianceRecoveryBackupSchedulesUpdate.md)|  | 
 
 ### Return type
 
@@ -262,12 +304,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

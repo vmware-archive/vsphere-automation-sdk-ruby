@@ -4,7 +4,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add**](LibraryItemUpdatesessionFileApi.md#add) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;add | Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. &lt;p&gt; When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
+[**add**](LibraryItemUpdatesessionFileApi.md#add) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id} | Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. &lt;p&gt; When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
 [**get**](LibraryItemUpdatesessionFileApi.md#get) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;get | Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
 [**list**](LibraryItemUpdatesessionFileApi.md#list) | **GET** /com/vmware/content/library/item/updatesession/file | Lists all files in the library item associated with the update session.
 [**remove**](LibraryItemUpdatesessionFileApi.md#remove) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;remove | Requests a file to be removed. The file will only be effectively removed when the update session is completed.
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **add**
-> ContentLibraryItemUpdatesessionFileAddResult add(update_session_id, content_library_item_updatesession_file_add)
+> ContentLibraryItemUpdatesessionFileAddResult add(update_session_id, action, request_body)
 
 Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. <p> When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
 
@@ -20,14 +20,22 @@ Requests file content to be changed (either created, or updated). Depending on t
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session to be modified.
-content_library_item_updatesession_file_add = VSphereAutomation::ContentLibraryItemUpdatesessionFileAdd.new # ContentLibraryItemUpdatesessionFileAdd | 
+action = 'action_example' # String | ~action=add
+request_body = Content::ContentLibraryItemUpdatesessionFileAdd.new # ContentLibraryItemUpdatesessionFileAdd | 
 
 begin
   #Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. <p> When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
-  result = api_instance.add(update_session_id, content_library_item_updatesession_file_add)
+  result = api_instance.add(update_session_id, action, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdatesessionFileApi->add: #{e}"
@@ -39,7 +47,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session to be modified. | 
- **content_library_item_updatesession_file_add** | [**ContentLibraryItemUpdatesessionFileAdd**](ContentLibraryItemUpdatesessionFileAdd.md)|  | 
+ **action** | **String**| ~action&#x3D;add | 
+ **request_body** | [**ContentLibraryItemUpdatesessionFileAdd**](ContentLibraryItemUpdatesessionFileAdd.md)|  | 
 
 ### Return type
 
@@ -47,17 +56,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **get**
-> ContentLibraryItemUpdatesessionFileResult get(update_session_id, content_library_item_updatesession_file_get)
+> ContentLibraryItemUpdatesessionFileResult get(update_session_id, request_body)
 
 Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
 
@@ -65,14 +74,21 @@ Retrieves information about a specific file in the snapshot of the library item 
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session.
-content_library_item_updatesession_file_get = VSphereAutomation::ContentLibraryItemUpdatesessionFileGet.new # ContentLibraryItemUpdatesessionFileGet | 
+request_body = Content::ContentLibraryItemUpdatesessionFileGet.new # ContentLibraryItemUpdatesessionFileGet | 
 
 begin
   #Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
-  result = api_instance.get(update_session_id, content_library_item_updatesession_file_get)
+  result = api_instance.get(update_session_id, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdatesessionFileApi->get: #{e}"
@@ -84,7 +100,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session. | 
- **content_library_item_updatesession_file_get** | [**ContentLibraryItemUpdatesessionFileGet**](ContentLibraryItemUpdatesessionFileGet.md)|  | 
+ **request_body** | [**ContentLibraryItemUpdatesessionFileGet**](ContentLibraryItemUpdatesessionFileGet.md)|  | 
 
 ### Return type
 
@@ -92,12 +108,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -110,6 +126,13 @@ Lists all files in the library item associated with the update session.
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session.
@@ -135,17 +158,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **remove**
-> remove(update_session_id, content_library_item_updatesession_file_remove)
+> remove(update_session_id, request_body)
 
 Requests a file to be removed. The file will only be effectively removed when the update session is completed.
 
@@ -153,14 +176,21 @@ Requests a file to be removed. The file will only be effectively removed when th
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session.
-content_library_item_updatesession_file_remove = VSphereAutomation::ContentLibraryItemUpdatesessionFileRemove.new # ContentLibraryItemUpdatesessionFileRemove | 
+request_body = Content::ContentLibraryItemUpdatesessionFileRemove.new # ContentLibraryItemUpdatesessionFileRemove | 
 
 begin
   #Requests a file to be removed. The file will only be effectively removed when the update session is completed.
-  api_instance.remove(update_session_id, content_library_item_updatesession_file_remove)
+  api_instance.remove(update_session_id, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemUpdatesessionFileApi->remove: #{e}"
 end
@@ -171,7 +201,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_session_id** | **String**| Identifier of the update session. | 
- **content_library_item_updatesession_file_remove** | [**ContentLibraryItemUpdatesessionFileRemove**](ContentLibraryItemUpdatesessionFileRemove.md)|  | 
+ **request_body** | [**ContentLibraryItemUpdatesessionFileRemove**](ContentLibraryItemUpdatesessionFileRemove.md)|  | 
 
 ### Return type
 
@@ -179,12 +209,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -197,6 +227,13 @@ Validates the files in the update session with the referenced identifier and ens
 ```ruby
 # load the gem
 require 'vsphere-automation-content'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Content::LibraryItemUpdatesessionFileApi.new
 update_session_id = 'update_session_id_example' # String | Identifier of the update session to validate.
@@ -222,12 +259,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

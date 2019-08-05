@@ -30,7 +30,7 @@ describe 'VchaClusterApi' do
 
   # unit tests for deploytask
   # Prepares, clones, and configures a VCHA cluster.
-  # @param vcenter_vcha_cluster_deploy_task 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVchaClusterDeployTaskResult]
   describe 'deploytask test' do
@@ -41,7 +41,8 @@ describe 'VchaClusterApi' do
 
   # unit tests for failovertask
   # Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
-  # @param vcenter_vcha_cluster_failover_task 
+  # @param action action&#x3D;failover&amp;vmw-task
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVchaClusterFailoverTaskResult]
   describe 'failovertask test' do
@@ -53,7 +54,7 @@ describe 'VchaClusterApi' do
   # unit tests for get
   # Retrieves the status of a VCHA cluster.
   # @param [Hash] opts the optional parameters
-  # @option opts [VcenterVchaClusterGet] :vcenter_vcha_cluster_get 
+  # @option opts [VcenterVchaClusterGet] :request_body 
   # @return [VcenterVchaClusterResult]
   describe 'get test' do
     it 'should work' do
@@ -63,7 +64,7 @@ describe 'VchaClusterApi' do
 
   # unit tests for undeploytask
   # Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
-  # @param vcenter_vcha_cluster_undeploy_task 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVchaClusterUndeployTaskResult]
   describe 'undeploytask test' do

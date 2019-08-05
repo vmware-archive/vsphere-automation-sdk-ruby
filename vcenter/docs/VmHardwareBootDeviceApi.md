@@ -17,6 +17,13 @@ Returns an ordered list of boot devices for the virtual machine. If the list is 
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareBootDeviceApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
@@ -42,17 +49,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(vm, vcenter_vm_hardware_boot_device_set)
+> set(vm, request_body)
 
 Sets the virtual devices that will be used to boot the virtual machine. The virtual machine will check the devices in order, attempting to boot from each, until the virtual machine boots successfully. If the list is empty, the virtual machine will use a default boot sequence. There should be no more than one instance of Device.Entry for a given device type except ETHERNET in the list.
 
@@ -60,14 +67,21 @@ Sets the virtual devices that will be used to boot the virtual machine. The virt
 ```ruby
 # load the gem
 require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::VCenter::VmHardwareBootDeviceApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-vcenter_vm_hardware_boot_device_set = VSphereAutomation::VcenterVmHardwareBootDeviceSet.new # VcenterVmHardwareBootDeviceSet | 
+request_body = VCenter::VcenterVmHardwareBootDeviceSet.new # VcenterVmHardwareBootDeviceSet | 
 
 begin
   #Sets the virtual devices that will be used to boot the virtual machine. The virtual machine will check the devices in order, attempting to boot from each, until the virtual machine boots successfully. If the list is empty, the virtual machine will use a default boot sequence. There should be no more than one instance of Device.Entry for a given device type except ETHERNET in the list.
-  api_instance.set(vm, vcenter_vm_hardware_boot_device_set)
+  api_instance.set(vm, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmHardwareBootDeviceApi->set: #{e}"
 end
@@ -78,7 +92,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine. | 
- **vcenter_vm_hardware_boot_device_set** | [**VcenterVmHardwareBootDeviceSet**](VcenterVmHardwareBootDeviceSet.md)|  | 
+ **request_body** | [**VcenterVmHardwareBootDeviceSet**](VcenterVmHardwareBootDeviceSet.md)|  | 
 
 ### Return type
 
@@ -86,12 +100,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

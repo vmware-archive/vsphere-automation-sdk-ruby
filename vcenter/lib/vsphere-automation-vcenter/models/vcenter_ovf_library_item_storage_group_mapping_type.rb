@@ -12,8 +12,8 @@ module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemStorageGroupMappingType
     
-    DATASTORE = 'DATASTORE'.freeze
-    STORAGE_PROFILE = 'STORAGE_PROFILE'.freeze
+    DATASTORE = "DATASTORE".freeze
+    STORAGE_PROFILE = "STORAGE_PROFILE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

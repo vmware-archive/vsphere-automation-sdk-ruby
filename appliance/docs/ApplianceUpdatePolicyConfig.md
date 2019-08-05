@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **username** | **String** | Username for the update repository | [optional] 
 **password** | **String** | Password for the update repository | [optional] 
 **check_schedule** | [**Array&lt;ApplianceUpdatePolicyTime&gt;**](ApplianceUpdatePolicyTime.md) | Schedule when the automatic check will be run. | 
-**auto_stage** | **BOOLEAN** | Automatically stage the latest update if available. | 
+**auto_stage** | **Boolean** | Automatically stage the latest update if available. | 
 
 

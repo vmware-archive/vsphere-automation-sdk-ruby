@@ -80,7 +80,7 @@ module VSphereAutomation
       {
         :'authentication' => :'ApplianceTechpreviewMonitoringSnmpSNMPAuthProto',
         :'communities' => :'Array<String>',
-        :'enable' => :'BOOLEAN',
+        :'enable' => :'Boolean',
         :'engineid' => :'String',
         :'loglevel' => :'String',
         :'notraps' => :'Array<String>',

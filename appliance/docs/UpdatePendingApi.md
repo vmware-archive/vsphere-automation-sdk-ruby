@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**get**](UpdatePendingApi.md#get) | **GET** /appliance/update/pending/{version} | Gets update information
 [**install**](UpdatePendingApi.md#install) | **POST** /appliance/update/pending/{version}?action&#x3D;install | Starts operation of installing the appliance update. Will fail is the update is not staged
 [**list**](UpdatePendingApi.md#list) | **GET** /appliance/update/pending | Checks if new updates are available.
-[**precheck**](UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version}?action&#x3D;precheck | Runs update precheck
+[**precheck**](UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version} | Runs update precheck
 [**stage**](UpdatePendingApi.md#stage) | **POST** /appliance/update/pending/{version}?action&#x3D;stage | Starts staging the appliance update. The updates are searched for in the following order: staged, CDROM, URL
 [**stage_and_install**](UpdatePendingApi.md#stage_and_install) | **POST** /appliance/update/pending/{version}?action&#x3D;stage-and-install | Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
 [**validate**](UpdatePendingApi.md#validate) | **POST** /appliance/update/pending/{version}?action&#x3D;validate | Validates the user provided data before the update installation.
@@ -22,6 +22,13 @@ Gets update information
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
@@ -47,17 +54,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **install**
-> install(version, appliance_update_pending_install)
+> install(version, request_body)
 
 Starts operation of installing the appliance update. Will fail is the update is not staged
 
@@ -65,14 +72,21 @@ Starts operation of installing the appliance update. Will fail is the update is 
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
-appliance_update_pending_install = VSphereAutomation::ApplianceUpdatePendingInstall.new # ApplianceUpdatePendingInstall | 
+request_body = Appliance::ApplianceUpdatePendingInstall.new # ApplianceUpdatePendingInstall | 
 
 begin
   #Starts operation of installing the appliance update. Will fail is the update is not staged
-  api_instance.install(version, appliance_update_pending_install)
+  api_instance.install(version, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->install: #{e}"
 end
@@ -83,7 +97,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
- **appliance_update_pending_install** | [**ApplianceUpdatePendingInstall**](ApplianceUpdatePendingInstall.md)|  | 
+ **request_body** | [**ApplianceUpdatePendingInstall**](ApplianceUpdatePendingInstall.md)|  | 
 
 ### Return type
 
@@ -91,12 +105,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -109,6 +123,13 @@ Checks if new updates are available.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 source_type = 'source_type_example' # String | The {@name SourceType} {@term enumerated type} defines the supported types of sources of updates.
@@ -138,17 +159,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **precheck**
-> ApplianceUpdatePendingPrecheckResult precheck(version)
+> ApplianceUpdatePendingPrecheckResult precheck(version, action)
 
 Runs update precheck
 
@@ -156,13 +177,21 @@ Runs update precheck
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
+action = 'action_example' # String | action=precheck
 
 begin
   #Runs update precheck
-  result = api_instance.precheck(version)
+  result = api_instance.precheck(version, action)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->precheck: #{e}"
@@ -174,6 +203,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
+ **action** | **String**| action&#x3D;precheck | 
 
 ### Return type
 
@@ -181,12 +211,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -199,6 +229,13 @@ Starts staging the appliance update. The updates are searched for in the followi
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
@@ -223,17 +260,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **stage_and_install**
-> stage_and_install(version, appliance_update_pending_stage_and_install)
+> stage_and_install(version, request_body)
 
 Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
 
@@ -241,14 +278,21 @@ Starts operation of installing the appliance update. Will stage update if not al
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
-appliance_update_pending_stage_and_install = VSphereAutomation::ApplianceUpdatePendingStageAndInstall.new # ApplianceUpdatePendingStageAndInstall | 
+request_body = Appliance::ApplianceUpdatePendingStageAndInstall.new # ApplianceUpdatePendingStageAndInstall | 
 
 begin
   #Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
-  api_instance.stage_and_install(version, appliance_update_pending_stage_and_install)
+  api_instance.stage_and_install(version, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->stage_and_install: #{e}"
 end
@@ -259,7 +303,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
- **appliance_update_pending_stage_and_install** | [**ApplianceUpdatePendingStageAndInstall**](ApplianceUpdatePendingStageAndInstall.md)|  | 
+ **request_body** | [**ApplianceUpdatePendingStageAndInstall**](ApplianceUpdatePendingStageAndInstall.md)|  | 
 
 ### Return type
 
@@ -267,17 +311,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **validate**
-> ApplianceUpdatePendingValidateResult validate(version, appliance_update_pending_validate)
+> ApplianceUpdatePendingValidateResult validate(version, request_body)
 
 Validates the user provided data before the update installation.
 
@@ -285,14 +329,21 @@ Validates the user provided data before the update installation.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
-appliance_update_pending_validate = VSphereAutomation::ApplianceUpdatePendingValidate.new # ApplianceUpdatePendingValidate | 
+request_body = Appliance::ApplianceUpdatePendingValidate.new # ApplianceUpdatePendingValidate | 
 
 begin
   #Validates the user provided data before the update installation.
-  result = api_instance.validate(version, appliance_update_pending_validate)
+  result = api_instance.validate(version, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->validate: #{e}"
@@ -304,7 +355,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
- **appliance_update_pending_validate** | [**ApplianceUpdatePendingValidate**](ApplianceUpdatePendingValidate.md)|  | 
+ **request_body** | [**ApplianceUpdatePendingValidate**](ApplianceUpdatePendingValidate.md)|  | 
 
 ### Return type
 
@@ -312,12 +363,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

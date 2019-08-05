@@ -43,11 +43,11 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'label' => :'String',
-        :'yield_on_poll' => :'BOOLEAN',
+        :'yield_on_poll' => :'Boolean',
         :'backing' => :'VcenterVmHardwareSerialBackingInfo',
         :'state' => :'VcenterVmHardwareConnectionState',
-        :'start_connected' => :'BOOLEAN',
-        :'allow_guest_control' => :'BOOLEAN'
+        :'start_connected' => :'Boolean',
+        :'allow_guest_control' => :'Boolean'
       }
     end
 

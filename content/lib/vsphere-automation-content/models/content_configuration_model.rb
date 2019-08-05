@@ -36,7 +36,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'automatic_sync_enabled' => :'BOOLEAN',
+        :'automatic_sync_enabled' => :'Boolean',
         :'automatic_sync_start_hour' => :'Integer',
         :'automatic_sync_stop_hour' => :'Integer',
         :'maximum_concurrent_item_syncs' => :'Integer'

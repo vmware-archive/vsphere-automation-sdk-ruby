@@ -54,7 +54,7 @@ module VSphereAutomation
         :'severity' => :'ApplianceUpdateCommonInfoSeverity',
         :'update_type' => :'ApplianceUpdateCommonInfoCategory',
         :'release_date' => :'DateTime',
-        :'reboot_required' => :'BOOLEAN',
+        :'reboot_required' => :'Boolean',
         :'size' => :'Integer'
       }
     end

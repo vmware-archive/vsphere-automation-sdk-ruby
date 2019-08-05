@@ -12,11 +12,11 @@ module VSphereAutomation
   module VCenter
     class VcenterFolderType
     
-    DATACENTER = 'DATACENTER'.freeze
-    DATASTORE = 'DATASTORE'.freeze
-    HOST = 'HOST'.freeze
-    NETWORK = 'NETWORK'.freeze
-    VIRTUAL_MACHINE = 'VIRTUAL_MACHINE'.freeze
+    DATACENTER = "DATACENTER".freeze
+    DATASTORE = "DATASTORE".freeze
+    HOST = "HOST".freeze
+    NETWORK = "NETWORK".freeze
+    VIRTUAL_MACHINE = "VIRTUAL_MACHINE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -30,6 +30,7 @@ describe 'ConfigurationApi' do
 
   # unit tests for get
   # Retrieves the current configuration values.
+  # @param action ~action&#x3D;get
   # @param [Hash] opts the optional parameters
   # @return [ContentConfigurationResult]
   describe 'get test' do
@@ -40,7 +41,7 @@ describe 'ConfigurationApi' do
 
   # unit tests for update
   # Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn&#39;t guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
-  # @param content_configuration_update 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update test' do

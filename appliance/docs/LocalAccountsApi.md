@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create**
-> create(username, appliance_local_accounts_create)
+> create(username, request_body)
 
 Create a new local user account.
 
@@ -21,14 +21,21 @@ Create a new local user account.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
-appliance_local_accounts_create = VSphereAutomation::ApplianceLocalAccountsCreate.new # ApplianceLocalAccountsCreate | 
+request_body = Appliance::ApplianceLocalAccountsCreate.new # ApplianceLocalAccountsCreate | 
 
 begin
   #Create a new local user account.
-  api_instance.create(username, appliance_local_accounts_create)
+  api_instance.create(username, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalAccountsApi->create: #{e}"
 end
@@ -39,7 +46,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| User login name | 
- **appliance_local_accounts_create** | [**ApplianceLocalAccountsCreate**](ApplianceLocalAccountsCreate.md)|  | 
+ **request_body** | [**ApplianceLocalAccountsCreate**](ApplianceLocalAccountsCreate.md)|  | 
 
 ### Return type
 
@@ -47,12 +54,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -65,6 +72,13 @@ Delete a local user account.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
@@ -89,12 +103,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -107,6 +121,13 @@ Get the local user account information.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
@@ -132,12 +153,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
@@ -150,6 +171,13 @@ Get a list of the local user accounts.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 
@@ -171,17 +199,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **set**
-> set(username, appliance_local_accounts_set)
+> set(username, request_body)
 
 Set local user account properties.
 
@@ -189,14 +217,21 @@ Set local user account properties.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
-appliance_local_accounts_set = VSphereAutomation::ApplianceLocalAccountsSet.new # ApplianceLocalAccountsSet | 
+request_body = Appliance::ApplianceLocalAccountsSet.new # ApplianceLocalAccountsSet | 
 
 begin
   #Set local user account properties.
-  api_instance.set(username, appliance_local_accounts_set)
+  api_instance.set(username, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalAccountsApi->set: #{e}"
 end
@@ -207,7 +242,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| User login name | 
- **appliance_local_accounts_set** | [**ApplianceLocalAccountsSet**](ApplianceLocalAccountsSet.md)|  | 
+ **request_body** | [**ApplianceLocalAccountsSet**](ApplianceLocalAccountsSet.md)|  | 
 
 ### Return type
 
@@ -215,17 +250,17 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 
 # **update**
-> update(username, appliance_local_accounts_update)
+> update(username, request_body)
 
 Update selected fields in local user account properties.
 
@@ -233,14 +268,21 @@ Update selected fields in local user account properties.
 ```ruby
 # load the gem
 require 'vsphere-automation-appliance'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
 
 api_instance = VSphereAutomation::Appliance::LocalAccountsApi.new
 username = 'username_example' # String | User login name
-appliance_local_accounts_update = VSphereAutomation::ApplianceLocalAccountsUpdate.new # ApplianceLocalAccountsUpdate | 
+request_body = Appliance::ApplianceLocalAccountsUpdate.new # ApplianceLocalAccountsUpdate | 
 
 begin
   #Update selected fields in local user account properties.
-  api_instance.update(username, appliance_local_accounts_update)
+  api_instance.update(username, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LocalAccountsApi->update: #{e}"
 end
@@ -251,7 +293,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| User login name | 
- **appliance_local_accounts_update** | [**ApplianceLocalAccountsUpdate**](ApplianceLocalAccountsUpdate.md)|  | 
+ **request_body** | [**ApplianceLocalAccountsUpdate**](ApplianceLocalAccountsUpdate.md)|  | 
 
 ### Return type
 
@@ -259,12 +301,12 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 
 

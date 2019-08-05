@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **bytes_transferred** | **Integer** | The number of bytes of this file that have been received by the server. | 
 **status** | [**ContentLibraryItemTransferStatus**](ContentLibraryItemTransferStatus.md) |  | 
 **error_message** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | [optional] 
-**keep_in_storage** | **BOOLEAN** | Whether or not the file will be kept in storage upon update session completion. The flag is true for most files, and false for metadata files such as manifest and certificate file of update session with library item type OVF. Any file with {@link Info#keepInStorage} set to false will not show up in the list of files returned from {@link content.library.item.File#list} upon update session completion. | [optional] 
+**keep_in_storage** | **Boolean** | Whether or not the file will be kept in storage upon update session completion. The flag is true for most files, and false for metadata files such as manifest and certificate file of update session with library item type OVF. Any file with {@link Info#keepInStorage} set to false will not show up in the list of files returned from {@link content.library.item.File#list} upon update session completion. | [optional] 
 
 

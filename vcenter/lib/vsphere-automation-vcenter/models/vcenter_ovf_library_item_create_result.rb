@@ -31,7 +31,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'succeeded' => :'BOOLEAN',
+        :'succeeded' => :'Boolean',
         :'ovf_library_item_id' => :'String',
         :'error' => :'VcenterOvfLibraryItemResultInfo'
       }

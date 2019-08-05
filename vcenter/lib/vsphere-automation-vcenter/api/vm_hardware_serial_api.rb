@@ -53,14 +53,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -74,21 +74,21 @@ module VSphereAutomation
     end
     # Adds a virtual serial port to the virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-    # @param vcenter_vm_hardware_serial_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterVmHardwareSerialCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
-    def create(vm, vcenter_vm_hardware_serial_create, opts = {})
-      data, _status_code, _headers = create_with_http_info(vm, vcenter_vm_hardware_serial_create, opts)
+    def create(vm, request_body, opts = {})
+      data, _status_code, _headers = create_with_http_info(vm, request_body, opts)
       data
     end
 
     # Adds a virtual serial port to the virtual machine.
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-    # @param vcenter_vm_hardware_serial_create 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmHardwareSerialCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    def create_with_http_info(vm, vcenter_vm_hardware_serial_create, opts = {})
+    def create_with_http_info(vm, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.create ...'
       end
@@ -96,9 +96,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && vm.nil?
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareSerialApi.create"
       end
-      # verify the required parameter 'vcenter_vm_hardware_serial_create' is set
-      if @api_client.config.client_side_validation && vcenter_vm_hardware_serial_create.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_vm_hardware_serial_create' when calling VmHardwareSerialApi.create"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareSerialApi.create"
       end
       # resource path
       local_var_path = '/vcenter/vm/{vm}/hardware/serial'.sub('{' + 'vm' + '}', vm.to_s)
@@ -109,7 +109,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -117,8 +117,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_vm_hardware_serial_create)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -175,14 +175,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -231,14 +231,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -287,14 +287,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -345,14 +345,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -375,11 +375,11 @@ module VSphereAutomation
     # Updates the configuration of a virtual serial port.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
-    # @param vcenter_vm_hardware_serial_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
-    def update(vm, port, vcenter_vm_hardware_serial_update, opts = {})
-      update_with_http_info(vm, port, vcenter_vm_hardware_serial_update, opts)
+    def update(vm, port, request_body, opts = {})
+      update_with_http_info(vm, port, request_body, opts)
       nil
     end
 
@@ -387,10 +387,10 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual serial port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
-    # @param vcenter_vm_hardware_serial_update 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def update_with_http_info(vm, port, vcenter_vm_hardware_serial_update, opts = {})
+    def update_with_http_info(vm, port, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareSerialApi.update ...'
       end
@@ -402,9 +402,9 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && port.nil?
         fail ArgumentError, "Missing the required parameter 'port' when calling VmHardwareSerialApi.update"
       end
-      # verify the required parameter 'vcenter_vm_hardware_serial_update' is set
-      if @api_client.config.client_side_validation && vcenter_vm_hardware_serial_update.nil?
-        fail ArgumentError, "Missing the required parameter 'vcenter_vm_hardware_serial_update' when calling VmHardwareSerialApi.update"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareSerialApi.update"
       end
       # resource path
       local_var_path = '/vcenter/vm/{vm}/hardware/serial/{port}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
@@ -415,7 +415,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -423,8 +423,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(vcenter_vm_hardware_serial_update)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

@@ -40,7 +40,7 @@ describe 'SystemTimeTimezoneApi' do
 
   # unit tests for set
   # Set time zone.
-  # @param appliance_system_time_timezone_set 
+  # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'set test' do

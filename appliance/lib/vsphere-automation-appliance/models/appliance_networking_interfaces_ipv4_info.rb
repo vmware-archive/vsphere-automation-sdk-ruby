@@ -39,7 +39,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'configurable' => :'BOOLEAN',
+        :'configurable' => :'Boolean',
         :'mode' => :'ApplianceNetworkingInterfacesIpv4Mode',
         :'address' => :'String',
         :'prefix' => :'Integer',

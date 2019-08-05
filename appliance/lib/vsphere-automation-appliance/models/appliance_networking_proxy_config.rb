@@ -44,7 +44,7 @@ module VSphereAutomation
         :'port' => :'Integer',
         :'username' => :'String',
         :'password' => :'String',
-        :'enabled' => :'BOOLEAN'
+        :'enabled' => :'Boolean'
       }
     end
 

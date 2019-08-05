@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterOvfDiskProvisioningType
     
-    THIN = 'thin'.freeze
-    THICK = 'thick'.freeze
-    EAGER_ZEROED_THICK = 'eagerZeroedThick'.freeze
+    THIN = "thin".freeze
+    THICK = "thick".freeze
+    EAGER_ZEROED_THICK = "eagerZeroedThick".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

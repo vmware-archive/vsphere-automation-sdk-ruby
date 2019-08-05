@@ -12,12 +12,12 @@ module VSphereAutomation
   module VCenter
     class VcenterVmHardwareEthernetEmulationType
     
-    E1000 = 'E1000'.freeze
-    E1000_E = 'E1000E'.freeze
-    PCNET32 = 'PCNET32'.freeze
-    VMXNET = 'VMXNET'.freeze
-    VMXNET2 = 'VMXNET2'.freeze
-    VMXNET3 = 'VMXNET3'.freeze
+    E1000 = "E1000".freeze
+    E1000_E = "E1000E".freeze
+    PCNET32 = "PCNET32".freeze
+    VMXNET = "VMXNET".freeze
+    VMXNET2 = "VMXNET2".freeze
+    VMXNET3 = "VMXNET3".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

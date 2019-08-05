@@ -12,9 +12,9 @@ module VSphereAutomation
   module VCenter
     class VcenterHostPowerState
     
-    POWERED_ON = 'POWERED_ON'.freeze
-    POWERED_OFF = 'POWERED_OFF'.freeze
-    STANDBY = 'STANDBY'.freeze
+    POWERED_ON = "POWERED_ON".freeze
+    POWERED_OFF = "POWERED_OFF".freeze
+    STANDBY = "STANDBY".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

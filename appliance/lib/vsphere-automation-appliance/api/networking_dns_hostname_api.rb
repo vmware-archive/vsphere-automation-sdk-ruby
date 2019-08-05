@@ -41,14 +41,14 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -65,26 +65,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Set the Fully Qualified Domain Name.
-    # @param appliance_networking_dns_hostname_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def set(appliance_networking_dns_hostname_set, opts = {})
-      set_with_http_info(appliance_networking_dns_hostname_set, opts)
+    def set(request_body, opts = {})
+      set_with_http_info(request_body, opts)
       nil
     end
 
     # Set the Fully Qualified Domain Name.
     # @api private
-    # @param appliance_networking_dns_hostname_set 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def set_with_http_info(appliance_networking_dns_hostname_set, opts = {})
+    def set_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsHostnameApi.set ...'
       end
-      # verify the required parameter 'appliance_networking_dns_hostname_set' is set
-      if @api_client.config.client_side_validation && appliance_networking_dns_hostname_set.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_networking_dns_hostname_set' when calling NetworkingDnsHostnameApi.set"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsHostnameApi.set"
       end
       # resource path
       local_var_path = '/appliance/networking/dns/hostname'
@@ -95,7 +95,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -103,8 +103,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_networking_dns_hostname_set)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -117,26 +117,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Test the Fully Qualified Domain Name.
-    # @param appliance_networking_dns_hostname_test 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ApplianceNetworkingDnsHostnameTestResult|VapiStdErrorsErrorError|]
-    def test(appliance_networking_dns_hostname_test, opts = {})
-      data, _status_code, _headers = test_with_http_info(appliance_networking_dns_hostname_test, opts)
+    def test(request_body, opts = {})
+      data, _status_code, _headers = test_with_http_info(request_body, opts)
       data
     end
 
     # Test the Fully Qualified Domain Name.
     # @api private
-    # @param appliance_networking_dns_hostname_test 
+    # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingDnsHostnameTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    def test_with_http_info(appliance_networking_dns_hostname_test, opts = {})
+    def test_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsHostnameApi.test ...'
       end
-      # verify the required parameter 'appliance_networking_dns_hostname_test' is set
-      if @api_client.config.client_side_validation && appliance_networking_dns_hostname_test.nil?
-        fail ArgumentError, "Missing the required parameter 'appliance_networking_dns_hostname_test' when calling NetworkingDnsHostnameApi.test"
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsHostnameApi.test"
       end
       # resource path
       local_var_path = '/appliance/networking/dns/hostname/test'
@@ -147,7 +147,7 @@ module VSphereAutomation
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -155,8 +155,8 @@ module VSphereAutomation
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(appliance_networking_dns_hostname_test)
-      auth_names = []
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

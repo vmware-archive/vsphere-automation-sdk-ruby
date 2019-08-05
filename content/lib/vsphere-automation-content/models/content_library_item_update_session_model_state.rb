@@ -12,10 +12,10 @@ module VSphereAutomation
   module Content
     class ContentLibraryItemUpdateSessionModelState
     
-    ACTIVE = 'ACTIVE'.freeze
-    DONE = 'DONE'.freeze
-    ERROR = 'ERROR'.freeze
-    CANCELED = 'CANCELED'.freeze
+    ACTIVE = "ACTIVE".freeze
+    DONE = "DONE".freeze
+    ERROR = "ERROR".freeze
+    CANCELED = "CANCELED".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

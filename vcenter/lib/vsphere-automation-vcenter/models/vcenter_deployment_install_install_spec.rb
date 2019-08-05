@@ -36,7 +36,7 @@ module VSphereAutomation
         :'vcsa_embedded' => :'VcenterDeploymentInstallVcsaEmbeddedSpec',
         :'psc' => :'VcenterDeploymentInstallPscSpec',
         :'vcsa_external' => :'VcenterDeploymentRemotePscSpec',
-        :'auto_answer' => :'BOOLEAN'
+        :'auto_answer' => :'Boolean'
       }
     end
 

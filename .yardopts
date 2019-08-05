@@ -1,4 +1,5 @@
 --no-private
 --output-dir docs
 --hide-api private
+--template-path /Users/jrg/code/jrgarcia/yard_clarity/tempaltes
 {appliance,cis,content,vapi,vcenter}/**/*.rb
