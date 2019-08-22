@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**get**](NetworkingProxyApi.md#get) | **GET** /appliance/networking/proxy/{protocol} | Gets the proxy configuration for a specific protocol.
 [**list**](NetworkingProxyApi.md#list) | **GET** /appliance/networking/proxy | Gets proxy configuration for all configured protocols.
 [**set**](NetworkingProxyApi.md#set) | **PUT** /appliance/networking/proxy/{protocol} | Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
-[**test**](NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol} | Tests a proxy configuration by testing the connection to the proxy server and test host.
+[**test**](NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol}?action&#x3D;test | Tests a proxy configuration by testing the connection to the proxy server and test host.
 
 
 # **delete**
@@ -208,7 +208,7 @@ nil (empty response body)
 
 
 # **test**
-> ApplianceNetworkingProxyTestResult test(protocol, action, request_body)
+> ApplianceNetworkingProxyTestResult test(protocol, request_body)
 
 Tests a proxy configuration by testing the connection to the proxy server and test host.
 
@@ -226,12 +226,11 @@ end
 
 api_instance = VSphereAutomation::Appliance::NetworkingProxyApi.new
 protocol = 'protocol_example' # String | Protocol whose proxy is to be tested.
-action = 'action_example' # String | action=test
 request_body = Appliance::ApplianceNetworkingProxyTest.new # ApplianceNetworkingProxyTest | 
 
 begin
   #Tests a proxy configuration by testing the connection to the proxy server and test host.
-  result = api_instance.test(protocol, action, request_body)
+  result = api_instance.test(protocol, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingProxyApi->test: #{e}"
@@ -243,7 +242,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **protocol** | **String**| Protocol whose proxy is to be tested. | 
- **action** | **String**| action&#x3D;test | 
  **request_body** | [**ApplianceNetworkingProxyTest**](ApplianceNetworkingProxyTest.md)|  | 
 
 ### Return type

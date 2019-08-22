@@ -132,23 +132,21 @@ module VSphereAutomation
     end
     # Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
     # @param tag_id The identifier of the input tag.
-    # @param action ~action&#x3D;attach-tag-to-multiple-objects
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [CisTaggingTagAssociationAttachTagToMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def attach_tag_to_multiple_objects(tag_id, action, request_body, opts = {})
-      data, _status_code, _headers = attach_tag_to_multiple_objects_with_http_info(tag_id, action, request_body, opts)
+    def attach_tag_to_multiple_objects(tag_id, request_body, opts = {})
+      data, _status_code, _headers = attach_tag_to_multiple_objects_with_http_info(tag_id, request_body, opts)
       data
     end
 
     # Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
     # @api private
     # @param tag_id The identifier of the input tag.
-    # @param action ~action&#x3D;attach-tag-to-multiple-objects
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationAttachTagToMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def attach_tag_to_multiple_objects_with_http_info(tag_id, action, request_body, opts = {})
+    def attach_tag_to_multiple_objects_with_http_info(tag_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.attach_tag_to_multiple_objects ...'
       end
@@ -156,24 +154,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && tag_id.nil?
         fail ArgumentError, "Missing the required parameter 'tag_id' when calling TaggingTagAssociationApi.attach_tag_to_multiple_objects"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling TaggingTagAssociationApi.attach_tag_to_multiple_objects"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['attach-tag-to-multiple-objects'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of attach-tag-to-multiple-objects"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.attach_tag_to_multiple_objects"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/tag-association/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach-tag-to-multiple-objects'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
@@ -604,43 +593,32 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
-    # @param action ~action&#x3D;list-attached-tags-on-objects
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [CisTaggingTagAssociationListAttachedTagsOnObjectsResult|]
-    def list_attached_tags_on_objects(action, request_body, opts = {})
-      data, _status_code, _headers = list_attached_tags_on_objects_with_http_info(action, request_body, opts)
+    def list_attached_tags_on_objects(request_body, opts = {})
+      data, _status_code, _headers = list_attached_tags_on_objects_with_http_info(request_body, opts)
       data
     end
 
     # Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
     # @api private
-    # @param action ~action&#x3D;list-attached-tags-on-objects
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagAssociationListAttachedTagsOnObjectsResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def list_attached_tags_on_objects_with_http_info(action, request_body, opts = {})
+    def list_attached_tags_on_objects_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_tags_on_objects ...'
-      end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling TaggingTagAssociationApi.list_attached_tags_on_objects"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['list-attached-tags-on-objects'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of list-attached-tags-on-objects"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.list_attached_tags_on_objects"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/tag-association'
+      local_var_path = '/com/vmware/cis/tagging/tag-association?~action=list-attached-tags-on-objects'
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

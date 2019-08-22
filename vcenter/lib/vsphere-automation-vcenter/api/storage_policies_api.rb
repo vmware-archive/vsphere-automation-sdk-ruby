@@ -18,23 +18,21 @@ module VSphereAutomation
     end
     # Returns datastore compatibility summary about a specific storage policy.
     # @param policy The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
-    # @param action action&#x3D;check-compatibility
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterStoragePoliciesCheckCompatibilityResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
-    def check_compatibility(policy, action, request_body, opts = {})
-      data, _status_code, _headers = check_compatibility_with_http_info(policy, action, request_body, opts)
+    def check_compatibility(policy, request_body, opts = {})
+      data, _status_code, _headers = check_compatibility_with_http_info(policy, request_body, opts)
       data
     end
 
     # Returns datastore compatibility summary about a specific storage policy.
     # @api private
     # @param policy The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
-    # @param action action&#x3D;check-compatibility
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterStoragePoliciesCheckCompatibilityResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    def check_compatibility_with_http_info(policy, action, request_body, opts = {})
+    def check_compatibility_with_http_info(policy, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesApi.check_compatibility ...'
       end
@@ -42,24 +40,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && policy.nil?
         fail ArgumentError, "Missing the required parameter 'policy' when calling StoragePoliciesApi.check_compatibility"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling StoragePoliciesApi.check_compatibility"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['check-compatibility'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of check-compatibility"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling StoragePoliciesApi.check_compatibility"
       end
       # resource path
-      local_var_path = '/vcenter/storage/policies/{policy}'.sub('{' + 'policy' + '}', policy.to_s)
+      local_var_path = '/vcenter/storage/policies/{policy}?action=check-compatibility'.sub('{' + 'policy' + '}', policy.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

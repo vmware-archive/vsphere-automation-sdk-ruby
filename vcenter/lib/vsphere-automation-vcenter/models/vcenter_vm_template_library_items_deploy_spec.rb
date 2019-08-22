@@ -55,7 +55,7 @@ module VSphereAutomation
         :'description' => :'String',
         :'vm_home_storage' => :'VcenterVmTemplateLibraryItemsDeploySpecVmHomeStorage',
         :'disk_storage' => :'VcenterVmTemplateLibraryItemsDeploySpecDiskStorage',
-        :'disk_storage_overrides' => :'Array<Object>',
+        :'disk_storage_overrides' => :'Array<VcenterVmTemplateLibraryItemsDeploySpecDiskStorageOverrides>',
         :'placement' => :'VcenterVmTemplateLibraryItemsDeployPlacementSpec',
         :'powered_on' => :'Boolean',
         :'guest_customization' => :'VcenterVmTemplateLibraryItemsGuestCustomizationSpec',

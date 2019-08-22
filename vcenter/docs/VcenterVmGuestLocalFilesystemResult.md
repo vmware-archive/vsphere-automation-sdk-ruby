@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Array&lt;Object&gt;** |  | 
+**value** | [**Array&lt;VcenterVmGuestLocalFilesystemResultValue&gt;**](VcenterVmGuestLocalFilesystemResultValue.md) |  | 
 
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_data** | **Array&lt;Object&gt;** | map of user provided data with IDs | 
+**user_data** | [**Array&lt;ApplianceUpdatePendingInstallUserData&gt;**](ApplianceUpdatePendingInstallUserData.md) | map of user provided data with IDs | 
 
 

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **progress** | [**CisTaskProgress**](CisTaskProgress.md) |  | [optional] 
 **subtask_order** | **Array&lt;String&gt;** | List of tasks that make up this appliance task in the order they are being run. | 
-**subtasks** | **Array&lt;Object&gt;** | Information about the subtasks that this appliance task consists of. | 
+**subtasks** | [**Array&lt;ApplianceTaskInfoSubtasks&gt;**](ApplianceTaskInfoSubtasks.md) | Information about the subtasks that this appliance task consists of. | 
 **description** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | 
 **service** | **String** | Identifier of the service containing the operation. | 
 **operation** | **String** | Identifier of the operation associated with the task. | 

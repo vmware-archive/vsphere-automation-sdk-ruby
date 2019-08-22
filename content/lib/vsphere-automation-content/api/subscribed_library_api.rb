@@ -331,21 +331,19 @@ module VSphereAutomation
     end
     # Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
     # @param library_id Identifier of the subscribed library to synchronize.
-    # @param action ~action&#x3D;sync
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|nil]
-    def sync(library_id, action, opts = {})
-      sync_with_http_info(library_id, action, opts)
+    def sync(library_id, opts = {})
+      sync_with_http_info(library_id, opts)
       nil
     end
 
     # Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
     # @api private
     # @param library_id Identifier of the subscribed library to synchronize.
-    # @param action ~action&#x3D;sync
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def sync_with_http_info(library_id, action, opts = {})
+    def sync_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.sync ...'
       end
@@ -353,20 +351,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_id' when calling SubscribedLibraryApi.sync"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling SubscribedLibraryApi.sync"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['sync'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of sync"
-      end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}?~action=sync'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

@@ -4,13 +4,13 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fingerprint**](MetadataCliNamespaceApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/cli/namespace | Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
+[**fingerprint**](MetadataCliNamespaceApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/cli/namespace?~action&#x3D;fingerprint | Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
 [**get**](MetadataCliNamespaceApi.md#get) | **POST** /com/vmware/vapi/metadata/cli/namespace?~action&#x3D;get | Retreives information about a namespace including information about children of that namespace.
 [**list**](MetadataCliNamespaceApi.md#list) | **GET** /com/vmware/vapi/metadata/cli/namespace | Returns the identifiers of all namespaces registered with the infrastructure.
 
 
 # **fingerprint**
-> VapiMetadataCliNamespaceFingerprintResult fingerprint(action)
+> VapiMetadataCliNamespaceFingerprintResult fingerprint
 
 Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
 
@@ -27,11 +27,10 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VAPI::MetadataCliNamespaceApi.new
-action = 'action_example' # String | ~action=fingerprint
 
 begin
   #Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
-  result = api_instance.fingerprint(action)
+  result = api_instance.fingerprint
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataCliNamespaceApi->fingerprint: #{e}"
@@ -39,10 +38,7 @@ end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **String**| ~action&#x3D;fingerprint | 
+This endpoint does not need any parameter.
 
 ### Return type
 

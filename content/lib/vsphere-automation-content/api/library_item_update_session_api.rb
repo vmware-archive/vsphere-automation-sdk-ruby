@@ -68,21 +68,19 @@ module VSphereAutomation
     end
     # Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.
     # @param update_session_id Identifier of the update session that should be completed.
-    # @param action ~action&#x3D;complete
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def complete(update_session_id, action, opts = {})
-      complete_with_http_info(update_session_id, action, opts)
+    def complete(update_session_id, opts = {})
+      complete_with_http_info(update_session_id, opts)
       nil
     end
 
     # Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. &lt;p&gt; Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. &lt;p&gt; Modifications are not visible to other clients unless the session is completed and all necessary files have been received.
     # @api private
     # @param update_session_id Identifier of the update session that should be completed.
-    # @param action ~action&#x3D;complete
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def complete_with_http_info(update_session_id, action, opts = {})
+    def complete_with_http_info(update_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.complete ...'
       end
@@ -90,20 +88,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && update_session_id.nil?
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.complete"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryItemUpdateSessionApi.complete"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['complete'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of complete"
-      end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=complete'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

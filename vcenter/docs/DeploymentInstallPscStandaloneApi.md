@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](DeploymentInstallPscStandaloneApi.md#check) | **POST** /vcenter/deployment/install/psc/standalone | Checks that the information to configure a non-replicated PSC satisfies the requirements.
+[**check**](DeploymentInstallPscStandaloneApi.md#check) | **POST** /vcenter/deployment/install/psc/standalone?action&#x3D;check | Checks that the information to configure a non-replicated PSC satisfies the requirements.
 
 
 # **check**
-> VcenterDeploymentInstallPscStandaloneCheckResult check(action, request_body)
+> VcenterDeploymentInstallPscStandaloneCheckResult check(request_body)
 
 Checks that the information to configure a non-replicated PSC satisfies the requirements.
 
@@ -25,12 +25,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallPscStandaloneApi.new
-action = 'action_example' # String | action=check
 request_body = VCenter::VcenterDeploymentInstallPscStandaloneCheck.new # VcenterDeploymentInstallPscStandaloneCheck | 
 
 begin
   #Checks that the information to configure a non-replicated PSC satisfies the requirements.
-  result = api_instance.check(action, request_body)
+  result = api_instance.check(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallPscStandaloneApi->check: #{e}"
@@ -41,7 +40,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;check | 
  **request_body** | [**VcenterDeploymentInstallPscStandaloneCheck**](VcenterDeploymentInstallPscStandaloneCheck.md)|  | 
 
 ### Return type

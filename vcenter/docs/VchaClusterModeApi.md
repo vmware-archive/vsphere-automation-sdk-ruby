@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](VchaClusterModeApi.md#get) | **GET** /vcenter/vcha/cluster/mode | Retrieves the current mode of a VCHA cluster.
-[**settask**](VchaClusterModeApi.md#settask) | **PUT** /vcenter/vcha/cluster/mode | Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -&gt; disabled - Allowed only in healthy and degraded states.  enabled -&gt; maintenance - Allowed only in healthy state.  disabled -&gt; enabled - Allowed only in healthy state.  maintenance -&gt; enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -&gt; disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
+[**settask**](VchaClusterModeApi.md#settask) | **PUT** /vcenter/vcha/cluster/mode?vmw-task&#x3D;true | Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -&gt; disabled - Allowed only in healthy and degraded states.  enabled -&gt; maintenance - Allowed only in healthy state.  disabled -&gt; enabled - Allowed only in healthy state.  maintenance -&gt; enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -&gt; disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 
 
 # **get**
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 
 # **settask**
-> VcenterVchaClusterModeSetTaskResult settask(vmw_task, request_body)
+> VcenterVchaClusterModeSetTaskResult settask(request_body)
 
 Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 
@@ -72,12 +72,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterModeApi.new
-vmw_task = 'vmw_task_example' # String | vmw-task=true
 request_body = VCenter::VcenterVchaClusterModeSetTask.new # VcenterVchaClusterModeSetTask | 
 
 begin
   #Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
-  result = api_instance.settask(vmw_task, request_body)
+  result = api_instance.settask(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterModeApi->settask: #{e}"
@@ -88,7 +87,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vmw_task** | **String**| vmw-task&#x3D;true | 
  **request_body** | [**VcenterVchaClusterModeSetTask**](VcenterVchaClusterModeSetTask.md)|  | 
 
 ### Return type

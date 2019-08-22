@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](NetworkingApi.md#get) | **GET** /appliance/networking | Get Networking information for all configured interfaces.
-[**reset**](NetworkingApi.md#reset) | **POST** /appliance/networking | Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
+[**reset**](NetworkingApi.md#reset) | **POST** /appliance/networking?action&#x3D;reset | Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
 [**update**](NetworkingApi.md#update) | **PATCH** /appliance/networking | Enable or Disable ipv6 on all interfaces
 
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 
 # **reset**
-> reset(action)
+> reset
 
 Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
 
@@ -73,21 +73,17 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::Appliance::NetworkingApi.new
-action = 'action_example' # String | action=reset
 
 begin
   #Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
-  api_instance.reset(action)
+  api_instance.reset
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling NetworkingApi->reset: #{e}"
 end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;reset | 
+This endpoint does not need any parameter.
 
 ### Return type
 

@@ -24,7 +24,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'user_data' => :'Array<Object>'
+        :'user_data' => :'Array<ApplianceUpdatePendingInstallUserData>'
       }
     end
 

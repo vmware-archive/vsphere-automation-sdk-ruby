@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get**](TaggingCategoryApi.md#get) | **GET** /com/vmware/cis/tagging/category/id:{category_id} | Fetches the category information for the given category identifier. In order to view the category information, you need the read privilege on the category.
 [**list**](TaggingCategoryApi.md#list) | **GET** /com/vmware/cis/tagging/category | Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
 [**list_used_categories**](TaggingCategoryApi.md#list_used_categories) | **POST** /com/vmware/cis/tagging/category?~action&#x3D;list-used-categories | Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
-[**remove_from_used_by**](TaggingCategoryApi.md#remove_from_used_by) | **POST** /com/vmware/cis/tagging/category/id:{category_id} | Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
+[**remove_from_used_by**](TaggingCategoryApi.md#remove_from_used_by) | **POST** /com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;remove-from-used-by | Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
 [**revoke_propagating_permissions**](TaggingCategoryApi.md#revoke_propagating_permissions) | **POST** /com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;revoke-propagating-permissions | Revokes all propagating permissions on the given category. You should then attach a direct permission with tagging privileges on the given category. To invoke this {@term operation}, you need category related privileges (direct or propagating) on the concerned category.
 [**update**](TaggingCategoryApi.md#update) | **PATCH** /com/vmware/cis/tagging/category/id:{category_id} | Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 
 # **remove_from_used_by**
-> remove_from_used_by(category_id, action, request_body)
+> remove_from_used_by(category_id, request_body)
 
 Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
 
@@ -330,12 +330,11 @@ end
 
 api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new
 category_id = 'category_id_example' # String | The identifier of the input category.
-action = 'action_example' # String | ~action=remove-from-used-by
 request_body = CIS::CisTaggingCategoryRemoveFromUsedBy.new # CisTaggingCategoryRemoveFromUsedBy | 
 
 begin
   #Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
-  api_instance.remove_from_used_by(category_id, action, request_body)
+  api_instance.remove_from_used_by(category_id, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TaggingCategoryApi->remove_from_used_by: #{e}"
 end
@@ -346,7 +345,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **String**| The identifier of the input category. | 
- **action** | **String**| ~action&#x3D;remove-from-used-by | 
  **request_body** | [**CisTaggingCategoryRemoveFromUsedBy**](CisTaggingCategoryRemoveFromUsedBy.md)|  | 
 
 ### Return type

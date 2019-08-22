@@ -18,21 +18,19 @@ module VSphereAutomation
     end
     # Sends a request to cancel the task associated with the provided {@param.name activationId}.
     # @param activation_id the {@param.name activationId} associated with a vCenter Server task to be canceled.
-    # @param action ~action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
-    def cancel(activation_id, action, opts = {})
-      cancel_with_http_info(activation_id, action, opts)
+    def cancel(activation_id, opts = {})
+      cancel_with_http_info(activation_id, opts)
       nil
     end
 
     # Sends a request to cancel the task associated with the provided {@param.name activationId}.
     # @api private
     # @param activation_id the {@param.name activationId} associated with a vCenter Server task to be canceled.
-    # @param action ~action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def cancel_with_http_info(activation_id, action, opts = {})
+    def cancel_with_http_info(activation_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VcenterActivationApi.cancel ...'
       end
@@ -40,20 +38,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && activation_id.nil?
         fail ArgumentError, "Missing the required parameter 'activation_id' when calling VcenterActivationApi.cancel"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling VcenterActivationApi.cancel"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['cancel'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of cancel"
-      end
       # resource path
-      local_var_path = '/com/vmware/vapi/vcenter/activation/id:{activation_id}'.sub('{' + 'activation_id' + '}', activation_id.to_s)
+      local_var_path = '/com/vmware/vapi/vcenter/activation/id:{activation_id}?~action=cancel'.sub('{' + 'activation_id' + '}', activation_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**answer**](DeploymentQuestionApi.md#answer) | **POST** /vcenter/deployment/question | Supply answer to the raised question.
+[**answer**](DeploymentQuestionApi.md#answer) | **POST** /vcenter/deployment/question?action&#x3D;answer | Supply answer to the raised question.
 [**get**](DeploymentQuestionApi.md#get) | **GET** /vcenter/deployment/question | Get the question that was raised during the configuration.
 
 
 # **answer**
-> answer(action, request_body)
+> answer(request_body)
 
 Supply answer to the raised question.
 
@@ -26,12 +26,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::DeploymentQuestionApi.new
-action = 'action_example' # String | action=answer
 request_body = VCenter::VcenterDeploymentQuestionAnswer.new # VcenterDeploymentQuestionAnswer | 
 
 begin
   #Supply answer to the raised question.
-  api_instance.answer(action, request_body)
+  api_instance.answer(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentQuestionApi->answer: #{e}"
 end
@@ -41,7 +40,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;answer | 
  **request_body** | [**VcenterDeploymentQuestionAnswer**](VcenterDeploymentQuestionAnswer.md)|  | 
 
 ### Return type

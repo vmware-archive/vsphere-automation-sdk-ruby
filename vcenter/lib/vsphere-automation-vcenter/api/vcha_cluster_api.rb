@@ -74,43 +74,32 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
-    # @param action action&#x3D;failover&amp;vmw-task
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterVchaClusterFailoverTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
-    def failovertask(action, request_body, opts = {})
-      data, _status_code, _headers = failovertask_with_http_info(action, request_body, opts)
+    def failovertask(request_body, opts = {})
+      data, _status_code, _headers = failovertask_with_http_info(request_body, opts)
       data
     end
 
     # Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
     # @api private
-    # @param action action&#x3D;failover&amp;vmw-task
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterFailoverTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def failovertask_with_http_info(action, request_body, opts = {})
+    def failovertask_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterApi.failovertask ...'
-      end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling VchaClusterApi.failovertask"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['failover&vmw-task'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of failover&vmw-task"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterApi.failovertask"
       end
       # resource path
-      local_var_path = '/vcenter/vcha/cluster'
+      local_var_path = '/vcenter/vcha/cluster?action=failover&vmw-task=true'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

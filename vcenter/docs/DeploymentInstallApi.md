@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](DeploymentInstallApi.md#cancel) | **POST** /vcenter/deployment/install | Cancel the appliance installation that is in progress.
+[**cancel**](DeploymentInstallApi.md#cancel) | **POST** /vcenter/deployment/install?action&#x3D;cancel | Cancel the appliance installation that is in progress.
 [**check**](DeploymentInstallApi.md#check) | **POST** /vcenter/deployment/install?action&#x3D;check | Run sanity checks using the InstallSpec parameters passed.
 [**get**](DeploymentInstallApi.md#get) | **GET** /vcenter/deployment/install | Get the parameters used to configure the ongoing appliance installation.
 [**start**](DeploymentInstallApi.md#start) | **POST** /vcenter/deployment/install?action&#x3D;start | Start the appliance installation.
 
 
 # **cancel**
-> cancel(action)
+> cancel
 
 Cancel the appliance installation that is in progress.
 
@@ -28,21 +28,17 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallApi.new
-action = 'action_example' # String | action=cancel
 
 begin
   #Cancel the appliance installation that is in progress.
-  api_instance.cancel(action)
+  api_instance.cancel
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallApi->cancel: #{e}"
 end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;cancel | 
+This endpoint does not need any parameter.
 
 ### Return type
 

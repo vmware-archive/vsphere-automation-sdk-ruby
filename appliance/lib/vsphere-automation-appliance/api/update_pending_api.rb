@@ -198,21 +198,19 @@ module VSphereAutomation
     end
     # Runs update precheck
     # @param version Update version
-    # @param action action&#x3D;precheck
     # @param [Hash] opts the optional parameters
     # @return [ApplianceUpdatePendingPrecheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def precheck(version, action, opts = {})
-      data, _status_code, _headers = precheck_with_http_info(version, action, opts)
+    def precheck(version, opts = {})
+      data, _status_code, _headers = precheck_with_http_info(version, opts)
       data
     end
 
     # Runs update precheck
     # @api private
     # @param version Update version
-    # @param action action&#x3D;precheck
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceUpdatePendingPrecheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def precheck_with_http_info(version, action, opts = {})
+    def precheck_with_http_info(version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.precheck ...'
       end
@@ -220,20 +218,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && version.nil?
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.precheck"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling UpdatePendingApi.precheck"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['precheck'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of precheck"
-      end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/appliance/update/pending/{version}?action=precheck'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

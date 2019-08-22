@@ -17,37 +17,26 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
-    # @param action ~action&#x3D;fingerprint
     # @param [Hash] opts the optional parameters
     # @return [VapiMetadataCliNamespaceFingerprintResult|]
-    def fingerprint(action, opts = {})
-      data, _status_code, _headers = fingerprint_with_http_info(action, opts)
+    def fingerprint(opts = {})
+      data, _status_code, _headers = fingerprint_with_http_info(opts)
       data
     end
 
     # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
     # @api private
-    # @param action ~action&#x3D;fingerprint
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataCliNamespaceFingerprintResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def fingerprint_with_http_info(action, opts = {})
+    def fingerprint_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.fingerprint ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling MetadataCliNamespaceApi.fingerprint"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['fingerprint'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of fingerprint"
-      end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/cli/namespace'
+      local_var_path = '/com/vmware/vapi/metadata/cli/namespace?~action=fingerprint'
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

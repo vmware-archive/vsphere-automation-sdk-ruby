@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**list**](SystemStorageApi.md#list) | **GET** /appliance/system/storage | Get disk to partition mapping.
 [**resize**](SystemStorageApi.md#resize) | **POST** /appliance/system/storage/resize | Resize all partitions to 100 percent of disk size.
-[**resize_ex**](SystemStorageApi.md#resize_ex) | **POST** /appliance/system/storage | Resize all partitions to 100 percent of disk size.
+[**resize_ex**](SystemStorageApi.md#resize_ex) | **POST** /appliance/system/storage?action&#x3D;resize-ex | Resize all partitions to 100 percent of disk size.
 
 
 # **list**
@@ -101,7 +101,7 @@ nil (empty response body)
 
 
 # **resize_ex**
-> ApplianceSystemStorageResizeExResult resize_ex(action)
+> ApplianceSystemStorageResizeExResult resize_ex
 
 Resize all partitions to 100 percent of disk size.
 
@@ -118,11 +118,10 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::Appliance::SystemStorageApi.new
-action = 'action_example' # String | action=resize-ex
 
 begin
   #Resize all partitions to 100 percent of disk size.
-  result = api_instance.resize_ex(action)
+  result = api_instance.resize_ex
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SystemStorageApi->resize_ex: #{e}"
@@ -130,10 +129,7 @@ end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;resize-ex | 
+This endpoint does not need any parameter.
 
 ### Return type
 

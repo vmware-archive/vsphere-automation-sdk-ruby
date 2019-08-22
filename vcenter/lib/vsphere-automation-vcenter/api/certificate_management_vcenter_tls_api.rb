@@ -66,39 +66,28 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Renews the TLS certificate for the given duration period.
-    # @param action action&#x3D;renew
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterCertificateManagementVcenterTlsRenew] :request_body 
     # @return [|VapiStdErrorsErrorError|nil]
-    def renew(action, opts = {})
-      renew_with_http_info(action, opts)
+    def renew(opts = {})
+      renew_with_http_info(opts)
       nil
     end
 
     # Renews the TLS certificate for the given duration period.
     # @api private
-    # @param action action&#x3D;renew
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterCertificateManagementVcenterTlsRenew] :request_body 
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def renew_with_http_info(action, opts = {})
+    def renew_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CertificateManagementVcenterTlsApi.renew ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling CertificateManagementVcenterTlsApi.renew"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['renew'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of renew"
-      end
       # resource path
-      local_var_path = '/vcenter/certificate-management/vcenter/tls'
+      local_var_path = '/vcenter/certificate-management/vcenter/tls?action=renew'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

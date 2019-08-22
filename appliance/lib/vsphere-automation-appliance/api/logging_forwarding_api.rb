@@ -116,39 +116,28 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
-    # @param action action&#x3D;test
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceLoggingForwardingTest] :request_body 
     # @return [ApplianceLoggingForwardingTestResult|]
-    def test(action, opts = {})
-      data, _status_code, _headers = test_with_http_info(action, opts)
+    def test(opts = {})
+      data, _status_code, _headers = test_with_http_info(opts)
       data
     end
 
     # Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \&quot;This is a diagnostic log test message from vCenter Server.\&quot;
     # @api private
-    # @param action action&#x3D;test
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceLoggingForwardingTest] :request_body 
     # @return [Array<(ApplianceLoggingForwardingTestResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def test_with_http_info(action, opts = {})
+    def test_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoggingForwardingApi.test ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LoggingForwardingApi.test"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['test'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of test"
-      end
       # resource path
-      local_var_path = '/appliance/logging/forwarding'
+      local_var_path = '/appliance/logging/forwarding?action=test'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

@@ -28,7 +28,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'vm_home' => :'VcenterVmStoragePolicyVmHomePolicySpec',
-        :'disks' => :'Array<Object>'
+        :'disks' => :'Array<VcenterVmStoragePolicyUpdateSpecDisks>'
       }
     end
 

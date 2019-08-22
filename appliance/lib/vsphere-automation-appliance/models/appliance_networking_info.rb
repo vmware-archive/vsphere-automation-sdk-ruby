@@ -28,7 +28,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'dns' => :'ApplianceNetworkingDNSInfo',
-        :'interfaces' => :'Array<Object>'
+        :'interfaces' => :'Array<ApplianceNetworkingInfoInterfaces>'
       }
     end
 

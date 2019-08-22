@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](LibraryItemDownloadsessionFileApi.md#get) | **POST** /com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action&#x3D;get | Retrieves file download information for a specific file.
 [**list**](LibraryItemDownloadsessionFileApi.md#list) | **GET** /com/vmware/content/library/item/downloadsession/file | Lists the information of all the files in the library item associated with the download session.
-[**prepare**](LibraryItemDownloadsessionFileApi.md#prepare) | **POST** /com/vmware/content/library/item/downloadsession/file/id:{download_session_id} | Requests a file to be prepared for download.
+[**prepare**](LibraryItemDownloadsessionFileApi.md#prepare) | **POST** /com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action&#x3D;prepare | Requests a file to be prepared for download.
 
 
 # **get**
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 
 # **prepare**
-> ContentLibraryItemDownloadsessionFilePrepareResult prepare(download_session_id, action, request_body)
+> ContentLibraryItemDownloadsessionFilePrepareResult prepare(download_session_id, request_body)
 
 Requests a file to be prepared for download.
 
@@ -130,12 +130,11 @@ end
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadsessionFileApi.new
 download_session_id = 'download_session_id_example' # String | Identifier of the download session.
-action = 'action_example' # String | ~action=prepare
 request_body = Content::ContentLibraryItemDownloadsessionFilePrepare.new # ContentLibraryItemDownloadsessionFilePrepare | 
 
 begin
   #Requests a file to be prepared for download.
-  result = api_instance.prepare(download_session_id, action, request_body)
+  result = api_instance.prepare(download_session_id, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadsessionFileApi->prepare: #{e}"
@@ -147,7 +146,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **download_session_id** | **String**| Identifier of the download session. | 
- **action** | **String**| ~action&#x3D;prepare | 
  **request_body** | [**ContentLibraryItemDownloadsessionFilePrepare**](ContentLibraryItemDownloadsessionFilePrepare.md)|  | 
 
 ### Return type

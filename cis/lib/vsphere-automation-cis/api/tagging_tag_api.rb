@@ -18,23 +18,21 @@ module VSphereAutomation
     end
     # Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.
     # @param tag_id The identifier of the input tag.
-    # @param action ~action&#x3D;add-to-used-by
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def add_to_used_by(tag_id, action, request_body, opts = {})
-      add_to_used_by_with_http_info(tag_id, action, request_body, opts)
+    def add_to_used_by(tag_id, request_body, opts = {})
+      add_to_used_by_with_http_info(tag_id, request_body, opts)
       nil
     end
 
     # Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.
     # @api private
     # @param tag_id The identifier of the input tag.
-    # @param action ~action&#x3D;add-to-used-by
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def add_to_used_by_with_http_info(tag_id, action, request_body, opts = {})
+    def add_to_used_by_with_http_info(tag_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.add_to_used_by ...'
       end
@@ -42,24 +40,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && tag_id.nil?
         fail ArgumentError, "Missing the required parameter 'tag_id' when calling TaggingTagApi.add_to_used_by"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling TaggingTagApi.add_to_used_by"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['add-to-used-by'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of add-to-used-by"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagApi.add_to_used_by"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}?~action=add-to-used-by'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}
@@ -297,21 +286,19 @@ module VSphereAutomation
     end
     # Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
     # @param category_id The identifier of the input category.
-    # @param action ~action&#x3D;list-tags-for-category
     # @param [Hash] opts the optional parameters
     # @return [CisTaggingTagListTagsForCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def list_tags_for_category(category_id, action, opts = {})
-      data, _status_code, _headers = list_tags_for_category_with_http_info(category_id, action, opts)
+    def list_tags_for_category(category_id, opts = {})
+      data, _status_code, _headers = list_tags_for_category_with_http_info(category_id, opts)
       data
     end
 
     # Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
     # @api private
     # @param category_id The identifier of the input category.
-    # @param action ~action&#x3D;list-tags-for-category
     # @param [Hash] opts the optional parameters
     # @return [Array<(CisTaggingTagListTagsForCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def list_tags_for_category_with_http_info(category_id, action, opts = {})
+    def list_tags_for_category_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.list_tags_for_category ...'
       end
@@ -319,20 +306,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && category_id.nil?
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingTagApi.list_tags_for_category"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling TaggingTagApi.list_tags_for_category"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['list-tags-for-category'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of list-tags-for-category"
-      end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/tag/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{category_id}?~action=list-tags-for-category'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

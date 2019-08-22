@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](DeploymentInstallRemotePscApi.md#check) | **POST** /vcenter/deployment/install/remote-psc | Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
+[**check**](DeploymentInstallRemotePscApi.md#check) | **POST** /vcenter/deployment/install/remote-psc?action&#x3D;check | Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
 
 
 # **check**
-> VcenterDeploymentInstallRemotePscCheckResult check(action, request_body)
+> VcenterDeploymentInstallRemotePscCheckResult check(request_body)
 
 Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
 
@@ -25,12 +25,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallRemotePscApi.new
-action = 'action_example' # String | action=check
 request_body = VCenter::VcenterDeploymentInstallRemotePscCheck.new # VcenterDeploymentInstallRemotePscCheck | 
 
 begin
   #Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
-  result = api_instance.check(action, request_body)
+  result = api_instance.check(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallRemotePscApi->check: #{e}"
@@ -41,7 +40,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;check | 
  **request_body** | [**VcenterDeploymentInstallRemotePscCheck**](VcenterDeploymentInstallRemotePscCheck.md)|  | 
 
 ### Return type

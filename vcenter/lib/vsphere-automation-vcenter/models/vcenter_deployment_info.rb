@@ -78,7 +78,7 @@ module VSphereAutomation
         :'state' => :'VcenterDeploymentApplianceState',
         :'progress' => :'CisTaskProgress',
         :'subtask_order' => :'Array<String>',
-        :'subtasks' => :'Array<Object>',
+        :'subtasks' => :'Array<VcenterDeploymentInfoSubtasks>',
         :'description' => :'VapiStdLocalizableMessage',
         :'service' => :'String',
         :'operation' => :'String',

@@ -17,43 +17,32 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
-    # @param action ~action&#x3D;find
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterInventoryNetworkFindResult|VapiStdErrorsNotFoundError|]
-    def find(action, request_body, opts = {})
-      data, _status_code, _headers = find_with_http_info(action, request_body, opts)
+    def find(request_body, opts = {})
+      data, _status_code, _headers = find_with_http_info(request_body, opts)
       data
     end
 
     # Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
     # @api private
-    # @param action ~action&#x3D;find
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterInventoryNetworkFindResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def find_with_http_info(action, request_body, opts = {})
+    def find_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InventoryNetworkApi.find ...'
-      end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling InventoryNetworkApi.find"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['find'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of find"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling InventoryNetworkApi.find"
       end
       # resource path
-      local_var_path = '/com/vmware/vcenter/inventory/network'
+      local_var_path = '/com/vmware/vcenter/inventory/network?~action=find'
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

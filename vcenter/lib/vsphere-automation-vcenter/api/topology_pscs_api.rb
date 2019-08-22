@@ -18,23 +18,21 @@ module VSphereAutomation
     end
     # Decommission the external Platform Services Controller node.
     # @param hostname FQDN or IP address of external Platform Services Controller node to be decommissioned.
-    # @param action action&#x3D;decommission&amp;vmw-task
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterTopologyPscsDecommissionTaskResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
-    def decommissiontask(hostname, action, request_body, opts = {})
-      data, _status_code, _headers = decommissiontask_with_http_info(hostname, action, request_body, opts)
+    def decommissiontask(hostname, request_body, opts = {})
+      data, _status_code, _headers = decommissiontask_with_http_info(hostname, request_body, opts)
       data
     end
 
     # Decommission the external Platform Services Controller node.
     # @api private
     # @param hostname FQDN or IP address of external Platform Services Controller node to be decommissioned.
-    # @param action action&#x3D;decommission&amp;vmw-task
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterTopologyPscsDecommissionTaskResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def decommissiontask_with_http_info(hostname, action, request_body, opts = {})
+    def decommissiontask_with_http_info(hostname, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TopologyPscsApi.decommissiontask ...'
       end
@@ -42,24 +40,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && hostname.nil?
         fail ArgumentError, "Missing the required parameter 'hostname' when calling TopologyPscsApi.decommissiontask"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling TopologyPscsApi.decommissiontask"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['decommission&vmw-task'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of decommission&vmw-task"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TopologyPscsApi.decommissiontask"
       end
       # resource path
-      local_var_path = '/vcenter/topology/pscs/{hostname}'.sub('{' + 'hostname' + '}', hostname.to_s)
+      local_var_path = '/vcenter/topology/pscs/{hostname}?action=decommission&vmw-task=true'.sub('{' + 'hostname' + '}', hostname.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

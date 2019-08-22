@@ -175,23 +175,21 @@ module VSphereAutomation
     end
     # Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
     # @param download_session_id Identifier of the download session to fail.
-    # @param action ~action&#x3D;fail
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def fail(download_session_id, action, request_body, opts = {})
-      fail_with_http_info(download_session_id, action, request_body, opts)
+    def fail(download_session_id, request_body, opts = {})
+      fail_with_http_info(download_session_id, request_body, opts)
       nil
     end
 
     # Terminates the download session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
     # @api private
     # @param download_session_id Identifier of the download session to fail.
-    # @param action ~action&#x3D;fail
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def fail_with_http_info(download_session_id, action, request_body, opts = {})
+    def fail_with_http_info(download_session_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.fail ...'
       end
@@ -199,24 +197,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && download_session_id.nil?
         fail ArgumentError, "Missing the required parameter 'download_session_id' when calling LibraryItemDownloadSessionApi.fail"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryItemDownloadSessionApi.fail"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['fail'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of fail"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemDownloadSessionApi.fail"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=fail'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

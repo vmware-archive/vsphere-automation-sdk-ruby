@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find**](InventoryDatastoreApi.md#find) | **POST** /com/vmware/vcenter/inventory/datastore | Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
+[**find**](InventoryDatastoreApi.md#find) | **POST** /com/vmware/vcenter/inventory/datastore?~action&#x3D;find | Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
 
 
 # **find**
-> VcenterInventoryDatastoreFindResult find(action, request_body)
+> VcenterInventoryDatastoreFindResult find(request_body)
 
 Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
 
@@ -25,12 +25,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::InventoryDatastoreApi.new
-action = 'action_example' # String | ~action=find
 request_body = VCenter::VcenterInventoryDatastoreFind.new # VcenterInventoryDatastoreFind | 
 
 begin
   #Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
-  result = api_instance.find(action, request_body)
+  result = api_instance.find(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling InventoryDatastoreApi->find: #{e}"
@@ -41,7 +40,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| ~action&#x3D;find | 
  **request_body** | [**VcenterInventoryDatastoreFind**](VcenterInventoryDatastoreFind.md)|  | 
 
 ### Return type

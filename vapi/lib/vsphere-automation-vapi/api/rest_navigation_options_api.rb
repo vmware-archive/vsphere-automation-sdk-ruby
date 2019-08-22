@@ -17,43 +17,32 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Retrieves operations for specific URL.
-    # @param action ~action&#x3D;get
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VapiRestNavigationOptionsResult|VapiStdErrorsNotFoundError|]
-    def get(action, request_body, opts = {})
-      data, _status_code, _headers = get_with_http_info(action, request_body, opts)
+    def get(request_body, opts = {})
+      data, _status_code, _headers = get_with_http_info(request_body, opts)
       data
     end
 
     # Retrieves operations for specific URL.
     # @api private
-    # @param action ~action&#x3D;get
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiRestNavigationOptionsResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(action, request_body, opts = {})
+    def get_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationOptionsApi.get ...'
-      end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling RestNavigationOptionsApi.get"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['get'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of get"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling RestNavigationOptionsApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/rest/navigation/options'
+      local_var_path = '/com/vmware/vapi/rest/navigation/options?~action=get'
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

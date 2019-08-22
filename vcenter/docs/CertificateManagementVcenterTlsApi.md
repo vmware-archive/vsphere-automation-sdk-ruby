@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](CertificateManagementVcenterTlsApi.md#get) | **GET** /vcenter/certificate-management/vcenter/tls | Returns the rhttpproxy TLS certificate.
-[**renew**](CertificateManagementVcenterTlsApi.md#renew) | **POST** /vcenter/certificate-management/vcenter/tls | Renews the TLS certificate for the given duration period.
+[**renew**](CertificateManagementVcenterTlsApi.md#renew) | **POST** /vcenter/certificate-management/vcenter/tls?action&#x3D;renew | Renews the TLS certificate for the given duration period.
 [**set**](CertificateManagementVcenterTlsApi.md#set) | **PUT** /vcenter/certificate-management/vcenter/tls | Replaces the rhttpproxy TLS certificate with the specified certificate.
 
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 
 # **renew**
-> renew(action, opts)
+> renew(opts)
 
 Renews the TLS certificate for the given duration period.
 
@@ -73,14 +73,13 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::CertificateManagementVcenterTlsApi.new
-action = 'action_example' # String | action=renew
 opts = {
   request_body: VCenter::VcenterCertificateManagementVcenterTlsRenew.new # VcenterCertificateManagementVcenterTlsRenew | 
 }
 
 begin
   #Renews the TLS certificate for the given duration period.
-  api_instance.renew(action, opts)
+  api_instance.renew(opts)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling CertificateManagementVcenterTlsApi->renew: #{e}"
 end
@@ -90,7 +89,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;renew | 
  **request_body** | [**VcenterCertificateManagementVcenterTlsRenew**](VcenterCertificateManagementVcenterTlsRenew.md)|  | [optional] 
 
 ### Return type

@@ -18,23 +18,21 @@ module VSphereAutomation
     end
     # Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-    # @param action action&#x3D;check
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVmStoragePolicyComplianceCheck] :request_body 
     # @return [VcenterVmStoragePolicyComplianceCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
-    def check(vm, action, opts = {})
-      data, _status_code, _headers = check_with_http_info(vm, action, opts)
+    def check(vm, opts = {})
+      data, _status_code, _headers = check_with_http_info(vm, opts)
       data
     end
 
     # Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-    # @param action action&#x3D;check
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVmStoragePolicyComplianceCheck] :request_body 
     # @return [Array<(VcenterVmStoragePolicyComplianceCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    def check_with_http_info(vm, action, opts = {})
+    def check_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmStoragePolicyComplianceApi.check ...'
       end
@@ -42,20 +40,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && vm.nil?
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmStoragePolicyComplianceApi.check"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling VmStoragePolicyComplianceApi.check"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['check'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of check"
-      end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/storage/policy/compliance'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/storage/policy/compliance?action=check'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

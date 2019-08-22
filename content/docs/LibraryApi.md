@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find**](LibraryApi.md#find) | **POST** /com/vmware/content/library | Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
+[**find**](LibraryApi.md#find) | **POST** /com/vmware/content/library?~action&#x3D;find | Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
 [**get**](LibraryApi.md#get) | **GET** /com/vmware/content/library/id:{library_id} | Returns a given {@link LibraryModel}.
 [**list**](LibraryApi.md#list) | **GET** /com/vmware/content/library | Returns the identifiers of all libraries of any type in the Content Library.
 [**update**](LibraryApi.md#update) | **PATCH** /com/vmware/content/library/id:{library_id} | Updates the properties of a library. &lt;p&gt; This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
 
 
 # **find**
-> ContentLibraryFindResult find(action, request_body)
+> ContentLibraryFindResult find(request_body)
 
 Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
 
@@ -28,12 +28,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::Content::LibraryApi.new
-action = 'action_example' # String | ~action=find
 request_body = Content::ContentLibraryFind.new # ContentLibraryFind | 
 
 begin
   #Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-  result = api_instance.find(action, request_body)
+  result = api_instance.find(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryApi->find: #{e}"
@@ -44,7 +43,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| ~action&#x3D;find | 
  **request_body** | [**ContentLibraryFind**](ContentLibraryFind.md)|  | 
 
 ### Return type

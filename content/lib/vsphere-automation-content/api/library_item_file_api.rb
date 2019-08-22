@@ -18,23 +18,21 @@ module VSphereAutomation
     end
     # Retrieves the information for a single file in a library item by its name.
     # @param library_item_id Identifier of the library item whose file information should be returned.
-    # @param action ~action&#x3D;get
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentLibraryItemFileResult|VapiStdErrorsNotFoundError|]
-    def get(library_item_id, action, request_body, opts = {})
-      data, _status_code, _headers = get_with_http_info(library_item_id, action, request_body, opts)
+    def get(library_item_id, request_body, opts = {})
+      data, _status_code, _headers = get_with_http_info(library_item_id, request_body, opts)
       data
     end
 
     # Retrieves the information for a single file in a library item by its name.
     # @api private
     # @param library_item_id Identifier of the library item whose file information should be returned.
-    # @param action ~action&#x3D;get
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemFileResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(library_item_id, action, request_body, opts = {})
+    def get_with_http_info(library_item_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemFileApi.get ...'
       end
@@ -42,24 +40,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_item_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_item_id' when calling LibraryItemFileApi.get"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryItemFileApi.get"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['get'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of get"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemFileApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/file/id:{library_item_id}'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/file/id:{library_item_id}?~action=get'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

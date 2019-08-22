@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find**](InventoryNetworkApi.md#find) | **POST** /com/vmware/vcenter/inventory/network | Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
+[**find**](InventoryNetworkApi.md#find) | **POST** /com/vmware/vcenter/inventory/network?~action&#x3D;find | Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
 
 
 # **find**
-> VcenterInventoryNetworkFindResult find(action, request_body)
+> VcenterInventoryNetworkFindResult find(request_body)
 
 Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
 
@@ -25,12 +25,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::InventoryNetworkApi.new
-action = 'action_example' # String | ~action=find
 request_body = VCenter::VcenterInventoryNetworkFind.new # VcenterInventoryNetworkFind | 
 
 begin
   #Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
-  result = api_instance.find(action, request_body)
+  result = api_instance.find(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling InventoryNetworkApi->find: #{e}"
@@ -41,7 +40,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| ~action&#x3D;find | 
  **request_body** | [**VcenterInventoryNetworkFind**](VcenterInventoryNetworkFind.md)|  | 
 
 ### Return type

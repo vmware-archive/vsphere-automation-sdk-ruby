@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.3"
 
-  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.2.2'
-  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.2.2'
+  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.3.0'
+  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.3.0'
 
   s.add_development_dependency 'bundler', '~> 2.0'
   s.add_development_dependency 'pry', '~> 0.12.2'

@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](RestNavigationOptionsApi.md#get) | **POST** /com/vmware/vapi/rest/navigation/options | Retrieves operations for specific URL.
+[**get**](RestNavigationOptionsApi.md#get) | **POST** /com/vmware/vapi/rest/navigation/options?~action&#x3D;get | Retrieves operations for specific URL.
 
 
 # **get**
-> VapiRestNavigationOptionsResult get(action, request_body)
+> VapiRestNavigationOptionsResult get(request_body)
 
 Retrieves operations for specific URL.
 
@@ -25,12 +25,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VAPI::RestNavigationOptionsApi.new
-action = 'action_example' # String | ~action=get
 request_body = VAPI::VapiRestNavigationOptionsGet.new # VapiRestNavigationOptionsGet | 
 
 begin
   #Retrieves operations for specific URL.
-  result = api_instance.get(action, request_body)
+  result = api_instance.get(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling RestNavigationOptionsApi->get: #{e}"
@@ -41,7 +40,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| ~action&#x3D;get | 
  **request_body** | [**VapiRestNavigationOptionsGet**](VapiRestNavigationOptionsGet.md)|  | 
 
 ### Return type

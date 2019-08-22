@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**get**](UpdatePendingApi.md#get) | **GET** /appliance/update/pending/{version} | Gets update information
 [**install**](UpdatePendingApi.md#install) | **POST** /appliance/update/pending/{version}?action&#x3D;install | Starts operation of installing the appliance update. Will fail is the update is not staged
 [**list**](UpdatePendingApi.md#list) | **GET** /appliance/update/pending | Checks if new updates are available.
-[**precheck**](UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version} | Runs update precheck
+[**precheck**](UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version}?action&#x3D;precheck | Runs update precheck
 [**stage**](UpdatePendingApi.md#stage) | **POST** /appliance/update/pending/{version}?action&#x3D;stage | Starts staging the appliance update. The updates are searched for in the following order: staged, CDROM, URL
 [**stage_and_install**](UpdatePendingApi.md#stage_and_install) | **POST** /appliance/update/pending/{version}?action&#x3D;stage-and-install | Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
 [**validate**](UpdatePendingApi.md#validate) | **POST** /appliance/update/pending/{version}?action&#x3D;validate | Validates the user provided data before the update installation.
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 
 # **precheck**
-> ApplianceUpdatePendingPrecheckResult precheck(version, action)
+> ApplianceUpdatePendingPrecheckResult precheck(version)
 
 Runs update precheck
 
@@ -187,11 +187,10 @@ end
 
 api_instance = VSphereAutomation::Appliance::UpdatePendingApi.new
 version = 'version_example' # String | Update version
-action = 'action_example' # String | action=precheck
 
 begin
   #Runs update precheck
-  result = api_instance.precheck(version, action)
+  result = api_instance.precheck(version)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdatePendingApi->precheck: #{e}"
@@ -203,7 +202,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **String**| Update version | 
- **action** | **String**| action&#x3D;precheck | 
 
 ### Return type
 

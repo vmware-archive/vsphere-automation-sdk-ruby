@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**cancel**](LibraryItemDownloadSessionApi.md#cancel) | **POST** /com/vmware/content/library/item/download-session/id:{download_session_id}?~action&#x3D;cancel | Cancels the download session. This {@term operation} will abort any ongoing transfers and invalidate transfer urls that the client may be downloading from.
 [**create**](LibraryItemDownloadSessionApi.md#create) | **POST** /com/vmware/content/library/item/download-session | Creates a new download session.
 [**delete**](LibraryItemDownloadSessionApi.md#delete) | **DELETE** /com/vmware/content/library/item/download-session/id:{download_session_id} | Deletes a download session. This removes the session and all information associated with it. &lt;p&gt; Removing a download session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the transfers will be able to complete). However there will no longer be a means of inspecting the status of those downloads except by seeing the effect on the library item. &lt;p&gt; Download sessions for which there is no download activity or which are complete will automatically be expired and then deleted after a period of time.
-[**fail**](LibraryItemDownloadSessionApi.md#fail) | **POST** /com/vmware/content/library/item/download-session/id:{download_session_id} | Terminates the download session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
+[**fail**](LibraryItemDownloadSessionApi.md#fail) | **POST** /com/vmware/content/library/item/download-session/id:{download_session_id}?~action&#x3D;fail | Terminates the download session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
 [**get**](LibraryItemDownloadSessionApi.md#get) | **GET** /com/vmware/content/library/item/download-session/id:{download_session_id} | Gets the download session with the specified identifier, including the most up-to-date status information for the session.
 [**keep_alive**](LibraryItemDownloadSessionApi.md#keep_alive) | **POST** /com/vmware/content/library/item/download-session/id:{download_session_id}?~action&#x3D;keep-alive | Keeps a download session alive. This operation is allowed only if the session is in the {@link DownloadSessionModel.State#ACTIVE} state. &lt;p&gt; If there is no activity for a download session for a certain period of time, the download session will expire. The download session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of an active download session.
 [**list**](LibraryItemDownloadSessionApi.md#list) | **GET** /com/vmware/content/library/item/download-session | Lists the identifiers of the download sessions created by the calling user. Optionally may filter by library item.
@@ -162,7 +162,7 @@ nil (empty response body)
 
 
 # **fail**
-> fail(download_session_id, action, request_body)
+> fail(download_session_id, request_body)
 
 Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
 
@@ -180,12 +180,11 @@ end
 
 api_instance = VSphereAutomation::Content::LibraryItemDownloadSessionApi.new
 download_session_id = 'download_session_id_example' # String | Identifier of the download session to fail.
-action = 'action_example' # String | ~action=fail
 request_body = Content::ContentLibraryItemDownloadSessionFail.new # ContentLibraryItemDownloadSessionFail | 
 
 begin
   #Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
-  api_instance.fail(download_session_id, action, request_body)
+  api_instance.fail(download_session_id, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemDownloadSessionApi->fail: #{e}"
 end
@@ -196,7 +195,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **download_session_id** | **String**| Identifier of the download session to fail. | 
- **action** | **String**| ~action&#x3D;fail | 
  **request_body** | [**ContentLibraryItemDownloadSessionFail**](ContentLibraryItemDownloadSessionFail.md)|  | 
 
 ### Return type

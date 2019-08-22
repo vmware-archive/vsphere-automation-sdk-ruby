@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**decommissiontask**](TopologyPscsApi.md#decommissiontask) | **POST** /vcenter/topology/pscs/{hostname} | Decommission the external Platform Services Controller node.
+[**decommissiontask**](TopologyPscsApi.md#decommissiontask) | **POST** /vcenter/topology/pscs/{hostname}?action&#x3D;decommission&amp;vmw-task&#x3D;true | Decommission the external Platform Services Controller node.
 
 
 # **decommissiontask**
-> VcenterTopologyPscsDecommissionTaskResult decommissiontask(hostname, action, request_body)
+> VcenterTopologyPscsDecommissionTaskResult decommissiontask(hostname, request_body)
 
 Decommission the external Platform Services Controller node.
 
@@ -26,12 +26,11 @@ end
 
 api_instance = VSphereAutomation::VCenter::TopologyPscsApi.new
 hostname = 'hostname_example' # String | FQDN or IP address of external Platform Services Controller node to be decommissioned.
-action = 'action_example' # String | action=decommission&vmw-task
 request_body = VCenter::VcenterTopologyPscsDecommissionTask.new # VcenterTopologyPscsDecommissionTask | 
 
 begin
   #Decommission the external Platform Services Controller node.
-  result = api_instance.decommissiontask(hostname, action, request_body)
+  result = api_instance.decommissiontask(hostname, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling TopologyPscsApi->decommissiontask: #{e}"
@@ -43,7 +42,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **hostname** | **String**| FQDN or IP address of external Platform Services Controller node to be decommissioned. | 
- **action** | **String**| action&#x3D;decommission&amp;vmw-task | 
  **request_body** | [**VcenterTopologyPscsDecommissionTask**](VcenterTopologyPscsDecommissionTask.md)|  | 
 
 ### Return type

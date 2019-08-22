@@ -17,39 +17,28 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Retrieves information about the active node of a VCHA cluster.
-    # @param action action&#x3D;get
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVchaClusterActiveGet] :request_body 
     # @return [VcenterVchaClusterActiveResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def get(action, opts = {})
-      data, _status_code, _headers = get_with_http_info(action, opts)
+    def get(opts = {})
+      data, _status_code, _headers = get_with_http_info(opts)
       data
     end
 
     # Retrieves information about the active node of a VCHA cluster.
     # @api private
-    # @param action action&#x3D;get
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVchaClusterActiveGet] :request_body 
     # @return [Array<(VcenterVchaClusterActiveResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(action, opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterActiveApi.get ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling VchaClusterActiveApi.get"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['get'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of get"
-      end
       # resource path
-      local_var_path = '/vcenter/vcha/cluster/active'
+      local_var_path = '/vcenter/vcha/cluster/active?action=get'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

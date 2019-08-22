@@ -29,7 +29,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'vm_home' => :'String',
-        :'disks' => :'Array<Object>'
+        :'disks' => :'Array<VcenterOvfLibraryItemResourcePoolDeploymentSpecNetworkMappings>'
       }
     end
 

@@ -65,37 +65,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
-    # @param action action&#x3D;reset
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|nil]
-    def reset(action, opts = {})
-      reset_with_http_info(action, opts)
+    def reset(opts = {})
+      reset_with_http_info(opts)
       nil
     end
 
     # Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
     # @api private
-    # @param action action&#x3D;reset
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def reset_with_http_info(action, opts = {})
+    def reset_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingApi.reset ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling NetworkingApi.reset"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['reset'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of reset"
-      end
       # resource path
-      local_var_path = '/appliance/networking'
+      local_var_path = '/appliance/networking?action=reset'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

@@ -45,10 +45,10 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'name' => :'String',
-        :'structures' => :'Array<Object>',
-        :'enumerations' => :'Array<Object>',
-        :'services' => :'Array<Object>',
-        :'metadata' => :'Array<Object>',
+        :'structures' => :'Array<VapiMetadataMetamodelPackageInfoStructures>',
+        :'enumerations' => :'Array<VapiMetadataMetamodelPackageInfoEnumerations>',
+        :'services' => :'Array<VapiMetadataMetamodelPackageInfoServices>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'documentation' => :'String'
       }
     end

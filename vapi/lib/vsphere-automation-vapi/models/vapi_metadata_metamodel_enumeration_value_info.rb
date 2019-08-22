@@ -33,7 +33,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'value' => :'String',
-        :'metadata' => :'Array<Object>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'documentation' => :'String'
       }
     end

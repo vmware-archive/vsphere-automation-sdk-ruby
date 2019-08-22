@@ -38,7 +38,7 @@ module VSphereAutomation
       {
         :'name' => :'String',
         :'values' => :'Array<VapiMetadataMetamodelEnumerationValueInfo>',
-        :'metadata' => :'Array<Object>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'documentation' => :'String'
       }
     end

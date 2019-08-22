@@ -17,37 +17,26 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Cancel the appliance upgrade that is in progress.
-    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil]
-    def cancel(action, opts = {})
-      cancel_with_http_info(action, opts)
+    def cancel(opts = {})
+      cancel_with_http_info(opts)
       nil
     end
 
     # Cancel the appliance upgrade that is in progress.
     # @api private
-    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def cancel_with_http_info(action, opts = {})
+    def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentUpgradeApi.cancel ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentUpgradeApi.cancel"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['cancel'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of cancel"
-      end
       # resource path
-      local_var_path = '/vcenter/deployment/upgrade'
+      local_var_path = '/vcenter/deployment/upgrade?action=cancel'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

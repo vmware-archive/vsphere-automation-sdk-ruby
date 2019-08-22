@@ -86,14 +86,14 @@ module VSphereAutomation
         :'boot_devices' => :'Array<VcenterVmHardwareBootDeviceEntry>',
         :'cpu' => :'VcenterVmHardwareCpuInfo',
         :'memory' => :'VcenterVmHardwareMemoryInfo',
-        :'disks' => :'Array<Object>',
-        :'nics' => :'Array<Object>',
-        :'cdroms' => :'Array<Object>',
-        :'floppies' => :'Array<Object>',
-        :'parallel_ports' => :'Array<Object>',
-        :'serial_ports' => :'Array<Object>',
-        :'sata_adapters' => :'Array<Object>',
-        :'scsi_adapters' => :'Array<Object>'
+        :'disks' => :'Array<VcenterVMInfoDisks>',
+        :'nics' => :'Array<VcenterVMInfoNics>',
+        :'cdroms' => :'Array<VcenterVMInfoCdroms>',
+        :'floppies' => :'Array<VcenterVMInfoFloppies>',
+        :'parallel_ports' => :'Array<VcenterVMInfoParallelPorts>',
+        :'serial_ports' => :'Array<VcenterVMInfoSerialPorts>',
+        :'sata_adapters' => :'Array<VcenterVMInfoSataAdapters>',
+        :'scsi_adapters' => :'Array<VcenterVMInfoScsiAdapters>'
       }
     end
 

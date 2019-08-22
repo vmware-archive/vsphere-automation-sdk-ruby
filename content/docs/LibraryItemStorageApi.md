@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](LibraryItemStorageApi.md#get) | **POST** /com/vmware/content/library/item/storage/id:{library_item_id} | Retrieves the storage information for a specific file in a library item.
+[**get**](LibraryItemStorageApi.md#get) | **POST** /com/vmware/content/library/item/storage/id:{library_item_id}?~action&#x3D;get | Retrieves the storage information for a specific file in a library item.
 [**list**](LibraryItemStorageApi.md#list) | **GET** /com/vmware/content/library/item/storage | Lists all storage items for a given library item.
 
 
 # **get**
-> ContentLibraryItemStorageResult get(library_item_id, action, request_body)
+> ContentLibraryItemStorageResult get(library_item_id, request_body)
 
 Retrieves the storage information for a specific file in a library item.
 
@@ -27,12 +27,11 @@ end
 
 api_instance = VSphereAutomation::Content::LibraryItemStorageApi.new
 library_item_id = 'library_item_id_example' # String | Identifier of the library item whose storage information should be retrieved.
-action = 'action_example' # String | ~action=get
 request_body = Content::ContentLibraryItemStorageGet.new # ContentLibraryItemStorageGet | 
 
 begin
   #Retrieves the storage information for a specific file in a library item.
-  result = api_instance.get(library_item_id, action, request_body)
+  result = api_instance.get(library_item_id, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling LibraryItemStorageApi->get: #{e}"
@@ -44,7 +43,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item_id** | **String**| Identifier of the library item whose storage information should be retrieved. | 
- **action** | **String**| ~action&#x3D;get | 
  **request_body** | [**ContentLibraryItemStorageGet**](ContentLibraryItemStorageGet.md)|  | 
 
 ### Return type

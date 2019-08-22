@@ -38,9 +38,9 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'nics' => :'Array<Object>',
+        :'nics' => :'Array<VcenterVmTemplateLibraryItemsHardwareCustomizationSpecNics>',
         :'disks_to_remove' => :'Array<String>',
-        :'disks_to_update' => :'Array<Object>',
+        :'disks_to_update' => :'Array<VcenterVmTemplateLibraryItemsHardwareCustomizationSpecDisksToUpdate>',
         :'cpu_update' => :'VcenterVmTemplateLibraryItemsCpuUpdateSpec',
         :'memory_update' => :'VcenterVmTemplateLibraryItemsMemoryUpdateSpec'
       }

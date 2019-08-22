@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get**](SubscribedLibraryApi.md#get) | **GET** /com/vmware/content/subscribed-library/id:{library_id} | Returns a given subscribed library.
 [**list**](SubscribedLibraryApi.md#list) | **GET** /com/vmware/content/subscribed-library | Returns the identifiers of all subscribed libraries in the Content Library.
 [**probe**](SubscribedLibraryApi.md#probe) | **POST** /com/vmware/content/subscribed-library?~action&#x3D;probe | Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
-[**sync**](SubscribedLibraryApi.md#sync) | **POST** /com/vmware/content/subscribed-library/id:{library_id} | Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
+[**sync**](SubscribedLibraryApi.md#sync) | **POST** /com/vmware/content/subscribed-library/id:{library_id}?~action&#x3D;sync | Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
 [**update**](SubscribedLibraryApi.md#update) | **PATCH** /com/vmware/content/subscribed-library/id:{library_id} | Updates the properties of a subscribed library. &lt;p&gt; This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
 
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 
 # **sync**
-> sync(library_id, action)
+> sync(library_id)
 
 Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
 
@@ -327,11 +327,10 @@ end
 
 api_instance = VSphereAutomation::Content::SubscribedLibraryApi.new
 library_id = 'library_id_example' # String | Identifier of the subscribed library to synchronize.
-action = 'action_example' # String | ~action=sync
 
 begin
   #Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
-  api_instance.sync(library_id, action)
+  api_instance.sync(library_id)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling SubscribedLibraryApi->sync: #{e}"
 end
@@ -342,7 +341,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_id** | **String**| Identifier of the subscribed library to synchronize. | 
- **action** | **String**| ~action&#x3D;sync | 
 
 ### Return type
 

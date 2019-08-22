@@ -228,23 +228,21 @@ module VSphereAutomation
     end
     # Tests a proxy configuration by testing the connection to the proxy server and test host.
     # @param protocol Protocol whose proxy is to be tested.
-    # @param action action&#x3D;test
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ApplianceNetworkingProxyTestResult|VapiStdErrorsErrorError|]
-    def test(protocol, action, request_body, opts = {})
-      data, _status_code, _headers = test_with_http_info(protocol, action, request_body, opts)
+    def test(protocol, request_body, opts = {})
+      data, _status_code, _headers = test_with_http_info(protocol, request_body, opts)
       data
     end
 
     # Tests a proxy configuration by testing the connection to the proxy server and test host.
     # @api private
     # @param protocol Protocol whose proxy is to be tested.
-    # @param action action&#x3D;test
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ApplianceNetworkingProxyTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
-    def test_with_http_info(protocol, action, request_body, opts = {})
+    def test_with_http_info(protocol, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.test ...'
       end
@@ -252,24 +250,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && protocol.nil?
         fail ArgumentError, "Missing the required parameter 'protocol' when calling NetworkingProxyApi.test"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling NetworkingProxyApi.test"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['test'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of test"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingProxyApi.test"
       end
       # resource path
-      local_var_path = '/appliance/networking/proxy/{protocol}'.sub('{' + 'protocol' + '}', protocol.to_s)
+      local_var_path = '/appliance/networking/proxy/{protocol}?action=test'.sub('{' + 'protocol' + '}', protocol.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

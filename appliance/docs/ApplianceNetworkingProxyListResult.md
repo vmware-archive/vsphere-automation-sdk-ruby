@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **Array&lt;Object&gt;** |  | 
+**value** | [**Array&lt;ApplianceNetworkingProxyListResultValue&gt;**](ApplianceNetworkingProxyListResultValue.md) |  | 
 
 

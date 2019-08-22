@@ -17,37 +17,26 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Retrieves the current configuration values.
-    # @param action ~action&#x3D;get
     # @param [Hash] opts the optional parameters
     # @return [ContentConfigurationResult|]
-    def get(action, opts = {})
-      data, _status_code, _headers = get_with_http_info(action, opts)
+    def get(opts = {})
+      data, _status_code, _headers = get_with_http_info(opts)
       data
     end
 
     # Retrieves the current configuration values.
     # @api private
-    # @param action ~action&#x3D;get
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentConfigurationResult|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(action, opts = {})
+    def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ConfigurationApi.get ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling ConfigurationApi.get"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['get'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of get"
-      end
       # resource path
-      local_var_path = '/com/vmware/content/configuration'
+      local_var_path = '/com/vmware/content/configuration?~action=get'
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

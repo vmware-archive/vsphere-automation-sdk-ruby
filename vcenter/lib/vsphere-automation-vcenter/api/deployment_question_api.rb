@@ -17,43 +17,32 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Supply answer to the raised question.
-    # @param action action&#x3D;answer
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|nil]
-    def answer(action, request_body, opts = {})
-      answer_with_http_info(action, request_body, opts)
+    def answer(request_body, opts = {})
+      answer_with_http_info(request_body, opts)
       nil
     end
 
     # Supply answer to the raised question.
     # @api private
-    # @param action action&#x3D;answer
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def answer_with_http_info(action, request_body, opts = {})
+    def answer_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentQuestionApi.answer ...'
-      end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentQuestionApi.answer"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['answer'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of answer"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentQuestionApi.answer"
       end
       # resource path
-      local_var_path = '/vcenter/deployment/question'
+      local_var_path = '/vcenter/deployment/question?action=answer'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

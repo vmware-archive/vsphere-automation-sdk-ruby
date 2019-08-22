@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](DeploymentInstallPscReplicatedApi.md#check) | **POST** /vcenter/deployment/install/psc/replicated | Checks whether the provided remote PSC is reachable and can be replicated.
+[**check**](DeploymentInstallPscReplicatedApi.md#check) | **POST** /vcenter/deployment/install/psc/replicated?action&#x3D;check | Checks whether the provided remote PSC is reachable and can be replicated.
 
 
 # **check**
-> VcenterDeploymentInstallPscReplicatedCheckResult check(action, request_body)
+> VcenterDeploymentInstallPscReplicatedCheckResult check(request_body)
 
 Checks whether the provided remote PSC is reachable and can be replicated.
 
@@ -25,12 +25,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::DeploymentInstallPscReplicatedApi.new
-action = 'action_example' # String | action=check
 request_body = VCenter::VcenterDeploymentInstallPscReplicatedCheck.new # VcenterDeploymentInstallPscReplicatedCheck | 
 
 begin
   #Checks whether the provided remote PSC is reachable and can be replicated.
-  result = api_instance.check(action, request_body)
+  result = api_instance.check(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentInstallPscReplicatedApi->check: #{e}"
@@ -41,7 +40,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;check | 
  **request_body** | [**VcenterDeploymentInstallPscReplicatedCheck**](VcenterDeploymentInstallPscReplicatedCheck.md)|  | 
 
 ### Return type

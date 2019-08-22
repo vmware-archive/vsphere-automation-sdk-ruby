@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check_compatibility**](StoragePoliciesApi.md#check_compatibility) | **POST** /vcenter/storage/policies/{policy} | Returns datastore compatibility summary about a specific storage policy.
+[**check_compatibility**](StoragePoliciesApi.md#check_compatibility) | **POST** /vcenter/storage/policies/{policy}?action&#x3D;check-compatibility | Returns datastore compatibility summary about a specific storage policy.
 [**list**](StoragePoliciesApi.md#list) | **GET** /vcenter/storage/policies | Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
 
 
 # **check_compatibility**
-> VcenterStoragePoliciesCheckCompatibilityResult check_compatibility(policy, action, request_body)
+> VcenterStoragePoliciesCheckCompatibilityResult check_compatibility(policy, request_body)
 
 Returns datastore compatibility summary about a specific storage policy.
 
@@ -27,12 +27,11 @@ end
 
 api_instance = VSphereAutomation::VCenter::StoragePoliciesApi.new
 policy = 'policy_example' # String | The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
-action = 'action_example' # String | action=check-compatibility
 request_body = VCenter::VcenterStoragePoliciesCheckCompatibility.new # VcenterStoragePoliciesCheckCompatibility | 
 
 begin
   #Returns datastore compatibility summary about a specific storage policy.
-  result = api_instance.check_compatibility(policy, action, request_body)
+  result = api_instance.check_compatibility(policy, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling StoragePoliciesApi->check_compatibility: #{e}"
@@ -44,7 +43,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy** | **String**| The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy. | 
- **action** | **String**| action&#x3D;check-compatibility | 
  **request_body** | [**VcenterStoragePoliciesCheckCompatibility**](VcenterStoragePoliciesCheckCompatibility.md)|  | 
 
 ### Return type

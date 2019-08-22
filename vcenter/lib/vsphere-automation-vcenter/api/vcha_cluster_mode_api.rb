@@ -66,43 +66,32 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
-    # @param vmw_task vmw-task&#x3D;true
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterVchaClusterModeSetTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
-    def settask(vmw_task, request_body, opts = {})
-      data, _status_code, _headers = settask_with_http_info(vmw_task, request_body, opts)
+    def settask(request_body, opts = {})
+      data, _status_code, _headers = settask_with_http_info(request_body, opts)
       data
     end
 
     # Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -&gt; disabled - Allowed only in healthy and degraded states.  enabled -&gt; maintenance - Allowed only in healthy state.  disabled -&gt; enabled - Allowed only in healthy state.  maintenance -&gt; enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -&gt; disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
     # @api private
-    # @param vmw_task vmw-task&#x3D;true
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVchaClusterModeSetTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def settask_with_http_info(vmw_task, request_body, opts = {})
+    def settask_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterModeApi.settask ...'
-      end
-      # verify the required parameter 'vmw_task' is set
-      if @api_client.config.client_side_validation && vmw_task.nil?
-        fail ArgumentError, "Missing the required parameter 'vmw_task' when calling VchaClusterModeApi.settask"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['true'].include?(vmw_task)
-        fail ArgumentError, "invalid value for 'vmw_task', must be one of true"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterModeApi.settask"
       end
       # resource path
-      local_var_path = '/vcenter/vcha/cluster/mode'
+      local_var_path = '/vcenter/vcha/cluster/mode?vmw-task=true'
 
       # query parameters
       query_params = {}
-      query_params[:'vmw-task'] = vmw_task
 
       # header parameters
       header_params = {}

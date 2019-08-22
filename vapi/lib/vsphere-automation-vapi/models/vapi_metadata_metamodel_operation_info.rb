@@ -47,7 +47,7 @@ module VSphereAutomation
         :'params' => :'Array<VapiMetadataMetamodelFieldInfo>',
         :'output' => :'VapiMetadataMetamodelOperationResultInfo',
         :'errors' => :'Array<VapiMetadataMetamodelErrorInfo>',
-        :'metadata' => :'Array<Object>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'documentation' => :'String'
       }
     end

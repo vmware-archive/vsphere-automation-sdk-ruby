@@ -48,8 +48,8 @@ module VSphereAutomation
         :'cpu' => :'VcenterVmTemplateLibraryItemsCpuInfo',
         :'memory' => :'VcenterVmTemplateLibraryItemsMemoryInfo',
         :'vm_home_storage' => :'VcenterVmTemplateLibraryItemsVmHomeStorageInfo',
-        :'disks' => :'Array<Object>',
-        :'nics' => :'Array<Object>',
+        :'disks' => :'Array<VcenterVmTemplateLibraryItemsInfoDisks>',
+        :'nics' => :'Array<VcenterVmTemplateLibraryItemsInfoNics>',
         :'vm_template' => :'String'
       }
     end

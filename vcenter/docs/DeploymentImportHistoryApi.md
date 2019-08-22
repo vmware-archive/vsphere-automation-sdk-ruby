@@ -4,7 +4,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](DeploymentImportHistoryApi.md#cancel) | **POST** /vcenter/deployment/history | Cancels the task for importing vCenter historical data.
+[**cancel**](DeploymentImportHistoryApi.md#cancel) | **POST** /vcenter/deployment/history?action&#x3D;cancel | Cancels the task for importing vCenter historical data.
 [**get**](DeploymentImportHistoryApi.md#get) | **GET** /vcenter/deployment/history | Get the current status of the vCenter historical data import.
 [**pause**](DeploymentImportHistoryApi.md#pause) | **POST** /vcenter/deployment/history?action&#x3D;pause | Pauses the task for importing vCenter historical data.
 [**resume**](DeploymentImportHistoryApi.md#resume) | **POST** /vcenter/deployment/history?action&#x3D;resume | Resumes the task for importing vCenter historical data.
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **cancel**
-> cancel(action)
+> cancel
 
 Cancels the task for importing vCenter historical data.
 
@@ -29,21 +29,17 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::DeploymentImportHistoryApi.new
-action = 'action_example' # String | action=cancel
 
 begin
   #Cancels the task for importing vCenter historical data.
-  api_instance.cancel(action)
+  api_instance.cancel
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentImportHistoryApi->cancel: #{e}"
 end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;cancel | 
+This endpoint does not need any parameter.
 
 ### Return type
 

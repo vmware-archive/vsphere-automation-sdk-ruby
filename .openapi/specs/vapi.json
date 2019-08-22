@@ -54,49 +54,6 @@
             }
         },
         "/com/vmware/vapi/metadata/authentication/component/id:{component_id}": {
-            "post": {
-                "tags": [
-                    "metadata_authentication_component"
-                ],
-                "summary": "Retrieves the fingerprint computed from the authentication metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.authentication.Component#get}.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "component_id",
-                        "description": "Identifier of the component element."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=fingerprint",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "fingerprint"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The fingerprint computed from the authentication metadata of the component.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.metadata.authentication.component.fingerprint_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if the component element associated with {@param.name componentId} does not have any authentication information.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "fingerprint"
-            },
             "get": {
                 "tags": [
                     "metadata_authentication_component"
@@ -126,6 +83,41 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/com/vmware/vapi/metadata/authentication/component/id:{component_id}?~action=fingerprint": {
+            "post": {
+                "tags": [
+                    "metadata_authentication_component"
+                ],
+                "summary": "Retrieves the fingerprint computed from the authentication metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.authentication.Component#get}.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "component_id",
+                        "description": "Identifier of the component element."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The fingerprint computed from the authentication metadata of the component.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.metadata.authentication.component.fingerprint_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if the component element associated with {@param.name componentId} does not have any authentication information.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "fingerprint"
             }
         },
         "/com/vmware/vapi/metadata/authentication/package": {
@@ -260,7 +252,7 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/vapi/metadata/authentication/service/operation/id:{service_id}": {
+        "/com/vmware/vapi/metadata/authentication/service/operation/id:{service_id}?~action=get": {
             "post": {
                 "tags": [
                     "metadata_authentication_service_operation"
@@ -281,16 +273,6 @@
                         "schema": {
                             "$ref": "#/definitions/vapi.metadata.authentication.service.operation_get"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
                     }
                 ],
                 "responses": {
@@ -314,50 +296,6 @@
             }
         },
         "/com/vmware/vapi/metadata/cli/command": {
-            "post": {
-                "tags": [
-                    "metadata_cli_command"
-                ],
-                "summary": "Retrieves information about a command including information about how to execute that command.",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/vapi.metadata.cli.command_get"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Information about the command including information about how to execute that command.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.metadata.cli.command_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if a command corresponding to {@param.name identity} doesn't exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "get"
-            },
             "get": {
                 "tags": [
                     "metadata_cli_command"
@@ -410,37 +348,43 @@
                 "operationId": "fingerprint"
             }
         },
-        "/com/vmware/vapi/metadata/cli/namespace": {
+        "/com/vmware/vapi/metadata/cli/command?~action=get": {
             "post": {
                 "tags": [
-                    "metadata_cli_namespace"
+                    "metadata_cli_command"
                 ],
-                "summary": "Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.",
+                "summary": "Retrieves information about a command including information about how to execute that command.",
                 "parameters": [
                     {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=fingerprint",
+                        "in": "body",
+                        "name": "request_body",
                         "required": true,
-                        "type": "string",
-                        "enum": [
-                            "fingerprint"
-                        ]
+                        "schema": {
+                            "$ref": "#/definitions/vapi.metadata.cli.command_get"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Fingerprint of all the namespace metadata present on the server.",
+                        "description": "Information about the command including information about how to execute that command.",
                         "schema": {
-                            "$ref": "#/definitions/vapi.metadata.cli.namespace.fingerprint_result"
+                            "$ref": "#/definitions/vapi.metadata.cli.command_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if a command corresponding to {@param.name identity} doesn't exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
                         }
                     }
                 },
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "fingerprint"
-            },
+                "operationId": "get"
+            }
+        },
+        "/com/vmware/vapi/metadata/cli/namespace": {
             "get": {
                 "tags": [
                     "metadata_cli_namespace"
@@ -456,6 +400,27 @@
                     }
                 },
                 "operationId": "list"
+            }
+        },
+        "/com/vmware/vapi/metadata/cli/namespace?~action=fingerprint": {
+            "post": {
+                "tags": [
+                    "metadata_cli_namespace"
+                ],
+                "summary": "Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Fingerprint of all the namespace metadata present on the server.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.metadata.cli.namespace.fingerprint_result"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "fingerprint"
             }
         },
         "/com/vmware/vapi/metadata/cli/namespace?~action=get": {
@@ -513,49 +478,6 @@
             }
         },
         "/com/vmware/vapi/metadata/metamodel/component/id:{component_id}": {
-            "post": {
-                "tags": [
-                    "metadata_metamodel_component"
-                ],
-                "summary": "Retrieves the fingerprint computed from the metamodel metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component element has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.metamodel.Component#get}.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "component_id",
-                        "description": "Identifier of the component element."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=fingerprint",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "fingerprint"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The fingerprint computed from the metamodel metadata of the component element.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.metadata.metamodel.component.fingerprint_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if the component element associated with {@param.name componentId} is not registered with the infrastructure.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "fingerprint"
-            },
             "get": {
                 "tags": [
                     "metadata_metamodel_component"
@@ -585,6 +507,41 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/com/vmware/vapi/metadata/metamodel/component/id:{component_id}?~action=fingerprint": {
+            "post": {
+                "tags": [
+                    "metadata_metamodel_component"
+                ],
+                "summary": "Retrieves the fingerprint computed from the metamodel metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component element has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.metamodel.Component#get}.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "component_id",
+                        "description": "Identifier of the component element."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The fingerprint computed from the metamodel metadata of the component element.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.metadata.metamodel.component.fingerprint_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if the component element associated with {@param.name componentId} is not registered with the infrastructure.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "fingerprint"
             }
         },
         "/com/vmware/vapi/metadata/metamodel/enumeration": {
@@ -927,49 +884,6 @@
             }
         },
         "/com/vmware/vapi/metadata/privilege/component/id:{component_id}": {
-            "post": {
-                "tags": [
-                    "metadata_privilege_component"
-                ],
-                "summary": "Retrieves the fingerprint computed from the privilege metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.privilege.Component#get}.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "component_id",
-                        "description": "Identifier of the component element."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=fingerprint",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "fingerprint"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The fingerprint computed from the privilege metadata of the component.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.metadata.privilege.component.fingerprint_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if the component element associated with {@param.name componentId} does not have any privilege information.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "fingerprint"
-            },
             "get": {
                 "tags": [
                     "metadata_privilege_component"
@@ -999,6 +913,41 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/com/vmware/vapi/metadata/privilege/component/id:{component_id}?~action=fingerprint": {
+            "post": {
+                "tags": [
+                    "metadata_privilege_component"
+                ],
+                "summary": "Retrieves the fingerprint computed from the privilege metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.privilege.Component#get}.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "component_id",
+                        "description": "Identifier of the component element."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The fingerprint computed from the privilege metadata of the component.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.metadata.privilege.component.fingerprint_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if the component element associated with {@param.name componentId} does not have any privilege information.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "fingerprint"
             }
         },
         "/com/vmware/vapi/metadata/privilege/package": {
@@ -1133,7 +1082,7 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}": {
+        "/com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}?~action=get": {
             "post": {
                 "tags": [
                     "metadata_privilege_service_operation"
@@ -1154,16 +1103,6 @@
                         "schema": {
                             "$ref": "#/definitions/vapi.metadata.privilege.service.operation_get"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1212,7 +1151,7 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/vapi/rest/navigation/options": {
+        "/com/vmware/vapi/rest/navigation/options?~action=get": {
             "post": {
                 "tags": [
                     "rest_navigation_options"
@@ -1226,16 +1165,6 @@
                         "schema": {
                             "$ref": "#/definitions/vapi.rest.navigation.options_get"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1389,7 +1318,7 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/vapi/vcenter/activation/id:{activation_id}": {
+        "/com/vmware/vapi/vcenter/activation/id:{activation_id}?~action=cancel": {
             "post": {
                 "tags": [
                     "vcenter_activation"
@@ -1402,16 +1331,6 @@
                         "in": "path",
                         "name": "activation_id",
                         "description": "the {@param.name activationId} associated with a vCenter Server task to be canceled."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=cancel",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "cancel"
-                        ]
                     }
                 ],
                 "responses": {

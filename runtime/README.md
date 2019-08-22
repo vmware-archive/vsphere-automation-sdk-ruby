@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere Runtime API
 
 - API version: 2.0.0
-- Package version: 0.2.2
+- Package version: 0.3.0
 
 ## Installation
 

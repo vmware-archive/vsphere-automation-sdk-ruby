@@ -17,43 +17,32 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Checks that the information to configure a non-replicated PSC satisfies the requirements.
-    # @param action action&#x3D;check
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterDeploymentInstallPscStandaloneCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
-    def check(action, request_body, opts = {})
-      data, _status_code, _headers = check_with_http_info(action, request_body, opts)
+    def check(request_body, opts = {})
+      data, _status_code, _headers = check_with_http_info(request_body, opts)
       data
     end
 
     # Checks that the information to configure a non-replicated PSC satisfies the requirements.
     # @api private
-    # @param action action&#x3D;check
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterDeploymentInstallPscStandaloneCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def check_with_http_info(action, request_body, opts = {})
+    def check_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallPscStandaloneApi.check ...'
-      end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentInstallPscStandaloneApi.check"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['check'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of check"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentInstallPscStandaloneApi.check"
       end
       # resource path
-      local_var_path = '/vcenter/deployment/install/psc/standalone'
+      local_var_path = '/vcenter/deployment/install/psc/standalone?action=check'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **state** | [**VcenterDeploymentApplianceState**](VcenterDeploymentApplianceState.md) |  | 
 **progress** | [**CisTaskProgress**](CisTaskProgress.md) |  | [optional] 
 **subtask_order** | **Array&lt;String&gt;** | The ordered list of subtasks for this deployment operation. | [optional] 
-**subtasks** | **Array&lt;Object&gt;** | The map of the deployment subtasks and their status infomation. | [optional] 
+**subtasks** | [**Array&lt;VcenterDeploymentInfoSubtasks&gt;**](VcenterDeploymentInfoSubtasks.md) | The map of the deployment subtasks and their status infomation. | [optional] 
 **description** | [**VapiStdLocalizableMessage**](VapiStdLocalizableMessage.md) |  | 
 **service** | **String** | Identifier of the service containing the operation. | 
 **operation** | **String** | Identifier of the operation associated with the task. | 

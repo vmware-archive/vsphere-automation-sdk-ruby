@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataPrivilegeServiceOperationApi.md#get) | **POST** /com/vmware/vapi/metadata/privilege/service/operation/id:{service_id} | Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
+[**get**](MetadataPrivilegeServiceOperationApi.md#get) | **POST** /com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}?~action&#x3D;get | Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 [**list**](MetadataPrivilegeServiceOperationApi.md#list) | **GET** /com/vmware/vapi/metadata/privilege/service/operation | Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have privilege information.
 
 
 # **get**
-> VapiMetadataPrivilegeServiceOperationResult get(service_id, action, request_body)
+> VapiMetadataPrivilegeServiceOperationResult get(service_id, request_body)
 
 Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 
@@ -27,12 +27,11 @@ end
 
 api_instance = VSphereAutomation::VAPI::MetadataPrivilegeServiceOperationApi.new
 service_id = 'service_id_example' # String | Identifier of the service element.
-action = 'action_example' # String | ~action=get
 request_body = VAPI::VapiMetadataPrivilegeServiceOperationGet.new # VapiMetadataPrivilegeServiceOperationGet | 
 
 begin
   #Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
-  result = api_instance.get(service_id, action, request_body)
+  result = api_instance.get(service_id, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataPrivilegeServiceOperationApi->get: #{e}"
@@ -44,7 +43,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_id** | **String**| Identifier of the service element. | 
- **action** | **String**| ~action&#x3D;get | 
  **request_body** | [**VapiMetadataPrivilegeServiceOperationGet**](VapiMetadataPrivilegeServiceOperationGet.md)|  | 
 
 ### Return type

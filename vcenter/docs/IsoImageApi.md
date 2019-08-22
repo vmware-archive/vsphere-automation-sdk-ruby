@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**mount**](IsoImageApi.md#mount) | **POST** /com/vmware/vcenter/iso/image/id:{library_item} | Mounts an ISO image from a content library on a virtual machine.
-[**unmount**](IsoImageApi.md#unmount) | **POST** /com/vmware/vcenter/iso/image/id:{vm} | Unmounts a previously mounted CD-ROM using an ISO image as a backing.
+[**mount**](IsoImageApi.md#mount) | **POST** /com/vmware/vcenter/iso/image/id:{library_item}?~action&#x3D;mount | Mounts an ISO image from a content library on a virtual machine.
+[**unmount**](IsoImageApi.md#unmount) | **POST** /com/vmware/vcenter/iso/image/id:{vm}?~action&#x3D;unmount | Unmounts a previously mounted CD-ROM using an ISO image as a backing.
 
 
 # **mount**
-> VcenterIsoImageMountResult mount(library_item, action, request_body)
+> VcenterIsoImageMountResult mount(library_item, request_body)
 
 Mounts an ISO image from a content library on a virtual machine.
 
@@ -27,12 +27,11 @@ end
 
 api_instance = VSphereAutomation::VCenter::IsoImageApi.new
 library_item = 'library_item_example' # String | The identifier of the library item having the ISO image to mount on the virtual machine.
-action = 'action_example' # String | ~action=mount
 request_body = VCenter::VcenterIsoImageMount.new # VcenterIsoImageMount | 
 
 begin
   #Mounts an ISO image from a content library on a virtual machine.
-  result = api_instance.mount(library_item, action, request_body)
+  result = api_instance.mount(library_item, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling IsoImageApi->mount: #{e}"
@@ -44,7 +43,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **library_item** | **String**| The identifier of the library item having the ISO image to mount on the virtual machine. | 
- **action** | **String**| ~action&#x3D;mount | 
  **request_body** | [**VcenterIsoImageMount**](VcenterIsoImageMount.md)|  | 
 
 ### Return type
@@ -63,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **unmount**
-> unmount(vm, action, request_body)
+> unmount(vm, request_body)
 
 Unmounts a previously mounted CD-ROM using an ISO image as a backing.
 
@@ -81,12 +79,11 @@ end
 
 api_instance = VSphereAutomation::VCenter::IsoImageApi.new
 vm = 'vm_example' # String | The identifier of the virtual machine from which to unmount the virtual CD-ROM.
-action = 'action_example' # String | ~action=unmount
 request_body = VCenter::VcenterIsoImageUnmount.new # VcenterIsoImageUnmount | 
 
 begin
   #Unmounts a previously mounted CD-ROM using an ISO image as a backing.
-  api_instance.unmount(vm, action, request_body)
+  api_instance.unmount(vm, request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling IsoImageApi->unmount: #{e}"
 end
@@ -97,7 +94,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm** | **String**| The identifier of the virtual machine from which to unmount the virtual CD-ROM. | 
- **action** | **String**| ~action&#x3D;unmount | 
  **request_body** | [**VcenterIsoImageUnmount**](VcenterIsoImageUnmount.md)|  | 
 
 ### Return type

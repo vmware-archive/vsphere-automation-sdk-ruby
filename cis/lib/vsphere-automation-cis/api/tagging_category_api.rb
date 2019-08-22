@@ -340,23 +340,21 @@ module VSphereAutomation
     end
     # Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
     # @param category_id The identifier of the input category.
-    # @param action ~action&#x3D;remove-from-used-by
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def remove_from_used_by(category_id, action, request_body, opts = {})
-      remove_from_used_by_with_http_info(category_id, action, request_body, opts)
+    def remove_from_used_by(category_id, request_body, opts = {})
+      remove_from_used_by_with_http_info(category_id, request_body, opts)
       nil
     end
 
     # Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
     # @api private
     # @param category_id The identifier of the input category.
-    # @param action ~action&#x3D;remove-from-used-by
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def remove_from_used_by_with_http_info(category_id, action, request_body, opts = {})
+    def remove_from_used_by_with_http_info(category_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.remove_from_used_by ...'
       end
@@ -364,24 +362,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && category_id.nil?
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingCategoryApi.remove_from_used_by"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling TaggingCategoryApi.remove_from_used_by"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['remove-from-used-by'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of remove-from-used-by"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.remove_from_used_by"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}?~action=remove-from-used-by'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

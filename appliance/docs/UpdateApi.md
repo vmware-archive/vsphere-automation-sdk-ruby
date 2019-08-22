@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](UpdateApi.md#cancel) | **POST** /appliance/update | Request the cancellation the update operation that is currently in progress.
+[**cancel**](UpdateApi.md#cancel) | **POST** /appliance/update?action&#x3D;cancel | Request the cancellation the update operation that is currently in progress.
 [**get**](UpdateApi.md#get) | **GET** /appliance/update | Gets the current status of the appliance update.
 
 
 # **cancel**
-> cancel(action)
+> cancel
 
 Request the cancellation the update operation that is currently in progress.
 
@@ -26,21 +26,17 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::Appliance::UpdateApi.new
-action = 'action_example' # String | action=cancel
 
 begin
   #Request the cancellation the update operation that is currently in progress.
-  api_instance.cancel(action)
+  api_instance.cancel
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling UpdateApi->cancel: #{e}"
 end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;cancel | 
+This endpoint does not need any parameter.
 
 ### Return type
 

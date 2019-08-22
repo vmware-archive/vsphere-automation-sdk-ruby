@@ -164,70 +164,6 @@
             }
         },
         "/cis/tasks/{task}": {
-            "post": {
-                "tags": [
-                    "tasks"
-                ],
-                "summary": "Cancel a running operation associated with the task. This is the best effort attempt. Operation may not be cancelled anymore once it reaches certain stage.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "task",
-                        "description": "Task identifier.\nThe parameter must be an identifier for the resource type: cis.task."
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=cancel",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "cancel"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "if the task is not cancelable.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unsupported_error"
-                        }
-                    },
-                    "404": {
-                        "description": "if the task is not found.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "503": {
-                        "description": "if the system is unable to communicate with a service to complete the request.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
-                        }
-                    },
-                    "401": {
-                        "description": "if the user can not be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if the user doesn't have the required privileges.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "cancel"
-            },
             "get": {
                 "tags": [
                     "tasks"
@@ -293,6 +229,62 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/cis/tasks/{task}?action=cancel": {
+            "post": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Cancel a running operation associated with the task. This is the best effort attempt. Operation may not be cancelled anymore once it reaches certain stage.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "task",
+                        "description": "Task identifier.\nThe parameter must be an identifier for the resource type: cis.task."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "if the task is not cancelable.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unsupported_error"
+                        }
+                    },
+                    "404": {
+                        "description": "if the task is not found.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "503": {
+                        "description": "if the system is unable to communicate with a service to complete the request.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
+                        }
+                    },
+                    "401": {
+                        "description": "if the user can not be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if the user doesn't have the required privileges.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "cancel"
             }
         },
         "/com/vmware/cis/session": {
@@ -458,60 +450,6 @@
             }
         },
         "/com/vmware/cis/tagging/category/id:{category_id}": {
-            "post": {
-                "tags": [
-                    "tagging_category"
-                ],
-                "summary": "Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "category_id",
-                        "description": "The identifier of the input category."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/cis.tagging.category_remove_from_used_by"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=remove-from-used-by",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "remove-from-used-by"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "404": {
-                        "description": "if the category for the given {@param.name categoryId} does not exist in the system.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if you do not have the privilege to remove an entity from the {@link CategoryModel#usedBy} field.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "remove_from_used_by"
-            },
             "delete": {
                 "tags": [
                     "tagging_category"
@@ -678,6 +616,52 @@
                 "operationId": "add_to_used_by"
             }
         },
+        "/com/vmware/cis/tagging/category/id:{category_id}?~action=remove-from-used-by": {
+            "post": {
+                "tags": [
+                    "tagging_category"
+                ],
+                "summary": "Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "category_id",
+                        "description": "The identifier of the input category."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/cis.tagging.category_remove_from_used_by"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": "if the category for the given {@param.name categoryId} does not exist in the system.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if you do not have the privilege to remove an entity from the {@link CategoryModel#usedBy} field.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "remove_from_used_by"
+            }
+        },
         "/com/vmware/cis/tagging/category/id:{category_id}?~action=revoke-propagating-permissions": {
             "post": {
                 "tags": [
@@ -810,105 +794,6 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/cis/tagging/tag-association": {
-            "post": {
-                "tags": [
-                    "tagging_tag_association"
-                ],
-                "summary": "Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/cis.tagging.tag_association_list_attached_tags_on_objects"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=list-attached-tags-on-objects",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "list-attached-tags-on-objects"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The {@term list} of the object identifiers to all tag identifiers that are attached to that object.",
-                        "schema": {
-                            "$ref": "#/definitions/cis.tagging.tag_association.list_attached_tags_on_objects_result"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "list_attached_tags_on_objects"
-            }
-        },
-        "/com/vmware/cis/tagging/tag-association/id:{tag_id}": {
-            "post": {
-                "tags": [
-                    "tagging_tag_association"
-                ],
-                "summary": "Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "tag_id",
-                        "description": "The identifier of the input tag."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/cis.tagging.tag_association_attach_tag_to_multiple_objects"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=attach-tag-to-multiple-objects",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "attach-tag-to-multiple-objects"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The outcome of the batch {@term operation} and the {@term list} of error messages ({@link BatchResult#errorMessages}) describing attachment failures.",
-                        "schema": {
-                            "$ref": "#/definitions/cis.tagging.tag_association.attach_tag_to_multiple_objects_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if the tag for the given {@param.name tagId} does not exist in the system.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if you do not have the attach tag privilege on the tag.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "attach_tag_to_multiple_objects"
-            }
-        },
         "/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach": {
             "post": {
                 "tags": [
@@ -959,6 +844,55 @@
                     "application/json"
                 ],
                 "operationId": "attach"
+            }
+        },
+        "/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach-tag-to-multiple-objects": {
+            "post": {
+                "tags": [
+                    "tagging_tag_association"
+                ],
+                "summary": "Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "tag_id",
+                        "description": "The identifier of the input tag."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/cis.tagging.tag_association_attach_tag_to_multiple_objects"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The outcome of the batch {@term operation} and the {@term list} of error messages ({@link BatchResult#errorMessages}) describing attachment failures.",
+                        "schema": {
+                            "$ref": "#/definitions/cis.tagging.tag_association.attach_tag_to_multiple_objects_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if the tag for the given {@param.name tagId} does not exist in the system.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if you do not have the attach tag privilege on the tag.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "attach_tag_to_multiple_objects"
             }
         },
         "/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=detach": {
@@ -1271,7 +1205,37 @@
                 "operationId": "list_attached_tags"
             }
         },
-        "/com/vmware/cis/tagging/tag/id:{category_id}": {
+        "/com/vmware/cis/tagging/tag-association?~action=list-attached-tags-on-objects": {
+            "post": {
+                "tags": [
+                    "tagging_tag_association"
+                ],
+                "summary": "Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/cis.tagging.tag_association_list_attached_tags_on_objects"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The {@term list} of the object identifiers to all tag identifiers that are attached to that object.",
+                        "schema": {
+                            "$ref": "#/definitions/cis.tagging.tag_association.list_attached_tags_on_objects_result"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "list_attached_tags_on_objects"
+            }
+        },
+        "/com/vmware/cis/tagging/tag/id:{category_id}?~action=list-tags-for-category": {
             "post": {
                 "tags": [
                     "tagging_tag"
@@ -1284,16 +1248,6 @@
                         "in": "path",
                         "name": "category_id",
                         "description": "The identifier of the input category."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=list-tags-for-category",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "list-tags-for-category"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1323,60 +1277,6 @@
             }
         },
         "/com/vmware/cis/tagging/tag/id:{tag_id}": {
-            "post": {
-                "tags": [
-                    "tagging_tag"
-                ],
-                "summary": "Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "tag_id",
-                        "description": "The identifier of the input tag."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/cis.tagging.tag_add_to_used_by"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=add-to-used-by",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "add-to-used-by"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "404": {
-                        "description": "if the tag for the given {@param.name tagId} does not exist in the system.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if you do not have the privilege to add an entity to the {@link TagModel#usedBy} field.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "add_to_used_by"
-            },
             "delete": {
                 "tags": [
                     "tagging_tag"
@@ -1495,6 +1395,52 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/com/vmware/cis/tagging/tag/id:{tag_id}?~action=add-to-used-by": {
+            "post": {
+                "tags": [
+                    "tagging_tag"
+                ],
+                "summary": "Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "tag_id",
+                        "description": "The identifier of the input tag."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/cis.tagging.tag_add_to_used_by"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": "if the tag for the given {@param.name tagId} does not exist in the system.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if you do not have the privilege to add an entity to the {@link TagModel#usedBy} field.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "add_to_used_by"
             }
         },
         "/com/vmware/cis/tagging/tag/id:{tag_id}?~action=remove-from-used-by": {

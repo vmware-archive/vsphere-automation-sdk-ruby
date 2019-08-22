@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **library** | **String** | Identifier of the library in which the new library item should be created. | 
 **vm_home_storage** | [**VcenterVmTemplateLibraryItemsCreateSpecVmHomeStorage**](VcenterVmTemplateLibraryItemsCreateSpecVmHomeStorage.md) |  | [optional] 
 **disk_storage** | [**VcenterVmTemplateLibraryItemsCreateSpecDiskStorage**](VcenterVmTemplateLibraryItemsCreateSpecDiskStorage.md) |  | [optional] 
-**disk_storage_overrides** | **Array&lt;Object&gt;** | Storage specification for individual disks in the virtual machine template. This is specified as a mapping between disk identifiers in the source virtual machine and their respective storage specifications. | [optional] 
+**disk_storage_overrides** | [**Array&lt;VcenterVmTemplateLibraryItemsCreateSpecDiskStorageOverrides&gt;**](VcenterVmTemplateLibraryItemsCreateSpecDiskStorageOverrides.md) | Storage specification for individual disks in the virtual machine template. This is specified as a mapping between disk identifiers in the source virtual machine and their respective storage specifications. | [optional] 
 **placement** | [**VcenterVmTemplateLibraryItemsCreatePlacementSpec**](VcenterVmTemplateLibraryItemsCreatePlacementSpec.md) |  | [optional] 
 
 

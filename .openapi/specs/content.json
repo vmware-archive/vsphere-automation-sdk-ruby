@@ -36,36 +36,6 @@
     ],
     "paths": {
         "/com/vmware/content/configuration": {
-            "post": {
-                "tags": [
-                    "configuration"
-                ],
-                "summary": "Retrieves the current configuration values.",
-                "parameters": [
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The {@link ConfigurationModel} instance representing the configuration of the Content Library Service.",
-                        "schema": {
-                            "$ref": "#/definitions/content.configuration_result"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "get"
-            },
             "patch": {
                 "tags": [
                     "configuration"
@@ -98,51 +68,28 @@
                 "operationId": "update"
             }
         },
-        "/com/vmware/content/library": {
+        "/com/vmware/content/configuration?~action=get": {
             "post": {
                 "tags": [
-                    "library"
+                    "configuration"
                 ],
-                "summary": "Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library_find"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=find",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "find"
-                        ]
-                    }
-                ],
+                "summary": "Retrieves the current configuration values.",
+                "parameters": [],
                 "responses": {
                     "200": {
-                        "description": "The {@term list} of identifiers of all the visible libraries matching the given {@param.name spec}.",
+                        "description": "The {@link ConfigurationModel} instance representing the configuration of the Content Library Service.",
                         "schema": {
-                            "$ref": "#/definitions/content.library.find_result"
-                        }
-                    },
-                    "400": {
-                        "description": "if no properties are specified in the {@param.name spec}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
+                            "$ref": "#/definitions/content.configuration_result"
                         }
                     }
                 },
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "find"
-            },
+                "operationId": "get"
+            }
+        },
+        "/com/vmware/content/library": {
             "get": {
                 "tags": [
                     "library"
@@ -381,60 +328,6 @@
             }
         },
         "/com/vmware/content/library/item/download-session/id:{download_session_id}": {
-            "post": {
-                "tags": [
-                    "library_item_download_session"
-                ],
-                "summary": "Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "download_session_id",
-                        "description": "Identifier of the download session to fail."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item.download_session_fail"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=fail",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "fail"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "404": {
-                        "description": "if the download session does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if the download session is not in the {@link DownloadSessionModel.State#ACTIVE} state.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "fail"
-            },
             "delete": {
                 "tags": [
                     "library_item_download_session"
@@ -531,6 +424,52 @@
                 "operationId": "cancel"
             }
         },
+        "/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=fail": {
+            "post": {
+                "tags": [
+                    "library_item_download_session"
+                ],
+                "summary": "Terminates the download session with a client specified error message. <p> This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "download_session_id",
+                        "description": "Identifier of the download session to fail."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item.download_session_fail"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": "if the download session does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if the download session is not in the {@link DownloadSessionModel.State#ACTIVE} state.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "fail"
+            }
+        },
         "/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=keep-alive": {
             "post": {
                 "tags": [
@@ -608,71 +547,6 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}": {
-            "post": {
-                "tags": [
-                    "library_item_downloadsession_file"
-                ],
-                "summary": "Requests a file to be prepared for download.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "download_session_id",
-                        "description": "Identifier of the download session."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item.downloadsession.file_prepare"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=prepare",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "prepare"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "File information containing the status of the request and the download link to the file.",
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item.downloadsession.file.prepare_result"
-                        }
-                    },
-                    "404": {
-                        "description": "if the download session does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if there is no file with the specified {@param.name fileName}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if the the download session wasn't created with the ContentLibrary.ReadStorage privilege and the caller requested a {@link EndpointType#DIRECT} endpoint type.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "prepare"
-            }
-        },
         "/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action=get": {
             "post": {
                 "tags": [
@@ -722,6 +596,61 @@
                 "operationId": "get"
             }
         },
+        "/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action=prepare": {
+            "post": {
+                "tags": [
+                    "library_item_downloadsession_file"
+                ],
+                "summary": "Requests a file to be prepared for download.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "download_session_id",
+                        "description": "Identifier of the download session."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item.downloadsession.file_prepare"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "File information containing the status of the request and the download link to the file.",
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item.downloadsession.file.prepare_result"
+                        }
+                    },
+                    "404": {
+                        "description": "if the download session does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if there is no file with the specified {@param.name fileName}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if the the download session wasn't created with the ContentLibrary.ReadStorage privilege and the caller requested a {@link EndpointType#DIRECT} endpoint type.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "prepare"
+            }
+        },
         "/com/vmware/content/library/item/file": {
             "get": {
                 "tags": [
@@ -754,7 +683,7 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/content/library/item/file/id:{library_item_id}": {
+        "/com/vmware/content/library/item/file/id:{library_item_id}?~action=get": {
             "post": {
                 "tags": [
                     "library_item_file"
@@ -775,16 +704,6 @@
                         "schema": {
                             "$ref": "#/definitions/content.library.item.file_get"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
                     }
                 ],
                 "responses": {
@@ -808,72 +727,6 @@
             }
         },
         "/com/vmware/content/library/item/id:{library_item_id}": {
-            "post": {
-                "tags": [
-                    "library_item"
-                ],
-                "summary": "Publishes the library item to specified subscriptions of the library. If no subscriptions are specified, then publishes the library item to all subscriptions of the library.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "library_item_id",
-                        "description": "Library item identifier."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library.item_publish"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=publish",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "publish"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "If the library item specified by {@param.name libraryItemId} does not belong to a published library.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    },
-                    "404": {
-                        "description": "If the library item specified by {@param.name libraryItemId} does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "401": {
-                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "publish"
-            },
             "get": {
                 "tags": [
                     "library_item"
@@ -982,7 +835,65 @@
                 "operationId": "delete"
             }
         },
-        "/com/vmware/content/library/item/id:{source_library_item_id}": {
+        "/com/vmware/content/library/item/id:{library_item_id}?~action=publish": {
+            "post": {
+                "tags": [
+                    "library_item"
+                ],
+                "summary": "Publishes the library item to specified subscriptions of the library. If no subscriptions are specified, then publishes the library item to all subscriptions of the library.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "library_item_id",
+                        "description": "Library item identifier."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library.item_publish"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "If the library item specified by {@param.name libraryItemId} does not belong to a published library.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    },
+                    "404": {
+                        "description": "If the library item specified by {@param.name libraryItemId} does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "401": {
+                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "publish"
+            }
+        },
+        "/com/vmware/content/library/item/id:{source_library_item_id}?~action=copy": {
             "post": {
                 "tags": [
                     "library_item"
@@ -1003,16 +914,6 @@
                         "schema": {
                             "$ref": "#/definitions/content.library.item_copy"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=copy",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "copy"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1073,7 +974,7 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/content/library/item/storage/id:{library_item_id}": {
+        "/com/vmware/content/library/item/storage/id:{library_item_id}?~action=get": {
             "post": {
                 "tags": [
                     "library_item_storage"
@@ -1094,16 +995,6 @@
                         "schema": {
                             "$ref": "#/definitions/content.library.item.storage_get"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1199,52 +1090,6 @@
             }
         },
         "/com/vmware/content/library/item/update-session/id:{update_session_id}": {
-            "post": {
-                "tags": [
-                    "library_item_update_session"
-                ],
-                "summary": "Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "update_session_id",
-                        "description": "Identifier of the update session that should be completed."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=complete",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "complete"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "404": {
-                        "description": "if no update session with the given identifier exists.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state, or if some of the files that will be uploaded by the client aren't received correctly.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "complete"
-            },
             "get": {
                 "tags": [
                     "library_item_update_session"
@@ -1391,6 +1236,44 @@
                 "operationId": "cancel"
             }
         },
+        "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=complete": {
+            "post": {
+                "tags": [
+                    "library_item_update_session"
+                ],
+                "summary": "Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. <p> This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. <p> Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. <p> Modifications are not visible to other clients unless the session is completed and all necessary files have been received.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "update_session_id",
+                        "description": "Identifier of the update session that should be completed."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": "if no update session with the given identifier exists.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if the update session is not in the {@link UpdateSessionModel.State#ACTIVE} state, or if some of the files that will be uploaded by the client aren't received correctly.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "complete"
+            }
+        },
         "/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=fail": {
             "post": {
                 "tags": [
@@ -1514,7 +1397,7 @@
                 "operationId": "list"
             }
         },
-        "/com/vmware/content/library/item/updatesession/file/id:{update_session_id}": {
+        "/com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action=add": {
             "post": {
                 "tags": [
                     "library_item_updatesession_file"
@@ -1535,16 +1418,6 @@
                         "schema": {
                             "$ref": "#/definitions/content.library.item.updatesession.file_add"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=add",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "add"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1751,7 +1624,7 @@
                 "operationId": "find"
             }
         },
-        "/com/vmware/content/library/subscribed-item/id:{library_item_id}": {
+        "/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=evict": {
             "post": {
                 "tags": [
                     "library_subscribed_item"
@@ -1764,16 +1637,6 @@
                         "in": "path",
                         "name": "library_item_id",
                         "description": "Identifier of the library item whose content should be evicted."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=evict",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "evict"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1896,62 +1759,6 @@
             }
         },
         "/com/vmware/content/library/subscriptions/id:{library}": {
-            "patch": {
-                "tags": [
-                    "library_subscriptions"
-                ],
-                "summary": "Updates the specified subscription of the published library. <p> This is an incremental update to the subscription. Except for the {@link UpdateSpecPlacement} {@term structure}, {@term fields} that are {@term unset} in the update specification will be left unchanged. If {@param.name spec#subscribedLibraryPlacement} is specified, all {@term fields} of the current subscribed library placement will be replaced by this placement.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "library",
-                        "description": "Identifier of the published library."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/content.library.subscriptions_update"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "If the library specified by {@param.name library} is not a published library.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    },
-                    "404": {
-                        "description": "If the library specified by {@param.name library} does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "401": {
-                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "update"
-            },
             "post": {
                 "tags": [
                     "library_subscriptions"
@@ -2010,6 +1817,62 @@
                     "application/json"
                 ],
                 "operationId": "create"
+            },
+            "patch": {
+                "tags": [
+                    "library_subscriptions"
+                ],
+                "summary": "Updates the specified subscription of the published library. <p> This is an incremental update to the subscription. Except for the {@link UpdateSpecPlacement} {@term structure}, {@term fields} that are {@term unset} in the update specification will be left unchanged. If {@param.name spec#subscribedLibraryPlacement} is specified, all {@term fields} of the current subscribed library placement will be replaced by this placement.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "library",
+                        "description": "Identifier of the published library."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library.subscriptions_update"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "If the library specified by {@param.name library} is not a published library.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    },
+                    "404": {
+                        "description": "If the library specified by {@param.name library} does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "401": {
+                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update"
             }
         },
         "/com/vmware/content/library/subscriptions/id:{library}?~action=delete": {
@@ -2131,6 +1994,42 @@
                 "operationId": "get"
             }
         },
+        "/com/vmware/content/library?~action=find": {
+            "post": {
+                "tags": [
+                    "library"
+                ],
+                "summary": "Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/content.library_find"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The {@term list} of identifiers of all the visible libraries matching the given {@param.name spec}.",
+                        "schema": {
+                            "$ref": "#/definitions/content.library.find_result"
+                        }
+                    },
+                    "400": {
+                        "description": "if no properties are specified in the {@param.name spec}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.invalid_argument_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "find"
+            }
+        },
         "/com/vmware/content/local-library": {
             "get": {
                 "tags": [
@@ -2184,71 +2083,6 @@
             }
         },
         "/com/vmware/content/local-library/id:{library_id}": {
-            "post": {
-                "tags": [
-                    "local_library"
-                ],
-                "summary": "Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "library_id",
-                        "description": "Identifier of the published library."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "schema": {
-                            "$ref": "#/definitions/content.local_library_publish"
-                        }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=publish",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "publish"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "If the library specified by {@param.name libraryId} is not a published library.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    },
-                    "404": {
-                        "description": "If the library specified by {@param.name libraryId} does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "401": {
-                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "publish"
-            },
             "get": {
                 "tags": [
                     "local_library"
@@ -2363,6 +2197,63 @@
                 "operationId": "delete"
             }
         },
+        "/com/vmware/content/local-library/id:{library_id}?~action=publish": {
+            "post": {
+                "tags": [
+                    "local_library"
+                ],
+                "summary": "Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "library_id",
+                        "description": "Identifier of the published library."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "schema": {
+                            "$ref": "#/definitions/content.local_library_publish"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "If the library specified by {@param.name libraryId} is not a published library.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    },
+                    "404": {
+                        "description": "If the library specified by {@param.name libraryId} does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "401": {
+                        "description": "If the user that requested the {@term operation} cannot be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "publish"
+            }
+        },
         "/com/vmware/content/subscribed-library": {
             "post": {
                 "tags": [
@@ -2416,52 +2307,6 @@
             }
         },
         "/com/vmware/content/subscribed-library/id:{library_id}": {
-            "post": {
-                "tags": [
-                    "subscribed_library"
-                ],
-                "summary": "Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "library_id",
-                        "description": "Identifier of the subscribed library to synchronize."
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=sync",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "sync"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "404": {
-                        "description": "if the library specified by {@param.name libraryId} does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if the published library cannot be contacted or found.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.resource_inaccessible_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "sync"
-            },
             "patch": {
                 "tags": [
                     "subscribed_library"
@@ -2612,6 +2457,44 @@
                     "application/json"
                 ],
                 "operationId": "evict"
+            }
+        },
+        "/com/vmware/content/subscribed-library/id:{library_id}?~action=sync": {
+            "post": {
+                "tags": [
+                    "subscribed_library"
+                ],
+                "summary": "Forces the synchronization of the subscribed library. <p> Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "library_id",
+                        "description": "Identifier of the subscribed library to synchronize."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": "if the library specified by {@param.name libraryId} does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if the published library cannot be contacted or found.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.resource_inaccessible_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "sync"
             }
         },
         "/com/vmware/content/subscribed-library?~action=probe": {

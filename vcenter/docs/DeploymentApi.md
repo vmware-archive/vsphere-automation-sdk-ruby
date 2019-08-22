@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get**](DeploymentApi.md#get) | **GET** /vcenter/deployment | Get the current status of the appliance deployment.
-[**rollback**](DeploymentApi.md#rollback) | **POST** /vcenter/deployment | Rollback a failed appliance so it can be configured once again.
+[**rollback**](DeploymentApi.md#rollback) | **POST** /vcenter/deployment?action&#x3D;rollback | Rollback a failed appliance so it can be configured once again.
 
 
 # **get**
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 
 # **rollback**
-> rollback(action)
+> rollback
 
 Rollback a failed appliance so it can be configured once again.
 
@@ -72,21 +72,17 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::DeploymentApi.new
-action = 'action_example' # String | action=rollback
 
 begin
   #Rollback a failed appliance so it can be configured once again.
-  api_instance.rollback(action)
+  api_instance.rollback
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling DeploymentApi->rollback: #{e}"
 end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;rollback | 
+This endpoint does not need any parameter.
 
 ### Return type
 

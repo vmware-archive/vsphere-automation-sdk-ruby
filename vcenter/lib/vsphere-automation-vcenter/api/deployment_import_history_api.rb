@@ -17,37 +17,26 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Cancels the task for importing vCenter historical data.
-    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil]
-    def cancel(action, opts = {})
-      cancel_with_http_info(action, opts)
+    def cancel(opts = {})
+      cancel_with_http_info(opts)
       nil
     end
 
     # Cancels the task for importing vCenter historical data.
     # @api private
-    # @param action action&#x3D;cancel
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def cancel_with_http_info(action, opts = {})
+    def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.cancel ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentImportHistoryApi.cancel"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['cancel'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of cancel"
-      end
       # resource path
-      local_var_path = '/vcenter/deployment/history'
+      local_var_path = '/vcenter/deployment/history?action=cancel'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

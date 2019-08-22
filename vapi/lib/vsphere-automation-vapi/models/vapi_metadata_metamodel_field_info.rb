@@ -37,7 +37,7 @@ module VSphereAutomation
       {
         :'name' => :'String',
         :'type' => :'VapiMetadataMetamodelType',
-        :'metadata' => :'Array<Object>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'documentation' => :'String'
       }
     end

@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validate**](VchaVcCredentialsApi.md#validate) | **POST** /vcenter/vcha/vc-credentials | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
+[**validate**](VchaVcCredentialsApi.md#validate) | **POST** /vcenter/vcha/vc-credentials?action&#x3D;validate | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
 
 
 # **validate**
-> validate(action, request_body)
+> validate(request_body)
 
 Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
 
@@ -25,12 +25,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::VchaVcCredentialsApi.new
-action = 'action_example' # String | action=validate
 request_body = VCenter::VcenterVchaVcCredentialsValidate.new # VcenterVchaVcCredentialsValidate | 
 
 begin
   #Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
-  api_instance.validate(action, request_body)
+  api_instance.validate(request_body)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaVcCredentialsApi->validate: #{e}"
 end
@@ -40,7 +39,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;validate | 
  **request_body** | [**VcenterVchaVcCredentialsValidate**](VcenterVchaVcCredentialsValidate.md)|  | 
 
 ### Return type

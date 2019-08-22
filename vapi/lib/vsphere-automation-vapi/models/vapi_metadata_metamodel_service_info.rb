@@ -49,11 +49,11 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'name' => :'String',
-        :'operations' => :'Array<Object>',
-        :'structures' => :'Array<Object>',
-        :'enumerations' => :'Array<Object>',
-        :'constants' => :'Array<Object>',
-        :'metadata' => :'Array<Object>',
+        :'operations' => :'Array<VapiMetadataMetamodelServiceInfoOperations>',
+        :'structures' => :'Array<VapiMetadataMetamodelPackageInfoStructures>',
+        :'enumerations' => :'Array<VapiMetadataMetamodelPackageInfoEnumerations>',
+        :'constants' => :'Array<VapiMetadataMetamodelServiceInfoConstants>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'documentation' => :'String'
       }
     end

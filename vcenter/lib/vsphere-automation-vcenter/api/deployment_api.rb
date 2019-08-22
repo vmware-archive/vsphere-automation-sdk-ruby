@@ -66,37 +66,26 @@ module VSphereAutomation
       return data, status_code, headers
     end
     # Rollback a failed appliance so it can be configured once again.
-    # @param action action&#x3D;rollback
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|nil]
-    def rollback(action, opts = {})
-      rollback_with_http_info(action, opts)
+    def rollback(opts = {})
+      rollback_with_http_info(opts)
       nil
     end
 
     # Rollback a failed appliance so it can be configured once again.
     # @api private
-    # @param action action&#x3D;rollback
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def rollback_with_http_info(action, opts = {})
+    def rollback_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentApi.rollback ...'
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling DeploymentApi.rollback"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['rollback'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of rollback"
-      end
       # resource path
-      local_var_path = '/vcenter/deployment'
+      local_var_path = '/vcenter/deployment?action=rollback'
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VchaClusterActiveApi.md#get) | **POST** /vcenter/vcha/cluster/active | Retrieves information about the active node of a VCHA cluster.
+[**get**](VchaClusterActiveApi.md#get) | **POST** /vcenter/vcha/cluster/active?action&#x3D;get | Retrieves information about the active node of a VCHA cluster.
 
 
 # **get**
-> VcenterVchaClusterActiveResult get(action, opts)
+> VcenterVchaClusterActiveResult get(opts)
 
 Retrieves information about the active node of a VCHA cluster.
 
@@ -25,14 +25,13 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterActiveApi.new
-action = 'action_example' # String | action=get
 opts = {
   request_body: VCenter::VcenterVchaClusterActiveGet.new # VcenterVchaClusterActiveGet | 
 }
 
 begin
   #Retrieves information about the active node of a VCHA cluster.
-  result = api_instance.get(action, opts)
+  result = api_instance.get(opts)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterActiveApi->get: #{e}"
@@ -43,7 +42,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;get | 
  **request_body** | [**VcenterVchaClusterActiveGet**](VcenterVchaClusterActiveGet.md)|  | [optional] 
 
 ### Return type

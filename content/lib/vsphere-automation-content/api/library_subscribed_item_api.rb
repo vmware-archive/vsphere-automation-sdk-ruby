@@ -18,21 +18,19 @@ module VSphereAutomation
     end
     # Evicts the cached content of a library item in a subscribed library. <p> This {@term operation} allows the cached content of a library item to be removed to free up storage capacity. This {@term operation} will only work when a library item is synchronized on-demand. When a library is not synchronized on-demand, it always attempts to keep its cache up-to-date with the published source. Evicting the library item will set {@link ItemModel#cached} to false.
     # @param library_item_id Identifier of the library item whose content should be evicted.
-    # @param action ~action&#x3D;evict
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
-    def evict(library_item_id, action, opts = {})
-      evict_with_http_info(library_item_id, action, opts)
+    def evict(library_item_id, opts = {})
+      evict_with_http_info(library_item_id, opts)
       nil
     end
 
     # Evicts the cached content of a library item in a subscribed library. &lt;p&gt; This {@term operation} allows the cached content of a library item to be removed to free up storage capacity. This {@term operation} will only work when a library item is synchronized on-demand. When a library is not synchronized on-demand, it always attempts to keep its cache up-to-date with the published source. Evicting the library item will set {@link ItemModel#cached} to false.
     # @api private
     # @param library_item_id Identifier of the library item whose content should be evicted.
-    # @param action ~action&#x3D;evict
     # @param [Hash] opts the optional parameters
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def evict_with_http_info(library_item_id, action, opts = {})
+    def evict_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscribedItemApi.evict ...'
       end
@@ -40,20 +38,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_item_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_item_id' when calling LibrarySubscribedItemApi.evict"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LibrarySubscribedItemApi.evict"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['evict'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of evict"
-      end
       # resource path
-      local_var_path = '/com/vmware/content/library/subscribed-item/id:{library_item_id}'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
+      local_var_path = '/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=evict'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

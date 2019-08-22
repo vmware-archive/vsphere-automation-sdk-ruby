@@ -75,23 +75,21 @@ module VSphereAutomation
     end
     # Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. <p> This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. </p>
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to be deployed.
-    # @param action ~action&#x3D;deploy
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterOvfLibraryItemDeployResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def deploy(ovf_library_item_id, action, request_body, opts = {})
-      data, _status_code, _headers = deploy_with_http_info(ovf_library_item_id, action, request_body, opts)
+    def deploy(ovf_library_item_id, request_body, opts = {})
+      data, _status_code, _headers = deploy_with_http_info(ovf_library_item_id, request_body, opts)
       data
     end
 
     # Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. &lt;p&gt; This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. &lt;/p&gt;
     # @api private
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to be deployed.
-    # @param action ~action&#x3D;deploy
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterOvfLibraryItemDeployResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def deploy_with_http_info(ovf_library_item_id, action, request_body, opts = {})
+    def deploy_with_http_info(ovf_library_item_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfLibraryItemApi.deploy ...'
       end
@@ -99,24 +97,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && ovf_library_item_id.nil?
         fail ArgumentError, "Missing the required parameter 'ovf_library_item_id' when calling OvfLibraryItemApi.deploy"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling OvfLibraryItemApi.deploy"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['deploy'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of deploy"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling OvfLibraryItemApi.deploy"
       end
       # resource path
-      local_var_path = '/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}'.sub('{' + 'ovf_library_item_id' + '}', ovf_library_item_id.to_s)
+      local_var_path = '/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action=deploy'.sub('{' + 'ovf_library_item_id' + '}', ovf_library_item_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

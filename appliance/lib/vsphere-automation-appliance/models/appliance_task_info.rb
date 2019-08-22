@@ -74,7 +74,7 @@ module VSphereAutomation
       {
         :'progress' => :'CisTaskProgress',
         :'subtask_order' => :'Array<String>',
-        :'subtasks' => :'Array<Object>',
+        :'subtasks' => :'Array<ApplianceTaskInfoSubtasks>',
         :'description' => :'VapiStdLocalizableMessage',
         :'service' => :'String',
         :'operation' => :'String',

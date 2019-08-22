@@ -4,12 +4,12 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataAuthenticationServiceOperationApi.md#get) | **POST** /com/vmware/vapi/metadata/authentication/service/operation/id:{service_id} | Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
+[**get**](MetadataAuthenticationServiceOperationApi.md#get) | **POST** /com/vmware/vapi/metadata/authentication/service/operation/id:{service_id}?~action&#x3D;get | Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 [**list**](MetadataAuthenticationServiceOperationApi.md#list) | **GET** /com/vmware/vapi/metadata/authentication/service/operation | Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have authentication information.
 
 
 # **get**
-> VapiMetadataAuthenticationServiceOperationResult get(service_id, action, request_body)
+> VapiMetadataAuthenticationServiceOperationResult get(service_id, request_body)
 
 Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 
@@ -27,12 +27,11 @@ end
 
 api_instance = VSphereAutomation::VAPI::MetadataAuthenticationServiceOperationApi.new
 service_id = 'service_id_example' # String | Identifier of the service element.
-action = 'action_example' # String | ~action=get
 request_body = VAPI::VapiMetadataAuthenticationServiceOperationGet.new # VapiMetadataAuthenticationServiceOperationGet | 
 
 begin
   #Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
-  result = api_instance.get(service_id, action, request_body)
+  result = api_instance.get(service_id, request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling MetadataAuthenticationServiceOperationApi->get: #{e}"
@@ -44,7 +43,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_id** | **String**| Identifier of the service element. | 
- **action** | **String**| ~action&#x3D;get | 
  **request_body** | [**VapiMetadataAuthenticationServiceOperationGet**](VapiMetadataAuthenticationServiceOperationGet.md)|  | 
 
 ### Return type

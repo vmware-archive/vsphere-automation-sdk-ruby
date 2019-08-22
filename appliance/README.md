@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere Appliance API
 
 - API version: 2.0.0
-- Package version: 0.2.2
+- Package version: 0.3.0
 
 ## Installation
 
@@ -83,12 +83,12 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::LocalAccountsPolicyApi` | [**set**](docs/LocalAccountsPolicyApi.md#set) | **PUT** /appliance/local-accounts/global-policy | Set the global password policy.
 `VSphereAutomation::Appliance::LoggingForwardingApi` | [**get**](docs/LoggingForwardingApi.md#get) | **GET** /appliance/logging/forwarding | Returns the configuration for forwarding log messages to remote logging servers.
 `VSphereAutomation::Appliance::LoggingForwardingApi` | [**set**](docs/LoggingForwardingApi.md#set) | **PUT** /appliance/logging/forwarding | Sets the configuration for forwarding log messages to remote log servers.
-`VSphereAutomation::Appliance::LoggingForwardingApi` | [**test**](docs/LoggingForwardingApi.md#test) | **POST** /appliance/logging/forwarding | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
+`VSphereAutomation::Appliance::LoggingForwardingApi` | [**test**](docs/LoggingForwardingApi.md#test) | **POST** /appliance/logging/forwarding?action&#x3D;test | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
 `VSphereAutomation::Appliance::MonitoringApi` | [**get**](docs/MonitoringApi.md#get) | **GET** /appliance/monitoring/{stat_id} | Get monitored item info
 `VSphereAutomation::Appliance::MonitoringApi` | [**list**](docs/MonitoringApi.md#list) | **GET** /appliance/monitoring | Get monitored items list
 `VSphereAutomation::Appliance::MonitoringApi` | [**query**](docs/MonitoringApi.md#query) | **GET** /appliance/monitoring/query | Get monitoring data.
 `VSphereAutomation::Appliance::NetworkingApi` | [**get**](docs/NetworkingApi.md#get) | **GET** /appliance/networking | Get Networking information for all configured interfaces.
-`VSphereAutomation::Appliance::NetworkingApi` | [**reset**](docs/NetworkingApi.md#reset) | **POST** /appliance/networking | Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
+`VSphereAutomation::Appliance::NetworkingApi` | [**reset**](docs/NetworkingApi.md#reset) | **POST** /appliance/networking?action&#x3D;reset | Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
 `VSphereAutomation::Appliance::NetworkingApi` | [**update**](docs/NetworkingApi.md#update) | **PATCH** /appliance/networking | Enable or Disable ipv6 on all interfaces
 `VSphereAutomation::Appliance::NetworkingDnsDomainsApi` | [**add**](docs/NetworkingDnsDomainsApi.md#add) | **POST** /appliance/networking/dns/domains | Add domain to DNS search domains.
 `VSphereAutomation::Appliance::NetworkingDnsDomainsApi` | [**list**](docs/NetworkingDnsDomainsApi.md#list) | **GET** /appliance/networking/dns/domains | Get list of DNS search domains.
@@ -114,7 +114,7 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::NetworkingProxyApi` | [**get**](docs/NetworkingProxyApi.md#get) | **GET** /appliance/networking/proxy/{protocol} | Gets the proxy configuration for a specific protocol.
 `VSphereAutomation::Appliance::NetworkingProxyApi` | [**list**](docs/NetworkingProxyApi.md#list) | **GET** /appliance/networking/proxy | Gets proxy configuration for all configured protocols.
 `VSphereAutomation::Appliance::NetworkingProxyApi` | [**set**](docs/NetworkingProxyApi.md#set) | **PUT** /appliance/networking/proxy/{protocol} | Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
-`VSphereAutomation::Appliance::NetworkingProxyApi` | [**test**](docs/NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol} | Tests a proxy configuration by testing the connection to the proxy server and test host.
+`VSphereAutomation::Appliance::NetworkingProxyApi` | [**test**](docs/NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol}?action&#x3D;test | Tests a proxy configuration by testing the connection to the proxy server and test host.
 `VSphereAutomation::Appliance::NtpApi` | [**get**](docs/NtpApi.md#get) | **GET** /appliance/ntp | Get the NTP configuration status. If you run the 'timesync.get' command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The 'ntp' command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
 `VSphereAutomation::Appliance::NtpApi` | [**set**](docs/NtpApi.md#set) | **PUT** /appliance/ntp | Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
 `VSphereAutomation::Appliance::NtpApi` | [**test**](docs/NtpApi.md#test) | **POST** /appliance/ntp/test | Test the connection to a list of ntp servers.
@@ -153,7 +153,7 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::ShutdownApi` | [**reboot**](docs/ShutdownApi.md#reboot) | **POST** /appliance/shutdown/reboot | Reboot the appliance.
 `VSphereAutomation::Appliance::SystemStorageApi` | [**list**](docs/SystemStorageApi.md#list) | **GET** /appliance/system/storage | Get disk to partition mapping.
 `VSphereAutomation::Appliance::SystemStorageApi` | [**resize**](docs/SystemStorageApi.md#resize) | **POST** /appliance/system/storage/resize | Resize all partitions to 100 percent of disk size.
-`VSphereAutomation::Appliance::SystemStorageApi` | [**resize_ex**](docs/SystemStorageApi.md#resize_ex) | **POST** /appliance/system/storage | Resize all partitions to 100 percent of disk size.
+`VSphereAutomation::Appliance::SystemStorageApi` | [**resize_ex**](docs/SystemStorageApi.md#resize_ex) | **POST** /appliance/system/storage?action&#x3D;resize-ex | Resize all partitions to 100 percent of disk size.
 `VSphereAutomation::Appliance::SystemTimeApi` | [**get**](docs/SystemTimeApi.md#get) | **GET** /appliance/system/time | Get system time.
 `VSphereAutomation::Appliance::SystemTimeTimezoneApi` | [**get**](docs/SystemTimeTimezoneApi.md#get) | **GET** /appliance/system/time/timezone | Get time zone.
 `VSphereAutomation::Appliance::SystemTimeTimezoneApi` | [**set**](docs/SystemTimeTimezoneApi.md#set) | **PUT** /appliance/system/time/timezone | Set time zone.
@@ -171,12 +171,12 @@ Class | Method | HTTP request | Description
 `VSphereAutomation::Appliance::TechpreviewServicesStatusApi` | [**get**](docs/TechpreviewServicesStatusApi.md#get) | **POST** /appliance/techpreview/services/status/get | Get status of a service.
 `VSphereAutomation::Appliance::TimesyncApi` | [**get**](docs/TimesyncApi.md#get) | **GET** /appliance/timesync | Get time synchronization mode.
 `VSphereAutomation::Appliance::TimesyncApi` | [**set**](docs/TimesyncApi.md#set) | **PUT** /appliance/timesync | Set time synchronization mode.
-`VSphereAutomation::Appliance::UpdateApi` | [**cancel**](docs/UpdateApi.md#cancel) | **POST** /appliance/update | Request the cancellation the update operation that is currently in progress.
+`VSphereAutomation::Appliance::UpdateApi` | [**cancel**](docs/UpdateApi.md#cancel) | **POST** /appliance/update?action&#x3D;cancel | Request the cancellation the update operation that is currently in progress.
 `VSphereAutomation::Appliance::UpdateApi` | [**get**](docs/UpdateApi.md#get) | **GET** /appliance/update | Gets the current status of the appliance update.
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**get**](docs/UpdatePendingApi.md#get) | **GET** /appliance/update/pending/{version} | Gets update information
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**install**](docs/UpdatePendingApi.md#install) | **POST** /appliance/update/pending/{version}?action&#x3D;install | Starts operation of installing the appliance update. Will fail is the update is not staged
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**list**](docs/UpdatePendingApi.md#list) | **GET** /appliance/update/pending | Checks if new updates are available.
-`VSphereAutomation::Appliance::UpdatePendingApi` | [**precheck**](docs/UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version} | Runs update precheck
+`VSphereAutomation::Appliance::UpdatePendingApi` | [**precheck**](docs/UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version}?action&#x3D;precheck | Runs update precheck
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**stage**](docs/UpdatePendingApi.md#stage) | **POST** /appliance/update/pending/{version}?action&#x3D;stage | Starts staging the appliance update. The updates are searched for in the following order: staged, CDROM, URL
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**stage_and_install**](docs/UpdatePendingApi.md#stage_and_install) | **POST** /appliance/update/pending/{version}?action&#x3D;stage-and-install | Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
 `VSphereAutomation::Appliance::UpdatePendingApi` | [**validate**](docs/UpdatePendingApi.md#validate) | **POST** /appliance/update/pending/{version}?action&#x3D;validate | Validates the user provided data before the update installation.

@@ -4,11 +4,11 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](VcenterActivationApi.md#cancel) | **POST** /com/vmware/vapi/vcenter/activation/id:{activation_id} | Sends a request to cancel the task associated with the provided {@param.name activationId}.
+[**cancel**](VcenterActivationApi.md#cancel) | **POST** /com/vmware/vapi/vcenter/activation/id:{activation_id}?~action&#x3D;cancel | Sends a request to cancel the task associated with the provided {@param.name activationId}.
 
 
 # **cancel**
-> cancel(activation_id, action)
+> cancel(activation_id)
 
 Sends a request to cancel the task associated with the provided {@param.name activationId}.
 
@@ -26,11 +26,10 @@ end
 
 api_instance = VSphereAutomation::VAPI::VcenterActivationApi.new
 activation_id = 'activation_id_example' # String | the {@param.name activationId} associated with a vCenter Server task to be canceled.
-action = 'action_example' # String | ~action=cancel
 
 begin
   #Sends a request to cancel the task associated with the provided {@param.name activationId}.
-  api_instance.cancel(activation_id, action)
+  api_instance.cancel(activation_id)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VcenterActivationApi->cancel: #{e}"
 end
@@ -41,7 +40,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activation_id** | **String**| the {@param.name activationId} associated with a vCenter Server task to be canceled. | 
- **action** | **String**| ~action&#x3D;cancel | 
 
 ### Return type
 

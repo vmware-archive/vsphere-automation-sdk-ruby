@@ -78,23 +78,21 @@ module VSphereAutomation
     end
     # Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
     # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
-    # @param action action&#x3D;deploy
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VcenterVmTemplateLibraryItemsDeployResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
-    def deploy(template_library_item, action, request_body, opts = {})
-      data, _status_code, _headers = deploy_with_http_info(template_library_item, action, request_body, opts)
+    def deploy(template_library_item, request_body, opts = {})
+      data, _status_code, _headers = deploy_with_http_info(template_library_item, request_body, opts)
       data
     end
 
     # Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
     # @api private
     # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
-    # @param action action&#x3D;deploy
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VcenterVmTemplateLibraryItemsDeployResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    def deploy_with_http_info(template_library_item, action, request_body, opts = {})
+    def deploy_with_http_info(template_library_item, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.deploy ...'
       end
@@ -102,24 +100,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && template_library_item.nil?
         fail ArgumentError, "Missing the required parameter 'template_library_item' when calling VmTemplateLibraryItemsApi.deploy"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling VmTemplateLibraryItemsApi.deploy"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['deploy'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of deploy"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmTemplateLibraryItemsApi.deploy"
       end
       # resource path
-      local_var_path = '/vcenter/vm-template/library-items/{template_library_item}'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
+      local_var_path = '/vcenter/vm-template/library-items/{template_library_item}?action=deploy'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'action'] = action
 
       # header parameters
       header_params = {}

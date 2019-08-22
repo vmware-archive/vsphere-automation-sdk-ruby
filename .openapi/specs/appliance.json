@@ -786,43 +786,6 @@
             }
         },
         "/appliance/logging/forwarding": {
-            "post": {
-                "tags": [
-                    "logging_forwarding"
-                ],
-                "summary": "Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "schema": {
-                            "$ref": "#/definitions/appliance.logging.forwarding_test"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=test",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "test"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Information about the status of the connection to each of the remote logging servers.",
-                        "schema": {
-                            "$ref": "#/definitions/appliance.logging.forwarding.test_result"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "test"
-            },
             "put": {
                 "tags": [
                     "logging_forwarding"
@@ -869,6 +832,35 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/appliance/logging/forwarding?action=test": {
+            "post": {
+                "tags": [
+                    "logging_forwarding"
+                ],
+                "summary": "Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "schema": {
+                            "$ref": "#/definitions/appliance.logging.forwarding_test"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Information about the status of the connection to each of the remote logging servers.",
+                        "schema": {
+                            "$ref": "#/definitions/appliance.logging.forwarding.test_result"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "test"
             }
         },
         "/appliance/monitoring": {
@@ -1005,39 +997,6 @@
             }
         },
         "/appliance/networking": {
-            "post": {
-                "tags": [
-                    "networking"
-                ],
-                "summary": "Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.",
-                "parameters": [
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=reset",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "reset"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "Generic error.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "reset"
-            },
             "get": {
                 "tags": [
                     "networking"
@@ -1752,57 +1711,6 @@
             }
         },
         "/appliance/networking/proxy/{protocol}": {
-            "post": {
-                "tags": [
-                    "networking_proxy"
-                ],
-                "summary": "Tests a proxy configuration by testing the connection to the proxy server and test host.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "protocol",
-                        "description": "Protocol whose proxy is to be tested."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/appliance.networking.proxy_test"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=test",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "test"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Status of proxy settings.",
-                        "schema": {
-                            "$ref": "#/definitions/appliance.networking.proxy.test_result"
-                        }
-                    },
-                    "400": {
-                        "description": "Generic error.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "test"
-            },
             "put": {
                 "tags": [
                     "networking_proxy"
@@ -1897,6 +1805,73 @@
                     }
                 },
                 "operationId": "delete"
+            }
+        },
+        "/appliance/networking/proxy/{protocol}?action=test": {
+            "post": {
+                "tags": [
+                    "networking_proxy"
+                ],
+                "summary": "Tests a proxy configuration by testing the connection to the proxy server and test host.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "protocol",
+                        "description": "Protocol whose proxy is to be tested."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/appliance.networking.proxy_test"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status of proxy settings.",
+                        "schema": {
+                            "$ref": "#/definitions/appliance.networking.proxy.test_result"
+                        }
+                    },
+                    "400": {
+                        "description": "Generic error.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "test"
+            }
+        },
+        "/appliance/networking?action=reset": {
+            "post": {
+                "tags": [
+                    "networking"
+                ],
+                "summary": "Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Generic error.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "reset"
             }
         },
         "/appliance/ntp": {
@@ -3194,42 +3169,6 @@
             }
         },
         "/appliance/system/storage": {
-            "post": {
-                "tags": [
-                    "system_storage"
-                ],
-                "summary": "Resize all partitions to 100 percent of disk size.",
-                "parameters": [
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=resize-ex",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "resize-ex"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "List of the partitions with the size before and after resizing",
-                        "schema": {
-                            "$ref": "#/definitions/appliance.system.storage.resize_ex_result"
-                        }
-                    },
-                    "400": {
-                        "description": "Generic error",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "resize_ex"
-            },
             "get": {
                 "tags": [
                     "system_storage"
@@ -3275,6 +3214,33 @@
                     "application/json"
                 ],
                 "operationId": "resize"
+            }
+        },
+        "/appliance/system/storage?action=resize-ex": {
+            "post": {
+                "tags": [
+                    "system_storage"
+                ],
+                "summary": "Resize all partitions to 100 percent of disk size.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "List of the partitions with the size before and after resizing",
+                        "schema": {
+                            "$ref": "#/definitions/appliance.system.storage.resize_ex_result"
+                        }
+                    },
+                    "400": {
+                        "description": "Generic error",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "resize_ex"
             }
         },
         "/appliance/system/time": {
@@ -3734,51 +3700,6 @@
             }
         },
         "/appliance/update": {
-            "post": {
-                "tags": [
-                    "update"
-                ],
-                "summary": "Request the cancellation the update operation that is currently in progress.",
-                "parameters": [
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=cancel",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "cancel"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "Current task is not cancellable",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    },
-                    "401": {
-                        "description": "session is not authenticated",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "session is not authorized to perform this operation",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "cancel"
-            },
             "get": {
                 "tags": [
                     "update"
@@ -3877,67 +3798,6 @@
             }
         },
         "/appliance/update/pending/{version}": {
-            "post": {
-                "tags": [
-                    "update_pending"
-                ],
-                "summary": "Runs update precheck",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "version",
-                        "description": "Update version"
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=precheck",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "precheck"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "PrecheckResult",
-                        "schema": {
-                            "$ref": "#/definitions/appliance.update.pending.precheck_result"
-                        }
-                    },
-                    "400": {
-                        "description": "if another operation is in progress",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    },
-                    "401": {
-                        "description": "session is not authenticated",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "session is not authorized to perform this operation",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    },
-                    "404": {
-                        "description": "the update is not found",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "precheck"
-            },
             "get": {
                 "tags": [
                     "update_pending"
@@ -4043,6 +3903,59 @@
                     "application/json"
                 ],
                 "operationId": "install"
+            }
+        },
+        "/appliance/update/pending/{version}?action=precheck": {
+            "post": {
+                "tags": [
+                    "update_pending"
+                ],
+                "summary": "Runs update precheck",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "version",
+                        "description": "Update version"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "PrecheckResult",
+                        "schema": {
+                            "$ref": "#/definitions/appliance.update.pending.precheck_result"
+                        }
+                    },
+                    "400": {
+                        "description": "if another operation is in progress",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    },
+                    "401": {
+                        "description": "session is not authenticated",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "session is not authorized to perform this operation",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    },
+                    "404": {
+                        "description": "the update is not found",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "precheck"
             }
         },
         "/appliance/update/pending/{version}?action=stage": {
@@ -4358,6 +4271,42 @@
                     }
                 },
                 "operationId": "delete"
+            }
+        },
+        "/appliance/update?action=cancel": {
+            "post": {
+                "tags": [
+                    "update"
+                ],
+                "summary": "Request the cancellation the update operation that is currently in progress.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Current task is not cancellable",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    },
+                    "401": {
+                        "description": "session is not authenticated",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "session is not authorized to perform this operation",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "cancel"
             }
         },
         "/appliance/vmon/service": {

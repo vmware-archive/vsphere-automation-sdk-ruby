@@ -17,43 +17,32 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-    # @param action ~action&#x3D;find
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentLibraryFindResult|VapiStdErrorsInvalidArgumentError|]
-    def find(action, request_body, opts = {})
-      data, _status_code, _headers = find_with_http_info(action, request_body, opts)
+    def find(request_body, opts = {})
+      data, _status_code, _headers = find_with_http_info(request_body, opts)
       data
     end
 
     # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
     # @api private
-    # @param action ~action&#x3D;find
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryFindResult|VapiStdErrorsInvalidArgumentError|, Fixnum, Hash)>]  data, response status code and response headers
-    def find_with_http_info(action, request_body, opts = {})
+    def find_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryApi.find ...'
-      end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryApi.find"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['find'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of find"
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryApi.find"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library'
+      local_var_path = '/com/vmware/content/library?~action=find'
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

@@ -18,23 +18,21 @@ module VSphereAutomation
     end
     # Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. <p> When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
     # @param update_session_id Identifier of the update session to be modified.
-    # @param action ~action&#x3D;add
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [ContentLibraryItemUpdatesessionFileAddResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
-    def add(update_session_id, action, request_body, opts = {})
-      data, _status_code, _headers = add_with_http_info(update_session_id, action, request_body, opts)
+    def add(update_session_id, request_body, opts = {})
+      data, _status_code, _headers = add_with_http_info(update_session_id, request_body, opts)
       data
     end
 
     # Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. &lt;p&gt; When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
     # @api private
     # @param update_session_id Identifier of the update session to be modified.
-    # @param action ~action&#x3D;add
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContentLibraryItemUpdatesessionFileAddResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def add_with_http_info(update_session_id, action, request_body, opts = {})
+    def add_with_http_info(update_session_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdatesessionFileApi.add ...'
       end
@@ -42,24 +40,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && update_session_id.nil?
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdatesessionFileApi.add"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LibraryItemUpdatesessionFileApi.add"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['add'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of add"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemUpdatesessionFileApi.add"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/updatesession/file/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action=add'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

@@ -49,10 +49,10 @@ module VSphereAutomation
       {
         :'name' => :'String',
         :'type' => :'VapiMetadataMetamodelStructureInfoType',
-        :'enumerations' => :'Array<Object>',
-        :'constants' => :'Array<Object>',
+        :'enumerations' => :'Array<VapiMetadataMetamodelPackageInfoEnumerations>',
+        :'constants' => :'Array<VapiMetadataMetamodelServiceInfoConstants>',
         :'fields' => :'Array<VapiMetadataMetamodelFieldInfo>',
-        :'metadata' => :'Array<Object>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'documentation' => :'String'
       }
     end

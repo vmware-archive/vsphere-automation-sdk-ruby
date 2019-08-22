@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deploytask**](VchaClusterApi.md#deploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;deploy&amp;vmw-task&#x3D;true | Prepares, clones, and configures a VCHA cluster.
-[**failovertask**](VchaClusterApi.md#failovertask) | **POST** /vcenter/vcha/cluster | Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
+[**failovertask**](VchaClusterApi.md#failovertask) | **POST** /vcenter/vcha/cluster?action&#x3D;failover&amp;vmw-task&#x3D;true | Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
 [**get**](VchaClusterApi.md#get) | **POST** /vcenter/vcha/cluster?action&#x3D;get | Retrieves the status of a VCHA cluster.
 [**undeploytask**](VchaClusterApi.md#undeploytask) | **POST** /vcenter/vcha/cluster?action&#x3D;undeploy&amp;vmw-task&#x3D;true | Destroys the VCHA cluster and removes all VCHA specific information from the VCVA appliance. Optionally, the passive and witness node virtual machines will be deleted only if VCHA was deployed using automatic deployment. The active node in the cluster continues to run as a standalone VCVA appliance after the destroy operation has been performed.   If the VCHA cluster is in a transition state and not configured, then the VCHA cluster specific information is removed. 
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **failovertask**
-> VcenterVchaClusterFailoverTaskResult failovertask(action, request_body)
+> VcenterVchaClusterFailoverTaskResult failovertask(request_body)
 
 Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
 
@@ -78,12 +78,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterApi.new
-action = 'action_example' # String | action=failover&vmw-task
 request_body = VCenter::VcenterVchaClusterFailoverTask.new # VcenterVchaClusterFailoverTask | 
 
 begin
   #Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster's mode is enabled and all cluster members are present.    2.  Cluster's mode is maintenance and all cluster members are present. 
-  result = api_instance.failovertask(action, request_body)
+  result = api_instance.failovertask(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterApi->failovertask: #{e}"
@@ -94,7 +93,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;failover&amp;vmw-task | 
  **request_body** | [**VcenterVchaClusterFailoverTask**](VcenterVchaClusterFailoverTask.md)|  | 
 
 ### Return type

@@ -18,23 +18,21 @@ module VSphereAutomation
     end
     # Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
     # @param service_id Identifier of the service element.
-    # @param action ~action&#x3D;get
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [VapiMetadataAuthenticationServiceOperationResult|VapiStdErrorsNotFoundError|]
-    def get(service_id, action, request_body, opts = {})
-      data, _status_code, _headers = get_with_http_info(service_id, action, request_body, opts)
+    def get(service_id, request_body, opts = {})
+      data, _status_code, _headers = get_with_http_info(service_id, request_body, opts)
       data
     end
 
     # Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
     # @api private
     # @param service_id Identifier of the service element.
-    # @param action ~action&#x3D;get
     # @param request_body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(VapiMetadataAuthenticationServiceOperationResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
-    def get_with_http_info(service_id, action, request_body, opts = {})
+    def get_with_http_info(service_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationServiceOperationApi.get ...'
       end
@@ -42,24 +40,15 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && service_id.nil?
         fail ArgumentError, "Missing the required parameter 'service_id' when calling MetadataAuthenticationServiceOperationApi.get"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling MetadataAuthenticationServiceOperationApi.get"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['get'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of get"
-      end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling MetadataAuthenticationServiceOperationApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/authentication/service/operation/id:{service_id}'.sub('{' + 'service_id' + '}', service_id.to_s)
+      local_var_path = '/com/vmware/vapi/metadata/authentication/service/operation/id:{service_id}?~action=get'.sub('{' + 'service_id' + '}', service_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

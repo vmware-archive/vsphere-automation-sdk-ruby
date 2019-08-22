@@ -226,23 +226,21 @@ module VSphereAutomation
     end
     # Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.
     # @param library_id Identifier of the published library.
-    # @param action ~action&#x3D;publish
     # @param [Hash] opts the optional parameters
     # @option opts [ContentLocalLibraryPublish] :request_body 
     # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
-    def publish(library_id, action, opts = {})
-      publish_with_http_info(library_id, action, opts)
+    def publish(library_id, opts = {})
+      publish_with_http_info(library_id, opts)
       nil
     end
 
     # Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.
     # @api private
     # @param library_id Identifier of the published library.
-    # @param action ~action&#x3D;publish
     # @param [Hash] opts the optional parameters
     # @option opts [ContentLocalLibraryPublish] :request_body 
     # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
-    def publish_with_http_info(library_id, action, opts = {})
+    def publish_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.publish ...'
       end
@@ -250,20 +248,11 @@ module VSphereAutomation
       if @api_client.config.client_side_validation && library_id.nil?
         fail ArgumentError, "Missing the required parameter 'library_id' when calling LocalLibraryApi.publish"
       end
-      # verify the required parameter 'action' is set
-      if @api_client.config.client_side_validation && action.nil?
-        fail ArgumentError, "Missing the required parameter 'action' when calling LocalLibraryApi.publish"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['publish'].include?(action)
-        fail ArgumentError, "invalid value for 'action', must be one of publish"
-      end
       # resource path
-      local_var_path = '/com/vmware/content/local-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/com/vmware/content/local-library/id:{library_id}?~action=publish'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
-      query_params[:'~action'] = action
 
       # header parameters
       header_params = {}

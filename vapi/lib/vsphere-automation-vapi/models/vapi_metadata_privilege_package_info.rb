@@ -29,7 +29,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'privileges' => :'Array<String>',
-        :'services' => :'Array<Object>'
+        :'services' => :'Array<VapiMetadataPrivilegePackageInfoServices>'
       }
     end
 

@@ -35,7 +35,7 @@
         "http"
     ],
     "paths": {
-        "/com/vmware/vcenter/inventory/datastore": {
+        "/com/vmware/vcenter/inventory/datastore?~action=find": {
             "post": {
                 "tags": [
                     "inventory_datastore"
@@ -49,16 +49,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.inventory.datastore_find"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=find",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "find"
-                        ]
                     }
                 ],
                 "responses": {
@@ -81,7 +71,7 @@
                 "operationId": "find"
             }
         },
-        "/com/vmware/vcenter/inventory/network": {
+        "/com/vmware/vcenter/inventory/network?~action=find": {
             "post": {
                 "tags": [
                     "inventory_network"
@@ -95,16 +85,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.inventory.network_find"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=find",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "find"
-                        ]
                     }
                 ],
                 "responses": {
@@ -127,7 +107,7 @@
                 "operationId": "find"
             }
         },
-        "/com/vmware/vcenter/iso/image/id:{library_item}": {
+        "/com/vmware/vcenter/iso/image/id:{library_item}?~action=mount": {
             "post": {
                 "tags": [
                     "iso_image"
@@ -148,16 +128,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.iso.image_mount"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=mount",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "mount"
-                        ]
                     }
                 ],
                 "responses": {
@@ -186,7 +156,7 @@
                 "operationId": "mount"
             }
         },
-        "/com/vmware/vcenter/iso/image/id:{vm}": {
+        "/com/vmware/vcenter/iso/image/id:{vm}?~action=unmount": {
             "post": {
                 "tags": [
                     "iso_image"
@@ -207,16 +177,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.iso.image_unmount"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=unmount",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "unmount"
-                        ]
                     }
                 ],
                 "responses": {
@@ -366,7 +326,7 @@
                 "operationId": "create"
             }
         },
-        "/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}": {
+        "/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action=deploy": {
             "post": {
                 "tags": [
                     "ovf_library_item"
@@ -387,16 +347,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.ovf.library_item_deploy"
                         }
-                    },
-                    {
-                        "name": "~action",
-                        "in": "query",
-                        "description": "~action=deploy",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "deploy"
-                        ]
                     }
                 ],
                 "responses": {
@@ -481,46 +431,6 @@
             }
         },
         "/vcenter/certificate-management/vcenter/tls": {
-            "post": {
-                "tags": [
-                    "certificate_management_vcenter_tls"
-                ],
-                "summary": "Renews the TLS certificate for the given duration period.",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.certificate_management.vcenter.tls_renew"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=renew",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "renew"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "If the system failed to renew the TLS certificate.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "renew"
-            },
             "put": {
                 "tags": [
                     "certificate_management_vcenter_tls"
@@ -621,6 +531,38 @@
                     "application/json"
                 ],
                 "operationId": "create"
+            }
+        },
+        "/vcenter/certificate-management/vcenter/tls?action=renew": {
+            "post": {
+                "tags": [
+                    "certificate_management_vcenter_tls"
+                ],
+                "summary": "Renews the TLS certificate for the given duration period.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.certificate_management.vcenter.tls_renew"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "If the system failed to renew the TLS certificate.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "renew"
             }
         },
         "/vcenter/certificate-management/vcenter/trusted-root-chains": {
@@ -1345,45 +1287,6 @@
             }
         },
         "/vcenter/deployment": {
-            "post": {
-                "tags": [
-                    "deployment"
-                ],
-                "summary": "Rollback a failed appliance so it can be configured once again.",
-                "parameters": [
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=rollback",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "rollback"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "if the appliance is not in FAILED state.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unsupported_error"
-                        }
-                    },
-                    "401": {
-                        "description": "if the caller is not authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "rollback"
-            },
             "get": {
                 "tags": [
                     "deployment"
@@ -1414,51 +1317,6 @@
             }
         },
         "/vcenter/deployment/history": {
-            "post": {
-                "tags": [
-                    "deployment_import_history"
-                ],
-                "summary": "Cancels the task for importing vCenter historical data.",
-                "parameters": [
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=cancel",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "cancel"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "401": {
-                        "description": "if the caller is not authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if the caller is not authorized to perform the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    },
-                    "400": {
-                        "description": "Generic error.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "cancel"
-            },
             "get": {
                 "tags": [
                     "deployment_import_history"
@@ -1492,6 +1350,42 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/vcenter/deployment/history?action=cancel": {
+            "post": {
+                "tags": [
+                    "deployment_import_history"
+                ],
+                "summary": "Cancels the task for importing vCenter historical data.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "401": {
+                        "description": "if the caller is not authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if the caller is not authorized to perform the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    },
+                    "400": {
+                        "description": "Generic error.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "cancel"
             }
         },
         "/vcenter/deployment/history?action=pause": {
@@ -1611,45 +1505,6 @@
             }
         },
         "/vcenter/deployment/install": {
-            "post": {
-                "tags": [
-                    "deployment_install"
-                ],
-                "summary": "Cancel the appliance installation that is in progress.",
-                "parameters": [
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=cancel",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "cancel"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "401": {
-                        "description": "if the caller is not authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if the appliance is not in CONFIG_IN_PROGRESS state and if the operation is not INSTALL.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "cancel"
-            },
             "get": {
                 "tags": [
                     "deployment_install"
@@ -1724,7 +1579,7 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/deployment/install/psc/replicated": {
+        "/vcenter/deployment/install/psc/replicated?action=check": {
             "post": {
                 "tags": [
                     "deployment_install_psc_replicated"
@@ -1738,16 +1593,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.deployment.install.psc.replicated_check"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=check",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "check"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1776,7 +1621,7 @@
                 "operationId": "check"
             }
         },
-        "/vcenter/deployment/install/psc/standalone": {
+        "/vcenter/deployment/install/psc/standalone?action=check": {
             "post": {
                 "tags": [
                     "deployment_install_psc_standalone"
@@ -1790,16 +1635,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.deployment.install.psc.standalone_check"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=check",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "check"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1828,7 +1663,7 @@
                 "operationId": "check"
             }
         },
-        "/vcenter/deployment/install/remote-psc": {
+        "/vcenter/deployment/install/remote-psc?action=check": {
             "post": {
                 "tags": [
                     "deployment_install_remote_psc"
@@ -1842,16 +1677,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.deployment.install.remote_psc_check"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=check",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "check"
-                        ]
                     }
                 ],
                 "responses": {
@@ -1878,6 +1703,36 @@
                     "application/json"
                 ],
                 "operationId": "check"
+            }
+        },
+        "/vcenter/deployment/install?action=cancel": {
+            "post": {
+                "tags": [
+                    "deployment_install"
+                ],
+                "summary": "Cancel the appliance installation that is in progress.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "401": {
+                        "description": "if the caller is not authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if the appliance is not in CONFIG_IN_PROGRESS state and if the operation is not INSTALL.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "cancel"
             }
         },
         "/vcenter/deployment/install?action=check": {
@@ -1962,59 +1817,6 @@
             }
         },
         "/vcenter/deployment/question": {
-            "post": {
-                "tags": [
-                    "deployment_question"
-                ],
-                "summary": "Supply answer to the raised question.",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.deployment.question_answer"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=answer",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "answer"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "401": {
-                        "description": "if the caller is not authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "400": {
-                        "description": "if the appliance is NOT in QUESTION_RAISED state.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
-                        }
-                    },
-                    "500": {
-                        "description": "if answer file could not be created.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.internal_server_error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "answer"
-            },
             "get": {
                 "tags": [
                     "deployment_question"
@@ -2050,22 +1852,20 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/deployment/upgrade": {
+        "/vcenter/deployment/question?action=answer": {
             "post": {
                 "tags": [
-                    "deployment_upgrade"
+                    "deployment_question"
                 ],
-                "summary": "Cancel the appliance upgrade that is in progress.",
+                "summary": "Supply answer to the raised question.",
                 "parameters": [
                     {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=cancel",
+                        "in": "body",
+                        "name": "request_body",
                         "required": true,
-                        "type": "string",
-                        "enum": [
-                            "cancel"
-                        ]
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.deployment.question_answer"
+                        }
                     }
                 ],
                 "responses": {
@@ -2079,17 +1879,25 @@
                         }
                     },
                     "400": {
-                        "description": "if the appliance is not in CONFIG_IN_PROGRESS state and if the operation is not INSTALL.",
+                        "description": "if the appliance is NOT in QUESTION_RAISED state.",
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    },
+                    "500": {
+                        "description": "if answer file could not be created.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.internal_server_error_error"
                         }
                     }
                 },
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "cancel"
-            },
+                "operationId": "answer"
+            }
+        },
+        "/vcenter/deployment/upgrade": {
             "get": {
                 "tags": [
                     "deployment_upgrade"
@@ -2117,6 +1925,36 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/vcenter/deployment/upgrade?action=cancel": {
+            "post": {
+                "tags": [
+                    "deployment_upgrade"
+                ],
+                "summary": "Cancel the appliance upgrade that is in progress.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "401": {
+                        "description": "if the caller is not authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "400": {
+                        "description": "if the appliance is not in CONFIG_IN_PROGRESS state and if the operation is not INSTALL.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_allowed_in_current_state_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "cancel"
             }
         },
         "/vcenter/deployment/upgrade?action=check": {
@@ -2198,6 +2036,36 @@
                     "application/json"
                 ],
                 "operationId": "start"
+            }
+        },
+        "/vcenter/deployment?action=rollback": {
+            "post": {
+                "tags": [
+                    "deployment"
+                ],
+                "summary": "Rollback a failed appliance so it can be configured once again.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "if the appliance is not in FAILED state.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unsupported_error"
+                        }
+                    },
+                    "401": {
+                        "description": "if the caller is not authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "rollback"
             }
         },
         "/vcenter/folder": {
@@ -3362,83 +3230,6 @@
                 "operationId": "list"
             }
         },
-        "/vcenter/storage/policies/{policy}": {
-            "post": {
-                "tags": [
-                    "storage_policies"
-                ],
-                "summary": "Returns datastore compatibility summary about a specific storage policy.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "policy",
-                        "description": "The storage policy identifier\nThe parameter must be an identifier for the resource type: vcenter.StoragePolicy."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.storage.policies_check_compatibility"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=check-compatibility",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "check-compatibility"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "datastore compatibility summary about a specific storage policy.",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.storage.policies.check_compatibility_result"
-                        }
-                    },
-                    "400": {
-                        "description": "if input more than 1024 datastores.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unable_to_allocate_resource_error"
-                        }
-                    },
-                    "404": {
-                        "description": "if the storage policy specified does not exist.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "503": {
-                        "description": "if the system is unable to communicate with a service to complete the request.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
-                        }
-                    },
-                    "401": {
-                        "description": "if the user can not be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if the user doesn't have the required privileges.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "check_compatibility"
-            }
-        },
         "/vcenter/storage/policies/{policy}/vm": {
             "get": {
                 "tags": [
@@ -3493,6 +3284,73 @@
                     }
                 },
                 "operationId": "list"
+            }
+        },
+        "/vcenter/storage/policies/{policy}?action=check-compatibility": {
+            "post": {
+                "tags": [
+                    "storage_policies"
+                ],
+                "summary": "Returns datastore compatibility summary about a specific storage policy.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "policy",
+                        "description": "The storage policy identifier\nThe parameter must be an identifier for the resource type: vcenter.StoragePolicy."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.storage.policies_check_compatibility"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "datastore compatibility summary about a specific storage policy.",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.storage.policies.check_compatibility_result"
+                        }
+                    },
+                    "400": {
+                        "description": "if input more than 1024 datastores.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unable_to_allocate_resource_error"
+                        }
+                    },
+                    "404": {
+                        "description": "if the storage policy specified does not exist.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "503": {
+                        "description": "if the system is unable to communicate with a service to complete the request.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
+                        }
+                    },
+                    "401": {
+                        "description": "if the user can not be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if the user doesn't have the required privileges.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "check_compatibility"
             }
         },
         "/vcenter/system-config/deployment-type": {
@@ -3671,7 +3529,7 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/topology/pscs/{hostname}": {
+        "/vcenter/topology/pscs/{hostname}?action=decommission&vmw-task=true": {
             "post": {
                 "tags": [
                     "topology_pscs"
@@ -3692,16 +3550,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.topology.pscs_decommission_task"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=decommission&vmw-task",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "decommission&vmw-task"
-                        ]
                     }
                 ],
                 "responses": {
@@ -3760,59 +3608,7 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/vcha/cluster": {
-            "post": {
-                "tags": [
-                    "vcha_cluster"
-                ],
-                "summary": "Initiates failover from the active vCenter node to the passive node. \n For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover. \n\n For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss. \n\n A failover is allowed only in the following cases: \n\n   1.  Cluster's mode is enabled and all cluster members are present.\n   2.  Cluster's mode is maintenance and all cluster members are present.\n",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster_failover_task"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=failover&vmw-task",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "failover&vmw-task"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.failover_task_result"
-                        }
-                    },
-                    "403": {
-                        "description": "If the user has insufficient privilege to perform the operation. Operation execution requires the Global.VCServer privilege.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    },
-                    "400": {
-                        "description": "If any other error occurs.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "failover$task"
-            }
-        },
-        "/vcenter/vcha/cluster/active": {
+        "/vcenter/vcha/cluster/active?action=get": {
             "post": {
                 "tags": [
                     "vcha_cluster_active"
@@ -3825,16 +3621,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.vcha.cluster.active_get"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=get",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "get"
-                        ]
                     }
                 ],
                 "responses": {
@@ -3900,56 +3686,6 @@
             }
         },
         "/vcenter/vcha/cluster/mode": {
-            "put": {
-                "tags": [
-                    "vcha_cluster_mode"
-                ],
-                "summary": "Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:\n enabled -> disabled - Allowed only in healthy and degraded states.\n enabled -> maintenance - Allowed only in healthy state.\n disabled -> enabled - Allowed only in healthy state.\n maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.\n maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.\n All other transitions are not allowed. \n VCHA Cluster configuration remains intact in any of the cluster modes.\n",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.mode_set_task"
-                        }
-                    },
-                    {
-                        "name": "vmw-task",
-                        "in": "query",
-                        "description": "vmw-task=true",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "true"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.mode.set_task_result"
-                        }
-                    },
-                    "403": {
-                        "description": "If the user has insufficient privilege to perform the operation. Operation execution requires the Global.VCServer privilege.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    },
-                    "400": {
-                        "description": "If any other error occurs.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "set$task"
-            },
             "get": {
                 "tags": [
                     "vcha_cluster_mode"
@@ -3979,43 +3715,27 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/vcha/cluster/passive": {
-            "post": {
+        "/vcenter/vcha/cluster/mode?vmw-task=true": {
+            "put": {
                 "tags": [
-                    "vcha_cluster_passive"
+                    "vcha_cluster_mode"
                 ],
-                "summary": "Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.",
+                "summary": "Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:\n enabled -> disabled - Allowed only in healthy and degraded states.\n enabled -> maintenance - Allowed only in healthy state.\n disabled -> enabled - Allowed only in healthy state.\n maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.\n maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.\n All other transitions are not allowed. \n VCHA Cluster configuration remains intact in any of the cluster modes.\n",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "request_body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.passive_redeploy_task"
+                            "$ref": "#/definitions/vcenter.vcha.cluster.mode_set_task"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=redeploy&vmw-task",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "redeploy&vmw-task"
-                        ]
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.passive.redeploy_task_result"
-                        }
-                    },
-                    "400": {
-                        "description": "If any other error occurs.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                            "$ref": "#/definitions/vcenter.vcha.cluster.mode.set_task_result"
                         }
                     },
                     "403": {
@@ -4023,12 +3743,18 @@
                         "schema": {
                             "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
                         }
+                    },
+                    "400": {
+                        "description": "If any other error occurs.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
                     }
                 },
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "redeploy$task"
+                "operationId": "set$task"
             }
         },
         "/vcenter/vcha/cluster/passive?action=check": {
@@ -4079,37 +3805,27 @@
                 "operationId": "check"
             }
         },
-        "/vcenter/vcha/cluster/witness": {
+        "/vcenter/vcha/cluster/passive?action=redeploy&vmw-task=true": {
             "post": {
                 "tags": [
-                    "vcha_cluster_witness"
+                    "vcha_cluster_passive"
                 ],
-                "summary": "Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.",
+                "summary": "Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "request_body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.witness_redeploy_task"
+                            "$ref": "#/definitions/vcenter.vcha.cluster.passive_redeploy_task"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=redeploy&vmw-task",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "redeploy&vmw-task"
-                        ]
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/vcenter.vcha.cluster.witness.redeploy_task_result"
+                            "$ref": "#/definitions/vcenter.vcha.cluster.passive.redeploy_task_result"
                         }
                     },
                     "400": {
@@ -4179,6 +3895,48 @@
                 "operationId": "check"
             }
         },
+        "/vcenter/vcha/cluster/witness?action=redeploy&vmw-task=true": {
+            "post": {
+                "tags": [
+                    "vcha_cluster_witness"
+                ],
+                "summary": "Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vcha.cluster.witness_redeploy_task"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vcha.cluster.witness.redeploy_task_result"
+                        }
+                    },
+                    "400": {
+                        "description": "If any other error occurs.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user has insufficient privilege to perform the operation. Operation execution requires the Global.VCServer privilege.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "redeploy$task"
+            }
+        },
         "/vcenter/vcha/cluster?action=deploy&vmw-task=true": {
             "post": {
                 "tags": [
@@ -4219,6 +3977,48 @@
                     "application/json"
                 ],
                 "operationId": "deploy$task"
+            }
+        },
+        "/vcenter/vcha/cluster?action=failover&vmw-task=true": {
+            "post": {
+                "tags": [
+                    "vcha_cluster"
+                ],
+                "summary": "Initiates failover from the active vCenter node to the passive node. \n For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover. \n\n For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss. \n\n A failover is allowed only in the following cases: \n\n   1.  Cluster's mode is enabled and all cluster members are present.\n   2.  Cluster's mode is maintenance and all cluster members are present.\n",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vcha.cluster_failover_task"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vcha.cluster.failover_task_result"
+                        }
+                    },
+                    "403": {
+                        "description": "If the user has insufficient privilege to perform the operation. Operation execution requires the Global.VCServer privilege.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    },
+                    "400": {
+                        "description": "If any other error occurs.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "failover$task"
             }
         },
         "/vcenter/vcha/cluster?action=get": {
@@ -4340,7 +4140,7 @@
                 "operationId": "get"
             }
         },
-        "/vcenter/vcha/vc-credentials": {
+        "/vcenter/vcha/vc-credentials?action=validate": {
             "post": {
                 "tags": [
                     "vcha_vc_credentials"
@@ -4354,16 +4154,6 @@
                         "schema": {
                             "$ref": "#/definitions/vcenter.vcha.vc_credentials_validate"
                         }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=validate",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "validate"
-                        ]
                     }
                 ],
                 "responses": {
@@ -4642,81 +4432,6 @@
             }
         },
         "/vcenter/vm-template/library-items/{template_library_item}": {
-            "post": {
-                "tags": [
-                    "vm_template_library_items"
-                ],
-                "summary": "Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "template_library_item",
-                        "description": "identifier of the content library item containing the source virtual machine template to be deployed."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vm_template.library_items_deploy"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=deploy",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "deploy"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Identifier of the deployed virtual machine.",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vm_template.library_items.deploy_result"
-                        }
-                    },
-                    "400": {
-                        "description": "if there was an error in allocating any of the resources required by the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unable_to_allocate_resource_error"
-                        }
-                    },
-                    "404": {
-                        "description": "if the library item specified by {@param.name templateLibraryItem} cannot be found.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "503": {
-                        "description": "if any of the services involved in the {@term operation} are unavailable.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
-                        }
-                    },
-                    "401": {
-                        "description": "if the user that requested the {@term operation} cannot be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "deploy"
-            },
             "get": {
                 "tags": [
                     "vm_template_library_items"
@@ -4770,6 +4485,73 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/vcenter/vm-template/library-items/{template_library_item}?action=deploy": {
+            "post": {
+                "tags": [
+                    "vm_template_library_items"
+                ],
+                "summary": "Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "template_library_item",
+                        "description": "identifier of the content library item containing the source virtual machine template to be deployed."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vm_template.library_items_deploy"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Identifier of the deployed virtual machine.",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vm_template.library_items.deploy_result"
+                        }
+                    },
+                    "400": {
+                        "description": "if there was an error in allocating any of the resources required by the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unable_to_allocate_resource_error"
+                        }
+                    },
+                    "404": {
+                        "description": "if the library item specified by {@param.name templateLibraryItem} cannot be found.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "503": {
+                        "description": "if any of the services involved in the {@term operation} are unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
+                        }
+                    },
+                    "401": {
+                        "description": "if the user that requested the {@term operation} cannot be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if the user that requested the {@term operation} is not authorized to perform the {@term operation}.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deploy"
             }
         },
         "/vcenter/vm/{vm}": {
@@ -4968,58 +4750,6 @@
             }
         },
         "/vcenter/vm/{vm}/guest/power": {
-            "post": {
-                "tags": [
-                    "vm_guest_power"
-                ],
-                "summary": "Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "vm",
-                        "description": "Identifier of the virtual machine.\nThe parameter must be an identifier for the resource type: VirtualMachine."
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=reboot",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "reboot"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "if the virtual machine does not support being powered on (e.g. marked as a template, serving as a fault-tolerance secondary virtual machine).",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unsupported_error"
-                        }
-                    },
-                    "404": {
-                        "description": "if the virtual machine is not found.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
-                        }
-                    },
-                    "503": {
-                        "description": "if VMware Tools is not running.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "reboot"
-            },
             "get": {
                 "tags": [
                     "vm_guest_power"
@@ -5055,6 +4785,50 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/vcenter/vm/{vm}/guest/power?action=reboot": {
+            "post": {
+                "tags": [
+                    "vm_guest_power"
+                ],
+                "summary": "Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "vm",
+                        "description": "Identifier of the virtual machine.\nThe parameter must be an identifier for the resource type: VirtualMachine."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "if the virtual machine does not support being powered on (e.g. marked as a template, serving as a fault-tolerance secondary virtual machine).",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unsupported_error"
+                        }
+                    },
+                    "404": {
+                        "description": "if the virtual machine is not found.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.not_found_error"
+                        }
+                    },
+                    "503": {
+                        "description": "if VMware Tools is not running.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "reboot"
             }
         },
         "/vcenter/vm/{vm}/guest/power?action=shutdown": {
@@ -9234,74 +9008,6 @@
             }
         },
         "/vcenter/vm/{vm}/storage/policy/compliance": {
-            "post": {
-                "tags": [
-                    "vm_storage_policy_compliance"
-                ],
-                "summary": "Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "required": true,
-                        "in": "path",
-                        "name": "vm",
-                        "description": "Virtual machine identifier.\nThe parameter must be an identifier for the resource type: VirtualMachine."
-                    },
-                    {
-                        "in": "body",
-                        "name": "request_body",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vm.storage.policy.compliance_check"
-                        }
-                    },
-                    {
-                        "name": "action",
-                        "in": "query",
-                        "description": "action=check",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "check"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Virtual machine storage policy compliance Compliance.Info structure .\nIf unset, neither the virtual machine home directory nor any of it's virtual disks are associated with a storage policy.",
-                        "schema": {
-                            "$ref": "#/definitions/vcenter.vm.storage.policy.compliance.check_result"
-                        }
-                    },
-                    "400": {
-                        "description": "if the system reports an error while responding to the request.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.error_error"
-                        }
-                    },
-                    "503": {
-                        "description": "if the system is unable to communicate with a service necessary to complete the request.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
-                        }
-                    },
-                    "401": {
-                        "description": "if the user cannot be authenticated.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
-                        }
-                    },
-                    "403": {
-                        "description": "if the user does not have the required privileges.",
-                        "schema": {
-                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
-                        }
-                    }
-                },
-                "consumes": [
-                    "application/json"
-                ],
-                "operationId": "check"
-            },
             "get": {
                 "tags": [
                     "vm_storage_policy_compliance"
@@ -9349,6 +9055,66 @@
                     }
                 },
                 "operationId": "get"
+            }
+        },
+        "/vcenter/vm/{vm}/storage/policy/compliance?action=check": {
+            "post": {
+                "tags": [
+                    "vm_storage_policy_compliance"
+                ],
+                "summary": "Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "name": "vm",
+                        "description": "Virtual machine identifier.\nThe parameter must be an identifier for the resource type: VirtualMachine."
+                    },
+                    {
+                        "in": "body",
+                        "name": "request_body",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vm.storage.policy.compliance_check"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Virtual machine storage policy compliance Compliance.Info structure .\nIf unset, neither the virtual machine home directory nor any of it's virtual disks are associated with a storage policy.",
+                        "schema": {
+                            "$ref": "#/definitions/vcenter.vm.storage.policy.compliance.check_result"
+                        }
+                    },
+                    "400": {
+                        "description": "if the system reports an error while responding to the request.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.error_error"
+                        }
+                    },
+                    "503": {
+                        "description": "if the system is unable to communicate with a service necessary to complete the request.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.service_unavailable_error"
+                        }
+                    },
+                    "401": {
+                        "description": "if the user cannot be authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthenticated_error"
+                        }
+                    },
+                    "403": {
+                        "description": "if the user does not have the required privileges.",
+                        "schema": {
+                            "$ref": "#/definitions/vapi.std.errors.unauthorized_error"
+                        }
+                    }
+                },
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "check"
             }
         }
     },

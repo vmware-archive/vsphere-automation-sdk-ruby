@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;vcenter&gt;/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**check**](VchaClusterWitnessApi.md#check) | **POST** /vcenter/vcha/cluster/witness?action&#x3D;check | Validates the specified witness node&#39;s placement configuration.
-[**redeploytask**](VchaClusterWitnessApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/witness | Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
+[**redeploytask**](VchaClusterWitnessApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/witness?action&#x3D;redeploy&amp;vmw-task&#x3D;true | Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
 
 # **check**
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **redeploytask**
-> VcenterVchaClusterWitnessRedeployTaskResult redeploytask(action, request_body)
+> VcenterVchaClusterWitnessRedeployTaskResult redeploytask(request_body)
 
 Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
@@ -76,12 +76,11 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VCenter::VchaClusterWitnessApi.new
-action = 'action_example' # String | action=redeploy&vmw-task
 request_body = VCenter::VcenterVchaClusterWitnessRedeployTask.new # VcenterVchaClusterWitnessRedeployTask | 
 
 begin
   #Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
-  result = api_instance.redeploytask(action, request_body)
+  result = api_instance.redeploytask(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VchaClusterWitnessApi->redeploytask: #{e}"
@@ -92,7 +91,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **String**| action&#x3D;redeploy&amp;vmw-task | 
  **request_body** | [**VcenterVchaClusterWitnessRedeployTask**](VcenterVchaClusterWitnessRedeployTask.md)|  | 
 
 ### Return type

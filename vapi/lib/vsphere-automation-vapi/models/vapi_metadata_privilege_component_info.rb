@@ -24,7 +24,7 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'packages' => :'Array<Object>'
+        :'packages' => :'Array<VapiMetadataPrivilegeComponentInfoPackages>'
       }
     end
 

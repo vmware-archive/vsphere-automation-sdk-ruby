@@ -33,7 +33,7 @@ module VSphereAutomation
       {
         :'vm' => :'String',
         :'vm_home' => :'VcenterStoragePoliciesComplianceStatus',
-        :'disks' => :'Array<Object>'
+        :'disks' => :'Array<VcenterStoragePoliciesComplianceSummaryDisks>'
       }
     end
 
