@@ -66,7 +66,6 @@ describe 'UpdatePendingApi' do
   # unit tests for precheck
   # Runs update precheck
   # @param version Update version
-  # @param action action&#x3D;precheck
   # @param [Hash] opts the optional parameters
   # @return [ApplianceUpdatePendingPrecheckResult]
   describe 'precheck test' do

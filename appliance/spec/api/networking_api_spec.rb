@@ -40,7 +40,6 @@ describe 'NetworkingApi' do
 
   # unit tests for reset
   # Reset and restarts network configuration on all interfaces, also this will renew the DHCP lease for DHCP IP address.
-  # @param action action&#x3D;reset
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'reset test' do

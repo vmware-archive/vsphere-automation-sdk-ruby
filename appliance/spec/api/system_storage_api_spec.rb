@@ -50,7 +50,6 @@ describe 'SystemStorageApi' do
 
   # unit tests for resize_ex
   # Resize all partitions to 100 percent of disk size.
-  # @param action action&#x3D;resize-ex
   # @param [Hash] opts the optional parameters
   # @return [ApplianceSystemStorageResizeExResult]
   describe 'resize_ex test' do

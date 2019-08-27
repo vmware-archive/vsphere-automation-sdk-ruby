@@ -40,7 +40,6 @@ describe 'CertificateManagementVcenterTlsApi' do
 
   # unit tests for renew
   # Renews the TLS certificate for the given duration period.
-  # @param action action&#x3D;renew
   # @param [Hash] opts the optional parameters
   # @option opts [VcenterCertificateManagementVcenterTlsRenew] :request_body 
   # @return [nil]

@@ -54,7 +54,6 @@ describe 'LibraryItemDownloadsessionFileApi' do
   # unit tests for prepare
   # Requests a file to be prepared for download.
   # @param download_session_id Identifier of the download session.
-  # @param action ~action&#x3D;prepare
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemDownloadsessionFilePrepareResult]

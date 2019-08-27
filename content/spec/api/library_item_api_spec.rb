@@ -31,7 +31,6 @@ describe 'LibraryItemApi' do
   # unit tests for copy
   # Copies a library item. &lt;p&gt; Copying a library item allows a duplicate to be made within the same or different library. The copy occurs by first creating a new library item, whose identifier is returned. The content of the library item is then copied asynchronously. This copy can be tracked as a task. &lt;p&gt; If the copy fails, Content Library Service will roll back the copy by deleting any content that was already copied, and removing the new library item. A failure during rollback may require manual cleanup by an administrator. &lt;p&gt; A library item cannot be copied into a subscribed library.
   # @param source_library_item_id Identifier of the existing library item from which the content will be copied.
-  # @param action ~action&#x3D;copy
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemCopyResult]
@@ -99,7 +98,6 @@ describe 'LibraryItemApi' do
   # unit tests for publish
   # Publishes the library item to specified subscriptions of the library. If no subscriptions are specified, then publishes the library item to all subscriptions of the library.
   # @param library_item_id Library item identifier.
-  # @param action ~action&#x3D;publish
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]

@@ -42,7 +42,6 @@ describe 'VmTemplateLibraryItemsApi' do
   # unit tests for deploy
   # Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
   # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
-  # @param action action&#x3D;deploy
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVmTemplateLibraryItemsDeployResult]

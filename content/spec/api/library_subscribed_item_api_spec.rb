@@ -31,7 +31,6 @@ describe 'LibrarySubscribedItemApi' do
   # unit tests for evict
   # Evicts the cached content of a library item in a subscribed library. &lt;p&gt; This {@term operation} allows the cached content of a library item to be removed to free up storage capacity. This {@term operation} will only work when a library item is synchronized on-demand. When a library is not synchronized on-demand, it always attempts to keep its cache up-to-date with the published source. Evicting the library item will set {@link ItemModel#cached} to false.
   # @param library_item_id Identifier of the library item whose content should be evicted.
-  # @param action ~action&#x3D;evict
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'evict test' do

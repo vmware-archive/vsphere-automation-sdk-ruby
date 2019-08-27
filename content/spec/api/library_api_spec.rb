@@ -30,7 +30,6 @@ describe 'LibraryApi' do
 
   # unit tests for find
   # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-  # @param action ~action&#x3D;find
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryFindResult]

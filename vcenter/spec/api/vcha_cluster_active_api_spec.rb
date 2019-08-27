@@ -30,7 +30,6 @@ describe 'VchaClusterActiveApi' do
 
   # unit tests for get
   # Retrieves information about the active node of a VCHA cluster.
-  # @param action action&#x3D;get
   # @param [Hash] opts the optional parameters
   # @option opts [VcenterVchaClusterActiveGet] :request_body 
   # @return [VcenterVchaClusterActiveResult]

@@ -30,7 +30,6 @@ describe 'MetadataCliNamespaceApi' do
 
   # unit tests for fingerprint
   # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
-  # @param action ~action&#x3D;fingerprint
   # @param [Hash] opts the optional parameters
   # @return [VapiMetadataCliNamespaceFingerprintResult]
   describe 'fingerprint test' do

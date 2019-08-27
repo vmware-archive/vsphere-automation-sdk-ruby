@@ -97,7 +97,6 @@ describe 'TaggingCategoryApi' do
   # unit tests for remove_from_used_by
   # Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
   # @param category_id The identifier of the input category.
-  # @param action ~action&#x3D;remove-from-used-by
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]

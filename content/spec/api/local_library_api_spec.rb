@@ -74,7 +74,6 @@ describe 'LocalLibraryApi' do
   # unit tests for publish
   # Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.
   # @param library_id Identifier of the published library.
-  # @param action ~action&#x3D;publish
   # @param [Hash] opts the optional parameters
   # @option opts [ContentLocalLibraryPublish] :request_body 
   # @return [nil]

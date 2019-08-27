@@ -41,7 +41,6 @@ describe 'VchaClusterApi' do
 
   # unit tests for failovertask
   # Initiates failover from the active vCenter node to the passive node.   For forced failover, Active node immediately initiates a failover. This may result into a data loss after failover.    For planned failover, Active node flushes all the state to the Passive node, waits for the flush to complete before causing a failover. After the failover, Passive node starts without any data loss.    A failover is allowed only in the following cases:      1.  Cluster&#39;s mode is enabled and all cluster members are present.    2.  Cluster&#39;s mode is maintenance and all cluster members are present. 
-  # @param action action&#x3D;failover&amp;vmw-task
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterVchaClusterFailoverTaskResult]

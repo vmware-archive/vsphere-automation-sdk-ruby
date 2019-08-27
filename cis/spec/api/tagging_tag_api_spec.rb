@@ -31,7 +31,6 @@ describe 'TaggingTagApi' do
   # unit tests for add_to_used_by
   # Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.
   # @param tag_id The identifier of the input tag.
-  # @param action ~action&#x3D;add-to-used-by
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -87,7 +86,6 @@ describe 'TaggingTagApi' do
   # unit tests for list_tags_for_category
   # Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
   # @param category_id The identifier of the input category.
-  # @param action ~action&#x3D;list-tags-for-category
   # @param [Hash] opts the optional parameters
   # @return [CisTaggingTagListTagsForCategoryResult]
   describe 'list_tags_for_category test' do

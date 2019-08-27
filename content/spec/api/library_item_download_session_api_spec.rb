@@ -64,7 +64,6 @@ describe 'LibraryItemDownloadSessionApi' do
   # unit tests for fail
   # Terminates the download session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to download a file) to the server side.
   # @param download_session_id Identifier of the download session to fail.
-  # @param action ~action&#x3D;fail
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]

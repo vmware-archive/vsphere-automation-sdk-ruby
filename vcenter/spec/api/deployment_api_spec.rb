@@ -40,7 +40,6 @@ describe 'DeploymentApi' do
 
   # unit tests for rollback
   # Rollback a failed appliance so it can be configured once again.
-  # @param action action&#x3D;rollback
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'rollback test' do

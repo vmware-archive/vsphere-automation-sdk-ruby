@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere CIS API
 
 - API version: 2.0.0
-- Package version: 0.3.0
+- Package version: 0.4.0
 
 ## Installation
 
