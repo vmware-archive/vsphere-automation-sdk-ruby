@@ -1,182 +1,188 @@
-=begin
-{{> api_info}}
-=end
+# frozen_string_literal: true
 
-require 'date'
 require 'json'
 require 'logger'
-require 'tempfile'
-require 'typhoeus'
+require 'net/http'
+require 'openssl'
 require 'uri'
+require 'vsphere-automation-runtime/configuration'
 
 module VSphereAutomation
+  # The client responsible for communicating with the API.
   class ApiClient
     # The Configuration object holding settings to be used in the API client.
     attr_accessor :config
 
-    # Defines the headers to be used in HTTP requests of all API calls by default.
+    # Defines the headers to be used in HTTP requests of all API calls by
+    # default.
     #
     # @return [Hash]
-    attr_accessor :default_headers
+    attr_reader :default_headers
 
-    # Initializes the ApiClient
-    # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
+    # Creates a new instance
+    #
+    # @param config [Configuration] configuration object with values to use
     def initialize(config = Configuration.default)
       @config = config
-      {{=<% %>=}}
-      @user_agent = "SDK/<%gemVersion%> Ruby/#{RUBY_VERSION} (#{Gem::Platform.local.os}; #{Gem::Platform.local.version}; #{Gem::Platform.local.cpu})"
-      <%={{ }}=%>
-      @default_headers = {
-        'Content-Type' => 'application/json',
-        'User-Agent' => @user_agent
-      }
+      @http = create_http
+      @user_agent = default_user_agent
+      @default_headers = { 'Content-Type' => 'application/json',
+                           'User-Agent' => @user_agent }
     end
 
-    def self.default
-      @@default ||= ApiClient.new
-    end
-
-    # Call an API with given options.
+    # Retrieves an instance of the object in it's default state
     #
-    # @return [Array<(Object, Fixnum, Hash)>] an array of 3 elements:
-    #   the data deserialized from response body (could be nil), response status code and response headers.
+    # @return [ApiClient] an instance of the object in it's default state
+    def self.default
+      DEFAULT
+    end
+
+    # Build the collection of parameters
+    def build_collection_param(params, format)
+      params
+    end
+
+    # Make a request to an API endpoint with the given options
+    #
+    # @param http_method [Symbol] the HTTP method to be used
+    # @param path [String] the path request will be made to
+    # @param opts [Hash] any additional options needed
+    # @return [Array<(Object, Fixnum, Hash)>] the deserialized body, status
+    #   code, and headers.
     def call_api(http_method, path, opts = {})
-      request = build_request(http_method, path, opts)
-      response = request.run
+      query_params = opts.fetch(:query_params, {})
+      header_params = opts.fetch(:header_params, {})
+      form_params = opts.fetch(:form_params, {})
+      add_auth(query_params, header_params, opts.fetch(:auth_names, []))
+
+      uri = build_request_uri(path, query_params)
+      request = Net::HTTP.const_get(http_method.capitalize).new(uri)
+
+      add_form_params(request, form_params)
+      add_header_params(request, header_params)
+      request.body = opts[:body] if opts[:body]
+      request.content_type = request['Content-Type'] if request['Content-Type']
 
       if @config.debugging
-        @config.logger.debug "HTTP response body ~BEGIN~\n#{response.body}\n~END~\n"
+        @config.logger.debug("Request Body:\n#{request.body}\n")
       end
 
-      unless opts.fetch(:return_type, {}).keys.include?(response.code.to_s) || response.success?
-        if response.timed_out?
-          fail ApiError.new('Connection timed out')
-        elsif response.code == 0
-          # Errors from libcurl will be made visible here
-          fail ApiError.new(:code => 0,
-                            :message => response.return_message)
-        else
-          fail ApiError.new(:code => response.code,
-                            :response_headers => response.headers,
-                            :response_body => response.body),
-               response.status_message
-        end
-      end
+      response = @http.request(request)
+      @cookie = cookie_from_response(response)
+      api_key_from_response(response)
 
-      if opts[:return_type]
-        data = deserialize(response, opts[:return_type][response.code.to_s])
-        if path == '/com/vmware/cis/session'
-          @config.api_key['vmware-api-session-id'] = data.value
-        end
-      else
-        data = nil
-      end
-      return data, response.code, response.headers
+      return_type = opts.fetch(:return_type, {}).fetch(response.code, nil)
+      data = deserialize(response, return_type)
+      [data, Integer(response.code), response.each_header.to_h]
     end
 
-    # Builds the HTTP request
+    # Takes an object and returns the object as an HTTP body
     #
-    # @param [String] http_method HTTP method/verb (e.g. POST)
-    # @param [String] path URL path (e.g. /account/new)
-    # @option opts [Hash] :header_params Header parameters
-    # @option opts [Hash] :query_params Query parameters
-    # @option opts [Hash] :form_params Query parameters
-    # @option opts [Object] :body HTTP body (JSON/XML)
-    # @return [Typhoeus::Request] A Typhoeus Request
-    def build_request(http_method, path, opts = {})
-      url = build_request_url(path)
-      http_method = http_method.to_sym.downcase
+    # @param object [Object] object to transform
+    # @return [String] object as JSON string
+    def object_to_http_body(object)
+      return object.map { |o| object_to_http_body(o) } if object.is_a?(Array)
 
-      header_params = @default_headers.merge(opts[:header_params] || {})
-      query_params = opts[:query_params] || {}
-      form_params = opts[:form_params] || {}
+      return object unless object.respond_to?(:to_hash)
 
-      {{#hasAuthMethods}}
-      update_params_for_auth! header_params, query_params, opts[:auth_names]
-      {{/hasAuthMethods}}
+      object.to_hash.to_json
+    end
 
-      # set ssl_verifyhosts option based on @config.verify_ssl_host (true/false)
-      _verify_ssl_host = @config.verify_ssl_host ? 2 : 0
+    # Select an Accept header to use
+    #
+    # @param types [Array] a list of suggested types
+    # @return [String] the Accept header value
+    def select_header_accept(types)
+      return DEFAULT_MIME_TYPE unless types.is_a?(Array)
 
-      req_opts = {
-        :method => http_method,
-        :headers => header_params,
-        :params => query_params,
-        :params_encoding => @config.params_encoding,
-        :timeout => @config.timeout,
-        :ssl_verifypeer => @config.verify_ssl,
-        :ssl_verifyhost => _verify_ssl_host,
-        :sslcert => @config.cert_file,
-        :sslkey => @config.key_file,
-        :verbose => @config.debugging
-      }
+      types.find { |t| t.include?('json') } || types.join(', ')
+    end
 
-      # set custom cert, if provided
-      req_opts[:cainfo] = @config.ssl_ca_cert if @config.ssl_ca_cert
+    # Select an Content-Type header to use
+    #
+    # @param types [Array] a list of suggested types
+    # @return [String] the Content-Type header value
+    def select_header_content_type(types)
+      return DEFAULT_MIME_TYPE unless types.is_a?(Array)
 
-      if [:post, :patch, :put, :delete].include?(http_method)
-        req_body = build_request_body(header_params, form_params, opts[:body])
-        req_opts.update :body => req_body
-        if @config.debugging
-          @config.logger.debug "HTTP request body param ~BEGIN~\n#{req_body}\n~END~\n"
+      types.find { |t| t.include?('json') } || types.first
+    end
+
+    private
+
+    def add_auth(query_params, header_params, auth_names)
+      auth_names.map do |name|
+        settings = @config.auth_settings.fetch(name, {})
+        case settings[:in]
+        when 'header'
+          header_params[settings[:key]] = settings[:value]
+          api_key_from_cookie(header_params, settings) unless settings[:value]
+        when 'query'
+          query_params[settings[:key]] = settings[:value]
         end
       end
-
-      request = Typhoeus::Request.new(url, req_opts)
-      download_file(request) if opts[:return_type] == 'File'
-      request
     end
 
-    # Check if the given MIME is a JSON MIME.
-    # JSON MIME examples:
-    #   application/json
-    #   application/json; charset=UTF8
-    #   APPLICATION/JSON
-    #   */*
-    # @param [String] mime MIME
-    # @return [Boolean] True if the MIME is application/json
-    def json_mime?(mime)
-      (mime == '*/*') || !(mime =~ /Application\/.*json(?!p)(;.*)?/i).nil?
+    def add_form_params(request, form_params)
+      request.set_form_data(form_params) unless form_params.empty?
     end
 
-    # Deserialize the response to the given return type.
+    def add_header_params(request, headers)
+      header_params = @default_headers.merge(headers, Hash(@cookie))
+      header_params.map { |name, value| request[name] = value }
+    end
+
+    def add_query_params(uri, query_params)
+      uri.query = URI.encode_www_form(query_params)
+    end
+
+    def build_request_uri(path = '', query_params = {})
+      path = "/#{path}".gsub(%r{/+}, '/')
+      uri = URI.parse(@config.base_url + path)
+      add_query_params(uri, query_params)
+      uri
+    end
+
+    def create_http
+      uri = build_request_uri
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = @config.scheme == 'https'
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE unless @config.verify_ssl_host
+      http
+    end
+
+    # The default user agent
     #
-    # @param [Response] response HTTP response
-    # @param [String] return_type some examples: "User", "Array[User]", "Hash[String,Integer]"
+    # @return [String] the default user agent
+    def default_user_agent
+      "SDK/#{VSphereAutomation::Runtime::VERSION} "\
+      "Ruby/#{RUBY_VERSION} "\
+      "(#{Gem::Platform.local.os}; "\
+      "#{Gem::Platform.local.version}; "\
+      "#{Gem::Platform.local.cpu})"
+    end
+
+    # Deserialize the response to the given return type
+    #
+    # @param [Response] response the HTTP response
+    # @param [String] return_type the type to return
+    # @return [Object] the response represented as the return type
     def deserialize(response, return_type)
       body = response.body
 
-      # handle file downloading - return the File instance processed in request callbacks
-      # note that response body is empty when the file is written in chunks in request on_body callback
-      return @tempfile if return_type == 'File'
-
-      return nil if body.nil? || body.empty?
-
-      # return response body directly for String return type
-      return body if return_type == 'String'
-
-      # ensuring a default content type
-      content_type = response.headers['Content-Type'] || 'application/json'
-
-      fail "Content-Type is not supported: #{content_type}" unless json_mime?(content_type)
+      return nil if body.nil? || body.empty? || return_type.nil?
 
       begin
-        data = JSON.parse("[#{body}]", :symbolize_names => true)[0]
+        data = JSON.parse("[#{body}]", symbolize_names: true).first
       rescue JSON::ParserError => e
-        if %w(String Date DateTime).include?(return_type)
-          data = body
-        else
-          raise e
-        end
+        raise e unless %w[String Date DateTime].include?(return_type)
+
+        data = body
       end
 
-      convert_to_type data, return_type
+      convert_to_type(data, return_type)
     end
 
-    # Convert data to the given return type.
-    # @param [Object] data Data to be converted
-    # @param [String] return_type Return type
-    # @return [Mixed] Data in a particular type
     def convert_to_type(data, return_type)
       return nil if data.nil?
       case return_type
@@ -215,174 +221,33 @@ module VSphereAutomation
       end
     end
 
-    # Save response body into a file in (the defined) temporary folder, using the filename
-    # from the "Content-Disposition" header if provided, otherwise a random filename.
-    # The response body is written to the file in chunks in order to handle files which
-    # size is larger than maximum Ruby String or even larger than the maximum memory a Ruby
-    # process can use.
+    # Create the Cookie header from a response
     #
-    # @see Configuration#temp_folder_path
-    def download_file(request)
-      tempfile = nil
-      encoding = nil
-      request.on_headers do |response|
-        content_disposition = response.headers['Content-Disposition']
-        if content_disposition && content_disposition =~ /filename=/i
-          filename = content_disposition[/filename=['"]?([^'"\s]+)['"]?/, 1]
-          prefix = sanitize_filename(filename)
-        else
-          prefix = 'download-'
-        end
-        prefix = prefix + '-' unless prefix.end_with?('-')
-        encoding = response.body.encoding
-        tempfile = Tempfile.open(prefix, @config.temp_folder_path, encoding: encoding)
-        @tempfile = tempfile
-      end
-      request.on_body do |chunk|
-        chunk.force_encoding(encoding)
-        tempfile.write(chunk)
-      end
-      request.on_complete do |response|
-        tempfile.close
-        @config.logger.info "Temp file written to #{tempfile.path}, please copy the file to a proper folder "\
-                            "with e.g. `FileUtils.cp(tempfile.path, '/new/file/path')` otherwise the temp file "\
-                            "will be deleted automatically with GC. It's also recommended to delete the temp file "\
-                            "explicitly with `tempfile.delete`"
-      end
+    # @param response [Net::HTTPResponse] the response
+    # @return [Hash, nil] the Cookie header
+    def cookie_from_response(response)
+      { 'Cookie' => response['set-cookie'] } if response['set-cookie']
     end
 
-    # Sanitize filename by removing path.
-    # e.g. ../../sun.gif becomes sun.gif
-    #
-    # @param [String] filename the filename to be sanitized
-    # @return [String] the sanitized filename
-    def sanitize_filename(filename)
-      filename.gsub(/.*[\/\\]/, '')
+    def api_key_from_response(response)
+      key = @config.auth_settings['api_key'][:key]
+      @config.api_key[key] = response[key] if response[key]
     end
 
-    def build_request_url(path)
-      # Add leading and trailing slashes to path
-      path = "/#{path}".gsub(/\/+/, '/')
-      URI.encode(@config.base_url + path)
+    def api_key_from_cookie(headers, auth)
+      return if @cookie.nil?
+
+      regex = /(?<key>#{auth[:key]})=(?<value>\w+)/
+      matches = Hash(@cookie)['Cookie'].match(regex)
+      headers[matches[:key]] = matches[:value] if matches
     end
 
-    # Builds the HTTP request body
-    #
-    # @param [Hash] header_params Header parameters
-    # @param [Hash] form_params Query parameters
-    # @param [Object] body HTTP body (JSON/XML)
-    # @return [String] HTTP body data in the form of string
-    def build_request_body(header_params, form_params, body)
-      # http form
-      if header_params['Content-Type'] == 'application/x-www-form-urlencoded' ||
-          header_params['Content-Type'] == 'multipart/form-data'
-        data = {}
-        form_params.each do |key, value|
-          case value
-          when ::File, ::Array, nil
-            # let typhoeus handle File, Array and nil parameters
-            data[key] = value
-          else
-            data[key] = value.to_s
-          end
-        end
-      elsif body
-        data = body.is_a?(String) ? body : body.to_json
-      else
-        data = nil
-      end
-      data
-    end
+    # An instance of the object in it's default state
+    DEFAULT = new
 
-    # Update hearder and query params based on authentication settings.
-    #
-    # @param [Hash] header_params Header parameters
-    # @param [Hash] query_params Query parameters
-    # @param [String] auth_names Authentication scheme name
-    def update_params_for_auth!(header_params, query_params, auth_names)
-      Array(auth_names).each do |auth_name|
-        auth_setting = @config.auth_settings[auth_name]
-        next unless auth_setting
-        case auth_setting[:in]
-        when 'header' then header_params[auth_setting[:key]] = auth_setting[:value]
-        when 'query'  then query_params[auth_setting[:key]] = auth_setting[:value]
-        else fail ArgumentError, 'Authentication token must be in `query` of `header`'
-        end
-      end
-    end
+    # The default MIME type for Content-Type and Accept headers
+    DEFAULT_MIME_TYPE = 'application/json'
 
-    # Sets user agent in HTTP header
-    #
-    # @param [String] user_agent User agent (e.g. openapi-generator/ruby/1.0.0)
-    def user_agent=(user_agent)
-      @user_agent = user_agent
-      @default_headers['User-Agent'] = @user_agent
-    end
-
-    # Return Accept header based on an array of accepts provided.
-    # @param [Array] accepts array for Accept
-    # @return [String] the Accept header (e.g. application/json)
-    def select_header_accept(accepts)
-      return nil if accepts.nil? || accepts.empty?
-      # use JSON when present, otherwise use all of the provided
-      json_accept = accepts.find { |s| json_mime?(s) }
-      json_accept || accepts.join(',')
-    end
-
-    # Return Content-Type header based on an array of content types provided.
-    # @param [Array] content_types array for Content-Type
-    # @return [String] the Content-Type header  (e.g. application/json)
-    def select_header_content_type(content_types)
-      # use application/json by default
-      return 'application/json' if content_types.nil? || content_types.empty?
-      # use JSON when present, otherwise use the first one
-      json_content_type = content_types.find { |s| json_mime?(s) }
-      json_content_type || content_types.first
-    end
-
-    # Convert object (array, hash, object, etc) to JSON string.
-    # @param [Object] model object to be converted into JSON string
-    # @return [String] JSON string representation of the object
-    def object_to_http_body(model)
-      return model if model.nil? || model.is_a?(String)
-      local_body = nil
-      if model.is_a?(Array)
-        local_body = model.map { |m| object_to_hash(m) }
-      else
-        local_body = object_to_hash(model)
-      end
-      local_body.to_json
-    end
-
-    # Convert object(non-array) to hash.
-    # @param [Object] obj object to be converted into JSON string
-    # @return [String] JSON string representation of the object
-    def object_to_hash(obj)
-      if obj.respond_to?(:to_hash)
-        obj.to_hash
-      else
-        obj
-      end
-    end
-
-    # Build parameter value according to the given collection format.
-    # @param [String] collection_format one of :csv, :ssv, :tsv, :pipes and :multi
-    def build_collection_param(param, collection_format)
-      case collection_format
-      when :csv
-        param.join(',')
-      when :ssv
-        param.join(' ')
-      when :tsv
-        param.join("\t")
-      when :pipes
-        param.join('|')
-      when :multi
-        # return the array directly as typhoeus will handle it as expected
-        param
-      else
-        fail "unknown collection format: #{collection_format.inspect}"
-      end
-    end
+    private_constant :DEFAULT, :DEFAULT_MIME_TYPE
   end
 end

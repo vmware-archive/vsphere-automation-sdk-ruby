@@ -96,7 +96,6 @@ describe 'SubscribedLibraryApi' do
   # unit tests for sync
   # Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
   # @param library_id Identifier of the subscribed library to synchronize.
-  # @param action ~action&#x3D;sync
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'sync test' do

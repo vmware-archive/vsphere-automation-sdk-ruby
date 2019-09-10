@@ -31,7 +31,6 @@ describe 'VmStoragePolicyComplianceApi' do
   # unit tests for check
   # Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
   # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
-  # @param action action&#x3D;check
   # @param [Hash] opts the optional parameters
   # @option opts [VcenterVmStoragePolicyComplianceCheck] :request_body 
   # @return [VcenterVmStoragePolicyComplianceCheckResult]

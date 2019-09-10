@@ -31,7 +31,6 @@ describe 'LibraryItemStorageApi' do
   # unit tests for get
   # Retrieves the storage information for a specific file in a library item.
   # @param library_item_id Identifier of the library item whose storage information should be retrieved.
-  # @param action ~action&#x3D;get
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemStorageResult]

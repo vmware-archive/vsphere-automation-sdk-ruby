@@ -75,7 +75,6 @@ describe 'NetworkingProxyApi' do
   # unit tests for test
   # Tests a proxy configuration by testing the connection to the proxy server and test host.
   # @param protocol Protocol whose proxy is to be tested.
-  # @param action action&#x3D;test
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ApplianceNetworkingProxyTestResult]

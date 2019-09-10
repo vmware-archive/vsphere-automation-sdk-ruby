@@ -51,7 +51,6 @@ describe 'LoggingForwardingApi' do
 
   # unit tests for test
   # Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \&quot;This is a diagnostic log test message from vCenter Server.\&quot;
-  # @param action action&#x3D;test
   # @param [Hash] opts the optional parameters
   # @option opts [ApplianceLoggingForwardingTest] :request_body 
   # @return [ApplianceLoggingForwardingTestResult]

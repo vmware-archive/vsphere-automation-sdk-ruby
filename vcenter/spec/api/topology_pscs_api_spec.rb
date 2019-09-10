@@ -31,7 +31,6 @@ describe 'TopologyPscsApi' do
   # unit tests for decommissiontask
   # Decommission the external Platform Services Controller node.
   # @param hostname FQDN or IP address of external Platform Services Controller node to be decommissioned.
-  # @param action action&#x3D;decommission&amp;vmw-task
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterTopologyPscsDecommissionTaskResult]

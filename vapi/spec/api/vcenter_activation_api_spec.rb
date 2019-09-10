@@ -31,7 +31,6 @@ describe 'VcenterActivationApi' do
   # unit tests for cancel
   # Sends a request to cancel the task associated with the provided {@param.name activationId}.
   # @param activation_id the {@param.name activationId} associated with a vCenter Server task to be canceled.
-  # @param action ~action&#x3D;cancel
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel test' do

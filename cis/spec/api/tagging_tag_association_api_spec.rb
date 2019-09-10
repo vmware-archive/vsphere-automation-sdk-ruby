@@ -54,7 +54,6 @@ describe 'TaggingTagAssociationApi' do
   # unit tests for attach_tag_to_multiple_objects
   # Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
   # @param tag_id The identifier of the input tag.
-  # @param action ~action&#x3D;attach-tag-to-multiple-objects
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [CisTaggingTagAssociationAttachTagToMultipleObjectsResult]
@@ -145,7 +144,6 @@ describe 'TaggingTagAssociationApi' do
 
   # unit tests for list_attached_tags_on_objects
   # Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
-  # @param action ~action&#x3D;list-attached-tags-on-objects
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [CisTaggingTagAssociationListAttachedTagsOnObjectsResult]

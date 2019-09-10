@@ -31,7 +31,6 @@ describe 'StoragePoliciesApi' do
   # unit tests for check_compatibility
   # Returns datastore compatibility summary about a specific storage policy.
   # @param policy The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
-  # @param action action&#x3D;check-compatibility
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterStoragePoliciesCheckCompatibilityResult]

@@ -40,7 +40,6 @@ describe 'MetadataCliCommandApi' do
 
   # unit tests for get
   # Retrieves information about a command including information about how to execute that command.
-  # @param action ~action&#x3D;get
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VapiMetadataCliCommandResult]

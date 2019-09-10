@@ -30,7 +30,6 @@ describe 'VchaVcCredentialsApi' do
 
   # unit tests for validate
   # Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
-  # @param action action&#x3D;validate
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]

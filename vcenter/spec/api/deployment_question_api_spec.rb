@@ -30,7 +30,6 @@ describe 'DeploymentQuestionApi' do
 
   # unit tests for answer
   # Supply answer to the raised question.
-  # @param action action&#x3D;answer
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [nil]

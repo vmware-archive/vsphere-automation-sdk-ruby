@@ -30,7 +30,6 @@ describe 'DeploymentUpgradeApi' do
 
   # unit tests for cancel
   # Cancel the appliance upgrade that is in progress.
-  # @param action action&#x3D;cancel
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel test' do

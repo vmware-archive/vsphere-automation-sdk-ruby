@@ -30,7 +30,6 @@ describe 'ConfigurationApi' do
 
   # unit tests for get
   # Retrieves the current configuration values.
-  # @param action ~action&#x3D;get
   # @param [Hash] opts the optional parameters
   # @return [ContentConfigurationResult]
   describe 'get test' do

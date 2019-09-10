@@ -31,7 +31,6 @@ describe 'LibraryItemFileApi' do
   # unit tests for get
   # Retrieves the information for a single file in a library item by its name.
   # @param library_item_id Identifier of the library item whose file information should be returned.
-  # @param action ~action&#x3D;get
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [ContentLibraryItemFileResult]

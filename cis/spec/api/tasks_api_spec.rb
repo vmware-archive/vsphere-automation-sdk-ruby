@@ -31,7 +31,6 @@ describe 'TasksApi' do
   # unit tests for cancel
   # Cancel a running operation associated with the task. This is the best effort attempt. Operation may not be cancelled anymore once it reaches certain stage.
   # @param task Task identifier. The parameter must be an identifier for the resource type: cis.task.
-  # @param action action&#x3D;cancel
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel test' do
@@ -61,7 +60,7 @@ describe 'TasksApi' do
   # @option opts [Boolean] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
   # @option opts [Array<String>] :filter_spec_services Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
   # @option opts [Array<String>] :filter_spec_status Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter.
-  # @option opts [Array<Object>] :filter_spec_targets Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
+  # @option opts [Array<FilterSpecTargets>] :filter_spec_targets Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
   # @option opts [Array<String>] :filter_spec_users Users who must have initiated the operation for the associated task to match the filter (see CommonInfo.user). If unset or empty, tasks associated with operations initiated by any user match the filter.
   # @return [CisTasksListResult]
   describe 'list test' do

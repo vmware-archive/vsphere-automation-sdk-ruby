@@ -30,7 +30,6 @@ describe 'DeploymentImportHistoryApi' do
 
   # unit tests for cancel
   # Cancels the task for importing vCenter historical data.
-  # @param action action&#x3D;cancel
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel test' do

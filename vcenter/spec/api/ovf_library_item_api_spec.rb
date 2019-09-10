@@ -42,7 +42,6 @@ describe 'OvfLibraryItemApi' do
   # unit tests for deploy
   # Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. &lt;p&gt; This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. &lt;/p&gt;
   # @param ovf_library_item_id Identifier of the content library item containing the OVF package to be deployed.
-  # @param action ~action&#x3D;deploy
   # @param request_body 
   # @param [Hash] opts the optional parameters
   # @return [VcenterOvfLibraryItemDeployResult]
