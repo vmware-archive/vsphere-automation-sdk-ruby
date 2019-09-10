@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere Content API
 
 - API version: 2.0.0
-- Package version: 0.4.0
+- Package version: 0.4.1
 
 ## Installation
 

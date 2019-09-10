@@ -6,6 +6,7 @@ require 'net/http'
 require 'openssl'
 require 'uri'
 require 'vsphere-automation-runtime/configuration'
+require 'vsphere-automation-runtime/version'
 
 module VSphereAutomation
   # The client responsible for communicating with the API.
