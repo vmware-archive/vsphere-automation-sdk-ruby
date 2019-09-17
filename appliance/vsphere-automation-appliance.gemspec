@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
   s.description = "A Ruby SDK for the vSphere APIs (Appliance)"
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.3"
-  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.4.1'
-  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.4.1'
+  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.4.2'
+  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.4.2'
 
   s.add_development_dependency 'bundler', '~> 2.0'
   s.add_development_dependency 'pry', '~> 0.12.2'

@@ -23,12 +23,12 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.3"
 
-  s.add_runtime_dependency 'vsphere-automation-appliance', '~> 0.4.1'
-  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.4.1'
-  s.add_runtime_dependency 'vsphere-automation-content', '~> 0.4.1'
-  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.4.1'
-  s.add_runtime_dependency 'vsphere-automation-vapi', '~> 0.4.1'
-  s.add_runtime_dependency 'vsphere-automation-vcenter', '~> 0.4.1'
+  s.add_runtime_dependency 'vsphere-automation-appliance', '~> 0.4.2'
+  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.4.2'
+  s.add_runtime_dependency 'vsphere-automation-content', '~> 0.4.2'
+  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.4.2'
+  s.add_runtime_dependency 'vsphere-automation-vapi', '~> 0.4.2'
+  s.add_runtime_dependency 'vsphere-automation-vcenter', '~> 0.4.2'
 
   s.add_development_dependency 'rake', '~> 12.3'
 
