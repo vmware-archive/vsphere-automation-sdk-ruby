@@ -129,7 +129,8 @@ module VSphereAutomation
     end
 
     def add_header_params(request, headers)
-      header_params = @default_headers.merge(headers, Hash(@cookie))
+      header_params = @default_headers.merge(headers)
+      header_params.merge!(Hash(@cookie))
       header_params.map { |name, value| request[name] = value }
     end
 
