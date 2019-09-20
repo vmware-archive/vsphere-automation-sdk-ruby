@@ -5,6 +5,21 @@
 # other components.
 COMPONENTS = %w[runtime cis appliance content vapi vcenter].freeze
 
+namespace(:install) do
+  COMPONENTS.each do |component|
+    desc("Install #{component} component")
+    task(component) do
+      dir = File.expand_path(component, __dir__)
+      Bundler.with_clean_env do
+        exit(1) unless system('bundle', 'install', chdir: dir)
+      end
+    end
+  end
+
+  desc('Install all components')
+  task(all: COMPONENTS.map(&:to_sym))
+end
+
 namespace(:test) do
   COMPONENTS.each do |component|
     desc("Run all tests for #{component} component")
@@ -20,4 +35,4 @@ namespace(:test) do
   task(all: COMPONENTS.map(&:to_sym))
 end
 
-task(default: ['test:all'])
+task(default: ['install:all', 'test:all'])
