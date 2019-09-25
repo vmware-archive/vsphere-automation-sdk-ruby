@@ -142,6 +142,9 @@ module VSphereAutomation
       path = "/#{path}".gsub(%r{/+}, '/')
       uri = URI.parse(@config.base_url + path)
       add_query_params(uri, query_params)
+      forced_query_params = path.split('?')[1]
+      return URI.join(uri, '?' + forced_query_params) if forced_query_params
+
       uri
     end
 

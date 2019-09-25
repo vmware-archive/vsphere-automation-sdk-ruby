@@ -7,6 +7,6 @@
   "gemName": "vsphere-automation-cis",
   "gemRequiredRubyVersion": ">= 2.3",
   "gemSummary": "A Ruby SDK for the vSphere REST APIs (CIS)",
-  "gemVersion": "0.4.1",
+  "gemVersion": "0.4.3",
   "moduleName": "CIS"
 }

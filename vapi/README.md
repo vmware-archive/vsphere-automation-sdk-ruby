@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere VAPI API
 
 - API version: 2.0.0
-- Package version: 0.4.2
+- Package version: 0.4.3
 
 ## Installation
 

@@ -49,6 +49,19 @@ describe VSphereAutomation::ApiClient do
       expect(a_request(:get, url).with(query: query_params)).to have_been_made
     end
 
+    it 'keeps query parameters from the path to request' do
+      # The specs have some paths that contain query parameters already. This
+      # test is to make sure they don't get overwritten.
+      key = '~foo'
+      value = 'bar'
+      query_params = { key => value }
+      stub_request(:post, url).with(query: query_params)
+
+      subject.call_api(:POST, "/test?#{key}=#{value}")
+
+      expect(a_request(:post, url).with(query: query_params)).to have_been_made
+    end
+
     it 'adds form parameters to the request body' do
       form_params = { 'foo' => 'bar' }
       body = form_params.to_a.map { |e| e.join('=') }.join('&')
