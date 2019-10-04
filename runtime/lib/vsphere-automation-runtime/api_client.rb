@@ -153,6 +153,7 @@ module VSphereAutomation
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = @config.scheme == 'https'
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE unless @config.verify_ssl_host
+      http.read_timeout = @config.timeout
       http
     end
 
