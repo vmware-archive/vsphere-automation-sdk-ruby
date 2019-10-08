@@ -39,13 +39,8 @@ OptionParser.new do |opts|
     end
   end
 
-  opts.on('-i CATEGORY_ID', '--category-id CATEGORY_ID', 'category id to use') do |i|
-    if i =~ /^urn:vmomi:InventoryServiceCategory:.*:GLOBAL$/
-      options[:category_id] = i
-    else
-      puts "ERROR: 'category_id' must be of the form 'urn:vmomi:InventoryServiceCategory:<your_id_here>:GLOBAL'"
-      exit(1)
-    end
+  opts.on('-o OLD_NAME', '--old-name OLD_NAME', 'category to lookup') do |o|
+    options[:old_name] = o
   end
 end.parse!
 
@@ -60,19 +55,26 @@ end
 api_client = VSphereAutomation::ApiClient.new(configuration)
 VSphereAutomation::CIS::SessionApi.new(api_client).create('')
 
-puts "Finding tag category with id #{options[:category_id]}"
-api_instance = VSphereAutomation::CIS::TaggingCategoryApi.new(api_client)
-category = api_instance.get(options[:category_id]).value
-puts "Found category '#{category.name}' matching #{category.id}"
+puts "Finding tag category with name #{options[:old_name]}"
+category_api = VSphereAutomation::CIS::TaggingCategoryApi.new(api_client)
+category = category_api.list.value.find do |id|
+  c = category_api.get(id).value
+  break c if c.name == options[:old_name]
+end
+if category.nil?
+  raise(ArgumentError, "category '#{options[:old_name]}' not found")
+end
 
-update_spec =  VSphereAutomation::CIS::CisTaggingCategoryUpdateSpec.new(
+puts "Found category '#{category.name}'"
+
+update_spec = VSphereAutomation::CIS::CisTaggingCategoryUpdateSpec.new(
   name: options.fetch(:name, category.name),
   description: options.fetch(:description, category.description),
   associable_types: options.fetch(:associable_types, category.associable_types),
-  cardinality: options.fetch(:cardinality, category.cardinality),
+  cardinality: options.fetch(:cardinality, category.cardinality)
 )
 update_model = VSphereAutomation::CIS::CisTaggingCategoryUpdate.new(update_spec: update_spec)
 
 puts "Updating #{category.id}"
-api_instance.update(category.id, update_model)
+category_api.update(category.id, update_model)
 puts "Updated #{category.id}"
