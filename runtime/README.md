@@ -40,5 +40,3 @@ Class | Method | HTTP request | Description
 
 
 ## Documentation for Models
-
-

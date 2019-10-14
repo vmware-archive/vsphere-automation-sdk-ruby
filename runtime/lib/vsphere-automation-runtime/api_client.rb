@@ -117,7 +117,7 @@ module VSphereAutomation
         case settings[:in]
         when 'header'
           header_params[settings[:key]] = settings[:value]
-          api_key_from_cookie(header_params, settings) unless settings[:value]
+          api_key_from_cookie(settings) unless settings[:value]
         when 'query'
           query_params[settings[:key]] = settings[:value]
         end
@@ -240,12 +240,13 @@ module VSphereAutomation
       @config.api_key[key] = response[key] if response[key]
     end
 
-    def api_key_from_cookie(headers, auth)
+    def api_key_from_cookie(auth)
       return if @cookie.nil?
 
       regex = /(?<key>#{auth[:key]})=(?<value>\w+)/
       matches = Hash(@cookie)['Cookie'].match(regex)
-      headers[matches[:key]] = matches[:value] if matches
+      key = @config.auth_settings['api_key'][:key]
+      @config.api_key[key] = matches[:value] if matches
     end
 
     # An instance of the object in it's default state

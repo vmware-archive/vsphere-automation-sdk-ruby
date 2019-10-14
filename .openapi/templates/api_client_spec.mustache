@@ -102,16 +102,15 @@ describe VSphereAutomation::ApiClient do
       value = 'foo'
       cookie = "#{key}=#{value};Path=/rest;Secure;HttpOnly"
       set_cookie_header = { 'set-cookie' => cookie }
-      auth_header = { key => value }
       stub_request(:get, url + '1').to_return(headers: set_cookie_header)
-      stub_request(:get, url + '2').with(headers: auth_header)
+      stub_request(:get, url + '2')
 
       subject.call_api(:GET, '/test1')
       subject.call_api(:GET, '/test2', auth_names: ['api_key'])
 
       expect(a_request(:get, url + '1')).to have_been_made
-      expect(a_request(:get, url + '2')
-               .with(headers: auth_header)).to have_been_made
+      expect(a_request(:get, url + '2')).to have_been_made
+      expect(subject.config.api_key[key]).to eq(value)
     end
 
     it 'updates api_key from responses with api_key header' do
