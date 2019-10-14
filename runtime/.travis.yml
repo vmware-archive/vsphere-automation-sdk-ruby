@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build vsphere-automation-runtime.gemspec
-  - gem install ./vsphere-automation-runtime-0.4.4.gem
+  - gem install ./vsphere-automation-runtime-0.4.5.pre.gem
