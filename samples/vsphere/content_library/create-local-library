@@ -60,5 +60,5 @@ create_model = VSphereAutomation::Content::ContentLocalLibraryCreate.new(
 )
 
 local_library_api = VSphereAutomation::Content::LocalLibraryApi.new(api_client)
-local_library_id = local_library_api.create(content_local_library_create: create_model).value
+local_library_id = local_library_api.create(create_model).value
 puts "Library ID: #{local_library_id}"
