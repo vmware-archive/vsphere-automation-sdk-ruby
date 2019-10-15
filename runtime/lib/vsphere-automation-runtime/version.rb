@@ -8,6 +8,6 @@
 
 module VSphereAutomation
   module Runtime
-    VERSION = '0.4.5.pre'
+    VERSION = '0.4.5'
   end
 end
