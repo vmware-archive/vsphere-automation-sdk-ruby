@@ -24,21 +24,29 @@ OptionParser.new do |opts|
   end
 
   opts.on('-c CLUSTER', '--cluster CLUSTER', 'name of cluster to use') do |c|
-    options[:cluster_name] = c
+    options[:cluster] = c
   end
 
   opts.on('-d DATASTORE', '--datastore DATASTORE', 'name of datastore to use') do |d|
-    options[:datastore_name] = d
+    options[:datastore] = d
   end
 
   opts.on('-f FOLDER', '--folder FOLDER', 'name of folder to use') do |f|
-    options[:folder_name] = f
+    options[:folder] = f
   end
 
   opts.on('-n NAME', '--name NAME', 'name of VM to be created') do |n|
-    options[:vm_name] = n
+    options[:vm] = n
+  end
+
+  opts.on('--datacenter DATACENTER', 'name of datacenter to use') do |dc|
+    options[:datacenter] = dc
   end
 end.parse!
+
+%i[server username password cluster datastore folder datacenter].each do |o|
+  raise(ArgumentError, "'#{o}' is required") unless options[o]
+end
 
 configuration = VSphereAutomation::Configuration.new.tap do |c|
   c.host = options[:server]
@@ -50,28 +58,32 @@ configuration = VSphereAutomation::Configuration.new.tap do |c|
 end
 
 api_client = VSphereAutomation::ApiClient.new(configuration)
-api_client.default_headers['Authorization'] = configuration.basic_auth_token
+VSphereAutomation::CIS::SessionApi.new(api_client).create('')
 
-session_api = VSphereAutomation::CIS::SessionApi.new(api_client)
-session_id = session_api.create('').value
-
-api_client.default_headers['vmware-api-session-id'] = session_id
-
+datacenter_api = VSphereAutomation::VCenter::DatacenterApi.new(api_client)
 cluster_api = VSphereAutomation::VCenter::ClusterApi.new(api_client)
 datastore_api = VSphereAutomation::VCenter::DatastoreApi.new(api_client)
 folder_api = VSphereAutomation::VCenter::FolderApi.new(api_client)
 vm_api = VSphereAutomation::VCenter::VMApi.new(api_client)
 
-puts "Looking for #{options[:cluster_name]}"
-cluster = cluster_api.list(filter_names: options[:cluster_name]).value.first.cluster
+puts "Looking for #{options[:datacenter]}"
+datacenter = datacenter_api.list(filter_names: [options[:datacenter]]).value.first.datacenter
+puts "Found #{datacenter}"
+
+puts "Looking for #{options[:cluster]} in #{datacenter}"
+cluster = cluster_api.list(filter_names: [options[:cluster]],
+                           filter_datacenters: [datacenter]).value.first.cluster
 puts "Found #{cluster}"
 
-puts "Looking for #{options[:datastore_name]}"
-datastore = datastore_api.list(filter_names: options[:datastore_name]).value.first.datastore
+puts "Looking for #{options[:datastore]} in #{datacenter}"
+datastore = datastore_api.list(filter_names: [options[:datastore]],
+                               filter_datacenters: [datacenter]).value.first.datastore
 puts "Found #{datastore}"
 
-puts "Looking for #{options[:folder_name]}"
-folder = folder_api.list(filter_names: options[:folder_name]).value.first.folder
+puts "Looking for #{options[:folder]} in #{datacenter}"
+folder = folder_api.list(filter_names: [options[:folder]],
+                         filter_type: VSphereAutomation::VCenter::VcenterFolderType::VIRTUAL_MACHINE,
+                         filter_datacenters: [datacenter]).value.first.folder
 puts "Found #{folder}"
 
 guest_os = VSphereAutomation::VCenter::VcenterVmGuestOS::OTHER
@@ -82,7 +94,7 @@ placement_spec = VSphereAutomation::VCenter::VcenterVMPlacementSpec.new(
 )
 create_spec = VSphereAutomation::VCenter::VcenterVMCreateSpec.new(
   guest_OS: guest_os,
-  name: options[:vm_name],
+  name: options[:vm],
   placement: placement_spec
 )
 create_model = VSphereAutomation::VCenter::VcenterVMCreate.new(spec: create_spec)
