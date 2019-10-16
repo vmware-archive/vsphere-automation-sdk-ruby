@@ -2,7 +2,7 @@
 
 ## Generated Code
 
-All of the code for the SDKs are generated from the vCenter REST APIs using the [VMware OpenAPI Generator](https://github.com/vmware/vmware-openapi-generator) and the [OpenAPI Generator](https://github.com/openapitools/openapi-generator). This means that any changes you would like to contribute to the SDK itself will most likely not be accepted because the code is generated and the next generation will overwrite any modifications to the code.
+All of the code for the SDKs are generated from the vCenter REST APIs using the [VMware OpenAPI Generator](https://github.com/vmware/vmware-openapi-generator) and the [OpenAPI Generator](https://github.com/openapitools/openapi-generator). This means that any changes you would like to contribute to the SDK itself will need to be made through the OpenAPI generator templates. If you make contributions directly to the code, it will be overwritten on the next generation. The templates can be found [here](https://github.com/vmware/vsphere-automation-sdk-ruby/tree/master/.openapi/templates). For information on how the generation process works, see the wiki page [here](https://github.com/vmware/vsphere-automation-sdk-ruby/wiki/SDK-Generation).
 
 The samples _are not_ generated code, so feel free to modify, extend, or contribute to the samples. If you choose to contribute to the samples, please see below for the process on how to do this.
 
