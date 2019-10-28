@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rake', '~> 12.3'
 
-  s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
-  s.executables   = []
-  s.require_paths = ["lib"]
+  s.files = Dir.glob('lib/**/*')
+  s.require_paths = ['lib']
 end
