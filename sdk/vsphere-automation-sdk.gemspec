@@ -32,6 +32,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rake', '~> 12.3'
 
-  s.files = Dir.glob('lib/**/*')
+  s.files = Dir.glob('lib/**/*') << 'LICENSE'
   s.require_paths = ['lib']
 end
