@@ -21,7 +21,7 @@ namespace(:install) do
   end
 
   desc('Install all components')
-  task(all: COMPONENTS.map(&:to_sym))
+  multitask(all: COMPONENTS.map(&:to_sym))
 end
 
 # Bundle RSpec tasks for each component and an additional one to do all. This
@@ -38,7 +38,7 @@ namespace(:test) do
   end
 
   desc('Run all tests for all components')
-  task(all: COMPONENTS.map(&:to_sym))
+  multitask(all: COMPONENTS.map(&:to_sym))
 end
 
 # Generate tasks for each component and an additional one to do all. This will
@@ -53,7 +53,7 @@ namespace(:generate) do
   end
 
   desc('Generate bindings for all components')
-  task(all: COMPONENTS.map(&:to_sym))
+  multitask(all: COMPONENTS.map(&:to_sym))
 end
 
 # The rest of the code is used to generate the SDK bindings. It should probably
