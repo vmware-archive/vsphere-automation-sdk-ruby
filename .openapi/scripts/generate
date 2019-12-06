@@ -21,7 +21,7 @@ def template_dir
 end
 
 def generate_gem(component, output_dir)
-  generate_command = 'npx openapi-generator generate '\
+  generate_command = 'openapi-generator generate '\
                      '-g ruby '\
                      "-i #{spec_dir}/#{component}.json "\
                      "-c #{config_dir}/#{component}.json "\
