@@ -11,36 +11,36 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareInfo
-    attr_accessor :version
+    # Reason for the scheduled upgrade failure. This field is optional and it is only relevant when the value of Hardware.Info.upgrade-status is FAILED.
+    attr_accessor :upgrade_error
 
     attr_accessor :upgrade_policy
 
-    attr_accessor :upgrade_version
-
     attr_accessor :upgrade_status
 
-    # Reason for the scheduled upgrade failure. This field is optional and it is only relevant when the value of Hardware.Info.upgrade-status is FAILED.
-    attr_accessor :upgrade_error
+    attr_accessor :upgrade_version
+
+    attr_accessor :version
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'version' => :'version',
+        :'upgrade_error' => :'upgrade_error',
         :'upgrade_policy' => :'upgrade_policy',
-        :'upgrade_version' => :'upgrade_version',
         :'upgrade_status' => :'upgrade_status',
-        :'upgrade_error' => :'upgrade_error'
+        :'upgrade_version' => :'upgrade_version',
+        :'version' => :'version'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'version' => :'VcenterVmHardwareVersion',
+        :'upgrade_error' => :'String',
         :'upgrade_policy' => :'VcenterVmHardwareUpgradePolicy',
-        :'upgrade_version' => :'VcenterVmHardwareVersion',
         :'upgrade_status' => :'VcenterVmHardwareUpgradeStatus',
-        :'upgrade_error' => :'String'
+        :'upgrade_version' => :'VcenterVmHardwareVersion',
+        :'version' => :'VcenterVmHardwareVersion'
       }
     end
 
@@ -52,24 +52,24 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
+      if attributes.has_key?(:'upgrade_error')
+        self.upgrade_error = attributes[:'upgrade_error']
       end
 
       if attributes.has_key?(:'upgrade_policy')
         self.upgrade_policy = attributes[:'upgrade_policy']
       end
 
-      if attributes.has_key?(:'upgrade_version')
-        self.upgrade_version = attributes[:'upgrade_version']
-      end
-
       if attributes.has_key?(:'upgrade_status')
         self.upgrade_status = attributes[:'upgrade_status']
       end
 
-      if attributes.has_key?(:'upgrade_error')
-        self.upgrade_error = attributes[:'upgrade_error']
+      if attributes.has_key?(:'upgrade_version')
+        self.upgrade_version = attributes[:'upgrade_version']
+      end
+
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
     end
 
@@ -77,10 +77,6 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
-      end
-
       if @upgrade_policy.nil?
         invalid_properties.push('invalid value for "upgrade_policy", upgrade_policy cannot be nil.')
       end
@@ -89,15 +85,19 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "upgrade_status", upgrade_status cannot be nil.')
       end
 
+      if @version.nil?
+        invalid_properties.push('invalid value for "version", version cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @version.nil?
       return false if @upgrade_policy.nil?
       return false if @upgrade_status.nil?
+      return false if @version.nil?
       true
     end
 
@@ -106,11 +106,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          version == o.version &&
+          upgrade_error == o.upgrade_error &&
           upgrade_policy == o.upgrade_policy &&
-          upgrade_version == o.upgrade_version &&
           upgrade_status == o.upgrade_status &&
-          upgrade_error == o.upgrade_error
+          upgrade_version == o.upgrade_version &&
+          version == o.version
     end
 
     # @see the `==` method
@@ -122,7 +122,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [version, upgrade_policy, upgrade_version, upgrade_status, upgrade_error].hash
+      [upgrade_error, upgrade_policy, upgrade_status, upgrade_version, version].hash
     end
 
     # Builds the object from hash

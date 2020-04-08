@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionFileValidationError
+    attr_accessor :error_message
+
     # The name of the file.
     attr_accessor :name
-
-    attr_accessor :error_message
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'error_message' => :'error_message'
+        :'error_message' => :'error_message',
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'error_message' => :'VapiStdLocalizableMessage'
+        :'error_message' => :'VapiStdLocalizableMessage',
+        :'name' => :'String'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'error_message')
         self.error_message = attributes[:'error_message']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
     end
 
@@ -53,12 +53,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       if @error_message.nil?
         invalid_properties.push('invalid value for "error_message", error_message cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       invalid_properties
@@ -67,8 +67,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
       return false if @error_message.nil?
+      return false if @name.nil?
       true
     end
 
@@ -77,8 +77,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          error_message == o.error_message
+          error_message == o.error_message &&
+          name == o.name
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, error_message].hash
+      [error_message, name].hash
     end
 
     # Builds the object from hash

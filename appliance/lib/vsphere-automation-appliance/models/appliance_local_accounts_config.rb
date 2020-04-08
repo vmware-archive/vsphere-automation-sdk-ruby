@@ -11,23 +11,32 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceLocalAccountsConfig
-    # Password
-    attr_accessor :password
-
-    # Old password of the user (required in case of the password change, not required if superAdmin user changes the password of the other user)
-    attr_accessor :old_password
-
-    # Full name of the user
-    attr_accessor :full_name
+    # Number of days after password expiration before the account will be locked
+    attr_accessor :days_after_password_expiration
 
     # Email address of the local account
     attr_accessor :email
 
-    # User roles
-    attr_accessor :roles
-
     # Flag indicating if the account is enabled
     attr_accessor :enabled
+
+    # Full name of the user
+    attr_accessor :full_name
+
+    # Flag indicating if the account will be locked after password expiration
+    attr_accessor :inactive_after_password_expiration
+
+    # Maximum number of days between password change
+    attr_accessor :max_days_between_password_change
+
+    # Minimum number of days between password change
+    attr_accessor :min_days_between_password_change
+
+    # Old password of the user (required in case of the password change, not required if superAdmin user changes the password of the other user)
+    attr_accessor :old_password
+
+    # Password
+    attr_accessor :password
 
     # Flag indicating if the account password expires
     attr_accessor :password_expires
@@ -35,17 +44,8 @@ module VSphereAutomation
     # Date when the account's password will expire
     attr_accessor :password_expires_at
 
-    # Flag indicating if the account will be locked after password expiration
-    attr_accessor :inactive_after_password_expiration
-
-    # Number of days after password expiration before the account will be locked
-    attr_accessor :days_after_password_expiration
-
-    # Minimum number of days between password change
-    attr_accessor :min_days_between_password_change
-
-    # Maximum number of days between password change
-    attr_accessor :max_days_between_password_change
+    # User roles
+    attr_accessor :roles
 
     # Number of days of warning before password expires
     attr_accessor :warn_days_before_password_expiration
@@ -53,18 +53,18 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'password' => :'password',
-        :'old_password' => :'old_password',
-        :'full_name' => :'full_name',
+        :'days_after_password_expiration' => :'days_after_password_expiration',
         :'email' => :'email',
-        :'roles' => :'roles',
         :'enabled' => :'enabled',
+        :'full_name' => :'full_name',
+        :'inactive_after_password_expiration' => :'inactive_after_password_expiration',
+        :'max_days_between_password_change' => :'max_days_between_password_change',
+        :'min_days_between_password_change' => :'min_days_between_password_change',
+        :'old_password' => :'old_password',
+        :'password' => :'password',
         :'password_expires' => :'password_expires',
         :'password_expires_at' => :'password_expires_at',
-        :'inactive_after_password_expiration' => :'inactive_after_password_expiration',
-        :'days_after_password_expiration' => :'days_after_password_expiration',
-        :'min_days_between_password_change' => :'min_days_between_password_change',
-        :'max_days_between_password_change' => :'max_days_between_password_change',
+        :'roles' => :'roles',
         :'warn_days_before_password_expiration' => :'warn_days_before_password_expiration'
       }
     end
@@ -72,18 +72,18 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'password' => :'String',
-        :'old_password' => :'String',
-        :'full_name' => :'String',
+        :'days_after_password_expiration' => :'Integer',
         :'email' => :'String',
-        :'roles' => :'Array<String>',
         :'enabled' => :'Boolean',
+        :'full_name' => :'String',
+        :'inactive_after_password_expiration' => :'Boolean',
+        :'max_days_between_password_change' => :'Integer',
+        :'min_days_between_password_change' => :'Integer',
+        :'old_password' => :'String',
+        :'password' => :'String',
         :'password_expires' => :'Boolean',
         :'password_expires_at' => :'DateTime',
-        :'inactive_after_password_expiration' => :'Boolean',
-        :'days_after_password_expiration' => :'Integer',
-        :'min_days_between_password_change' => :'Integer',
-        :'max_days_between_password_change' => :'Integer',
+        :'roles' => :'Array<String>',
         :'warn_days_before_password_expiration' => :'Integer'
       }
     end
@@ -96,30 +96,40 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'password')
-        self.password = attributes[:'password']
-      end
-
-      if attributes.has_key?(:'old_password')
-        self.old_password = attributes[:'old_password']
-      end
-
-      if attributes.has_key?(:'full_name')
-        self.full_name = attributes[:'full_name']
+      if attributes.has_key?(:'days_after_password_expiration')
+        self.days_after_password_expiration = attributes[:'days_after_password_expiration']
       end
 
       if attributes.has_key?(:'email')
         self.email = attributes[:'email']
       end
 
-      if attributes.has_key?(:'roles')
-        if (value = attributes[:'roles']).is_a?(Array)
-          self.roles = value
-        end
-      end
-
       if attributes.has_key?(:'enabled')
         self.enabled = attributes[:'enabled']
+      end
+
+      if attributes.has_key?(:'full_name')
+        self.full_name = attributes[:'full_name']
+      end
+
+      if attributes.has_key?(:'inactive_after_password_expiration')
+        self.inactive_after_password_expiration = attributes[:'inactive_after_password_expiration']
+      end
+
+      if attributes.has_key?(:'max_days_between_password_change')
+        self.max_days_between_password_change = attributes[:'max_days_between_password_change']
+      end
+
+      if attributes.has_key?(:'min_days_between_password_change')
+        self.min_days_between_password_change = attributes[:'min_days_between_password_change']
+      end
+
+      if attributes.has_key?(:'old_password')
+        self.old_password = attributes[:'old_password']
+      end
+
+      if attributes.has_key?(:'password')
+        self.password = attributes[:'password']
       end
 
       if attributes.has_key?(:'password_expires')
@@ -130,20 +140,10 @@ module VSphereAutomation
         self.password_expires_at = attributes[:'password_expires_at']
       end
 
-      if attributes.has_key?(:'inactive_after_password_expiration')
-        self.inactive_after_password_expiration = attributes[:'inactive_after_password_expiration']
-      end
-
-      if attributes.has_key?(:'days_after_password_expiration')
-        self.days_after_password_expiration = attributes[:'days_after_password_expiration']
-      end
-
-      if attributes.has_key?(:'min_days_between_password_change')
-        self.min_days_between_password_change = attributes[:'min_days_between_password_change']
-      end
-
-      if attributes.has_key?(:'max_days_between_password_change')
-        self.max_days_between_password_change = attributes[:'max_days_between_password_change']
+      if attributes.has_key?(:'roles')
+        if (value = attributes[:'roles']).is_a?(Array)
+          self.roles = value
+        end
       end
 
       if attributes.has_key?(:'warn_days_before_password_expiration')
@@ -179,18 +179,18 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          password == o.password &&
-          old_password == o.old_password &&
-          full_name == o.full_name &&
+          days_after_password_expiration == o.days_after_password_expiration &&
           email == o.email &&
-          roles == o.roles &&
           enabled == o.enabled &&
+          full_name == o.full_name &&
+          inactive_after_password_expiration == o.inactive_after_password_expiration &&
+          max_days_between_password_change == o.max_days_between_password_change &&
+          min_days_between_password_change == o.min_days_between_password_change &&
+          old_password == o.old_password &&
+          password == o.password &&
           password_expires == o.password_expires &&
           password_expires_at == o.password_expires_at &&
-          inactive_after_password_expiration == o.inactive_after_password_expiration &&
-          days_after_password_expiration == o.days_after_password_expiration &&
-          min_days_between_password_change == o.min_days_between_password_change &&
-          max_days_between_password_change == o.max_days_between_password_change &&
+          roles == o.roles &&
           warn_days_before_password_expiration == o.warn_days_before_password_expiration
     end
 
@@ -203,7 +203,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [password, old_password, full_name, email, roles, enabled, password_expires, password_expires_at, inactive_after_password_expiration, days_after_password_expiration, min_days_between_password_change, max_days_between_password_change, warn_days_before_password_expiration].hash
+      [days_after_password_expiration, email, enabled, full_name, inactive_after_password_expiration, max_days_between_password_change, min_days_between_password_change, old_password, password, password_expires, password_expires_at, roles, warn_days_before_password_expiration].hash
     end
 
     # Builds the object from hash

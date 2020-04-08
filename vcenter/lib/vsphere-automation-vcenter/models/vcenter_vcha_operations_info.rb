@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaOperationsInfo
-    # Identifiers of the operations that are current disabled. These operation strings are one of CLUSTER_DEPLOY_OP, CLUSTER_FAILOVER_OP, PASSIVE_REDEPLOY_OP, WITNESS_REDEPLOY_OP, MODE_SET_OP, CLUSTER_UNDEPLOY_OP and CLUSTER_GET_OP. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.operation.
-    attr_accessor :disabled
-
-    # Identifiers of the operations that are currently running. These operation strings are one of CLUSTER_DEPLOY_OP, CLUSTER_FAILOVER_OP, PASSIVE_REDEPLOY_OP, WITNESS_REDEPLOY_OP, MODE_SET_OP, and CLUSTER_UNDEPLOY_OP. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.operation.
+    # Identifiers of the operations that are currently running. These operation strings are one of \"vcenter.vcha.cluster.deploy\", \"vcenter.vcha.cluster.failover\", \"vcenter.vcha.cluster.passive.redeploy\", \"vcenter.vcha.cluster.witness.redeploy\", \"vcenter.vcha.cluster.mode.set\", and \"vcenter.vcha.cluster.undeploy\". When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.operation.
     attr_accessor :active
+
+    # Identifiers of the operations that are current disabled. These operation strings are one of \"vcenter.vcha.cluster.deploy\", \"vcenter.vcha.cluster.failover\", \"vcenter.vcha.cluster.passive.redeploy\", \"vcenter.vcha.cluster.witness.redeploy\", \"vcenter.vcha.cluster.mode.set\", \"vcenter.vcha.cluster.undeploy\" and \"vcenter.vcha.cluster.get\". When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.operation.
+    attr_accessor :disabled
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'disabled' => :'disabled',
-        :'active' => :'active'
+        :'active' => :'active',
+        :'disabled' => :'disabled'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'disabled' => :'Array<String>',
-        :'active' => :'Array<String>'
+        :'active' => :'Array<String>',
+        :'disabled' => :'Array<String>'
       }
     end
 
@@ -41,15 +41,15 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'disabled')
-        if (value = attributes[:'disabled']).is_a?(Array)
-          self.disabled = value
-        end
-      end
-
       if attributes.has_key?(:'active')
         if (value = attributes[:'active']).is_a?(Array)
           self.active = value
+        end
+      end
+
+      if attributes.has_key?(:'disabled')
+        if (value = attributes[:'disabled']).is_a?(Array)
+          self.disabled = value
         end
       end
     end
@@ -58,12 +58,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @disabled.nil?
-        invalid_properties.push('invalid value for "disabled", disabled cannot be nil.')
-      end
-
       if @active.nil?
         invalid_properties.push('invalid value for "active", active cannot be nil.')
+      end
+
+      if @disabled.nil?
+        invalid_properties.push('invalid value for "disabled", disabled cannot be nil.')
       end
 
       invalid_properties
@@ -72,8 +72,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @disabled.nil?
       return false if @active.nil?
+      return false if @disabled.nil?
       true
     end
 
@@ -82,8 +82,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          disabled == o.disabled &&
-          active == o.active
+          active == o.active &&
+          disabled == o.disabled
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [disabled, active].hash
+      [active, disabled].hash
     end
 
     # Builds the object from hash

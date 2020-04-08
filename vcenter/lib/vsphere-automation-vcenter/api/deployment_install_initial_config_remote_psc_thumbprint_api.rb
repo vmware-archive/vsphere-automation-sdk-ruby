@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param spec_address The IP address or DNS resolvable name of the remote PSC.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :spec_https_port The HTTPS port of the remote PSC.
-    # @return [VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|]
+    # @return [VcenterDeploymentInstallInitialConfigRemotePscThumbprintResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|]
     def get(spec_address, opts = {})
       data, _status_code, _headers = get_with_http_info(spec_address, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param spec_address The IP address or DNS resolvable name of the remote PSC.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :spec_https_port The HTTPS port of the remote PSC.
-    # @return [Array<(VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentInstallInitialConfigRemotePscThumbprintResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(spec_address, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallInitialConfigRemotePscThumbprintApi.get ...'
@@ -41,7 +41,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'spec_address' when calling DeploymentInstallInitialConfigRemotePscThumbprintApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/deployment/install/initial-config/remote-psc/thumbprint'
+      local_var_path = '/rest/vcenter/deployment/install/initial-config/remote-psc/thumbprint'
 
       # query parameters
       query_params = {}
@@ -66,7 +66,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult',
+	  '200' => 'VCenter::VcenterDeploymentInstallInitialConfigRemotePscThumbprintResp',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	})

@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::NetworkingNoProxyApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NetworkingNoProxyApi.md#get) | **GET** /appliance/networking/noproxy | Returns servers for which no proxy configuration will be applied.
-[**set**](NetworkingNoProxyApi.md#set) | **PUT** /appliance/networking/noproxy | Sets servers for which no proxy configuration should be applied. This operation sets environment variables. In order for this operation to take effect, a logout from appliance or a service restart is required. If IPv4 is enabled, \&quot;127.0.0.1\&quot; and \&quot;localhost\&quot; will always bypass the proxy (even if they are not explicitly configured).
+[**get**](NetworkingNoProxyApi.md#get) | **GET** /rest/appliance/networking/noproxy | Returns servers for which no proxy configuration will be applied.
+[**set**](NetworkingNoProxyApi.md#set) | **PUT** /rest/appliance/networking/noproxy | Sets servers for which no proxy configuration should be applied. This operation sets environment variables. In order for this operation to take effect, a logout from appliance or a service restart is required. If IPv4 is enabled, \&quot;127.0.0.1\&quot; and \&quot;localhost\&quot; will always bypass the proxy (even if they are not explicitly configured).
 
 
 # **get**
-> ApplianceNetworkingNoProxyResult get
+> ApplianceNetworkingNoProxyResp get
 
 Returns servers for which no proxy configuration will be applied.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNetworkingNoProxyResult**](ApplianceNetworkingNoProxyResult.md)
+[**ApplianceNetworkingNoProxyResp**](ApplianceNetworkingNoProxyResp.md)
 
 ### Authorization
 

@@ -1,15 +1,116 @@
 # VSphereAutomation::VCenter::ClusterApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](ClusterApi.md#get) | **GET** /vcenter/cluster/{cluster} | Retrieves information about the cluster corresponding to cluster.
-[**list**](ClusterApi.md#list) | **GET** /vcenter/cluster | Returns information about at most 1000 visible (subject to permission checks) clusters in vCenter matching the Cluster.FilterSpec.
+[**create**](ClusterApi.md#create) | **POST** /rest/vcenter/cluster | Create a new cluster in the vCenter inventory. Warning: This operation is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+[**delete**](ClusterApi.md#delete) | **DELETE** /rest/vcenter/cluster/{cluster} | Delete an empty cluster from the vCenter Server. Warning: This operation is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+[**get**](ClusterApi.md#get) | **GET** /rest/vcenter/cluster/{cluster} | Retrieves information about the cluster corresponding to cluster.
+[**list**](ClusterApi.md#list) | **GET** /rest/vcenter/cluster | Returns information about at most 1000 visible (subject to permission checks) clusters in vCenter matching the Cluster.FilterSpec.
+
+
+# **create**
+> VcenterClusterCreateResp create(request_body)
+
+Create a new cluster in the vCenter inventory. Warning: This operation is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::ClusterApi.new
+request_body = VCenter::VcenterClusterCreate.new # VcenterClusterCreate | 
+
+begin
+  #Create a new cluster in the vCenter inventory. Warning: This operation is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+  result = api_instance.create(request_body)
+  p result
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling ClusterApi->create: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_body** | [**VcenterClusterCreate**](VcenterClusterCreate.md)|  | 
+
+### Return type
+
+[**VcenterClusterCreateResp**](VcenterClusterCreateResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete**
+> delete(cluster)
+
+Delete an empty cluster from the vCenter Server. Warning: This operation is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::ClusterApi.new
+cluster = 'cluster_example' # String | Identifier of the cluster to be deleted. The parameter must be an identifier for the resource type: ClusterComputeResource.
+
+begin
+  #Delete an empty cluster from the vCenter Server. Warning: This operation is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+  api_instance.delete(cluster)
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling ClusterApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster** | **String**| Identifier of the cluster to be deleted. The parameter must be an identifier for the resource type: ClusterComputeResource. | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 
 
 # **get**
-> VcenterClusterResult get(cluster)
+> VcenterClusterResp get(cluster)
 
 Retrieves information about the cluster corresponding to cluster.
 
@@ -45,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterClusterResult**](VcenterClusterResult.md)
+[**VcenterClusterResp**](VcenterClusterResp.md)
 
 ### Authorization
 
@@ -59,7 +160,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterClusterListResult list(opts)
+> VcenterClusterListResp list(opts)
 
 Returns information about at most 1000 visible (subject to permission checks) clusters in vCenter matching the Cluster.FilterSpec.
 
@@ -103,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterClusterListResult**](VcenterClusterListResult.md)
+[**VcenterClusterListResp**](VcenterClusterListResp.md)
 
 ### Authorization
 

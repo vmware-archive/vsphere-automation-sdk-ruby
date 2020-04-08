@@ -11,19 +11,19 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaggingCategoryModel
+    # The types of objects that the tags in this category can be attached to. If the {@term set} is empty, then tags can be attached to all types of objects. This field works only for objects that reside in Inventory Service (IS). For non IS objects, this check is not performed today and hence a tag can be attached to any non IS object.
+    attr_accessor :associable_types
+
+    attr_accessor :cardinality
+
+    # The description of the category.
+    attr_accessor :description
+
     # The unique identifier of the category.
     attr_accessor :id
 
     # The display name of the category.
     attr_accessor :name
-
-    # The description of the category.
-    attr_accessor :description
-
-    attr_accessor :cardinality
-
-    # The types of objects that the tags in this category can be attached to. If the {@term set} is empty, then tags can be attached to all types of objects. This field works only for objects that reside in Inventory Service (IS). For non IS objects, this check is not performed today and hence a tag can be attached to any non IS object.
-    attr_accessor :associable_types
 
     # The {@term set} of users that can use this category. To add users to this, you need to have the edit privilege on the category. Similarly, to unsubscribe from this category, you need the edit privilege on the category. You should not modify other users subscription from this {@term set}.
     attr_accessor :used_by
@@ -31,11 +31,11 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'associable_types' => :'associable_types',
+        :'cardinality' => :'cardinality',
+        :'description' => :'description',
         :'id' => :'id',
         :'name' => :'name',
-        :'description' => :'description',
-        :'cardinality' => :'cardinality',
-        :'associable_types' => :'associable_types',
         :'used_by' => :'used_by'
       }
     end
@@ -43,11 +43,11 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'associable_types' => :'Array<String>',
+        :'cardinality' => :'CisTaggingCategoryModelCardinality',
+        :'description' => :'String',
         :'id' => :'String',
         :'name' => :'String',
-        :'description' => :'String',
-        :'cardinality' => :'CisTaggingCategoryModelCardinality',
-        :'associable_types' => :'Array<String>',
         :'used_by' => :'Array<String>'
       }
     end
@@ -60,26 +60,26 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.has_key?(:'associable_types')
+        if (value = attributes[:'associable_types']).is_a?(Array)
+          self.associable_types = value
+        end
       end
 
       if attributes.has_key?(:'cardinality')
         self.cardinality = attributes[:'cardinality']
       end
 
-      if attributes.has_key?(:'associable_types')
-        if (value = attributes[:'associable_types']).is_a?(Array)
-          self.associable_types = value
-        end
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'used_by')
@@ -93,24 +93,24 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      if @associable_types.nil?
+        invalid_properties.push('invalid value for "associable_types", associable_types cannot be nil.')
       end
 
       if @cardinality.nil?
         invalid_properties.push('invalid value for "cardinality", cardinality cannot be nil.')
       end
 
-      if @associable_types.nil?
-        invalid_properties.push('invalid value for "associable_types", associable_types cannot be nil.')
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      end
+
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @used_by.nil?
@@ -123,11 +123,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @associable_types.nil?
+      return false if @cardinality.nil?
+      return false if @description.nil?
       return false if @id.nil?
       return false if @name.nil?
-      return false if @description.nil?
-      return false if @cardinality.nil?
-      return false if @associable_types.nil?
       return false if @used_by.nil?
       true
     end
@@ -137,11 +137,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          associable_types == o.associable_types &&
+          cardinality == o.cardinality &&
+          description == o.description &&
           id == o.id &&
           name == o.name &&
-          description == o.description &&
-          cardinality == o.cardinality &&
-          associable_types == o.associable_types &&
           used_by == o.used_by
     end
 
@@ -154,7 +154,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, description, cardinality, associable_types, used_by].hash
+      [associable_types, cardinality, description, id, name, used_by].hash
     end
 
     # Builds the object from hash

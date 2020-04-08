@@ -1,16 +1,16 @@
 # VSphereAutomation::VAPI::MetadataMetamodelComponentApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fingerprint**](MetadataMetamodelComponentApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/metamodel/component/id:{component_id}?~action&#x3D;fingerprint | Retrieves the fingerprint computed from the metamodel metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component element has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.metamodel.Component#get}.
-[**get**](MetadataMetamodelComponentApi.md#get) | **GET** /com/vmware/vapi/metadata/metamodel/component/id:{component_id} | Retrieves metamodel information about the component element corresponding to {@param.name componentId}. &lt;p&gt; The {@link ComponentData} contains the metamodel information about the component and it&#39;s fingerprint. It contains information about all the package elements that are contained in this component element.
-[**list**](MetadataMetamodelComponentApi.md#list) | **GET** /com/vmware/vapi/metadata/metamodel/component | Returns the identifiers for the component elements that are registered with the infrastructure.
+[**fingerprint**](MetadataMetamodelComponentApi.md#fingerprint) | **POST** /rest/com/vmware/vapi/metadata/metamodel/component/id:{component_id}?~action&#x3D;fingerprint | Retrieves the fingerprint computed from the metamodel metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component element has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.metamodel.Component#get}.
+[**get**](MetadataMetamodelComponentApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/metamodel/component/id:{component_id} | Retrieves metamodel information about the component element corresponding to {@param.name componentId}. &lt;p&gt; The {@link ComponentData} contains the metamodel information about the component and it&#39;s fingerprint. It contains information about all the package elements that are contained in this component element.
+[**list**](MetadataMetamodelComponentApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/metamodel/component | Returns the identifiers for the component elements that are registered with the infrastructure.
 
 
 # **fingerprint**
-> VapiMetadataMetamodelComponentFingerprintResult fingerprint(component_id)
+> VapiMetadataMetamodelComponentFingerprintResp fingerprint(component_id)
 
 Retrieves the fingerprint computed from the metamodel metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component element has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.metamodel.Component#get}.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelComponentFingerprintResult**](VapiMetadataMetamodelComponentFingerprintResult.md)
+[**VapiMetadataMetamodelComponentFingerprintResp**](VapiMetadataMetamodelComponentFingerprintResp.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> VapiMetadataMetamodelComponentResult get(component_id)
+> VapiMetadataMetamodelComponentResp get(component_id)
 
 Retrieves metamodel information about the component element corresponding to {@param.name componentId}. <p> The {@link ComponentData} contains the metamodel information about the component and it's fingerprint. It contains information about all the package elements that are contained in this component element.
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelComponentResult**](VapiMetadataMetamodelComponentResult.md)
+[**VapiMetadataMetamodelComponentResp**](VapiMetadataMetamodelComponentResp.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataMetamodelComponentListResult list
+> VapiMetadataMetamodelComponentListResp list
 
 Returns the identifiers for the component elements that are registered with the infrastructure.
 
@@ -142,7 +142,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataMetamodelComponentListResult**](VapiMetadataMetamodelComponentListResult.md)
+[**VapiMetadataMetamodelComponentListResp**](VapiMetadataMetamodelComponentListResp.md)
 
 ### Authorization
 

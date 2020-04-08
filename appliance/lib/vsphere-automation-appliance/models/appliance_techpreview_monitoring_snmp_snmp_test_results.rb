@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPTestResults
-    # Set success to true/false
-    attr_accessor :success
-
     # message
     attr_accessor :message
+
+    # Set success to true/false
+    attr_accessor :success
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'success' => :'success',
-        :'message' => :'message'
+        :'message' => :'message',
+        :'success' => :'success'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'success' => :'Boolean',
-        :'message' => :'String'
+        :'message' => :'String',
+        :'success' => :'Boolean'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'success')
-        self.success = attributes[:'success']
-      end
-
       if attributes.has_key?(:'message')
         self.message = attributes[:'message']
+      end
+
+      if attributes.has_key?(:'success')
+        self.success = attributes[:'success']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @success.nil?
-        invalid_properties.push('invalid value for "success", success cannot be nil.')
-      end
-
       if @message.nil?
         invalid_properties.push('invalid value for "message", message cannot be nil.')
+      end
+
+      if @success.nil?
+        invalid_properties.push('invalid value for "success", success cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @success.nil?
       return false if @message.nil?
+      return false if @success.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          success == o.success &&
-          message == o.message
+          message == o.message &&
+          success == o.success
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [success, message].hash
+      [message, success].hash
     end
 
     # Builds the object from hash

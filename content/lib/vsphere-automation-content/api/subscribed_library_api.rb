@@ -19,7 +19,7 @@ module VSphereAutomation
     # Creates a new subscribed library. <p> Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentSubscribedLibraryCreateResult|VapiStdErrorsResourceInaccessibleError|]
+    # @return [ContentSubscribedLibraryCreateResp|VapiStdErrorsResourceInaccessibleError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentSubscribedLibraryCreateResult|VapiStdErrorsResourceInaccessibleError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentSubscribedLibraryCreateResp|VapiStdErrorsResourceInaccessibleError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.create ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling SubscribedLibraryApi.create"
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library'
+      local_var_path = '/rest/com/vmware/content/subscribed-library'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentSubscribedLibraryCreateResult',
+	  '200' => 'Content::ContentSubscribedLibraryCreateResp',
 	  '400' => 'Content::VapiStdErrorsResourceInaccessibleError',
 	})
       if @api_client.config.debugging
@@ -95,7 +95,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_id' when calling SubscribedLibraryApi.delete"
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/rest/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
@@ -145,7 +145,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_id' when calling SubscribedLibraryApi.evict"
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}?~action=evict'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/rest/com/vmware/content/subscribed-library/id:{library_id}?~action=evict'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
@@ -175,7 +175,7 @@ module VSphereAutomation
     # Returns a given subscribed library.
     # @param library_id Identifier of the subscribed library to return.
     # @param [Hash] opts the optional parameters
-    # @return [ContentSubscribedLibraryResult|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|]
+    # @return [ContentSubscribedLibraryResp|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|]
     def get(library_id, opts = {})
       data, _status_code, _headers = get_with_http_info(library_id, opts)
       data
@@ -185,7 +185,7 @@ module VSphereAutomation
     # @api private
     # @param library_id Identifier of the subscribed library to return.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentSubscribedLibraryResult|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentSubscribedLibraryResp|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.get ...'
@@ -195,7 +195,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_id' when calling SubscribedLibraryApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/rest/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
@@ -218,7 +218,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentSubscribedLibraryResult',
+	  '200' => 'Content::ContentSubscribedLibraryResp',
 	  '400' => 'Content::VapiStdErrorsInvalidElementTypeError',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
@@ -229,7 +229,7 @@ module VSphereAutomation
     end
     # Returns the identifiers of all subscribed libraries in the Content Library.
     # @param [Hash] opts the optional parameters
-    # @return [ContentSubscribedLibraryListResult|]
+    # @return [ContentSubscribedLibraryListResp|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -238,13 +238,13 @@ module VSphereAutomation
     # Returns the identifiers of all subscribed libraries in the Content Library.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentSubscribedLibraryListResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentSubscribedLibraryListResp|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.list ...'
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library'
+      local_var_path = '/rest/com/vmware/content/subscribed-library'
 
       # query parameters
       query_params = {}
@@ -267,7 +267,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentSubscribedLibraryListResult',
+	  '200' => 'Content::ContentSubscribedLibraryListResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SubscribedLibraryApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -277,7 +277,7 @@ module VSphereAutomation
     # Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentSubscribedLibraryProbeResult|]
+    # @return [ContentSubscribedLibraryProbeResp|]
     def probe(request_body, opts = {})
       data, _status_code, _headers = probe_with_http_info(request_body, opts)
       data
@@ -287,7 +287,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentSubscribedLibraryProbeResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentSubscribedLibraryProbeResp|, Fixnum, Hash)>]  data, response status code and response headers
     def probe_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SubscribedLibraryApi.probe ...'
@@ -297,7 +297,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling SubscribedLibraryApi.probe"
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library?~action=probe'
+      local_var_path = '/rest/com/vmware/content/subscribed-library?~action=probe'
 
       # query parameters
       query_params = {}
@@ -322,7 +322,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentSubscribedLibraryProbeResult',
+	  '200' => 'Content::ContentSubscribedLibraryProbeResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SubscribedLibraryApi#probe\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -352,7 +352,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_id' when calling SubscribedLibraryApi.sync"
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}?~action=sync'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/rest/com/vmware/content/subscribed-library/id:{library_id}?~action=sync'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
@@ -408,7 +408,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling SubscribedLibraryApi.update"
       end
       # resource path
-      local_var_path = '/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/rest/com/vmware/content/subscribed-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}

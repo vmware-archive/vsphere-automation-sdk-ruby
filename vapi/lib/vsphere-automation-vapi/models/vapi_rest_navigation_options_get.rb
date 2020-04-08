@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiRestNavigationOptionsGet
+    # Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
+    attr_accessor :base_url
+
     # URL for which operations are retrieved.
     attr_accessor :url
-
-    # Base URL.
-    attr_accessor :base_url
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'url' => :'url',
-        :'base_url' => :'base_url'
+        :'base_url' => :'base_url',
+        :'url' => :'url'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'url' => :'String',
-        :'base_url' => :'String'
+        :'base_url' => :'String',
+        :'url' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'url')
-        self.url = attributes[:'url']
-      end
-
       if attributes.has_key?(:'base_url')
         self.base_url = attributes[:'base_url']
+      end
+
+      if attributes.has_key?(:'url')
+        self.url = attributes[:'url']
       end
     end
 
@@ -73,8 +73,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          url == o.url &&
-          base_url == o.base_url
+          base_url == o.base_url &&
+          url == o.url
     end
 
     # @see the `==` method
@@ -86,7 +86,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [url, base_url].hash
+      [base_url, url].hash
     end
 
     # Builds the object from hash

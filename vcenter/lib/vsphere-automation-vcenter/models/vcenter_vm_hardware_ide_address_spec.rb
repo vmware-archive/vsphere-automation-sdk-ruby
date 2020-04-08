@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareIdeAddressSpec
-    # Flag specifying whether the device should be attached to the primary or secondary IDE adapter of the virtual machine. If unset, the server will choose a adapter with an available connection. If no IDE connections are available, the request will be rejected.
-    attr_accessor :primary
-
     # Flag specifying whether the device should be the master or slave device on the IDE adapter. If unset, the server will choose an available connection type. If no IDE connections are available, the request will be rejected.
     attr_accessor :master
+
+    # Flag specifying whether the device should be attached to the primary or secondary IDE adapter of the virtual machine. If unset, the server will choose a adapter with an available connection. If no IDE connections are available, the request will be rejected.
+    attr_accessor :primary
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'primary' => :'primary',
-        :'master' => :'master'
+        :'master' => :'master',
+        :'primary' => :'primary'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'primary' => :'Boolean',
-        :'master' => :'Boolean'
+        :'master' => :'Boolean',
+        :'primary' => :'Boolean'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'primary')
-        self.primary = attributes[:'primary']
-      end
-
       if attributes.has_key?(:'master')
         self.master = attributes[:'master']
+      end
+
+      if attributes.has_key?(:'primary')
+        self.primary = attributes[:'primary']
       end
     end
 
@@ -68,8 +68,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          primary == o.primary &&
-          master == o.master
+          master == o.master &&
+          primary == o.primary
     end
 
     # @see the `==` method
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [primary, master].hash
+      [master, primary].hash
     end
 
     # Builds the object from hash

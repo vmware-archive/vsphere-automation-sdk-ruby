@@ -11,14 +11,14 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaggingTagCreateSpec
-    # The display name of the tag. The name must be unique within its category.
-    attr_accessor :name
+    # The unique identifier of the parent category in which this tag will be created.
+    attr_accessor :category_id
 
     # The description of the tag.
     attr_accessor :description
 
-    # The unique identifier of the parent category in which this tag will be created.
-    attr_accessor :category_id
+    # The display name of the tag. The name must be unique within its category.
+    attr_accessor :name
 
     # The identifier of the tag. If specified, tag will be created with the specified identifier. This has to be of the tag ManagedObject Id format urn:vmomi:InventoryServiceTag:<id>:GLOBAL The <id> cannot contain special character ':'
     attr_accessor :tag_id
@@ -26,9 +26,9 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'description' => :'description',
         :'category_id' => :'category_id',
+        :'description' => :'description',
+        :'name' => :'name',
         :'tag_id' => :'tag_id'
       }
     end
@@ -36,9 +36,9 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'description' => :'String',
         :'category_id' => :'String',
+        :'description' => :'String',
+        :'name' => :'String',
         :'tag_id' => :'String'
       }
     end
@@ -51,16 +51,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'category_id')
+        self.category_id = attributes[:'category_id']
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'category_id')
-        self.category_id = attributes[:'category_id']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'tag_id')
@@ -72,16 +72,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @category_id.nil?
+        invalid_properties.push('invalid value for "category_id", category_id cannot be nil.')
       end
 
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
-      if @category_id.nil?
-        invalid_properties.push('invalid value for "category_id", category_id cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       invalid_properties
@@ -90,9 +90,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
-      return false if @description.nil?
       return false if @category_id.nil?
+      return false if @description.nil?
+      return false if @name.nil?
       true
     end
 
@@ -101,9 +101,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          description == o.description &&
           category_id == o.category_id &&
+          description == o.description &&
+          name == o.name &&
           tag_id == o.tag_id
     end
 
@@ -116,7 +116,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, description, category_id, tag_id].hash
+      [category_id, description, name, tag_id].hash
     end
 
     # Builds the object from hash

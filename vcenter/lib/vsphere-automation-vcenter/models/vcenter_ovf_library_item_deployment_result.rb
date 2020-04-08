@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemDeploymentResult
-    # Whether the {@name LibraryItem#deploy} {@term operation} completed successfully.
-    attr_accessor :succeeded
+    attr_accessor :error
 
     attr_accessor :resource_id
 
-    attr_accessor :error
+    # Whether the {@name LibraryItem#deploy} {@term operation} completed successfully.
+    attr_accessor :succeeded
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'succeeded' => :'succeeded',
+        :'error' => :'error',
         :'resource_id' => :'resource_id',
-        :'error' => :'error'
+        :'succeeded' => :'succeeded'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'succeeded' => :'Boolean',
+        :'error' => :'VcenterOvfLibraryItemResultInfo',
         :'resource_id' => :'VcenterOvfLibraryItemDeployableIdentity',
-        :'error' => :'VcenterOvfLibraryItemResultInfo'
+        :'succeeded' => :'Boolean'
       }
     end
 
@@ -44,16 +44,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'succeeded')
-        self.succeeded = attributes[:'succeeded']
+      if attributes.has_key?(:'error')
+        self.error = attributes[:'error']
       end
 
       if attributes.has_key?(:'resource_id')
         self.resource_id = attributes[:'resource_id']
       end
 
-      if attributes.has_key?(:'error')
-        self.error = attributes[:'error']
+      if attributes.has_key?(:'succeeded')
+        self.succeeded = attributes[:'succeeded']
       end
     end
 
@@ -80,9 +80,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          succeeded == o.succeeded &&
+          error == o.error &&
           resource_id == o.resource_id &&
-          error == o.error
+          succeeded == o.succeeded
     end
 
     # @see the `==` method
@@ -94,7 +94,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [succeeded, resource_id, error].hash
+      [error, resource_id, succeeded].hash
     end
 
     # Builds the object from hash

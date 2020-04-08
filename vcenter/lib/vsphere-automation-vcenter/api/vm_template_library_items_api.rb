@@ -19,7 +19,7 @@ module VSphereAutomation
     # Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmTemplateLibraryItemsCreateResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmTemplateLibraryItemsCreateResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmTemplateLibraryItemsCreateResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmTemplateLibraryItemsCreateResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.create ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmTemplateLibraryItemsApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/vm-template/library-items'
+      local_var_path = '/rest/vcenter/vm-template/library-items'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmTemplateLibraryItemsCreateResult',
+	  '200' => 'VCenter::VcenterVmTemplateLibraryItemsCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -80,7 +80,7 @@ module VSphereAutomation
     # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmTemplateLibraryItemsDeployResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmTemplateLibraryItemsDeployResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def deploy(template_library_item, request_body, opts = {})
       data, _status_code, _headers = deploy_with_http_info(template_library_item, request_body, opts)
       data
@@ -91,7 +91,7 @@ module VSphereAutomation
     # @param template_library_item identifier of the content library item containing the source virtual machine template to be deployed.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmTemplateLibraryItemsDeployResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmTemplateLibraryItemsDeployResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def deploy_with_http_info(template_library_item, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.deploy ...'
@@ -105,7 +105,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmTemplateLibraryItemsApi.deploy"
       end
       # resource path
-      local_var_path = '/vcenter/vm-template/library-items/{template_library_item}?action=deploy'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
+      local_var_path = '/rest/vcenter/vm-template/library-items/{template_library_item}?action=deploy'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
 
       # query parameters
       query_params = {}
@@ -130,7 +130,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmTemplateLibraryItemsDeployResult',
+	  '200' => 'VCenter::VcenterVmTemplateLibraryItemsDeployResp',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -145,7 +145,7 @@ module VSphereAutomation
     # Returns information about a virtual machine template contained in the library item specified by {@param.name templateLibraryItem}
     # @param template_library_item identifier of the library item containing the virtual machine template.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmTemplateLibraryItemsResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmTemplateLibraryItemsResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(template_library_item, opts = {})
       data, _status_code, _headers = get_with_http_info(template_library_item, opts)
       data
@@ -155,7 +155,7 @@ module VSphereAutomation
     # @api private
     # @param template_library_item identifier of the library item containing the virtual machine template.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmTemplateLibraryItemsResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmTemplateLibraryItemsResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(template_library_item, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmTemplateLibraryItemsApi.get ...'
@@ -165,7 +165,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'template_library_item' when calling VmTemplateLibraryItemsApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/vm-template/library-items/{template_library_item}'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
+      local_var_path = '/rest/vcenter/vm-template/library-items/{template_library_item}'.sub('{' + 'template_library_item' + '}', template_library_item.to_s)
 
       # query parameters
       query_params = {}
@@ -188,7 +188,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmTemplateLibraryItemsResult',
+	  '200' => 'VCenter::VcenterVmTemplateLibraryItemsResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

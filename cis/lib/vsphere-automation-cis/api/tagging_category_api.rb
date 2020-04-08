@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.add_to_used_by"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}?~action=add-to-used-by'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/rest/com/vmware/cis/tagging/category/id:{category_id}?~action=add-to-used-by'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -77,7 +77,7 @@ module VSphereAutomation
     # Creates a category. To invoke this {@term operation}, you need the create category privilege.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingCategoryCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|]
+    # @return [CisTaggingCategoryCreateResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -87,7 +87,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingCategoryCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingCategoryCreateResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.create ...'
@@ -97,7 +97,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.create"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category'
+      local_var_path = '/rest/com/vmware/cis/tagging/category'
 
       # query parameters
       query_params = {}
@@ -122,7 +122,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingCategoryCreateResult',
+	  '200' => 'CIS::CisTaggingCategoryCreateResp',
 	  '400' => 'CIS::VapiStdErrorsInvalidArgumentError',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	})
@@ -134,7 +134,7 @@ module VSphereAutomation
     # Deletes an existing category. To invoke this {@term operation}, you need the delete privilege on the category.
     # @param category_id The identifier of category to be deleted.
     # @param [Hash] opts the optional parameters
-    # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
+    # @return [|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
     def delete(category_id, opts = {})
       delete_with_http_info(category_id, opts)
       nil
@@ -144,7 +144,7 @@ module VSphereAutomation
     # @api private
     # @param category_id The identifier of category to be deleted.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.delete ...'
@@ -154,7 +154,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingCategoryApi.delete"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/rest/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -184,7 +184,7 @@ module VSphereAutomation
     # Fetches the category information for the given category identifier. In order to view the category information, you need the read privilege on the category.
     # @param category_id The identifier of the input category.
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [CisTaggingCategoryResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def get(category_id, opts = {})
       data, _status_code, _headers = get_with_http_info(category_id, opts)
       data
@@ -194,7 +194,7 @@ module VSphereAutomation
     # @api private
     # @param category_id The identifier of the input category.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingCategoryResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.get ...'
@@ -204,7 +204,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingCategoryApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/rest/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -227,7 +227,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingCategoryResult',
+	  '200' => 'CIS::CisTaggingCategoryResp',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	  '404' => 'CIS::VapiStdErrorsNotFoundError',
 	})
@@ -238,7 +238,7 @@ module VSphereAutomation
     end
     # Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingCategoryListResult|]
+    # @return [CisTaggingCategoryListResp|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -247,13 +247,13 @@ module VSphereAutomation
     # Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingCategoryListResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingCategoryListResp|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.list ...'
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category'
+      local_var_path = '/rest/com/vmware/cis/tagging/category'
 
       # query parameters
       query_params = {}
@@ -276,7 +276,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingCategoryListResult',
+	  '200' => 'CIS::CisTaggingCategoryListResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaggingCategoryApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -286,7 +286,7 @@ module VSphereAutomation
     # Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingCategoryListUsedCategoriesResult|]
+    # @return [CisTaggingCategoryListUsedCategoriesResp|]
     def list_used_categories(request_body, opts = {})
       data, _status_code, _headers = list_used_categories_with_http_info(request_body, opts)
       data
@@ -296,7 +296,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingCategoryListUsedCategoriesResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingCategoryListUsedCategoriesResp|, Fixnum, Hash)>]  data, response status code and response headers
     def list_used_categories_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingCategoryApi.list_used_categories ...'
@@ -306,7 +306,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.list_used_categories"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category?~action=list-used-categories'
+      local_var_path = '/rest/com/vmware/cis/tagging/category?~action=list-used-categories'
 
       # query parameters
       query_params = {}
@@ -331,7 +331,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingCategoryListUsedCategoriesResult',
+	  '200' => 'CIS::CisTaggingCategoryListUsedCategoriesResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaggingCategoryApi#list_used_categories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -367,7 +367,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.remove_from_used_by"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}?~action=remove-from-used-by'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/rest/com/vmware/cis/tagging/category/id:{category_id}?~action=remove-from-used-by'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -419,7 +419,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingCategoryApi.revoke_propagating_permissions"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}?~action=revoke-propagating-permissions'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/rest/com/vmware/cis/tagging/category/id:{category_id}?~action=revoke-propagating-permissions'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -475,7 +475,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingCategoryApi.update"
       end
       # resource path
-      local_var_path = '/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/rest/com/vmware/cis/tagging/category/id:{category_id}'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}

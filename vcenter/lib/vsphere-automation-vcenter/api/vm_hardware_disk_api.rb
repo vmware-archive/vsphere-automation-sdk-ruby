@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareDiskCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareDiskCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(vm, request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(vm, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareDiskCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareDiskCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(vm, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.create ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareDiskApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/disk'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/disk'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareDiskCreateResult',
+	  '200' => 'VCenter::VcenterVmHardwareDiskCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsUnsupportedError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -111,7 +111,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'disk' when calling VmHardwareDiskApi.delete"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/disk/{disk}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'disk' + '}', disk.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/disk/{disk}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'disk' + '}', disk.to_s)
 
       # query parameters
       query_params = {}
@@ -142,7 +142,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param disk Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareDiskResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareDiskResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, disk, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, disk, opts)
       data
@@ -153,7 +153,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param disk Virtual disk identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Disk.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareDiskResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareDiskResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, disk, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.get ...'
@@ -167,7 +167,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'disk' when calling VmHardwareDiskApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/disk/{disk}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'disk' + '}', disk.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/disk/{disk}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'disk' + '}', disk.to_s)
 
       # query parameters
       query_params = {}
@@ -190,7 +190,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareDiskResult',
+	  '200' => 'VCenter::VcenterVmHardwareDiskResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -205,7 +205,7 @@ module VSphereAutomation
     # Returns commonly used information about the virtual disks belonging to the virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareDiskListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareDiskListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def list(vm, opts = {})
       data, _status_code, _headers = list_with_http_info(vm, opts)
       data
@@ -215,7 +215,7 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareDiskListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareDiskListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareDiskApi.list ...'
@@ -225,7 +225,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareDiskApi.list"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/disk'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/disk'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -248,7 +248,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareDiskListResult',
+	  '200' => 'VCenter::VcenterVmHardwareDiskListResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -295,7 +295,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareDiskApi.update"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/disk/{disk}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'disk' + '}', disk.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/disk/{disk}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'disk' + '}', disk.to_s)
 
       # query parameters
       query_params = {}

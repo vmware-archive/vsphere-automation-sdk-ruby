@@ -11,14 +11,11 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibrarySubscriptionsUpdateSpecPlacement
-    # Virtual machine folder into which the virtual machine template should be placed.
-    attr_accessor :folder
-
     # Cluster onto which the virtual machine template should be placed. If {@name #cluster} and {@name #resourcePool} are both specified, {@name #resourcePool} must belong to {@name #cluster}. If {@name #cluster} and {@name #host} are both specified, {@name #host} must be a member of {@name #cluster}. If {@name #resourcePool} or {@name #host} is specified, it is recommended that this {@term field} be {@term unset}.
     attr_accessor :cluster
 
-    # Resource pool into which the virtual machine template should be placed.
-    attr_accessor :resource_pool
+    # Virtual machine folder into which the virtual machine template should be placed.
+    attr_accessor :folder
 
     # Host onto which the virtual machine template should be placed. If {@name #host} and {@name #resourcePool} are both specified, {@name #resourcePool} must belong to {@name #host}. If {@name #host} and {@name #cluster} are both specified, {@name #host} must be a member of {@name #cluster}.
     attr_accessor :host
@@ -26,25 +23,28 @@ module VSphereAutomation
     # Network that backs the virtual Ethernet adapters in the virtual machine template.
     attr_accessor :network
 
+    # Resource pool into which the virtual machine template should be placed.
+    attr_accessor :resource_pool
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'folder' => :'folder',
         :'cluster' => :'cluster',
-        :'resource_pool' => :'resource_pool',
+        :'folder' => :'folder',
         :'host' => :'host',
-        :'network' => :'network'
+        :'network' => :'network',
+        :'resource_pool' => :'resource_pool'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'folder' => :'String',
         :'cluster' => :'String',
-        :'resource_pool' => :'String',
+        :'folder' => :'String',
         :'host' => :'String',
-        :'network' => :'String'
+        :'network' => :'String',
+        :'resource_pool' => :'String'
       }
     end
 
@@ -56,16 +56,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'folder')
-        self.folder = attributes[:'folder']
-      end
-
       if attributes.has_key?(:'cluster')
         self.cluster = attributes[:'cluster']
       end
 
-      if attributes.has_key?(:'resource_pool')
-        self.resource_pool = attributes[:'resource_pool']
+      if attributes.has_key?(:'folder')
+        self.folder = attributes[:'folder']
       end
 
       if attributes.has_key?(:'host')
@@ -74,6 +70,10 @@ module VSphereAutomation
 
       if attributes.has_key?(:'network')
         self.network = attributes[:'network']
+      end
+
+      if attributes.has_key?(:'resource_pool')
+        self.resource_pool = attributes[:'resource_pool']
       end
     end
 
@@ -95,11 +95,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          folder == o.folder &&
           cluster == o.cluster &&
-          resource_pool == o.resource_pool &&
+          folder == o.folder &&
           host == o.host &&
-          network == o.network
+          network == o.network &&
+          resource_pool == o.resource_pool
     end
 
     # @see the `==` method
@@ -111,7 +111,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [folder, cluster, resource_pool, host, network].hash
+      [cluster, folder, host, network, resource_pool].hash
     end
 
     # Builds the object from hash

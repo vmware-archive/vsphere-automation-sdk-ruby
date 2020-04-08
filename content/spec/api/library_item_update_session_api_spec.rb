@@ -54,7 +54,7 @@ describe 'LibraryItemUpdateSessionApi' do
   # Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. &lt;p&gt; Content Library Service allows only one single update session to be active for a specific library item.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemUpdateSessionCreateResult]
+  # @return [ContentLibraryItemUpdateSessionCreateResp]
   describe 'create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -88,7 +88,7 @@ describe 'LibraryItemUpdateSessionApi' do
   # Gets the update session with the specified identifier, including the most up-to-date status information for the session.
   # @param update_session_id Identifier of the update session to retrieve.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemUpdateSessionResult]
+  # @return [ContentLibraryItemUpdateSessionResp]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -111,7 +111,7 @@ describe 'LibraryItemUpdateSessionApi' do
   # Lists the identifiers of the update session created by the calling user. Optionally may filter by library item.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :library_item_id Optional library item identifier on which to filter results.
-  # @return [ContentLibraryItemUpdateSessionListResult]
+  # @return [ContentLibraryItemUpdateSessionListResp]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

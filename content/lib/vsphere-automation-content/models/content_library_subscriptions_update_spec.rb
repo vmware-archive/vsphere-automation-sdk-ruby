@@ -11,23 +11,23 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibrarySubscriptionsUpdateSpec
-    attr_accessor :subscribed_library_vcenter
-
     attr_accessor :subscribed_library_placement
+
+    attr_accessor :subscribed_library_vcenter
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'subscribed_library_vcenter' => :'subscribed_library_vcenter',
-        :'subscribed_library_placement' => :'subscribed_library_placement'
+        :'subscribed_library_placement' => :'subscribed_library_placement',
+        :'subscribed_library_vcenter' => :'subscribed_library_vcenter'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'subscribed_library_vcenter' => :'ContentLibrarySubscriptionsUpdateSpecVcenter',
-        :'subscribed_library_placement' => :'ContentLibrarySubscriptionsUpdateSpecPlacement'
+        :'subscribed_library_placement' => :'ContentLibrarySubscriptionsUpdateSpecPlacement',
+        :'subscribed_library_vcenter' => :'ContentLibrarySubscriptionsUpdateSpecVcenter'
       }
     end
 
@@ -39,12 +39,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'subscribed_library_vcenter')
-        self.subscribed_library_vcenter = attributes[:'subscribed_library_vcenter']
-      end
-
       if attributes.has_key?(:'subscribed_library_placement')
         self.subscribed_library_placement = attributes[:'subscribed_library_placement']
+      end
+
+      if attributes.has_key?(:'subscribed_library_vcenter')
+        self.subscribed_library_vcenter = attributes[:'subscribed_library_vcenter']
       end
     end
 
@@ -66,8 +66,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          subscribed_library_vcenter == o.subscribed_library_vcenter &&
-          subscribed_library_placement == o.subscribed_library_placement
+          subscribed_library_placement == o.subscribed_library_placement &&
+          subscribed_library_vcenter == o.subscribed_library_vcenter
     end
 
     # @see the `==` method
@@ -79,7 +79,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [subscribed_library_vcenter, subscribed_library_placement].hash
+      [subscribed_library_placement, subscribed_library_vcenter].hash
     end
 
     # Builds the object from hash

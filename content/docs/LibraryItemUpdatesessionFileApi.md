@@ -1,18 +1,18 @@
 # VSphereAutomation::Content::LibraryItemUpdatesessionFileApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add**](LibraryItemUpdatesessionFileApi.md#add) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;add | Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. &lt;p&gt; When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
-[**get**](LibraryItemUpdatesessionFileApi.md#get) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;get | Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
-[**list**](LibraryItemUpdatesessionFileApi.md#list) | **GET** /com/vmware/content/library/item/updatesession/file | Lists all files in the library item associated with the update session.
-[**remove**](LibraryItemUpdatesessionFileApi.md#remove) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;remove | Requests a file to be removed. The file will only be effectively removed when the update session is completed.
-[**validate**](LibraryItemUpdatesessionFileApi.md#validate) | **POST** /com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;validate | Validates the files in the update session with the referenced identifier and ensures all necessary files are received. In the case where a file is missing, this {@term operation} will return its name in the {@link ValidationResult#missingFiles} set. The user can add the missing files and try re-validating. For other type of errors, {@link ValidationResult#invalidFiles} will contain the list of invalid files.
+[**add**](LibraryItemUpdatesessionFileApi.md#add) | **POST** /rest/com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;add | Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. &lt;p&gt; When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
+[**get**](LibraryItemUpdatesessionFileApi.md#get) | **POST** /rest/com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;get | Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
+[**list**](LibraryItemUpdatesessionFileApi.md#list) | **GET** /rest/com/vmware/content/library/item/updatesession/file | Lists all files in the library item associated with the update session.
+[**remove**](LibraryItemUpdatesessionFileApi.md#remove) | **POST** /rest/com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;remove | Requests a file to be removed. The file will only be effectively removed when the update session is completed.
+[**validate**](LibraryItemUpdatesessionFileApi.md#validate) | **POST** /rest/com/vmware/content/library/item/updatesession/file/id:{update_session_id}?~action&#x3D;validate | Validates the files in the update session with the referenced identifier and ensures all necessary files are received. In the case where a file is missing, this {@term operation} will return its name in the {@link ValidationResult#missingFiles} set. The user can add the missing files and try re-validating. For other type of errors, {@link ValidationResult#invalidFiles} will contain the list of invalid files.
 
 
 # **add**
-> ContentLibraryItemUpdatesessionFileAddResult add(update_session_id, request_body)
+> ContentLibraryItemUpdatesessionFileAddResp add(update_session_id, request_body)
 
 Requests file content to be changed (either created, or updated). Depending on the source type of the file, this {@term operation} will either return an upload endpoint where the client can push the content, or the server will pull from the provided source endpoint. If a file with the same name already exists in this session, this {@term operation} will be used to update the content of the existing file. <p> When importing a file directly from storage, where the source endpoint is a file or datastore URI, you will need to have the ContentLibrary.ReadStorage privilege on the library item. If the file is located in the same directory as the library storage backing folder, the server will move the file instead of copying it, thereby allowing instantaneous import of files for efficient backup and restore scenarios. In all other cases, a copy is performed rather than a move.
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemUpdatesessionFileAddResult**](ContentLibraryItemUpdatesessionFileAddResult.md)
+[**ContentLibraryItemUpdatesessionFileAddResp**](ContentLibraryItemUpdatesessionFileAddResp.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> ContentLibraryItemUpdatesessionFileResult get(update_session_id, request_body)
+> ContentLibraryItemUpdatesessionFileResp get(update_session_id, request_body)
 
 Retrieves information about a specific file in the snapshot of the library item at the time when the update session was created.
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemUpdatesessionFileResult**](ContentLibraryItemUpdatesessionFileResult.md)
+[**ContentLibraryItemUpdatesessionFileResp**](ContentLibraryItemUpdatesessionFileResp.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ContentLibraryItemUpdatesessionFileListResult list(update_session_id)
+> ContentLibraryItemUpdatesessionFileListResp list(update_session_id)
 
 Lists all files in the library item associated with the update session.
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemUpdatesessionFileListResult**](ContentLibraryItemUpdatesessionFileListResult.md)
+[**ContentLibraryItemUpdatesessionFileListResp**](ContentLibraryItemUpdatesessionFileListResp.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ nil (empty response body)
 
 
 # **validate**
-> ContentLibraryItemUpdatesessionFileValidateResult validate(update_session_id)
+> ContentLibraryItemUpdatesessionFileValidateResp validate(update_session_id)
 
 Validates the files in the update session with the referenced identifier and ensures all necessary files are received. In the case where a file is missing, this {@term operation} will return its name in the {@link ValidationResult#missingFiles} set. The user can add the missing files and try re-validating. For other type of errors, {@link ValidationResult#invalidFiles} will contain the list of invalid files.
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemUpdatesessionFileValidateResult**](ContentLibraryItemUpdatesessionFileValidateResult.md)
+[**ContentLibraryItemUpdatesessionFileValidateResp**](ContentLibraryItemUpdatesessionFileValidateResp.md)
 
 ### Authorization
 

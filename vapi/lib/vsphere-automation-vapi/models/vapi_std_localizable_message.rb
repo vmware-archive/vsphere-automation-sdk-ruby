@@ -11,30 +11,40 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiStdLocalizableMessage
-    # Unique identifier of the localizable string or message template. <p> This identifier is typically used to retrieve a locale-specific string or message template from a message catalog.
-    attr_accessor :id
+    # Positional arguments to be substituted into the message template. This list will be empty if the message uses named arguments or has no arguments.
+    attr_accessor :args
 
     # The value of this localizable string or message template in the {@code en_US} (English) locale.  If {@link #id} refers to a message template, the default message will contain the substituted arguments. This value can be used by clients that do not need to display strings and messages in the native language of the user.  It could also be used as a fallback if a client is unable to access the appropriate message catalog.
     attr_accessor :default_message
 
-    # Arguments to be substituted into a message template.
-    attr_accessor :args
+    # Unique identifier of the localizable string or message template. <p> This identifier is typically used to retrieve a locale-specific string or message template from a message catalog.
+    attr_accessor :id
+
+    # Localized string value as per request requirements.
+    attr_accessor :localized
+
+    # Named arguments to be substituted into the message template.
+    attr_accessor :params
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
+        :'args' => :'args',
         :'default_message' => :'default_message',
-        :'args' => :'args'
+        :'id' => :'id',
+        :'localized' => :'localized',
+        :'params' => :'params'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
+        :'args' => :'Array<String>',
         :'default_message' => :'String',
-        :'args' => :'Array<String>'
+        :'id' => :'String',
+        :'localized' => :'String',
+        :'params' => :'Array<VapiStdLocalizableMessageParams>'
       }
     end
 
@@ -46,17 +56,27 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.has_key?(:'args')
+        if (value = attributes[:'args']).is_a?(Array)
+          self.args = value
+        end
       end
 
       if attributes.has_key?(:'default_message')
         self.default_message = attributes[:'default_message']
       end
 
-      if attributes.has_key?(:'args')
-        if (value = attributes[:'args']).is_a?(Array)
-          self.args = value
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'localized')
+        self.localized = attributes[:'localized']
+      end
+
+      if attributes.has_key?(:'params')
+        if (value = attributes[:'params']).is_a?(Array)
+          self.params = value
         end
       end
     end
@@ -65,16 +85,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      if @args.nil?
+        invalid_properties.push('invalid value for "args", args cannot be nil.')
       end
 
       if @default_message.nil?
         invalid_properties.push('invalid value for "default_message", default_message cannot be nil.')
       end
 
-      if @args.nil?
-        invalid_properties.push('invalid value for "args", args cannot be nil.')
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
       invalid_properties
@@ -83,9 +103,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
-      return false if @default_message.nil?
       return false if @args.nil?
+      return false if @default_message.nil?
+      return false if @id.nil?
       true
     end
 
@@ -94,9 +114,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
+          args == o.args &&
           default_message == o.default_message &&
-          args == o.args
+          id == o.id &&
+          localized == o.localized &&
+          params == o.params
     end
 
     # @see the `==` method
@@ -108,7 +130,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, default_message, args].hash
+      [args, default_message, id, localized, params].hash
     end
 
     # Builds the object from hash

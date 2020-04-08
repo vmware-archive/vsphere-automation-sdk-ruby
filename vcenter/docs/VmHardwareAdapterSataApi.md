@@ -1,17 +1,17 @@
 # VSphereAutomation::VCenter::VmHardwareAdapterSataApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](VmHardwareAdapterSataApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/adapter/sata | Adds a virtual SATA adapter to the virtual machine.
-[**delete**](VmHardwareAdapterSataApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/adapter/sata/{adapter} | Removes a virtual SATA adapter from the virtual machine.
-[**get**](VmHardwareAdapterSataApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/adapter/sata/{adapter} | Returns information about a virtual SATA adapter.
-[**list**](VmHardwareAdapterSataApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/adapter/sata | Returns commonly used information about the virtual SATA adapters belonging to the virtual machine.
+[**create**](VmHardwareAdapterSataApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/adapter/sata | Adds a virtual SATA adapter to the virtual machine.
+[**delete**](VmHardwareAdapterSataApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/adapter/sata/{adapter} | Removes a virtual SATA adapter from the virtual machine.
+[**get**](VmHardwareAdapterSataApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/adapter/sata/{adapter} | Returns information about a virtual SATA adapter.
+[**list**](VmHardwareAdapterSataApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/adapter/sata | Returns commonly used information about the virtual SATA adapters belonging to the virtual machine.
 
 
 # **create**
-> VcenterVmHardwareAdapterSataCreateResult create(vm, request_body)
+> VcenterVmHardwareAdapterSataCreateResp create(vm, request_body)
 
 Adds a virtual SATA adapter to the virtual machine.
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareAdapterSataCreateResult**](VcenterVmHardwareAdapterSataCreateResult.md)
+[**VcenterVmHardwareAdapterSataCreateResp**](VcenterVmHardwareAdapterSataCreateResp.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareAdapterSataResult get(vm, adapter)
+> VcenterVmHardwareAdapterSataResp get(vm, adapter)
 
 Returns information about a virtual SATA adapter.
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareAdapterSataResult**](VcenterVmHardwareAdapterSataResult.md)
+[**VcenterVmHardwareAdapterSataResp**](VcenterVmHardwareAdapterSataResp.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareAdapterSataListResult list(vm)
+> VcenterVmHardwareAdapterSataListResp list(vm)
 
 Returns commonly used information about the virtual SATA adapters belonging to the virtual machine.
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareAdapterSataListResult**](VcenterVmHardwareAdapterSataListResult.md)
+[**VcenterVmHardwareAdapterSataListResp**](VcenterVmHardwareAdapterSataListResp.md)
 
 ### Authorization
 

@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterPassiveCheckResult
-    # A list of problems which may require attention, but which are not fatal.
-    attr_accessor :warnings
-
     # A list of problems which are fatal to the operation and the operation will fail.
     attr_accessor :errors
+
+    # A list of problems which may require attention, but which are not fatal.
+    attr_accessor :warnings
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'warnings' => :'warnings',
-        :'errors' => :'errors'
+        :'errors' => :'errors',
+        :'warnings' => :'warnings'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'warnings' => :'Array<VapiStdLocalizableMessage>',
-        :'errors' => :'Array<VapiStdLocalizableMessage>'
+        :'errors' => :'Array<VapiStdLocalizableMessage>',
+        :'warnings' => :'Array<VapiStdLocalizableMessage>'
       }
     end
 
@@ -41,15 +41,15 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'warnings')
-        if (value = attributes[:'warnings']).is_a?(Array)
-          self.warnings = value
-        end
-      end
-
       if attributes.has_key?(:'errors')
         if (value = attributes[:'errors']).is_a?(Array)
           self.errors = value
+        end
+      end
+
+      if attributes.has_key?(:'warnings')
+        if (value = attributes[:'warnings']).is_a?(Array)
+          self.warnings = value
         end
       end
     end
@@ -58,12 +58,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @warnings.nil?
-        invalid_properties.push('invalid value for "warnings", warnings cannot be nil.')
-      end
-
       if @errors.nil?
         invalid_properties.push('invalid value for "errors", errors cannot be nil.')
+      end
+
+      if @warnings.nil?
+        invalid_properties.push('invalid value for "warnings", warnings cannot be nil.')
       end
 
       invalid_properties
@@ -72,8 +72,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @warnings.nil?
       return false if @errors.nil?
+      return false if @warnings.nil?
       true
     end
 
@@ -82,8 +82,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          warnings == o.warnings &&
-          errors == o.errors
+          errors == o.errors &&
+          warnings == o.warnings
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [warnings, errors].hash
+      [errors, warnings].hash
     end
 
     # Builds the object from hash

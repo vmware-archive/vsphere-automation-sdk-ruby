@@ -14,46 +14,54 @@ module VSphereAutomation
     # List of the 1. issues addressed since previous/current version 2. new features/improvements
     attr_accessor :contents
 
-    # List of the services that will be stopped and restarted during the update installation.
-    attr_accessor :services_will_be_stopped
+    attr_accessor :description
 
     # List of EULAs. This list has multiple entries and can be dynamic based on what we are actually installing.
     attr_accessor :eulas
 
-    # Is the update staged
-    attr_accessor :staged
+    # URL for the knowledge base article describing this update. Warning: This attribute is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+    attr_accessor :knowledge_base
 
-    attr_accessor :description
+    # Name of the update. Warning: This attribute is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+    attr_accessor :name
 
     attr_accessor :priority
-
-    attr_accessor :severity
-
-    attr_accessor :update_type
-
-    # Update release date.
-    attr_accessor :release_date
 
     # Flag indicating whether reboot is required after update.
     attr_accessor :reboot_required
 
+    # Update release date.
+    attr_accessor :release_date
+
+    # List of the services that will be stopped and restarted during the update installation.
+    attr_accessor :services_will_be_stopped
+
+    attr_accessor :severity
+
     # Download Size of update in Megabytes.
     attr_accessor :size
+
+    # Is the update staged
+    attr_accessor :staged
+
+    attr_accessor :update_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'contents' => :'contents',
-        :'services_will_be_stopped' => :'services_will_be_stopped',
-        :'eulas' => :'eulas',
-        :'staged' => :'staged',
         :'description' => :'description',
+        :'eulas' => :'eulas',
+        :'knowledge_base' => :'knowledge_base',
+        :'name' => :'name',
         :'priority' => :'priority',
-        :'severity' => :'severity',
-        :'update_type' => :'update_type',
-        :'release_date' => :'release_date',
         :'reboot_required' => :'reboot_required',
-        :'size' => :'size'
+        :'release_date' => :'release_date',
+        :'services_will_be_stopped' => :'services_will_be_stopped',
+        :'severity' => :'severity',
+        :'size' => :'size',
+        :'staged' => :'staged',
+        :'update_type' => :'update_type'
       }
     end
 
@@ -61,16 +69,18 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'contents' => :'Array<VapiStdLocalizableMessage>',
-        :'services_will_be_stopped' => :'Array<ApplianceUpdateServiceInfo>',
-        :'eulas' => :'Array<VapiStdLocalizableMessage>',
-        :'staged' => :'Boolean',
         :'description' => :'VapiStdLocalizableMessage',
+        :'eulas' => :'Array<VapiStdLocalizableMessage>',
+        :'knowledge_base' => :'String',
+        :'name' => :'String',
         :'priority' => :'ApplianceUpdateCommonInfoPriority',
-        :'severity' => :'ApplianceUpdateCommonInfoSeverity',
-        :'update_type' => :'ApplianceUpdateCommonInfoCategory',
-        :'release_date' => :'DateTime',
         :'reboot_required' => :'Boolean',
-        :'size' => :'Integer'
+        :'release_date' => :'DateTime',
+        :'services_will_be_stopped' => :'Array<ApplianceUpdateServiceInfo>',
+        :'severity' => :'ApplianceUpdateCommonInfoSeverity',
+        :'size' => :'Integer',
+        :'staged' => :'Boolean',
+        :'update_type' => :'ApplianceUpdateCommonInfoCategory'
       }
     end
 
@@ -88,10 +98,8 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'services_will_be_stopped')
-        if (value = attributes[:'services_will_be_stopped']).is_a?(Array)
-          self.services_will_be_stopped = value
-        end
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
       end
 
       if attributes.has_key?(:'eulas')
@@ -100,36 +108,46 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'staged')
-        self.staged = attributes[:'staged']
+      if attributes.has_key?(:'knowledge_base')
+        self.knowledge_base = attributes[:'knowledge_base']
       end
 
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'priority')
         self.priority = attributes[:'priority']
       end
 
-      if attributes.has_key?(:'severity')
-        self.severity = attributes[:'severity']
-      end
-
-      if attributes.has_key?(:'update_type')
-        self.update_type = attributes[:'update_type']
+      if attributes.has_key?(:'reboot_required')
+        self.reboot_required = attributes[:'reboot_required']
       end
 
       if attributes.has_key?(:'release_date')
         self.release_date = attributes[:'release_date']
       end
 
-      if attributes.has_key?(:'reboot_required')
-        self.reboot_required = attributes[:'reboot_required']
+      if attributes.has_key?(:'services_will_be_stopped')
+        if (value = attributes[:'services_will_be_stopped']).is_a?(Array)
+          self.services_will_be_stopped = value
+        end
+      end
+
+      if attributes.has_key?(:'severity')
+        self.severity = attributes[:'severity']
       end
 
       if attributes.has_key?(:'size')
         self.size = attributes[:'size']
+      end
+
+      if attributes.has_key?(:'staged')
+        self.staged = attributes[:'staged']
+      end
+
+      if attributes.has_key?(:'update_type')
+        self.update_type = attributes[:'update_type']
       end
     end
 
@@ -141,44 +159,44 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "contents", contents cannot be nil.')
       end
 
-      if @services_will_be_stopped.nil?
-        invalid_properties.push('invalid value for "services_will_be_stopped", services_will_be_stopped cannot be nil.')
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
       if @eulas.nil?
         invalid_properties.push('invalid value for "eulas", eulas cannot be nil.')
       end
 
-      if @staged.nil?
-        invalid_properties.push('invalid value for "staged", staged cannot be nil.')
-      end
-
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
       if @priority.nil?
         invalid_properties.push('invalid value for "priority", priority cannot be nil.')
-      end
-
-      if @severity.nil?
-        invalid_properties.push('invalid value for "severity", severity cannot be nil.')
-      end
-
-      if @update_type.nil?
-        invalid_properties.push('invalid value for "update_type", update_type cannot be nil.')
-      end
-
-      if @release_date.nil?
-        invalid_properties.push('invalid value for "release_date", release_date cannot be nil.')
       end
 
       if @reboot_required.nil?
         invalid_properties.push('invalid value for "reboot_required", reboot_required cannot be nil.')
       end
 
+      if @release_date.nil?
+        invalid_properties.push('invalid value for "release_date", release_date cannot be nil.')
+      end
+
+      if @services_will_be_stopped.nil?
+        invalid_properties.push('invalid value for "services_will_be_stopped", services_will_be_stopped cannot be nil.')
+      end
+
+      if @severity.nil?
+        invalid_properties.push('invalid value for "severity", severity cannot be nil.')
+      end
+
       if @size.nil?
         invalid_properties.push('invalid value for "size", size cannot be nil.')
+      end
+
+      if @staged.nil?
+        invalid_properties.push('invalid value for "staged", staged cannot be nil.')
+      end
+
+      if @update_type.nil?
+        invalid_properties.push('invalid value for "update_type", update_type cannot be nil.')
       end
 
       invalid_properties
@@ -188,16 +206,16 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @contents.nil?
-      return false if @services_will_be_stopped.nil?
-      return false if @eulas.nil?
-      return false if @staged.nil?
       return false if @description.nil?
+      return false if @eulas.nil?
       return false if @priority.nil?
-      return false if @severity.nil?
-      return false if @update_type.nil?
-      return false if @release_date.nil?
       return false if @reboot_required.nil?
+      return false if @release_date.nil?
+      return false if @services_will_be_stopped.nil?
+      return false if @severity.nil?
       return false if @size.nil?
+      return false if @staged.nil?
+      return false if @update_type.nil?
       true
     end
 
@@ -207,16 +225,18 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           contents == o.contents &&
-          services_will_be_stopped == o.services_will_be_stopped &&
-          eulas == o.eulas &&
-          staged == o.staged &&
           description == o.description &&
+          eulas == o.eulas &&
+          knowledge_base == o.knowledge_base &&
+          name == o.name &&
           priority == o.priority &&
-          severity == o.severity &&
-          update_type == o.update_type &&
-          release_date == o.release_date &&
           reboot_required == o.reboot_required &&
-          size == o.size
+          release_date == o.release_date &&
+          services_will_be_stopped == o.services_will_be_stopped &&
+          severity == o.severity &&
+          size == o.size &&
+          staged == o.staged &&
+          update_type == o.update_type
     end
 
     # @see the `==` method
@@ -228,7 +248,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [contents, services_will_be_stopped, eulas, staged, description, priority, severity, update_type, release_date, reboot_required, size].hash
+      [contents, description, eulas, knowledge_base, name, priority, reboot_required, release_date, services_will_be_stopped, severity, size, staged, update_type].hash
     end
 
     # Builds the object from hash

@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VmHardwareCpuApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmHardwareCpuApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/cpu | Returns the CPU-related settings of a virtual machine.
-[**update**](VmHardwareCpuApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/cpu | Updates the CPU-related settings of a virtual machine.
+[**get**](VmHardwareCpuApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/cpu | Returns the CPU-related settings of a virtual machine.
+[**update**](VmHardwareCpuApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/cpu | Updates the CPU-related settings of a virtual machine.
 
 
 # **get**
-> VcenterVmHardwareCpuResult get(vm)
+> VcenterVmHardwareCpuResp get(vm)
 
 Returns the CPU-related settings of a virtual machine.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareCpuResult**](VcenterVmHardwareCpuResult.md)
+[**VcenterVmHardwareCpuResp**](VcenterVmHardwareCpuResp.md)
 
 ### Authorization
 

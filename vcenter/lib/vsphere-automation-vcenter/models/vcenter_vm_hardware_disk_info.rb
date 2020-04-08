@@ -11,45 +11,49 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareDiskInfo
-    # Device label.
-    attr_accessor :label
-
-    attr_accessor :type
-
-    attr_accessor :ide
-
-    attr_accessor :scsi
-
-    attr_accessor :sata
-
     attr_accessor :backing
 
     # Capacity of the virtual disk in bytes. If unset, virtual disk is inaccessible or disk capacity is 0.
     attr_accessor :capacity
 
+    attr_accessor :ide
+
+    # Device label.
+    attr_accessor :label
+
+    attr_accessor :nvme
+
+    attr_accessor :sata
+
+    attr_accessor :scsi
+
+    attr_accessor :type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'label' => :'label',
-        :'type' => :'type',
-        :'ide' => :'ide',
-        :'scsi' => :'scsi',
-        :'sata' => :'sata',
         :'backing' => :'backing',
-        :'capacity' => :'capacity'
+        :'capacity' => :'capacity',
+        :'ide' => :'ide',
+        :'label' => :'label',
+        :'nvme' => :'nvme',
+        :'sata' => :'sata',
+        :'scsi' => :'scsi',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'label' => :'String',
-        :'type' => :'VcenterVmHardwareDiskHostBusAdapterType',
-        :'ide' => :'VcenterVmHardwareIdeAddressInfo',
-        :'scsi' => :'VcenterVmHardwareScsiAddressInfo',
-        :'sata' => :'VcenterVmHardwareSataAddressInfo',
         :'backing' => :'VcenterVmHardwareDiskBackingInfo',
-        :'capacity' => :'Integer'
+        :'capacity' => :'Integer',
+        :'ide' => :'VcenterVmHardwareIdeAddressInfo',
+        :'label' => :'String',
+        :'nvme' => :'VcenterVmHardwareNvmeAddressInfo',
+        :'sata' => :'VcenterVmHardwareSataAddressInfo',
+        :'scsi' => :'VcenterVmHardwareScsiAddressInfo',
+        :'type' => :'VcenterVmHardwareDiskHostBusAdapterType'
       }
     end
 
@@ -61,26 +65,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'label')
-        self.label = attributes[:'label']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'ide')
-        self.ide = attributes[:'ide']
-      end
-
-      if attributes.has_key?(:'scsi')
-        self.scsi = attributes[:'scsi']
-      end
-
-      if attributes.has_key?(:'sata')
-        self.sata = attributes[:'sata']
-      end
-
       if attributes.has_key?(:'backing')
         self.backing = attributes[:'backing']
       end
@@ -88,12 +72,40 @@ module VSphereAutomation
       if attributes.has_key?(:'capacity')
         self.capacity = attributes[:'capacity']
       end
+
+      if attributes.has_key?(:'ide')
+        self.ide = attributes[:'ide']
+      end
+
+      if attributes.has_key?(:'label')
+        self.label = attributes[:'label']
+      end
+
+      if attributes.has_key?(:'nvme')
+        self.nvme = attributes[:'nvme']
+      end
+
+      if attributes.has_key?(:'sata')
+        self.sata = attributes[:'sata']
+      end
+
+      if attributes.has_key?(:'scsi')
+        self.scsi = attributes[:'scsi']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @backing.nil?
+        invalid_properties.push('invalid value for "backing", backing cannot be nil.')
+      end
+
       if @label.nil?
         invalid_properties.push('invalid value for "label", label cannot be nil.')
       end
@@ -102,19 +114,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
-      if @backing.nil?
-        invalid_properties.push('invalid value for "backing", backing cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @backing.nil?
       return false if @label.nil?
       return false if @type.nil?
-      return false if @backing.nil?
       true
     end
 
@@ -123,13 +131,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          label == o.label &&
-          type == o.type &&
-          ide == o.ide &&
-          scsi == o.scsi &&
-          sata == o.sata &&
           backing == o.backing &&
-          capacity == o.capacity
+          capacity == o.capacity &&
+          ide == o.ide &&
+          label == o.label &&
+          nvme == o.nvme &&
+          sata == o.sata &&
+          scsi == o.scsi &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -141,7 +150,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [label, type, ide, scsi, sata, backing, capacity].hash
+      [backing, capacity, ide, label, nvme, sata, scsi, type].hash
     end
 
     # Builds the object from hash

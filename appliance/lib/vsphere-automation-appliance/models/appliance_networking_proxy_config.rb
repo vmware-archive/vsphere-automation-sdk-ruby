@@ -11,40 +11,40 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceNetworkingProxyConfig
-    # Hostname or IP address of the proxy server.
-    attr_accessor :server
-
-    # Port to connect to the proxy server. In a 'get' call, indicates the port connected to the proxy server. In a 'set' call, specifies the port to connect to the proxy server. A value of -1 indicates the default port.
-    attr_accessor :port
-
-    # Username for proxy server.
-    attr_accessor :username
+    # In the result of the {@name #get} and {@name #list} {@term operations} this {@term field} indicates whether proxying is enabled for a particular protocol. In the input to the {@name test} and {@name set} {@term operations} this {@term field} specifies whether proxying should be enabled for a particular protocol.
+    attr_accessor :enabled
 
     # Password for proxy server.
     attr_accessor :password
 
-    # In the result of the {@name #get} and {@name #list} {@term operations} this {@term field} indicates whether proxying is enabled for a particular protocol. In the input to the {@name test} and {@name set} {@term operations} this {@term field} specifies whether proxying should be enabled for a particular protocol.
-    attr_accessor :enabled
+    # Port to connect to the proxy server. In a 'get' call, indicates the port connected to the proxy server. In a 'set' call, specifies the port to connect to the proxy server. A value of -1 indicates the default port.
+    attr_accessor :port
+
+    # URL of the proxy server
+    attr_accessor :server
+
+    # Username for proxy server.
+    attr_accessor :username
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'server' => :'server',
-        :'port' => :'port',
-        :'username' => :'username',
+        :'enabled' => :'enabled',
         :'password' => :'password',
-        :'enabled' => :'enabled'
+        :'port' => :'port',
+        :'server' => :'server',
+        :'username' => :'username'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'server' => :'String',
-        :'port' => :'Integer',
-        :'username' => :'String',
+        :'enabled' => :'Boolean',
         :'password' => :'String',
-        :'enabled' => :'Boolean'
+        :'port' => :'Integer',
+        :'server' => :'String',
+        :'username' => :'String'
       }
     end
 
@@ -56,24 +56,24 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'server')
-        self.server = attributes[:'server']
-      end
-
-      if attributes.has_key?(:'port')
-        self.port = attributes[:'port']
-      end
-
-      if attributes.has_key?(:'username')
-        self.username = attributes[:'username']
+      if attributes.has_key?(:'enabled')
+        self.enabled = attributes[:'enabled']
       end
 
       if attributes.has_key?(:'password')
         self.password = attributes[:'password']
       end
 
-      if attributes.has_key?(:'enabled')
-        self.enabled = attributes[:'enabled']
+      if attributes.has_key?(:'port')
+        self.port = attributes[:'port']
+      end
+
+      if attributes.has_key?(:'server')
+        self.server = attributes[:'server']
+      end
+
+      if attributes.has_key?(:'username')
+        self.username = attributes[:'username']
       end
     end
 
@@ -81,16 +81,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @server.nil?
-        invalid_properties.push('invalid value for "server", server cannot be nil.')
+      if @enabled.nil?
+        invalid_properties.push('invalid value for "enabled", enabled cannot be nil.')
       end
 
       if @port.nil?
         invalid_properties.push('invalid value for "port", port cannot be nil.')
       end
 
-      if @enabled.nil?
-        invalid_properties.push('invalid value for "enabled", enabled cannot be nil.')
+      if @server.nil?
+        invalid_properties.push('invalid value for "server", server cannot be nil.')
       end
 
       invalid_properties
@@ -99,9 +99,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @server.nil?
-      return false if @port.nil?
       return false if @enabled.nil?
+      return false if @port.nil?
+      return false if @server.nil?
       true
     end
 
@@ -110,11 +110,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          server == o.server &&
-          port == o.port &&
-          username == o.username &&
+          enabled == o.enabled &&
           password == o.password &&
-          enabled == o.enabled
+          port == o.port &&
+          server == o.server &&
+          username == o.username
     end
 
     # @see the `==` method
@@ -126,7 +126,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [server, port, username, password, enabled].hash
+      [enabled, password, port, server, username].hash
     end
 
     # Builds the object from hash

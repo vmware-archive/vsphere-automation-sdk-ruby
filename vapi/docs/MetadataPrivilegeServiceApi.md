@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataPrivilegeServiceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataPrivilegeServiceApi.md#get) | **GET** /com/vmware/vapi/metadata/privilege/service/id:{service_id} | Retrieves privilege information about the service element corresponding to {@param.name serviceId}.
-[**list**](MetadataPrivilegeServiceApi.md#list) | **GET** /com/vmware/vapi/metadata/privilege/service | Returns the identifiers for the service elements that have privilege information.
+[**get**](MetadataPrivilegeServiceApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/privilege/service/id:{service_id} | Retrieves privilege information about the service element corresponding to {@param.name serviceId}.
+[**list**](MetadataPrivilegeServiceApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/privilege/service | Returns the identifiers for the service elements that have privilege information.
 
 
 # **get**
-> VapiMetadataPrivilegeServiceResult get(service_id)
+> VapiMetadataPrivilegeServiceResp get(service_id)
 
 Retrieves privilege information about the service element corresponding to {@param.name serviceId}.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataPrivilegeServiceResult**](VapiMetadataPrivilegeServiceResult.md)
+[**VapiMetadataPrivilegeServiceResp**](VapiMetadataPrivilegeServiceResp.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataPrivilegeServiceListResult list
+> VapiMetadataPrivilegeServiceListResp list
 
 Returns the identifiers for the service elements that have privilege information.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataPrivilegeServiceListResult**](VapiMetadataPrivilegeServiceListResult.md)
+[**VapiMetadataPrivilegeServiceListResp**](VapiMetadataPrivilegeServiceListResp.md)
 
 ### Authorization
 

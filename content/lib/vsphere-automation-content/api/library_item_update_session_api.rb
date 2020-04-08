@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.cancel"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=cancel'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=cancel'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -89,7 +89,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.complete"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=complete'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=complete'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -119,7 +119,7 @@ module VSphereAutomation
     # Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. <p> Content Library Service allows only one single update session to be active for a specific library item.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemUpdateSessionCreateResult|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemUpdateSessionCreateResp|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -129,7 +129,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemUpdateSessionCreateResult|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemUpdateSessionCreateResp|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.create ...'
@@ -139,7 +139,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemUpdateSessionApi.create"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session'
+      local_var_path = '/rest/com/vmware/content/library/item/update-session'
 
       # query parameters
       query_params = {}
@@ -164,7 +164,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemUpdateSessionCreateResult',
+	  '200' => 'Content::ContentLibraryItemUpdateSessionCreateResp',
 	  '400' => 'Content::VapiStdErrorsResourceBusyError',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
@@ -196,7 +196,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.delete"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/rest/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -252,7 +252,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemUpdateSessionApi.fail"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=fail'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=fail'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -284,7 +284,7 @@ module VSphereAutomation
     # Gets the update session with the specified identifier, including the most up-to-date status information for the session.
     # @param update_session_id Identifier of the update session to retrieve.
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemUpdateSessionResult|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemUpdateSessionResp|VapiStdErrorsNotFoundError|]
     def get(update_session_id, opts = {})
       data, _status_code, _headers = get_with_http_info(update_session_id, opts)
       data
@@ -294,7 +294,7 @@ module VSphereAutomation
     # @api private
     # @param update_session_id Identifier of the update session to retrieve.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemUpdateSessionResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemUpdateSessionResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(update_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.get ...'
@@ -304,7 +304,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/rest/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -327,7 +327,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemUpdateSessionResult',
+	  '200' => 'Content::ContentLibraryItemUpdateSessionResp',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -360,7 +360,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'update_session_id' when calling LibraryItemUpdateSessionApi.keep_alive"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=keep-alive'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action=keep-alive'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -392,7 +392,7 @@ module VSphereAutomation
     # Lists the identifiers of the update session created by the calling user. Optionally may filter by library item.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :library_item_id Optional library item identifier on which to filter results.
-    # @return [ContentLibraryItemUpdateSessionListResult|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemUpdateSessionListResp|VapiStdErrorsNotFoundError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -402,13 +402,13 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [String] :library_item_id Optional library item identifier on which to filter results.
-    # @return [Array<(ContentLibraryItemUpdateSessionListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemUpdateSessionListResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemUpdateSessionApi.list ...'
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session'
+      local_var_path = '/rest/com/vmware/content/library/item/update-session'
 
       # query parameters
       query_params = {}
@@ -432,7 +432,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemUpdateSessionListResult',
+	  '200' => 'Content::ContentLibraryItemUpdateSessionListResp',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -469,7 +469,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemUpdateSessionApi.update"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
+      local_var_path = '/rest/com/vmware/content/library/item/update-session/id:{update_session_id}'.sub('{' + 'update_session_id' + '}', update_session_id.to_s)
 
       # query parameters
       query_params = {}

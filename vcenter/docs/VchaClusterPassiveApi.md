@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VchaClusterPassiveApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](VchaClusterPassiveApi.md#check) | **POST** /vcenter/vcha/cluster/passive?action&#x3D;check | Validates the specified passive node&#39;s placement configuration.
-[**redeploytask**](VchaClusterPassiveApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/passive?action&#x3D;redeploy&amp;vmw-task&#x3D;true | Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
+[**check**](VchaClusterPassiveApi.md#check) | **POST** /rest/vcenter/vcha/cluster/passive?action&#x3D;check | Validates the specified passive node&#39;s placement configuration.
+[**redeploy_task**](VchaClusterPassiveApi.md#redeploy_task) | **POST** /rest/vcenter/vcha/cluster/passive?action&#x3D;redeploy&amp;vmw-task&#x3D;true | Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
 
 # **check**
-> VcenterVchaClusterPassiveCheckResult check(request_body)
+> VcenterVchaClusterPassiveCheckResp check(request_body)
 
 Validates the specified passive node's placement configuration.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVchaClusterPassiveCheckResult**](VcenterVchaClusterPassiveCheckResult.md)
+[**VcenterVchaClusterPassiveCheckResp**](VcenterVchaClusterPassiveCheckResp.md)
 
 ### Authorization
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 
 
-# **redeploytask**
-> VcenterVchaClusterPassiveRedeployTaskResult redeploytask(request_body)
+# **redeploy_task**
+> VcenterVchaClusterPassiveRedeployTaskResp redeploy_task(request_body)
 
 Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
@@ -80,10 +80,10 @@ request_body = VCenter::VcenterVchaClusterPassiveRedeployTask.new # VcenterVchaC
 
 begin
   #Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
-  result = api_instance.redeploytask(request_body)
+  result = api_instance.redeploy_task(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
-  puts "Exception when calling VchaClusterPassiveApi->redeploytask: #{e}"
+  puts "Exception when calling VchaClusterPassiveApi->redeploy_task: #{e}"
 end
 ```
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVchaClusterPassiveRedeployTaskResult**](VcenterVchaClusterPassiveRedeployTaskResult.md)
+[**VcenterVchaClusterPassiveRedeployTaskResp**](VcenterVchaClusterPassiveRedeployTaskResp.md)
 
 ### Authorization
 

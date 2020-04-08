@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_status Compliance Status that a virtual machine must have to match the filter. Atleast one status must be specified.
     # @option opts [Array<String>] :filter_vms Identifiers of virtual machines that can match the filter If unset or empty, virtual machines with any identifier matches the filter When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: VirtualMachine.
-    # @return [VcenterStoragePoliciesComplianceVMListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterStoragePoliciesComplianceVMListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_status Compliance Status that a virtual machine must have to match the filter. Atleast one status must be specified.
     # @option opts [Array<String>] :filter_vms Identifiers of virtual machines that can match the filter If unset or empty, virtual machines with any identifier matches the filter When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: VirtualMachine.
-    # @return [Array<(VcenterStoragePoliciesComplianceVMListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterStoragePoliciesComplianceVMListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesComplianceVMApi.list ...'
@@ -40,7 +40,7 @@ module VSphereAutomation
         fail ArgumentError, 'invalid value for "filter_status", must include one of COMPLIANT, NON_COMPLIANT, UNKNOWN_COMPLIANCE, NOT_APPLICABLE, OUT_OF_DATE'
       end
       # resource path
-      local_var_path = '/vcenter/storage/policies/compliance/vm'
+      local_var_path = '/rest/vcenter/storage/policies/compliance/vm'
 
       # query parameters
       query_params = {}
@@ -65,7 +65,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterStoragePoliciesComplianceVMListResult',
+	  '200' => 'VCenter::VcenterStoragePoliciesComplianceVMListResp',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

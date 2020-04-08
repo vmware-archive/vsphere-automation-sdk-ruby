@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get memory health.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceHealthMemResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceHealthMemResp|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get memory health.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceHealthMemResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceHealthMemResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthMemApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/health/mem'
+      local_var_path = '/rest/appliance/health/mem'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceHealthMemResult',
+	  '200' => 'Appliance::ApplianceHealthMemResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

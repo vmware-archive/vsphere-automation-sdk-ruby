@@ -17,29 +17,23 @@ module VSphereAutomation
       @api_client = api_client
     end
     # Creates a session with the API. This is the equivalent of login. This operation exchanges user credentials supplied in the security context for a session identifier that is to be used for authenticating subsequent calls. To authenticate subsequent calls clients are expected to include the session key.
-    # @param vmware_use_header_authn Custom header to protect against CSRF attacks in browser based clients
     # @param [Hash] opts the optional parameters
-    # @return [CisSessionCreateResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|]
-    def create(vmware_use_header_authn, opts = {})
-      data, _status_code, _headers = create_with_http_info(vmware_use_header_authn, opts)
+    # @return [CisSessionCreateResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|]
+    def create(opts = {})
+      data, _status_code, _headers = create_with_http_info(opts)
       data
     end
 
     # Creates a session with the API. This is the equivalent of login. This operation exchanges user credentials supplied in the security context for a session identifier that is to be used for authenticating subsequent calls. To authenticate subsequent calls clients are expected to include the session key.
     # @api private
-    # @param vmware_use_header_authn Custom header to protect against CSRF attacks in browser based clients
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisSessionCreateResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
-    def create_with_http_info(vmware_use_header_authn, opts = {})
+    # @return [Array<(CisSessionCreateResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    def create_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SessionApi.create ...'
       end
-      # verify the required parameter 'vmware_use_header_authn' is set
-      if @api_client.config.client_side_validation && vmware_use_header_authn.nil?
-        fail ArgumentError, "Missing the required parameter 'vmware_use_header_authn' when calling SessionApi.create"
-      end
       # resource path
-      local_var_path = '/com/vmware/cis/session'
+      local_var_path = '/rest/com/vmware/cis/session'
 
       # query parameters
       query_params = {}
@@ -48,7 +42,6 @@ module VSphereAutomation
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'vmware-use-header-authn'] = vmware_use_header_authn
 
       # form parameters
       form_params = {}
@@ -63,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisSessionCreateResult',
+	  '200' => 'CIS::CisSessionCreateResp',
 	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
 	  '503' => 'CIS::VapiStdErrorsServiceUnavailableError',
 	})
@@ -89,7 +82,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: SessionApi.delete ...'
       end
       # resource path
-      local_var_path = '/com/vmware/cis/session'
+      local_var_path = '/rest/com/vmware/cis/session'
 
       # query parameters
       query_params = {}
@@ -118,7 +111,7 @@ module VSphereAutomation
     end
     # Returns information about the current session. This operation expects a valid session identifier to be supplied.   A side effect of invoking this operation may be a change to the session's last accessed time to the current time if this is supported by the session implementation. Invoking any other operation in the API will also update the session's last accessed time.    This API is meant to serve the needs of various front end projects that may want to display the name of the user. Examples of this include various web based user interfaces and logging facilities. 
     # @param [Hash] opts the optional parameters
-    # @return [CisSessionResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|]
+    # @return [CisSessionResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -127,13 +120,13 @@ module VSphereAutomation
     # Returns information about the current session. This operation expects a valid session identifier to be supplied.   A side effect of invoking this operation may be a change to the session&#39;s last accessed time to the current time if this is supported by the session implementation. Invoking any other operation in the API will also update the session&#39;s last accessed time.    This API is meant to serve the needs of various front end projects that may want to display the name of the user. Examples of this include various web based user interfaces and logging facilities. 
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisSessionResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisSessionResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SessionApi.get ...'
       end
       # resource path
-      local_var_path = '/com/vmware/cis/session?~action=get'
+      local_var_path = '/rest/com/vmware/cis/session?~action=get'
 
       # query parameters
       query_params = {}
@@ -156,7 +149,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisSessionResult',
+	  '200' => 'CIS::CisSessionResp',
 	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
 	  '503' => 'CIS::VapiStdErrorsServiceUnavailableError',
 	})

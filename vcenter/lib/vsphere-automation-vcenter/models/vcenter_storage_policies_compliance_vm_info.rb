@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterStoragePoliciesComplianceVMInfo
-    attr_accessor :vm_home
-
     # A Map of virtual disks and their compliance status If empty, the virtual machine does not have any disks or its disks are not associated with a storage policy. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Disk. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Disk.
     attr_accessor :disks
+
+    attr_accessor :vm_home
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'vm_home' => :'vm_home',
-        :'disks' => :'disks'
+        :'disks' => :'disks',
+        :'vm_home' => :'vm_home'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'vm_home' => :'VcenterStoragePoliciesComplianceVMStatus',
-        :'disks' => :'Array<VcenterStoragePoliciesComplianceVMInfoDisks>'
+        :'disks' => :'Array<VcenterStoragePoliciesComplianceVMInfoDisks>',
+        :'vm_home' => :'VcenterStoragePoliciesComplianceVMStatus'
       }
     end
 
@@ -40,14 +40,14 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'vm_home')
-        self.vm_home = attributes[:'vm_home']
-      end
-
       if attributes.has_key?(:'disks')
         if (value = attributes[:'disks']).is_a?(Array)
           self.disks = value
         end
+      end
+
+      if attributes.has_key?(:'vm_home')
+        self.vm_home = attributes[:'vm_home']
       end
     end
 
@@ -74,8 +74,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          vm_home == o.vm_home &&
-          disks == o.disks
+          disks == o.disks &&
+          vm_home == o.vm_home
     end
 
     # @see the `==` method
@@ -87,7 +87,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [vm_home, disks].hash
+      [disks, vm_home].hash
     end
 
     # Builds the object from hash

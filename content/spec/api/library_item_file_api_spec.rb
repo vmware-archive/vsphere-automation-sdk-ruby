@@ -33,7 +33,7 @@ describe 'LibraryItemFileApi' do
   # @param library_item_id Identifier of the library item whose file information should be returned.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemFileResult]
+  # @return [ContentLibraryItemFileResp]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -44,7 +44,7 @@ describe 'LibraryItemFileApi' do
   # Lists all of the files that are stored within a given library item.
   # @param library_item_id Identifier of the library item whose files should be listed.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemFileListResult]
+  # @return [ContentLibraryItemFileListResp]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

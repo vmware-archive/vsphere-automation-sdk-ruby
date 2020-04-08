@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Returns the configuration for forwarding log messages to remote logging servers.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceLoggingForwardingResult|]
+    # @return [ApplianceLoggingForwardingResp|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Returns the configuration for forwarding log messages to remote logging servers.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceLoggingForwardingResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceLoggingForwardingResp|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoggingForwardingApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/logging/forwarding'
+      local_var_path = '/rest/appliance/logging/forwarding'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceLoggingForwardingResult',
+	  '200' => 'Appliance::ApplianceLoggingForwardingResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LoggingForwardingApi#get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -86,7 +86,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LoggingForwardingApi.set"
       end
       # resource path
-      local_var_path = '/appliance/logging/forwarding'
+      local_var_path = '/rest/appliance/logging/forwarding'
 
       # query parameters
       query_params = {}
@@ -118,7 +118,7 @@ module VSphereAutomation
     # Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceLoggingForwardingTest] :request_body 
-    # @return [ApplianceLoggingForwardingTestResult|]
+    # @return [ApplianceLoggingForwardingTestResp|]
     def test(opts = {})
       data, _status_code, _headers = test_with_http_info(opts)
       data
@@ -128,13 +128,13 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceLoggingForwardingTest] :request_body 
-    # @return [Array<(ApplianceLoggingForwardingTestResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceLoggingForwardingTestResp|, Fixnum, Hash)>]  data, response status code and response headers
     def test_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoggingForwardingApi.test ...'
       end
       # resource path
-      local_var_path = '/appliance/logging/forwarding?action=test'
+      local_var_path = '/rest/appliance/logging/forwarding?action=test'
 
       # query parameters
       query_params = {}
@@ -159,7 +159,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceLoggingForwardingTestResult',
+	  '200' => 'Appliance::ApplianceLoggingForwardingTestResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LoggingForwardingApi#test\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

@@ -11,51 +11,56 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceUpdateSummary
-    # Version in form of X.Y.Z.P. e.g. 6.5.1.5400
-    attr_accessor :version
-
     attr_accessor :description
 
+    # Name of the update. Warning: This attribute is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+    attr_accessor :name
+
     attr_accessor :priority
-
-    attr_accessor :severity
-
-    attr_accessor :update_type
-
-    # Update release date.
-    attr_accessor :release_date
 
     # Flag indicating whether reboot is required after update.
     attr_accessor :reboot_required
 
+    # Update release date.
+    attr_accessor :release_date
+
+    attr_accessor :severity
+
     # Download Size of update in Megabytes.
     attr_accessor :size
+
+    attr_accessor :update_type
+
+    # Version in form of X.Y.Z.P. e.g. 6.5.1.5400
+    attr_accessor :version
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'version' => :'version',
         :'description' => :'description',
+        :'name' => :'name',
         :'priority' => :'priority',
-        :'severity' => :'severity',
-        :'update_type' => :'update_type',
-        :'release_date' => :'release_date',
         :'reboot_required' => :'reboot_required',
-        :'size' => :'size'
+        :'release_date' => :'release_date',
+        :'severity' => :'severity',
+        :'size' => :'size',
+        :'update_type' => :'update_type',
+        :'version' => :'version'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'version' => :'String',
         :'description' => :'VapiStdLocalizableMessage',
+        :'name' => :'String',
         :'priority' => :'ApplianceUpdateCommonInfoPriority',
-        :'severity' => :'ApplianceUpdateCommonInfoSeverity',
-        :'update_type' => :'ApplianceUpdateCommonInfoCategory',
-        :'release_date' => :'DateTime',
         :'reboot_required' => :'Boolean',
-        :'size' => :'Integer'
+        :'release_date' => :'DateTime',
+        :'severity' => :'ApplianceUpdateCommonInfoSeverity',
+        :'size' => :'Integer',
+        :'update_type' => :'ApplianceUpdateCommonInfoCategory',
+        :'version' => :'String'
       }
     end
 
@@ -67,36 +72,40 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
-      end
-
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'priority')
         self.priority = attributes[:'priority']
       end
 
-      if attributes.has_key?(:'severity')
-        self.severity = attributes[:'severity']
-      end
-
-      if attributes.has_key?(:'update_type')
-        self.update_type = attributes[:'update_type']
+      if attributes.has_key?(:'reboot_required')
+        self.reboot_required = attributes[:'reboot_required']
       end
 
       if attributes.has_key?(:'release_date')
         self.release_date = attributes[:'release_date']
       end
 
-      if attributes.has_key?(:'reboot_required')
-        self.reboot_required = attributes[:'reboot_required']
+      if attributes.has_key?(:'severity')
+        self.severity = attributes[:'severity']
       end
 
       if attributes.has_key?(:'size')
         self.size = attributes[:'size']
+      end
+
+      if attributes.has_key?(:'update_type')
+        self.update_type = attributes[:'update_type']
+      end
+
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
     end
 
@@ -104,10 +113,6 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
-      end
-
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
@@ -116,24 +121,28 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "priority", priority cannot be nil.')
       end
 
-      if @severity.nil?
-        invalid_properties.push('invalid value for "severity", severity cannot be nil.')
-      end
-
-      if @update_type.nil?
-        invalid_properties.push('invalid value for "update_type", update_type cannot be nil.')
+      if @reboot_required.nil?
+        invalid_properties.push('invalid value for "reboot_required", reboot_required cannot be nil.')
       end
 
       if @release_date.nil?
         invalid_properties.push('invalid value for "release_date", release_date cannot be nil.')
       end
 
-      if @reboot_required.nil?
-        invalid_properties.push('invalid value for "reboot_required", reboot_required cannot be nil.')
+      if @severity.nil?
+        invalid_properties.push('invalid value for "severity", severity cannot be nil.')
       end
 
       if @size.nil?
         invalid_properties.push('invalid value for "size", size cannot be nil.')
+      end
+
+      if @update_type.nil?
+        invalid_properties.push('invalid value for "update_type", update_type cannot be nil.')
+      end
+
+      if @version.nil?
+        invalid_properties.push('invalid value for "version", version cannot be nil.')
       end
 
       invalid_properties
@@ -142,14 +151,14 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @version.nil?
       return false if @description.nil?
       return false if @priority.nil?
-      return false if @severity.nil?
-      return false if @update_type.nil?
-      return false if @release_date.nil?
       return false if @reboot_required.nil?
+      return false if @release_date.nil?
+      return false if @severity.nil?
       return false if @size.nil?
+      return false if @update_type.nil?
+      return false if @version.nil?
       true
     end
 
@@ -158,14 +167,15 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          version == o.version &&
           description == o.description &&
+          name == o.name &&
           priority == o.priority &&
-          severity == o.severity &&
-          update_type == o.update_type &&
-          release_date == o.release_date &&
           reboot_required == o.reboot_required &&
-          size == o.size
+          release_date == o.release_date &&
+          severity == o.severity &&
+          size == o.size &&
+          update_type == o.update_type &&
+          version == o.version
     end
 
     # @see the `==` method
@@ -177,7 +187,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [version, description, priority, severity, update_type, release_date, reboot_required, size].hash
+      [description, name, priority, reboot_required, release_date, severity, size, update_type, version].hash
     end
 
     # Builds the object from hash

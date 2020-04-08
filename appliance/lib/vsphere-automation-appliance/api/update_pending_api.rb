@@ -19,7 +19,7 @@ module VSphereAutomation
     # Gets update information
     # @param version Update version
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceUpdatePendingResult|VapiStdErrorsAlreadyInDesiredStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceUpdatePendingResp|VapiStdErrorsAlreadyInDesiredStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def get(version, opts = {})
       data, _status_code, _headers = get_with_http_info(version, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param version Update version
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceUpdatePendingResult|VapiStdErrorsAlreadyInDesiredStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceUpdatePendingResp|VapiStdErrorsAlreadyInDesiredStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.get"
       end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/rest/appliance/update/pending/{version}'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceUpdatePendingResult',
+	  '200' => 'Appliance::ApplianceUpdatePendingResp',
 	  '400' => 'Appliance::VapiStdErrorsAlreadyInDesiredStateError',
 	  '401' => 'Appliance::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Appliance::VapiStdErrorsUnauthorizedError',
@@ -102,7 +102,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePendingApi.install"
       end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}?action=install'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/rest/appliance/update/pending/{version}?action=install'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
@@ -135,7 +135,7 @@ module VSphereAutomation
     # @param source_type The {@name SourceType} {@term enumerated type} defines the supported types of sources of updates.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :url specific URL to check at
-    # @return [ApplianceUpdatePendingListResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceUpdatePendingListResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def list(source_type, opts = {})
       data, _status_code, _headers = list_with_http_info(source_type, opts)
       data
@@ -146,7 +146,7 @@ module VSphereAutomation
     # @param source_type The {@name SourceType} {@term enumerated type} defines the supported types of sources of updates.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :url specific URL to check at
-    # @return [Array<(ApplianceUpdatePendingListResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceUpdatePendingListResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(source_type, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.list ...'
@@ -160,7 +160,7 @@ module VSphereAutomation
         fail ArgumentError, "invalid value for 'source_type', must be one of LAST_CHECK, LOCAL, LOCAL_AND_ONLINE"
       end
       # resource path
-      local_var_path = '/appliance/update/pending'
+      local_var_path = '/rest/appliance/update/pending'
 
       # query parameters
       query_params = {}
@@ -185,7 +185,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceUpdatePendingListResult',
+	  '200' => 'Appliance::ApplianceUpdatePendingListResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '401' => 'Appliance::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Appliance::VapiStdErrorsUnauthorizedError',
@@ -199,7 +199,7 @@ module VSphereAutomation
     # Runs update precheck
     # @param version Update version
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceUpdatePendingPrecheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceUpdatePendingPrecheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def precheck(version, opts = {})
       data, _status_code, _headers = precheck_with_http_info(version, opts)
       data
@@ -209,7 +209,7 @@ module VSphereAutomation
     # @api private
     # @param version Update version
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceUpdatePendingPrecheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceUpdatePendingPrecheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def precheck_with_http_info(version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.precheck ...'
@@ -219,7 +219,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.precheck"
       end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}?action=precheck'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/rest/appliance/update/pending/{version}?action=precheck'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
@@ -242,7 +242,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceUpdatePendingPrecheckResult',
+	  '200' => 'Appliance::ApplianceUpdatePendingPrecheckResp',
 	  '400' => 'Appliance::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'Appliance::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Appliance::VapiStdErrorsUnauthorizedError',
@@ -276,7 +276,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'version' when calling UpdatePendingApi.stage"
       end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}?action=stage'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/rest/appliance/update/pending/{version}?action=stage'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
@@ -332,7 +332,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePendingApi.stage_and_install"
       end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}?action=stage-and-install'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/rest/appliance/update/pending/{version}?action=stage-and-install'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
@@ -365,7 +365,7 @@ module VSphereAutomation
     # @param version Update version
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceUpdatePendingValidateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceUpdatePendingValidateResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def validate(version, request_body, opts = {})
       data, _status_code, _headers = validate_with_http_info(version, request_body, opts)
       data
@@ -376,7 +376,7 @@ module VSphereAutomation
     # @param version Update version
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceUpdatePendingValidateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceUpdatePendingValidateResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def validate_with_http_info(version, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePendingApi.validate ...'
@@ -390,7 +390,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePendingApi.validate"
       end
       # resource path
-      local_var_path = '/appliance/update/pending/{version}?action=validate'.sub('{' + 'version' + '}', version.to_s)
+      local_var_path = '/rest/appliance/update/pending/{version}?action=validate'.sub('{' + 'version' + '}', version.to_s)
 
       # query parameters
       query_params = {}
@@ -415,7 +415,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceUpdatePendingValidateResult',
+	  '200' => 'Appliance::ApplianceUpdatePendingValidateResp',
 	  '400' => 'Appliance::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'Appliance::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Appliance::VapiStdErrorsUnauthorizedError',

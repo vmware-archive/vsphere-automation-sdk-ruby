@@ -11,38 +11,38 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceMonitoringMonitoredItemDataRequest
-    # monitored item IDs Ex: CPU, MEMORY
-    attr_accessor :names
+    # End time in UTC
+    attr_accessor :end_time
+
+    attr_accessor :function
 
     attr_accessor :interval
 
-    attr_accessor :function
+    # monitored item IDs Ex: CPU, MEMORY
+    attr_accessor :names
 
     # Start time in UTC
     attr_accessor :start_time
 
-    # End time in UTC
-    attr_accessor :end_time
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'names' => :'names',
-        :'interval' => :'interval',
+        :'end_time' => :'end_time',
         :'function' => :'function',
-        :'start_time' => :'start_time',
-        :'end_time' => :'end_time'
+        :'interval' => :'interval',
+        :'names' => :'names',
+        :'start_time' => :'start_time'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'names' => :'Array<String>',
-        :'interval' => :'ApplianceMonitoringIntervalType',
+        :'end_time' => :'DateTime',
         :'function' => :'ApplianceMonitoringFunctionType',
-        :'start_time' => :'DateTime',
-        :'end_time' => :'DateTime'
+        :'interval' => :'ApplianceMonitoringIntervalType',
+        :'names' => :'Array<String>',
+        :'start_time' => :'DateTime'
       }
     end
 
@@ -54,26 +54,26 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'names')
-        if (value = attributes[:'names']).is_a?(Array)
-          self.names = value
-        end
-      end
-
-      if attributes.has_key?(:'interval')
-        self.interval = attributes[:'interval']
+      if attributes.has_key?(:'end_time')
+        self.end_time = attributes[:'end_time']
       end
 
       if attributes.has_key?(:'function')
         self.function = attributes[:'function']
       end
 
-      if attributes.has_key?(:'start_time')
-        self.start_time = attributes[:'start_time']
+      if attributes.has_key?(:'interval')
+        self.interval = attributes[:'interval']
       end
 
-      if attributes.has_key?(:'end_time')
-        self.end_time = attributes[:'end_time']
+      if attributes.has_key?(:'names')
+        if (value = attributes[:'names']).is_a?(Array)
+          self.names = value
+        end
+      end
+
+      if attributes.has_key?(:'start_time')
+        self.start_time = attributes[:'start_time']
       end
     end
 
@@ -81,24 +81,24 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @names.nil?
-        invalid_properties.push('invalid value for "names", names cannot be nil.')
-      end
-
-      if @interval.nil?
-        invalid_properties.push('invalid value for "interval", interval cannot be nil.')
+      if @end_time.nil?
+        invalid_properties.push('invalid value for "end_time", end_time cannot be nil.')
       end
 
       if @function.nil?
         invalid_properties.push('invalid value for "function", function cannot be nil.')
       end
 
-      if @start_time.nil?
-        invalid_properties.push('invalid value for "start_time", start_time cannot be nil.')
+      if @interval.nil?
+        invalid_properties.push('invalid value for "interval", interval cannot be nil.')
       end
 
-      if @end_time.nil?
-        invalid_properties.push('invalid value for "end_time", end_time cannot be nil.')
+      if @names.nil?
+        invalid_properties.push('invalid value for "names", names cannot be nil.')
+      end
+
+      if @start_time.nil?
+        invalid_properties.push('invalid value for "start_time", start_time cannot be nil.')
       end
 
       invalid_properties
@@ -107,11 +107,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @names.nil?
-      return false if @interval.nil?
-      return false if @function.nil?
-      return false if @start_time.nil?
       return false if @end_time.nil?
+      return false if @function.nil?
+      return false if @interval.nil?
+      return false if @names.nil?
+      return false if @start_time.nil?
       true
     end
 
@@ -120,11 +120,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          names == o.names &&
-          interval == o.interval &&
+          end_time == o.end_time &&
           function == o.function &&
-          start_time == o.start_time &&
-          end_time == o.end_time
+          interval == o.interval &&
+          names == o.names &&
+          start_time == o.start_time
     end
 
     # @see the `==` method
@@ -136,7 +136,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [names, interval, function, start_time, end_time].hash
+      [end_time, function, interval, names, start_time].hash
     end
 
     # Builds the object from hash

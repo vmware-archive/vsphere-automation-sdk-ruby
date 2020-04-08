@@ -11,11 +11,11 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareCpuUpdateSpec
-    # New number of CPU cores. The number of CPU cores in the virtual machine must be a multiple of the number of cores per socket.   The supported range of CPU counts is constrained by the configured guest operating system and virtual hardware version of the virtual machine.    If the virtual machine is running, the number of CPU cores may only be increased if Cpu.Info.hot-add-enabled is true, and may only be decreased if Cpu.Info.hot-remove-enabled is true.  If unset, the value is unchanged.
-    attr_accessor :count
-
     # New number of CPU cores per socket. The number of CPU cores in the virtual machine must be a multiple of the number of cores per socket. If unset, the value is unchanged.
     attr_accessor :cores_per_socket
+
+    # New number of CPU cores. The number of CPU cores in the virtual machine must be a multiple of the number of cores per socket.   The supported range of CPU counts is constrained by the configured guest operating system and virtual hardware version of the virtual machine.    If the virtual machine is running, the number of CPU cores may only be increased if Cpu.Info.hot-add-enabled is true, and may only be decreased if Cpu.Info.hot-remove-enabled is true.  If unset, the value is unchanged.
+    attr_accessor :count
 
     # Flag indicating whether adding CPUs while the virtual machine is running is enabled.   This field may only be modified if the virtual machine is powered off.  If unset, the value is unchanged.
     attr_accessor :hot_add_enabled
@@ -26,8 +26,8 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
         :'cores_per_socket' => :'cores_per_socket',
+        :'count' => :'count',
         :'hot_add_enabled' => :'hot_add_enabled',
         :'hot_remove_enabled' => :'hot_remove_enabled'
       }
@@ -36,8 +36,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'count' => :'Integer',
         :'cores_per_socket' => :'Integer',
+        :'count' => :'Integer',
         :'hot_add_enabled' => :'Boolean',
         :'hot_remove_enabled' => :'Boolean'
       }
@@ -51,12 +51,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
-      end
-
       if attributes.has_key?(:'cores_per_socket')
         self.cores_per_socket = attributes[:'cores_per_socket']
+      end
+
+      if attributes.has_key?(:'count')
+        self.count = attributes[:'count']
       end
 
       if attributes.has_key?(:'hot_add_enabled')
@@ -86,8 +86,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
           cores_per_socket == o.cores_per_socket &&
+          count == o.count &&
           hot_add_enabled == o.hot_add_enabled &&
           hot_remove_enabled == o.hot_remove_enabled
     end
@@ -101,7 +101,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, cores_per_socket, hot_add_enabled, hot_remove_enabled].hash
+      [cores_per_socket, count, hot_add_enabled, hot_remove_enabled].hash
     end
 
     # Builds the object from hash

@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get overall health of system.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceHealthSystemResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceHealthSystemResp|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get overall health of system.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceHealthSystemResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceHealthSystemResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthSystemApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/health/system'
+      local_var_path = '/rest/appliance/health/system'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceHealthSystemResult',
+	  '200' => 'Appliance::ApplianceHealthSystemResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -66,7 +66,7 @@ module VSphereAutomation
     end
     # Get last check timestamp of the health of the system.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceHealthSystemLastcheckResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceHealthSystemLastcheckResp|VapiStdErrorsErrorError|]
     def lastcheck(opts = {})
       data, _status_code, _headers = lastcheck_with_http_info(opts)
       data
@@ -75,13 +75,13 @@ module VSphereAutomation
     # Get last check timestamp of the health of the system.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceHealthSystemLastcheckResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceHealthSystemLastcheckResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def lastcheck_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthSystemApi.lastcheck ...'
       end
       # resource path
-      local_var_path = '/appliance/health/system/lastcheck'
+      local_var_path = '/rest/appliance/health/system/lastcheck'
 
       # query parameters
       query_params = {}
@@ -104,7 +104,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceHealthSystemLastcheckResult',
+	  '200' => 'Appliance::ApplianceHealthSystemLastcheckResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

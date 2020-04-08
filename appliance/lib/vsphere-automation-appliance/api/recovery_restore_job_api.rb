@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Cancel the restore job
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryRestoreJobCancelResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryRestoreJobCancelResp|VapiStdErrorsErrorError|]
     def cancel(opts = {})
       data, _status_code, _headers = cancel_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Cancel the restore job
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryRestoreJobCancelResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryRestoreJobCancelResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def cancel_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreJobApi.cancel ...'
       end
       # resource path
-      local_var_path = '/appliance/recovery/restore/job/cancel'
+      local_var_path = '/rest/appliance/recovery/restore/job/cancel'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryRestoreJobCancelResult',
+	  '200' => 'Appliance::ApplianceRecoveryRestoreJobCancelResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -67,7 +67,7 @@ module VSphereAutomation
     # Initiate restore.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryRestoreJobCreateResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryRestoreJobCreateResp|VapiStdErrorsErrorError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -77,7 +77,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryRestoreJobCreateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryRestoreJobCreateResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreJobApi.create ...'
@@ -87,7 +87,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryRestoreJobApi.create"
       end
       # resource path
-      local_var_path = '/appliance/recovery/restore/job'
+      local_var_path = '/rest/appliance/recovery/restore/job'
 
       # query parameters
       query_params = {}
@@ -112,7 +112,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryRestoreJobCreateResult',
+	  '200' => 'Appliance::ApplianceRecoveryRestoreJobCreateResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -122,7 +122,7 @@ module VSphereAutomation
     end
     # See restore job progress/result.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryRestoreJobResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryRestoreJobResp|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -131,13 +131,13 @@ module VSphereAutomation
     # See restore job progress/result.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryRestoreJobResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryRestoreJobResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryRestoreJobApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/recovery/restore/job'
+      local_var_path = '/rest/appliance/recovery/restore/job'
 
       # query parameters
       query_params = {}
@@ -160,7 +160,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryRestoreJobResult',
+	  '200' => 'Appliance::ApplianceRecoveryRestoreJobResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

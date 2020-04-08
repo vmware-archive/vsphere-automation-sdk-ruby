@@ -1,18 +1,18 @@
 # VSphereAutomation::Content::LibraryItemUpdateSessionApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](LibraryItemUpdateSessionApi.md#cancel) | **POST** /com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;cancel | Cancels the update session and sets its state to {@link UpdateSessionModel.State#CANCELED}. This {@term operation} will free up any temporary resources currently associated with the session. &lt;p&gt; This {@term operation} is not allowed if the session has been already completed. &lt;p&gt; Cancelling an update session will cancel any in progress transfers (either uploaded by the client or pulled by the server). Any content that has been already received will be scheduled for deletion.
-[**complete**](LibraryItemUpdateSessionApi.md#complete) | **POST** /com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;complete | Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. &lt;p&gt; Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. &lt;p&gt; Modifications are not visible to other clients unless the session is completed and all necessary files have been received.
-[**create**](LibraryItemUpdateSessionApi.md#create) | **POST** /com/vmware/content/library/item/update-session | Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. &lt;p&gt; Content Library Service allows only one single update session to be active for a specific library item.
-[**delete**](LibraryItemUpdateSessionApi.md#delete) | **DELETE** /com/vmware/content/library/item/update-session/id:{update_session_id} | Deletes an update session. This removes the session and all information associated with it. &lt;p&gt; Removing an update session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the server will terminate the transfers, or that the transfers can be completed). However there will no longer be a means of inspecting the status of those uploads except by seeing the effect on the library item. &lt;p&gt; Update sessions for which there is no upload activity or which are complete will automatically be deleted after a period of time.
-[**fail**](LibraryItemUpdateSessionApi.md#fail) | **POST** /com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;fail | Terminates the update session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to access a file) to the server side.
-[**get**](LibraryItemUpdateSessionApi.md#get) | **GET** /com/vmware/content/library/item/update-session/id:{update_session_id} | Gets the update session with the specified identifier, including the most up-to-date status information for the session.
-[**keep_alive**](LibraryItemUpdateSessionApi.md#keep_alive) | **POST** /com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;keep-alive | Keeps an update session alive. &lt;p&gt; If there is no activity for an update session after a period of time, the update session will expire, then be deleted. The update session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of the update session.
-[**list**](LibraryItemUpdateSessionApi.md#list) | **GET** /com/vmware/content/library/item/update-session | Lists the identifiers of the update session created by the calling user. Optionally may filter by library item.
-[**update**](LibraryItemUpdateSessionApi.md#update) | **PATCH** /com/vmware/content/library/item/update-session/id:{update_session_id} | Updates the properties of an update session. &lt;p&gt; This is an incremental update to the update session. Any {@term field} in the {@link UpdateSessionModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the property {@link UpdateSessionModel#warningBehavior} of the update session. This will not, for example, update the {@link UpdateSessionModel#libraryItemId} or {@link UpdateSessionModel#state} of an update session. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state.
+[**cancel**](LibraryItemUpdateSessionApi.md#cancel) | **POST** /rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;cancel | Cancels the update session and sets its state to {@link UpdateSessionModel.State#CANCELED}. This {@term operation} will free up any temporary resources currently associated with the session. &lt;p&gt; This {@term operation} is not allowed if the session has been already completed. &lt;p&gt; Cancelling an update session will cancel any in progress transfers (either uploaded by the client or pulled by the server). Any content that has been already received will be scheduled for deletion.
+[**complete**](LibraryItemUpdateSessionApi.md#complete) | **POST** /rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;complete | Completes the update session. This indicates that the client has finished making all the changes required to the underlying library item. If the client is pushing the content to the server, the library item will be updated once this call returns. If the server is pulling the content, the call may return before the changes become visible. In that case, the client can track the session to know when the server is done. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state. &lt;p&gt; Depending on the type of the library item associated with this session, a type adapter may be invoked to verify the validity of the files uploaded. The user can explicitly validate the session before completing the session by using the {@link content.library.item.updatesession.File#validate} {@term operation}. &lt;p&gt; Modifications are not visible to other clients unless the session is completed and all necessary files have been received.
+[**create**](LibraryItemUpdateSessionApi.md#create) | **POST** /rest/com/vmware/content/library/item/update-session | Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. &lt;p&gt; Content Library Service allows only one single update session to be active for a specific library item.
+[**delete**](LibraryItemUpdateSessionApi.md#delete) | **DELETE** /rest/com/vmware/content/library/item/update-session/id:{update_session_id} | Deletes an update session. This removes the session and all information associated with it. &lt;p&gt; Removing an update session leaves any current transfers for that session in an indeterminate state (there is no guarantee that the server will terminate the transfers, or that the transfers can be completed). However there will no longer be a means of inspecting the status of those uploads except by seeing the effect on the library item. &lt;p&gt; Update sessions for which there is no upload activity or which are complete will automatically be deleted after a period of time.
+[**fail**](LibraryItemUpdateSessionApi.md#fail) | **POST** /rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;fail | Terminates the update session with a client specified error message. &lt;p&gt; This is useful in transmitting client side failures (for example, not being able to access a file) to the server side.
+[**get**](LibraryItemUpdateSessionApi.md#get) | **GET** /rest/com/vmware/content/library/item/update-session/id:{update_session_id} | Gets the update session with the specified identifier, including the most up-to-date status information for the session.
+[**keep_alive**](LibraryItemUpdateSessionApi.md#keep_alive) | **POST** /rest/com/vmware/content/library/item/update-session/id:{update_session_id}?~action&#x3D;keep-alive | Keeps an update session alive. &lt;p&gt; If there is no activity for an update session after a period of time, the update session will expire, then be deleted. The update session expiration timeout is configurable in the Content Library Service system configuration. The default is five minutes. Invoking this {@term operation} enables a client to specifically extend the lifetime of the update session.
+[**list**](LibraryItemUpdateSessionApi.md#list) | **GET** /rest/com/vmware/content/library/item/update-session | Lists the identifiers of the update session created by the calling user. Optionally may filter by library item.
+[**update**](LibraryItemUpdateSessionApi.md#update) | **PATCH** /rest/com/vmware/content/library/item/update-session/id:{update_session_id} | Updates the properties of an update session. &lt;p&gt; This is an incremental update to the update session. Any {@term field} in the {@link UpdateSessionModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the property {@link UpdateSessionModel#warningBehavior} of the update session. This will not, for example, update the {@link UpdateSessionModel#libraryItemId} or {@link UpdateSessionModel#state} of an update session. &lt;p&gt; This {@term operation} requires the session to be in the {@link UpdateSessionModel.State#ACTIVE} state.
 
 
 # **cancel**
@@ -114,7 +114,7 @@ nil (empty response body)
 
 
 # **create**
-> ContentLibraryItemUpdateSessionCreateResult create(request_body)
+> ContentLibraryItemUpdateSessionCreateResp create(request_body)
 
 Creates a new update session. An update session is used to make modifications to a library item. Modifications are not visible to other clients unless the session is completed and all necessary files have been received. <p> Content Library Service allows only one single update session to be active for a specific library item.
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemUpdateSessionCreateResult**](ContentLibraryItemUpdateSessionCreateResult.md)
+[**ContentLibraryItemUpdateSessionCreateResp**](ContentLibraryItemUpdateSessionCreateResp.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ nil (empty response body)
 
 
 # **get**
-> ContentLibraryItemUpdateSessionResult get(update_session_id)
+> ContentLibraryItemUpdateSessionResp get(update_session_id)
 
 Gets the update session with the specified identifier, including the most up-to-date status information for the session.
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemUpdateSessionResult**](ContentLibraryItemUpdateSessionResult.md)
+[**ContentLibraryItemUpdateSessionResp**](ContentLibraryItemUpdateSessionResp.md)
 
 ### Authorization
 
@@ -367,7 +367,7 @@ nil (empty response body)
 
 
 # **list**
-> ContentLibraryItemUpdateSessionListResult list(opts)
+> ContentLibraryItemUpdateSessionListResp list(opts)
 
 Lists the identifiers of the update session created by the calling user. Optionally may filter by library item.
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemUpdateSessionListResult**](ContentLibraryItemUpdateSessionListResult.md)
+[**ContentLibraryItemUpdateSessionListResp**](ContentLibraryItemUpdateSessionListResp.md)
 
 ### Authorization
 

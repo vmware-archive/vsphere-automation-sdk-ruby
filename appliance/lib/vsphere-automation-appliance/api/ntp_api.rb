@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get the NTP configuration status. If you run the 'timesync.get' command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The 'ntp' command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNtpResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceNtpResp|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get the NTP configuration status. If you run the &#39;timesync.get&#39; command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The &#39;ntp&#39; command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNtpResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNtpResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NtpApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/ntp'
+      local_var_path = '/rest/appliance/ntp'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNtpResult',
+	  '200' => 'Appliance::ApplianceNtpResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -87,7 +87,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NtpApi.set"
       end
       # resource path
-      local_var_path = '/appliance/ntp'
+      local_var_path = '/rest/appliance/ntp'
 
       # query parameters
       query_params = {}
@@ -119,7 +119,7 @@ module VSphereAutomation
     # Test the connection to a list of ntp servers.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNtpTestResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceNtpTestResp|VapiStdErrorsErrorError|]
     def test(request_body, opts = {})
       data, _status_code, _headers = test_with_http_info(request_body, opts)
       data
@@ -129,7 +129,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNtpTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNtpTestResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def test_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NtpApi.test ...'
@@ -139,7 +139,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NtpApi.test"
       end
       # resource path
-      local_var_path = '/appliance/ntp/test'
+      local_var_path = '/rest/appliance/ntp/test'
 
       # query parameters
       query_params = {}
@@ -164,7 +164,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNtpTestResult',
+	  '200' => 'Appliance::ApplianceNtpTestResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

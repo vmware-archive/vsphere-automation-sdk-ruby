@@ -16,20 +16,20 @@ module VSphereAutomation
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Creates a new trusted root certificate chain from the CreateSpec.
+    # Creates a new trusted root certificate chain from the CreateSpec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterCertificateManagementVcenterTrustedRootChainsCreateResult|VapiStdErrorsAlreadyExistsError|VapiStdErrorsUnauthorizedError|]
+    # @return [VcenterCertificateManagementVcenterTrustedRootChainsCreateResp|VapiStdErrorsAlreadyExistsError|VapiStdErrorsUnauthorizedError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
-    # Creates a new trusted root certificate chain from the CreateSpec.
+    # Creates a new trusted root certificate chain from the CreateSpec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterCertificateManagementVcenterTrustedRootChainsCreateResult|VapiStdErrorsAlreadyExistsError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterCertificateManagementVcenterTrustedRootChainsCreateResp|VapiStdErrorsAlreadyExistsError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CertificateManagementVcenterTrustedRootChainsApi.create ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling CertificateManagementVcenterTrustedRootChainsApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/certificate-management/vcenter/trusted-root-chains'
+      local_var_path = '/rest/vcenter/certificate-management/vcenter/trusted-root-chains'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterCertificateManagementVcenterTrustedRootChainsCreateResult',
+	  '200' => 'VCenter::VcenterCertificateManagementVcenterTrustedRootChainsCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsAlreadyExistsError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	})
@@ -73,7 +73,7 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Deletes trusted root certificate chain for a given identifier.
+    # Deletes trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
     # @param chain Unique identifier for a trusted root cert chain.
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
@@ -82,7 +82,7 @@ module VSphereAutomation
       nil
     end
 
-    # Deletes trusted root certificate chain for a given identifier.
+    # Deletes trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
     # @api private
     # @param chain Unique identifier for a trusted root cert chain.
     # @param [Hash] opts the optional parameters
@@ -96,7 +96,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'chain' when calling CertificateManagementVcenterTrustedRootChainsApi.delete"
       end
       # resource path
-      local_var_path = '/vcenter/certificate-management/vcenter/trusted-root-chains/{chain}'.sub('{' + 'chain' + '}', chain.to_s)
+      local_var_path = '/rest/vcenter/certificate-management/vcenter/trusted-root-chains/{chain}'.sub('{' + 'chain' + '}', chain.to_s)
 
       # query parameters
       query_params = {}
@@ -123,20 +123,20 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Retrieve a trusted root certificate chain for a given identifier.
+    # Retrieve a trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
     # @param chain Unique identifier for a trusted root cert chain.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterCertificateManagementVcenterTrustedRootChainsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterCertificateManagementVcenterTrustedRootChainsResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def get(chain, opts = {})
       data, _status_code, _headers = get_with_http_info(chain, opts)
       data
     end
 
-    # Retrieve a trusted root certificate chain for a given identifier.
+    # Retrieve a trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
     # @api private
     # @param chain Unique identifier for a trusted root cert chain.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterCertificateManagementVcenterTrustedRootChainsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterCertificateManagementVcenterTrustedRootChainsResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(chain, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CertificateManagementVcenterTrustedRootChainsApi.get ...'
@@ -146,7 +146,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'chain' when calling CertificateManagementVcenterTrustedRootChainsApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/certificate-management/vcenter/trusted-root-chains/{chain}'.sub('{' + 'chain' + '}', chain.to_s)
+      local_var_path = '/rest/vcenter/certificate-management/vcenter/trusted-root-chains/{chain}'.sub('{' + 'chain' + '}', chain.to_s)
 
       # query parameters
       query_params = {}
@@ -169,7 +169,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterCertificateManagementVcenterTrustedRootChainsResult',
+	  '200' => 'VCenter::VcenterCertificateManagementVcenterTrustedRootChainsResp',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	})
@@ -178,24 +178,24 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Returns summary information for each trusted root certificate chain.
+    # Returns summary information for each trusted root certificate chain. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
     # @param [Hash] opts the optional parameters
-    # @return [VcenterCertificateManagementVcenterTrustedRootChainsListResult|VapiStdErrorsUnauthorizedError|]
+    # @return [VcenterCertificateManagementVcenterTrustedRootChainsListResp|VapiStdErrorsUnauthorizedError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
     end
 
-    # Returns summary information for each trusted root certificate chain.
+    # Returns summary information for each trusted root certificate chain. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterCertificateManagementVcenterTrustedRootChainsListResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterCertificateManagementVcenterTrustedRootChainsListResp|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CertificateManagementVcenterTrustedRootChainsApi.list ...'
       end
       # resource path
-      local_var_path = '/vcenter/certificate-management/vcenter/trusted-root-chains'
+      local_var_path = '/rest/vcenter/certificate-management/vcenter/trusted-root-chains'
 
       # query parameters
       query_params = {}
@@ -218,7 +218,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterCertificateManagementVcenterTrustedRootChainsListResult',
+	  '200' => 'VCenter::VcenterCertificateManagementVcenterTrustedRootChainsListResp',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging

@@ -11,46 +11,46 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemDownloadsessionFileInfo
+    # The number of bytes that have been transferred by the server so far for making this file prepared for download. This value may stay at zero till the client starts downloading the file.
+    attr_accessor :bytes_transferred
+
+    attr_accessor :checksum_info
+
+    attr_accessor :download_endpoint
+
+    attr_accessor :error_message
+
     # The name of the file.
     attr_accessor :name
 
     # The file size, in bytes.
     attr_accessor :size
 
-    # The number of bytes that have been transferred by the server so far for making this file prepared for download. This value may stay at zero till the client starts downloading the file.
-    attr_accessor :bytes_transferred
-
     attr_accessor :status
-
-    attr_accessor :download_endpoint
-
-    attr_accessor :checksum_info
-
-    attr_accessor :error_message
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'bytes_transferred' => :'bytes_transferred',
+        :'checksum_info' => :'checksum_info',
+        :'download_endpoint' => :'download_endpoint',
+        :'error_message' => :'error_message',
         :'name' => :'name',
         :'size' => :'size',
-        :'bytes_transferred' => :'bytes_transferred',
-        :'status' => :'status',
-        :'download_endpoint' => :'download_endpoint',
-        :'checksum_info' => :'checksum_info',
-        :'error_message' => :'error_message'
+        :'status' => :'status'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'bytes_transferred' => :'Integer',
+        :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
+        :'download_endpoint' => :'ContentLibraryItemTransferEndpoint',
+        :'error_message' => :'VapiStdLocalizableMessage',
         :'name' => :'String',
         :'size' => :'Integer',
-        :'bytes_transferred' => :'Integer',
-        :'status' => :'ContentLibraryItemDownloadsessionFilePrepareStatus',
-        :'download_endpoint' => :'ContentLibraryItemTransferEndpoint',
-        :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
-        :'error_message' => :'VapiStdLocalizableMessage'
+        :'status' => :'ContentLibraryItemDownloadsessionFilePrepareStatus'
       }
     end
 
@@ -62,6 +62,22 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'bytes_transferred')
+        self.bytes_transferred = attributes[:'bytes_transferred']
+      end
+
+      if attributes.has_key?(:'checksum_info')
+        self.checksum_info = attributes[:'checksum_info']
+      end
+
+      if attributes.has_key?(:'download_endpoint')
+        self.download_endpoint = attributes[:'download_endpoint']
+      end
+
+      if attributes.has_key?(:'error_message')
+        self.error_message = attributes[:'error_message']
+      end
+
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
@@ -70,24 +86,8 @@ module VSphereAutomation
         self.size = attributes[:'size']
       end
 
-      if attributes.has_key?(:'bytes_transferred')
-        self.bytes_transferred = attributes[:'bytes_transferred']
-      end
-
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'download_endpoint')
-        self.download_endpoint = attributes[:'download_endpoint']
-      end
-
-      if attributes.has_key?(:'checksum_info')
-        self.checksum_info = attributes[:'checksum_info']
-      end
-
-      if attributes.has_key?(:'error_message')
-        self.error_message = attributes[:'error_message']
       end
     end
 
@@ -95,12 +95,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       if @bytes_transferred.nil?
         invalid_properties.push('invalid value for "bytes_transferred", bytes_transferred cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @status.nil?
@@ -113,8 +113,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
       return false if @bytes_transferred.nil?
+      return false if @name.nil?
       return false if @status.nil?
       true
     end
@@ -124,13 +124,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          bytes_transferred == o.bytes_transferred &&
+          checksum_info == o.checksum_info &&
+          download_endpoint == o.download_endpoint &&
+          error_message == o.error_message &&
           name == o.name &&
           size == o.size &&
-          bytes_transferred == o.bytes_transferred &&
-          status == o.status &&
-          download_endpoint == o.download_endpoint &&
-          checksum_info == o.checksum_info &&
-          error_message == o.error_message
+          status == o.status
     end
 
     # @see the `==` method
@@ -142,7 +142,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, size, bytes_transferred, status, download_endpoint, checksum_info, error_message].hash
+      [bytes_transferred, checksum_info, download_endpoint, error_message, name, size, status].hash
     end
 
     # Builds the object from hash

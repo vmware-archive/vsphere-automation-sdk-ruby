@@ -23,7 +23,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_types Types that networks must have to match the filter (see Network.Summary.type). If unset, networks with any type match the filter.
     # @option opts [Array<String>] :filter_folders Folders that must contain the network for the network to match the filter. If unset or empty, networks in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_datacenters Datacenters that must contain the network for the network to match the filter. If unset or empty, networks in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    # @return [VcenterNetworkListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterNetworkListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -37,7 +37,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_types Types that networks must have to match the filter (see Network.Summary.type). If unset, networks with any type match the filter.
     # @option opts [Array<String>] :filter_folders Folders that must contain the network for the network to match the filter. If unset or empty, networks in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_datacenters Datacenters that must contain the network for the network to match the filter. If unset or empty, networks in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    # @return [Array<(VcenterNetworkListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterNetworkListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkApi.list ...'
@@ -46,7 +46,7 @@ module VSphereAutomation
         fail ArgumentError, 'invalid value for "filter_types", must include one of STANDARD_PORTGROUP, DISTRIBUTED_PORTGROUP, OPAQUE_NETWORK'
       end
       # resource path
-      local_var_path = '/vcenter/network'
+      local_var_path = '/rest/vcenter/network'
 
       # query parameters
       query_params = {}
@@ -74,7 +74,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterNetworkListResult',
+	  '200' => 'VCenter::VcenterNetworkListResp',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

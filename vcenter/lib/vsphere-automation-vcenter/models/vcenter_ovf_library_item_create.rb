@@ -14,19 +14,19 @@ module VSphereAutomation
     # Client-generated token used to retry a request if the client fails to get a response from the server. If the original request succeeded, the result of that request will be returned, otherwise the operation will be retried.
     attr_accessor :client_token
 
+    attr_accessor :create_spec
+
     attr_accessor :source
 
     attr_accessor :target
-
-    attr_accessor :create_spec
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'client_token' => :'client_token',
+        :'create_spec' => :'create_spec',
         :'source' => :'source',
-        :'target' => :'target',
-        :'create_spec' => :'create_spec'
+        :'target' => :'target'
       }
     end
 
@@ -34,9 +34,9 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'client_token' => :'String',
+        :'create_spec' => :'VcenterOvfLibraryItemCreateSpec',
         :'source' => :'VcenterOvfLibraryItemDeployableIdentity',
-        :'target' => :'VcenterOvfLibraryItemCreateTarget',
-        :'create_spec' => :'VcenterOvfLibraryItemCreateSpec'
+        :'target' => :'VcenterOvfLibraryItemCreateTarget'
       }
     end
 
@@ -52,6 +52,10 @@ module VSphereAutomation
         self.client_token = attributes[:'client_token']
       end
 
+      if attributes.has_key?(:'create_spec')
+        self.create_spec = attributes[:'create_spec']
+      end
+
       if attributes.has_key?(:'source')
         self.source = attributes[:'source']
       end
@@ -59,16 +63,16 @@ module VSphereAutomation
       if attributes.has_key?(:'target')
         self.target = attributes[:'target']
       end
-
-      if attributes.has_key?(:'create_spec')
-        self.create_spec = attributes[:'create_spec']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @create_spec.nil?
+        invalid_properties.push('invalid value for "create_spec", create_spec cannot be nil.')
+      end
+
       if @source.nil?
         invalid_properties.push('invalid value for "source", source cannot be nil.')
       end
@@ -77,19 +81,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "target", target cannot be nil.')
       end
 
-      if @create_spec.nil?
-        invalid_properties.push('invalid value for "create_spec", create_spec cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @create_spec.nil?
       return false if @source.nil?
       return false if @target.nil?
-      return false if @create_spec.nil?
       true
     end
 
@@ -99,9 +99,9 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           client_token == o.client_token &&
+          create_spec == o.create_spec &&
           source == o.source &&
-          target == o.target &&
-          create_spec == o.create_spec
+          target == o.target
     end
 
     # @see the `==` method
@@ -113,7 +113,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [client_token, source, target, create_spec].hash
+      [client_token, create_spec, source, target].hash
     end
 
     # Builds the object from hash

@@ -11,50 +11,50 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareCdromInfo
-    attr_accessor :type
+    # Flag indicating whether the guest can connect and disconnect the device.
+    attr_accessor :allow_guest_control
+
+    attr_accessor :backing
+
+    attr_accessor :ide
 
     # Device label.
     attr_accessor :label
 
-    attr_accessor :ide
-
     attr_accessor :sata
-
-    attr_accessor :backing
-
-    attr_accessor :state
 
     # Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on.
     attr_accessor :start_connected
 
-    # Flag indicating whether the guest can connect and disconnect the device.
-    attr_accessor :allow_guest_control
+    attr_accessor :state
+
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'label' => :'label',
-        :'ide' => :'ide',
-        :'sata' => :'sata',
+        :'allow_guest_control' => :'allow_guest_control',
         :'backing' => :'backing',
-        :'state' => :'state',
+        :'ide' => :'ide',
+        :'label' => :'label',
+        :'sata' => :'sata',
         :'start_connected' => :'start_connected',
-        :'allow_guest_control' => :'allow_guest_control'
+        :'state' => :'state',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmHardwareCdromHostBusAdapterType',
-        :'label' => :'String',
-        :'ide' => :'VcenterVmHardwareIdeAddressInfo',
-        :'sata' => :'VcenterVmHardwareSataAddressInfo',
+        :'allow_guest_control' => :'Boolean',
         :'backing' => :'VcenterVmHardwareCdromBackingInfo',
-        :'state' => :'VcenterVmHardwareConnectionState',
+        :'ide' => :'VcenterVmHardwareIdeAddressInfo',
+        :'label' => :'String',
+        :'sata' => :'VcenterVmHardwareSataAddressInfo',
         :'start_connected' => :'Boolean',
-        :'allow_guest_control' => :'Boolean'
+        :'state' => :'VcenterVmHardwareConnectionState',
+        :'type' => :'VcenterVmHardwareCdromHostBusAdapterType'
       }
     end
 
@@ -66,36 +66,36 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'label')
-        self.label = attributes[:'label']
-      end
-
-      if attributes.has_key?(:'ide')
-        self.ide = attributes[:'ide']
-      end
-
-      if attributes.has_key?(:'sata')
-        self.sata = attributes[:'sata']
+      if attributes.has_key?(:'allow_guest_control')
+        self.allow_guest_control = attributes[:'allow_guest_control']
       end
 
       if attributes.has_key?(:'backing')
         self.backing = attributes[:'backing']
       end
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.has_key?(:'ide')
+        self.ide = attributes[:'ide']
+      end
+
+      if attributes.has_key?(:'label')
+        self.label = attributes[:'label']
+      end
+
+      if attributes.has_key?(:'sata')
+        self.sata = attributes[:'sata']
       end
 
       if attributes.has_key?(:'start_connected')
         self.start_connected = attributes[:'start_connected']
       end
 
-      if attributes.has_key?(:'allow_guest_control')
-        self.allow_guest_control = attributes[:'allow_guest_control']
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -103,28 +103,28 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @label.nil?
-        invalid_properties.push('invalid value for "label", label cannot be nil.')
+      if @allow_guest_control.nil?
+        invalid_properties.push('invalid value for "allow_guest_control", allow_guest_control cannot be nil.')
       end
 
       if @backing.nil?
         invalid_properties.push('invalid value for "backing", backing cannot be nil.')
       end
 
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      if @label.nil?
+        invalid_properties.push('invalid value for "label", label cannot be nil.')
       end
 
       if @start_connected.nil?
         invalid_properties.push('invalid value for "start_connected", start_connected cannot be nil.')
       end
 
-      if @allow_guest_control.nil?
-        invalid_properties.push('invalid value for "allow_guest_control", allow_guest_control cannot be nil.')
+      if @state.nil?
+        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      end
+
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       invalid_properties
@@ -133,12 +133,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      return false if @label.nil?
-      return false if @backing.nil?
-      return false if @state.nil?
-      return false if @start_connected.nil?
       return false if @allow_guest_control.nil?
+      return false if @backing.nil?
+      return false if @label.nil?
+      return false if @start_connected.nil?
+      return false if @state.nil?
+      return false if @type.nil?
       true
     end
 
@@ -147,14 +147,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          label == o.label &&
-          ide == o.ide &&
-          sata == o.sata &&
+          allow_guest_control == o.allow_guest_control &&
           backing == o.backing &&
-          state == o.state &&
+          ide == o.ide &&
+          label == o.label &&
+          sata == o.sata &&
           start_connected == o.start_connected &&
-          allow_guest_control == o.allow_guest_control
+          state == o.state &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -166,7 +166,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, label, ide, sata, backing, state, start_connected, allow_guest_control].hash
+      [allow_guest_control, backing, ide, label, sata, start_connected, state, type].hash
     end
 
     # Builds the object from hash

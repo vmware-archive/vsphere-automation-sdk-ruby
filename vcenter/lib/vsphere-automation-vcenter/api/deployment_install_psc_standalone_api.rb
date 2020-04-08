@@ -19,7 +19,7 @@ module VSphereAutomation
     # Checks that the information to configure a non-replicated PSC satisfies the requirements.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentInstallPscStandaloneCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
+    # @return [VcenterDeploymentInstallPscStandaloneCheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
     def check(request_body, opts = {})
       data, _status_code, _headers = check_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentInstallPscStandaloneCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentInstallPscStandaloneCheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
     def check_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallPscStandaloneApi.check ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentInstallPscStandaloneApi.check"
       end
       # resource path
-      local_var_path = '/vcenter/deployment/install/psc/standalone?action=check'
+      local_var_path = '/rest/vcenter/deployment/install/psc/standalone?action=check'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentInstallPscStandaloneCheckResult',
+	  '200' => 'VCenter::VcenterDeploymentInstallPscStandaloneCheckResp',
 	  '400' => 'VCenter::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	})

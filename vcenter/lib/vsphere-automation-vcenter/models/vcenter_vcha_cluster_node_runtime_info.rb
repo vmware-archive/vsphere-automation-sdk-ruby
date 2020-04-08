@@ -11,27 +11,27 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterNodeRuntimeInfo
-    attr_accessor :state
+    attr_accessor :placement
 
     attr_accessor :role
 
-    attr_accessor :placement
+    attr_accessor :state
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'state' => :'state',
+        :'placement' => :'placement',
         :'role' => :'role',
-        :'placement' => :'placement'
+        :'state' => :'state'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'state' => :'VcenterVchaClusterNodeState',
+        :'placement' => :'VcenterVchaPlacementInfo',
         :'role' => :'VcenterVchaClusterNodeRole',
-        :'placement' => :'VcenterVchaPlacementInfo'
+        :'state' => :'VcenterVchaClusterNodeState'
       }
     end
 
@@ -43,16 +43,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.has_key?(:'placement')
+        self.placement = attributes[:'placement']
       end
 
       if attributes.has_key?(:'role')
         self.role = attributes[:'role']
       end
 
-      if attributes.has_key?(:'placement')
-        self.placement = attributes[:'placement']
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
       end
     end
 
@@ -74,9 +74,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          state == o.state &&
+          placement == o.placement &&
           role == o.role &&
-          placement == o.placement
+          state == o.state
     end
 
     # @see the `==` method
@@ -88,7 +88,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [state, role, placement].hash
+      [placement, role, state].hash
     end
 
     # Builds the object from hash

@@ -11,52 +11,52 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsCreateSpec
-    # Identifier of the source virtual machine to create the library item from.
-    attr_accessor :source_vm
-
-    # Name of the library item.
-    attr_accessor :name
-
     # Description of the library item.
     attr_accessor :description
-
-    # Identifier of the library in which the new library item should be created.
-    attr_accessor :library
-
-    attr_accessor :vm_home_storage
 
     attr_accessor :disk_storage
 
     # Storage specification for individual disks in the virtual machine template. This is specified as a mapping between disk identifiers in the source virtual machine and their respective storage specifications.
     attr_accessor :disk_storage_overrides
 
+    # Identifier of the library in which the new library item should be created.
+    attr_accessor :library
+
+    # Name of the library item.
+    attr_accessor :name
+
     attr_accessor :placement
+
+    # Identifier of the source virtual machine to create the library item from.
+    attr_accessor :source_vm
+
+    attr_accessor :vm_home_storage
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'source_vm' => :'source_vm',
-        :'name' => :'name',
         :'description' => :'description',
-        :'library' => :'library',
-        :'vm_home_storage' => :'vm_home_storage',
         :'disk_storage' => :'disk_storage',
         :'disk_storage_overrides' => :'disk_storage_overrides',
-        :'placement' => :'placement'
+        :'library' => :'library',
+        :'name' => :'name',
+        :'placement' => :'placement',
+        :'source_vm' => :'source_vm',
+        :'vm_home_storage' => :'vm_home_storage'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'source_vm' => :'String',
-        :'name' => :'String',
         :'description' => :'String',
-        :'library' => :'String',
-        :'vm_home_storage' => :'VcenterVmTemplateLibraryItemsCreateSpecVmHomeStorage',
         :'disk_storage' => :'VcenterVmTemplateLibraryItemsCreateSpecDiskStorage',
         :'disk_storage_overrides' => :'Array<VcenterVmTemplateLibraryItemsCreateSpecDiskStorageOverrides>',
-        :'placement' => :'VcenterVmTemplateLibraryItemsCreatePlacementSpec'
+        :'library' => :'String',
+        :'name' => :'String',
+        :'placement' => :'VcenterVmTemplateLibraryItemsCreatePlacementSpec',
+        :'source_vm' => :'String',
+        :'vm_home_storage' => :'VcenterVmTemplateLibraryItemsCreateSpecVmHomeStorage'
       }
     end
 
@@ -68,24 +68,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'source_vm')
-        self.source_vm = attributes[:'source_vm']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'library')
-        self.library = attributes[:'library']
-      end
-
-      if attributes.has_key?(:'vm_home_storage')
-        self.vm_home_storage = attributes[:'vm_home_storage']
       end
 
       if attributes.has_key?(:'disk_storage')
@@ -98,8 +82,24 @@ module VSphereAutomation
         end
       end
 
+      if attributes.has_key?(:'library')
+        self.library = attributes[:'library']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
       if attributes.has_key?(:'placement')
         self.placement = attributes[:'placement']
+      end
+
+      if attributes.has_key?(:'source_vm')
+        self.source_vm = attributes[:'source_vm']
+      end
+
+      if attributes.has_key?(:'vm_home_storage')
+        self.vm_home_storage = attributes[:'vm_home_storage']
       end
     end
 
@@ -107,16 +107,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @source_vm.nil?
-        invalid_properties.push('invalid value for "source_vm", source_vm cannot be nil.')
+      if @library.nil?
+        invalid_properties.push('invalid value for "library", library cannot be nil.')
       end
 
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @library.nil?
-        invalid_properties.push('invalid value for "library", library cannot be nil.')
+      if @source_vm.nil?
+        invalid_properties.push('invalid value for "source_vm", source_vm cannot be nil.')
       end
 
       invalid_properties
@@ -125,9 +125,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @source_vm.nil?
-      return false if @name.nil?
       return false if @library.nil?
+      return false if @name.nil?
+      return false if @source_vm.nil?
       true
     end
 
@@ -136,14 +136,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          source_vm == o.source_vm &&
-          name == o.name &&
           description == o.description &&
-          library == o.library &&
-          vm_home_storage == o.vm_home_storage &&
           disk_storage == o.disk_storage &&
           disk_storage_overrides == o.disk_storage_overrides &&
-          placement == o.placement
+          library == o.library &&
+          name == o.name &&
+          placement == o.placement &&
+          source_vm == o.source_vm &&
+          vm_home_storage == o.vm_home_storage
     end
 
     # @see the `==` method
@@ -155,7 +155,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [source_vm, name, description, library, vm_home_storage, disk_storage, disk_storage_overrides, placement].hash
+      [description, disk_storage, disk_storage_overrides, library, name, placement, source_vm, vm_home_storage].hash
     end
 
     # Builds the object from hash

@@ -11,32 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentInstallInstallSpec
-    attr_accessor :vcsa_embedded
-
-    attr_accessor :psc
-
-    attr_accessor :vcsa_external
-
     # Use the default option for any questions that may come up during appliance configuration.
     attr_accessor :auto_answer
+
+    attr_accessor :vcsa_embedded
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'vcsa_embedded' => :'vcsa_embedded',
-        :'psc' => :'psc',
-        :'vcsa_external' => :'vcsa_external',
-        :'auto_answer' => :'auto_answer'
+        :'auto_answer' => :'auto_answer',
+        :'vcsa_embedded' => :'vcsa_embedded'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'vcsa_embedded' => :'VcenterDeploymentInstallVcsaEmbeddedSpec',
-        :'psc' => :'VcenterDeploymentInstallPscSpec',
-        :'vcsa_external' => :'VcenterDeploymentRemotePscSpec',
-        :'auto_answer' => :'Boolean'
+        :'auto_answer' => :'Boolean',
+        :'vcsa_embedded' => :'VcenterDeploymentInstallVcsaEmbeddedSpec'
       }
     end
 
@@ -48,20 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'vcsa_embedded')
-        self.vcsa_embedded = attributes[:'vcsa_embedded']
-      end
-
-      if attributes.has_key?(:'psc')
-        self.psc = attributes[:'psc']
-      end
-
-      if attributes.has_key?(:'vcsa_external')
-        self.vcsa_external = attributes[:'vcsa_external']
-      end
-
       if attributes.has_key?(:'auto_answer')
         self.auto_answer = attributes[:'auto_answer']
+      end
+
+      if attributes.has_key?(:'vcsa_embedded')
+        self.vcsa_embedded = attributes[:'vcsa_embedded']
       end
     end
 
@@ -69,12 +53,17 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @vcsa_embedded.nil?
+        invalid_properties.push('invalid value for "vcsa_embedded", vcsa_embedded cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @vcsa_embedded.nil?
       true
     end
 
@@ -83,10 +72,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          vcsa_embedded == o.vcsa_embedded &&
-          psc == o.psc &&
-          vcsa_external == o.vcsa_external &&
-          auto_answer == o.auto_answer
+          auto_answer == o.auto_answer &&
+          vcsa_embedded == o.vcsa_embedded
     end
 
     # @see the `==` method
@@ -98,7 +85,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [vcsa_embedded, psc, vcsa_external, auto_answer].hash
+      [auto_answer, vcsa_embedded].hash
     end
 
     # Builds the object from hash

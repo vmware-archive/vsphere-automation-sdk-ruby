@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param library Identifier of the published library.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibrarySubscriptionsCreateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibrarySubscriptionsCreateResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def create(library, request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(library, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param library Identifier of the published library.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibrarySubscriptionsCreateResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibrarySubscriptionsCreateResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(library, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscriptionsApi.create ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibrarySubscriptionsApi.create"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/subscriptions/id:{library}'.sub('{' + 'library' + '}', library.to_s)
+      local_var_path = '/rest/com/vmware/content/library/subscriptions/id:{library}'.sub('{' + 'library' + '}', library.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibrarySubscriptionsCreateResult',
+	  '200' => 'Content::ContentLibrarySubscriptionsCreateResp',
 	  '400' => 'Content::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'Content::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Content::VapiStdErrorsUnauthorizedError',
@@ -110,7 +110,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibrarySubscriptionsApi.delete"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/subscriptions/id:{library}?~action=delete'.sub('{' + 'library' + '}', library.to_s)
+      local_var_path = '/rest/com/vmware/content/library/subscriptions/id:{library}?~action=delete'.sub('{' + 'library' + '}', library.to_s)
 
       # query parameters
       query_params = {}
@@ -143,7 +143,7 @@ module VSphereAutomation
     # @param library Identifier of the published library.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibrarySubscriptionsResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibrarySubscriptionsResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def get(library, request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(library, request_body, opts)
       data
@@ -154,7 +154,7 @@ module VSphereAutomation
     # @param library Identifier of the published library.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibrarySubscriptionsResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibrarySubscriptionsResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(library, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscriptionsApi.get ...'
@@ -168,7 +168,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibrarySubscriptionsApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/subscriptions/id:{library}?~action=get'.sub('{' + 'library' + '}', library.to_s)
+      local_var_path = '/rest/com/vmware/content/library/subscriptions/id:{library}?~action=get'.sub('{' + 'library' + '}', library.to_s)
 
       # query parameters
       query_params = {}
@@ -193,7 +193,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibrarySubscriptionsResult',
+	  '200' => 'Content::ContentLibrarySubscriptionsResp',
 	  '400' => 'Content::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'Content::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Content::VapiStdErrorsUnauthorizedError',
@@ -207,7 +207,7 @@ module VSphereAutomation
     # Lists the subscriptions of the published library.
     # @param library Identifier of the published library.
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibrarySubscriptionsListResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibrarySubscriptionsListResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def list(library, opts = {})
       data, _status_code, _headers = list_with_http_info(library, opts)
       data
@@ -217,7 +217,7 @@ module VSphereAutomation
     # @api private
     # @param library Identifier of the published library.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibrarySubscriptionsListResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibrarySubscriptionsListResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(library, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibrarySubscriptionsApi.list ...'
@@ -227,7 +227,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library' when calling LibrarySubscriptionsApi.list"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/subscriptions'
+      local_var_path = '/rest/com/vmware/content/library/subscriptions'
 
       # query parameters
       query_params = {}
@@ -251,7 +251,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibrarySubscriptionsListResult',
+	  '200' => 'Content::ContentLibrarySubscriptionsListResp',
 	  '400' => 'Content::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'Content::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Content::VapiStdErrorsUnauthorizedError',
@@ -291,7 +291,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibrarySubscriptionsApi.update"
       end
       # resource path
-      local_var_path = '/com/vmware/content/library/subscriptions/id:{library}'.sub('{' + 'library' + '}', library.to_s)
+      local_var_path = '/rest/com/vmware/content/library/subscriptions/id:{library}'.sub('{' + 'library' + '}', library.to_s)
 
       # query parameters
       query_params = {}

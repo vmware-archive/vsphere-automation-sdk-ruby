@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves authentication information about the service element corresponding to {@param.name serviceId}.
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataAuthenticationServiceResult|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataAuthenticationServiceResp|VapiStdErrorsNotFoundError|]
     def get(service_id, opts = {})
       data, _status_code, _headers = get_with_http_info(service_id, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataAuthenticationServiceResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataAuthenticationServiceResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(service_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationServiceApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service_id' when calling MetadataAuthenticationServiceApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/authentication/service/id:{service_id}'.sub('{' + 'service_id' + '}', service_id.to_s)
+      local_var_path = '/rest/com/vmware/vapi/metadata/authentication/service/id:{service_id}'.sub('{' + 'service_id' + '}', service_id.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataAuthenticationServiceResult',
+	  '200' => 'VAPI::VapiMetadataAuthenticationServiceResp',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -72,7 +72,7 @@ module VSphereAutomation
     end
     # Returns the identifiers for the service elements that have authentication information.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataAuthenticationServiceListResult|]
+    # @return [VapiMetadataAuthenticationServiceListResp|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -81,13 +81,13 @@ module VSphereAutomation
     # Returns the identifiers for the service elements that have authentication information.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataAuthenticationServiceListResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataAuthenticationServiceListResp|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataAuthenticationServiceApi.list ...'
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/authentication/service'
+      local_var_path = '/rest/com/vmware/vapi/metadata/authentication/service'
 
       # query parameters
       query_params = {}
@@ -110,7 +110,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataAuthenticationServiceListResult',
+	  '200' => 'VAPI::VapiMetadataAuthenticationServiceListResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataAuthenticationServiceApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

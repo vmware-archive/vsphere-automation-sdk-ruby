@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::InventoryNetworkApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find**](InventoryNetworkApi.md#find) | **POST** /com/vmware/vcenter/inventory/network?~action&#x3D;find | Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
+[**find**](InventoryNetworkApi.md#find) | **POST** /rest/com/vmware/vcenter/inventory/network?~action&#x3D;find | Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
 
 
 # **find**
-> VcenterInventoryNetworkFindResult find(request_body)
+> VcenterInventoryNetworkFindResp find(request_body)
 
 Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterInventoryNetworkFindResult**](VcenterInventoryNetworkFindResult.md)
+[**VcenterInventoryNetworkFindResp**](VcenterInventoryNetworkFindResp.md)
 
 ### Authorization
 

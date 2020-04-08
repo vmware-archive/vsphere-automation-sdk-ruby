@@ -15,6 +15,7 @@ module VSphereAutomation
     IDE = "IDE".freeze
     SCSI = "SCSI".freeze
     SATA = "SATA".freeze
+    NVME = "NVME".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

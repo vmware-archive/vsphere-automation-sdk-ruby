@@ -11,10 +11,10 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTasksFilterSpec
-    # Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task.
-    attr_accessor :tasks
+    # Identifiers of operations. Tasks created by these operations match the filter (see CommonInfo.operation).   Note that an operation identifier by itself is not globally unique. To filter on an operation, the identifier of the service interface containing the operation should also be specified in Tasks.FilterSpec.services.  If unset or empty, tasks associated with any operation will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.operation.
+    attr_accessor :operations
 
-    # Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
+    # Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for any service will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
     attr_accessor :services
 
     # Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter.
@@ -23,16 +23,20 @@ module VSphereAutomation
     # Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
     attr_accessor :targets
 
+    # Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task.
+    attr_accessor :tasks
+
     # Users who must have initiated the operation for the associated task to match the filter (see CommonInfo.user). If unset or empty, tasks associated with operations initiated by any user match the filter.
     attr_accessor :users
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'tasks' => :'tasks',
+        :'operations' => :'operations',
         :'services' => :'services',
         :'status' => :'status',
         :'targets' => :'targets',
+        :'tasks' => :'tasks',
         :'users' => :'users'
       }
     end
@@ -40,10 +44,11 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'tasks' => :'Array<String>',
+        :'operations' => :'Array<String>',
         :'services' => :'Array<String>',
         :'status' => :'Array<CisTaskStatus>',
         :'targets' => :'Array<VapiStdDynamicID>',
+        :'tasks' => :'Array<String>',
         :'users' => :'Array<String>'
       }
     end
@@ -56,9 +61,9 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'tasks')
-        if (value = attributes[:'tasks']).is_a?(Array)
-          self.tasks = value
+      if attributes.has_key?(:'operations')
+        if (value = attributes[:'operations']).is_a?(Array)
+          self.operations = value
         end
       end
 
@@ -77,6 +82,12 @@ module VSphereAutomation
       if attributes.has_key?(:'targets')
         if (value = attributes[:'targets']).is_a?(Array)
           self.targets = value
+        end
+      end
+
+      if attributes.has_key?(:'tasks')
+        if (value = attributes[:'tasks']).is_a?(Array)
+          self.tasks = value
         end
       end
 
@@ -105,10 +116,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          tasks == o.tasks &&
+          operations == o.operations &&
           services == o.services &&
           status == o.status &&
           targets == o.targets &&
+          tasks == o.tasks &&
           users == o.users
     end
 
@@ -121,7 +133,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [tasks, services, status, targets, users].hash
+      [operations, services, status, targets, tasks, users].hash
     end
 
     # Builds the object from hash

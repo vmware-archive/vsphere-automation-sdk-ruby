@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'port' when calling VmHardwareParallelApi.connect"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/parallel/{port}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/parallel/{port}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
 
       # query parameters
       query_params = {}
@@ -76,7 +76,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareParallelCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareParallelCreateResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(vm, request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(vm, request_body, opts)
       data
@@ -87,7 +87,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareParallelCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareParallelCreateResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(vm, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareParallelApi.create ...'
@@ -101,7 +101,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareParallelApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/parallel'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/parallel'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -126,7 +126,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareParallelCreateResult',
+	  '200' => 'VCenter::VcenterVmHardwareParallelCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -167,7 +167,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'port' when calling VmHardwareParallelApi.delete"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/parallel/{port}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/parallel/{port}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
 
       # query parameters
       query_params = {}
@@ -223,7 +223,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'port' when calling VmHardwareParallelApi.disconnect"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/parallel/{port}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/parallel/{port}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
 
       # query parameters
       query_params = {}
@@ -254,7 +254,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual parallel port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ParallelPort.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareParallelResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareParallelResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, port, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, port, opts)
       data
@@ -265,7 +265,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param port Virtual parallel port identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.ParallelPort.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareParallelResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareParallelResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, port, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareParallelApi.get ...'
@@ -279,7 +279,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'port' when calling VmHardwareParallelApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/parallel/{port}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/parallel/{port}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
 
       # query parameters
       query_params = {}
@@ -302,7 +302,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareParallelResult',
+	  '200' => 'VCenter::VcenterVmHardwareParallelResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -317,7 +317,7 @@ module VSphereAutomation
     # Returns commonly used information about the virtual parallel ports belonging to the virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareParallelListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareParallelListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def list(vm, opts = {})
       data, _status_code, _headers = list_with_http_info(vm, opts)
       data
@@ -327,7 +327,7 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareParallelListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareParallelListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareParallelApi.list ...'
@@ -337,7 +337,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareParallelApi.list"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/parallel'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/parallel'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -360,7 +360,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareParallelListResult',
+	  '200' => 'VCenter::VcenterVmHardwareParallelListResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -407,7 +407,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareParallelApi.update"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/parallel/{port}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/parallel/{port}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'port' + '}', port.to_s)
 
       # query parameters
       query_params = {}

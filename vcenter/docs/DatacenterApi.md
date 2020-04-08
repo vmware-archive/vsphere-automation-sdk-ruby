@@ -1,17 +1,17 @@
 # VSphereAutomation::VCenter::DatacenterApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](DatacenterApi.md#create) | **POST** /vcenter/datacenter | Create a new datacenter in the vCenter inventory
-[**delete**](DatacenterApi.md#delete) | **DELETE** /vcenter/datacenter/{datacenter} | Delete an empty datacenter from the vCenter Server
-[**get**](DatacenterApi.md#get) | **GET** /vcenter/datacenter/{datacenter} | Retrieves information about the datacenter corresponding to datacenter.
-[**list**](DatacenterApi.md#list) | **GET** /vcenter/datacenter | Returns information about at most 1000 visible (subject to permission checks) datacenters in vCenter matching the Datacenter.FilterSpec.
+[**create**](DatacenterApi.md#create) | **POST** /rest/vcenter/datacenter | Create a new datacenter in the vCenter inventory
+[**delete**](DatacenterApi.md#delete) | **DELETE** /rest/vcenter/datacenter/{datacenter} | Delete an empty datacenter from the vCenter Server
+[**get**](DatacenterApi.md#get) | **GET** /rest/vcenter/datacenter/{datacenter} | Retrieves information about the datacenter corresponding to datacenter.
+[**list**](DatacenterApi.md#list) | **GET** /rest/vcenter/datacenter | Returns information about at most 1000 visible (subject to permission checks) datacenters in vCenter matching the Datacenter.FilterSpec.
 
 
 # **create**
-> VcenterDatacenterCreateResult create(request_body)
+> VcenterDatacenterCreateResp create(request_body)
 
 Create a new datacenter in the vCenter inventory
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDatacenterCreateResult**](VcenterDatacenterCreateResult.md)
+[**VcenterDatacenterCreateResp**](VcenterDatacenterCreateResp.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterDatacenterResult get(datacenter)
+> VcenterDatacenterResp get(datacenter)
 
 Retrieves information about the datacenter corresponding to datacenter.
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDatacenterResult**](VcenterDatacenterResult.md)
+[**VcenterDatacenterResp**](VcenterDatacenterResp.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterDatacenterListResult list(opts)
+> VcenterDatacenterListResp list(opts)
 
 Returns information about at most 1000 visible (subject to permission checks) datacenters in vCenter matching the Datacenter.FilterSpec.
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDatacenterListResult**](VcenterDatacenterListResult.md)
+[**VcenterDatacenterListResp**](VcenterDatacenterListResp.md)
 
 ### Authorization
 

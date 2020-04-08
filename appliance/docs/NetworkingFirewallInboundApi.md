@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::NetworkingFirewallInboundApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NetworkingFirewallInboundApi.md#get) | **GET** /appliance/networking/firewall/inbound | Get the ordered list of firewall rules. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
-[**set**](NetworkingFirewallInboundApi.md#set) | **PUT** /appliance/networking/firewall/inbound | Set the ordered list of firewall rules to allow or deny traffic from one or more incoming IP addresses. This overwrites the existing firewall rules and creates a new rule list. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. For example, the list of rules can be as follows: &lt;table&gt; &lt;tr&gt; &lt;th&gt;Address&lt;/th&gt;&lt;th&gt;Prefix&lt;/th&gt;&lt;th&gt;Interface Name&lt;/th&gt;&lt;th&gt;Policy&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;10.112.0.1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;REJECT&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;10.112.0.1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;nic0&lt;/td&gt;&lt;td&gt;ACCEPT&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; In the above example, the first rule drops all packets originating from 10.112.0.1 and&lt;br&gt; the second rule accepts all packets originating from 10.112.0.1 only on nic0. In effect, the second rule is always ignored which is not desired, hence the order has to be swapped. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
+[**get**](NetworkingFirewallInboundApi.md#get) | **GET** /rest/appliance/networking/firewall/inbound | Get the ordered list of firewall rules. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
+[**set**](NetworkingFirewallInboundApi.md#set) | **PUT** /rest/appliance/networking/firewall/inbound | Set the ordered list of firewall rules to allow or deny traffic from one or more incoming IP addresses. This overwrites the existing firewall rules and creates a new rule list. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. For example, the list of rules can be as follows: &lt;table&gt; &lt;tr&gt; &lt;th&gt;Address&lt;/th&gt;&lt;th&gt;Prefix&lt;/th&gt;&lt;th&gt;Interface Name&lt;/th&gt;&lt;th&gt;Policy&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;10.112.0.1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;REJECT&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;10.112.0.1&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;nic0&lt;/td&gt;&lt;td&gt;ACCEPT&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; In the above example, the first rule drops all packets originating from 10.112.0.1 and&lt;br&gt; the second rule accepts all packets originating from 10.112.0.1 only on nic0. In effect, the second rule is always ignored which is not desired, hence the order has to be swapped. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
 
 
 # **get**
-> ApplianceNetworkingFirewallInboundResult get
+> ApplianceNetworkingFirewallInboundResp get
 
 Get the ordered list of firewall rules. Within the list of traffic rules, rules are processed in order of appearance, from top to bottom. When a connection matches a firewall rule, further processing for the connection stops, and the appliance ignores any additional firewall rules you have set.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNetworkingFirewallInboundResult**](ApplianceNetworkingFirewallInboundResult.md)
+[**ApplianceNetworkingFirewallInboundResp**](ApplianceNetworkingFirewallInboundResp.md)
 
 ### Authorization
 

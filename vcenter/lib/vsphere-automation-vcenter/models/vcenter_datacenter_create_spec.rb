@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDatacenterCreateSpec
-    # The name of the datacenter to be created.
-    attr_accessor :name
-
     # Datacenter folder in which the new datacenter should be created. This field is currently required. In the future, if this field is unset, the system will attempt to choose a suitable folder for the datacenter; if a folder cannot be chosen, the datacenter creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder.
     attr_accessor :folder
+
+    # The name of the datacenter to be created.
+    attr_accessor :name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'folder' => :'folder'
+        :'folder' => :'folder',
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'folder' => :'String'
+        :'folder' => :'String',
+        :'name' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'folder')
         self.folder = attributes[:'folder']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
     end
 
@@ -73,8 +73,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          folder == o.folder
+          folder == o.folder &&
+          name == o.name
     end
 
     # @see the `==` method
@@ -86,7 +86,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, folder].hash
+      [folder, name].hash
     end
 
     # Builds the object from hash

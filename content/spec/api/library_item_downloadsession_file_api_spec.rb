@@ -33,7 +33,7 @@ describe 'LibraryItemDownloadsessionFileApi' do
   # @param download_session_id Identifier of the download session.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemDownloadsessionFileResult]
+  # @return [ContentLibraryItemDownloadsessionFileResp]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -44,7 +44,7 @@ describe 'LibraryItemDownloadsessionFileApi' do
   # Lists the information of all the files in the library item associated with the download session.
   # @param download_session_id Identifier of the download session.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemDownloadsessionFileListResult]
+  # @return [ContentLibraryItemDownloadsessionFileListResp]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -56,7 +56,7 @@ describe 'LibraryItemDownloadsessionFileApi' do
   # @param download_session_id Identifier of the download session.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemDownloadsessionFilePrepareResult]
+  # @return [ContentLibraryItemDownloadsessionFilePrepareResp]
   describe 'prepare test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

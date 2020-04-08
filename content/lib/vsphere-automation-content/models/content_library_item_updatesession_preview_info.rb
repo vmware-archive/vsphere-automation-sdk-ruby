@@ -11,9 +11,9 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionPreviewInfo
-    attr_accessor :state
-
     attr_accessor :certificate_info
+
+    attr_accessor :state
 
     # The list of warnings raised for this update session. Any warning which is not ignored by the client will, by default, fail the update session during session complete operation.
     attr_accessor :warnings
@@ -21,8 +21,8 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'state' => :'state',
         :'certificate_info' => :'certificate_info',
+        :'state' => :'state',
         :'warnings' => :'warnings'
       }
     end
@@ -30,8 +30,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'state' => :'ContentLibraryItemUpdatesessionPreviewInfoState',
         :'certificate_info' => :'ContentLibraryItemUpdatesessionCertificateInfo',
+        :'state' => :'ContentLibraryItemUpdatesessionPreviewInfoState',
         :'warnings' => :'Array<ContentLibraryItemUpdatesessionPreviewWarningInfo>'
       }
     end
@@ -44,12 +44,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
-      end
-
       if attributes.has_key?(:'certificate_info')
         self.certificate_info = attributes[:'certificate_info']
+      end
+
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
       end
 
       if attributes.has_key?(:'warnings')
@@ -82,8 +82,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          state == o.state &&
           certificate_info == o.certificate_info &&
+          state == o.state &&
           warnings == o.warnings
     end
 
@@ -96,7 +96,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [state, certificate_info, warnings].hash
+      [certificate_info, state, warnings].hash
     end
 
     # Builds the object from hash

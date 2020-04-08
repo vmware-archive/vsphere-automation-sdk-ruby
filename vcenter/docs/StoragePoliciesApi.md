@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::StoragePoliciesApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check_compatibility**](StoragePoliciesApi.md#check_compatibility) | **POST** /vcenter/storage/policies/{policy}?action&#x3D;check-compatibility | Returns datastore compatibility summary about a specific storage policy.
-[**list**](StoragePoliciesApi.md#list) | **GET** /vcenter/storage/policies | Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
+[**check_compatibility**](StoragePoliciesApi.md#check_compatibility) | **POST** /rest/vcenter/storage/policies/{policy}?action&#x3D;check-compatibility | Returns datastore compatibility summary about a specific storage policy.
+[**list**](StoragePoliciesApi.md#list) | **GET** /rest/vcenter/storage/policies | Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
 
 
 # **check_compatibility**
-> VcenterStoragePoliciesCheckCompatibilityResult check_compatibility(policy, request_body)
+> VcenterStoragePoliciesCheckCompatibilityResp check_compatibility(policy, request_body)
 
 Returns datastore compatibility summary about a specific storage policy.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterStoragePoliciesCheckCompatibilityResult**](VcenterStoragePoliciesCheckCompatibilityResult.md)
+[**VcenterStoragePoliciesCheckCompatibilityResp**](VcenterStoragePoliciesCheckCompatibilityResp.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterStoragePoliciesListResult list(opts)
+> VcenterStoragePoliciesListResp list(opts)
 
 Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterStoragePoliciesListResult**](VcenterStoragePoliciesListResult.md)
+[**VcenterStoragePoliciesListResp**](VcenterStoragePoliciesListResp.md)
 
 ### Authorization
 

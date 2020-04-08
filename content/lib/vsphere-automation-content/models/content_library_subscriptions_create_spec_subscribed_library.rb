@@ -11,40 +11,40 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibrarySubscriptionsCreateSpecSubscribedLibrary
-    attr_accessor :target
+    attr_accessor :location
 
     attr_accessor :new_subscribed_library
+
+    attr_accessor :placement
 
     # Identifier of the existing subscribed library to associate with the subscription. Only the subscribed libraries for which {@link SubscriptionInfo#subscriptionUrl} property is set to the {@link PublishInfo#publishUrl} of the published library can be associated with the subscription.
     attr_accessor :subscribed_library
 
-    attr_accessor :location
+    attr_accessor :target
 
     attr_accessor :vcenter
-
-    attr_accessor :placement
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'target' => :'target',
-        :'new_subscribed_library' => :'new_subscribed_library',
-        :'subscribed_library' => :'subscribed_library',
         :'location' => :'location',
-        :'vcenter' => :'vcenter',
-        :'placement' => :'placement'
+        :'new_subscribed_library' => :'new_subscribed_library',
+        :'placement' => :'placement',
+        :'subscribed_library' => :'subscribed_library',
+        :'target' => :'target',
+        :'vcenter' => :'vcenter'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'target' => :'ContentLibrarySubscriptionsCreateSpecSubscribedLibraryTarget',
-        :'new_subscribed_library' => :'ContentLibrarySubscriptionsCreateSpecNewSubscribedLibrary',
-        :'subscribed_library' => :'String',
         :'location' => :'ContentLibrarySubscriptionsLocation',
-        :'vcenter' => :'ContentLibrarySubscriptionsCreateSpecVcenter',
-        :'placement' => :'ContentLibrarySubscriptionsCreateSpecPlacement'
+        :'new_subscribed_library' => :'ContentLibrarySubscriptionsCreateSpecNewSubscribedLibrary',
+        :'placement' => :'ContentLibrarySubscriptionsCreateSpecPlacement',
+        :'subscribed_library' => :'String',
+        :'target' => :'ContentLibrarySubscriptionsCreateSpecSubscribedLibraryTarget',
+        :'vcenter' => :'ContentLibrarySubscriptionsCreateSpecVcenter'
       }
     end
 
@@ -56,28 +56,28 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'target')
-        self.target = attributes[:'target']
+      if attributes.has_key?(:'location')
+        self.location = attributes[:'location']
       end
 
       if attributes.has_key?(:'new_subscribed_library')
         self.new_subscribed_library = attributes[:'new_subscribed_library']
       end
 
+      if attributes.has_key?(:'placement')
+        self.placement = attributes[:'placement']
+      end
+
       if attributes.has_key?(:'subscribed_library')
         self.subscribed_library = attributes[:'subscribed_library']
       end
 
-      if attributes.has_key?(:'location')
-        self.location = attributes[:'location']
+      if attributes.has_key?(:'target')
+        self.target = attributes[:'target']
       end
 
       if attributes.has_key?(:'vcenter')
         self.vcenter = attributes[:'vcenter']
-      end
-
-      if attributes.has_key?(:'placement')
-        self.placement = attributes[:'placement']
       end
     end
 
@@ -85,12 +85,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @target.nil?
-        invalid_properties.push('invalid value for "target", target cannot be nil.')
-      end
-
       if @location.nil?
         invalid_properties.push('invalid value for "location", location cannot be nil.')
+      end
+
+      if @target.nil?
+        invalid_properties.push('invalid value for "target", target cannot be nil.')
       end
 
       invalid_properties
@@ -99,8 +99,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @target.nil?
       return false if @location.nil?
+      return false if @target.nil?
       true
     end
 
@@ -109,12 +109,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          target == o.target &&
-          new_subscribed_library == o.new_subscribed_library &&
-          subscribed_library == o.subscribed_library &&
           location == o.location &&
-          vcenter == o.vcenter &&
-          placement == o.placement
+          new_subscribed_library == o.new_subscribed_library &&
+          placement == o.placement &&
+          subscribed_library == o.subscribed_library &&
+          target == o.target &&
+          vcenter == o.vcenter
     end
 
     # @see the `==` method
@@ -126,7 +126,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [target, new_subscribed_library, subscribed_library, location, vcenter, placement].hash
+      [location, new_subscribed_library, placement, subscribed_library, target, vcenter].hash
     end
 
     # Builds the object from hash

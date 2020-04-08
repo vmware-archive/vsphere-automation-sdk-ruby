@@ -1,13 +1,13 @@
 # VSphereAutomation::Appliance::ShutdownApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](ShutdownApi.md#cancel) | **POST** /appliance/shutdown/cancel | Cancel pending shutdown action.
-[**get**](ShutdownApi.md#get) | **GET** /appliance/shutdown | Get details about the pending shutdown action.
-[**poweroff**](ShutdownApi.md#poweroff) | **POST** /appliance/shutdown/poweroff | Power off the appliance.
-[**reboot**](ShutdownApi.md#reboot) | **POST** /appliance/shutdown/reboot | Reboot the appliance.
+[**cancel**](ShutdownApi.md#cancel) | **POST** /rest/appliance/shutdown/cancel | Cancel pending shutdown action.
+[**get**](ShutdownApi.md#get) | **GET** /rest/appliance/shutdown | Get details about the pending shutdown action.
+[**poweroff**](ShutdownApi.md#poweroff) | **POST** /rest/appliance/shutdown/poweroff | Power off the appliance.
+[**reboot**](ShutdownApi.md#reboot) | **POST** /rest/appliance/shutdown/reboot | Reboot the appliance.
 
 
 # **cancel**
@@ -56,7 +56,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceShutdownResult get
+> ApplianceShutdownResp get
 
 Get details about the pending shutdown action.
 
@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceShutdownResult**](ApplianceShutdownResult.md)
+[**ApplianceShutdownResp**](ApplianceShutdownResp.md)
 
 ### Authorization
 

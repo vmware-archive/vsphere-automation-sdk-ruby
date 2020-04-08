@@ -28,13 +28,13 @@ describe 'ContentLibraryItemTransferEndpoint' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibraryItemTransferEndpoint)
     end
   end
-  describe 'test attribute "uri"' do
+  describe 'test attribute "ssl_certificate_thumbprint"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "ssl_certificate_thumbprint"' do
+  describe 'test attribute "uri"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

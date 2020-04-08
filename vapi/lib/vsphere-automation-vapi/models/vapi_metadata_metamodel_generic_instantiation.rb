@@ -11,9 +11,9 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelGenericInstantiation
-    attr_accessor :generic_type
-
     attr_accessor :element_type
+
+    attr_accessor :generic_type
 
     attr_accessor :map_key_type
 
@@ -22,8 +22,8 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'generic_type' => :'generic_type',
         :'element_type' => :'element_type',
+        :'generic_type' => :'generic_type',
         :'map_key_type' => :'map_key_type',
         :'map_value_type' => :'map_value_type'
       }
@@ -32,8 +32,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'generic_type' => :'VapiMetadataMetamodelGenericInstantiationGenericType',
         :'element_type' => :'VapiMetadataMetamodelType',
+        :'generic_type' => :'VapiMetadataMetamodelGenericInstantiationGenericType',
         :'map_key_type' => :'VapiMetadataMetamodelType',
         :'map_value_type' => :'VapiMetadataMetamodelType'
       }
@@ -47,12 +47,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'generic_type')
-        self.generic_type = attributes[:'generic_type']
-      end
-
       if attributes.has_key?(:'element_type')
         self.element_type = attributes[:'element_type']
+      end
+
+      if attributes.has_key?(:'generic_type')
+        self.generic_type = attributes[:'generic_type']
       end
 
       if attributes.has_key?(:'map_key_type')
@@ -87,8 +87,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          generic_type == o.generic_type &&
           element_type == o.element_type &&
+          generic_type == o.generic_type &&
           map_key_type == o.map_key_type &&
           map_value_type == o.map_value_type
     end
@@ -102,7 +102,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [generic_type, element_type, map_key_type, map_value_type].hash
+      [element_type, generic_type, map_key_type, map_value_type].hash
     end
 
     # Builds the object from hash

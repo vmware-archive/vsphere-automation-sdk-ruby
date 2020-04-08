@@ -11,8 +11,14 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDatastoreFilterSpec
+    # Datacenters that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
+    attr_accessor :datacenters
+
     # Identifiers of datastores that can match the filter. If unset or empty, datastores with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datastore. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datastore.
     attr_accessor :datastores
+
+    # Folders that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
+    attr_accessor :folders
 
     # Names that datastores must have to match the filter (see Datastore.Info.name). If unset or empty, datastores with any name match the filter.
     attr_accessor :names
@@ -20,31 +26,25 @@ module VSphereAutomation
     # Types that datastores must have to match the filter (see Datastore.Summary.type). If unset or empty, datastores with any type match the filter.
     attr_accessor :types
 
-    # Folders that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
-    attr_accessor :folders
-
-    # Datacenters that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    attr_accessor :datacenters
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'datacenters' => :'datacenters',
         :'datastores' => :'datastores',
-        :'names' => :'names',
-        :'types' => :'types',
         :'folders' => :'folders',
-        :'datacenters' => :'datacenters'
+        :'names' => :'names',
+        :'types' => :'types'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'datacenters' => :'Array<String>',
         :'datastores' => :'Array<String>',
-        :'names' => :'Array<String>',
-        :'types' => :'Array<VcenterDatastoreType>',
         :'folders' => :'Array<String>',
-        :'datacenters' => :'Array<String>'
+        :'names' => :'Array<String>',
+        :'types' => :'Array<VcenterDatastoreType>'
       }
     end
 
@@ -56,9 +56,21 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'datacenters')
+        if (value = attributes[:'datacenters']).is_a?(Array)
+          self.datacenters = value
+        end
+      end
+
       if attributes.has_key?(:'datastores')
         if (value = attributes[:'datastores']).is_a?(Array)
           self.datastores = value
+        end
+      end
+
+      if attributes.has_key?(:'folders')
+        if (value = attributes[:'folders']).is_a?(Array)
+          self.folders = value
         end
       end
 
@@ -71,18 +83,6 @@ module VSphereAutomation
       if attributes.has_key?(:'types')
         if (value = attributes[:'types']).is_a?(Array)
           self.types = value
-        end
-      end
-
-      if attributes.has_key?(:'folders')
-        if (value = attributes[:'folders']).is_a?(Array)
-          self.folders = value
-        end
-      end
-
-      if attributes.has_key?(:'datacenters')
-        if (value = attributes[:'datacenters']).is_a?(Array)
-          self.datacenters = value
         end
       end
     end
@@ -105,11 +105,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          datacenters == o.datacenters &&
           datastores == o.datastores &&
-          names == o.names &&
-          types == o.types &&
           folders == o.folders &&
-          datacenters == o.datacenters
+          names == o.names &&
+          types == o.types
     end
 
     # @see the `==` method
@@ -121,7 +121,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [datastores, names, types, folders, datacenters].hash
+      [datacenters, datastores, folders, names, types].hash
     end
 
     # Builds the object from hash

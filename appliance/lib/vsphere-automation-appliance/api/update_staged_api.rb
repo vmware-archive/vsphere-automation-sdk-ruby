@@ -33,7 +33,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: UpdateStagedApi.delete ...'
       end
       # resource path
-      local_var_path = '/appliance/update/staged'
+      local_var_path = '/rest/appliance/update/staged'
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
     end
     # Gets the current status of the staged update
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceUpdateStagedResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
+    # @return [ApplianceUpdateStagedResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -71,13 +71,13 @@ module VSphereAutomation
     # Gets the current status of the staged update
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceUpdateStagedResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceUpdateStagedResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdateStagedApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/update/staged'
+      local_var_path = '/rest/appliance/update/staged'
 
       # query parameters
       query_params = {}
@@ -100,7 +100,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceUpdateStagedResult',
+	  '200' => 'Appliance::ApplianceUpdateStagedResp',
 	  '400' => 'Appliance::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'Appliance::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Appliance::VapiStdErrorsUnauthorizedError',

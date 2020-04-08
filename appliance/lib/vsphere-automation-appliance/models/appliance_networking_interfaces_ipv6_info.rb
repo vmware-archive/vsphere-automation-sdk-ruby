@@ -11,40 +11,40 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesIpv6Info
-    # DHCP is on.
-    attr_accessor :dhcp
+    # List of addresses with their origins and statuses.
+    attr_accessor :addresses
 
     # Stateless Address Autoconfiguration (SLAAC) is on.
     attr_accessor :autoconf
 
-    # List of addresses with their origins and statuses.
-    attr_accessor :addresses
+    # Is NIC configurable or not.
+    attr_accessor :configurable
 
     # The default gateway for static IP address assignment. This configures the global IPv6 default gateway on the appliance with the specified gateway address and interface. This gateway replaces the existing default gateway configured on the appliance. However, if the gateway address is link-local, then it is added for that interface. This does not support configuration of multiple global default gateways through different interfaces.
     attr_accessor :default_gateway
 
-    # Is NIC configurable or not.
-    attr_accessor :configurable
+    # DHCP is on.
+    attr_accessor :dhcp
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'dhcp' => :'dhcp',
-        :'autoconf' => :'autoconf',
         :'addresses' => :'addresses',
+        :'autoconf' => :'autoconf',
+        :'configurable' => :'configurable',
         :'default_gateway' => :'default_gateway',
-        :'configurable' => :'configurable'
+        :'dhcp' => :'dhcp'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'dhcp' => :'Boolean',
-        :'autoconf' => :'Boolean',
         :'addresses' => :'Array<ApplianceNetworkingInterfacesIpv6AddressInfo>',
+        :'autoconf' => :'Boolean',
+        :'configurable' => :'Boolean',
         :'default_gateway' => :'String',
-        :'configurable' => :'Boolean'
+        :'dhcp' => :'Boolean'
       }
     end
 
@@ -56,26 +56,26 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'dhcp')
-        self.dhcp = attributes[:'dhcp']
-      end
-
-      if attributes.has_key?(:'autoconf')
-        self.autoconf = attributes[:'autoconf']
-      end
-
       if attributes.has_key?(:'addresses')
         if (value = attributes[:'addresses']).is_a?(Array)
           self.addresses = value
         end
       end
 
-      if attributes.has_key?(:'default_gateway')
-        self.default_gateway = attributes[:'default_gateway']
+      if attributes.has_key?(:'autoconf')
+        self.autoconf = attributes[:'autoconf']
       end
 
       if attributes.has_key?(:'configurable')
         self.configurable = attributes[:'configurable']
+      end
+
+      if attributes.has_key?(:'default_gateway')
+        self.default_gateway = attributes[:'default_gateway']
+      end
+
+      if attributes.has_key?(:'dhcp')
+        self.dhcp = attributes[:'dhcp']
       end
     end
 
@@ -83,24 +83,24 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @dhcp.nil?
-        invalid_properties.push('invalid value for "dhcp", dhcp cannot be nil.')
+      if @addresses.nil?
+        invalid_properties.push('invalid value for "addresses", addresses cannot be nil.')
       end
 
       if @autoconf.nil?
         invalid_properties.push('invalid value for "autoconf", autoconf cannot be nil.')
       end
 
-      if @addresses.nil?
-        invalid_properties.push('invalid value for "addresses", addresses cannot be nil.')
+      if @configurable.nil?
+        invalid_properties.push('invalid value for "configurable", configurable cannot be nil.')
       end
 
       if @default_gateway.nil?
         invalid_properties.push('invalid value for "default_gateway", default_gateway cannot be nil.')
       end
 
-      if @configurable.nil?
-        invalid_properties.push('invalid value for "configurable", configurable cannot be nil.')
+      if @dhcp.nil?
+        invalid_properties.push('invalid value for "dhcp", dhcp cannot be nil.')
       end
 
       invalid_properties
@@ -109,11 +109,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @dhcp.nil?
-      return false if @autoconf.nil?
       return false if @addresses.nil?
-      return false if @default_gateway.nil?
+      return false if @autoconf.nil?
       return false if @configurable.nil?
+      return false if @default_gateway.nil?
+      return false if @dhcp.nil?
       true
     end
 
@@ -122,11 +122,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          dhcp == o.dhcp &&
-          autoconf == o.autoconf &&
           addresses == o.addresses &&
+          autoconf == o.autoconf &&
+          configurable == o.configurable &&
           default_gateway == o.default_gateway &&
-          configurable == o.configurable
+          dhcp == o.dhcp
     end
 
     # @see the `==` method
@@ -138,7 +138,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [dhcp, autoconf, addresses, default_gateway, configurable].hash
+      [addresses, autoconf, configurable, default_gateway, dhcp].hash
     end
 
     # Builds the object from hash

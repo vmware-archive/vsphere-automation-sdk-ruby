@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareFloppyBackingInfo
-    attr_accessor :type
-
-    # Path of the image file backing the virtual floppy drive. This field is optional and it is only relevant when the value of Floppy.BackingInfo.type is IMAGE_FILE.
-    attr_accessor :image_file
+    # Flag indicating whether the virtual floppy drive is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Floppy.BackingInfo.type is HOST_DEVICE.
+    attr_accessor :auto_detect
 
     # Name of the host device backing the virtual floppy drive.    This field will be unset if Floppy.BackingInfo.auto-detect is true and the virtual floppy drive is not connected or no suitable device is available on the host.
     attr_accessor :host_device
 
-    # Flag indicating whether the virtual floppy drive is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Floppy.BackingInfo.type is HOST_DEVICE.
-    attr_accessor :auto_detect
+    # Path of the image file backing the virtual floppy drive. This field is optional and it is only relevant when the value of Floppy.BackingInfo.type is IMAGE_FILE.
+    attr_accessor :image_file
+
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'image_file' => :'image_file',
+        :'auto_detect' => :'auto_detect',
         :'host_device' => :'host_device',
-        :'auto_detect' => :'auto_detect'
+        :'image_file' => :'image_file',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmHardwareFloppyBackingType',
-        :'image_file' => :'String',
+        :'auto_detect' => :'Boolean',
         :'host_device' => :'String',
-        :'auto_detect' => :'Boolean'
+        :'image_file' => :'String',
+        :'type' => :'VcenterVmHardwareFloppyBackingType'
       }
     end
 
@@ -50,20 +50,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'image_file')
-        self.image_file = attributes[:'image_file']
+      if attributes.has_key?(:'auto_detect')
+        self.auto_detect = attributes[:'auto_detect']
       end
 
       if attributes.has_key?(:'host_device')
         self.host_device = attributes[:'host_device']
       end
 
-      if attributes.has_key?(:'auto_detect')
-        self.auto_detect = attributes[:'auto_detect']
+      if attributes.has_key?(:'image_file')
+        self.image_file = attributes[:'image_file']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -90,10 +90,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          image_file == o.image_file &&
+          auto_detect == o.auto_detect &&
           host_device == o.host_device &&
-          auto_detect == o.auto_detect
+          image_file == o.image_file &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -105,7 +105,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, image_file, host_device, auto_detect].hash
+      [auto_detect, host_device, image_file, type].hash
     end
 
     # Builds the object from hash

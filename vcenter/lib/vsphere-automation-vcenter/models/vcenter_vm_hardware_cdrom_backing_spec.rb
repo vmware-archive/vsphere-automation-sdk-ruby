@@ -11,33 +11,33 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareCdromBackingSpec
-    attr_accessor :type
-
-    # Path of the image file that should be used as the virtual CD-ROM device backing. This field is optional and it is only relevant when the value of Cdrom.BackingSpec.type is ISO_FILE.
-    attr_accessor :iso_file
+    attr_accessor :device_access_type
 
     # Name of the device that should be used as the virtual CD-ROM device backing. If unset, the virtual CD-ROM device will be configured to automatically detect a suitable host device.
     attr_accessor :host_device
 
-    attr_accessor :device_access_type
+    # Path of the image file that should be used as the virtual CD-ROM device backing. This field is optional and it is only relevant when the value of Cdrom.BackingSpec.type is ISO_FILE.
+    attr_accessor :iso_file
+
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'iso_file' => :'iso_file',
+        :'device_access_type' => :'device_access_type',
         :'host_device' => :'host_device',
-        :'device_access_type' => :'device_access_type'
+        :'iso_file' => :'iso_file',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmHardwareCdromBackingType',
-        :'iso_file' => :'String',
+        :'device_access_type' => :'VcenterVmHardwareCdromDeviceAccessType',
         :'host_device' => :'String',
-        :'device_access_type' => :'VcenterVmHardwareCdromDeviceAccessType'
+        :'iso_file' => :'String',
+        :'type' => :'VcenterVmHardwareCdromBackingType'
       }
     end
 
@@ -49,20 +49,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'iso_file')
-        self.iso_file = attributes[:'iso_file']
+      if attributes.has_key?(:'device_access_type')
+        self.device_access_type = attributes[:'device_access_type']
       end
 
       if attributes.has_key?(:'host_device')
         self.host_device = attributes[:'host_device']
       end
 
-      if attributes.has_key?(:'device_access_type')
-        self.device_access_type = attributes[:'device_access_type']
+      if attributes.has_key?(:'iso_file')
+        self.iso_file = attributes[:'iso_file']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -89,10 +89,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          iso_file == o.iso_file &&
+          device_access_type == o.device_access_type &&
           host_device == o.host_device &&
-          device_access_type == o.device_access_type
+          iso_file == o.iso_file &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -104,7 +104,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, iso_file, host_device, device_access_type].hash
+      [device_access_type, host_device, iso_file, type].hash
     end
 
     # Builds the object from hash

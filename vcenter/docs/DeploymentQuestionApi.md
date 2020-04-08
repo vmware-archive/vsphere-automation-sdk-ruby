@@ -1,11 +1,11 @@
 # VSphereAutomation::VCenter::DeploymentQuestionApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**answer**](DeploymentQuestionApi.md#answer) | **POST** /vcenter/deployment/question?action&#x3D;answer | Supply answer to the raised question.
-[**get**](DeploymentQuestionApi.md#get) | **GET** /vcenter/deployment/question | Get the question that was raised during the configuration.
+[**answer**](DeploymentQuestionApi.md#answer) | **POST** /rest/vcenter/deployment/question?action&#x3D;answer | Supply answer to the raised question.
+[**get**](DeploymentQuestionApi.md#get) | **GET** /rest/vcenter/deployment/question | Get the question that was raised during the configuration.
 
 
 # **answer**
@@ -58,7 +58,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterDeploymentQuestionResult get
+> VcenterDeploymentQuestionResp get
 
 Get the question that was raised during the configuration.
 
@@ -90,7 +90,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterDeploymentQuestionResult**](VcenterDeploymentQuestionResult.md)
+[**VcenterDeploymentQuestionResp**](VcenterDeploymentQuestionResp.md)
 
 ### Authorization
 

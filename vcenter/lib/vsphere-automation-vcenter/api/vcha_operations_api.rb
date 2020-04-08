@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Retrieves the current active and disabled operations of a VCHA cluster.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVchaOperationsResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
+    # @return [VcenterVchaOperationsResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Retrieves the current active and disabled operations of a VCHA cluster.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVchaOperationsResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVchaOperationsResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaOperationsApi.get ...'
       end
       # resource path
-      local_var_path = '/vcenter/vcha/operations'
+      local_var_path = '/rest/vcenter/vcha/operations'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaOperationsResult',
+	  '200' => 'VCenter::VcenterVchaOperationsResp',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	})

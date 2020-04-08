@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsDomainsApi.add"
       end
       # resource path
-      local_var_path = '/appliance/networking/dns/domains'
+      local_var_path = '/rest/appliance/networking/dns/domains'
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
     end
     # Get list of DNS search domains.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingDnsDomainsListResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingDnsDomainsListResp|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -79,13 +79,13 @@ module VSphereAutomation
     # Get list of DNS search domains.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingDnsDomainsListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingDnsDomainsListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsDomainsApi.list ...'
       end
       # resource path
-      local_var_path = '/appliance/networking/dns/domains'
+      local_var_path = '/rest/appliance/networking/dns/domains'
 
       # query parameters
       query_params = {}
@@ -108,7 +108,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingDnsDomainsListResult',
+	  '200' => 'Appliance::ApplianceNetworkingDnsDomainsListResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -139,7 +139,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsDomainsApi.set"
       end
       # resource path
-      local_var_path = '/appliance/networking/dns/domains'
+      local_var_path = '/rest/appliance/networking/dns/domains'
 
       # query parameters
       query_params = {}

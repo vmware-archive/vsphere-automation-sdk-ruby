@@ -11,10 +11,8 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemStorageInfo
-    attr_accessor :storage_backing
-
-    # URIs that identify the file on the storage backing. <p> These URIs may be specific to the backing and may need interpretation by the client. A client that understands a URI scheme in this list may use that URI to directly access the file on the storage backing. This can provide high-performance support for file manipulation.
-    attr_accessor :storage_uris
+    # Indicates whether the file is on disk or not.
+    attr_accessor :cached
 
     attr_accessor :checksum_info
 
@@ -24,8 +22,13 @@ module VSphereAutomation
     # The file size, in bytes. The file size is the storage used and not the uploaded or provisioned size. For example, when uploading a disk to a datastore, the amount of storage that the disk consumes may be different from the disk file size. When the file is not cached, the size is 0.
     attr_accessor :size
 
-    # Indicates whether the file is on disk or not.
-    attr_accessor :cached
+    attr_accessor :storage_backing
+
+    # Identifier of the storage policy associated with the file. Warning: This attribute is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented.
+    attr_accessor :storage_policy_id
+
+    # URIs that identify the file on the storage backing. <p> These URIs may be specific to the backing and may need interpretation by the client. A client that understands a URI scheme in this list may use that URI to directly access the file on the storage backing. This can provide high-performance support for file manipulation.
+    attr_accessor :storage_uris
 
     # The version of this file; incremented when a new copy of the file is uploaded.
     attr_accessor :version
@@ -33,12 +36,13 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'storage_backing' => :'storage_backing',
-        :'storage_uris' => :'storage_uris',
+        :'cached' => :'cached',
         :'checksum_info' => :'checksum_info',
         :'name' => :'name',
         :'size' => :'size',
-        :'cached' => :'cached',
+        :'storage_backing' => :'storage_backing',
+        :'storage_policy_id' => :'storage_policy_id',
+        :'storage_uris' => :'storage_uris',
         :'version' => :'version'
       }
     end
@@ -46,12 +50,13 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'storage_backing' => :'ContentLibraryStorageBacking',
-        :'storage_uris' => :'Array<String>',
+        :'cached' => :'Boolean',
         :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
         :'name' => :'String',
         :'size' => :'Integer',
-        :'cached' => :'Boolean',
+        :'storage_backing' => :'ContentLibraryStorageBacking',
+        :'storage_policy_id' => :'String',
+        :'storage_uris' => :'Array<String>',
         :'version' => :'String'
       }
     end
@@ -64,14 +69,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'storage_backing')
-        self.storage_backing = attributes[:'storage_backing']
-      end
-
-      if attributes.has_key?(:'storage_uris')
-        if (value = attributes[:'storage_uris']).is_a?(Array)
-          self.storage_uris = value
-        end
+      if attributes.has_key?(:'cached')
+        self.cached = attributes[:'cached']
       end
 
       if attributes.has_key?(:'checksum_info')
@@ -86,8 +85,18 @@ module VSphereAutomation
         self.size = attributes[:'size']
       end
 
-      if attributes.has_key?(:'cached')
-        self.cached = attributes[:'cached']
+      if attributes.has_key?(:'storage_backing')
+        self.storage_backing = attributes[:'storage_backing']
+      end
+
+      if attributes.has_key?(:'storage_policy_id')
+        self.storage_policy_id = attributes[:'storage_policy_id']
+      end
+
+      if attributes.has_key?(:'storage_uris')
+        if (value = attributes[:'storage_uris']).is_a?(Array)
+          self.storage_uris = value
+        end
       end
 
       if attributes.has_key?(:'version')
@@ -99,12 +108,8 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @storage_backing.nil?
-        invalid_properties.push('invalid value for "storage_backing", storage_backing cannot be nil.')
-      end
-
-      if @storage_uris.nil?
-        invalid_properties.push('invalid value for "storage_uris", storage_uris cannot be nil.')
+      if @cached.nil?
+        invalid_properties.push('invalid value for "cached", cached cannot be nil.')
       end
 
       if @name.nil?
@@ -115,8 +120,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "size", size cannot be nil.')
       end
 
-      if @cached.nil?
-        invalid_properties.push('invalid value for "cached", cached cannot be nil.')
+      if @storage_backing.nil?
+        invalid_properties.push('invalid value for "storage_backing", storage_backing cannot be nil.')
+      end
+
+      if @storage_uris.nil?
+        invalid_properties.push('invalid value for "storage_uris", storage_uris cannot be nil.')
       end
 
       if @version.nil?
@@ -129,11 +138,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @storage_backing.nil?
-      return false if @storage_uris.nil?
+      return false if @cached.nil?
       return false if @name.nil?
       return false if @size.nil?
-      return false if @cached.nil?
+      return false if @storage_backing.nil?
+      return false if @storage_uris.nil?
       return false if @version.nil?
       true
     end
@@ -143,12 +152,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          storage_backing == o.storage_backing &&
-          storage_uris == o.storage_uris &&
+          cached == o.cached &&
           checksum_info == o.checksum_info &&
           name == o.name &&
           size == o.size &&
-          cached == o.cached &&
+          storage_backing == o.storage_backing &&
+          storage_policy_id == o.storage_policy_id &&
+          storage_uris == o.storage_uris &&
           version == o.version
     end
 
@@ -161,7 +171,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [storage_backing, storage_uris, checksum_info, name, size, cached, version].hash
+      [cached, checksum_info, name, size, storage_backing, storage_policy_id, storage_uris, version].hash
     end
 
     # Builds the object from hash

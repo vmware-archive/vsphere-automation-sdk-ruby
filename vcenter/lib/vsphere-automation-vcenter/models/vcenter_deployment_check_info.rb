@@ -11,23 +11,27 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentCheckInfo
-    attr_accessor :status
-
     attr_accessor :result
+
+    attr_accessor :source_info
+
+    attr_accessor :status
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'status' => :'status',
-        :'result' => :'result'
+        :'result' => :'result',
+        :'source_info' => :'source_info',
+        :'status' => :'status'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'status' => :'VcenterDeploymentCheckStatus',
-        :'result' => :'VcenterDeploymentNotifications'
+        :'result' => :'VcenterDeploymentNotifications',
+        :'source_info' => :'VcenterDeploymentSourceInfo',
+        :'status' => :'VcenterDeploymentCheckStatus'
       }
     end
 
@@ -39,12 +43,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
       if attributes.has_key?(:'result')
         self.result = attributes[:'result']
+      end
+
+      if attributes.has_key?(:'source_info')
+        self.source_info = attributes[:'source_info']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
     end
 
@@ -71,8 +79,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          status == o.status &&
-          result == o.result
+          result == o.result &&
+          source_info == o.source_info &&
+          status == o.status
     end
 
     # @see the `==` method
@@ -84,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [status, result].hash
+      [result, source_info, status].hash
     end
 
     # Builds the object from hash

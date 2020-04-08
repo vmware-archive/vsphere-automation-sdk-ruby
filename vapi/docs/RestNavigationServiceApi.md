@@ -1,16 +1,16 @@
 # VSphereAutomation::VAPI::RestNavigationServiceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](RestNavigationServiceApi.md#list) | **GET** /com/vmware/vapi/rest/navigation/service | Gets list of all vAPI REST {@link Service}s for a vAPI REST {@link Component}.
+[**list**](RestNavigationServiceApi.md#list) | **GET** /rest/com/vmware/vapi/rest/navigation/service | Gets list of all vAPI REST Services for a vAPI REST Component.
 
 
 # **list**
-> VapiRestNavigationServiceListResult list(component_id, opts)
+> VapiRestNavigationServiceListResp list(component_id, opts)
 
-Gets list of all vAPI REST {@link Service}s for a vAPI REST {@link Component}.
+Gets list of all vAPI REST Services for a vAPI REST Component.
 
 ### Example
 ```ruby
@@ -25,13 +25,13 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VAPI::RestNavigationServiceApi.new
-component_id = 'component_id_example' # String | Component identifier.
+component_id = 'component_id_example' # String | Component identifier. The parameter must be an identifier for the resource type: vapi.component.
 opts = {
-  base_url: 'base_url_example' # String | Base URL.
+  base_url: 'base_url_example' # String | Base URL. This parameter is used to produce absolute URLs. If the {param.name baseUrl} parameter is unset then this service will produce relative URLs.
 }
 
 begin
-  #Gets list of all vAPI REST {@link Service}s for a vAPI REST {@link Component}.
+  #Gets list of all vAPI REST Services for a vAPI REST Component.
   result = api_instance.list(component_id, opts)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -43,12 +43,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **component_id** | **String**| Component identifier. | 
- **base_url** | **String**| Base URL. | [optional] 
+ **component_id** | **String**| Component identifier. The parameter must be an identifier for the resource type: vapi.component. | 
+ **base_url** | **String**| Base URL. This parameter is used to produce absolute URLs. If the {param.name baseUrl} parameter is unset then this service will produce relative URLs. | [optional] 
 
 ### Return type
 
-[**VapiRestNavigationServiceListResult**](VapiRestNavigationServiceListResult.md)
+[**VapiRestNavigationServiceListResp**](VapiRestNavigationServiceListResp.md)
 
 ### Authorization
 

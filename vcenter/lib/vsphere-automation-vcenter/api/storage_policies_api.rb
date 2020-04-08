@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param policy The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterStoragePoliciesCheckCompatibilityResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterStoragePoliciesCheckCompatibilityResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def check_compatibility(policy, request_body, opts = {})
       data, _status_code, _headers = check_compatibility_with_http_info(policy, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param policy The storage policy identifier The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterStoragePoliciesCheckCompatibilityResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterStoragePoliciesCheckCompatibilityResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def check_compatibility_with_http_info(policy, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesApi.check_compatibility ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling StoragePoliciesApi.check_compatibility"
       end
       # resource path
-      local_var_path = '/vcenter/storage/policies/{policy}?action=check-compatibility'.sub('{' + 'policy' + '}', policy.to_s)
+      local_var_path = '/rest/vcenter/storage/policies/{policy}?action=check-compatibility'.sub('{' + 'policy' + '}', policy.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterStoragePoliciesCheckCompatibilityResult',
+	  '200' => 'VCenter::VcenterStoragePoliciesCheckCompatibilityResp',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -85,7 +85,7 @@ module VSphereAutomation
     # Returns information about at most 1024 visible (subject to permission checks) storage solicies availabe in vCenter. These storage policies can be used for provisioning virtual machines or disks.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_policies Identifiers of storage policies that can match the filter. If unset or empty, storage policies with any identifiers match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.StoragePolicy. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.StoragePolicy.
-    # @return [VcenterStoragePoliciesListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterStoragePoliciesListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -95,13 +95,13 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_policies Identifiers of storage policies that can match the filter. If unset or empty, storage policies with any identifiers match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.StoragePolicy. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.StoragePolicy.
-    # @return [Array<(VcenterStoragePoliciesListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterStoragePoliciesListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesApi.list ...'
       end
       # resource path
-      local_var_path = '/vcenter/storage/policies'
+      local_var_path = '/rest/vcenter/storage/policies'
 
       # query parameters
       query_params = {}
@@ -125,7 +125,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterStoragePoliciesListResult',
+	  '200' => 'VCenter::VcenterStoragePoliciesListResp',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

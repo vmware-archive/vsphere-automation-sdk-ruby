@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::DatastoreDefaultPolicyApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](DatastoreDefaultPolicyApi.md#get) | **GET** /vcenter/datastore/{datastore}/default-policy | Returns the identifier of the current default storage policy associated with the specified datastore.
+[**get**](DatastoreDefaultPolicyApi.md#get) | **GET** /rest/vcenter/datastore/{datastore}/default-policy | Returns the identifier of the current default storage policy associated with the specified datastore.
 
 
 # **get**
-> VcenterDatastoreDefaultPolicyResult get(datastore)
+> VcenterDatastoreDefaultPolicyResp get(datastore)
 
 Returns the identifier of the current default storage policy associated with the specified datastore.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDatastoreDefaultPolicyResult**](VcenterDatastoreDefaultPolicyResult.md)
+[**VcenterDatastoreDefaultPolicyResp**](VcenterDatastoreDefaultPolicyResp.md)
 
 ### Authorization
 

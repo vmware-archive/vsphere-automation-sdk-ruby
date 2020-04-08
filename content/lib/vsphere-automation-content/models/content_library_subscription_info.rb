@@ -22,6 +22,8 @@ module VSphereAutomation
     # The password to use when authenticating. <p> The password must be set when using a password-based authentication method; empty strings are not allowed.
     attr_accessor :password
 
+    attr_accessor :source_info
+
     # An optional SHA-1 hash of the SSL certificate for the remote endpoint. <p> If this value is defined the SSL certificate will be verified by comparing it to the SSL thumbprint. The SSL certificate must verify against the thumbprint. When specified, the standard certificate chain validation behavior is not used. The certificate chain is validated normally if this value is {@term unset}.
     attr_accessor :ssl_thumbprint
 
@@ -31,8 +33,6 @@ module VSphereAutomation
     # The username to use when authenticating. <p> The username must be set when using a password-based authentication method. Empty strings are allowed for usernames.
     attr_accessor :user_name
 
-    attr_accessor :source_info
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,10 +40,10 @@ module VSphereAutomation
         :'automatic_sync_enabled' => :'automatic_sync_enabled',
         :'on_demand' => :'on_demand',
         :'password' => :'password',
+        :'source_info' => :'source_info',
         :'ssl_thumbprint' => :'ssl_thumbprint',
         :'subscription_url' => :'subscription_url',
-        :'user_name' => :'user_name',
-        :'source_info' => :'source_info'
+        :'user_name' => :'user_name'
       }
     end
 
@@ -54,10 +54,10 @@ module VSphereAutomation
         :'automatic_sync_enabled' => :'Boolean',
         :'on_demand' => :'Boolean',
         :'password' => :'String',
+        :'source_info' => :'ContentLibrarySourceInfo',
         :'ssl_thumbprint' => :'String',
         :'subscription_url' => :'String',
-        :'user_name' => :'String',
-        :'source_info' => :'ContentLibrarySourceInfo'
+        :'user_name' => :'String'
       }
     end
 
@@ -85,6 +85,10 @@ module VSphereAutomation
         self.password = attributes[:'password']
       end
 
+      if attributes.has_key?(:'source_info')
+        self.source_info = attributes[:'source_info']
+      end
+
       if attributes.has_key?(:'ssl_thumbprint')
         self.ssl_thumbprint = attributes[:'ssl_thumbprint']
       end
@@ -95,10 +99,6 @@ module VSphereAutomation
 
       if attributes.has_key?(:'user_name')
         self.user_name = attributes[:'user_name']
-      end
-
-      if attributes.has_key?(:'source_info')
-        self.source_info = attributes[:'source_info']
       end
     end
 
@@ -124,10 +124,10 @@ module VSphereAutomation
           automatic_sync_enabled == o.automatic_sync_enabled &&
           on_demand == o.on_demand &&
           password == o.password &&
+          source_info == o.source_info &&
           ssl_thumbprint == o.ssl_thumbprint &&
           subscription_url == o.subscription_url &&
-          user_name == o.user_name &&
-          source_info == o.source_info
+          user_name == o.user_name
     end
 
     # @see the `==` method
@@ -139,7 +139,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authentication_method, automatic_sync_enabled, on_demand, password, ssl_thumbprint, subscription_url, user_name, source_info].hash
+      [authentication_method, automatic_sync_enabled, on_demand, password, source_info, ssl_thumbprint, subscription_url, user_name].hash
     end
 
     # Builds the object from hash

@@ -1,19 +1,126 @@
 # VSphereAutomation::VCenter::VMApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](VMApi.md#create) | **POST** /vcenter/vm | Creates a virtual machine.
-[**delete**](VMApi.md#delete) | **DELETE** /vcenter/vm/{vm} | Deletes a virtual machine.
-[**get**](VMApi.md#get) | **GET** /vcenter/vm/{vm} | Returns information about a virtual machine.
-[**list**](VMApi.md#list) | **GET** /vcenter/vm | Returns information about at most 1000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
+[**clone**](VMApi.md#clone) | **POST** /rest/vcenter/vm?action&#x3D;clone | Creates a virtual machine from an existing virtual machine.    if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.DiskCloneSpec.datastore requires Datastore.AllocateSpace.    -  The resource Datastore referenced by the attribute VM.ClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Folder referenced by the attribute VM.ClonePlacementSpec.folder requires VirtualMachine.Inventory.CreateFromExisting.    -  The resource ResourcePool referenced by the attribute VM.ClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource VirtualMachine referenced by the attribute VM.CloneSpec.source requires VirtualMachine.Provisioning.Clone.  
+[**clone_task**](VMApi.md#clone_task) | **POST** /rest/vcenter/vm?action&#x3D;clone&amp;vmw-task&#x3D;true | Creates a virtual machine from an existing virtual machine.    if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.DiskCloneSpec.datastore requires Datastore.AllocateSpace.    -  The resource Datastore referenced by the attribute VM.ClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Folder referenced by the attribute VM.ClonePlacementSpec.folder requires VirtualMachine.Inventory.CreateFromExisting.    -  The resource ResourcePool referenced by the attribute VM.ClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource VirtualMachine referenced by the attribute VM.CloneSpec.source requires VirtualMachine.Provisioning.Clone.  
+[**create**](VMApi.md#create) | **POST** /rest/vcenter/vm | Creates a virtual machine. if you do not have all of the privileges described as follows:     -  The resource Folder referenced by the attribute VM.InventoryPlacementSpec.folder requires VirtualMachine.Inventory.Create.    -  The resource ResourcePool referenced by the attribute VM.ComputePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource Datastore referenced by the attribute VM.StoragePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Network referenced by the attribute Ethernet.BackingSpec.network requires Network.Assign.  
+[**delete**](VMApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm} | Deletes a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Inventory.Delete.  
+[**get**](VMApi.md#get) | **GET** /rest/vcenter/vm/{vm} | Returns information about a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
+[**instant_clone**](VMApi.md#instant_clone) | **POST** /rest/vcenter/vm?action&#x3D;instant-clone | Create an instant clone of an existing virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the attribute VM.InstantCloneSpec.source requires VirtualMachine.Provisioning.Clone and VirtualMachine.Inventory.CreateFromExisting.    -  The resource Folder referenced by the attribute VM.InstantClonePlacementSpec.folder requires VirtualMachine.Interact.PowerOn.    -  The resource ResourcePool referenced by the attribute VM.InstantClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource Datastore referenced by the attribute VM.InstantClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Network referenced by the attribute Ethernet.BackingSpec.network requires Network.Assign.  
+[**list**](VMApi.md#list) | **GET** /rest/vcenter/vm | Returns information about at most 4000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
+[**register**](VMApi.md#register) | **POST** /rest/vcenter/vm?action&#x3D;register | Creates a virtual machine from existing virtual machine files on storage. if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.RegisterSpec.datastore requires System.Read.    -  The resource Folder referenced by the attribute VM.InventoryPlacementSpec.folder requires VirtualMachine.Inventory.Register.    -  The resource ResourcePool referenced by the attribute VM.ComputePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+[**relocate**](VMApi.md#relocate) | **POST** /rest/vcenter/vm/{vm}?action&#x3D;relocate | Relocates a virtual machine based on the specification. The parts of the virtual machine that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the virtual machine and disks.    if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires Resource.ColdMigrate.    -  The resource ResourcePool referenced by the attribute VM.RelocatePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+[**relocate_task**](VMApi.md#relocate_task) | **POST** /rest/vcenter/vm/{vm}?action&#x3D;relocate&amp;vmw-task&#x3D;true | Relocates a virtual machine based on the specification. The parts of the virtual machine that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the virtual machine and disks.    if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires Resource.ColdMigrate.    -  The resource ResourcePool referenced by the attribute VM.RelocatePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+[**unregister**](VMApi.md#unregister) | **POST** /rest/vcenter/vm/{vm}?action&#x3D;unregister | Removes the virtual machine corresponding to vm from the vCenter inventory without removing any of the virtual machine&#39;s files from storage. All high-level information stored with the management server (ESXi or vCenter) is removed, including information such as statistics, resource pool association, permissions, and alarms. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Inventory.Unregister.  
+
+
+# **clone**
+> VcenterVMCloneResp clone(request_body)
+
+Creates a virtual machine from an existing virtual machine.    if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.DiskCloneSpec.datastore requires Datastore.AllocateSpace.    -  The resource Datastore referenced by the attribute VM.ClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Folder referenced by the attribute VM.ClonePlacementSpec.folder requires VirtualMachine.Inventory.CreateFromExisting.    -  The resource ResourcePool referenced by the attribute VM.ClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource VirtualMachine referenced by the attribute VM.CloneSpec.source requires VirtualMachine.Provisioning.Clone.  
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::VMApi.new
+request_body = VCenter::VcenterVMClone.new # VcenterVMClone | 
+
+begin
+  #Creates a virtual machine from an existing virtual machine.    if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.DiskCloneSpec.datastore requires Datastore.AllocateSpace.    -  The resource Datastore referenced by the attribute VM.ClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Folder referenced by the attribute VM.ClonePlacementSpec.folder requires VirtualMachine.Inventory.CreateFromExisting.    -  The resource ResourcePool referenced by the attribute VM.ClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource VirtualMachine referenced by the attribute VM.CloneSpec.source requires VirtualMachine.Provisioning.Clone.  
+  result = api_instance.clone(request_body)
+  p result
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling VMApi->clone: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_body** | [**VcenterVMClone**](VcenterVMClone.md)|  | 
+
+### Return type
+
+[**VcenterVMCloneResp**](VcenterVMCloneResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **clone_task**
+> VcenterVMCloneTaskResp clone_task(request_body)
+
+Creates a virtual machine from an existing virtual machine.    if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.DiskCloneSpec.datastore requires Datastore.AllocateSpace.    -  The resource Datastore referenced by the attribute VM.ClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Folder referenced by the attribute VM.ClonePlacementSpec.folder requires VirtualMachine.Inventory.CreateFromExisting.    -  The resource ResourcePool referenced by the attribute VM.ClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource VirtualMachine referenced by the attribute VM.CloneSpec.source requires VirtualMachine.Provisioning.Clone.  
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::VMApi.new
+request_body = VCenter::VcenterVMCloneTask.new # VcenterVMCloneTask | 
+
+begin
+  #Creates a virtual machine from an existing virtual machine.    if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.DiskCloneSpec.datastore requires Datastore.AllocateSpace.    -  The resource Datastore referenced by the attribute VM.ClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Folder referenced by the attribute VM.ClonePlacementSpec.folder requires VirtualMachine.Inventory.CreateFromExisting.    -  The resource ResourcePool referenced by the attribute VM.ClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource VirtualMachine referenced by the attribute VM.CloneSpec.source requires VirtualMachine.Provisioning.Clone.  
+  result = api_instance.clone_task(request_body)
+  p result
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling VMApi->clone_task: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_body** | [**VcenterVMCloneTask**](VcenterVMCloneTask.md)|  | 
+
+### Return type
+
+[**VcenterVMCloneTaskResp**](VcenterVMCloneTaskResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 
 
 # **create**
-> VcenterVMCreateResult create(request_body)
+> VcenterVMCreateResp create(request_body)
 
-Creates a virtual machine.
+Creates a virtual machine. if you do not have all of the privileges described as follows:     -  The resource Folder referenced by the attribute VM.InventoryPlacementSpec.folder requires VirtualMachine.Inventory.Create.    -  The resource ResourcePool referenced by the attribute VM.ComputePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource Datastore referenced by the attribute VM.StoragePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Network referenced by the attribute Ethernet.BackingSpec.network requires Network.Assign.  
 
 ### Example
 ```ruby
@@ -31,7 +138,7 @@ api_instance = VSphereAutomation::VCenter::VMApi.new
 request_body = VCenter::VcenterVMCreate.new # VcenterVMCreate | 
 
 begin
-  #Creates a virtual machine.
+  #Creates a virtual machine. if you do not have all of the privileges described as follows:     -  The resource Folder referenced by the attribute VM.InventoryPlacementSpec.folder requires VirtualMachine.Inventory.Create.    -  The resource ResourcePool referenced by the attribute VM.ComputePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource Datastore referenced by the attribute VM.StoragePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Network referenced by the attribute Ethernet.BackingSpec.network requires Network.Assign.  
   result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -47,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVMCreateResult**](VcenterVMCreateResult.md)
+[**VcenterVMCreateResp**](VcenterVMCreateResp.md)
 
 ### Authorization
 
@@ -63,7 +170,7 @@ Name | Type | Description  | Notes
 # **delete**
 > delete(vm)
 
-Deletes a virtual machine.
+Deletes a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Inventory.Delete.  
 
 ### Example
 ```ruby
@@ -81,7 +188,7 @@ api_instance = VSphereAutomation::VCenter::VMApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 
 begin
-  #Deletes a virtual machine.
+  #Deletes a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Inventory.Delete.  
   api_instance.delete(vm)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VMApi->delete: #{e}"
@@ -110,9 +217,9 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVMResult get(vm)
+> VcenterVMResp get(vm)
 
-Returns information about a virtual machine.
+Returns information about a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
 
 ### Example
 ```ruby
@@ -130,7 +237,7 @@ api_instance = VSphereAutomation::VCenter::VMApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 
 begin
-  #Returns information about a virtual machine.
+  #Returns information about a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
   result = api_instance.get(vm)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -146,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVMResult**](VcenterVMResult.md)
+[**VcenterVMResp**](VcenterVMResp.md)
 
 ### Authorization
 
@@ -159,10 +266,60 @@ Name | Type | Description  | Notes
 
 
 
-# **list**
-> VcenterVMListResult list(opts)
+# **instant_clone**
+> VcenterVMInstantCloneResp instant_clone(request_body)
 
-Returns information about at most 1000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
+Create an instant clone of an existing virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the attribute VM.InstantCloneSpec.source requires VirtualMachine.Provisioning.Clone and VirtualMachine.Inventory.CreateFromExisting.    -  The resource Folder referenced by the attribute VM.InstantClonePlacementSpec.folder requires VirtualMachine.Interact.PowerOn.    -  The resource ResourcePool referenced by the attribute VM.InstantClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource Datastore referenced by the attribute VM.InstantClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Network referenced by the attribute Ethernet.BackingSpec.network requires Network.Assign.  
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::VMApi.new
+request_body = VCenter::VcenterVMInstantClone.new # VcenterVMInstantClone | 
+
+begin
+  #Create an instant clone of an existing virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the attribute VM.InstantCloneSpec.source requires VirtualMachine.Provisioning.Clone and VirtualMachine.Inventory.CreateFromExisting.    -  The resource Folder referenced by the attribute VM.InstantClonePlacementSpec.folder requires VirtualMachine.Interact.PowerOn.    -  The resource ResourcePool referenced by the attribute VM.InstantClonePlacementSpec.resource-pool requires Resource.AssignVMToPool.    -  The resource Datastore referenced by the attribute VM.InstantClonePlacementSpec.datastore requires Datastore.AllocateSpace.    -  The resource Network referenced by the attribute Ethernet.BackingSpec.network requires Network.Assign.  
+  result = api_instance.instant_clone(request_body)
+  p result
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling VMApi->instant_clone: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_body** | [**VcenterVMInstantClone**](VcenterVMInstantClone.md)|  | 
+
+### Return type
+
+[**VcenterVMInstantCloneResp**](VcenterVMInstantCloneResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **list**
+> VcenterVMListResp list(opts)
+
+Returns information about at most 4000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
 
 ### Example
 ```ruby
@@ -189,7 +346,7 @@ opts = {
 }
 
 begin
-  #Returns information about at most 1000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
+  #Returns information about at most 4000 visible (subject to permission checks) virtual machines in vCenter matching the VM.FilterSpec.
   result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -212,7 +369,209 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVMListResult**](VcenterVMListResult.md)
+[**VcenterVMListResp**](VcenterVMListResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **register**
+> VcenterVMRegisterResp register(request_body)
+
+Creates a virtual machine from existing virtual machine files on storage. if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.RegisterSpec.datastore requires System.Read.    -  The resource Folder referenced by the attribute VM.InventoryPlacementSpec.folder requires VirtualMachine.Inventory.Register.    -  The resource ResourcePool referenced by the attribute VM.ComputePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::VMApi.new
+request_body = VCenter::VcenterVMRegister.new # VcenterVMRegister | 
+
+begin
+  #Creates a virtual machine from existing virtual machine files on storage. if you do not have all of the privileges described as follows:     -  The resource Datastore referenced by the attribute VM.RegisterSpec.datastore requires System.Read.    -  The resource Folder referenced by the attribute VM.InventoryPlacementSpec.folder requires VirtualMachine.Inventory.Register.    -  The resource ResourcePool referenced by the attribute VM.ComputePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+  result = api_instance.register(request_body)
+  p result
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling VMApi->register: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_body** | [**VcenterVMRegister**](VcenterVMRegister.md)|  | 
+
+### Return type
+
+[**VcenterVMRegisterResp**](VcenterVMRegisterResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **relocate**
+> relocate(vm, request_body)
+
+Relocates a virtual machine based on the specification. The parts of the virtual machine that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the virtual machine and disks.    if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires Resource.ColdMigrate.    -  The resource ResourcePool referenced by the attribute VM.RelocatePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::VMApi.new
+vm = 'vm_example' # String | Existing Virtual machine to relocate. The parameter must be an identifier for the resource type: VirtualMachine.
+request_body = VCenter::VcenterVMRelocate.new # VcenterVMRelocate | 
+
+begin
+  #Relocates a virtual machine based on the specification. The parts of the virtual machine that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the virtual machine and disks.    if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires Resource.ColdMigrate.    -  The resource ResourcePool referenced by the attribute VM.RelocatePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+  api_instance.relocate(vm, request_body)
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling VMApi->relocate: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vm** | **String**| Existing Virtual machine to relocate. The parameter must be an identifier for the resource type: VirtualMachine. | 
+ **request_body** | [**VcenterVMRelocate**](VcenterVMRelocate.md)|  | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **relocate_task**
+> VcenterVMRelocateTaskResp relocate_task(vm, request_body)
+
+Relocates a virtual machine based on the specification. The parts of the virtual machine that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the virtual machine and disks.    if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires Resource.ColdMigrate.    -  The resource ResourcePool referenced by the attribute VM.RelocatePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::VMApi.new
+vm = 'vm_example' # String | Existing Virtual machine to relocate. The parameter must be an identifier for the resource type: VirtualMachine.
+request_body = VCenter::VcenterVMRelocateTask.new # VcenterVMRelocateTask | 
+
+begin
+  #Relocates a virtual machine based on the specification. The parts of the virtual machine that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the virtual machine and disks.    if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires Resource.ColdMigrate.    -  The resource ResourcePool referenced by the attribute VM.RelocatePlacementSpec.resource-pool requires Resource.AssignVMToPool.  
+  result = api_instance.relocate_task(vm, request_body)
+  p result
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling VMApi->relocate_task: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vm** | **String**| Existing Virtual machine to relocate. The parameter must be an identifier for the resource type: VirtualMachine. | 
+ **request_body** | [**VcenterVMRelocateTask**](VcenterVMRelocateTask.md)|  | 
+
+### Return type
+
+[**VcenterVMRelocateTaskResp**](VcenterVMRelocateTaskResp.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **unregister**
+> unregister(vm)
+
+Removes the virtual machine corresponding to vm from the vCenter inventory without removing any of the virtual machine's files from storage. All high-level information stored with the management server (ESXi or vCenter) is removed, including information such as statistics, resource pool association, permissions, and alarms. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Inventory.Unregister.  
+
+### Example
+```ruby
+# load the gem
+require 'vsphere-automation-vcenter'
+# setup authorization
+VSphereAutomation::Configuration.new.tap do |config|
+  # Configure API key authorization: api_key
+  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
+end
+
+api_instance = VSphereAutomation::VCenter::VMApi.new
+vm = 'vm_example' # String | Identifier of the virtual machine to be unregistered. The parameter must be an identifier for the resource type: VirtualMachine.
+
+begin
+  #Removes the virtual machine corresponding to vm from the vCenter inventory without removing any of the virtual machine's files from storage. All high-level information stored with the management server (ESXi or vCenter) is removed, including information such as statistics, resource pool association, permissions, and alarms. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Inventory.Unregister.  
+  api_instance.unregister(vm)
+rescue VSphereAutomation::ApiError => e
+  puts "Exception when calling VMApi->unregister: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vm** | **String**| Identifier of the virtual machine to be unregistered. The parameter must be an identifier for the resource type: VirtualMachine. | 
+
+### Return type
+
+nil (empty response body)
 
 ### Authorization
 

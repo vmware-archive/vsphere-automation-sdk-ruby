@@ -17,6 +17,7 @@ module VSphereAutomation
     FTPS = "FTPS".freeze
     HTTPS = "HTTPS".freeze
     SCP = "SCP".freeze
+    SFTP = "SFTP".freeze
     NFS = "NFS".freeze
     SMB = "SMB".freeze
 

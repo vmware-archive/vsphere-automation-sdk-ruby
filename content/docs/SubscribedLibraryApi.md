@@ -1,21 +1,21 @@
 # VSphereAutomation::Content::SubscribedLibraryApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](SubscribedLibraryApi.md#create) | **POST** /com/vmware/content/subscribed-library | Creates a new subscribed library. &lt;p&gt; Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
-[**delete**](SubscribedLibraryApi.md#delete) | **DELETE** /com/vmware/content/subscribed-library/id:{library_id} | Deletes the specified subscribed library. &lt;p&gt; Deleting a subscribed library will remove the entry immediately and begin an asynchronous task to remove all cached content for the library. If the asynchronous task fails, file content may remain on the storage backing. This content will require manual removal.
-[**evict**](SubscribedLibraryApi.md#evict) | **POST** /com/vmware/content/subscribed-library/id:{library_id}?~action&#x3D;evict | Evicts the cached content of an on-demand subscribed library. &lt;p&gt; This {@term operation} allows the cached content of a subscribed library to be removed to free up storage capacity. This {@term operation} will only work when a subscribed library is synchronized on-demand.
-[**get**](SubscribedLibraryApi.md#get) | **GET** /com/vmware/content/subscribed-library/id:{library_id} | Returns a given subscribed library.
-[**list**](SubscribedLibraryApi.md#list) | **GET** /com/vmware/content/subscribed-library | Returns the identifiers of all subscribed libraries in the Content Library.
-[**probe**](SubscribedLibraryApi.md#probe) | **POST** /com/vmware/content/subscribed-library?~action&#x3D;probe | Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
-[**sync**](SubscribedLibraryApi.md#sync) | **POST** /com/vmware/content/subscribed-library/id:{library_id}?~action&#x3D;sync | Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
-[**update**](SubscribedLibraryApi.md#update) | **PATCH** /com/vmware/content/subscribed-library/id:{library_id} | Updates the properties of a subscribed library. &lt;p&gt; This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
+[**create**](SubscribedLibraryApi.md#create) | **POST** /rest/com/vmware/content/subscribed-library | Creates a new subscribed library. &lt;p&gt; Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
+[**delete**](SubscribedLibraryApi.md#delete) | **DELETE** /rest/com/vmware/content/subscribed-library/id:{library_id} | Deletes the specified subscribed library. &lt;p&gt; Deleting a subscribed library will remove the entry immediately and begin an asynchronous task to remove all cached content for the library. If the asynchronous task fails, file content may remain on the storage backing. This content will require manual removal.
+[**evict**](SubscribedLibraryApi.md#evict) | **POST** /rest/com/vmware/content/subscribed-library/id:{library_id}?~action&#x3D;evict | Evicts the cached content of an on-demand subscribed library. &lt;p&gt; This {@term operation} allows the cached content of a subscribed library to be removed to free up storage capacity. This {@term operation} will only work when a subscribed library is synchronized on-demand.
+[**get**](SubscribedLibraryApi.md#get) | **GET** /rest/com/vmware/content/subscribed-library/id:{library_id} | Returns a given subscribed library.
+[**list**](SubscribedLibraryApi.md#list) | **GET** /rest/com/vmware/content/subscribed-library | Returns the identifiers of all subscribed libraries in the Content Library.
+[**probe**](SubscribedLibraryApi.md#probe) | **POST** /rest/com/vmware/content/subscribed-library?~action&#x3D;probe | Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
+[**sync**](SubscribedLibraryApi.md#sync) | **POST** /rest/com/vmware/content/subscribed-library/id:{library_id}?~action&#x3D;sync | Forces the synchronization of the subscribed library. &lt;p&gt; Synchronizing a subscribed library forcefully with this {@term operation} will perform the same synchronization behavior as would run periodically for the library. The {@link SubscriptionInfo#onDemand} setting is respected. Calling this {@term operation} on a library that is already in the process of synchronizing will have no effect.
+[**update**](SubscribedLibraryApi.md#update) | **PATCH** /rest/com/vmware/content/subscribed-library/id:{library_id} | Updates the properties of a subscribed library. &lt;p&gt; This is an incremental update to the subscribed library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
 
 
 # **create**
-> ContentSubscribedLibraryCreateResult create(request_body)
+> ContentSubscribedLibraryCreateResp create(request_body)
 
 Creates a new subscribed library. <p> Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentSubscribedLibraryCreateResult**](ContentSubscribedLibraryCreateResult.md)
+[**ContentSubscribedLibraryCreateResp**](ContentSubscribedLibraryCreateResp.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ nil (empty response body)
 
 
 # **get**
-> ContentSubscribedLibraryResult get(library_id)
+> ContentSubscribedLibraryResp get(library_id)
 
 Returns a given subscribed library.
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentSubscribedLibraryResult**](ContentSubscribedLibraryResult.md)
+[**ContentSubscribedLibraryResp**](ContentSubscribedLibraryResp.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ContentSubscribedLibraryListResult list
+> ContentSubscribedLibraryListResp list
 
 Returns the identifiers of all subscribed libraries in the Content Library.
 
@@ -245,7 +245,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ContentSubscribedLibraryListResult**](ContentSubscribedLibraryListResult.md)
+[**ContentSubscribedLibraryListResp**](ContentSubscribedLibraryListResp.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ This endpoint does not need any parameter.
 
 
 # **probe**
-> ContentSubscribedLibraryProbeResult probe(request_body)
+> ContentSubscribedLibraryProbeResp probe(request_body)
 
 Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
 
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentSubscribedLibraryProbeResult**](ContentSubscribedLibraryProbeResult.md)
+[**ContentSubscribedLibraryProbeResp**](ContentSubscribedLibraryProbeResp.md)
 
 ### Authorization
 

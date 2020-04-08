@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::AccessDcuiApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](AccessDcuiApi.md#get) | **GET** /appliance/access/dcui | Get enabled state of Direct Console User Interface (DCUI TTY2).
-[**set**](AccessDcuiApi.md#set) | **PUT** /appliance/access/dcui | Set enabled state of Direct Console User Interface (DCUI TTY2).
+[**get**](AccessDcuiApi.md#get) | **GET** /rest/appliance/access/dcui | Get enabled state of Direct Console User Interface (DCUI TTY2).
+[**set**](AccessDcuiApi.md#set) | **PUT** /rest/appliance/access/dcui | Set enabled state of Direct Console User Interface (DCUI TTY2).
 
 
 # **get**
-> ApplianceAccessDcuiResult get
+> ApplianceAccessDcuiResp get
 
 Get enabled state of Direct Console User Interface (DCUI TTY2).
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceAccessDcuiResult**](ApplianceAccessDcuiResult.md)
+[**ApplianceAccessDcuiResp**](ApplianceAccessDcuiResp.md)
 
 ### Authorization
 

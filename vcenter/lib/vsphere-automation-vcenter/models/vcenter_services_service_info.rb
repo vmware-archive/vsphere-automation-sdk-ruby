@@ -11,42 +11,42 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterServicesServiceInfo
-    # Service name key. Can be used to lookup resource bundle
-    attr_accessor :name_key
-
     # Service description key. Can be used to lookup resource bundle
     attr_accessor :description_key
-
-    attr_accessor :startup_type
-
-    attr_accessor :state
 
     attr_accessor :health
 
     # Localizable messages associated with the health of the service
     attr_accessor :health_messages
 
+    # Service name key. Can be used to lookup resource bundle
+    attr_accessor :name_key
+
+    attr_accessor :startup_type
+
+    attr_accessor :state
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name_key' => :'name_key',
         :'description_key' => :'description_key',
-        :'startup_type' => :'startup_type',
-        :'state' => :'state',
         :'health' => :'health',
-        :'health_messages' => :'health_messages'
+        :'health_messages' => :'health_messages',
+        :'name_key' => :'name_key',
+        :'startup_type' => :'startup_type',
+        :'state' => :'state'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name_key' => :'String',
         :'description_key' => :'String',
-        :'startup_type' => :'VcenterServicesServiceStartupType',
-        :'state' => :'VcenterServicesServiceState',
         :'health' => :'VcenterServicesServiceHealth',
-        :'health_messages' => :'Array<VapiStdLocalizableMessage>'
+        :'health_messages' => :'Array<VapiStdLocalizableMessage>',
+        :'name_key' => :'String',
+        :'startup_type' => :'VcenterServicesServiceStartupType',
+        :'state' => :'VcenterServicesServiceState'
       }
     end
 
@@ -58,20 +58,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name_key')
-        self.name_key = attributes[:'name_key']
-      end
-
       if attributes.has_key?(:'description_key')
         self.description_key = attributes[:'description_key']
-      end
-
-      if attributes.has_key?(:'startup_type')
-        self.startup_type = attributes[:'startup_type']
-      end
-
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
       end
 
       if attributes.has_key?(:'health')
@@ -83,18 +71,30 @@ module VSphereAutomation
           self.health_messages = value
         end
       end
+
+      if attributes.has_key?(:'name_key')
+        self.name_key = attributes[:'name_key']
+      end
+
+      if attributes.has_key?(:'startup_type')
+        self.startup_type = attributes[:'startup_type']
+      end
+
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name_key.nil?
-        invalid_properties.push('invalid value for "name_key", name_key cannot be nil.')
-      end
-
       if @description_key.nil?
         invalid_properties.push('invalid value for "description_key", description_key cannot be nil.')
+      end
+
+      if @name_key.nil?
+        invalid_properties.push('invalid value for "name_key", name_key cannot be nil.')
       end
 
       if @startup_type.nil?
@@ -111,8 +111,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name_key.nil?
       return false if @description_key.nil?
+      return false if @name_key.nil?
       return false if @startup_type.nil?
       return false if @state.nil?
       true
@@ -123,12 +123,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name_key == o.name_key &&
           description_key == o.description_key &&
-          startup_type == o.startup_type &&
-          state == o.state &&
           health == o.health &&
-          health_messages == o.health_messages
+          health_messages == o.health_messages &&
+          name_key == o.name_key &&
+          startup_type == o.startup_type &&
+          state == o.state
     end
 
     # @see the `==` method
@@ -140,7 +140,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name_key, description_key, startup_type, state, health, health_messages].hash
+      [description_key, health, health_messages, name_key, startup_type, state].hash
     end
 
     # Builds the object from hash

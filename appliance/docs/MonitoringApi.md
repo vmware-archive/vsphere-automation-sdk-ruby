@@ -1,16 +1,16 @@
 # VSphereAutomation::Appliance::MonitoringApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MonitoringApi.md#get) | **GET** /appliance/monitoring/{stat_id} | Get monitored item info
-[**list**](MonitoringApi.md#list) | **GET** /appliance/monitoring | Get monitored items list
-[**query**](MonitoringApi.md#query) | **GET** /appliance/monitoring/query | Get monitoring data.
+[**get**](MonitoringApi.md#get) | **GET** /rest/appliance/monitoring/{stat_id} | Get monitored item info
+[**list**](MonitoringApi.md#list) | **GET** /rest/appliance/monitoring | Get monitored items list
+[**query**](MonitoringApi.md#query) | **GET** /rest/appliance/monitoring/query | Get monitoring data.
 
 
 # **get**
-> ApplianceMonitoringResult get(stat_id)
+> ApplianceMonitoringResp get(stat_id)
 
 Get monitored item info
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceMonitoringResult**](ApplianceMonitoringResult.md)
+[**ApplianceMonitoringResp**](ApplianceMonitoringResp.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceMonitoringListResult list
+> ApplianceMonitoringListResp list
 
 Get monitored items list
 
@@ -92,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceMonitoringListResult**](ApplianceMonitoringListResult.md)
+[**ApplianceMonitoringListResp**](ApplianceMonitoringListResp.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ This endpoint does not need any parameter.
 
 
 # **query**
-> ApplianceMonitoringQueryResult query(item_names, item_interval, item_function, item_start_time, item_end_time)
+> ApplianceMonitoringQueryResp query(item_names, item_interval, item_function, item_start_time, item_end_time)
 
 Get monitoring data.
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceMonitoringQueryResult**](ApplianceMonitoringQueryResult.md)
+[**ApplianceMonitoringQueryResp**](ApplianceMonitoringQueryResp.md)
 
 ### Authorization
 

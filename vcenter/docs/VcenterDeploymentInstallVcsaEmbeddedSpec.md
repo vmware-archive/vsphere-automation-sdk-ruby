@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**standalone** | [**VcenterDeploymentStandaloneSpec**](VcenterDeploymentStandaloneSpec.md) |  | [optional] 
-**replicated** | [**VcenterDeploymentReplicatedSpec**](VcenterDeploymentReplicatedSpec.md) |  | [optional] 
 **ceip_enabled** | **Boolean** | Whether CEIP should be enabled or disabled. | 
+**replicated** | [**VcenterDeploymentReplicatedSpec**](VcenterDeploymentReplicatedSpec.md) |  | [optional] 
+**standalone** | [**VcenterDeploymentStandaloneSpec**](VcenterDeploymentStandaloneSpec.md) |  | [optional] 
 
 

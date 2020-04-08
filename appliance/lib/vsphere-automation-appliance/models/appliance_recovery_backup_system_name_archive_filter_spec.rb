@@ -11,35 +11,35 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupSystemNameArchiveFilterSpec
-    # Backup must have been taken on or after this time to match the filter.
-    attr_accessor :start_timestamp
+    # Backup comment must contain this {@term string} to match the filter.
+    attr_accessor :comment_substring
 
     # Backup must have been taken on or before this time to match the filter.
     attr_accessor :end_timestamp
 
-    # Backup comment must contain this {@term string} to match the filter.
-    attr_accessor :comment_substring
-
     # Limit result to a max count of most recent backups.
     attr_accessor :max_results
+
+    # Backup must have been taken on or after this time to match the filter.
+    attr_accessor :start_timestamp
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'start_timestamp' => :'start_timestamp',
-        :'end_timestamp' => :'end_timestamp',
         :'comment_substring' => :'comment_substring',
-        :'max_results' => :'max_results'
+        :'end_timestamp' => :'end_timestamp',
+        :'max_results' => :'max_results',
+        :'start_timestamp' => :'start_timestamp'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'start_timestamp' => :'DateTime',
-        :'end_timestamp' => :'DateTime',
         :'comment_substring' => :'String',
-        :'max_results' => :'Integer'
+        :'end_timestamp' => :'DateTime',
+        :'max_results' => :'Integer',
+        :'start_timestamp' => :'DateTime'
       }
     end
 
@@ -51,20 +51,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'start_timestamp')
-        self.start_timestamp = attributes[:'start_timestamp']
+      if attributes.has_key?(:'comment_substring')
+        self.comment_substring = attributes[:'comment_substring']
       end
 
       if attributes.has_key?(:'end_timestamp')
         self.end_timestamp = attributes[:'end_timestamp']
       end
 
-      if attributes.has_key?(:'comment_substring')
-        self.comment_substring = attributes[:'comment_substring']
-      end
-
       if attributes.has_key?(:'max_results')
         self.max_results = attributes[:'max_results']
+      end
+
+      if attributes.has_key?(:'start_timestamp')
+        self.start_timestamp = attributes[:'start_timestamp']
       end
     end
 
@@ -86,10 +86,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          start_timestamp == o.start_timestamp &&
-          end_timestamp == o.end_timestamp &&
           comment_substring == o.comment_substring &&
-          max_results == o.max_results
+          end_timestamp == o.end_timestamp &&
+          max_results == o.max_results &&
+          start_timestamp == o.start_timestamp
     end
 
     # @see the `==` method
@@ -101,7 +101,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [start_timestamp, end_timestamp, comment_substring, max_results].hash
+      [comment_substring, end_timestamp, max_results, start_timestamp].hash
     end
 
     # Builds the object from hash

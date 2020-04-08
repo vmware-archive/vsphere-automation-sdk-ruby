@@ -24,6 +24,9 @@ module VSphereAutomation
     N13 = "VMX_13".freeze
     N14 = "VMX_14".freeze
     N15 = "VMX_15".freeze
+    N16 = "VMX_16".freeze
+    N17 = "VMX_17".freeze
+    FUTURE = "VMX_FUTURE".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

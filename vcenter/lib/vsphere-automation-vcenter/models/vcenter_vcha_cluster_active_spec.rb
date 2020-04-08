@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterActiveSpec
-    attr_accessor :ha_network_type
+    attr_accessor :ha_ip
 
     # The identifier of the Network object used for the HA network.  If the Cluster.ActiveSpec.ha-network field is set, then the Cluster.ActiveSpec.ha-network-type field must be set.  If the Cluster.ActiveSpec.ha-network field is unset, then the Cluster.ActiveSpec.ha-network-type field is ignored. If unset and the Cluster.ActiveSpec.ha-network-type field is unset, then the second NIC is assumed to be already configured.  If unset and the Cluster.ActiveSpec.ha-network field is set, then an error is reported. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network:VCenter.
     attr_accessor :ha_network
 
-    attr_accessor :ha_ip
+    attr_accessor :ha_network_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'ha_network_type' => :'ha_network_type',
+        :'ha_ip' => :'ha_ip',
         :'ha_network' => :'ha_network',
-        :'ha_ip' => :'ha_ip'
+        :'ha_network_type' => :'ha_network_type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'ha_network_type' => :'VcenterVchaNetworkType',
+        :'ha_ip' => :'VcenterVchaIpSpec',
         :'ha_network' => :'String',
-        :'ha_ip' => :'VcenterVchaIpSpec'
+        :'ha_network_type' => :'VcenterVchaNetworkType'
       }
     end
 
@@ -44,16 +44,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ha_network_type')
-        self.ha_network_type = attributes[:'ha_network_type']
+      if attributes.has_key?(:'ha_ip')
+        self.ha_ip = attributes[:'ha_ip']
       end
 
       if attributes.has_key?(:'ha_network')
         self.ha_network = attributes[:'ha_network']
       end
 
-      if attributes.has_key?(:'ha_ip')
-        self.ha_ip = attributes[:'ha_ip']
+      if attributes.has_key?(:'ha_network_type')
+        self.ha_network_type = attributes[:'ha_network_type']
       end
     end
 
@@ -80,9 +80,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          ha_network_type == o.ha_network_type &&
+          ha_ip == o.ha_ip &&
           ha_network == o.ha_network &&
-          ha_ip == o.ha_ip
+          ha_network_type == o.ha_network_type
     end
 
     # @see the `==` method
@@ -94,7 +94,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ha_network_type, ha_network, ha_ip].hash
+      [ha_ip, ha_network, ha_network_type].hash
     end
 
     # Builds the object from hash

@@ -33,7 +33,7 @@ describe 'LibraryItemStorageApi' do
   # @param library_item_id Identifier of the library item whose storage information should be retrieved.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemStorageResult]
+  # @return [ContentLibraryItemStorageResp]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -44,7 +44,7 @@ describe 'LibraryItemStorageApi' do
   # Lists all storage items for a given library item.
   # @param library_item_id Identifier of the library item whose storage information should be listed.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemStorageListResult]
+  # @return [ContentLibraryItemStorageListResp]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

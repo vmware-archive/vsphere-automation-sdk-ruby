@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'cdrom' when calling VmHardwareCdromApi.connect"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/cdrom/{cdrom}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
 
       # query parameters
       query_params = {}
@@ -76,7 +76,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareCdromCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareCdromCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(vm, request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(vm, request_body, opts)
       data
@@ -87,7 +87,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareCdromCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareCdromCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(vm, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareCdromApi.create ...'
@@ -101,7 +101,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareCdromApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/cdrom'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/cdrom'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -126,7 +126,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareCdromCreateResult',
+	  '200' => 'VCenter::VcenterVmHardwareCdromCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsUnsupportedError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -167,7 +167,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'cdrom' when calling VmHardwareCdromApi.delete"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/cdrom/{cdrom}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
 
       # query parameters
       query_params = {}
@@ -223,7 +223,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'cdrom' when calling VmHardwareCdromApi.disconnect"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/cdrom/{cdrom}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
 
       # query parameters
       query_params = {}
@@ -254,7 +254,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param cdrom Virtual CD-ROM device identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Cdrom.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareCdromResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareCdromResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, cdrom, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, cdrom, opts)
       data
@@ -265,7 +265,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param cdrom Virtual CD-ROM device identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Cdrom.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareCdromResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareCdromResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, cdrom, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareCdromApi.get ...'
@@ -279,7 +279,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'cdrom' when calling VmHardwareCdromApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/cdrom/{cdrom}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
 
       # query parameters
       query_params = {}
@@ -302,7 +302,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareCdromResult',
+	  '200' => 'VCenter::VcenterVmHardwareCdromResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -317,7 +317,7 @@ module VSphereAutomation
     # Returns commonly used information about the virtual CD-ROM devices belonging to the virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareCdromListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareCdromListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def list(vm, opts = {})
       data, _status_code, _headers = list_with_http_info(vm, opts)
       data
@@ -327,7 +327,7 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareCdromListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareCdromListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareCdromApi.list ...'
@@ -337,7 +337,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareCdromApi.list"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/cdrom'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/cdrom'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -360,7 +360,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareCdromListResult',
+	  '200' => 'VCenter::VcenterVmHardwareCdromListResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -407,7 +407,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareCdromApi.update"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/cdrom/{cdrom}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'cdrom' + '}', cdrom.to_s)
 
       # query parameters
       query_params = {}

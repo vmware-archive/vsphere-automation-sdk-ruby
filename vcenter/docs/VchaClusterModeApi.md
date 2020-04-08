@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VchaClusterModeApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VchaClusterModeApi.md#get) | **GET** /vcenter/vcha/cluster/mode | Retrieves the current mode of a VCHA cluster.
-[**settask**](VchaClusterModeApi.md#settask) | **PUT** /vcenter/vcha/cluster/mode?vmw-task&#x3D;true | Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -&gt; disabled - Allowed only in healthy and degraded states.  enabled -&gt; maintenance - Allowed only in healthy state.  disabled -&gt; enabled - Allowed only in healthy state.  maintenance -&gt; enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -&gt; disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
+[**get**](VchaClusterModeApi.md#get) | **GET** /rest/vcenter/vcha/cluster/mode | Retrieves the current mode of a VCHA cluster.
+[**set_task**](VchaClusterModeApi.md#set_task) | **PUT** /rest/vcenter/vcha/cluster/mode?vmw-task&#x3D;true | Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -&gt; disabled - Allowed only in healthy and degraded states.  enabled -&gt; maintenance - Allowed only in healthy state.  disabled -&gt; enabled - Allowed only in healthy state.  maintenance -&gt; enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -&gt; disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 
 
 # **get**
-> VcenterVchaClusterModeResult get
+> VcenterVchaClusterModeResp get
 
 Retrieves the current mode of a VCHA cluster.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterVchaClusterModeResult**](VcenterVchaClusterModeResult.md)
+[**VcenterVchaClusterModeResp**](VcenterVchaClusterModeResp.md)
 
 ### Authorization
 
@@ -54,8 +54,8 @@ This endpoint does not need any parameter.
 
 
 
-# **settask**
-> VcenterVchaClusterModeSetTaskResult settask(request_body)
+# **set_task**
+> VcenterVchaClusterModeSetTaskResp set_task(request_body)
 
 Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
 
@@ -76,10 +76,10 @@ request_body = VCenter::VcenterVchaClusterModeSetTask.new # VcenterVchaClusterMo
 
 begin
   #Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
-  result = api_instance.settask(request_body)
+  result = api_instance.set_task(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
-  puts "Exception when calling VchaClusterModeApi->settask: #{e}"
+  puts "Exception when calling VchaClusterModeApi->set_task: #{e}"
 end
 ```
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVchaClusterModeSetTaskResult**](VcenterVchaClusterModeSetTaskResult.md)
+[**VcenterVchaClusterModeSetTaskResp**](VcenterVchaClusterModeSetTaskResp.md)
 
 ### Authorization
 

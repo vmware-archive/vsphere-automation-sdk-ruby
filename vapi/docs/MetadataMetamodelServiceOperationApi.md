@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataMetamodelServiceOperationApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataMetamodelServiceOperationApi.md#get) | **GET** /com/vmware/vapi/metadata/metamodel/service/operation/id:{service_id}/id:{operation_id} | Retrieves the metamodel information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
-[**list**](MetadataMetamodelServiceOperationApi.md#list) | **GET** /com/vmware/vapi/metadata/metamodel/service/operation | Returns the identifiers for the operation elements that are defined in the scope of {@param.name serviceId}.
+[**get**](MetadataMetamodelServiceOperationApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/metamodel/service/operation/id:{service_id}/id:{operation_id} | Retrieves the metamodel information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
+[**list**](MetadataMetamodelServiceOperationApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/metamodel/service/operation | Returns the identifiers for the operation elements that are defined in the scope of {@param.name serviceId}.
 
 
 # **get**
-> VapiMetadataMetamodelServiceOperationResult get(service_id, operation_id)
+> VapiMetadataMetamodelServiceOperationResp get(service_id, operation_id)
 
 Retrieves the metamodel information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelServiceOperationResult**](VapiMetadataMetamodelServiceOperationResult.md)
+[**VapiMetadataMetamodelServiceOperationResp**](VapiMetadataMetamodelServiceOperationResp.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataMetamodelServiceOperationListResult list(service_id)
+> VapiMetadataMetamodelServiceOperationListResp list(service_id)
 
 Returns the identifiers for the operation elements that are defined in the scope of {@param.name serviceId}.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelServiceOperationListResult**](VapiMetadataMetamodelServiceOperationListResult.md)
+[**VapiMetadataMetamodelServiceOperationListResp**](VapiMetadataMetamodelServiceOperationListResp.md)
 
 ### Authorization
 

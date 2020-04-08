@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns the identifier of the current default storage policy associated with the specified datastore.
     # @param datastore Identifier of the datastore for which the default policy is requested. The parameter must be an identifier for the resource type: Datastore.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDatastoreDefaultPolicyResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterDatastoreDefaultPolicyResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(datastore, opts = {})
       data, _status_code, _headers = get_with_http_info(datastore, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param datastore Identifier of the datastore for which the default policy is requested. The parameter must be an identifier for the resource type: Datastore.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDatastoreDefaultPolicyResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDatastoreDefaultPolicyResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(datastore, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatastoreDefaultPolicyApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'datastore' when calling DatastoreDefaultPolicyApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/datastore/{datastore}/default-policy'.sub('{' + 'datastore' + '}', datastore.to_s)
+      local_var_path = '/rest/vcenter/datastore/{datastore}/default-policy'.sub('{' + 'datastore' + '}', datastore.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDatastoreDefaultPolicyResult',
+	  '200' => 'VCenter::VcenterDatastoreDefaultPolicyResp',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

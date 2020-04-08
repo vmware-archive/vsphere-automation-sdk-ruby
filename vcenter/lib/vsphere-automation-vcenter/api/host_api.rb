@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'host' when calling HostApi.connect"
       end
       # resource path
-      local_var_path = '/vcenter/host/{host}/connect'.sub('{' + 'host' + '}', host.to_s)
+      local_var_path = '/rest/vcenter/host/{host}/connect'.sub('{' + 'host' + '}', host.to_s)
 
       # query parameters
       query_params = {}
@@ -69,7 +69,7 @@ module VSphereAutomation
     # Add a new standalone host in the vCenter inventory. The newly connected host will be in connected state. The vCenter Server will verify the SSL certificate before adding the host to its inventory. In the case where the SSL certificate cannot be verified because the Certificate Authority is not recognized or the certificate is self signed, the vCenter Server will fall back to thumbprint verification mode as defined by Host.CreateSpec.ThumbprintVerification.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterHostCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterHostCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -79,7 +79,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterHostCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterHostCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HostApi.create ...'
@@ -89,7 +89,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling HostApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/host'
+      local_var_path = '/rest/vcenter/host'
 
       # query parameters
       query_params = {}
@@ -114,7 +114,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterHostCreateResult',
+	  '200' => 'VCenter::VcenterHostCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsUnsupportedError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -149,7 +149,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'host' when calling HostApi.delete"
       end
       # resource path
-      local_var_path = '/vcenter/host/{host}'.sub('{' + 'host' + '}', host.to_s)
+      local_var_path = '/rest/vcenter/host/{host}'.sub('{' + 'host' + '}', host.to_s)
 
       # query parameters
       query_params = {}
@@ -199,7 +199,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'host' when calling HostApi.disconnect"
       end
       # resource path
-      local_var_path = '/vcenter/host/{host}/disconnect'.sub('{' + 'host' + '}', host.to_s)
+      local_var_path = '/rest/vcenter/host/{host}/disconnect'.sub('{' + 'host' + '}', host.to_s)
 
       # query parameters
       query_params = {}
@@ -226,7 +226,7 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Returns information about at most 1000 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
+    # Returns information about at most 2500 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_hosts Identifiers of hosts that can match the filter. If unset or empty, hosts with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
     # @option opts [Array<String>] :filter_names Names that hosts must have to match the filter (see Host.Summary.name). If unset or empty, hosts with any name match the filter.
@@ -235,13 +235,13 @@ module VSphereAutomation
     # @option opts [Boolean] :filter_standalone If true, only hosts that are not part of a cluster can match the filter, and if false, only hosts that are are part of a cluster can match the filter. If unset Hosts can match filter independent of whether they are part of a cluster or not. If this field is true and Host.FilterSpec.clusters os not empty, no hosts will match the filter.
     # @option opts [Array<String>] :filter_clusters Clusters that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any cluster and hosts that are not in a cluster match the filter. If this field is not empty and Host.FilterSpec.standalone is true, no hosts will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
     # @option opts [Array<String>] :filter_connection_states Connection states that a host must be in to match the filter (see Host.Summary.connection-state. If unset or empty, hosts in any connection state match the filter.
-    # @return [VcenterHostListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterHostListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
     end
 
-    # Returns information about at most 1000 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
+    # Returns information about at most 2500 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_hosts Identifiers of hosts that can match the filter. If unset or empty, hosts with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
@@ -251,7 +251,7 @@ module VSphereAutomation
     # @option opts [Boolean] :filter_standalone If true, only hosts that are not part of a cluster can match the filter, and if false, only hosts that are are part of a cluster can match the filter. If unset Hosts can match filter independent of whether they are part of a cluster or not. If this field is true and Host.FilterSpec.clusters os not empty, no hosts will match the filter.
     # @option opts [Array<String>] :filter_clusters Clusters that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any cluster and hosts that are not in a cluster match the filter. If this field is not empty and Host.FilterSpec.standalone is true, no hosts will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
     # @option opts [Array<String>] :filter_connection_states Connection states that a host must be in to match the filter (see Host.Summary.connection-state. If unset or empty, hosts in any connection state match the filter.
-    # @return [Array<(VcenterHostListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterHostListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HostApi.list ...'
@@ -260,7 +260,7 @@ module VSphereAutomation
         fail ArgumentError, 'invalid value for "filter_connection_states", must include one of CONNECTED, DISCONNECTED, NOT_RESPONDING'
       end
       # resource path
-      local_var_path = '/vcenter/host'
+      local_var_path = '/rest/vcenter/host'
 
       # query parameters
       query_params = {}
@@ -290,7 +290,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterHostListResult',
+	  '200' => 'VCenter::VcenterHostListResp',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

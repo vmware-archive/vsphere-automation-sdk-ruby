@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mode** | [**ApplianceNetworkingDNSInfoDNSMode**](ApplianceNetworkingDNSInfoDNSMode.md) |  | 
 **hostname** | **String** | Hostname. | 
+**mode** | [**ApplianceNetworkingDNSInfoDNSMode**](ApplianceNetworkingDNSInfoDNSMode.md) |  | 
 **servers** | **Array&lt;String&gt;** | Servers. | 
 
 

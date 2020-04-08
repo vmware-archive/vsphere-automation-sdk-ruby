@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**VcenterDeploymentCheckStatus**](VcenterDeploymentCheckStatus.md) |  | 
 **result** | [**VcenterDeploymentNotifications**](VcenterDeploymentNotifications.md) |  | [optional] 
+**source_info** | [**VcenterDeploymentSourceInfo**](VcenterDeploymentSourceInfo.md) |  | [optional] 
+**status** | [**VcenterDeploymentCheckStatus**](VcenterDeploymentCheckStatus.md) |  | 
 
 

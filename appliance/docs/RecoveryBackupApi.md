@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::RecoveryBackupApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validate**](RecoveryBackupApi.md#validate) | **POST** /appliance/recovery/backup/validate | Check for backup errors without starting backup.
+[**validate**](RecoveryBackupApi.md#validate) | **POST** /rest/appliance/recovery/backup/validate | Check for backup errors without starting backup.
 
 
 # **validate**
-> ApplianceRecoveryBackupValidateResult validate(request_body)
+> ApplianceRecoveryBackupValidateResp validate(request_body)
 
 Check for backup errors without starting backup.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupValidateResult**](ApplianceRecoveryBackupValidateResult.md)
+[**ApplianceRecoveryBackupValidateResp**](ApplianceRecoveryBackupValidateResp.md)
 
 ### Authorization
 

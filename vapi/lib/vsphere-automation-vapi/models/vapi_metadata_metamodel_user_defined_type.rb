@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelUserDefinedType
-    # Category of the user defined named type. The named type could be a structure element or an enumeration element.
-    attr_accessor :resource_type
-
     # Identifier of the user defined named type.
     attr_accessor :resource_id
+
+    # Category of the user defined named type. The named type could be a structure element or an enumeration element.
+    attr_accessor :resource_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'resource_type' => :'resource_type',
-        :'resource_id' => :'resource_id'
+        :'resource_id' => :'resource_id',
+        :'resource_type' => :'resource_type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'resource_type' => :'String',
-        :'resource_id' => :'String'
+        :'resource_id' => :'String',
+        :'resource_type' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'resource_type')
-        self.resource_type = attributes[:'resource_type']
-      end
-
       if attributes.has_key?(:'resource_id')
         self.resource_id = attributes[:'resource_id']
+      end
+
+      if attributes.has_key?(:'resource_type')
+        self.resource_type = attributes[:'resource_type']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @resource_type.nil?
-        invalid_properties.push('invalid value for "resource_type", resource_type cannot be nil.')
-      end
-
       if @resource_id.nil?
         invalid_properties.push('invalid value for "resource_id", resource_id cannot be nil.')
+      end
+
+      if @resource_type.nil?
+        invalid_properties.push('invalid value for "resource_type", resource_type cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @resource_type.nil?
       return false if @resource_id.nil?
+      return false if @resource_type.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          resource_type == o.resource_type &&
-          resource_id == o.resource_id
+          resource_id == o.resource_id &&
+          resource_type == o.resource_type
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [resource_type, resource_id].hash
+      [resource_id, resource_type].hash
     end
 
     # Builds the object from hash

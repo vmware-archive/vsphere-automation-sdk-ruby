@@ -11,13 +11,8 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelOperationInfo
-    # Name of the operation element in a canonical format. The format is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
-    attr_accessor :name
-
-    # Metamodel information for the parameter elements. The order of the parameters elements in the list is same as the order of the parameters declared in the interface definition file.
-    attr_accessor :params
-
-    attr_accessor :output
+    # English language documentation for the service element. It can contain HTML markup and Javadoc tags.
+    attr_accessor :documentation
 
     # List of error elements that might be reported by the operation element. If the operation reports the same error for more than one reason, the list contains the error element associated with the error more than once with different documentation elements.
     attr_accessor :errors
@@ -25,30 +20,35 @@ module VSphereAutomation
     # Generic metadata elements for the operation element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for key in the {@term map}.
     attr_accessor :metadata
 
-    # English language documentation for the service element. It can contain HTML markup and Javadoc tags.
-    attr_accessor :documentation
+    # Name of the operation element in a canonical format. The format is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
+    attr_accessor :name
+
+    attr_accessor :output
+
+    # Metamodel information for the parameter elements. The order of the parameters elements in the list is same as the order of the parameters declared in the interface definition file.
+    attr_accessor :params
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'params' => :'params',
-        :'output' => :'output',
+        :'documentation' => :'documentation',
         :'errors' => :'errors',
         :'metadata' => :'metadata',
-        :'documentation' => :'documentation'
+        :'name' => :'name',
+        :'output' => :'output',
+        :'params' => :'params'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'params' => :'Array<VapiMetadataMetamodelFieldInfo>',
-        :'output' => :'VapiMetadataMetamodelOperationResultInfo',
+        :'documentation' => :'String',
         :'errors' => :'Array<VapiMetadataMetamodelErrorInfo>',
         :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
-        :'documentation' => :'String'
+        :'name' => :'String',
+        :'output' => :'VapiMetadataMetamodelOperationResultInfo',
+        :'params' => :'Array<VapiMetadataMetamodelFieldInfo>'
       }
     end
 
@@ -60,18 +60,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'params')
-        if (value = attributes[:'params']).is_a?(Array)
-          self.params = value
-        end
-      end
-
-      if attributes.has_key?(:'output')
-        self.output = attributes[:'output']
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
       end
 
       if attributes.has_key?(:'errors')
@@ -86,8 +76,18 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'output')
+        self.output = attributes[:'output']
+      end
+
+      if attributes.has_key?(:'params')
+        if (value = attributes[:'params']).is_a?(Array)
+          self.params = value
+        end
       end
     end
 
@@ -95,16 +95,8 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @params.nil?
-        invalid_properties.push('invalid value for "params", params cannot be nil.')
-      end
-
-      if @output.nil?
-        invalid_properties.push('invalid value for "output", output cannot be nil.')
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
       end
 
       if @errors.nil?
@@ -115,8 +107,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
       end
 
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @output.nil?
+        invalid_properties.push('invalid value for "output", output cannot be nil.')
+      end
+
+      if @params.nil?
+        invalid_properties.push('invalid value for "params", params cannot be nil.')
       end
 
       invalid_properties
@@ -125,12 +125,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
-      return false if @params.nil?
-      return false if @output.nil?
+      return false if @documentation.nil?
       return false if @errors.nil?
       return false if @metadata.nil?
-      return false if @documentation.nil?
+      return false if @name.nil?
+      return false if @output.nil?
+      return false if @params.nil?
       true
     end
 
@@ -139,12 +139,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          params == o.params &&
-          output == o.output &&
+          documentation == o.documentation &&
           errors == o.errors &&
           metadata == o.metadata &&
-          documentation == o.documentation
+          name == o.name &&
+          output == o.output &&
+          params == o.params
     end
 
     # @see the `==` method
@@ -156,7 +156,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, params, output, errors, metadata, documentation].hash
+      [documentation, errors, metadata, name, output, params].hash
     end
 
     # Builds the object from hash

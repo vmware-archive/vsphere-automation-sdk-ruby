@@ -14,23 +14,23 @@ module VSphereAutomation
     # Identifier of the subscribed library associated with the subscription.
     attr_accessor :subscribed_library
 
+    attr_accessor :subscribed_library_location
+
     # Name of the subscribed library associated with the subscription.
     attr_accessor :subscribed_library_name
 
-    attr_accessor :subscribed_library_location
+    attr_accessor :subscribed_library_placement
 
     attr_accessor :subscribed_library_vcenter
-
-    attr_accessor :subscribed_library_placement
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'subscribed_library' => :'subscribed_library',
-        :'subscribed_library_name' => :'subscribed_library_name',
         :'subscribed_library_location' => :'subscribed_library_location',
-        :'subscribed_library_vcenter' => :'subscribed_library_vcenter',
-        :'subscribed_library_placement' => :'subscribed_library_placement'
+        :'subscribed_library_name' => :'subscribed_library_name',
+        :'subscribed_library_placement' => :'subscribed_library_placement',
+        :'subscribed_library_vcenter' => :'subscribed_library_vcenter'
       }
     end
 
@@ -38,10 +38,10 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'subscribed_library' => :'String',
-        :'subscribed_library_name' => :'String',
         :'subscribed_library_location' => :'ContentLibrarySubscriptionsLocation',
-        :'subscribed_library_vcenter' => :'ContentLibrarySubscriptionsVcenterInfo',
-        :'subscribed_library_placement' => :'ContentLibrarySubscriptionsPlacementInfo'
+        :'subscribed_library_name' => :'String',
+        :'subscribed_library_placement' => :'ContentLibrarySubscriptionsPlacementInfo',
+        :'subscribed_library_vcenter' => :'ContentLibrarySubscriptionsVcenterInfo'
       }
     end
 
@@ -57,20 +57,20 @@ module VSphereAutomation
         self.subscribed_library = attributes[:'subscribed_library']
       end
 
-      if attributes.has_key?(:'subscribed_library_name')
-        self.subscribed_library_name = attributes[:'subscribed_library_name']
-      end
-
       if attributes.has_key?(:'subscribed_library_location')
         self.subscribed_library_location = attributes[:'subscribed_library_location']
       end
 
-      if attributes.has_key?(:'subscribed_library_vcenter')
-        self.subscribed_library_vcenter = attributes[:'subscribed_library_vcenter']
+      if attributes.has_key?(:'subscribed_library_name')
+        self.subscribed_library_name = attributes[:'subscribed_library_name']
       end
 
       if attributes.has_key?(:'subscribed_library_placement')
         self.subscribed_library_placement = attributes[:'subscribed_library_placement']
+      end
+
+      if attributes.has_key?(:'subscribed_library_vcenter')
+        self.subscribed_library_vcenter = attributes[:'subscribed_library_vcenter']
       end
     end
 
@@ -82,12 +82,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "subscribed_library", subscribed_library cannot be nil.')
       end
 
-      if @subscribed_library_name.nil?
-        invalid_properties.push('invalid value for "subscribed_library_name", subscribed_library_name cannot be nil.')
-      end
-
       if @subscribed_library_location.nil?
         invalid_properties.push('invalid value for "subscribed_library_location", subscribed_library_location cannot be nil.')
+      end
+
+      if @subscribed_library_name.nil?
+        invalid_properties.push('invalid value for "subscribed_library_name", subscribed_library_name cannot be nil.')
       end
 
       if @subscribed_library_placement.nil?
@@ -101,8 +101,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @subscribed_library.nil?
-      return false if @subscribed_library_name.nil?
       return false if @subscribed_library_location.nil?
+      return false if @subscribed_library_name.nil?
       return false if @subscribed_library_placement.nil?
       true
     end
@@ -113,10 +113,10 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           subscribed_library == o.subscribed_library &&
-          subscribed_library_name == o.subscribed_library_name &&
           subscribed_library_location == o.subscribed_library_location &&
-          subscribed_library_vcenter == o.subscribed_library_vcenter &&
-          subscribed_library_placement == o.subscribed_library_placement
+          subscribed_library_name == o.subscribed_library_name &&
+          subscribed_library_placement == o.subscribed_library_placement &&
+          subscribed_library_vcenter == o.subscribed_library_vcenter
     end
 
     # @see the `==` method
@@ -128,7 +128,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [subscribed_library, subscribed_library_name, subscribed_library_location, subscribed_library_vcenter, subscribed_library_placement].hash
+      [subscribed_library, subscribed_library_location, subscribed_library_name, subscribed_library_placement, subscribed_library_vcenter].hash
     end
 
     # Builds the object from hash

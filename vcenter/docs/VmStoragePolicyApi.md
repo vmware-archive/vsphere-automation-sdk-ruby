@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VmStoragePolicyApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmStoragePolicyApi.md#get) | **GET** /vcenter/vm/{vm}/storage/policy | Returns Information about Storage Policy associated with a virtual machine&#39;s home directory and/or its virtual hard disks.
-[**update**](VmStoragePolicyApi.md#update) | **PATCH** /vcenter/vm/{vm}/storage/policy | Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
+[**get**](VmStoragePolicyApi.md#get) | **GET** /rest/vcenter/vm/{vm}/storage/policy | Returns Information about Storage Policy associated with a virtual machine&#39;s home directory and/or its virtual hard disks.
+[**update**](VmStoragePolicyApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/storage/policy | Updates the storage policy configuration of a virtual machine and/or its associated virtual hard disks.
 
 
 # **get**
-> VcenterVmStoragePolicyResult get(vm)
+> VcenterVmStoragePolicyResp get(vm)
 
 Returns Information about Storage Policy associated with a virtual machine's home directory and/or its virtual hard disks.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmStoragePolicyResult**](VcenterVmStoragePolicyResult.md)
+[**VcenterVmStoragePolicyResp**](VcenterVmStoragePolicyResp.md)
 
 ### Authorization
 

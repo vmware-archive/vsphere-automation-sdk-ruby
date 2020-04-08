@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataAuthenticationServiceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataAuthenticationServiceApi.md#get) | **GET** /com/vmware/vapi/metadata/authentication/service/id:{service_id} | Retrieves authentication information about the service element corresponding to {@param.name serviceId}.
-[**list**](MetadataAuthenticationServiceApi.md#list) | **GET** /com/vmware/vapi/metadata/authentication/service | Returns the identifiers for the service elements that have authentication information.
+[**get**](MetadataAuthenticationServiceApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/authentication/service/id:{service_id} | Retrieves authentication information about the service element corresponding to {@param.name serviceId}.
+[**list**](MetadataAuthenticationServiceApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/authentication/service | Returns the identifiers for the service elements that have authentication information.
 
 
 # **get**
-> VapiMetadataAuthenticationServiceResult get(service_id)
+> VapiMetadataAuthenticationServiceResp get(service_id)
 
 Retrieves authentication information about the service element corresponding to {@param.name serviceId}.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataAuthenticationServiceResult**](VapiMetadataAuthenticationServiceResult.md)
+[**VapiMetadataAuthenticationServiceResp**](VapiMetadataAuthenticationServiceResp.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataAuthenticationServiceListResult list
+> VapiMetadataAuthenticationServiceListResp list
 
 Returns the identifiers for the service elements that have authentication information.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataAuthenticationServiceListResult**](VapiMetadataAuthenticationServiceListResult.md)
+[**VapiMetadataAuthenticationServiceListResp**](VapiMetadataAuthenticationServiceListResp.md)
 
 ### Authorization
 

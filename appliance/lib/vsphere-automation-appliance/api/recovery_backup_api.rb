@@ -19,7 +19,7 @@ module VSphereAutomation
     # Check for backup errors without starting backup.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryBackupValidateResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryBackupValidateResp|VapiStdErrorsErrorError|]
     def validate(request_body, opts = {})
       data, _status_code, _headers = validate_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryBackupValidateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryBackupValidateResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def validate_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupApi.validate ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryBackupApi.validate"
       end
       # resource path
-      local_var_path = '/appliance/recovery/backup/validate'
+      local_var_path = '/rest/appliance/recovery/backup/validate'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryBackupValidateResult',
+	  '200' => 'Appliance::ApplianceRecoveryBackupValidateResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

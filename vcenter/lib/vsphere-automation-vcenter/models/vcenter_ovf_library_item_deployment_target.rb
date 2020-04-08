@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemDeploymentTarget
-    # Identifier of the resource pool to which the virtual machine or virtual appliance should be attached.
-    attr_accessor :resource_pool_id
+    # Identifier of the vCenter folder that should contain the virtual machine or virtual appliance. The folder must be virtual machine folder.
+    attr_accessor :folder_id
 
     # Identifier of the target host on which the virtual machine or virtual appliance will run. The target host must be a member of the cluster that contains the resource pool identified by {@link #resourcePoolId}.
     attr_accessor :host_id
 
-    # Identifier of the vCenter folder that should contain the virtual machine or virtual appliance. The folder must be virtual machine folder.
-    attr_accessor :folder_id
+    # Identifier of the resource pool to which the virtual machine or virtual appliance should be attached.
+    attr_accessor :resource_pool_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'resource_pool_id' => :'resource_pool_id',
+        :'folder_id' => :'folder_id',
         :'host_id' => :'host_id',
-        :'folder_id' => :'folder_id'
+        :'resource_pool_id' => :'resource_pool_id'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'resource_pool_id' => :'String',
+        :'folder_id' => :'String',
         :'host_id' => :'String',
-        :'folder_id' => :'String'
+        :'resource_pool_id' => :'String'
       }
     end
 
@@ -46,16 +46,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'resource_pool_id')
-        self.resource_pool_id = attributes[:'resource_pool_id']
+      if attributes.has_key?(:'folder_id')
+        self.folder_id = attributes[:'folder_id']
       end
 
       if attributes.has_key?(:'host_id')
         self.host_id = attributes[:'host_id']
       end
 
-      if attributes.has_key?(:'folder_id')
-        self.folder_id = attributes[:'folder_id']
+      if attributes.has_key?(:'resource_pool_id')
+        self.resource_pool_id = attributes[:'resource_pool_id']
       end
     end
 
@@ -82,9 +82,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          resource_pool_id == o.resource_pool_id &&
+          folder_id == o.folder_id &&
           host_id == o.host_id &&
-          folder_id == o.folder_id
+          resource_pool_id == o.resource_pool_id
     end
 
     # @see the `==` method
@@ -96,7 +96,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [resource_pool_id, host_id, folder_id].hash
+      [folder_id, host_id, resource_pool_id].hash
     end
 
     # Builds the object from hash

@@ -11,11 +11,14 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemFindSpec
-    # The name of the library item. The name is case-insensitive. See {@link ItemModel#name}.
-    attr_accessor :name
+    # Whether the item is cached. Possible values are 'true' or 'false'. See {@link ItemModel#cached}.
+    attr_accessor :cached
 
     # The identifier of the library containing the item. See {@link ItemModel#libraryId}.
     attr_accessor :library_id
+
+    # The name of the library item. The name is case-insensitive. See {@link ItemModel#name}.
+    attr_accessor :name
 
     # The identifier of the library item as reported by the publisher. See {@link ItemModel#sourceId}.
     attr_accessor :source_id
@@ -23,28 +26,25 @@ module VSphereAutomation
     # The type of the library item. The type is case-insensitive. See {@link ItemModel#type}.
     attr_accessor :type
 
-    # Whether the item is cached. Possible values are 'true' or 'false'. See {@link ItemModel#cached}.
-    attr_accessor :cached
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
+        :'cached' => :'cached',
         :'library_id' => :'library_id',
+        :'name' => :'name',
         :'source_id' => :'source_id',
-        :'type' => :'type',
-        :'cached' => :'cached'
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
+        :'cached' => :'Boolean',
         :'library_id' => :'String',
+        :'name' => :'String',
         :'source_id' => :'String',
-        :'type' => :'String',
-        :'cached' => :'Boolean'
+        :'type' => :'String'
       }
     end
 
@@ -56,12 +56,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'cached')
+        self.cached = attributes[:'cached']
       end
 
       if attributes.has_key?(:'library_id')
         self.library_id = attributes[:'library_id']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'source_id')
@@ -70,10 +74,6 @@ module VSphereAutomation
 
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'cached')
-        self.cached = attributes[:'cached']
       end
     end
 
@@ -95,11 +95,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
+          cached == o.cached &&
           library_id == o.library_id &&
+          name == o.name &&
           source_id == o.source_id &&
-          type == o.type &&
-          cached == o.cached
+          type == o.type
     end
 
     # @see the `==` method
@@ -111,7 +111,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, library_id, source_id, type, cached].hash
+      [cached, library_id, name, source_id, type].hash
     end
 
     # Builds the object from hash

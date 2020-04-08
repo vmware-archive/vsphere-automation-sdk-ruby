@@ -11,54 +11,54 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterHostCreateSpec
-    # The IP address or DNS resolvable name of the host.
-    attr_accessor :hostname
-
-    # The port of the host. If unset, port 443 will be used.
-    attr_accessor :port
-
-    # The administrator account on the host.
-    attr_accessor :user_name
-
-    # The password for the administrator account on the host.
-    attr_accessor :password
-
     # Host and cluster folder in which the new standalone host should be created. This field is currently required. In the future, if this field is unset, the system will attempt to choose a suitable folder for the host; if a folder cannot be chosen, the host creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder.
     attr_accessor :folder
-
-    attr_accessor :thumbprint_verification
-
-    # The thumbprint of the SSL certificate, which the host is expected to have. The thumbprint is always computed using the SHA1 hash and is the string representation of that hash in the format: xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx where, 'x' represents a hexadecimal digit. This field is optional and it is only relevant when the value of Host.CreateSpec.thumbprint-verification is THUMBPRINT.
-    attr_accessor :thumbprint
 
     # Whether host should be added to the vCenter Server even if it is being managed by another vCenter Server. The original vCenterServer loses connection to the host. If unset, forceAdd is default to false.
     attr_accessor :force_add
 
+    # The IP address or DNS resolvable name of the host.
+    attr_accessor :hostname
+
+    # The password for the administrator account on the host.
+    attr_accessor :password
+
+    # The port of the host. If unset, port 443 will be used.
+    attr_accessor :port
+
+    # The thumbprint of the SSL certificate, which the host is expected to have. The thumbprint is always computed using the SHA1 hash and is the string representation of that hash in the format: xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx where, 'x' represents a hexadecimal digit. This field is optional and it is only relevant when the value of Host.CreateSpec.thumbprint-verification is THUMBPRINT.
+    attr_accessor :thumbprint
+
+    attr_accessor :thumbprint_verification
+
+    # The administrator account on the host.
+    attr_accessor :user_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'hostname' => :'hostname',
-        :'port' => :'port',
-        :'user_name' => :'user_name',
-        :'password' => :'password',
         :'folder' => :'folder',
-        :'thumbprint_verification' => :'thumbprint_verification',
+        :'force_add' => :'force_add',
+        :'hostname' => :'hostname',
+        :'password' => :'password',
+        :'port' => :'port',
         :'thumbprint' => :'thumbprint',
-        :'force_add' => :'force_add'
+        :'thumbprint_verification' => :'thumbprint_verification',
+        :'user_name' => :'user_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'hostname' => :'String',
-        :'port' => :'Integer',
-        :'user_name' => :'String',
-        :'password' => :'String',
         :'folder' => :'String',
-        :'thumbprint_verification' => :'VcenterHostCreateSpecThumbprintVerification',
+        :'force_add' => :'Boolean',
+        :'hostname' => :'String',
+        :'password' => :'String',
+        :'port' => :'Integer',
         :'thumbprint' => :'String',
-        :'force_add' => :'Boolean'
+        :'thumbprint_verification' => :'VcenterHostCreateSpecThumbprintVerification',
+        :'user_name' => :'String'
       }
     end
 
@@ -70,36 +70,36 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'folder')
+        self.folder = attributes[:'folder']
+      end
+
+      if attributes.has_key?(:'force_add')
+        self.force_add = attributes[:'force_add']
+      end
+
       if attributes.has_key?(:'hostname')
         self.hostname = attributes[:'hostname']
-      end
-
-      if attributes.has_key?(:'port')
-        self.port = attributes[:'port']
-      end
-
-      if attributes.has_key?(:'user_name')
-        self.user_name = attributes[:'user_name']
       end
 
       if attributes.has_key?(:'password')
         self.password = attributes[:'password']
       end
 
-      if attributes.has_key?(:'folder')
-        self.folder = attributes[:'folder']
-      end
-
-      if attributes.has_key?(:'thumbprint_verification')
-        self.thumbprint_verification = attributes[:'thumbprint_verification']
+      if attributes.has_key?(:'port')
+        self.port = attributes[:'port']
       end
 
       if attributes.has_key?(:'thumbprint')
         self.thumbprint = attributes[:'thumbprint']
       end
 
-      if attributes.has_key?(:'force_add')
-        self.force_add = attributes[:'force_add']
+      if attributes.has_key?(:'thumbprint_verification')
+        self.thumbprint_verification = attributes[:'thumbprint_verification']
+      end
+
+      if attributes.has_key?(:'user_name')
+        self.user_name = attributes[:'user_name']
       end
     end
 
@@ -111,16 +111,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "hostname", hostname cannot be nil.')
       end
 
-      if @user_name.nil?
-        invalid_properties.push('invalid value for "user_name", user_name cannot be nil.')
-      end
-
       if @password.nil?
         invalid_properties.push('invalid value for "password", password cannot be nil.')
       end
 
       if @thumbprint_verification.nil?
         invalid_properties.push('invalid value for "thumbprint_verification", thumbprint_verification cannot be nil.')
+      end
+
+      if @user_name.nil?
+        invalid_properties.push('invalid value for "user_name", user_name cannot be nil.')
       end
 
       invalid_properties
@@ -130,9 +130,9 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @hostname.nil?
-      return false if @user_name.nil?
       return false if @password.nil?
       return false if @thumbprint_verification.nil?
+      return false if @user_name.nil?
       true
     end
 
@@ -141,14 +141,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          hostname == o.hostname &&
-          port == o.port &&
-          user_name == o.user_name &&
-          password == o.password &&
           folder == o.folder &&
-          thumbprint_verification == o.thumbprint_verification &&
+          force_add == o.force_add &&
+          hostname == o.hostname &&
+          password == o.password &&
+          port == o.port &&
           thumbprint == o.thumbprint &&
-          force_add == o.force_add
+          thumbprint_verification == o.thumbprint_verification &&
+          user_name == o.user_name
     end
 
     # @see the `==` method
@@ -160,7 +160,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [hostname, port, user_name, password, folder, thumbprint_verification, thumbprint, force_add].hash
+      [folder, force_add, hostname, password, port, thumbprint, thumbprint_verification, user_name].hash
     end
 
     # Builds the object from hash

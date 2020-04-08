@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupJobDetailsBuildInfo
-    # Appliance product type, for example 6.8.2 GA
-    attr_accessor :version_name
+    # Build Number of the appliance
+    attr_accessor :build_number
 
     # Appliance version, for example 6.8.2.10000
     attr_accessor :version
 
-    # Build Number of the appliance
-    attr_accessor :build_number
+    # Appliance product type, for example 6.8.2 GA
+    attr_accessor :version_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'version_name' => :'version_name',
+        :'build_number' => :'build_number',
         :'version' => :'version',
-        :'build_number' => :'build_number'
+        :'version_name' => :'version_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'version_name' => :'String',
+        :'build_number' => :'String',
         :'version' => :'String',
-        :'build_number' => :'String'
+        :'version_name' => :'String'
       }
     end
 
@@ -46,16 +46,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'version_name')
-        self.version_name = attributes[:'version_name']
+      if attributes.has_key?(:'build_number')
+        self.build_number = attributes[:'build_number']
       end
 
       if attributes.has_key?(:'version')
         self.version = attributes[:'version']
       end
 
-      if attributes.has_key?(:'build_number')
-        self.build_number = attributes[:'build_number']
+      if attributes.has_key?(:'version_name')
+        self.version_name = attributes[:'version_name']
       end
     end
 
@@ -63,16 +63,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @version_name.nil?
-        invalid_properties.push('invalid value for "version_name", version_name cannot be nil.')
+      if @build_number.nil?
+        invalid_properties.push('invalid value for "build_number", build_number cannot be nil.')
       end
 
       if @version.nil?
         invalid_properties.push('invalid value for "version", version cannot be nil.')
       end
 
-      if @build_number.nil?
-        invalid_properties.push('invalid value for "build_number", build_number cannot be nil.')
+      if @version_name.nil?
+        invalid_properties.push('invalid value for "version_name", version_name cannot be nil.')
       end
 
       invalid_properties
@@ -81,9 +81,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @version_name.nil?
-      return false if @version.nil?
       return false if @build_number.nil?
+      return false if @version.nil?
+      return false if @version_name.nil?
       true
     end
 
@@ -92,9 +92,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          version_name == o.version_name &&
+          build_number == o.build_number &&
           version == o.version &&
-          build_number == o.build_number
+          version_name == o.version_name
     end
 
     # @see the `==` method
@@ -106,7 +106,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [version_name, version, build_number].hash
+      [build_number, version, version_name].hash
     end
 
     # Builds the object from hash

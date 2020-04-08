@@ -11,31 +11,31 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterPassiveRedeploySpec
-    attr_accessor :vc_spec
-
-    attr_accessor :placement
+    attr_accessor :failover_ip
 
     attr_accessor :ha_ip
 
-    attr_accessor :failover_ip
+    attr_accessor :placement
+
+    attr_accessor :vc_spec
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'vc_spec' => :'vc_spec',
-        :'placement' => :'placement',
+        :'failover_ip' => :'failover_ip',
         :'ha_ip' => :'ha_ip',
-        :'failover_ip' => :'failover_ip'
+        :'placement' => :'placement',
+        :'vc_spec' => :'vc_spec'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'vc_spec' => :'VcenterVchaCredentialsSpec',
-        :'placement' => :'VcenterVchaPlacementSpec',
+        :'failover_ip' => :'VcenterVchaIpSpec',
         :'ha_ip' => :'VcenterVchaIpSpec',
-        :'failover_ip' => :'VcenterVchaIpSpec'
+        :'placement' => :'VcenterVchaPlacementSpec',
+        :'vc_spec' => :'VcenterVchaCredentialsSpec'
       }
     end
 
@@ -47,20 +47,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'vc_spec')
-        self.vc_spec = attributes[:'vc_spec']
-      end
-
-      if attributes.has_key?(:'placement')
-        self.placement = attributes[:'placement']
+      if attributes.has_key?(:'failover_ip')
+        self.failover_ip = attributes[:'failover_ip']
       end
 
       if attributes.has_key?(:'ha_ip')
         self.ha_ip = attributes[:'ha_ip']
       end
 
-      if attributes.has_key?(:'failover_ip')
-        self.failover_ip = attributes[:'failover_ip']
+      if attributes.has_key?(:'placement')
+        self.placement = attributes[:'placement']
+      end
+
+      if attributes.has_key?(:'vc_spec')
+        self.vc_spec = attributes[:'vc_spec']
       end
     end
 
@@ -87,10 +87,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          vc_spec == o.vc_spec &&
-          placement == o.placement &&
+          failover_ip == o.failover_ip &&
           ha_ip == o.ha_ip &&
-          failover_ip == o.failover_ip
+          placement == o.placement &&
+          vc_spec == o.vc_spec
     end
 
     # @see the `==` method
@@ -102,7 +102,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [vc_spec, placement, ha_ip, failover_ip].hash
+      [failover_ip, ha_ip, placement, vc_spec].hash
     end
 
     # Builds the object from hash

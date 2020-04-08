@@ -31,7 +31,7 @@ describe 'ConfigurationApi' do
   # unit tests for get
   # Retrieves the current configuration values.
   # @param [Hash] opts the optional parameters
-  # @return [ContentConfigurationResult]
+  # @return [ContentConfigurationResp]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

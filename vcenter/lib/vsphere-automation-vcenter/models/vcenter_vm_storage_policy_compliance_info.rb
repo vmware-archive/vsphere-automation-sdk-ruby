@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmStoragePolicyComplianceInfo
+    # The compliance information Compliance.VmComplianceInfo for the virtual machine's virtual disks that are currently associated with a storage policy. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Disk. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Disk.
+    attr_accessor :disks
+
     attr_accessor :overall_compliance
 
     attr_accessor :vm_home
 
-    # The compliance information Compliance.VmComplianceInfo for the virtual machine's virtual disks that are currently associated with a storage policy. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Disk. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Disk.
-    attr_accessor :disks
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'disks' => :'disks',
         :'overall_compliance' => :'overall_compliance',
-        :'vm_home' => :'vm_home',
-        :'disks' => :'disks'
+        :'vm_home' => :'vm_home'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'disks' => :'Array<VcenterVmStoragePolicyComplianceInfoDisks>',
         :'overall_compliance' => :'VcenterVmStoragePolicyComplianceStatus',
-        :'vm_home' => :'VcenterVmStoragePolicyComplianceVmComplianceInfo',
-        :'disks' => :'Array<VcenterVmStoragePolicyComplianceInfoDisks>'
+        :'vm_home' => :'VcenterVmStoragePolicyComplianceVmComplianceInfo'
       }
     end
 
@@ -44,6 +44,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'disks')
+        if (value = attributes[:'disks']).is_a?(Array)
+          self.disks = value
+        end
+      end
+
       if attributes.has_key?(:'overall_compliance')
         self.overall_compliance = attributes[:'overall_compliance']
       end
@@ -51,24 +57,18 @@ module VSphereAutomation
       if attributes.has_key?(:'vm_home')
         self.vm_home = attributes[:'vm_home']
       end
-
-      if attributes.has_key?(:'disks')
-        if (value = attributes[:'disks']).is_a?(Array)
-          self.disks = value
-        end
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @overall_compliance.nil?
-        invalid_properties.push('invalid value for "overall_compliance", overall_compliance cannot be nil.')
-      end
-
       if @disks.nil?
         invalid_properties.push('invalid value for "disks", disks cannot be nil.')
+      end
+
+      if @overall_compliance.nil?
+        invalid_properties.push('invalid value for "overall_compliance", overall_compliance cannot be nil.')
       end
 
       invalid_properties
@@ -77,8 +77,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @overall_compliance.nil?
       return false if @disks.nil?
+      return false if @overall_compliance.nil?
       true
     end
 
@@ -87,9 +87,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          disks == o.disks &&
           overall_compliance == o.overall_compliance &&
-          vm_home == o.vm_home &&
-          disks == o.disks
+          vm_home == o.vm_home
     end
 
     # @see the `==` method
@@ -101,7 +101,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [overall_compliance, vm_home, disks].hash
+      [disks, overall_compliance, vm_home].hash
     end
 
     # Builds the object from hash

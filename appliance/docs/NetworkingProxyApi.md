@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::NetworkingProxyApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete**](NetworkingProxyApi.md#delete) | **DELETE** /appliance/networking/proxy/{protocol} | Deletes a proxy configuration for a specific protocol.
-[**get**](NetworkingProxyApi.md#get) | **GET** /appliance/networking/proxy/{protocol} | Gets the proxy configuration for a specific protocol.
-[**list**](NetworkingProxyApi.md#list) | **GET** /appliance/networking/proxy | Gets proxy configuration for all configured protocols.
-[**set**](NetworkingProxyApi.md#set) | **PUT** /appliance/networking/proxy/{protocol} | Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
-[**test**](NetworkingProxyApi.md#test) | **POST** /appliance/networking/proxy/{protocol}?action&#x3D;test | Tests a proxy configuration by testing the connection to the proxy server and test host.
+[**delete**](NetworkingProxyApi.md#delete) | **DELETE** /rest/appliance/networking/proxy/{protocol} | Deletes a proxy configuration for a specific protocol.
+[**get**](NetworkingProxyApi.md#get) | **GET** /rest/appliance/networking/proxy/{protocol} | Gets the proxy configuration for a specific protocol.
+[**list**](NetworkingProxyApi.md#list) | **GET** /rest/appliance/networking/proxy | Gets proxy configuration for all configured protocols.
+[**set**](NetworkingProxyApi.md#set) | **PUT** /rest/appliance/networking/proxy/{protocol} | Configures which proxy server to use for the specified protocol. This operation sets environment variables for using proxy. In order for this configuration to take effect a logout / service restart is required.
+[**test**](NetworkingProxyApi.md#test) | **POST** /rest/appliance/networking/proxy/{protocol}?action&#x3D;test | Tests a proxy configuration by testing the connection to the proxy server and test host.
 
 
 # **delete**
@@ -61,7 +61,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceNetworkingProxyResult get(protocol)
+> ApplianceNetworkingProxyResp get(protocol)
 
 Gets the proxy configuration for a specific protocol.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNetworkingProxyResult**](ApplianceNetworkingProxyResult.md)
+[**ApplianceNetworkingProxyResp**](ApplianceNetworkingProxyResp.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceNetworkingProxyListResult list
+> ApplianceNetworkingProxyListResp list
 
 Gets proxy configuration for all configured protocols.
 
@@ -143,7 +143,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNetworkingProxyListResult**](ApplianceNetworkingProxyListResult.md)
+[**ApplianceNetworkingProxyListResp**](ApplianceNetworkingProxyListResp.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ nil (empty response body)
 
 
 # **test**
-> ApplianceNetworkingProxyTestResult test(protocol, request_body)
+> ApplianceNetworkingProxyTestResp test(protocol, request_body)
 
 Tests a proxy configuration by testing the connection to the proxy server and test host.
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNetworkingProxyTestResult**](ApplianceNetworkingProxyTestResult.md)
+[**ApplianceNetworkingProxyTestResp**](ApplianceNetworkingProxyTestResp.md)
 
 ### Authorization
 

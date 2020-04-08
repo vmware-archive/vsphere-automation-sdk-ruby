@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::VmHardwareEthernetApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**connect**](VmHardwareEthernetApi.md#connect) | **POST** /vcenter/vm/{vm}/hardware/ethernet/{nic}/connect | Connects a virtual Ethernet adapter of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Ethernet.update operation may be used to configure the virtual Ethernet adapter to start in the connected state when the virtual machine is powered on. 
-[**create**](VmHardwareEthernetApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/ethernet | Adds a virtual Ethernet adapter to the virtual machine.
-[**delete**](VmHardwareEthernetApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/ethernet/{nic} | Removes a virtual Ethernet adapter from the virtual machine.
-[**disconnect**](VmHardwareEthernetApi.md#disconnect) | **POST** /vcenter/vm/{vm}/hardware/ethernet/{nic}/disconnect | Disconnects a virtual Ethernet adapter of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the Ethernet adapter is not connected to its backing resource.   For a powered-off virtual machine, the Ethernet.update operation may be used to configure the virtual Ethernet adapter to start in the disconnected state when the virtual machine is powered on. 
-[**get**](VmHardwareEthernetApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/ethernet/{nic} | Returns information about a virtual Ethernet adapter.
-[**list**](VmHardwareEthernetApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/ethernet | Returns commonly used information about the virtual Ethernet adapters belonging to the virtual machine.
-[**update**](VmHardwareEthernetApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/ethernet/{nic} | Updates the configuration of a virtual Ethernet adapter.
+[**connect**](VmHardwareEthernetApi.md#connect) | **POST** /rest/vcenter/vm/{vm}/hardware/ethernet/{nic}/connect | Connects a virtual Ethernet adapter of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Ethernet.update operation may be used to configure the virtual Ethernet adapter to start in the connected state when the virtual machine is powered on. 
+[**create**](VmHardwareEthernetApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/ethernet | Adds a virtual Ethernet adapter to the virtual machine.
+[**delete**](VmHardwareEthernetApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/ethernet/{nic} | Removes a virtual Ethernet adapter from the virtual machine.
+[**disconnect**](VmHardwareEthernetApi.md#disconnect) | **POST** /rest/vcenter/vm/{vm}/hardware/ethernet/{nic}/disconnect | Disconnects a virtual Ethernet adapter of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the Ethernet adapter is not connected to its backing resource.   For a powered-off virtual machine, the Ethernet.update operation may be used to configure the virtual Ethernet adapter to start in the disconnected state when the virtual machine is powered on. 
+[**get**](VmHardwareEthernetApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/ethernet/{nic} | Returns information about a virtual Ethernet adapter.
+[**list**](VmHardwareEthernetApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/ethernet | Returns commonly used information about the virtual Ethernet adapters belonging to the virtual machine.
+[**update**](VmHardwareEthernetApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/ethernet/{nic} | Updates the configuration of a virtual Ethernet adapter.
 
 
 # **connect**
@@ -65,7 +65,7 @@ nil (empty response body)
 
 
 # **create**
-> VcenterVmHardwareEthernetCreateResult create(vm, request_body)
+> VcenterVmHardwareEthernetCreateResp create(vm, request_body)
 
 Adds a virtual Ethernet adapter to the virtual machine.
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareEthernetCreateResult**](VcenterVmHardwareEthernetCreateResult.md)
+[**VcenterVmHardwareEthernetCreateResp**](VcenterVmHardwareEthernetCreateResp.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareEthernetResult get(vm, nic)
+> VcenterVmHardwareEthernetResp get(vm, nic)
 
 Returns information about a virtual Ethernet adapter.
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareEthernetResult**](VcenterVmHardwareEthernetResult.md)
+[**VcenterVmHardwareEthernetResp**](VcenterVmHardwareEthernetResp.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareEthernetListResult list(vm)
+> VcenterVmHardwareEthernetListResp list(vm)
 
 Returns commonly used information about the virtual Ethernet adapters belonging to the virtual machine.
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareEthernetListResult**](VcenterVmHardwareEthernetListResult.md)
+[**VcenterVmHardwareEthernetListResp**](VcenterVmHardwareEthernetListResp.md)
 
 ### Authorization
 

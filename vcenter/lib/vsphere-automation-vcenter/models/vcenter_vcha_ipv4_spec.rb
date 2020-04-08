@@ -14,18 +14,18 @@ module VSphereAutomation
     # IPV4 address to be used to configure the interface.
     attr_accessor :address
 
-    # The subnet mask for the interface. If unset and the Ipv4Spec.prefix field is unset, then an error will be reported.  If unset and the Ipv4Spec.prefix field is set, then the Ipv4Spec.prefix field will be used to create a subnet mask whose first prefix bits are 1 and the remaining bits 0.  If both the Ipv4Spec.subnet-mask field and the Ipv4Spec.prefix field are set and they do not represent the same value, then an error will be reported.
-    attr_accessor :subnet_mask
-
     # The CIDR prefix for the interface. If unset and the Ipv4Spec.subnet-mask field is unset, this an error will be reported.  If unset and the Ipv4Spec.subnet-mask field is set, then the Ipv4Spec.subnet-mask field will be used.  If both the Ipv4Spec.subnet-mask field and the Ipv4Spec.prefix field are set and they do not represent the same value, then an error will be reported.
     attr_accessor :prefix
+
+    # The subnet mask for the interface. If unset and the Ipv4Spec.prefix field is unset, then an error will be reported.  If unset and the Ipv4Spec.prefix field is set, then the Ipv4Spec.prefix field will be used to create a subnet mask whose first prefix bits are 1 and the remaining bits 0.  If both the Ipv4Spec.subnet-mask field and the Ipv4Spec.prefix field are set and they do not represent the same value, then an error will be reported.
+    attr_accessor :subnet_mask
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'address' => :'address',
-        :'subnet_mask' => :'subnet_mask',
-        :'prefix' => :'prefix'
+        :'prefix' => :'prefix',
+        :'subnet_mask' => :'subnet_mask'
       }
     end
 
@@ -33,8 +33,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'address' => :'String',
-        :'subnet_mask' => :'String',
-        :'prefix' => :'Integer'
+        :'prefix' => :'Integer',
+        :'subnet_mask' => :'String'
       }
     end
 
@@ -50,12 +50,12 @@ module VSphereAutomation
         self.address = attributes[:'address']
       end
 
-      if attributes.has_key?(:'subnet_mask')
-        self.subnet_mask = attributes[:'subnet_mask']
-      end
-
       if attributes.has_key?(:'prefix')
         self.prefix = attributes[:'prefix']
+      end
+
+      if attributes.has_key?(:'subnet_mask')
+        self.subnet_mask = attributes[:'subnet_mask']
       end
     end
 
@@ -83,8 +83,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
-          subnet_mask == o.subnet_mask &&
-          prefix == o.prefix
+          prefix == o.prefix &&
+          subnet_mask == o.subnet_mask
     end
 
     # @see the `==` method
@@ -96,7 +96,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, subnet_mask, prefix].hash
+      [address, prefix, subnet_mask].hash
     end
 
     # Builds the object from hash

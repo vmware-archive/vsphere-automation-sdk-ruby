@@ -11,33 +11,33 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemStorageGroupMapping
-    attr_accessor :type
-
     # Target datastore to be used for the storage group.
     attr_accessor :datastore_id
+
+    attr_accessor :provisioning
 
     # Target storage profile to be used for the storage group.
     attr_accessor :storage_profile_id
 
-    attr_accessor :provisioning
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
         :'datastore_id' => :'datastore_id',
+        :'provisioning' => :'provisioning',
         :'storage_profile_id' => :'storage_profile_id',
-        :'provisioning' => :'provisioning'
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterOvfLibraryItemStorageGroupMappingType',
         :'datastore_id' => :'String',
+        :'provisioning' => :'VcenterOvfDiskProvisioningType',
         :'storage_profile_id' => :'String',
-        :'provisioning' => :'VcenterOvfDiskProvisioningType'
+        :'type' => :'VcenterOvfLibraryItemStorageGroupMappingType'
       }
     end
 
@@ -49,20 +49,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'datastore_id')
         self.datastore_id = attributes[:'datastore_id']
+      end
+
+      if attributes.has_key?(:'provisioning')
+        self.provisioning = attributes[:'provisioning']
       end
 
       if attributes.has_key?(:'storage_profile_id')
         self.storage_profile_id = attributes[:'storage_profile_id']
       end
 
-      if attributes.has_key?(:'provisioning')
-        self.provisioning = attributes[:'provisioning']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -89,10 +89,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
           datastore_id == o.datastore_id &&
+          provisioning == o.provisioning &&
           storage_profile_id == o.storage_profile_id &&
-          provisioning == o.provisioning
+          type == o.type
     end
 
     # @see the `==` method
@@ -104,7 +104,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, datastore_id, storage_profile_id, provisioning].hash
+      [datastore_id, provisioning, storage_profile_id, type].hash
     end
 
     # Builds the object from hash

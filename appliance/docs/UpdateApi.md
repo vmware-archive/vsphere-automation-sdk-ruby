@@ -1,11 +1,11 @@
 # VSphereAutomation::Appliance::UpdateApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](UpdateApi.md#cancel) | **POST** /appliance/update?action&#x3D;cancel | Request the cancellation the update operation that is currently in progress.
-[**get**](UpdateApi.md#get) | **GET** /appliance/update | Gets the current status of the appliance update.
+[**cancel**](UpdateApi.md#cancel) | **POST** /rest/appliance/update?action&#x3D;cancel | Request the cancellation the update operation that is currently in progress.
+[**get**](UpdateApi.md#get) | **GET** /rest/appliance/update | Gets the current status of the appliance update.
 
 
 # **cancel**
@@ -54,7 +54,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceUpdateResult get
+> ApplianceUpdateResp get
 
 Gets the current status of the appliance update.
 
@@ -86,7 +86,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceUpdateResult**](ApplianceUpdateResult.md)
+[**ApplianceUpdateResp**](ApplianceUpdateResp.md)
 
 ### Authorization
 

@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::RecoveryReconciliationJobApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](RecoveryReconciliationJobApi.md#create) | **POST** /appliance/recovery/reconciliation/job | Initiate reconciliation.
-[**get**](RecoveryReconciliationJobApi.md#get) | **GET** /appliance/recovery/reconciliation/job | Get reconciliation job progress/result.
+[**create**](RecoveryReconciliationJobApi.md#create) | **POST** /rest/appliance/recovery/reconciliation/job | Initiate reconciliation.
+[**get**](RecoveryReconciliationJobApi.md#get) | **GET** /rest/appliance/recovery/reconciliation/job | Get reconciliation job progress/result.
 
 
 # **create**
-> ApplianceRecoveryReconciliationJobCreateResult create(request_body)
+> ApplianceRecoveryReconciliationJobCreateResp create(request_body)
 
 Initiate reconciliation.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryReconciliationJobCreateResult**](ApplianceRecoveryReconciliationJobCreateResult.md)
+[**ApplianceRecoveryReconciliationJobCreateResp**](ApplianceRecoveryReconciliationJobCreateResp.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> ApplianceRecoveryReconciliationJobResult get
+> ApplianceRecoveryReconciliationJobResp get
 
 Get reconciliation job progress/result.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceRecoveryReconciliationJobResult**](ApplianceRecoveryReconciliationJobResult.md)
+[**ApplianceRecoveryReconciliationJobResp**](ApplianceRecoveryReconciliationJobResp.md)
 
 ### Authorization
 

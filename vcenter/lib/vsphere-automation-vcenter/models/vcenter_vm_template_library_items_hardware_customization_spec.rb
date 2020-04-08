@@ -11,8 +11,7 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsHardwareCustomizationSpec
-    # Map of Ethernet network adapters to update.
-    attr_accessor :nics
+    attr_accessor :cpu_update
 
     # Idenfiers of disks to remove from the deployed virtual machine.
     attr_accessor :disks_to_remove
@@ -20,29 +19,30 @@ module VSphereAutomation
     # Disk update specification for individual disks in the deployed virtual machine.
     attr_accessor :disks_to_update
 
-    attr_accessor :cpu_update
-
     attr_accessor :memory_update
+
+    # Map of Ethernet network adapters to update.
+    attr_accessor :nics
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'nics' => :'nics',
+        :'cpu_update' => :'cpu_update',
         :'disks_to_remove' => :'disks_to_remove',
         :'disks_to_update' => :'disks_to_update',
-        :'cpu_update' => :'cpu_update',
-        :'memory_update' => :'memory_update'
+        :'memory_update' => :'memory_update',
+        :'nics' => :'nics'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'nics' => :'Array<VcenterVmTemplateLibraryItemsHardwareCustomizationSpecNics>',
+        :'cpu_update' => :'VcenterVmTemplateLibraryItemsCpuUpdateSpec',
         :'disks_to_remove' => :'Array<String>',
         :'disks_to_update' => :'Array<VcenterVmTemplateLibraryItemsHardwareCustomizationSpecDisksToUpdate>',
-        :'cpu_update' => :'VcenterVmTemplateLibraryItemsCpuUpdateSpec',
-        :'memory_update' => :'VcenterVmTemplateLibraryItemsMemoryUpdateSpec'
+        :'memory_update' => :'VcenterVmTemplateLibraryItemsMemoryUpdateSpec',
+        :'nics' => :'Array<VcenterVmTemplateLibraryItemsHardwareCustomizationSpecNics>'
       }
     end
 
@@ -54,10 +54,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'nics')
-        if (value = attributes[:'nics']).is_a?(Array)
-          self.nics = value
-        end
+      if attributes.has_key?(:'cpu_update')
+        self.cpu_update = attributes[:'cpu_update']
       end
 
       if attributes.has_key?(:'disks_to_remove')
@@ -72,12 +70,14 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'cpu_update')
-        self.cpu_update = attributes[:'cpu_update']
-      end
-
       if attributes.has_key?(:'memory_update')
         self.memory_update = attributes[:'memory_update']
+      end
+
+      if attributes.has_key?(:'nics')
+        if (value = attributes[:'nics']).is_a?(Array)
+          self.nics = value
+        end
       end
     end
 
@@ -99,11 +99,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          nics == o.nics &&
+          cpu_update == o.cpu_update &&
           disks_to_remove == o.disks_to_remove &&
           disks_to_update == o.disks_to_update &&
-          cpu_update == o.cpu_update &&
-          memory_update == o.memory_update
+          memory_update == o.memory_update &&
+          nics == o.nics
     end
 
     # @see the `==` method
@@ -115,7 +115,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [nics, disks_to_remove, disks_to_update, cpu_update, memory_update].hash
+      [cpu_update, disks_to_remove, disks_to_update, memory_update, nics].hash
     end
 
     # Builds the object from hash

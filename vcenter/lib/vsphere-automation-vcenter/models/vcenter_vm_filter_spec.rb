@@ -11,55 +11,55 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVMFilterSpec
-    # Identifiers of virtual machines that can match the filter. If unset or empty, virtual machines with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: VirtualMachine.
-    attr_accessor :vms
-
-    # Names that virtual machines must have to match the filter (see VM.Info.name). If unset or empty, virtual machines with any name match the filter.
-    attr_accessor :names
-
-    # Folders that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
-    attr_accessor :folders
+    # Clusters that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any cluster match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
+    attr_accessor :clusters
 
     # Datacenters that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
     attr_accessor :datacenters
 
+    # Folders that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
+    attr_accessor :folders
+
     # Hosts that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines on any host match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
     attr_accessor :hosts
 
-    # Clusters that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any cluster match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
-    attr_accessor :clusters
-
-    # Resource pools that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any resource pool match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ResourcePool.
-    attr_accessor :resource_pools
+    # Names that virtual machines must have to match the filter (see VM.Info.name). If unset or empty, virtual machines with any name match the filter.
+    attr_accessor :names
 
     # Power states that a virtual machine must be in to match the filter (see Power.Info.state. If unset or empty, virtual machines in any power state match the filter.
     attr_accessor :power_states
 
+    # Resource pools that must contain the virtual machine for the virtual machine to match the filter. If unset or empty, virtual machines in any resource pool match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ResourcePool.
+    attr_accessor :resource_pools
+
+    # Identifiers of virtual machines that can match the filter. If unset or empty, virtual machines with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: VirtualMachine.
+    attr_accessor :vms
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'vms' => :'vms',
-        :'names' => :'names',
-        :'folders' => :'folders',
-        :'datacenters' => :'datacenters',
-        :'hosts' => :'hosts',
         :'clusters' => :'clusters',
+        :'datacenters' => :'datacenters',
+        :'folders' => :'folders',
+        :'hosts' => :'hosts',
+        :'names' => :'names',
+        :'power_states' => :'power_states',
         :'resource_pools' => :'resource_pools',
-        :'power_states' => :'power_states'
+        :'vms' => :'vms'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'vms' => :'Array<String>',
-        :'names' => :'Array<String>',
-        :'folders' => :'Array<String>',
-        :'datacenters' => :'Array<String>',
-        :'hosts' => :'Array<String>',
         :'clusters' => :'Array<String>',
+        :'datacenters' => :'Array<String>',
+        :'folders' => :'Array<String>',
+        :'hosts' => :'Array<String>',
+        :'names' => :'Array<String>',
+        :'power_states' => :'Array<VcenterVmPowerState>',
         :'resource_pools' => :'Array<String>',
-        :'power_states' => :'Array<VcenterVmPowerState>'
+        :'vms' => :'Array<String>'
       }
     end
 
@@ -71,21 +71,9 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'vms')
-        if (value = attributes[:'vms']).is_a?(Array)
-          self.vms = value
-        end
-      end
-
-      if attributes.has_key?(:'names')
-        if (value = attributes[:'names']).is_a?(Array)
-          self.names = value
-        end
-      end
-
-      if attributes.has_key?(:'folders')
-        if (value = attributes[:'folders']).is_a?(Array)
-          self.folders = value
+      if attributes.has_key?(:'clusters')
+        if (value = attributes[:'clusters']).is_a?(Array)
+          self.clusters = value
         end
       end
 
@@ -95,15 +83,27 @@ module VSphereAutomation
         end
       end
 
+      if attributes.has_key?(:'folders')
+        if (value = attributes[:'folders']).is_a?(Array)
+          self.folders = value
+        end
+      end
+
       if attributes.has_key?(:'hosts')
         if (value = attributes[:'hosts']).is_a?(Array)
           self.hosts = value
         end
       end
 
-      if attributes.has_key?(:'clusters')
-        if (value = attributes[:'clusters']).is_a?(Array)
-          self.clusters = value
+      if attributes.has_key?(:'names')
+        if (value = attributes[:'names']).is_a?(Array)
+          self.names = value
+        end
+      end
+
+      if attributes.has_key?(:'power_states')
+        if (value = attributes[:'power_states']).is_a?(Array)
+          self.power_states = value
         end
       end
 
@@ -113,9 +113,9 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'power_states')
-        if (value = attributes[:'power_states']).is_a?(Array)
-          self.power_states = value
+      if attributes.has_key?(:'vms')
+        if (value = attributes[:'vms']).is_a?(Array)
+          self.vms = value
         end
       end
     end
@@ -138,14 +138,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          vms == o.vms &&
-          names == o.names &&
-          folders == o.folders &&
-          datacenters == o.datacenters &&
-          hosts == o.hosts &&
           clusters == o.clusters &&
+          datacenters == o.datacenters &&
+          folders == o.folders &&
+          hosts == o.hosts &&
+          names == o.names &&
+          power_states == o.power_states &&
           resource_pools == o.resource_pools &&
-          power_states == o.power_states
+          vms == o.vms
     end
 
     # @see the `==` method
@@ -157,7 +157,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [vms, names, folders, datacenters, hosts, clusters, resource_pools, power_states].hash
+      [clusters, datacenters, folders, hosts, names, power_states, resource_pools, vms].hash
     end
 
     # Builds the object from hash

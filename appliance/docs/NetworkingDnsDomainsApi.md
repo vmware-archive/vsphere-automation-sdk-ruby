@@ -1,12 +1,12 @@
 # VSphereAutomation::Appliance::NetworkingDnsDomainsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add**](NetworkingDnsDomainsApi.md#add) | **POST** /appliance/networking/dns/domains | Add domain to DNS search domains.
-[**list**](NetworkingDnsDomainsApi.md#list) | **GET** /appliance/networking/dns/domains | Get list of DNS search domains.
-[**set**](NetworkingDnsDomainsApi.md#set) | **PUT** /appliance/networking/dns/domains | Set DNS search domains.
+[**add**](NetworkingDnsDomainsApi.md#add) | **POST** /rest/appliance/networking/dns/domains | Add domain to DNS search domains.
+[**list**](NetworkingDnsDomainsApi.md#list) | **GET** /rest/appliance/networking/dns/domains | Get list of DNS search domains.
+[**set**](NetworkingDnsDomainsApi.md#set) | **PUT** /rest/appliance/networking/dns/domains | Set DNS search domains.
 
 
 # **add**
@@ -59,7 +59,7 @@ nil (empty response body)
 
 
 # **list**
-> ApplianceNetworkingDnsDomainsListResult list
+> ApplianceNetworkingDnsDomainsListResp list
 
 Get list of DNS search domains.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNetworkingDnsDomainsListResult**](ApplianceNetworkingDnsDomainsListResult.md)
+[**ApplianceNetworkingDnsDomainsListResp**](ApplianceNetworkingDnsDomainsListResp.md)
 
 ### Authorization
 

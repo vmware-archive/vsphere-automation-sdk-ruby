@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get information of the PSC that this appliance is registered with.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterSystemConfigPscRegistrationResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
+    # @return [VcenterSystemConfigPscRegistrationResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get information of the PSC that this appliance is registered with.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterSystemConfigPscRegistrationResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterSystemConfigPscRegistrationResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemConfigPscRegistrationApi.get ...'
       end
       # resource path
-      local_var_path = '/vcenter/system-config/psc-registration'
+      local_var_path = '/rest/vcenter/system-config/psc-registration'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterSystemConfigPscRegistrationResult',
+	  '200' => 'VCenter::VcenterSystemConfigPscRegistrationResp',
 	  '400' => 'VCenter::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	})
@@ -88,7 +88,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling SystemConfigPscRegistrationApi.repoint"
       end
       # resource path
-      local_var_path = '/vcenter/system-config/psc-registration'
+      local_var_path = '/rest/vcenter/system-config/psc-registration'
 
       # query parameters
       query_params = {}

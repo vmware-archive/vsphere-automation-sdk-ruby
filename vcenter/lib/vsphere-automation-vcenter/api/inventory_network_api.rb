@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns network information for the specified vCenter Server networks. The key in the {@term result} {@term map} is the network identifier and the value in the {@term map} is the network information.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterInventoryNetworkFindResult|VapiStdErrorsNotFoundError|]
+    # @return [VcenterInventoryNetworkFindResp|VapiStdErrorsNotFoundError|]
     def find(request_body, opts = {})
       data, _status_code, _headers = find_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterInventoryNetworkFindResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterInventoryNetworkFindResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def find_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InventoryNetworkApi.find ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling InventoryNetworkApi.find"
       end
       # resource path
-      local_var_path = '/com/vmware/vcenter/inventory/network?~action=find'
+      local_var_path = '/rest/com/vmware/vcenter/inventory/network?~action=find'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterInventoryNetworkFindResult',
+	  '200' => 'VCenter::VcenterInventoryNetworkFindResp',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

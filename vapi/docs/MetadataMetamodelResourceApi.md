@@ -1,14 +1,14 @@
 # VSphereAutomation::VAPI::MetadataMetamodelResourceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](MetadataMetamodelResourceApi.md#list) | **GET** /com/vmware/vapi/metadata/metamodel/resource | Returns the set of resource types present across all the service elements contained in all the package elements.
+[**list**](MetadataMetamodelResourceApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/metamodel/resource | Returns the set of resource types present across all the service elements contained in all the package elements.
 
 
 # **list**
-> VapiMetadataMetamodelResourceListResult list
+> VapiMetadataMetamodelResourceListResp list
 
 Returns the set of resource types present across all the service elements contained in all the package elements.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataMetamodelResourceListResult**](VapiMetadataMetamodelResourceListResult.md)
+[**VapiMetadataMetamodelResourceListResp**](VapiMetadataMetamodelResourceListResp.md)
 
 ### Authorization
 

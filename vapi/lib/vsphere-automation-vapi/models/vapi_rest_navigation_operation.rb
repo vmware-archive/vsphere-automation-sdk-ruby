@@ -11,39 +11,39 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiRestNavigationOperation
+    # Documentation of the operation.
+    attr_accessor :documentation
+
+    # List of References to execute the operation.
+    attr_accessor :links
+
+    attr_accessor :metadata
+
     # Name of the operation.
     attr_accessor :name
 
     # Name of the service where the operations belongs to.
     attr_accessor :service
 
-    # Documentation of the operation.
-    attr_accessor :documentation
-
-    # {@link List} of {@link Reference}s to execute the operation.
-    attr_accessor :links
-
-    attr_accessor :metadata
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'service' => :'service',
         :'documentation' => :'documentation',
         :'links' => :'links',
-        :'metadata' => :'metadata'
+        :'metadata' => :'metadata',
+        :'name' => :'name',
+        :'service' => :'service'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'service' => :'String',
         :'documentation' => :'String',
         :'links' => :'Array<VapiRestNavigationReference>',
-        :'metadata' => :'VapiRestNavigationReference'
+        :'metadata' => :'VapiRestNavigationReference',
+        :'name' => :'String',
+        :'service' => :'String'
       }
     end
 
@@ -54,14 +54,6 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'service')
-        self.service = attributes[:'service']
-      end
 
       if attributes.has_key?(:'documentation')
         self.documentation = attributes[:'documentation']
@@ -76,20 +68,20 @@ module VSphereAutomation
       if attributes.has_key?(:'metadata')
         self.metadata = attributes[:'metadata']
       end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'service')
+        self.service = attributes[:'service']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @service.nil?
-        invalid_properties.push('invalid value for "service", service cannot be nil.')
-      end
-
       if @documentation.nil?
         invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
       end
@@ -102,17 +94,25 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
       end
 
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @service.nil?
+        invalid_properties.push('invalid value for "service", service cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
-      return false if @service.nil?
       return false if @documentation.nil?
       return false if @links.nil?
       return false if @metadata.nil?
+      return false if @name.nil?
+      return false if @service.nil?
       true
     end
 
@@ -121,11 +121,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          service == o.service &&
           documentation == o.documentation &&
           links == o.links &&
-          metadata == o.metadata
+          metadata == o.metadata &&
+          name == o.name &&
+          service == o.service
     end
 
     # @see the `==` method
@@ -137,7 +137,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, service, documentation, links, metadata].hash
+      [documentation, links, metadata, name, service].hash
     end
 
     # Builds the object from hash

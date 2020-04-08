@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**management** | [**VcenterVchaIpSpec**](VcenterVchaIpSpec.md) |  | 
 **ha** | [**VcenterVchaIpSpec**](VcenterVchaIpSpec.md) |  | [optional] 
+**management** | [**VcenterVchaIpSpec**](VcenterVchaIpSpec.md) |  | 
 **placement** | [**VcenterVchaPlacementInfo**](VcenterVchaPlacementInfo.md) |  | [optional] 
 
 

@@ -14,20 +14,20 @@ module VSphereAutomation
     # The notification id.
     attr_accessor :id
 
-    # The time the notification was raised/found.
-    attr_accessor :time
-
     attr_accessor :message
 
     attr_accessor :resolution
+
+    # The time the notification was raised/found.
+    attr_accessor :time
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'time' => :'time',
         :'message' => :'message',
-        :'resolution' => :'resolution'
+        :'resolution' => :'resolution',
+        :'time' => :'time'
       }
     end
 
@@ -35,9 +35,9 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'id' => :'String',
-        :'time' => :'DateTime',
         :'message' => :'VapiStdLocalizableMessage',
-        :'resolution' => :'VapiStdLocalizableMessage'
+        :'resolution' => :'VapiStdLocalizableMessage',
+        :'time' => :'DateTime'
       }
     end
 
@@ -53,16 +53,16 @@ module VSphereAutomation
         self.id = attributes[:'id']
       end
 
-      if attributes.has_key?(:'time')
-        self.time = attributes[:'time']
-      end
-
       if attributes.has_key?(:'message')
         self.message = attributes[:'message']
       end
 
       if attributes.has_key?(:'resolution')
         self.resolution = attributes[:'resolution']
+      end
+
+      if attributes.has_key?(:'time')
+        self.time = attributes[:'time']
       end
     end
 
@@ -95,9 +95,9 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          time == o.time &&
           message == o.message &&
-          resolution == o.resolution
+          resolution == o.resolution &&
+          time == o.time
     end
 
     # @see the `==` method
@@ -109,7 +109,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, time, message, resolution].hash
+      [id, message, resolution, time].hash
     end
 
     # Builds the object from hash

@@ -13,17 +13,17 @@ module VSphereAutomation
     class VapiMetadataMetamodelConstantValue
     attr_accessor :category
 
-    attr_accessor :primitive_value
-
     # List value of the constant element.
     attr_accessor :list_value
+
+    attr_accessor :primitive_value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'category' => :'category',
-        :'primitive_value' => :'primitive_value',
-        :'list_value' => :'list_value'
+        :'list_value' => :'list_value',
+        :'primitive_value' => :'primitive_value'
       }
     end
 
@@ -31,8 +31,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'category' => :'VapiMetadataMetamodelConstantValueCategory',
-        :'primitive_value' => :'VapiMetadataMetamodelPrimitiveValue',
-        :'list_value' => :'Array<VapiMetadataMetamodelPrimitiveValue>'
+        :'list_value' => :'Array<VapiMetadataMetamodelPrimitiveValue>',
+        :'primitive_value' => :'VapiMetadataMetamodelPrimitiveValue'
       }
     end
 
@@ -48,14 +48,14 @@ module VSphereAutomation
         self.category = attributes[:'category']
       end
 
-      if attributes.has_key?(:'primitive_value')
-        self.primitive_value = attributes[:'primitive_value']
-      end
-
       if attributes.has_key?(:'list_value')
         if (value = attributes[:'list_value']).is_a?(Array)
           self.list_value = value
         end
+      end
+
+      if attributes.has_key?(:'primitive_value')
+        self.primitive_value = attributes[:'primitive_value']
       end
     end
 
@@ -83,8 +83,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           category == o.category &&
-          primitive_value == o.primitive_value &&
-          list_value == o.list_value
+          list_value == o.list_value &&
+          primitive_value == o.primitive_value
     end
 
     # @see the `==` method
@@ -96,7 +96,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [category, primitive_value, list_value].hash
+      [category, list_value, primitive_value].hash
     end
 
     # Builds the object from hash

@@ -11,37 +11,37 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesInterfaceInfo
+    attr_accessor :ipv4
+
+    attr_accessor :ipv6
+
+    # MAC address. For example 00:0C:29:94:BB:5A.
+    attr_accessor :mac
+
     # Interface name, for example, \"nic0\", \"nic1\".
     attr_accessor :name
 
     attr_accessor :status
 
-    # MAC address. For example 00:0C:29:94:BB:5A.
-    attr_accessor :mac
-
-    attr_accessor :ipv4
-
-    attr_accessor :ipv6
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'status' => :'status',
-        :'mac' => :'mac',
         :'ipv4' => :'ipv4',
-        :'ipv6' => :'ipv6'
+        :'ipv6' => :'ipv6',
+        :'mac' => :'mac',
+        :'name' => :'name',
+        :'status' => :'status'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'status' => :'ApplianceNetworkingInterfacesInterfaceStatus',
-        :'mac' => :'String',
         :'ipv4' => :'ApplianceNetworkingInterfacesIpv4Info',
-        :'ipv6' => :'ApplianceNetworkingInterfacesIpv6Info'
+        :'ipv6' => :'ApplianceNetworkingInterfacesIpv6Info',
+        :'mac' => :'String',
+        :'name' => :'String',
+        :'status' => :'ApplianceNetworkingInterfacesInterfaceStatus'
       }
     end
 
@@ -53,18 +53,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'mac')
-        self.mac = attributes[:'mac']
-      end
-
       if attributes.has_key?(:'ipv4')
         self.ipv4 = attributes[:'ipv4']
       end
@@ -72,12 +60,28 @@ module VSphereAutomation
       if attributes.has_key?(:'ipv6')
         self.ipv6 = attributes[:'ipv6']
       end
+
+      if attributes.has_key?(:'mac')
+        self.mac = attributes[:'mac']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @mac.nil?
+        invalid_properties.push('invalid value for "mac", mac cannot be nil.')
+      end
+
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
@@ -86,19 +90,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "status", status cannot be nil.')
       end
 
-      if @mac.nil?
-        invalid_properties.push('invalid value for "mac", mac cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @mac.nil?
       return false if @name.nil?
       return false if @status.nil?
-      return false if @mac.nil?
       true
     end
 
@@ -107,11 +107,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          status == o.status &&
-          mac == o.mac &&
           ipv4 == o.ipv4 &&
-          ipv6 == o.ipv6
+          ipv6 == o.ipv6 &&
+          mac == o.mac &&
+          name == o.name &&
+          status == o.status
     end
 
     # @see the `==` method
@@ -123,7 +123,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, status, mac, ipv4, ipv6].hash
+      [ipv4, ipv6, mac, name, status].hash
     end
 
     # Builds the object from hash

@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataCliCommandOutputFieldInfo
-    # Name of the {@term field}.
-    attr_accessor :field_name
-
     # Name used by the CLI to display the {@term field}.
     attr_accessor :display_name
+
+    # Name of the {@term field}.
+    attr_accessor :field_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'field_name' => :'field_name',
-        :'display_name' => :'display_name'
+        :'display_name' => :'display_name',
+        :'field_name' => :'field_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'field_name' => :'String',
-        :'display_name' => :'String'
+        :'display_name' => :'String',
+        :'field_name' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'field_name')
-        self.field_name = attributes[:'field_name']
-      end
-
       if attributes.has_key?(:'display_name')
         self.display_name = attributes[:'display_name']
+      end
+
+      if attributes.has_key?(:'field_name')
+        self.field_name = attributes[:'field_name']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @field_name.nil?
-        invalid_properties.push('invalid value for "field_name", field_name cannot be nil.')
-      end
-
       if @display_name.nil?
         invalid_properties.push('invalid value for "display_name", display_name cannot be nil.')
+      end
+
+      if @field_name.nil?
+        invalid_properties.push('invalid value for "field_name", field_name cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @field_name.nil?
       return false if @display_name.nil?
+      return false if @field_name.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          field_name == o.field_name &&
-          display_name == o.display_name
+          display_name == o.display_name &&
+          field_name == o.field_name
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [field_name, display_name].hash
+      [display_name, field_name].hash
     end
 
     # Builds the object from hash

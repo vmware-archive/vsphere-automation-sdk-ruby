@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VchaClusterWitnessApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](VchaClusterWitnessApi.md#check) | **POST** /vcenter/vcha/cluster/witness?action&#x3D;check | Validates the specified witness node&#39;s placement configuration.
-[**redeploytask**](VchaClusterWitnessApi.md#redeploytask) | **POST** /vcenter/vcha/cluster/witness?action&#x3D;redeploy&amp;vmw-task&#x3D;true | Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
+[**check**](VchaClusterWitnessApi.md#check) | **POST** /rest/vcenter/vcha/cluster/witness?action&#x3D;check | Validates the specified witness node&#39;s placement configuration.
+[**redeploy_task**](VchaClusterWitnessApi.md#redeploy_task) | **POST** /rest/vcenter/vcha/cluster/witness?action&#x3D;redeploy&amp;vmw-task&#x3D;true | Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
 
 # **check**
-> VcenterVchaClusterWitnessCheckResult check(request_body)
+> VcenterVchaClusterWitnessCheckResp check(request_body)
 
 Validates the specified witness node's placement configuration.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVchaClusterWitnessCheckResult**](VcenterVchaClusterWitnessCheckResult.md)
+[**VcenterVchaClusterWitnessCheckResp**](VcenterVchaClusterWitnessCheckResp.md)
 
 ### Authorization
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 
 
-# **redeploytask**
-> VcenterVchaClusterWitnessRedeployTaskResult redeploytask(request_body)
+# **redeploy_task**
+> VcenterVchaClusterWitnessRedeployTaskResp redeploy_task(request_body)
 
 Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
 
@@ -80,10 +80,10 @@ request_body = VCenter::VcenterVchaClusterWitnessRedeployTask.new # VcenterVchaC
 
 begin
   #Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
-  result = api_instance.redeploytask(request_body)
+  result = api_instance.redeploy_task(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
-  puts "Exception when calling VchaClusterWitnessApi->redeploytask: #{e}"
+  puts "Exception when calling VchaClusterWitnessApi->redeploy_task: #{e}"
 end
 ```
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVchaClusterWitnessRedeployTaskResult**](VcenterVchaClusterWitnessRedeployTaskResult.md)
+[**VcenterVchaClusterWitnessRedeployTaskResp**](VcenterVchaClusterWitnessRedeployTaskResp.md)
 
 ### Authorization
 

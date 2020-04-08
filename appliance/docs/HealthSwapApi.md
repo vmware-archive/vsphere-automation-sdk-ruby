@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::HealthSwapApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](HealthSwapApi.md#get) | **GET** /appliance/health/swap | Get swap health.
+[**get**](HealthSwapApi.md#get) | **GET** /rest/appliance/health/swap | Get swap health.
 
 
 # **get**
-> ApplianceHealthSwapResult get
+> ApplianceHealthSwapResp get
 
 Get swap health.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthSwapResult**](ApplianceHealthSwapResult.md)
+[**ApplianceHealthSwapResp**](ApplianceHealthSwapResp.md)
 
 ### Authorization
 

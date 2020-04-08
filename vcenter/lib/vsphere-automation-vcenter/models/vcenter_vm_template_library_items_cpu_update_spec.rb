@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsCpuUpdateSpec
-    # Number of virtual processors in the deployed virtual machine.
-    attr_accessor :num_cpus
-
     # Number of cores among which to distribute CPUs in the deployed virtual machine.
     attr_accessor :num_cores_per_socket
+
+    # Number of virtual processors in the deployed virtual machine.
+    attr_accessor :num_cpus
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'num_cpus' => :'num_cpus',
-        :'num_cores_per_socket' => :'num_cores_per_socket'
+        :'num_cores_per_socket' => :'num_cores_per_socket',
+        :'num_cpus' => :'num_cpus'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'num_cpus' => :'Integer',
-        :'num_cores_per_socket' => :'Integer'
+        :'num_cores_per_socket' => :'Integer',
+        :'num_cpus' => :'Integer'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'num_cpus')
-        self.num_cpus = attributes[:'num_cpus']
-      end
-
       if attributes.has_key?(:'num_cores_per_socket')
         self.num_cores_per_socket = attributes[:'num_cores_per_socket']
+      end
+
+      if attributes.has_key?(:'num_cpus')
+        self.num_cpus = attributes[:'num_cpus']
       end
     end
 
@@ -68,8 +68,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          num_cpus == o.num_cpus &&
-          num_cores_per_socket == o.num_cores_per_socket
+          num_cores_per_socket == o.num_cores_per_socket &&
+          num_cpus == o.num_cpus
     end
 
     # @see the `==` method
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [num_cpus, num_cores_per_socket].hash
+      [num_cores_per_socket, num_cpus].hash
     end
 
     # Builds the object from hash

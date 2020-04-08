@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelErrorInfo
-    # Identifier for the structure element corresponding to the error that is being reported by the operation.
-    attr_accessor :structure_id
-
     # The English language documentation for the service element. It can contain HTML markup and Javadoc tags.
     attr_accessor :documentation
+
+    # Identifier for the structure element corresponding to the error that is being reported by the operation.
+    attr_accessor :structure_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'structure_id' => :'structure_id',
-        :'documentation' => :'documentation'
+        :'documentation' => :'documentation',
+        :'structure_id' => :'structure_id'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'structure_id' => :'String',
-        :'documentation' => :'String'
+        :'documentation' => :'String',
+        :'structure_id' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'structure_id')
-        self.structure_id = attributes[:'structure_id']
-      end
-
       if attributes.has_key?(:'documentation')
         self.documentation = attributes[:'documentation']
+      end
+
+      if attributes.has_key?(:'structure_id')
+        self.structure_id = attributes[:'structure_id']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @structure_id.nil?
-        invalid_properties.push('invalid value for "structure_id", structure_id cannot be nil.')
-      end
-
       if @documentation.nil?
         invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      end
+
+      if @structure_id.nil?
+        invalid_properties.push('invalid value for "structure_id", structure_id cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @structure_id.nil?
       return false if @documentation.nil?
+      return false if @structure_id.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          structure_id == o.structure_id &&
-          documentation == o.documentation
+          documentation == o.documentation &&
+          structure_id == o.structure_id
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [structure_id, documentation].hash
+      [documentation, structure_id].hash
     end
 
     # Builds the object from hash

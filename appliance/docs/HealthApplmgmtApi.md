@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::HealthApplmgmtApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](HealthApplmgmtApi.md#get) | **GET** /appliance/health/applmgmt | Get health status of applmgmt services.
+[**get**](HealthApplmgmtApi.md#get) | **GET** /rest/appliance/health/applmgmt | Get health status of applmgmt services.
 
 
 # **get**
-> ApplianceHealthApplmgmtResult get
+> ApplianceHealthApplmgmtResp get
 
 Get health status of applmgmt services.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthApplmgmtResult**](ApplianceHealthApplmgmtResult.md)
+[**ApplianceHealthApplmgmtResp**](ApplianceHealthApplmgmtResp.md)
 
 ### Authorization
 

@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataCliNamespaceFingerprintResult|]
+    # @return [VapiMetadataCliNamespaceFingerprintResp|]
     def fingerprint(opts = {})
       data, _status_code, _headers = fingerprint_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataCliNamespaceFingerprintResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataCliNamespaceFingerprintResp|, Fixnum, Hash)>]  data, response status code and response headers
     def fingerprint_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.fingerprint ...'
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/cli/namespace?~action=fingerprint'
+      local_var_path = '/rest/com/vmware/vapi/metadata/cli/namespace?~action=fingerprint'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataCliNamespaceFingerprintResult',
+	  '200' => 'VAPI::VapiMetadataCliNamespaceFingerprintResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataCliNamespaceApi#fingerprint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -66,7 +66,7 @@ module VSphereAutomation
     # Retreives information about a namespace including information about children of that namespace.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataCliNamespaceResult|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataCliNamespaceResp|VapiStdErrorsNotFoundError|]
     def get(request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(request_body, opts)
       data
@@ -76,7 +76,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataCliNamespaceResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataCliNamespaceResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.get ...'
@@ -86,7 +86,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling MetadataCliNamespaceApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/cli/namespace?~action=get'
+      local_var_path = '/rest/com/vmware/vapi/metadata/cli/namespace?~action=get'
 
       # query parameters
       query_params = {}
@@ -111,7 +111,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataCliNamespaceResult',
+	  '200' => 'VAPI::VapiMetadataCliNamespaceResp',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -121,7 +121,7 @@ module VSphereAutomation
     end
     # Returns the identifiers of all namespaces registered with the infrastructure.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataCliNamespaceListResult|]
+    # @return [VapiMetadataCliNamespaceListResp|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -130,13 +130,13 @@ module VSphereAutomation
     # Returns the identifiers of all namespaces registered with the infrastructure.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataCliNamespaceListResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataCliNamespaceListResp|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliNamespaceApi.list ...'
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/cli/namespace'
+      local_var_path = '/rest/com/vmware/vapi/metadata/cli/namespace'
 
       # query parameters
       query_params = {}
@@ -159,7 +159,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataCliNamespaceListResult',
+	  '200' => 'VAPI::VapiMetadataCliNamespaceListResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataCliNamespaceApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

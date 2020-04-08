@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiRestNavigationReference
-    attr_accessor :method
-
     # URL to be called.
     attr_accessor :href
+
+    attr_accessor :method
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'method' => :'method',
-        :'href' => :'href'
+        :'href' => :'href',
+        :'method' => :'method'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'method' => :'VapiRestNavigationHttpMethod',
-        :'href' => :'String'
+        :'href' => :'String',
+        :'method' => :'VapiRestNavigationHttpMethod'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'method')
-        self.method = attributes[:'method']
-      end
-
       if attributes.has_key?(:'href')
         self.href = attributes[:'href']
+      end
+
+      if attributes.has_key?(:'method')
+        self.method = attributes[:'method']
       end
     end
 
@@ -53,12 +53,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @method.nil?
-        invalid_properties.push('invalid value for "method", method cannot be nil.')
-      end
-
       if @href.nil?
         invalid_properties.push('invalid value for "href", href cannot be nil.')
+      end
+
+      if @method.nil?
+        invalid_properties.push('invalid value for "method", method cannot be nil.')
       end
 
       invalid_properties
@@ -67,8 +67,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @method.nil?
       return false if @href.nil?
+      return false if @method.nil?
       true
     end
 
@@ -77,8 +77,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          method == o.method &&
-          href == o.href
+          href == o.href &&
+          method == o.method
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [method, href].hash
+      [href, method].hash
     end
 
     # Builds the object from hash

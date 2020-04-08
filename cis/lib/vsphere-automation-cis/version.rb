@@ -8,6 +8,6 @@
 
 module VSphereAutomation
   module CIS
-    VERSION = '0.4.6'
+    VERSION = '0.5.0'
   end
 end

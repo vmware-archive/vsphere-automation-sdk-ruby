@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataMetamodelStructureApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataMetamodelStructureApi.md#get) | **GET** /com/vmware/vapi/metadata/metamodel/structure/id:{structure_id} | Retrieves information about the structure element corresponding to {@param.name structureId}. &lt;p&gt; The {@link StructureInfo} contains the metamodel information about the structure element. It contains information about all the field elements and enumeration elements contained in this structure element.
-[**list**](MetadataMetamodelStructureApi.md#list) | **GET** /com/vmware/vapi/metadata/metamodel/structure | Returns the identifiers for the structure elements that are contained in all the package elements and service elements.
+[**get**](MetadataMetamodelStructureApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/metamodel/structure/id:{structure_id} | Retrieves information about the structure element corresponding to {@param.name structureId}. &lt;p&gt; The {@link StructureInfo} contains the metamodel information about the structure element. It contains information about all the field elements and enumeration elements contained in this structure element.
+[**list**](MetadataMetamodelStructureApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/metamodel/structure | Returns the identifiers for the structure elements that are contained in all the package elements and service elements.
 
 
 # **get**
-> VapiMetadataMetamodelStructureResult get(structure_id)
+> VapiMetadataMetamodelStructureResp get(structure_id)
 
 Retrieves information about the structure element corresponding to {@param.name structureId}. <p> The {@link StructureInfo} contains the metamodel information about the structure element. It contains information about all the field elements and enumeration elements contained in this structure element.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelStructureResult**](VapiMetadataMetamodelStructureResult.md)
+[**VapiMetadataMetamodelStructureResp**](VapiMetadataMetamodelStructureResp.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataMetamodelStructureListResult list
+> VapiMetadataMetamodelStructureListResp list
 
 Returns the identifiers for the structure elements that are contained in all the package elements and service elements.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataMetamodelStructureListResult**](VapiMetadataMetamodelStructureListResult.md)
+[**VapiMetadataMetamodelStructureListResp**](VapiMetadataMetamodelStructureListResp.md)
 
 ### Authorization
 

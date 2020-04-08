@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataCliCommandIdentity
-    # The dot-separated path of the namespace containing the command in the CLI command tree.
-    attr_accessor :path
-
     # Name of the command.
     attr_accessor :name
+
+    # The dot-separated path of the namespace containing the command in the CLI command tree.
+    attr_accessor :path
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'path' => :'path',
-        :'name' => :'name'
+        :'name' => :'name',
+        :'path' => :'path'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'path' => :'String',
-        :'name' => :'String'
+        :'name' => :'String',
+        :'path' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'path')
-        self.path = attributes[:'path']
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'path')
+        self.path = attributes[:'path']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @path.nil?
-        invalid_properties.push('invalid value for "path", path cannot be nil.')
-      end
-
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @path.nil?
+        invalid_properties.push('invalid value for "path", path cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @path.nil?
       return false if @name.nil?
+      return false if @path.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          path == o.path &&
-          name == o.name
+          name == o.name &&
+          path == o.path
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [path, name].hash
+      [name, path].hash
     end
 
     # Builds the object from hash

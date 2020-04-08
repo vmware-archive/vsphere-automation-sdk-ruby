@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceNetworkingProxyTest
+    attr_accessor :config
+
     # A hostname, IPv4 or Ipv6 address.
     attr_accessor :host
-
-    attr_accessor :config
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'host' => :'host',
-        :'config' => :'config'
+        :'config' => :'config',
+        :'host' => :'host'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'host' => :'String',
-        :'config' => :'ApplianceNetworkingProxyConfig'
+        :'config' => :'ApplianceNetworkingProxyConfig',
+        :'host' => :'String'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'host')
-        self.host = attributes[:'host']
-      end
-
       if attributes.has_key?(:'config')
         self.config = attributes[:'config']
+      end
+
+      if attributes.has_key?(:'host')
+        self.host = attributes[:'host']
       end
     end
 
@@ -53,12 +53,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @host.nil?
-        invalid_properties.push('invalid value for "host", host cannot be nil.')
-      end
-
       if @config.nil?
         invalid_properties.push('invalid value for "config", config cannot be nil.')
+      end
+
+      if @host.nil?
+        invalid_properties.push('invalid value for "host", host cannot be nil.')
       end
 
       invalid_properties
@@ -67,8 +67,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @host.nil?
       return false if @config.nil?
+      return false if @host.nil?
       true
     end
 
@@ -77,8 +77,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          host == o.host &&
-          config == o.config
+          config == o.config &&
+          host == o.host
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host, config].hash
+      [config, host].hash
     end
 
     # Builds the object from hash

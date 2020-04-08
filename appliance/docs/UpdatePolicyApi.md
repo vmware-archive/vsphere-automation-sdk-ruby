@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::UpdatePolicyApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](UpdatePolicyApi.md#get) | **GET** /appliance/update/policy | Gets the automatic update checking and staging policy.
-[**set**](UpdatePolicyApi.md#set) | **PUT** /appliance/update/policy | Sets the automatic update checking and staging policy.
+[**get**](UpdatePolicyApi.md#get) | **GET** /rest/appliance/update/policy | Gets the automatic update checking and staging policy.
+[**set**](UpdatePolicyApi.md#set) | **PUT** /rest/appliance/update/policy | Sets the automatic update checking and staging policy.
 
 
 # **get**
-> ApplianceUpdatePolicyResult get
+> ApplianceUpdatePolicyResp get
 
 Gets the automatic update checking and staging policy.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceUpdatePolicyResult**](ApplianceUpdatePolicyResult.md)
+[**ApplianceUpdatePolicyResp**](ApplianceUpdatePolicyResp.md)
 
 ### Authorization
 

@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::HealthApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**messages**](HealthApi.md#messages) | **GET** /appliance/health/{item}/messages | Get health messages.
+[**messages**](HealthApi.md#messages) | **GET** /rest/appliance/health/{item}/messages | Get health messages.
 
 
 # **messages**
-> ApplianceHealthMessagesResult messages(item)
+> ApplianceHealthMessagesResp messages(item)
 
 Get health messages.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceHealthMessagesResult**](ApplianceHealthMessagesResult.md)
+[**ApplianceHealthMessagesResp**](ApplianceHealthMessagesResp.md)
 
 ### Authorization
 

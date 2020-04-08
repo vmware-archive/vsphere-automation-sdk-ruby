@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataAuthenticationServiceOperationApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataAuthenticationServiceOperationApi.md#get) | **POST** /com/vmware/vapi/metadata/authentication/service/operation/id:{service_id}?~action&#x3D;get | Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
-[**list**](MetadataAuthenticationServiceOperationApi.md#list) | **GET** /com/vmware/vapi/metadata/authentication/service/operation | Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have authentication information.
+[**get**](MetadataAuthenticationServiceOperationApi.md#get) | **POST** /rest/com/vmware/vapi/metadata/authentication/service/operation/id:{service_id}?~action&#x3D;get | Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
+[**list**](MetadataAuthenticationServiceOperationApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/authentication/service/operation | Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have authentication information.
 
 
 # **get**
-> VapiMetadataAuthenticationServiceOperationResult get(service_id, request_body)
+> VapiMetadataAuthenticationServiceOperationResp get(service_id, request_body)
 
 Retrieves the authentication information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataAuthenticationServiceOperationResult**](VapiMetadataAuthenticationServiceOperationResult.md)
+[**VapiMetadataAuthenticationServiceOperationResp**](VapiMetadataAuthenticationServiceOperationResp.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataAuthenticationServiceOperationListResult list(service_id)
+> VapiMetadataAuthenticationServiceOperationListResp list(service_id)
 
 Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have authentication information.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataAuthenticationServiceOperationListResult**](VapiMetadataAuthenticationServiceOperationListResult.md)
+[**VapiMetadataAuthenticationServiceOperationListResp**](VapiMetadataAuthenticationServiceOperationListResp.md)
 
 ### Authorization
 

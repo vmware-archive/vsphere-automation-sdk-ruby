@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataMetamodelPackageApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataMetamodelPackageApi.md#get) | **GET** /com/vmware/vapi/metadata/metamodel/package/id:{package_id} | Retrieves information about the package element corresponding to {@param.name packageId}.
-[**list**](MetadataMetamodelPackageApi.md#list) | **GET** /com/vmware/vapi/metadata/metamodel/package | Returns the identifiers for the packages elements that are contained in all the registered component elements.
+[**get**](MetadataMetamodelPackageApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/metamodel/package/id:{package_id} | Retrieves information about the package element corresponding to {@param.name packageId}.
+[**list**](MetadataMetamodelPackageApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/metamodel/package | Returns the identifiers for the packages elements that are contained in all the registered component elements.
 
 
 # **get**
-> VapiMetadataMetamodelPackageResult get(package_id)
+> VapiMetadataMetamodelPackageResp get(package_id)
 
 Retrieves information about the package element corresponding to {@param.name packageId}.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelPackageResult**](VapiMetadataMetamodelPackageResult.md)
+[**VapiMetadataMetamodelPackageResp**](VapiMetadataMetamodelPackageResp.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataMetamodelPackageListResult list
+> VapiMetadataMetamodelPackageListResp list
 
 Returns the identifiers for the packages elements that are contained in all the registered component elements.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataMetamodelPackageListResult**](VapiMetadataMetamodelPackageListResult.md)
+[**VapiMetadataMetamodelPackageListResp**](VapiMetadataMetamodelPackageListResp.md)
 
 ### Authorization
 

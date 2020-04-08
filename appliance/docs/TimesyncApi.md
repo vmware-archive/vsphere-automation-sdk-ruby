@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::TimesyncApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](TimesyncApi.md#get) | **GET** /appliance/timesync | Get time synchronization mode.
-[**set**](TimesyncApi.md#set) | **PUT** /appliance/timesync | Set time synchronization mode.
+[**get**](TimesyncApi.md#get) | **GET** /rest/appliance/timesync | Get time synchronization mode.
+[**set**](TimesyncApi.md#set) | **PUT** /rest/appliance/timesync | Set time synchronization mode.
 
 
 # **get**
-> ApplianceTimesyncResult get
+> ApplianceTimesyncResp get
 
 Get time synchronization mode.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceTimesyncResult**](ApplianceTimesyncResult.md)
+[**ApplianceTimesyncResp**](ApplianceTimesyncResp.md)
 
 ### Authorization
 

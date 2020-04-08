@@ -1,13 +1,13 @@
 # VSphereAutomation::VCenter::DeploymentInstallApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](DeploymentInstallApi.md#cancel) | **POST** /vcenter/deployment/install?action&#x3D;cancel | Cancel the appliance installation that is in progress.
-[**check**](DeploymentInstallApi.md#check) | **POST** /vcenter/deployment/install?action&#x3D;check | Run sanity checks using the InstallSpec parameters passed.
-[**get**](DeploymentInstallApi.md#get) | **GET** /vcenter/deployment/install | Get the parameters used to configure the ongoing appliance installation.
-[**start**](DeploymentInstallApi.md#start) | **POST** /vcenter/deployment/install?action&#x3D;start | Start the appliance installation.
+[**cancel**](DeploymentInstallApi.md#cancel) | **POST** /rest/vcenter/deployment/install?action&#x3D;cancel | Cancel the appliance installation that is in progress.
+[**check**](DeploymentInstallApi.md#check) | **POST** /rest/vcenter/deployment/install?action&#x3D;check | Run sanity checks using the InstallSpec parameters passed.
+[**get**](DeploymentInstallApi.md#get) | **GET** /rest/vcenter/deployment/install | Get the parameters used to configure the ongoing appliance installation.
+[**start**](DeploymentInstallApi.md#start) | **POST** /rest/vcenter/deployment/install?action&#x3D;start | Start the appliance installation.
 
 
 # **cancel**
@@ -56,7 +56,7 @@ nil (empty response body)
 
 
 # **check**
-> VcenterDeploymentInstallCheckResult check(request_body)
+> VcenterDeploymentInstallCheckResp check(request_body)
 
 Run sanity checks using the InstallSpec parameters passed.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDeploymentInstallCheckResult**](VcenterDeploymentInstallCheckResult.md)
+[**VcenterDeploymentInstallCheckResp**](VcenterDeploymentInstallCheckResp.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> VcenterDeploymentInstallResult get
+> VcenterDeploymentInstallResp get
 
 Get the parameters used to configure the ongoing appliance installation.
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterDeploymentInstallResult**](VcenterDeploymentInstallResult.md)
+[**VcenterDeploymentInstallResp**](VcenterDeploymentInstallResp.md)
 
 ### Authorization
 

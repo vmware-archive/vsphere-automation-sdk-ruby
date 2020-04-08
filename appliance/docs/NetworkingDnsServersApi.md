@@ -1,13 +1,13 @@
 # VSphereAutomation::Appliance::NetworkingDnsServersApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add**](NetworkingDnsServersApi.md#add) | **POST** /appliance/networking/dns/servers | Add a DNS server. This method fails if mode argument is \&quot;dhcp\&quot;
-[**get**](NetworkingDnsServersApi.md#get) | **GET** /appliance/networking/dns/servers | Get DNS server configuration.
-[**set**](NetworkingDnsServersApi.md#set) | **PUT** /appliance/networking/dns/servers | Set the DNS server configuration. If you set the mode argument to \&quot;DHCP\&quot;, a DHCP refresh is forced.
-[**test**](NetworkingDnsServersApi.md#test) | **POST** /appliance/networking/dns/servers/test | Test if dns servers are reachable.
+[**add**](NetworkingDnsServersApi.md#add) | **POST** /rest/appliance/networking/dns/servers | Add a DNS server. This method fails if mode argument is \&quot;dhcp\&quot;
+[**get**](NetworkingDnsServersApi.md#get) | **GET** /rest/appliance/networking/dns/servers | Get DNS server configuration.
+[**set**](NetworkingDnsServersApi.md#set) | **PUT** /rest/appliance/networking/dns/servers | Set the DNS server configuration. If you set the mode argument to \&quot;DHCP\&quot;, a DHCP refresh is forced.
+[**test**](NetworkingDnsServersApi.md#test) | **POST** /rest/appliance/networking/dns/servers/test | Test if dns servers are reachable.
 
 
 # **add**
@@ -60,7 +60,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceNetworkingDnsServersResult get
+> ApplianceNetworkingDnsServersResp get
 
 Get DNS server configuration.
 
@@ -92,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNetworkingDnsServersResult**](ApplianceNetworkingDnsServersResult.md)
+[**ApplianceNetworkingDnsServersResp**](ApplianceNetworkingDnsServersResp.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ nil (empty response body)
 
 
 # **test**
-> ApplianceNetworkingDnsServersTestResult test(request_body)
+> ApplianceNetworkingDnsServersTestResp test(request_body)
 
 Test if dns servers are reachable.
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNetworkingDnsServersTestResult**](ApplianceNetworkingDnsServersTestResult.md)
+[**ApplianceNetworkingDnsServersTestResp**](ApplianceNetworkingDnsServersTestResp.md)
 
 ### Authorization
 

@@ -13,34 +13,34 @@ module VSphereAutomation
     class ContentLibraryPublishInfo
     attr_accessor :authentication_method
 
-    # Whether the local library is published.
-    attr_accessor :published
-
-    # The URL to which the library metadata is published by the Content Library Service. <p> This value can be used to set the {@link SubscriptionInfo#subscriptionUrl} property when creating a subscribed library.
-    attr_accessor :publish_url
-
-    # The username to require for authentication.
-    attr_accessor :user_name
+    # The current password to verify. This {@term field} is available starting in vSphere 6.7.
+    attr_accessor :current_password
 
     # The new password to require for authentication.
     attr_accessor :password
 
-    # The current password to verify. This {@term field} is available starting in vSphere 6.7.
-    attr_accessor :current_password
-
     # Whether library and library item metadata are persisted in the storage backing as JSON files. This flag only applies if the local library is published. <p> Enabling JSON persistence allows you to synchronize a subscribed library manually instead of over HTTP. You copy the local library content and metadata to another storage backing manually and then create a subscribed library referencing the location of the library JSON file in the {@link SubscriptionInfo#subscriptionUrl}. When the subscribed library's storage backing matches the subscription URL, files do not need to be copied to the subscribed library. <p> For a library backed by a datastore, the library JSON file will be stored at the path contentlib-{library_id}/lib.json on the datastore. <p> For a library backed by a remote file system, the library JSON file will be stored at {library_id}/lib.json in the remote file system path.
     attr_accessor :persist_json_enabled
+
+    # The URL to which the library metadata is published by the Content Library Service. <p> This value can be used to set the {@link SubscriptionInfo#subscriptionUrl} property when creating a subscribed library.
+    attr_accessor :publish_url
+
+    # Whether the local library is published.
+    attr_accessor :published
+
+    # The username to require for authentication.
+    attr_accessor :user_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'authentication_method' => :'authentication_method',
-        :'published' => :'published',
-        :'publish_url' => :'publish_url',
-        :'user_name' => :'user_name',
-        :'password' => :'password',
         :'current_password' => :'current_password',
-        :'persist_json_enabled' => :'persist_json_enabled'
+        :'password' => :'password',
+        :'persist_json_enabled' => :'persist_json_enabled',
+        :'publish_url' => :'publish_url',
+        :'published' => :'published',
+        :'user_name' => :'user_name'
       }
     end
 
@@ -48,12 +48,12 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'authentication_method' => :'ContentLibraryPublishInfoAuthenticationMethod',
-        :'published' => :'Boolean',
-        :'publish_url' => :'String',
-        :'user_name' => :'String',
-        :'password' => :'String',
         :'current_password' => :'String',
-        :'persist_json_enabled' => :'Boolean'
+        :'password' => :'String',
+        :'persist_json_enabled' => :'Boolean',
+        :'publish_url' => :'String',
+        :'published' => :'Boolean',
+        :'user_name' => :'String'
       }
     end
 
@@ -69,28 +69,28 @@ module VSphereAutomation
         self.authentication_method = attributes[:'authentication_method']
       end
 
-      if attributes.has_key?(:'published')
-        self.published = attributes[:'published']
-      end
-
-      if attributes.has_key?(:'publish_url')
-        self.publish_url = attributes[:'publish_url']
-      end
-
-      if attributes.has_key?(:'user_name')
-        self.user_name = attributes[:'user_name']
+      if attributes.has_key?(:'current_password')
+        self.current_password = attributes[:'current_password']
       end
 
       if attributes.has_key?(:'password')
         self.password = attributes[:'password']
       end
 
-      if attributes.has_key?(:'current_password')
-        self.current_password = attributes[:'current_password']
-      end
-
       if attributes.has_key?(:'persist_json_enabled')
         self.persist_json_enabled = attributes[:'persist_json_enabled']
+      end
+
+      if attributes.has_key?(:'publish_url')
+        self.publish_url = attributes[:'publish_url']
+      end
+
+      if attributes.has_key?(:'published')
+        self.published = attributes[:'published']
+      end
+
+      if attributes.has_key?(:'user_name')
+        self.user_name = attributes[:'user_name']
       end
     end
 
@@ -113,12 +113,12 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           authentication_method == o.authentication_method &&
-          published == o.published &&
-          publish_url == o.publish_url &&
-          user_name == o.user_name &&
-          password == o.password &&
           current_password == o.current_password &&
-          persist_json_enabled == o.persist_json_enabled
+          password == o.password &&
+          persist_json_enabled == o.persist_json_enabled &&
+          publish_url == o.publish_url &&
+          published == o.published &&
+          user_name == o.user_name
     end
 
     # @see the `==` method
@@ -130,7 +130,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authentication_method, published, publish_url, user_name, password, current_password, persist_json_enabled].hash
+      [authentication_method, current_password, password, persist_json_enabled, publish_url, published, user_name].hash
     end
 
     # Builds the object from hash

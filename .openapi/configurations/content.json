@@ -7,6 +7,6 @@
   "gemName": "vsphere-automation-content",
   "gemRequiredRubyVersion": ">= 2.3",
   "gemSummary": "A Ruby SDK for the vSphere APIs (Content)",
-  "gemVersion": "0.4.6",
+  "gemVersion": "0.5.0",
   "moduleName": "Content"
 }

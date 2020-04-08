@@ -11,17 +11,11 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentReplicatedPscSpec
-    # The SSO sitename that will be used in PSC replication.
-    attr_accessor :sso_site_name
-
-    # The IP address or DNS resolvable name of the partner PSC appliance.
-    attr_accessor :partner_hostname
-
     # The HTTPS port of the external PSC appliance.
     attr_accessor :https_port
 
-    # The SSO administrator account password.
-    attr_accessor :sso_admin_password
+    # The IP address or DNS resolvable name of the partner PSC appliance.
+    attr_accessor :partner_hostname
 
     # SHA1 thumbprint of the server SSL certificate will be used for verification.
     attr_accessor :ssl_thumbprint
@@ -29,27 +23,33 @@ module VSphereAutomation
     # SSL verification should be enabled or disabled.
     attr_accessor :ssl_verify
 
+    # The SSO administrator account password.
+    attr_accessor :sso_admin_password
+
+    # The SSO sitename that will be used in PSC replication.
+    attr_accessor :sso_site_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'sso_site_name' => :'sso_site_name',
-        :'partner_hostname' => :'partner_hostname',
         :'https_port' => :'https_port',
-        :'sso_admin_password' => :'sso_admin_password',
+        :'partner_hostname' => :'partner_hostname',
         :'ssl_thumbprint' => :'ssl_thumbprint',
-        :'ssl_verify' => :'ssl_verify'
+        :'ssl_verify' => :'ssl_verify',
+        :'sso_admin_password' => :'sso_admin_password',
+        :'sso_site_name' => :'sso_site_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'sso_site_name' => :'String',
-        :'partner_hostname' => :'String',
         :'https_port' => :'Integer',
-        :'sso_admin_password' => :'String',
+        :'partner_hostname' => :'String',
         :'ssl_thumbprint' => :'String',
-        :'ssl_verify' => :'Boolean'
+        :'ssl_verify' => :'Boolean',
+        :'sso_admin_password' => :'String',
+        :'sso_site_name' => :'String'
       }
     end
 
@@ -61,20 +61,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'sso_site_name')
-        self.sso_site_name = attributes[:'sso_site_name']
-      end
-
-      if attributes.has_key?(:'partner_hostname')
-        self.partner_hostname = attributes[:'partner_hostname']
-      end
-
       if attributes.has_key?(:'https_port')
         self.https_port = attributes[:'https_port']
       end
 
-      if attributes.has_key?(:'sso_admin_password')
-        self.sso_admin_password = attributes[:'sso_admin_password']
+      if attributes.has_key?(:'partner_hostname')
+        self.partner_hostname = attributes[:'partner_hostname']
       end
 
       if attributes.has_key?(:'ssl_thumbprint')
@@ -83,6 +75,14 @@ module VSphereAutomation
 
       if attributes.has_key?(:'ssl_verify')
         self.ssl_verify = attributes[:'ssl_verify']
+      end
+
+      if attributes.has_key?(:'sso_admin_password')
+        self.sso_admin_password = attributes[:'sso_admin_password']
+      end
+
+      if attributes.has_key?(:'sso_site_name')
+        self.sso_site_name = attributes[:'sso_site_name']
       end
     end
 
@@ -114,12 +114,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          sso_site_name == o.sso_site_name &&
-          partner_hostname == o.partner_hostname &&
           https_port == o.https_port &&
-          sso_admin_password == o.sso_admin_password &&
+          partner_hostname == o.partner_hostname &&
           ssl_thumbprint == o.ssl_thumbprint &&
-          ssl_verify == o.ssl_verify
+          ssl_verify == o.ssl_verify &&
+          sso_admin_password == o.sso_admin_password &&
+          sso_site_name == o.sso_site_name
     end
 
     # @see the `==` method
@@ -131,7 +131,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [sso_site_name, partner_hostname, https_port, sso_admin_password, ssl_thumbprint, ssl_verify].hash
+      [https_port, partner_hostname, ssl_thumbprint, ssl_verify, sso_admin_password, sso_site_name].hash
     end
 
     # Builds the object from hash

@@ -11,66 +11,66 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareEthernetInfo
+    # Flag indicating whether the guest can connect and disconnect the device.
+    attr_accessor :allow_guest_control
+
+    attr_accessor :backing
+
     # Device label.
     attr_accessor :label
+
+    # MAC address. May be unset if Ethernet.Info.mac-type is MANUAL and has not been specified, or if Ethernet.Info.mac-type is GENERATED and the virtual machine has never been powered on since the Ethernet adapter was created.
+    attr_accessor :mac_address
+
+    attr_accessor :mac_type
+
+    # Address of the virtual Ethernet adapter on the PCI bus. If the PCI address is invalid, the server will change it when the VM is started or as the device is hot added. May be unset if the virtual machine has never been powered on since the adapter was created.
+    attr_accessor :pci_slot_number
+
+    # Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on.
+    attr_accessor :start_connected
+
+    attr_accessor :state
 
     attr_accessor :type
 
     # Flag indicating whether Universal Pass-Through (UPT) compatibility is enabled on this virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.Info.type is VMXNET3.
     attr_accessor :upt_compatibility_enabled
 
-    attr_accessor :mac_type
-
-    # MAC address. May be unset if Ethernet.Info.mac-type is MANUAL and has not been specified, or if Ethernet.Info.mac-type is GENERATED and the virtual machine has never been powered on since the Ethernet adapter was created.
-    attr_accessor :mac_address
-
-    # Address of the virtual Ethernet adapter on the PCI bus. If the PCI address is invalid, the server will change it when the VM is started or as the device is hot added. May be unset if the virtual machine has never been powered on since the adapter was created.
-    attr_accessor :pci_slot_number
-
     # Flag indicating whether wake-on-LAN is enabled on this virtual Ethernet adapter.
     attr_accessor :wake_on_lan_enabled
-
-    attr_accessor :backing
-
-    attr_accessor :state
-
-    # Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on.
-    attr_accessor :start_connected
-
-    # Flag indicating whether the guest can connect and disconnect the device.
-    attr_accessor :allow_guest_control
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'allow_guest_control' => :'allow_guest_control',
+        :'backing' => :'backing',
         :'label' => :'label',
+        :'mac_address' => :'mac_address',
+        :'mac_type' => :'mac_type',
+        :'pci_slot_number' => :'pci_slot_number',
+        :'start_connected' => :'start_connected',
+        :'state' => :'state',
         :'type' => :'type',
         :'upt_compatibility_enabled' => :'upt_compatibility_enabled',
-        :'mac_type' => :'mac_type',
-        :'mac_address' => :'mac_address',
-        :'pci_slot_number' => :'pci_slot_number',
-        :'wake_on_lan_enabled' => :'wake_on_lan_enabled',
-        :'backing' => :'backing',
-        :'state' => :'state',
-        :'start_connected' => :'start_connected',
-        :'allow_guest_control' => :'allow_guest_control'
+        :'wake_on_lan_enabled' => :'wake_on_lan_enabled'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'allow_guest_control' => :'Boolean',
+        :'backing' => :'VcenterVmHardwareEthernetBackingInfo',
         :'label' => :'String',
+        :'mac_address' => :'String',
+        :'mac_type' => :'VcenterVmHardwareEthernetMacAddressType',
+        :'pci_slot_number' => :'Integer',
+        :'start_connected' => :'Boolean',
+        :'state' => :'VcenterVmHardwareConnectionState',
         :'type' => :'VcenterVmHardwareEthernetEmulationType',
         :'upt_compatibility_enabled' => :'Boolean',
-        :'mac_type' => :'VcenterVmHardwareEthernetMacAddressType',
-        :'mac_address' => :'String',
-        :'pci_slot_number' => :'Integer',
-        :'wake_on_lan_enabled' => :'Boolean',
-        :'backing' => :'VcenterVmHardwareEthernetBackingInfo',
-        :'state' => :'VcenterVmHardwareConnectionState',
-        :'start_connected' => :'Boolean',
-        :'allow_guest_control' => :'Boolean'
+        :'wake_on_lan_enabled' => :'Boolean'
       }
     end
 
@@ -82,8 +82,36 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'allow_guest_control')
+        self.allow_guest_control = attributes[:'allow_guest_control']
+      end
+
+      if attributes.has_key?(:'backing')
+        self.backing = attributes[:'backing']
+      end
+
       if attributes.has_key?(:'label')
         self.label = attributes[:'label']
+      end
+
+      if attributes.has_key?(:'mac_address')
+        self.mac_address = attributes[:'mac_address']
+      end
+
+      if attributes.has_key?(:'mac_type')
+        self.mac_type = attributes[:'mac_type']
+      end
+
+      if attributes.has_key?(:'pci_slot_number')
+        self.pci_slot_number = attributes[:'pci_slot_number']
+      end
+
+      if attributes.has_key?(:'start_connected')
+        self.start_connected = attributes[:'start_connected']
+      end
+
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
       end
 
       if attributes.has_key?(:'type')
@@ -94,36 +122,8 @@ module VSphereAutomation
         self.upt_compatibility_enabled = attributes[:'upt_compatibility_enabled']
       end
 
-      if attributes.has_key?(:'mac_type')
-        self.mac_type = attributes[:'mac_type']
-      end
-
-      if attributes.has_key?(:'mac_address')
-        self.mac_address = attributes[:'mac_address']
-      end
-
-      if attributes.has_key?(:'pci_slot_number')
-        self.pci_slot_number = attributes[:'pci_slot_number']
-      end
-
       if attributes.has_key?(:'wake_on_lan_enabled')
         self.wake_on_lan_enabled = attributes[:'wake_on_lan_enabled']
-      end
-
-      if attributes.has_key?(:'backing')
-        self.backing = attributes[:'backing']
-      end
-
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
-      end
-
-      if attributes.has_key?(:'start_connected')
-        self.start_connected = attributes[:'start_connected']
-      end
-
-      if attributes.has_key?(:'allow_guest_control')
-        self.allow_guest_control = attributes[:'allow_guest_control']
       end
     end
 
@@ -131,36 +131,36 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @label.nil?
-        invalid_properties.push('invalid value for "label", label cannot be nil.')
-      end
-
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @mac_type.nil?
-        invalid_properties.push('invalid value for "mac_type", mac_type cannot be nil.')
-      end
-
-      if @wake_on_lan_enabled.nil?
-        invalid_properties.push('invalid value for "wake_on_lan_enabled", wake_on_lan_enabled cannot be nil.')
+      if @allow_guest_control.nil?
+        invalid_properties.push('invalid value for "allow_guest_control", allow_guest_control cannot be nil.')
       end
 
       if @backing.nil?
         invalid_properties.push('invalid value for "backing", backing cannot be nil.')
       end
 
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      if @label.nil?
+        invalid_properties.push('invalid value for "label", label cannot be nil.')
+      end
+
+      if @mac_type.nil?
+        invalid_properties.push('invalid value for "mac_type", mac_type cannot be nil.')
       end
 
       if @start_connected.nil?
         invalid_properties.push('invalid value for "start_connected", start_connected cannot be nil.')
       end
 
-      if @allow_guest_control.nil?
-        invalid_properties.push('invalid value for "allow_guest_control", allow_guest_control cannot be nil.')
+      if @state.nil?
+        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      end
+
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      end
+
+      if @wake_on_lan_enabled.nil?
+        invalid_properties.push('invalid value for "wake_on_lan_enabled", wake_on_lan_enabled cannot be nil.')
       end
 
       invalid_properties
@@ -169,14 +169,14 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @label.nil?
-      return false if @type.nil?
-      return false if @mac_type.nil?
-      return false if @wake_on_lan_enabled.nil?
-      return false if @backing.nil?
-      return false if @state.nil?
-      return false if @start_connected.nil?
       return false if @allow_guest_control.nil?
+      return false if @backing.nil?
+      return false if @label.nil?
+      return false if @mac_type.nil?
+      return false if @start_connected.nil?
+      return false if @state.nil?
+      return false if @type.nil?
+      return false if @wake_on_lan_enabled.nil?
       true
     end
 
@@ -185,17 +185,17 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          allow_guest_control == o.allow_guest_control &&
+          backing == o.backing &&
           label == o.label &&
+          mac_address == o.mac_address &&
+          mac_type == o.mac_type &&
+          pci_slot_number == o.pci_slot_number &&
+          start_connected == o.start_connected &&
+          state == o.state &&
           type == o.type &&
           upt_compatibility_enabled == o.upt_compatibility_enabled &&
-          mac_type == o.mac_type &&
-          mac_address == o.mac_address &&
-          pci_slot_number == o.pci_slot_number &&
-          wake_on_lan_enabled == o.wake_on_lan_enabled &&
-          backing == o.backing &&
-          state == o.state &&
-          start_connected == o.start_connected &&
-          allow_guest_control == o.allow_guest_control
+          wake_on_lan_enabled == o.wake_on_lan_enabled
     end
 
     # @see the `==` method
@@ -207,7 +207,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [label, type, upt_compatibility_enabled, mac_type, mac_address, pci_slot_number, wake_on_lan_enabled, backing, state, start_connected, allow_guest_control].hash
+      [allow_guest_control, backing, label, mac_address, mac_type, pci_slot_number, start_connected, state, type, upt_compatibility_enabled, wake_on_lan_enabled].hash
     end
 
     # Builds the object from hash

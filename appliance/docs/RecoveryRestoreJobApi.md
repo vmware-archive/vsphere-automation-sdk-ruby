@@ -1,16 +1,16 @@
 # VSphereAutomation::Appliance::RecoveryRestoreJobApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](RecoveryRestoreJobApi.md#cancel) | **POST** /appliance/recovery/restore/job/cancel | Cancel the restore job
-[**create**](RecoveryRestoreJobApi.md#create) | **POST** /appliance/recovery/restore/job | Initiate restore.
-[**get**](RecoveryRestoreJobApi.md#get) | **GET** /appliance/recovery/restore/job | See restore job progress/result.
+[**cancel**](RecoveryRestoreJobApi.md#cancel) | **POST** /rest/appliance/recovery/restore/job/cancel | Cancel the restore job
+[**create**](RecoveryRestoreJobApi.md#create) | **POST** /rest/appliance/recovery/restore/job | Initiate restore.
+[**get**](RecoveryRestoreJobApi.md#get) | **GET** /rest/appliance/recovery/restore/job | See restore job progress/result.
 
 
 # **cancel**
-> ApplianceRecoveryRestoreJobCancelResult cancel
+> ApplianceRecoveryRestoreJobCancelResp cancel
 
 Cancel the restore job
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceRecoveryRestoreJobCancelResult**](ApplianceRecoveryRestoreJobCancelResult.md)
+[**ApplianceRecoveryRestoreJobCancelResp**](ApplianceRecoveryRestoreJobCancelResp.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 
 # **create**
-> ApplianceRecoveryRestoreJobCreateResult create(request_body)
+> ApplianceRecoveryRestoreJobCreateResp create(request_body)
 
 Initiate restore.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryRestoreJobCreateResult**](ApplianceRecoveryRestoreJobCreateResult.md)
+[**ApplianceRecoveryRestoreJobCreateResp**](ApplianceRecoveryRestoreJobCreateResp.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> ApplianceRecoveryRestoreJobResult get
+> ApplianceRecoveryRestoreJobResp get
 
 See restore job progress/result.
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceRecoveryRestoreJobResult**](ApplianceRecoveryRestoreJobResult.md)
+[**ApplianceRecoveryRestoreJobResp**](ApplianceRecoveryRestoreJobResp.md)
 
 ### Authorization
 

@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataAuthenticationServiceInfo
-    # List of authentication schemes to be used for all the operation elements contained in this service element. The authentication scheme specified on the package element corresponding to this service element is ignored.
-    attr_accessor :schemes
-
     # Information about all operation elements contained in this service element that contain authentication information. The key in the {@term map} is the identifier of the operation element and the value in the {@term map} is the authentication information for the operation element. <p> For an explanation of containment of authentication information within operation elements, see {@link vapi.metadata.authentication.service.Operation}.
     attr_accessor :operations
+
+    # List of authentication schemes to be used for all the operation elements contained in this service element. The authentication scheme specified on the package element corresponding to this service element is ignored.
+    attr_accessor :schemes
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'schemes' => :'schemes',
-        :'operations' => :'operations'
+        :'operations' => :'operations',
+        :'schemes' => :'schemes'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'schemes' => :'Array<VapiMetadataAuthenticationAuthenticationInfo>',
-        :'operations' => :'Array<VapiMetadataAuthenticationServiceInfoOperations>'
+        :'operations' => :'Array<VapiMetadataAuthenticationServiceInfoOperations>',
+        :'schemes' => :'Array<VapiMetadataAuthenticationAuthenticationInfo>'
       }
     end
 
@@ -41,15 +41,15 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'schemes')
-        if (value = attributes[:'schemes']).is_a?(Array)
-          self.schemes = value
-        end
-      end
-
       if attributes.has_key?(:'operations')
         if (value = attributes[:'operations']).is_a?(Array)
           self.operations = value
+        end
+      end
+
+      if attributes.has_key?(:'schemes')
+        if (value = attributes[:'schemes']).is_a?(Array)
+          self.schemes = value
         end
       end
     end
@@ -58,12 +58,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @schemes.nil?
-        invalid_properties.push('invalid value for "schemes", schemes cannot be nil.')
-      end
-
       if @operations.nil?
         invalid_properties.push('invalid value for "operations", operations cannot be nil.')
+      end
+
+      if @schemes.nil?
+        invalid_properties.push('invalid value for "schemes", schemes cannot be nil.')
       end
 
       invalid_properties
@@ -72,8 +72,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @schemes.nil?
       return false if @operations.nil?
+      return false if @schemes.nil?
       true
     end
 
@@ -82,8 +82,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          schemes == o.schemes &&
-          operations == o.operations
+          operations == o.operations &&
+          schemes == o.schemes
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [schemes, operations].hash
+      [operations, schemes].hash
     end
 
     # Builds the object from hash

@@ -11,7 +11,8 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareSerialBackingInfo
-    attr_accessor :type
+    # Flag indicating whether the virtual serial port is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is HOST_DEVICE.
+    attr_accessor :auto_detect
 
     # Path of the file backing the virtual serial port. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is FILE.
     attr_accessor :file
@@ -19,46 +20,45 @@ module VSphereAutomation
     # Name of the device backing the virtual serial port.    This field will be unset if Serial.BackingInfo.auto-detect is true and the virtual serial port is not connected or no suitable device is available on the host.
     attr_accessor :host_device
 
-    # Flag indicating whether the virtual serial port is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is HOST_DEVICE.
-    attr_accessor :auto_detect
-
-    # Name of the pipe backing the virtual serial port. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is one of PIPE_SERVER or PIPE_CLIENT.
-    attr_accessor :pipe
+    # URI specifying the location of the network service backing the virtual serial port.     - If Serial.BackingInfo.type is NETWORK_SERVER, this field is the location used by clients to connect to this server. The hostname part of the URI should either be empty or should specify the address of the host on which the virtual machine is running.    - If Serial.BackingInfo.type is NETWORK_CLIENT, this field is the location used by the virtual machine to connect to the remote server.   This field is optional and it is only relevant when the value of Serial.BackingInfo.type is one of NETWORK_SERVER or NETWORK_CLIENT.
+    attr_accessor :network_location
 
     # Flag that enables optimized data transfer over the pipe. When the value is true, the host buffers data to prevent data overrun. This allows the virtual machine to read all of the data transferred over the pipe with no data loss. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is one of PIPE_SERVER or PIPE_CLIENT.
     attr_accessor :no_rx_loss
 
-    # URI specifying the location of the network service backing the virtual serial port.     - If Serial.BackingInfo.type is NETWORK_SERVER, this field is the location used by clients to connect to this server. The hostname part of the URI should either be empty or should specify the address of the host on which the virtual machine is running.    - If Serial.BackingInfo.type is NETWORK_CLIENT, this field is the location used by the virtual machine to connect to the remote server.   This field is optional and it is only relevant when the value of Serial.BackingInfo.type is one of NETWORK_SERVER or NETWORK_CLIENT.
-    attr_accessor :network_location
+    # Name of the pipe backing the virtual serial port. This field is optional and it is only relevant when the value of Serial.BackingInfo.type is one of PIPE_SERVER or PIPE_CLIENT.
+    attr_accessor :pipe
 
     # Proxy service that provides network access to the network backing. If set, the virtual machine initiates a connection with the proxy service and forwards the traffic to the proxy. If unset, no proxy service is configured.
     attr_accessor :proxy
 
+    attr_accessor :type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
+        :'auto_detect' => :'auto_detect',
         :'file' => :'file',
         :'host_device' => :'host_device',
-        :'auto_detect' => :'auto_detect',
-        :'pipe' => :'pipe',
-        :'no_rx_loss' => :'no_rx_loss',
         :'network_location' => :'network_location',
-        :'proxy' => :'proxy'
+        :'no_rx_loss' => :'no_rx_loss',
+        :'pipe' => :'pipe',
+        :'proxy' => :'proxy',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmHardwareSerialBackingType',
+        :'auto_detect' => :'Boolean',
         :'file' => :'String',
         :'host_device' => :'String',
-        :'auto_detect' => :'Boolean',
-        :'pipe' => :'String',
-        :'no_rx_loss' => :'Boolean',
         :'network_location' => :'String',
-        :'proxy' => :'String'
+        :'no_rx_loss' => :'Boolean',
+        :'pipe' => :'String',
+        :'proxy' => :'String',
+        :'type' => :'VcenterVmHardwareSerialBackingType'
       }
     end
 
@@ -70,8 +70,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'auto_detect')
+        self.auto_detect = attributes[:'auto_detect']
       end
 
       if attributes.has_key?(:'file')
@@ -82,24 +82,24 @@ module VSphereAutomation
         self.host_device = attributes[:'host_device']
       end
 
-      if attributes.has_key?(:'auto_detect')
-        self.auto_detect = attributes[:'auto_detect']
-      end
-
-      if attributes.has_key?(:'pipe')
-        self.pipe = attributes[:'pipe']
+      if attributes.has_key?(:'network_location')
+        self.network_location = attributes[:'network_location']
       end
 
       if attributes.has_key?(:'no_rx_loss')
         self.no_rx_loss = attributes[:'no_rx_loss']
       end
 
-      if attributes.has_key?(:'network_location')
-        self.network_location = attributes[:'network_location']
+      if attributes.has_key?(:'pipe')
+        self.pipe = attributes[:'pipe']
       end
 
       if attributes.has_key?(:'proxy')
         self.proxy = attributes[:'proxy']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -126,14 +126,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
+          auto_detect == o.auto_detect &&
           file == o.file &&
           host_device == o.host_device &&
-          auto_detect == o.auto_detect &&
-          pipe == o.pipe &&
-          no_rx_loss == o.no_rx_loss &&
           network_location == o.network_location &&
-          proxy == o.proxy
+          no_rx_loss == o.no_rx_loss &&
+          pipe == o.pipe &&
+          proxy == o.proxy &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -145,7 +145,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, file, host_device, auto_detect, pipe, no_rx_loss, network_location, proxy].hash
+      [auto_detect, file, host_device, network_location, no_rx_loss, pipe, proxy, type].hash
     end
 
     # Builds the object from hash

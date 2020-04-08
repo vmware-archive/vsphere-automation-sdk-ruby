@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmGuestPowerInfo
-    attr_accessor :state
-
     # Flag indicating if the virtual machine is ready to process soft power operations.
     attr_accessor :operations_ready
+
+    attr_accessor :state
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'state' => :'state',
-        :'operations_ready' => :'operations_ready'
+        :'operations_ready' => :'operations_ready',
+        :'state' => :'state'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'state' => :'VcenterVmGuestPowerState',
-        :'operations_ready' => :'Boolean'
+        :'operations_ready' => :'Boolean',
+        :'state' => :'VcenterVmGuestPowerState'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
-      end
-
       if attributes.has_key?(:'operations_ready')
         self.operations_ready = attributes[:'operations_ready']
+      end
+
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
       end
     end
 
@@ -53,12 +53,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
-      end
-
       if @operations_ready.nil?
         invalid_properties.push('invalid value for "operations_ready", operations_ready cannot be nil.')
+      end
+
+      if @state.nil?
+        invalid_properties.push('invalid value for "state", state cannot be nil.')
       end
 
       invalid_properties
@@ -67,8 +67,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @state.nil?
       return false if @operations_ready.nil?
+      return false if @state.nil?
       true
     end
 
@@ -77,8 +77,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          state == o.state &&
-          operations_ready == o.operations_ready
+          operations_ready == o.operations_ready &&
+          state == o.state
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [state, operations_ready].hash
+      [operations_ready, state].hash
     end
 
     # Builds the object from hash

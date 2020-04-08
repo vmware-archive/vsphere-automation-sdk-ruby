@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataPrivilegeServiceOperationApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataPrivilegeServiceOperationApi.md#get) | **POST** /com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}?~action&#x3D;get | Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
-[**list**](MetadataPrivilegeServiceOperationApi.md#list) | **GET** /com/vmware/vapi/metadata/privilege/service/operation | Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have privilege information.
+[**get**](MetadataPrivilegeServiceOperationApi.md#get) | **POST** /rest/com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}?~action&#x3D;get | Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
+[**list**](MetadataPrivilegeServiceOperationApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/privilege/service/operation | Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have privilege information.
 
 
 # **get**
-> VapiMetadataPrivilegeServiceOperationResult get(service_id, request_body)
+> VapiMetadataPrivilegeServiceOperationResp get(service_id, request_body)
 
 Retrieves the privilege information about an operation element corresponding to {@param.name operationId} contained in the service element corresponding to {@param.name serviceId}.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataPrivilegeServiceOperationResult**](VapiMetadataPrivilegeServiceOperationResult.md)
+[**VapiMetadataPrivilegeServiceOperationResp**](VapiMetadataPrivilegeServiceOperationResp.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataPrivilegeServiceOperationListResult list(service_id)
+> VapiMetadataPrivilegeServiceOperationListResp list(service_id)
 
 Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have privilege information.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataPrivilegeServiceOperationListResult**](VapiMetadataPrivilegeServiceOperationListResult.md)
+[**VapiMetadataPrivilegeServiceOperationListResp**](VapiMetadataPrivilegeServiceOperationListResp.md)
 
 ### Authorization
 

@@ -28,19 +28,13 @@ describe 'ContentLibraryItemUpdatesessionFileAddSpec' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibraryItemUpdatesessionFileAddSpec)
     end
   end
+  describe 'test attribute "checksum_info"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "name"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "source_type"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "source_endpoint"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -52,7 +46,13 @@ describe 'ContentLibraryItemUpdatesessionFileAddSpec' do
     end
   end
 
-  describe 'test attribute "checksum_info"' do
+  describe 'test attribute "source_endpoint"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "source_type"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

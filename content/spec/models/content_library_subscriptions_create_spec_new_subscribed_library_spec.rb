@@ -28,7 +28,7 @@ describe 'ContentLibrarySubscriptionsCreateSpecNewSubscribedLibrary' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibrarySubscriptionsCreateSpecNewSubscribedLibrary)
     end
   end
-  describe 'test attribute "name"' do
+  describe 'test attribute "automatic_sync_enabled"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -40,19 +40,19 @@ describe 'ContentLibrarySubscriptionsCreateSpecNewSubscribedLibrary' do
     end
   end
 
-  describe 'test attribute "storage_backings"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "automatic_sync_enabled"' do
+  describe 'test attribute "name"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
   describe 'test attribute "on_demand"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "storage_backings"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

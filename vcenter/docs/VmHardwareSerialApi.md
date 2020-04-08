@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::VmHardwareSerialApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**connect**](VmHardwareSerialApi.md#connect) | **POST** /vcenter/vm/{vm}/hardware/serial/{port}/connect | Connects a virtual serial port of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Serial.update operation may be used to configure the virtual serial port to start in the connected state when the virtual machine is powered on. 
-[**create**](VmHardwareSerialApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/serial | Adds a virtual serial port to the virtual machine.
-[**delete**](VmHardwareSerialApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/serial/{port} | Removes a virtual serial port from the virtual machine.
-[**disconnect**](VmHardwareSerialApi.md#disconnect) | **POST** /vcenter/vm/{vm}/hardware/serial/{port}/disconnect | Disconnects a virtual serial port of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the serial port is not connected to its backing.   For a powered-off virtual machine, the Serial.update operation may be used to configure the virtual serial port to start in the disconnected state when the virtual machine is powered on. 
-[**get**](VmHardwareSerialApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/serial/{port} | Returns information about a virtual serial port.
-[**list**](VmHardwareSerialApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/serial | Returns commonly used information about the virtual serial ports belonging to the virtual machine.
-[**update**](VmHardwareSerialApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/serial/{port} | Updates the configuration of a virtual serial port.
+[**connect**](VmHardwareSerialApi.md#connect) | **POST** /rest/vcenter/vm/{vm}/hardware/serial/{port}/connect | Connects a virtual serial port of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Serial.update operation may be used to configure the virtual serial port to start in the connected state when the virtual machine is powered on. 
+[**create**](VmHardwareSerialApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/serial | Adds a virtual serial port to the virtual machine.
+[**delete**](VmHardwareSerialApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/serial/{port} | Removes a virtual serial port from the virtual machine.
+[**disconnect**](VmHardwareSerialApi.md#disconnect) | **POST** /rest/vcenter/vm/{vm}/hardware/serial/{port}/disconnect | Disconnects a virtual serial port of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the serial port is not connected to its backing.   For a powered-off virtual machine, the Serial.update operation may be used to configure the virtual serial port to start in the disconnected state when the virtual machine is powered on. 
+[**get**](VmHardwareSerialApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/serial/{port} | Returns information about a virtual serial port.
+[**list**](VmHardwareSerialApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/serial | Returns commonly used information about the virtual serial ports belonging to the virtual machine.
+[**update**](VmHardwareSerialApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/serial/{port} | Updates the configuration of a virtual serial port.
 
 
 # **connect**
@@ -65,7 +65,7 @@ nil (empty response body)
 
 
 # **create**
-> VcenterVmHardwareSerialCreateResult create(vm, request_body)
+> VcenterVmHardwareSerialCreateResp create(vm, request_body)
 
 Adds a virtual serial port to the virtual machine.
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareSerialCreateResult**](VcenterVmHardwareSerialCreateResult.md)
+[**VcenterVmHardwareSerialCreateResp**](VcenterVmHardwareSerialCreateResp.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareSerialResult get(vm, port)
+> VcenterVmHardwareSerialResp get(vm, port)
 
 Returns information about a virtual serial port.
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareSerialResult**](VcenterVmHardwareSerialResult.md)
+[**VcenterVmHardwareSerialResp**](VcenterVmHardwareSerialResp.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareSerialListResult list(vm)
+> VcenterVmHardwareSerialListResp list(vm)
 
 Returns commonly used information about the virtual serial ports belonging to the virtual machine.
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareSerialListResult**](VcenterVmHardwareSerialListResult.md)
+[**VcenterVmHardwareSerialListResp**](VcenterVmHardwareSerialListResp.md)
 
 ### Authorization
 

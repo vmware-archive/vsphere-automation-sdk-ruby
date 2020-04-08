@@ -46,6 +46,7 @@ module VSphereAutomation
     WINDOWS_9_64 = "WINDOWS_9_64".freeze
     WINDOWS_9_SERVER_64 = "WINDOWS_9_SERVER_64".freeze
     WINDOWS_HYPERV = "WINDOWS_HYPERV".freeze
+    WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".freeze
     FREEBSD = "FREEBSD".freeze
     FREEBSD_64 = "FREEBSD_64".freeze
     FREEBSD_11 = "FREEBSD_11".freeze
@@ -114,6 +115,8 @@ module VSphereAutomation
     DEBIAN_9_64 = "DEBIAN_9_64".freeze
     DEBIAN_10 = "DEBIAN_10".freeze
     DEBIAN_10_64 = "DEBIAN_10_64".freeze
+    DEBIAN_11 = "DEBIAN_11".freeze
+    DEBIAN_11_64 = "DEBIAN_11_64".freeze
     ASIANUX_3 = "ASIANUX_3".freeze
     ASIANUX_3_64 = "ASIANUX_3_64".freeze
     ASIANUX_4 = "ASIANUX_4".freeze
@@ -167,11 +170,14 @@ module VSphereAutomation
     DARWIN_16_64 = "DARWIN_16_64".freeze
     DARWIN_17_64 = "DARWIN_17_64".freeze
     DARWIN_18_64 = "DARWIN_18_64".freeze
+    DARWIN_19_64 = "DARWIN_19_64".freeze
     VMKERNEL = "VMKERNEL".freeze
     VMKERNEL_5 = "VMKERNEL_5".freeze
     VMKERNEL_6 = "VMKERNEL_6".freeze
     VMKERNEL_65 = "VMKERNEL_65".freeze
+    VMKERNEL_7 = "VMKERNEL_7".freeze
     AMAZONLINUX2_64 = "AMAZONLINUX2_64".freeze
+    CRXPOD_1 = "CRXPOD_1".freeze
     OTHER = "OTHER".freeze
     OTHER_64 = "OTHER_64".freeze
 

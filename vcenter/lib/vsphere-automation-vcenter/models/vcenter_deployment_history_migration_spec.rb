@@ -13,7 +13,7 @@ module VSphereAutomation
     class VcenterDeploymentHistoryMigrationSpec
     attr_accessor :data_set
 
-    # Defines how vCenter history will be migrated. If set to true, vCenter history will be migrated separately after successful upgrade or migration, otherwise it will be migrated along with core data during the upgrade or migration process.
+    # Defines how vCenter history will be migrated. If set to true, vCenter history will be migrated separately after successful upgrade(supported scenarios are upgrade from 6.0 or 6.5 to 6.7) or migration, otherwise it will be migrated along with core data during the upgrade or migration process. vCSA upgrade with deferred import is no longer supported for target version 7.0 and later.
     attr_accessor :defer_import
 
     # Attribute mapping from ruby-style variable name to JSON key.

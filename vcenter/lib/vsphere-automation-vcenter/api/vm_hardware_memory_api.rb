@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns the memory-related settings of a virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareMemoryResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareMemoryResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareMemoryResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareMemoryResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareMemoryApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareMemoryApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/memory'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/memory'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareMemoryResult',
+	  '200' => 'VCenter::VcenterVmHardwareMemoryResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -103,7 +103,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareMemoryApi.update"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/memory'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/memory'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}

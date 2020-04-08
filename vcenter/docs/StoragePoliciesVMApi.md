@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::StoragePoliciesVMApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](StoragePoliciesVMApi.md#list) | **GET** /vcenter/storage/policies/{policy}/vm | Returns information about the virtual machines and/or their virtual disks that are associated with the given storage policy.
+[**list**](StoragePoliciesVMApi.md#list) | **GET** /rest/vcenter/storage/policies/{policy}/vm | Returns information about the virtual machines and/or their virtual disks that are associated with the given storage policy.
 
 
 # **list**
-> VcenterStoragePoliciesVMListResult list(policy)
+> VcenterStoragePoliciesVMListResp list(policy)
 
 Returns information about the virtual machines and/or their virtual disks that are associated with the given storage policy.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterStoragePoliciesVMListResult**](VcenterStoragePoliciesVMListResult.md)
+[**VcenterStoragePoliciesVMListResp**](VcenterStoragePoliciesVMListResp.md)
 
 ### Authorization
 

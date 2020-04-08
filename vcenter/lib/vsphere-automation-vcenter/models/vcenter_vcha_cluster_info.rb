@@ -11,20 +11,15 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterInfo
+    # Specifies if automatic failover is allowed. If unset, then the cluster state healthy and automatic failover allowance in accordance with the cluster mode.
+    attr_accessor :auto_failover_allowed
+
     attr_accessor :config_state
-
-    attr_accessor :node1
-
-    attr_accessor :node2
-
-    attr_accessor :witness
-
-    attr_accessor :mode
-
-    attr_accessor :health_state
 
     # Health warning messages if the health information is unavailable. If unset, then the cluster is in a healthy state.
     attr_accessor :health_exception
+
+    attr_accessor :health_state
 
     # A collection of messages describing the reason for a non-healthy Cluster. If unset, then the cluster is in a healthy state.
     attr_accessor :health_warnings
@@ -32,38 +27,43 @@ module VSphereAutomation
     # Specifies if manual failover is allowed. If unset, then the cluster state healthy and manual failover allowance in accordance with the cluster mode.
     attr_accessor :manual_failover_allowed
 
-    # Specifies if automatic failover is allowed. If unset, then the cluster state healthy and automatic failover allowance in accordance with the cluster mode.
-    attr_accessor :auto_failover_allowed
+    attr_accessor :mode
+
+    attr_accessor :node1
+
+    attr_accessor :node2
+
+    attr_accessor :witness
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'auto_failover_allowed' => :'auto_failover_allowed',
         :'config_state' => :'config_state',
-        :'node1' => :'node1',
-        :'node2' => :'node2',
-        :'witness' => :'witness',
-        :'mode' => :'mode',
-        :'health_state' => :'health_state',
         :'health_exception' => :'health_exception',
+        :'health_state' => :'health_state',
         :'health_warnings' => :'health_warnings',
         :'manual_failover_allowed' => :'manual_failover_allowed',
-        :'auto_failover_allowed' => :'auto_failover_allowed'
+        :'mode' => :'mode',
+        :'node1' => :'node1',
+        :'node2' => :'node2',
+        :'witness' => :'witness'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'auto_failover_allowed' => :'Boolean',
         :'config_state' => :'VcenterVchaClusterConfigState',
-        :'node1' => :'VcenterVchaClusterNodeInfo',
-        :'node2' => :'VcenterVchaClusterNodeInfo',
-        :'witness' => :'VcenterVchaClusterWitnessInfo',
-        :'mode' => :'VcenterVchaClusterClusterMode',
-        :'health_state' => :'VcenterVchaClusterClusterState',
         :'health_exception' => :'Array<VapiStdLocalizableMessage>',
+        :'health_state' => :'VcenterVchaClusterClusterState',
         :'health_warnings' => :'Array<VcenterVchaClusterErrorCondition>',
         :'manual_failover_allowed' => :'Boolean',
-        :'auto_failover_allowed' => :'Boolean'
+        :'mode' => :'VcenterVchaClusterClusterMode',
+        :'node1' => :'VcenterVchaClusterNodeInfo',
+        :'node2' => :'VcenterVchaClusterNodeInfo',
+        :'witness' => :'VcenterVchaClusterWitnessInfo'
       }
     end
 
@@ -75,34 +75,22 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'auto_failover_allowed')
+        self.auto_failover_allowed = attributes[:'auto_failover_allowed']
+      end
+
       if attributes.has_key?(:'config_state')
         self.config_state = attributes[:'config_state']
-      end
-
-      if attributes.has_key?(:'node1')
-        self.node1 = attributes[:'node1']
-      end
-
-      if attributes.has_key?(:'node2')
-        self.node2 = attributes[:'node2']
-      end
-
-      if attributes.has_key?(:'witness')
-        self.witness = attributes[:'witness']
-      end
-
-      if attributes.has_key?(:'mode')
-        self.mode = attributes[:'mode']
-      end
-
-      if attributes.has_key?(:'health_state')
-        self.health_state = attributes[:'health_state']
       end
 
       if attributes.has_key?(:'health_exception')
         if (value = attributes[:'health_exception']).is_a?(Array)
           self.health_exception = value
         end
+      end
+
+      if attributes.has_key?(:'health_state')
+        self.health_state = attributes[:'health_state']
       end
 
       if attributes.has_key?(:'health_warnings')
@@ -115,8 +103,20 @@ module VSphereAutomation
         self.manual_failover_allowed = attributes[:'manual_failover_allowed']
       end
 
-      if attributes.has_key?(:'auto_failover_allowed')
-        self.auto_failover_allowed = attributes[:'auto_failover_allowed']
+      if attributes.has_key?(:'mode')
+        self.mode = attributes[:'mode']
+      end
+
+      if attributes.has_key?(:'node1')
+        self.node1 = attributes[:'node1']
+      end
+
+      if attributes.has_key?(:'node2')
+        self.node2 = attributes[:'node2']
+      end
+
+      if attributes.has_key?(:'witness')
+        self.witness = attributes[:'witness']
       end
     end
 
@@ -138,16 +138,16 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          auto_failover_allowed == o.auto_failover_allowed &&
           config_state == o.config_state &&
-          node1 == o.node1 &&
-          node2 == o.node2 &&
-          witness == o.witness &&
-          mode == o.mode &&
-          health_state == o.health_state &&
           health_exception == o.health_exception &&
+          health_state == o.health_state &&
           health_warnings == o.health_warnings &&
           manual_failover_allowed == o.manual_failover_allowed &&
-          auto_failover_allowed == o.auto_failover_allowed
+          mode == o.mode &&
+          node1 == o.node1 &&
+          node2 == o.node2 &&
+          witness == o.witness
     end
 
     # @see the `==` method
@@ -159,7 +159,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [config_state, node1, node2, witness, mode, health_state, health_exception, health_warnings, manual_failover_allowed, auto_failover_allowed].hash
+      [auto_failover_allowed, config_state, health_exception, health_state, health_warnings, manual_failover_allowed, mode, node1, node2, witness].hash
     end
 
     # Builds the object from hash

@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceSystemStorageStorageMapping
+    attr_accessor :description
+
     # The disk number in the vSphere Web Client.
     attr_accessor :disk
 
     # Storage partition name.
     attr_accessor :partition
 
-    attr_accessor :description
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'description' => :'description',
         :'disk' => :'disk',
-        :'partition' => :'partition',
-        :'description' => :'description'
+        :'partition' => :'partition'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'description' => :'VapiStdLocalizableMessage',
         :'disk' => :'String',
-        :'partition' => :'String',
-        :'description' => :'VapiStdLocalizableMessage'
+        :'partition' => :'String'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
       if attributes.has_key?(:'disk')
         self.disk = attributes[:'disk']
       end
 
       if attributes.has_key?(:'partition')
         self.partition = attributes[:'partition']
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
       end
     end
 
@@ -86,9 +86,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          description == o.description &&
           disk == o.disk &&
-          partition == o.partition &&
-          description == o.description
+          partition == o.partition
     end
 
     # @see the `==` method
@@ -100,7 +100,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [disk, partition, description].hash
+      [description, disk, partition].hash
     end
 
     # Builds the object from hash

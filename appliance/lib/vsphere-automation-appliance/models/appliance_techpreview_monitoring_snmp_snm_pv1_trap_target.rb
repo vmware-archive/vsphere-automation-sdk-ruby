@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPv1TrapTarget
+    # SNMP target community
+    attr_accessor :community
+
     # SNMP target ip
     attr_accessor :ip
 
     # SNMP target port
     attr_accessor :port
 
-    # SNMP target community
-    attr_accessor :community
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'community' => :'community',
         :'ip' => :'ip',
-        :'port' => :'port',
-        :'community' => :'community'
+        :'port' => :'port'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'community' => :'String',
         :'ip' => :'String',
-        :'port' => :'Integer',
-        :'community' => :'String'
+        :'port' => :'Integer'
       }
     end
 
@@ -46,6 +46,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'community')
+        self.community = attributes[:'community']
+      end
+
       if attributes.has_key?(:'ip')
         self.ip = attributes[:'ip']
       end
@@ -53,16 +57,16 @@ module VSphereAutomation
       if attributes.has_key?(:'port')
         self.port = attributes[:'port']
       end
-
-      if attributes.has_key?(:'community')
-        self.community = attributes[:'community']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @community.nil?
+        invalid_properties.push('invalid value for "community", community cannot be nil.')
+      end
+
       if @ip.nil?
         invalid_properties.push('invalid value for "ip", ip cannot be nil.')
       end
@@ -71,19 +75,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "port", port cannot be nil.')
       end
 
-      if @community.nil?
-        invalid_properties.push('invalid value for "community", community cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @community.nil?
       return false if @ip.nil?
       return false if @port.nil?
-      return false if @community.nil?
       true
     end
 
@@ -92,9 +92,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          community == o.community &&
           ip == o.ip &&
-          port == o.port &&
-          community == o.community
+          port == o.port
     end
 
     # @see the `==` method
@@ -106,7 +106,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ip, port, community].hash
+      [community, ip, port].hash
     end
 
     # Builds the object from hash

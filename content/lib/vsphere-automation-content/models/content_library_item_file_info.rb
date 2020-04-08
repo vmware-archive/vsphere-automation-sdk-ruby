@@ -11,6 +11,9 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemFileInfo
+    # Indicates whether the file is on disk or not.
+    attr_accessor :cached
+
     attr_accessor :checksum_info
 
     # The name of the file. <p> This value will be unique within the library item for each file. It cannot be an empty string.
@@ -19,19 +22,16 @@ module VSphereAutomation
     # The file size, in bytes. The file size is the storage used and not the uploaded or provisioned size. For example, when uploading a disk to a datastore, the amount of storage that the disk consumes may be different from the disk file size. When the file is not cached, the size is 0.
     attr_accessor :size
 
-    # Indicates whether the file is on disk or not.
-    attr_accessor :cached
-
     # The version of this file; incremented when a new copy of the file is uploaded.
     attr_accessor :version
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'cached' => :'cached',
         :'checksum_info' => :'checksum_info',
         :'name' => :'name',
         :'size' => :'size',
-        :'cached' => :'cached',
         :'version' => :'version'
       }
     end
@@ -39,10 +39,10 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'cached' => :'Boolean',
         :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
         :'name' => :'String',
         :'size' => :'Integer',
-        :'cached' => :'Boolean',
         :'version' => :'String'
       }
     end
@@ -54,6 +54,10 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'cached')
+        self.cached = attributes[:'cached']
+      end
 
       if attributes.has_key?(:'checksum_info')
         self.checksum_info = attributes[:'checksum_info']
@@ -67,10 +71,6 @@ module VSphereAutomation
         self.size = attributes[:'size']
       end
 
-      if attributes.has_key?(:'cached')
-        self.cached = attributes[:'cached']
-      end
-
       if attributes.has_key?(:'version')
         self.version = attributes[:'version']
       end
@@ -80,16 +80,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @cached.nil?
+        invalid_properties.push('invalid value for "cached", cached cannot be nil.')
+      end
+
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @size.nil?
         invalid_properties.push('invalid value for "size", size cannot be nil.')
-      end
-
-      if @cached.nil?
-        invalid_properties.push('invalid value for "cached", cached cannot be nil.')
       end
 
       if @version.nil?
@@ -102,9 +102,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @cached.nil?
       return false if @name.nil?
       return false if @size.nil?
-      return false if @cached.nil?
       return false if @version.nil?
       true
     end
@@ -114,10 +114,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          cached == o.cached &&
           checksum_info == o.checksum_info &&
           name == o.name &&
           size == o.size &&
-          cached == o.cached &&
           version == o.version
     end
 
@@ -130,7 +130,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [checksum_info, name, size, cached, version].hash
+      [cached, checksum_info, name, size, version].hash
     end
 
     # Builds the object from hash

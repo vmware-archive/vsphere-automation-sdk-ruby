@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryRestoreJobLocalizableMessage
-    # id in message bundle
-    attr_accessor :id
+    # nested data
+    attr_accessor :args
 
     # text in english
     attr_accessor :default_message
 
-    # nested data
-    attr_accessor :args
+    # id in message bundle
+    attr_accessor :id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
+        :'args' => :'args',
         :'default_message' => :'default_message',
-        :'args' => :'args'
+        :'id' => :'id'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
+        :'args' => :'Array<String>',
         :'default_message' => :'String',
-        :'args' => :'Array<String>'
+        :'id' => :'String'
       }
     end
 
@@ -46,18 +46,18 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.has_key?(:'args')
+        if (value = attributes[:'args']).is_a?(Array)
+          self.args = value
+        end
       end
 
       if attributes.has_key?(:'default_message')
         self.default_message = attributes[:'default_message']
       end
 
-      if attributes.has_key?(:'args')
-        if (value = attributes[:'args']).is_a?(Array)
-          self.args = value
-        end
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
       end
     end
 
@@ -65,16 +65,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      if @args.nil?
+        invalid_properties.push('invalid value for "args", args cannot be nil.')
       end
 
       if @default_message.nil?
         invalid_properties.push('invalid value for "default_message", default_message cannot be nil.')
       end
 
-      if @args.nil?
-        invalid_properties.push('invalid value for "args", args cannot be nil.')
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
       invalid_properties
@@ -83,9 +83,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
-      return false if @default_message.nil?
       return false if @args.nil?
+      return false if @default_message.nil?
+      return false if @id.nil?
       true
     end
 
@@ -94,9 +94,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
+          args == o.args &&
           default_message == o.default_message &&
-          args == o.args
+          id == o.id
     end
 
     # @see the `==` method
@@ -108,7 +108,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, default_message, args].hash
+      [args, default_message, id].hash
     end
 
     # Builds the object from hash

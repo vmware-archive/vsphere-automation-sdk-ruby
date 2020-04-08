@@ -14,6 +14,9 @@ module VSphereAutomation
     # IP Address or DNS of the vCenter.
     attr_accessor :hostname
 
+    # Password for the specified user. This field is currently required. If unset, an empty password is assumed. In the future, if this field is unset, the system will attempt to authenticate the user. If a user cannot be identified, then the requested operation will fail.
+    attr_accessor :password
+
     # Port number. If unset, port 443 will be used.
     attr_accessor :port
 
@@ -23,17 +26,14 @@ module VSphereAutomation
     # Username to access the server. This field is currently required. If unset, an error is returned. In the future, if this field is unset, the system will attempt to identify the user. If a user cannot be identified, then the requested operation will fail.
     attr_accessor :username
 
-    # Password for the specified user. This field is currently required. If unset, an empty password is assumed. In the future, if this field is unset, the system will attempt to authenticate the user. If a user cannot be identified, then the requested operation will fail.
-    attr_accessor :password
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'hostname' => :'hostname',
+        :'password' => :'password',
         :'port' => :'port',
         :'ssl_thumbprint' => :'ssl_thumbprint',
-        :'username' => :'username',
-        :'password' => :'password'
+        :'username' => :'username'
       }
     end
 
@@ -41,10 +41,10 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'hostname' => :'String',
+        :'password' => :'String',
         :'port' => :'Integer',
         :'ssl_thumbprint' => :'String',
-        :'username' => :'String',
-        :'password' => :'String'
+        :'username' => :'String'
       }
     end
 
@@ -60,6 +60,10 @@ module VSphereAutomation
         self.hostname = attributes[:'hostname']
       end
 
+      if attributes.has_key?(:'password')
+        self.password = attributes[:'password']
+      end
+
       if attributes.has_key?(:'port')
         self.port = attributes[:'port']
       end
@@ -70,10 +74,6 @@ module VSphereAutomation
 
       if attributes.has_key?(:'username')
         self.username = attributes[:'username']
-      end
-
-      if attributes.has_key?(:'password')
-        self.password = attributes[:'password']
       end
     end
 
@@ -101,10 +101,10 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           hostname == o.hostname &&
+          password == o.password &&
           port == o.port &&
           ssl_thumbprint == o.ssl_thumbprint &&
-          username == o.username &&
-          password == o.password
+          username == o.username
     end
 
     # @see the `==` method
@@ -116,7 +116,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [hostname, port, ssl_thumbprint, username, password].hash
+      [hostname, password, port, ssl_thumbprint, username].hash
     end
 
     # Builds the object from hash

@@ -28,13 +28,13 @@ describe 'ContentLibrarySubscriptionsUpdate' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibrarySubscriptionsUpdate)
     end
   end
-  describe 'test attribute "subscription"' do
+  describe 'test attribute "spec"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "spec"' do
+  describe 'test attribute "subscription"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

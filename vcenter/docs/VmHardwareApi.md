@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::VmHardwareApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmHardwareApi.md#get) | **GET** /vcenter/vm/{vm}/hardware | Returns the virtual hardware settings of a virtual machine.
-[**update**](VmHardwareApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware | Updates the virtual hardware settings of a virtual machine.
-[**upgrade**](VmHardwareApi.md#upgrade) | **POST** /vcenter/vm/{vm}/hardware/action/upgrade | Upgrades the virtual machine to a newer virtual hardware version.
+[**get**](VmHardwareApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware | Returns the virtual hardware settings of a virtual machine.
+[**update**](VmHardwareApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware | Updates the virtual hardware settings of a virtual machine.
+[**upgrade**](VmHardwareApi.md#upgrade) | **POST** /rest/vcenter/vm/{vm}/hardware/action/upgrade | Upgrades the virtual machine to a newer virtual hardware version.
 
 
 # **get**
-> VcenterVmHardwareResult get(vm)
+> VcenterVmHardwareResp get(vm)
 
 Returns the virtual hardware settings of a virtual machine.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareResult**](VcenterVmHardwareResult.md)
+[**VcenterVmHardwareResp**](VcenterVmHardwareResp.md)
 
 ### Authorization
 

@@ -11,40 +11,40 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentUpgradeUpgradeSpec
+    # Use the default option for any questions that may come up during appliance configuration.
+    attr_accessor :auto_answer
+
+    attr_accessor :history
+
+    attr_accessor :psc
+
     attr_accessor :source_appliance
 
     attr_accessor :source_location
 
-    attr_accessor :history
-
     attr_accessor :vcsa_embedded
-
-    attr_accessor :psc
-
-    # Use the default option for any questions that may come up during appliance configuration.
-    attr_accessor :auto_answer
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'auto_answer' => :'auto_answer',
+        :'history' => :'history',
+        :'psc' => :'psc',
         :'source_appliance' => :'source_appliance',
         :'source_location' => :'source_location',
-        :'history' => :'history',
-        :'vcsa_embedded' => :'vcsa_embedded',
-        :'psc' => :'psc',
-        :'auto_answer' => :'auto_answer'
+        :'vcsa_embedded' => :'vcsa_embedded'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'auto_answer' => :'Boolean',
+        :'history' => :'VcenterDeploymentHistoryMigrationSpec',
+        :'psc' => :'VcenterDeploymentUpgradePscSpec',
         :'source_appliance' => :'VcenterDeploymentUpgradeSourceApplianceSpec',
         :'source_location' => :'VcenterDeploymentLocationSpec',
-        :'history' => :'VcenterDeploymentHistoryMigrationSpec',
-        :'vcsa_embedded' => :'VcenterDeploymentUpgradeVcsaEmbeddedSpec',
-        :'psc' => :'VcenterDeploymentUpgradePscSpec',
-        :'auto_answer' => :'Boolean'
+        :'vcsa_embedded' => :'VcenterDeploymentUpgradeVcsaEmbeddedSpec'
       }
     end
 
@@ -56,6 +56,18 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'auto_answer')
+        self.auto_answer = attributes[:'auto_answer']
+      end
+
+      if attributes.has_key?(:'history')
+        self.history = attributes[:'history']
+      end
+
+      if attributes.has_key?(:'psc')
+        self.psc = attributes[:'psc']
+      end
+
       if attributes.has_key?(:'source_appliance')
         self.source_appliance = attributes[:'source_appliance']
       end
@@ -64,20 +76,8 @@ module VSphereAutomation
         self.source_location = attributes[:'source_location']
       end
 
-      if attributes.has_key?(:'history')
-        self.history = attributes[:'history']
-      end
-
       if attributes.has_key?(:'vcsa_embedded')
         self.vcsa_embedded = attributes[:'vcsa_embedded']
-      end
-
-      if attributes.has_key?(:'psc')
-        self.psc = attributes[:'psc']
-      end
-
-      if attributes.has_key?(:'auto_answer')
-        self.auto_answer = attributes[:'auto_answer']
       end
     end
 
@@ -109,12 +109,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          auto_answer == o.auto_answer &&
+          history == o.history &&
+          psc == o.psc &&
           source_appliance == o.source_appliance &&
           source_location == o.source_location &&
-          history == o.history &&
-          vcsa_embedded == o.vcsa_embedded &&
-          psc == o.psc &&
-          auto_answer == o.auto_answer
+          vcsa_embedded == o.vcsa_embedded
     end
 
     # @see the `==` method
@@ -126,7 +126,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [source_appliance, source_location, history, vcsa_embedded, psc, auto_answer].hash
+      [auto_answer, history, psc, source_appliance, source_location, vcsa_embedded].hash
     end
 
     # Builds the object from hash

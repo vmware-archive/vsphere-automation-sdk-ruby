@@ -11,50 +11,50 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceSystemVersionVersionStruct
-    # Appliance version.
-    attr_accessor :version
-
-    # Appliance name.
-    attr_accessor :product
-
     # Appliance build number.
     attr_accessor :build
-
-    # Type of product. Same product can have different deployment options, which is represented by type.
-    attr_accessor :type
-
-    # Summary of patch (empty string, if the appliance has not been patched)
-    attr_accessor :summary
-
-    # Release date of patch (empty string, if the appliance has not been patched)
-    attr_accessor :releasedate
 
     # Display the date and time when this system was first installed. Value will not change on subsequent updates.
     attr_accessor :install_time
 
+    # Appliance name.
+    attr_accessor :product
+
+    # Release date of patch (empty string, if the appliance has not been patched)
+    attr_accessor :releasedate
+
+    # Summary of patch (empty string, if the appliance has not been patched)
+    attr_accessor :summary
+
+    # Type of product. Same product can have different deployment options, which is represented by type.
+    attr_accessor :type
+
+    # Appliance version.
+    attr_accessor :version
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'version' => :'version',
-        :'product' => :'product',
         :'build' => :'build',
-        :'type' => :'type',
-        :'summary' => :'summary',
+        :'install_time' => :'install_time',
+        :'product' => :'product',
         :'releasedate' => :'releasedate',
-        :'install_time' => :'install_time'
+        :'summary' => :'summary',
+        :'type' => :'type',
+        :'version' => :'version'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'version' => :'String',
-        :'product' => :'String',
         :'build' => :'String',
-        :'type' => :'String',
-        :'summary' => :'String',
+        :'install_time' => :'String',
+        :'product' => :'String',
         :'releasedate' => :'String',
-        :'install_time' => :'String'
+        :'summary' => :'String',
+        :'type' => :'String',
+        :'version' => :'String'
       }
     end
 
@@ -66,32 +66,32 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
+      if attributes.has_key?(:'build')
+        self.build = attributes[:'build']
+      end
+
+      if attributes.has_key?(:'install_time')
+        self.install_time = attributes[:'install_time']
       end
 
       if attributes.has_key?(:'product')
         self.product = attributes[:'product']
       end
 
-      if attributes.has_key?(:'build')
-        self.build = attributes[:'build']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'releasedate')
+        self.releasedate = attributes[:'releasedate']
       end
 
       if attributes.has_key?(:'summary')
         self.summary = attributes[:'summary']
       end
 
-      if attributes.has_key?(:'releasedate')
-        self.releasedate = attributes[:'releasedate']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
-      if attributes.has_key?(:'install_time')
-        self.install_time = attributes[:'install_time']
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
     end
 
@@ -99,32 +99,32 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
+      if @build.nil?
+        invalid_properties.push('invalid value for "build", build cannot be nil.')
+      end
+
+      if @install_time.nil?
+        invalid_properties.push('invalid value for "install_time", install_time cannot be nil.')
       end
 
       if @product.nil?
         invalid_properties.push('invalid value for "product", product cannot be nil.')
       end
 
-      if @build.nil?
-        invalid_properties.push('invalid value for "build", build cannot be nil.')
-      end
-
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      if @releasedate.nil?
+        invalid_properties.push('invalid value for "releasedate", releasedate cannot be nil.')
       end
 
       if @summary.nil?
         invalid_properties.push('invalid value for "summary", summary cannot be nil.')
       end
 
-      if @releasedate.nil?
-        invalid_properties.push('invalid value for "releasedate", releasedate cannot be nil.')
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
-      if @install_time.nil?
-        invalid_properties.push('invalid value for "install_time", install_time cannot be nil.')
+      if @version.nil?
+        invalid_properties.push('invalid value for "version", version cannot be nil.')
       end
 
       invalid_properties
@@ -133,13 +133,13 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @version.nil?
-      return false if @product.nil?
       return false if @build.nil?
-      return false if @type.nil?
-      return false if @summary.nil?
-      return false if @releasedate.nil?
       return false if @install_time.nil?
+      return false if @product.nil?
+      return false if @releasedate.nil?
+      return false if @summary.nil?
+      return false if @type.nil?
+      return false if @version.nil?
       true
     end
 
@@ -148,13 +148,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          version == o.version &&
-          product == o.product &&
           build == o.build &&
-          type == o.type &&
-          summary == o.summary &&
+          install_time == o.install_time &&
+          product == o.product &&
           releasedate == o.releasedate &&
-          install_time == o.install_time
+          summary == o.summary &&
+          type == o.type &&
+          version == o.version
     end
 
     # @see the `==` method
@@ -166,7 +166,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [version, product, build, type, summary, releasedate, install_time].hash
+      [build, install_time, product, releasedate, summary, type, version].hash
     end
 
     # Builds the object from hash

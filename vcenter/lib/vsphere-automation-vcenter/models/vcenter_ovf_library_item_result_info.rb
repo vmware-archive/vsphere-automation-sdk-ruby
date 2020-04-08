@@ -14,18 +14,18 @@ module VSphereAutomation
     # Errors reported by the {@name LibraryItem#create} or {@name LibraryItem#deploy} {@term operation}. These errors would have prevented the {@name LibraryItem#create} or {@name LibraryItem#deploy} {@term operation} from completing successfully.
     attr_accessor :errors
 
-    # Warnings reported by the {@name LibraryItem#create} or {@name LibraryItem#deploy} {@term operation}. These warnings would not have prevented the {@name LibraryItem#create} or {@name LibraryItem#deploy} {@term operation} from completing successfully, but there might be issues that warrant attention.
-    attr_accessor :warnings
-
     # Information messages reported by the {@name LibraryItem#create} or {@name LibraryItem#deploy} {@term operation}. For example, a non-required parameter was ignored.
     attr_accessor :information
+
+    # Warnings reported by the {@name LibraryItem#create} or {@name LibraryItem#deploy} {@term operation}. These warnings would not have prevented the {@name LibraryItem#create} or {@name LibraryItem#deploy} {@term operation} from completing successfully, but there might be issues that warrant attention.
+    attr_accessor :warnings
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'errors' => :'errors',
-        :'warnings' => :'warnings',
-        :'information' => :'information'
+        :'information' => :'information',
+        :'warnings' => :'warnings'
       }
     end
 
@@ -33,8 +33,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'errors' => :'Array<VcenterOvfOvfError>',
-        :'warnings' => :'Array<VcenterOvfOvfWarning>',
-        :'information' => :'Array<VcenterOvfOvfInfo>'
+        :'information' => :'Array<VcenterOvfOvfInfo>',
+        :'warnings' => :'Array<VcenterOvfOvfWarning>'
       }
     end
 
@@ -52,15 +52,15 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'warnings')
-        if (value = attributes[:'warnings']).is_a?(Array)
-          self.warnings = value
-        end
-      end
-
       if attributes.has_key?(:'information')
         if (value = attributes[:'information']).is_a?(Array)
           self.information = value
+        end
+      end
+
+      if attributes.has_key?(:'warnings')
+        if (value = attributes[:'warnings']).is_a?(Array)
+          self.warnings = value
         end
       end
     end
@@ -73,12 +73,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "errors", errors cannot be nil.')
       end
 
-      if @warnings.nil?
-        invalid_properties.push('invalid value for "warnings", warnings cannot be nil.')
-      end
-
       if @information.nil?
         invalid_properties.push('invalid value for "information", information cannot be nil.')
+      end
+
+      if @warnings.nil?
+        invalid_properties.push('invalid value for "warnings", warnings cannot be nil.')
       end
 
       invalid_properties
@@ -88,8 +88,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @errors.nil?
-      return false if @warnings.nil?
       return false if @information.nil?
+      return false if @warnings.nil?
       true
     end
 
@@ -99,8 +99,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           errors == o.errors &&
-          warnings == o.warnings &&
-          information == o.information
+          information == o.information &&
+          warnings == o.warnings
     end
 
     # @see the `==` method
@@ -112,7 +112,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [errors, warnings, information].hash
+      [errors, information, warnings].hash
     end
 
     # Builds the object from hash

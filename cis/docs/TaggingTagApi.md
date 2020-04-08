@@ -1,19 +1,19 @@
 # VSphereAutomation::CIS::TaggingTagApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_to_used_by**](TaggingTagApi.md#add_to_used_by) | **POST** /com/vmware/cis/tagging/tag/id:{tag_id}?~action&#x3D;add-to-used-by | Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.
-[**create**](TaggingTagApi.md#create) | **POST** /com/vmware/cis/tagging/tag | Creates a tag. To invoke this {@term operation}, you need the create tag privilege on the input category.
-[**delete**](TaggingTagApi.md#delete) | **DELETE** /com/vmware/cis/tagging/tag/id:{tag_id} | Deletes an existing tag. To invoke this {@term operation}, you need the delete privilege on the tag.
-[**get**](TaggingTagApi.md#get) | **GET** /com/vmware/cis/tagging/tag/id:{tag_id} | Fetches the tag information for the given tag identifier. To invoke this {@term operation}, you need the read privilege on the tag in order to view the tag info.
-[**list**](TaggingTagApi.md#list) | **GET** /com/vmware/cis/tagging/tag | Enumerates the tags in the system. To invoke this {@term operation}, you need read privilege on the individual tags. The {@term list} will only contain tags for which you have read privileges.
-[**list_tags_for_category**](TaggingTagApi.md#list_tags_for_category) | **POST** /com/vmware/cis/tagging/tag/id:{category_id}?~action&#x3D;list-tags-for-category | Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
-[**list_used_tags**](TaggingTagApi.md#list_used_tags) | **POST** /com/vmware/cis/tagging/tag?~action&#x3D;list-used-tags | Enumerates all tags for which the {@param.name usedByEntity} is part of the {@link TagModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual tags.
-[**remove_from_used_by**](TaggingTagApi.md#remove_from_used_by) | **POST** /com/vmware/cis/tagging/tag/id:{tag_id}?~action&#x3D;remove-from-used-by | Removes the {@param.name usedByEntity} from the {@link TagModel#usedBy} subscribers set. If the {@param.name usedByEntity} is not using this tag, then this becomes a no-op. To invoke this {@term operation}, you need modify {@link TagModel#usedBy} privilege on the tag.
-[**revoke_propagating_permissions**](TaggingTagApi.md#revoke_propagating_permissions) | **POST** /com/vmware/cis/tagging/tag/id:{tag_id}?~action&#x3D;revoke-propagating-permissions | Revokes all propagating permissions on the given tag. You should then attach a direct permission with tagging privileges on the given tag. To invoke this {@term operation}, you need tag related privileges (direct or propagating) on the concerned tag.
-[**update**](TaggingTagApi.md#update) | **PATCH** /com/vmware/cis/tagging/tag/id:{tag_id} | Updates an existing tag. To invoke this {@term operation}, you need the edit privilege on the tag.
+[**add_to_used_by**](TaggingTagApi.md#add_to_used_by) | **POST** /rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action&#x3D;add-to-used-by | Adds the {@param.name usedByEntity} to the {@link TagModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link TagModel#usedBy} privilege on the tag.
+[**create**](TaggingTagApi.md#create) | **POST** /rest/com/vmware/cis/tagging/tag | Creates a tag. To invoke this {@term operation}, you need the create tag privilege on the input category.
+[**delete**](TaggingTagApi.md#delete) | **DELETE** /rest/com/vmware/cis/tagging/tag/id:{tag_id} | Deletes an existing tag. To invoke this {@term operation}, you need the delete privilege on the tag.
+[**get**](TaggingTagApi.md#get) | **GET** /rest/com/vmware/cis/tagging/tag/id:{tag_id} | Fetches the tag information for the given tag identifier. To invoke this {@term operation}, you need the read privilege on the tag in order to view the tag info.
+[**list**](TaggingTagApi.md#list) | **GET** /rest/com/vmware/cis/tagging/tag | Enumerates the tags in the system. To invoke this {@term operation}, you need read privilege on the individual tags. The {@term list} will only contain tags for which you have read privileges.
+[**list_tags_for_category**](TaggingTagApi.md#list_tags_for_category) | **POST** /rest/com/vmware/cis/tagging/tag/id:{category_id}?~action&#x3D;list-tags-for-category | Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
+[**list_used_tags**](TaggingTagApi.md#list_used_tags) | **POST** /rest/com/vmware/cis/tagging/tag?~action&#x3D;list-used-tags | Enumerates all tags for which the {@param.name usedByEntity} is part of the {@link TagModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual tags.
+[**remove_from_used_by**](TaggingTagApi.md#remove_from_used_by) | **POST** /rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action&#x3D;remove-from-used-by | Removes the {@param.name usedByEntity} from the {@link TagModel#usedBy} subscribers set. If the {@param.name usedByEntity} is not using this tag, then this becomes a no-op. To invoke this {@term operation}, you need modify {@link TagModel#usedBy} privilege on the tag.
+[**revoke_propagating_permissions**](TaggingTagApi.md#revoke_propagating_permissions) | **POST** /rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action&#x3D;revoke-propagating-permissions | Revokes all propagating permissions on the given tag. You should then attach a direct permission with tagging privileges on the given tag. To invoke this {@term operation}, you need tag related privileges (direct or propagating) on the concerned tag.
+[**update**](TaggingTagApi.md#update) | **PATCH** /rest/com/vmware/cis/tagging/tag/id:{tag_id} | Updates an existing tag. To invoke this {@term operation}, you need the edit privilege on the tag.
 
 
 # **add_to_used_by**
@@ -68,7 +68,7 @@ nil (empty response body)
 
 
 # **create**
-> CisTaggingTagCreateResult create(request_body)
+> CisTaggingTagCreateResp create(request_body)
 
 Creates a tag. To invoke this {@term operation}, you need the create tag privilege on the input category.
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagCreateResult**](CisTaggingTagCreateResult.md)
+[**CisTaggingTagCreateResp**](CisTaggingTagCreateResp.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ nil (empty response body)
 
 
 # **get**
-> CisTaggingTagResult get(tag_id)
+> CisTaggingTagResp get(tag_id)
 
 Fetches the tag information for the given tag identifier. To invoke this {@term operation}, you need the read privilege on the tag in order to view the tag info.
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagResult**](CisTaggingTagResult.md)
+[**CisTaggingTagResp**](CisTaggingTagResp.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> CisTaggingTagListResult list
+> CisTaggingTagListResp list
 
 Enumerates the tags in the system. To invoke this {@term operation}, you need read privilege on the individual tags. The {@term list} will only contain tags for which you have read privileges.
 
@@ -249,7 +249,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CisTaggingTagListResult**](CisTaggingTagListResult.md)
+[**CisTaggingTagListResp**](CisTaggingTagListResp.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ This endpoint does not need any parameter.
 
 
 # **list_tags_for_category**
-> CisTaggingTagListTagsForCategoryResult list_tags_for_category(category_id)
+> CisTaggingTagListTagsForCategoryResp list_tags_for_category(category_id)
 
 Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagListTagsForCategoryResult**](CisTaggingTagListTagsForCategoryResult.md)
+[**CisTaggingTagListTagsForCategoryResp**](CisTaggingTagListTagsForCategoryResp.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 
 # **list_used_tags**
-> CisTaggingTagListUsedTagsResult list_used_tags(request_body)
+> CisTaggingTagListUsedTagsResp list_used_tags(request_body)
 
 Enumerates all tags for which the {@param.name usedByEntity} is part of the {@link TagModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual tags.
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagListUsedTagsResult**](CisTaggingTagListUsedTagsResult.md)
+[**CisTaggingTagListUsedTagsResp**](CisTaggingTagListUsedTagsResp.md)
 
 ### Authorization
 

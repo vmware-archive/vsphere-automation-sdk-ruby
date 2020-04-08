@@ -14,22 +14,22 @@ module VSphereAutomation
     # Identifier of the cluster. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ClusterComputeResource.
     attr_accessor :cluster
 
-    # Name of the cluster.
-    attr_accessor :name
+    # Flag indicating whether the vSphere DRS service is enabled for the cluster.
+    attr_accessor :drs_enabled
 
     # Flag indicating whether the vSphere HA feature is enabled for the cluster.
     attr_accessor :ha_enabled
 
-    # Flag indicating whether the vSphere DRS service is enabled for the cluster.
-    attr_accessor :drs_enabled
+    # Name of the cluster.
+    attr_accessor :name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'cluster' => :'cluster',
-        :'name' => :'name',
+        :'drs_enabled' => :'drs_enabled',
         :'ha_enabled' => :'ha_enabled',
-        :'drs_enabled' => :'drs_enabled'
+        :'name' => :'name'
       }
     end
 
@@ -37,9 +37,9 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'cluster' => :'String',
-        :'name' => :'String',
+        :'drs_enabled' => :'Boolean',
         :'ha_enabled' => :'Boolean',
-        :'drs_enabled' => :'Boolean'
+        :'name' => :'String'
       }
     end
 
@@ -55,16 +55,16 @@ module VSphereAutomation
         self.cluster = attributes[:'cluster']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'drs_enabled')
+        self.drs_enabled = attributes[:'drs_enabled']
       end
 
       if attributes.has_key?(:'ha_enabled')
         self.ha_enabled = attributes[:'ha_enabled']
       end
 
-      if attributes.has_key?(:'drs_enabled')
-        self.drs_enabled = attributes[:'drs_enabled']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
     end
 
@@ -76,16 +76,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "cluster", cluster cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @drs_enabled.nil?
+        invalid_properties.push('invalid value for "drs_enabled", drs_enabled cannot be nil.')
       end
 
       if @ha_enabled.nil?
         invalid_properties.push('invalid value for "ha_enabled", ha_enabled cannot be nil.')
       end
 
-      if @drs_enabled.nil?
-        invalid_properties.push('invalid value for "drs_enabled", drs_enabled cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       invalid_properties
@@ -95,9 +95,9 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @cluster.nil?
-      return false if @name.nil?
-      return false if @ha_enabled.nil?
       return false if @drs_enabled.nil?
+      return false if @ha_enabled.nil?
+      return false if @name.nil?
       true
     end
 
@@ -107,9 +107,9 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           cluster == o.cluster &&
-          name == o.name &&
+          drs_enabled == o.drs_enabled &&
           ha_enabled == o.ha_enabled &&
-          drs_enabled == o.drs_enabled
+          name == o.name
     end
 
     # @see the `==` method
@@ -121,7 +121,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cluster, name, ha_enabled, drs_enabled].hash
+      [cluster, drs_enabled, ha_enabled, name].hash
     end
 
     # Builds the object from hash

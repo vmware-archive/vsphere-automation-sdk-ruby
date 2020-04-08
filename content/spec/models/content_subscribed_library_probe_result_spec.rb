@@ -28,7 +28,7 @@ describe 'ContentSubscribedLibraryProbeResult' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentSubscribedLibraryProbeResult)
     end
   end
-  describe 'test attribute "status"' do
+  describe 'test attribute "error_messages"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -40,7 +40,7 @@ describe 'ContentSubscribedLibraryProbeResult' do
     end
   end
 
-  describe 'test attribute "error_messages"' do
+  describe 'test attribute "status"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

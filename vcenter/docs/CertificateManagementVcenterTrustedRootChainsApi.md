@@ -1,19 +1,19 @@
 # VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRootChainsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](CertificateManagementVcenterTrustedRootChainsApi.md#create) | **POST** /vcenter/certificate-management/vcenter/trusted-root-chains | Creates a new trusted root certificate chain from the CreateSpec.
-[**delete**](CertificateManagementVcenterTrustedRootChainsApi.md#delete) | **DELETE** /vcenter/certificate-management/vcenter/trusted-root-chains/{chain} | Deletes trusted root certificate chain for a given identifier.
-[**get**](CertificateManagementVcenterTrustedRootChainsApi.md#get) | **GET** /vcenter/certificate-management/vcenter/trusted-root-chains/{chain} | Retrieve a trusted root certificate chain for a given identifier.
-[**list**](CertificateManagementVcenterTrustedRootChainsApi.md#list) | **GET** /vcenter/certificate-management/vcenter/trusted-root-chains | Returns summary information for each trusted root certificate chain.
+[**create**](CertificateManagementVcenterTrustedRootChainsApi.md#create) | **POST** /rest/vcenter/certificate-management/vcenter/trusted-root-chains | Creates a new trusted root certificate chain from the CreateSpec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
+[**delete**](CertificateManagementVcenterTrustedRootChainsApi.md#delete) | **DELETE** /rest/vcenter/certificate-management/vcenter/trusted-root-chains/{chain} | Deletes trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
+[**get**](CertificateManagementVcenterTrustedRootChainsApi.md#get) | **GET** /rest/vcenter/certificate-management/vcenter/trusted-root-chains/{chain} | Retrieve a trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
+[**list**](CertificateManagementVcenterTrustedRootChainsApi.md#list) | **GET** /rest/vcenter/certificate-management/vcenter/trusted-root-chains | Returns summary information for each trusted root certificate chain. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
 
 
 # **create**
-> VcenterCertificateManagementVcenterTrustedRootChainsCreateResult create(request_body)
+> VcenterCertificateManagementVcenterTrustedRootChainsCreateResp create(request_body)
 
-Creates a new trusted root certificate chain from the CreateSpec.
+Creates a new trusted root certificate chain from the CreateSpec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
 
 ### Example
 ```ruby
@@ -31,7 +31,7 @@ api_instance = VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRo
 request_body = VCenter::VcenterCertificateManagementVcenterTrustedRootChainsCreate.new # VcenterCertificateManagementVcenterTrustedRootChainsCreate | 
 
 begin
-  #Creates a new trusted root certificate chain from the CreateSpec.
+  #Creates a new trusted root certificate chain from the CreateSpec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
   result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterCertificateManagementVcenterTrustedRootChainsCreateResult**](VcenterCertificateManagementVcenterTrustedRootChainsCreateResult.md)
+[**VcenterCertificateManagementVcenterTrustedRootChainsCreateResp**](VcenterCertificateManagementVcenterTrustedRootChainsCreateResp.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 # **delete**
 > delete(chain)
 
-Deletes trusted root certificate chain for a given identifier.
+Deletes trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
 
 ### Example
 ```ruby
@@ -81,7 +81,7 @@ api_instance = VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRo
 chain = 'chain_example' # String | Unique identifier for a trusted root cert chain.
 
 begin
-  #Deletes trusted root certificate chain for a given identifier.
+  #Deletes trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
   api_instance.delete(chain)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling CertificateManagementVcenterTrustedRootChainsApi->delete: #{e}"
@@ -110,9 +110,9 @@ nil (empty response body)
 
 
 # **get**
-> VcenterCertificateManagementVcenterTrustedRootChainsResult get(chain)
+> VcenterCertificateManagementVcenterTrustedRootChainsResp get(chain)
 
-Retrieve a trusted root certificate chain for a given identifier.
+Retrieve a trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
 
 ### Example
 ```ruby
@@ -130,7 +130,7 @@ api_instance = VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRo
 chain = 'chain_example' # String | Unique identifier for a trusted root cert chain.
 
 begin
-  #Retrieve a trusted root certificate chain for a given identifier.
+  #Retrieve a trusted root certificate chain for a given identifier. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
   result = api_instance.get(chain)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterCertificateManagementVcenterTrustedRootChainsResult**](VcenterCertificateManagementVcenterTrustedRootChainsResult.md)
+[**VcenterCertificateManagementVcenterTrustedRootChainsResp**](VcenterCertificateManagementVcenterTrustedRootChainsResp.md)
 
 ### Authorization
 
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterCertificateManagementVcenterTrustedRootChainsListResult list
+> VcenterCertificateManagementVcenterTrustedRootChainsListResp list
 
-Returns summary information for each trusted root certificate chain.
+Returns summary information for each trusted root certificate chain. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
 
 ### Example
 ```ruby
@@ -179,7 +179,7 @@ end
 api_instance = VSphereAutomation::VCenter::CertificateManagementVcenterTrustedRootChainsApi.new
 
 begin
-  #Returns summary information for each trusted root certificate chain.
+  #Returns summary information for each trusted root certificate chain. if you do not have all of the privileges described as follows:     -  Operation execution requires System.Read.  
   result = api_instance.list
   p result
 rescue VSphereAutomation::ApiError => e
@@ -192,7 +192,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterCertificateManagementVcenterTrustedRootChainsListResult**](VcenterCertificateManagementVcenterTrustedRootChainsListResult.md)
+[**VcenterCertificateManagementVcenterTrustedRootChainsListResp**](VcenterCertificateManagementVcenterTrustedRootChainsListResp.md)
 
 ### Authorization
 

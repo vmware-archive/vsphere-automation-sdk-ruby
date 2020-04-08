@@ -11,10 +11,11 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupJobBackupJobStatus
+    # Time when the backup was finished.
+    attr_accessor :end_time
+
     # TimeStamp based ID.
     attr_accessor :id
-
-    attr_accessor :state
 
     # List of messages.
     attr_accessor :messages
@@ -25,30 +26,29 @@ module VSphereAutomation
     # Time when the backup was started.
     attr_accessor :start_time
 
-    # Time when the backup was finished.
-    attr_accessor :end_time
+    attr_accessor :state
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'end_time' => :'end_time',
         :'id' => :'id',
-        :'state' => :'state',
         :'messages' => :'messages',
         :'progress' => :'progress',
         :'start_time' => :'start_time',
-        :'end_time' => :'end_time'
+        :'state' => :'state'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'end_time' => :'DateTime',
         :'id' => :'String',
-        :'state' => :'ApplianceRecoveryBackupJobBackupRestoreProcessState',
         :'messages' => :'Array<ApplianceRecoveryBackupJobLocalizableMessage>',
         :'progress' => :'Integer',
         :'start_time' => :'DateTime',
-        :'end_time' => :'DateTime'
+        :'state' => :'ApplianceRecoveryBackupJobBackupRestoreProcessState'
       }
     end
 
@@ -60,12 +60,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.has_key?(:'end_time')
+        self.end_time = attributes[:'end_time']
       end
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
       end
 
       if attributes.has_key?(:'messages')
@@ -82,8 +82,8 @@ module VSphereAutomation
         self.start_time = attributes[:'start_time']
       end
 
-      if attributes.has_key?(:'end_time')
-        self.end_time = attributes[:'end_time']
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
       end
     end
 
@@ -93,10 +93,6 @@ module VSphereAutomation
       invalid_properties = Array.new
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
       end
 
       if @messages.nil?
@@ -111,6 +107,10 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "start_time", start_time cannot be nil.')
       end
 
+      if @state.nil?
+        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -118,10 +118,10 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @id.nil?
-      return false if @state.nil?
       return false if @messages.nil?
       return false if @progress.nil?
       return false if @start_time.nil?
+      return false if @state.nil?
       true
     end
 
@@ -130,12 +130,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          end_time == o.end_time &&
           id == o.id &&
-          state == o.state &&
           messages == o.messages &&
           progress == o.progress &&
           start_time == o.start_time &&
-          end_time == o.end_time
+          state == o.state
     end
 
     # @see the `==` method
@@ -147,7 +147,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, state, messages, progress, start_time, end_time].hash
+      [end_time, id, messages, progress, start_time, state].hash
     end
 
     # Builds the object from hash

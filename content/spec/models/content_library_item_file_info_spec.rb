@@ -28,6 +28,12 @@ describe 'ContentLibraryItemFileInfo' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibraryItemFileInfo)
     end
   end
+  describe 'test attribute "cached"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "checksum_info"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -41,12 +47,6 @@ describe 'ContentLibraryItemFileInfo' do
   end
 
   describe 'test attribute "size"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "cached"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

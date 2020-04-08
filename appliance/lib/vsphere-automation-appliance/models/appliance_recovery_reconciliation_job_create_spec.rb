@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryReconciliationJobCreateSpec
+    # Flag indicating whether warnings should be ignored during reconciliation.
+    attr_accessor :ignore_warnings
+
     # Administrators username for SSO.
     attr_accessor :sso_admin_user_name
 
     # Password for SSO admin user.
     attr_accessor :sso_admin_user_password
 
-    # Flag indicating whether warnings should be ignored during reconciliation.
-    attr_accessor :ignore_warnings
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'ignore_warnings' => :'ignore_warnings',
         :'sso_admin_user_name' => :'sso_admin_user_name',
-        :'sso_admin_user_password' => :'sso_admin_user_password',
-        :'ignore_warnings' => :'ignore_warnings'
+        :'sso_admin_user_password' => :'sso_admin_user_password'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'ignore_warnings' => :'Boolean',
         :'sso_admin_user_name' => :'String',
-        :'sso_admin_user_password' => :'String',
-        :'ignore_warnings' => :'Boolean'
+        :'sso_admin_user_password' => :'String'
       }
     end
 
@@ -46,16 +46,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'ignore_warnings')
+        self.ignore_warnings = attributes[:'ignore_warnings']
+      end
+
       if attributes.has_key?(:'sso_admin_user_name')
         self.sso_admin_user_name = attributes[:'sso_admin_user_name']
       end
 
       if attributes.has_key?(:'sso_admin_user_password')
         self.sso_admin_user_password = attributes[:'sso_admin_user_password']
-      end
-
-      if attributes.has_key?(:'ignore_warnings')
-        self.ignore_warnings = attributes[:'ignore_warnings']
       end
     end
 
@@ -77,9 +77,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          ignore_warnings == o.ignore_warnings &&
           sso_admin_user_name == o.sso_admin_user_name &&
-          sso_admin_user_password == o.sso_admin_user_password &&
-          ignore_warnings == o.ignore_warnings
+          sso_admin_user_password == o.sso_admin_user_password
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [sso_admin_user_name, sso_admin_user_password, ignore_warnings].hash
+      [ignore_warnings, sso_admin_user_name, sso_admin_user_password].hash
     end
 
     # Builds the object from hash

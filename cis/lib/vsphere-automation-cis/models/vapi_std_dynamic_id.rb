@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module CIS
     class VapiStdDynamicID
-    # The type of resource being identified (for example {@code com.acme.Person}). <p> {@term Services} that contain {@term operations} for creating and deleting resources typically contain a {@term constant} specifying the resource type for the resources being created and deleted. The API metamodel metadata {@term services} include a {@term service} that allows retrieving all the known resource types.
-    attr_accessor :type
-
     # The identifier for a resource whose type is specified by {@link #type}.
     attr_accessor :id
+
+    # The type of resource being identified (for example {@code com.acme.Person}). <p> {@term Services} that contain {@term operations} for creating and deleting resources typically contain a {@term constant} specifying the resource type for the resources being created and deleted. The API metamodel metadata {@term services} include a {@term service} that allows retrieving all the known resource types.
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'id' => :'id'
+        :'id' => :'id',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'String',
-        :'id' => :'String'
+        :'id' => :'String',
+        :'type' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
       return false if @id.nil?
+      return false if @type.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          id == o.id
+          id == o.id &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, id].hash
+      [id, type].hash
     end
 
     # Builds the object from hash

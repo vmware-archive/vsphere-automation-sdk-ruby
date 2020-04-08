@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::StoragePoliciesComplianceVMApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](StoragePoliciesComplianceVMApi.md#list) | **GET** /vcenter/storage/policies/compliance/vm | Returns compliance information about at most 1000 virtual machines matching the filter VM.FilterSpec. If there are no virtual machines matching the VM.FilterSpec an empty List is returned. Virtual machines without storage policy association are not returned.
+[**list**](StoragePoliciesComplianceVMApi.md#list) | **GET** /rest/vcenter/storage/policies/compliance/vm | Returns compliance information about at most 1000 virtual machines matching the filter VM.FilterSpec. If there are no virtual machines matching the VM.FilterSpec an empty List is returned. Virtual machines without storage policy association are not returned.
 
 
 # **list**
-> VcenterStoragePoliciesComplianceVMListResult list(opts)
+> VcenterStoragePoliciesComplianceVMListResp list(opts)
 
 Returns compliance information about at most 1000 virtual machines matching the filter VM.FilterSpec. If there are no virtual machines matching the VM.FilterSpec an empty List is returned. Virtual machines without storage policy association are not returned.
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterStoragePoliciesComplianceVMListResult**](VcenterStoragePoliciesComplianceVMListResult.md)
+[**VcenterStoragePoliciesComplianceVMListResp**](VcenterStoragePoliciesComplianceVMListResp.md)
 
 ### Authorization
 

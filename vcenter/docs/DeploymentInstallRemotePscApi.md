@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::DeploymentInstallRemotePscApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](DeploymentInstallRemotePscApi.md#check) | **POST** /vcenter/deployment/install/remote-psc?action&#x3D;check | Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
+[**check**](DeploymentInstallRemotePscApi.md#check) | **POST** /rest/vcenter/deployment/install/remote-psc?action&#x3D;check | Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
 
 
 # **check**
-> VcenterDeploymentInstallRemotePscCheckResult check(request_body)
+> VcenterDeploymentInstallRemotePscCheckResp check(request_body)
 
 Checks whether the remote PSC is reachable and the deployed vCenter Server can be registered with the remote PSC.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDeploymentInstallRemotePscCheckResult**](VcenterDeploymentInstallRemotePscCheckResult.md)
+[**VcenterDeploymentInstallRemotePscCheckResp**](VcenterDeploymentInstallRemotePscCheckResp.md)
 
 ### Authorization
 

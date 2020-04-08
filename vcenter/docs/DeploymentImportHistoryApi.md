@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::DeploymentImportHistoryApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](DeploymentImportHistoryApi.md#cancel) | **POST** /vcenter/deployment/history?action&#x3D;cancel | Cancels the task for importing vCenter historical data.
-[**get**](DeploymentImportHistoryApi.md#get) | **GET** /vcenter/deployment/history | Get the current status of the vCenter historical data import.
-[**pause**](DeploymentImportHistoryApi.md#pause) | **POST** /vcenter/deployment/history?action&#x3D;pause | Pauses the task for importing vCenter historical data.
-[**resume**](DeploymentImportHistoryApi.md#resume) | **POST** /vcenter/deployment/history?action&#x3D;resume | Resumes the task for importing vCenter historical data.
-[**start**](DeploymentImportHistoryApi.md#start) | **POST** /vcenter/deployment/history?action&#x3D;start | Creates and starts task for importing vCenter historical data.
+[**cancel**](DeploymentImportHistoryApi.md#cancel) | **POST** /rest/vcenter/deployment/history?action&#x3D;cancel | Cancels the task for importing vCenter historical data.
+[**get**](DeploymentImportHistoryApi.md#get) | **GET** /rest/vcenter/deployment/history | Get the current status of the vCenter historical data import.
+[**pause**](DeploymentImportHistoryApi.md#pause) | **POST** /rest/vcenter/deployment/history?action&#x3D;pause | Pauses the task for importing vCenter historical data.
+[**resume**](DeploymentImportHistoryApi.md#resume) | **POST** /rest/vcenter/deployment/history?action&#x3D;resume | Resumes the task for importing vCenter historical data.
+[**start**](DeploymentImportHistoryApi.md#start) | **POST** /rest/vcenter/deployment/history?action&#x3D;start | Creates and starts task for importing vCenter historical data.
 
 
 # **cancel**
@@ -57,7 +57,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterDeploymentImportHistoryResult get
+> VcenterDeploymentImportHistoryResp get
 
 Get the current status of the vCenter historical data import.
 
@@ -89,7 +89,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterDeploymentImportHistoryResult**](VcenterDeploymentImportHistoryResult.md)
+[**VcenterDeploymentImportHistoryResp**](VcenterDeploymentImportHistoryResp.md)
 
 ### Authorization
 

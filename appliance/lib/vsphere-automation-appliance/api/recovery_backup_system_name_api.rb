@@ -21,7 +21,7 @@ module VSphereAutomation
     # @param [Hash] opts the optional parameters
     # @option opts [String] :loc_spec_location_user Username for the given location.
     # @option opts [String] :loc_spec_location_password Password for the given location.
-    # @return [ApplianceRecoveryBackupSystemNameListResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceRecoveryBackupSystemNameListResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def list(loc_spec_location, opts = {})
       data, _status_code, _headers = list_with_http_info(loc_spec_location, opts)
       data
@@ -33,7 +33,7 @@ module VSphereAutomation
     # @param [Hash] opts the optional parameters
     # @option opts [String] :loc_spec_location_user Username for the given location.
     # @option opts [String] :loc_spec_location_password Password for the given location.
-    # @return [Array<(ApplianceRecoveryBackupSystemNameListResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryBackupSystemNameListResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(loc_spec_location, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSystemNameApi.list ...'
@@ -43,7 +43,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'loc_spec_location' when calling RecoveryBackupSystemNameApi.list"
       end
       # resource path
-      local_var_path = '/appliance/recovery/backup/system-name'
+      local_var_path = '/rest/appliance/recovery/backup/system-name'
 
       # query parameters
       query_params = {}
@@ -69,7 +69,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryBackupSystemNameListResult',
+	  '200' => 'Appliance::ApplianceRecoveryBackupSystemNameListResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})

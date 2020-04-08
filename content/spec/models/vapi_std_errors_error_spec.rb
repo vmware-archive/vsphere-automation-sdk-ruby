@@ -28,13 +28,19 @@ describe 'VapiStdErrorsError' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::VapiStdErrorsError)
     end
   end
-  describe 'test attribute "messages"' do
+  describe 'test attribute "data"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "data"' do
+  describe 'test attribute "error_type"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "messages"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

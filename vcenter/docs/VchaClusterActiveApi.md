@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::VchaClusterActiveApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VchaClusterActiveApi.md#get) | **POST** /vcenter/vcha/cluster/active?action&#x3D;get | Retrieves information about the active node of a VCHA cluster.
+[**get**](VchaClusterActiveApi.md#get) | **POST** /rest/vcenter/vcha/cluster/active?action&#x3D;get | Retrieves information about the active node of a VCHA cluster.
 
 
 # **get**
-> VcenterVchaClusterActiveResult get(opts)
+> VcenterVchaClusterActiveResp get(opts)
 
 Retrieves information about the active node of a VCHA cluster.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVchaClusterActiveResult**](VcenterVchaClusterActiveResult.md)
+[**VcenterVchaClusterActiveResp**](VcenterVchaClusterActiveResp.md)
 
 ### Authorization
 

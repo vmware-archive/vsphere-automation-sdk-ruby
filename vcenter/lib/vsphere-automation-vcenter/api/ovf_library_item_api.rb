@@ -16,20 +16,20 @@ module VSphereAutomation
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Creates a library item in content library from a virtual machine or virtual appliance. <p> This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. </p>
+    # Creates a library item in content library from a virtual machine or virtual appliance. <p> This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. Meta data such as name and description is not updated for the exisitng library item. </p>
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterOvfLibraryItemCreateResult|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterOvfLibraryItemCreateResp|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
-    # Creates a library item in content library from a virtual machine or virtual appliance. &lt;p&gt; This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. &lt;/p&gt;
+    # Creates a library item in content library from a virtual machine or virtual appliance. &lt;p&gt; This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. Meta data such as name and description is not updated for the exisitng library item. &lt;/p&gt;
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterOvfLibraryItemCreateResult|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterOvfLibraryItemCreateResp|VapiStdErrorsResourceBusyError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfLibraryItemApi.create ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling OvfLibraryItemApi.create"
       end
       # resource path
-      local_var_path = '/com/vmware/vcenter/ovf/library-item'
+      local_var_path = '/rest/com/vmware/vcenter/ovf/library-item'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterOvfLibraryItemCreateResult',
+	  '200' => 'VCenter::VcenterOvfLibraryItemCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceBusyError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	})
@@ -77,7 +77,7 @@ module VSphereAutomation
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to be deployed.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterOvfLibraryItemDeployResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterOvfLibraryItemDeployResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def deploy(ovf_library_item_id, request_body, opts = {})
       data, _status_code, _headers = deploy_with_http_info(ovf_library_item_id, request_body, opts)
       data
@@ -88,7 +88,7 @@ module VSphereAutomation
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to be deployed.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterOvfLibraryItemDeployResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterOvfLibraryItemDeployResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def deploy_with_http_info(ovf_library_item_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfLibraryItemApi.deploy ...'
@@ -102,7 +102,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling OvfLibraryItemApi.deploy"
       end
       # resource path
-      local_var_path = '/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action=deploy'.sub('{' + 'ovf_library_item_id' + '}', ovf_library_item_id.to_s)
+      local_var_path = '/rest/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action=deploy'.sub('{' + 'ovf_library_item_id' + '}', ovf_library_item_id.to_s)
 
       # query parameters
       query_params = {}
@@ -127,7 +127,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterOvfLibraryItemDeployResult',
+	  '200' => 'VCenter::VcenterOvfLibraryItemDeployResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
@@ -141,7 +141,7 @@ module VSphereAutomation
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to query.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterOvfLibraryItemFilterResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterOvfLibraryItemFilterResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|]
     def filter(ovf_library_item_id, request_body, opts = {})
       data, _status_code, _headers = filter_with_http_info(ovf_library_item_id, request_body, opts)
       data
@@ -152,7 +152,7 @@ module VSphereAutomation
     # @param ovf_library_item_id Identifier of the content library item containing the OVF package to query.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterOvfLibraryItemFilterResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterOvfLibraryItemFilterResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def filter_with_http_info(ovf_library_item_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfLibraryItemApi.filter ...'
@@ -166,7 +166,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling OvfLibraryItemApi.filter"
       end
       # resource path
-      local_var_path = '/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action=filter'.sub('{' + 'ovf_library_item_id' + '}', ovf_library_item_id.to_s)
+      local_var_path = '/rest/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action=filter'.sub('{' + 'ovf_library_item_id' + '}', ovf_library_item_id.to_s)
 
       # query parameters
       query_params = {}
@@ -191,7 +191,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterOvfLibraryItemFilterResult',
+	  '200' => 'VCenter::VcenterOvfLibraryItemFilterResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	})

@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaCapabilitiesInfo
+    # Is the assignment mode of failover IP of the active node in the VCHA cluster valid.
+    attr_accessor :failover_ip_mode_valid
+
     # Are the active's management vCenter server credentials required.
     attr_accessor :management_vcenter_credentials_required
 
     # Does the vCenter have the appropriate license for VCHA.
     attr_accessor :vcha_licensed
 
-    # Is the assignment mode of failover IP of the active node in the VCHA cluster valid.
-    attr_accessor :failover_ip_mode_valid
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'failover_ip_mode_valid' => :'failover_ip_mode_valid',
         :'management_vcenter_credentials_required' => :'management_vcenter_credentials_required',
-        :'vcha_licensed' => :'vcha_licensed',
-        :'failover_ip_mode_valid' => :'failover_ip_mode_valid'
+        :'vcha_licensed' => :'vcha_licensed'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'failover_ip_mode_valid' => :'Boolean',
         :'management_vcenter_credentials_required' => :'Boolean',
-        :'vcha_licensed' => :'Boolean',
-        :'failover_ip_mode_valid' => :'Boolean'
+        :'vcha_licensed' => :'Boolean'
       }
     end
 
@@ -46,6 +46,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'failover_ip_mode_valid')
+        self.failover_ip_mode_valid = attributes[:'failover_ip_mode_valid']
+      end
+
       if attributes.has_key?(:'management_vcenter_credentials_required')
         self.management_vcenter_credentials_required = attributes[:'management_vcenter_credentials_required']
       end
@@ -53,16 +57,16 @@ module VSphereAutomation
       if attributes.has_key?(:'vcha_licensed')
         self.vcha_licensed = attributes[:'vcha_licensed']
       end
-
-      if attributes.has_key?(:'failover_ip_mode_valid')
-        self.failover_ip_mode_valid = attributes[:'failover_ip_mode_valid']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @failover_ip_mode_valid.nil?
+        invalid_properties.push('invalid value for "failover_ip_mode_valid", failover_ip_mode_valid cannot be nil.')
+      end
+
       if @management_vcenter_credentials_required.nil?
         invalid_properties.push('invalid value for "management_vcenter_credentials_required", management_vcenter_credentials_required cannot be nil.')
       end
@@ -71,19 +75,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "vcha_licensed", vcha_licensed cannot be nil.')
       end
 
-      if @failover_ip_mode_valid.nil?
-        invalid_properties.push('invalid value for "failover_ip_mode_valid", failover_ip_mode_valid cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @failover_ip_mode_valid.nil?
       return false if @management_vcenter_credentials_required.nil?
       return false if @vcha_licensed.nil?
-      return false if @failover_ip_mode_valid.nil?
       true
     end
 
@@ -92,9 +92,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          failover_ip_mode_valid == o.failover_ip_mode_valid &&
           management_vcenter_credentials_required == o.management_vcenter_credentials_required &&
-          vcha_licensed == o.vcha_licensed &&
-          failover_ip_mode_valid == o.failover_ip_mode_valid
+          vcha_licensed == o.vcha_licensed
     end
 
     # @see the `==` method
@@ -106,7 +106,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [management_vcenter_credentials_required, vcha_licensed, failover_ip_mode_valid].hash
+      [failover_ip_mode_valid, management_vcenter_credentials_required, vcha_licensed].hash
     end
 
     # Builds the object from hash

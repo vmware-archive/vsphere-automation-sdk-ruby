@@ -11,15 +11,15 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPv3Target
-    attr_accessor :type
-
-    attr_accessor :sec_level
-
     # SNMP target ip
     attr_accessor :ip
 
     # SNMP target port
     attr_accessor :port
+
+    attr_accessor :sec_level
+
+    attr_accessor :type
 
     # SNMP User
     attr_accessor :user
@@ -27,10 +27,10 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'sec_level' => :'sec_level',
         :'ip' => :'ip',
         :'port' => :'port',
+        :'sec_level' => :'sec_level',
+        :'type' => :'type',
         :'user' => :'user'
       }
     end
@@ -38,10 +38,10 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'ApplianceTechpreviewMonitoringSnmpSNMPv3Notfication',
-        :'sec_level' => :'ApplianceTechpreviewMonitoringSnmpSNMPSecLevel',
         :'ip' => :'String',
         :'port' => :'Integer',
+        :'sec_level' => :'ApplianceTechpreviewMonitoringSnmpSNMPSecLevel',
+        :'type' => :'ApplianceTechpreviewMonitoringSnmpSNMPv3Notfication',
         :'user' => :'String'
       }
     end
@@ -54,20 +54,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.has_key?(:'sec_level')
-        self.sec_level = attributes[:'sec_level']
-      end
-
       if attributes.has_key?(:'ip')
         self.ip = attributes[:'ip']
       end
 
       if attributes.has_key?(:'port')
         self.port = attributes[:'port']
+      end
+
+      if attributes.has_key?(:'sec_level')
+        self.sec_level = attributes[:'sec_level']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'user')
@@ -79,20 +79,20 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @sec_level.nil?
-        invalid_properties.push('invalid value for "sec_level", sec_level cannot be nil.')
-      end
-
       if @ip.nil?
         invalid_properties.push('invalid value for "ip", ip cannot be nil.')
       end
 
       if @port.nil?
         invalid_properties.push('invalid value for "port", port cannot be nil.')
+      end
+
+      if @sec_level.nil?
+        invalid_properties.push('invalid value for "sec_level", sec_level cannot be nil.')
+      end
+
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       if @user.nil?
@@ -105,10 +105,10 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      return false if @sec_level.nil?
       return false if @ip.nil?
       return false if @port.nil?
+      return false if @sec_level.nil?
+      return false if @type.nil?
       return false if @user.nil?
       true
     end
@@ -118,10 +118,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          sec_level == o.sec_level &&
           ip == o.ip &&
           port == o.port &&
+          sec_level == o.sec_level &&
+          type == o.type &&
           user == o.user
     end
 
@@ -134,7 +134,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, sec_level, ip, port, user].hash
+      [ip, port, sec_level, type, user].hash
     end
 
     # Builds the object from hash

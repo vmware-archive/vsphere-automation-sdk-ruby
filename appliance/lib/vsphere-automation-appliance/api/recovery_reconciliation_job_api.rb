@@ -19,7 +19,7 @@ module VSphereAutomation
     # Initiate reconciliation.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryReconciliationJobCreateResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryReconciliationJobCreateResp|VapiStdErrorsErrorError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryReconciliationJobCreateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryReconciliationJobCreateResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryReconciliationJobApi.create ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryReconciliationJobApi.create"
       end
       # resource path
-      local_var_path = '/appliance/recovery/reconciliation/job'
+      local_var_path = '/rest/appliance/recovery/reconciliation/job'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryReconciliationJobCreateResult',
+	  '200' => 'Appliance::ApplianceRecoveryReconciliationJobCreateResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -74,7 +74,7 @@ module VSphereAutomation
     end
     # Get reconciliation job progress/result.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryReconciliationJobResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceRecoveryReconciliationJobResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -83,13 +83,13 @@ module VSphereAutomation
     # Get reconciliation job progress/result.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryReconciliationJobResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryReconciliationJobResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryReconciliationJobApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/recovery/reconciliation/job'
+      local_var_path = '/rest/appliance/recovery/reconciliation/job'
 
       # query parameters
       query_params = {}
@@ -112,7 +112,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryReconciliationJobResult',
+	  '200' => 'Appliance::ApplianceRecoveryReconciliationJobResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})

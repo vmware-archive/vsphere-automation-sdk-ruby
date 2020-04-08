@@ -23,14 +23,17 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.3"
 
-  s.add_runtime_dependency 'vsphere-automation-appliance', '~> 0.4.6'
-  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.4.6'
-  s.add_runtime_dependency 'vsphere-automation-content', '~> 0.4.6'
-  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.4.6'
-  s.add_runtime_dependency 'vsphere-automation-vapi', '~> 0.4.6'
-  s.add_runtime_dependency 'vsphere-automation-vcenter', '~> 0.4.6'
+  s.add_runtime_dependency 'vsphere-automation-appliance', '~> 0.5.0'
+  s.add_runtime_dependency 'vsphere-automation-cis', '~> 0.5.0'
+  s.add_runtime_dependency 'vsphere-automation-content', '~> 0.5.0'
+  s.add_runtime_dependency 'vsphere-automation-esx', '~> 0.5.0'
+  s.add_runtime_dependency 'vsphere-automation-runtime', '~> 0.5.0'
+  s.add_runtime_dependency 'vsphere-automation-vapi', '~> 0.5.0'
+  s.add_runtime_dependency 'vsphere-automation-vcenter', '~> 0.5.0'
+  s.add_runtime_dependency 'vsphere-automation-vstats', '~> 0.5.0'
 
   s.add_development_dependency 'rake', '~> 12.3'
+  s.add_development_dependency 'pry', '~> 0.12.2'
 
   s.files = Dir.glob('lib/**/*') << 'LICENSE'
   s.require_paths = ['lib']

@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns compliance information about entities matching the filter Compliance.FilterSpec. Entities without storage policy association are not returned.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_status Compliance Status that a virtual machine must have to match the filter.
-    # @return [VcenterStoragePoliciesComplianceListResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterStoragePoliciesComplianceListResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_status Compliance Status that a virtual machine must have to match the filter.
-    # @return [Array<(VcenterStoragePoliciesComplianceListResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterStoragePoliciesComplianceListResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesComplianceApi.list ...'
@@ -38,7 +38,7 @@ module VSphereAutomation
         fail ArgumentError, 'invalid value for "filter_status", must include one of COMPLIANT, NON_COMPLIANT, UNKNOWN, NOT_APPLICABLE, OUT_OF_DATE'
       end
       # resource path
-      local_var_path = '/vcenter/storage/policies/entities/compliance'
+      local_var_path = '/rest/vcenter/storage/policies/entities/compliance'
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterStoragePoliciesComplianceListResult',
+	  '200' => 'VCenter::VcenterStoragePoliciesComplianceListResp',
 	  '400' => 'VCenter::VapiStdErrorsInvalidArgumentError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

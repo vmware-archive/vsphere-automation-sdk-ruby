@@ -11,23 +11,23 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterSystemConfigDeploymentTypeReconfigureSpec
-    attr_accessor :type
-
     attr_accessor :remote_psc
+
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'remote_psc' => :'remote_psc'
+        :'remote_psc' => :'remote_psc',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterDeploymentApplianceType',
-        :'remote_psc' => :'VcenterDeploymentRemotePscSpec'
+        :'remote_psc' => :'VcenterDeploymentRemotePscSpec',
+        :'type' => :'VcenterDeploymentApplianceType'
       }
     end
 
@@ -39,12 +39,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'remote_psc')
         self.remote_psc = attributes[:'remote_psc']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -71,8 +71,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          remote_psc == o.remote_psc
+          remote_psc == o.remote_psc &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -84,7 +84,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, remote_psc].hash
+      [remote_psc, type].hash
     end
 
     # Builds the object from hash

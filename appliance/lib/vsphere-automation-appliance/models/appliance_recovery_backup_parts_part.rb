@@ -11,38 +11,38 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupPartsPart
+    attr_accessor :description
+
     # part ID
     attr_accessor :id
 
     attr_accessor :name
 
-    attr_accessor :description
+    # Is this part optional.
+    attr_accessor :optional
 
     # Is this part selected by default in the user interface.
     attr_accessor :selected_by_default
 
-    # Is this part optional.
-    attr_accessor :optional
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'description' => :'description',
         :'id' => :'id',
         :'name' => :'name',
-        :'description' => :'description',
-        :'selected_by_default' => :'selected_by_default',
-        :'optional' => :'optional'
+        :'optional' => :'optional',
+        :'selected_by_default' => :'selected_by_default'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'description' => :'ApplianceRecoveryBackupPartsLocalizableMessage',
         :'id' => :'String',
         :'name' => :'ApplianceRecoveryBackupPartsLocalizableMessage',
-        :'description' => :'ApplianceRecoveryBackupPartsLocalizableMessage',
-        :'selected_by_default' => :'Boolean',
-        :'optional' => :'Boolean'
+        :'optional' => :'Boolean',
+        :'selected_by_default' => :'Boolean'
       }
     end
 
@@ -54,6 +54,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
       end
@@ -62,16 +66,12 @@ module VSphereAutomation
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.has_key?(:'optional')
+        self.optional = attributes[:'optional']
       end
 
       if attributes.has_key?(:'selected_by_default')
         self.selected_by_default = attributes[:'selected_by_default']
-      end
-
-      if attributes.has_key?(:'optional')
-        self.optional = attributes[:'optional']
       end
     end
 
@@ -79,6 +79,10 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      end
+
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
@@ -87,16 +91,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      if @optional.nil?
+        invalid_properties.push('invalid value for "optional", optional cannot be nil.')
       end
 
       if @selected_by_default.nil?
         invalid_properties.push('invalid value for "selected_by_default", selected_by_default cannot be nil.')
-      end
-
-      if @optional.nil?
-        invalid_properties.push('invalid value for "optional", optional cannot be nil.')
       end
 
       invalid_properties
@@ -105,11 +105,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @description.nil?
       return false if @id.nil?
       return false if @name.nil?
-      return false if @description.nil?
-      return false if @selected_by_default.nil?
       return false if @optional.nil?
+      return false if @selected_by_default.nil?
       true
     end
 
@@ -118,11 +118,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          description == o.description &&
           id == o.id &&
           name == o.name &&
-          description == o.description &&
-          selected_by_default == o.selected_by_default &&
-          optional == o.optional
+          optional == o.optional &&
+          selected_by_default == o.selected_by_default
     end
 
     # @see the `==` method
@@ -134,7 +134,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, description, selected_by_default, optional].hash
+      [description, id, name, optional, selected_by_default].hash
     end
 
     # Builds the object from hash

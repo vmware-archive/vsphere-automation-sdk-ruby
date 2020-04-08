@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::InventoryDatastoreApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find**](InventoryDatastoreApi.md#find) | **POST** /com/vmware/vcenter/inventory/datastore?~action&#x3D;find | Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
+[**find**](InventoryDatastoreApi.md#find) | **POST** /rest/com/vmware/vcenter/inventory/datastore?~action&#x3D;find | Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
 
 
 # **find**
-> VcenterInventoryDatastoreFindResult find(request_body)
+> VcenterInventoryDatastoreFindResp find(request_body)
 
 Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterInventoryDatastoreFindResult**](VcenterInventoryDatastoreFindResult.md)
+[**VcenterInventoryDatastoreFindResp**](VcenterInventoryDatastoreFindResp.md)
 
 ### Authorization
 

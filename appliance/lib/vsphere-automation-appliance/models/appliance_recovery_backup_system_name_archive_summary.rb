@@ -14,22 +14,22 @@ module VSphereAutomation
     # Backup archive identifier.
     attr_accessor :archive
 
+    # Custom comment added by the user for this backup.
+    attr_accessor :comment
+
     # Time when this backup was started.
     attr_accessor :timestamp
 
     # The version of the appliance represented by the backup archive.
     attr_accessor :version
 
-    # Custom comment added by the user for this backup.
-    attr_accessor :comment
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'archive' => :'archive',
+        :'comment' => :'comment',
         :'timestamp' => :'timestamp',
-        :'version' => :'version',
-        :'comment' => :'comment'
+        :'version' => :'version'
       }
     end
 
@@ -37,9 +37,9 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'archive' => :'String',
+        :'comment' => :'String',
         :'timestamp' => :'DateTime',
-        :'version' => :'String',
-        :'comment' => :'String'
+        :'version' => :'String'
       }
     end
 
@@ -55,16 +55,16 @@ module VSphereAutomation
         self.archive = attributes[:'archive']
       end
 
+      if attributes.has_key?(:'comment')
+        self.comment = attributes[:'comment']
+      end
+
       if attributes.has_key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
       end
 
       if attributes.has_key?(:'version')
         self.version = attributes[:'version']
-      end
-
-      if attributes.has_key?(:'comment')
-        self.comment = attributes[:'comment']
       end
     end
 
@@ -76,16 +76,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "archive", archive cannot be nil.')
       end
 
+      if @comment.nil?
+        invalid_properties.push('invalid value for "comment", comment cannot be nil.')
+      end
+
       if @timestamp.nil?
         invalid_properties.push('invalid value for "timestamp", timestamp cannot be nil.')
       end
 
       if @version.nil?
         invalid_properties.push('invalid value for "version", version cannot be nil.')
-      end
-
-      if @comment.nil?
-        invalid_properties.push('invalid value for "comment", comment cannot be nil.')
       end
 
       invalid_properties
@@ -95,9 +95,9 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @archive.nil?
+      return false if @comment.nil?
       return false if @timestamp.nil?
       return false if @version.nil?
-      return false if @comment.nil?
       true
     end
 
@@ -107,9 +107,9 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           archive == o.archive &&
+          comment == o.comment &&
           timestamp == o.timestamp &&
-          version == o.version &&
-          comment == o.comment
+          version == o.version
     end
 
     # @see the `==` method
@@ -121,7 +121,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [archive, timestamp, version, comment].hash
+      [archive, comment, timestamp, version].hash
     end
 
     # Builds the object from hash

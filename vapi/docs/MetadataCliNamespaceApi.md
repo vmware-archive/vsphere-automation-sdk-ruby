@@ -1,16 +1,16 @@
 # VSphereAutomation::VAPI::MetadataCliNamespaceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fingerprint**](MetadataCliNamespaceApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/cli/namespace?~action&#x3D;fingerprint | Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
-[**get**](MetadataCliNamespaceApi.md#get) | **POST** /com/vmware/vapi/metadata/cli/namespace?~action&#x3D;get | Retreives information about a namespace including information about children of that namespace.
-[**list**](MetadataCliNamespaceApi.md#list) | **GET** /com/vmware/vapi/metadata/cli/namespace | Returns the identifiers of all namespaces registered with the infrastructure.
+[**fingerprint**](MetadataCliNamespaceApi.md#fingerprint) | **POST** /rest/com/vmware/vapi/metadata/cli/namespace?~action&#x3D;fingerprint | Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
+[**get**](MetadataCliNamespaceApi.md#get) | **POST** /rest/com/vmware/vapi/metadata/cli/namespace?~action&#x3D;get | Retreives information about a namespace including information about children of that namespace.
+[**list**](MetadataCliNamespaceApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/cli/namespace | Returns the identifiers of all namespaces registered with the infrastructure.
 
 
 # **fingerprint**
-> VapiMetadataCliNamespaceFingerprintResult fingerprint
+> VapiMetadataCliNamespaceFingerprintResp fingerprint
 
 Returns the aggregate fingerprint of all the namespace metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for namespaces has been modified on the server.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataCliNamespaceFingerprintResult**](VapiMetadataCliNamespaceFingerprintResult.md)
+[**VapiMetadataCliNamespaceFingerprintResp**](VapiMetadataCliNamespaceFingerprintResp.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 
 # **get**
-> VapiMetadataCliNamespaceResult get(request_body)
+> VapiMetadataCliNamespaceResp get(request_body)
 
 Retreives information about a namespace including information about children of that namespace.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataCliNamespaceResult**](VapiMetadataCliNamespaceResult.md)
+[**VapiMetadataCliNamespaceResp**](VapiMetadataCliNamespaceResp.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataCliNamespaceListResult list
+> VapiMetadataCliNamespaceListResp list
 
 Returns the identifiers of all namespaces registered with the infrastructure.
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataCliNamespaceListResult**](VapiMetadataCliNamespaceListResult.md)
+[**VapiMetadataCliNamespaceListResp**](VapiMetadataCliNamespaceListResp.md)
 
 ### Authorization
 

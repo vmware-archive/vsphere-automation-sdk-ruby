@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelConstantInfo
+    # English language documentation for the constant element. It can contain HTML markup and documentation tags (similar to Javadoc tags).
+    attr_accessor :documentation
+
     attr_accessor :type
 
     attr_accessor :value
 
-    # English language documentation for the constant element. It can contain HTML markup and documentation tags (similar to Javadoc tags).
-    attr_accessor :documentation
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'documentation' => :'documentation',
         :'type' => :'type',
-        :'value' => :'value',
-        :'documentation' => :'documentation'
+        :'value' => :'value'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'documentation' => :'String',
         :'type' => :'VapiMetadataMetamodelType',
-        :'value' => :'VapiMetadataMetamodelConstantValue',
-        :'documentation' => :'String'
+        :'value' => :'VapiMetadataMetamodelConstantValue'
       }
     end
 
@@ -44,6 +44,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
+      end
+
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
       end
@@ -51,16 +55,16 @@ module VSphereAutomation
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
       end
-
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      end
+
       if @type.nil?
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
@@ -69,19 +73,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "value", value cannot be nil.')
       end
 
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @documentation.nil?
       return false if @type.nil?
       return false if @value.nil?
-      return false if @documentation.nil?
       true
     end
 
@@ -90,9 +90,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          documentation == o.documentation &&
           type == o.type &&
-          value == o.value &&
-          documentation == o.documentation
+          value == o.value
     end
 
     # @see the `==` method
@@ -104,7 +104,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, value, documentation].hash
+      [documentation, type, value].hash
     end
 
     # Builds the object from hash

@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Returns information about the supported export flags by the server. <p> The supported flags are: <dl> <dt>PRESERVE_MAC</dt> <dd>Include MAC addresses for network adapters.</dd> <dt>EXTRA_CONFIG</dt> <dd>Include extra configuration in OVF export.</dd> </dl> <p> Future server versions might support additional flags.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterOvfExportFlagListResult|]
+    # @return [VcenterOvfExportFlagListResp|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Returns information about the supported export flags by the server. &lt;p&gt; The supported flags are: &lt;dl&gt; &lt;dt&gt;PRESERVE_MAC&lt;/dt&gt; &lt;dd&gt;Include MAC addresses for network adapters.&lt;/dd&gt; &lt;dt&gt;EXTRA_CONFIG&lt;/dt&gt; &lt;dd&gt;Include extra configuration in OVF export.&lt;/dd&gt; &lt;/dl&gt; &lt;p&gt; Future server versions might support additional flags.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterOvfExportFlagListResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterOvfExportFlagListResp|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OvfExportFlagApi.list ...'
       end
       # resource path
-      local_var_path = '/com/vmware/vcenter/ovf/export-flag'
+      local_var_path = '/rest/com/vmware/vcenter/ovf/export-flag'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterOvfExportFlagListResult',
+	  '200' => 'VCenter::VcenterOvfExportFlagListResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OvfExportFlagApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

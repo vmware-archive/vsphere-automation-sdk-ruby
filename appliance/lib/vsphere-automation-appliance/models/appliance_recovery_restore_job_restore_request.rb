@@ -14,16 +14,19 @@ module VSphereAutomation
     # a password for a backup piece
     attr_accessor :backup_password
 
-    attr_accessor :location_type
+    # The flag to ignore warnings during restore
+    attr_accessor :ignore_warnings
 
     # path or url
     attr_accessor :location
 
-    # username for location
-    attr_accessor :location_user
-
     # password for location
     attr_accessor :location_password
+
+    attr_accessor :location_type
+
+    # username for location
+    attr_accessor :location_user
 
     # Administrators Username for SSO.
     attr_accessor :sso_admin_user_name
@@ -31,20 +34,17 @@ module VSphereAutomation
     # The password for SSO admin user.
     attr_accessor :sso_admin_user_password
 
-    # The flag to ignore warnings during restore
-    attr_accessor :ignore_warnings
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'backup_password' => :'backup_password',
-        :'location_type' => :'location_type',
+        :'ignore_warnings' => :'ignore_warnings',
         :'location' => :'location',
-        :'location_user' => :'location_user',
         :'location_password' => :'location_password',
+        :'location_type' => :'location_type',
+        :'location_user' => :'location_user',
         :'sso_admin_user_name' => :'sso_admin_user_name',
-        :'sso_admin_user_password' => :'sso_admin_user_password',
-        :'ignore_warnings' => :'ignore_warnings'
+        :'sso_admin_user_password' => :'sso_admin_user_password'
       }
     end
 
@@ -52,13 +52,13 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'backup_password' => :'String',
-        :'location_type' => :'ApplianceRecoveryRestoreJobLocationType',
+        :'ignore_warnings' => :'Boolean',
         :'location' => :'String',
-        :'location_user' => :'String',
         :'location_password' => :'String',
+        :'location_type' => :'ApplianceRecoveryRestoreJobLocationType',
+        :'location_user' => :'String',
         :'sso_admin_user_name' => :'String',
-        :'sso_admin_user_password' => :'String',
-        :'ignore_warnings' => :'Boolean'
+        :'sso_admin_user_password' => :'String'
       }
     end
 
@@ -74,20 +74,24 @@ module VSphereAutomation
         self.backup_password = attributes[:'backup_password']
       end
 
-      if attributes.has_key?(:'location_type')
-        self.location_type = attributes[:'location_type']
+      if attributes.has_key?(:'ignore_warnings')
+        self.ignore_warnings = attributes[:'ignore_warnings']
       end
 
       if attributes.has_key?(:'location')
         self.location = attributes[:'location']
       end
 
-      if attributes.has_key?(:'location_user')
-        self.location_user = attributes[:'location_user']
-      end
-
       if attributes.has_key?(:'location_password')
         self.location_password = attributes[:'location_password']
+      end
+
+      if attributes.has_key?(:'location_type')
+        self.location_type = attributes[:'location_type']
+      end
+
+      if attributes.has_key?(:'location_user')
+        self.location_user = attributes[:'location_user']
       end
 
       if attributes.has_key?(:'sso_admin_user_name')
@@ -97,22 +101,18 @@ module VSphereAutomation
       if attributes.has_key?(:'sso_admin_user_password')
         self.sso_admin_user_password = attributes[:'sso_admin_user_password']
       end
-
-      if attributes.has_key?(:'ignore_warnings')
-        self.ignore_warnings = attributes[:'ignore_warnings']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @location_type.nil?
-        invalid_properties.push('invalid value for "location_type", location_type cannot be nil.')
-      end
-
       if @location.nil?
         invalid_properties.push('invalid value for "location", location cannot be nil.')
+      end
+
+      if @location_type.nil?
+        invalid_properties.push('invalid value for "location_type", location_type cannot be nil.')
       end
 
       invalid_properties
@@ -121,8 +121,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @location_type.nil?
       return false if @location.nil?
+      return false if @location_type.nil?
       true
     end
 
@@ -132,13 +132,13 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           backup_password == o.backup_password &&
-          location_type == o.location_type &&
+          ignore_warnings == o.ignore_warnings &&
           location == o.location &&
-          location_user == o.location_user &&
           location_password == o.location_password &&
+          location_type == o.location_type &&
+          location_user == o.location_user &&
           sso_admin_user_name == o.sso_admin_user_name &&
-          sso_admin_user_password == o.sso_admin_user_password &&
-          ignore_warnings == o.ignore_warnings
+          sso_admin_user_password == o.sso_admin_user_password
     end
 
     # @see the `==` method
@@ -150,7 +150,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [backup_password, location_type, location, location_user, location_password, sso_admin_user_name, sso_admin_user_password, ignore_warnings].hash
+      [backup_password, ignore_warnings, location, location_password, location_type, location_user, sso_admin_user_name, sso_admin_user_password].hash
     end
 
     # Builds the object from hash

@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalAccountsApi.create"
       end
       # resource path
-      local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
+      local_var_path = '/rest/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
 
       # query parameters
       query_params = {}
@@ -97,7 +97,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'username' when calling LocalAccountsApi.delete"
       end
       # resource path
-      local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
+      local_var_path = '/rest/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
 
       # query parameters
       query_params = {}
@@ -127,7 +127,7 @@ module VSphereAutomation
     # Get the local user account information.
     # @param username User login name
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceLocalAccountsResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceLocalAccountsResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def get(username, opts = {})
       data, _status_code, _headers = get_with_http_info(username, opts)
       data
@@ -137,7 +137,7 @@ module VSphereAutomation
     # @api private
     # @param username User login name
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceLocalAccountsResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceLocalAccountsResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(username, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.get ...'
@@ -147,7 +147,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'username' when calling LocalAccountsApi.get"
       end
       # resource path
-      local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
+      local_var_path = '/rest/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
 
       # query parameters
       query_params = {}
@@ -170,7 +170,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceLocalAccountsResult',
+	  '200' => 'Appliance::ApplianceLocalAccountsResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})
@@ -181,7 +181,7 @@ module VSphereAutomation
     end
     # Get a list of the local user accounts.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceLocalAccountsListResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceLocalAccountsListResp|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -190,13 +190,13 @@ module VSphereAutomation
     # Get a list of the local user accounts.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceLocalAccountsListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceLocalAccountsListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsApi.list ...'
       end
       # resource path
-      local_var_path = '/appliance/local-accounts'
+      local_var_path = '/rest/appliance/local-accounts'
 
       # query parameters
       query_params = {}
@@ -219,7 +219,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceLocalAccountsListResult',
+	  '200' => 'Appliance::ApplianceLocalAccountsListResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -256,7 +256,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalAccountsApi.set"
       end
       # resource path
-      local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
+      local_var_path = '/rest/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
 
       # query parameters
       query_params = {}
@@ -314,7 +314,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalAccountsApi.update"
       end
       # resource path
-      local_var_path = '/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
+      local_var_path = '/rest/appliance/local-accounts/{username}'.sub('{' + 'username' + '}', username.to_s)
 
       # query parameters
       query_params = {}

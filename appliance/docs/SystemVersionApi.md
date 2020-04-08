@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::SystemVersionApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](SystemVersionApi.md#get) | **GET** /appliance/system/version | Get the version.
+[**get**](SystemVersionApi.md#get) | **GET** /rest/appliance/system/version | Get the version.
 
 
 # **get**
-> ApplianceSystemVersionResult get
+> ApplianceSystemVersionResp get
 
 Get the version.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceSystemVersionResult**](ApplianceSystemVersionResult.md)
+[**ApplianceSystemVersionResp**](ApplianceSystemVersionResp.md)
 
 ### Authorization
 

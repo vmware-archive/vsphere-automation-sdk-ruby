@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::CertificateManagementVcenterTlsCsrApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](CertificateManagementVcenterTlsCsrApi.md#create) | **POST** /vcenter/certificate-management/vcenter/tls-csr | Generates a CSR with the given Spec.
+[**create**](CertificateManagementVcenterTlsCsrApi.md#create) | **POST** /rest/vcenter/certificate-management/vcenter/tls-csr | Generates a CSR with the given Spec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
 
 
 # **create**
-> VcenterCertificateManagementVcenterTlsCsrCreateResult create(request_body)
+> VcenterCertificateManagementVcenterTlsCsrCreateResp create(request_body)
 
-Generates a CSR with the given Spec.
+Generates a CSR with the given Spec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
 
 ### Example
 ```ruby
@@ -28,7 +28,7 @@ api_instance = VSphereAutomation::VCenter::CertificateManagementVcenterTlsCsrApi
 request_body = VCenter::VcenterCertificateManagementVcenterTlsCsrCreate.new # VcenterCertificateManagementVcenterTlsCsrCreate | 
 
 begin
-  #Generates a CSR with the given Spec.
+  #Generates a CSR with the given Spec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
   result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterCertificateManagementVcenterTlsCsrCreateResult**](VcenterCertificateManagementVcenterTlsCsrCreateResult.md)
+[**VcenterCertificateManagementVcenterTlsCsrCreateResp**](VcenterCertificateManagementVcenterTlsCsrCreateResp.md)
 
 ### Authorization
 

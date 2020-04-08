@@ -1,10 +1,10 @@
 # VSphereAutomation::VCenter::VchaVcCredentialsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validate**](VchaVcCredentialsApi.md#validate) | **POST** /vcenter/vcha/vc-credentials?action&#x3D;validate | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
+[**validate**](VchaVcCredentialsApi.md#validate) | **POST** /rest/vcenter/vcha/vc-credentials?action&#x3D;validate | Validates the credentials of the management vCenter server of the active node of a VCHA cluster.
 
 
 # **validate**

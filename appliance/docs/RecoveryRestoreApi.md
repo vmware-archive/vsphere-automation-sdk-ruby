@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::RecoveryRestoreApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validate**](RecoveryRestoreApi.md#validate) | **POST** /appliance/recovery/restore/validate | Get metadata before restore
+[**validate**](RecoveryRestoreApi.md#validate) | **POST** /rest/appliance/recovery/restore/validate | Get metadata before restore
 
 
 # **validate**
-> ApplianceRecoveryRestoreValidateResult validate(request_body)
+> ApplianceRecoveryRestoreValidateResp validate(request_body)
 
 Get metadata before restore
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryRestoreValidateResult**](ApplianceRecoveryRestoreValidateResult.md)
+[**ApplianceRecoveryRestoreValidateResp**](ApplianceRecoveryRestoreValidateResp.md)
 
 ### Authorization
 

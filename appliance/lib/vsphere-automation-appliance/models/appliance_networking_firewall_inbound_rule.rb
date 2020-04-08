@@ -14,21 +14,21 @@ module VSphereAutomation
     # IPv4 or IPv6 address.
     attr_accessor :address
 
-    # CIDR prefix used to mask address. For example, an IPv4 prefix of 24 ignores the low-order 8 bits of address.
-    attr_accessor :prefix
+    # The interface to which this rule applies. An empty string indicates that the rule applies to all interfaces.
+    attr_accessor :interface_name
 
     attr_accessor :policy
 
-    # The interface to which this rule applies. An empty string indicates that the rule applies to all interfaces.
-    attr_accessor :interface_name
+    # CIDR prefix used to mask address. For example, an IPv4 prefix of 24 ignores the low-order 8 bits of address.
+    attr_accessor :prefix
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'address' => :'address',
-        :'prefix' => :'prefix',
+        :'interface_name' => :'interface_name',
         :'policy' => :'policy',
-        :'interface_name' => :'interface_name'
+        :'prefix' => :'prefix'
       }
     end
 
@@ -36,9 +36,9 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'address' => :'String',
-        :'prefix' => :'Integer',
+        :'interface_name' => :'String',
         :'policy' => :'ApplianceNetworkingFirewallInboundPolicy',
-        :'interface_name' => :'String'
+        :'prefix' => :'Integer'
       }
     end
 
@@ -54,16 +54,16 @@ module VSphereAutomation
         self.address = attributes[:'address']
       end
 
-      if attributes.has_key?(:'prefix')
-        self.prefix = attributes[:'prefix']
+      if attributes.has_key?(:'interface_name')
+        self.interface_name = attributes[:'interface_name']
       end
 
       if attributes.has_key?(:'policy')
         self.policy = attributes[:'policy']
       end
 
-      if attributes.has_key?(:'interface_name')
-        self.interface_name = attributes[:'interface_name']
+      if attributes.has_key?(:'prefix')
+        self.prefix = attributes[:'prefix']
       end
     end
 
@@ -75,12 +75,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "address", address cannot be nil.')
       end
 
-      if @prefix.nil?
-        invalid_properties.push('invalid value for "prefix", prefix cannot be nil.')
-      end
-
       if @policy.nil?
         invalid_properties.push('invalid value for "policy", policy cannot be nil.')
+      end
+
+      if @prefix.nil?
+        invalid_properties.push('invalid value for "prefix", prefix cannot be nil.')
       end
 
       invalid_properties
@@ -90,8 +90,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @address.nil?
-      return false if @prefix.nil?
       return false if @policy.nil?
+      return false if @prefix.nil?
       true
     end
 
@@ -101,9 +101,9 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
-          prefix == o.prefix &&
+          interface_name == o.interface_name &&
           policy == o.policy &&
-          interface_name == o.interface_name
+          prefix == o.prefix
     end
 
     # @see the `==` method
@@ -115,7 +115,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, prefix, policy, interface_name].hash
+      [address, interface_name, policy, prefix].hash
     end
 
     # Builds the object from hash

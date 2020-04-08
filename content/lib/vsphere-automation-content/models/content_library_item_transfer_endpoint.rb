@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemTransferEndpoint
-    # Transfer endpoint URI. The supported URI schemes are: {@code http}, {@code https}, {@code file}, and {@code ds}. <p> An endpoint URI with the {@code ds} scheme specifies the location of the file on the datastore. The format of the datastore URI is: <ul> <li>ds:///vmfs/volumes/uuid/path</li> </ul> <p> Some examples of valid file URI formats are: <ul> <li>file:///path</li> <li>file:///C:/path</li> <li>file://unc-server/path</li> </ul> <p> When the transfer endpoint is a file or datastore location, the server can import the file directly from the storage backing without the overhead of streaming over HTTP.
-    attr_accessor :uri
-
     # Thumbprint of the expected SSL certificate for this endpoint. Only used for HTTPS connections. The thumbprint is the SHA-1 hash of the DER encoding of the remote endpoint's SSL certificate. If set, the remote endpoint's SSL certificate is only accepted if it matches this thumbprint, and no other certificate validation is performed.
     attr_accessor :ssl_certificate_thumbprint
+
+    # Transfer endpoint URI. The supported URI schemes are: {@code http}, {@code https}, and {@code ds}. <p> An endpoint URI with the {@code ds} scheme specifies the location of the file on the datastore. The format of the datastore URI is: <ul> <li>ds:///vmfs/volumes/uuid/path</li> </ul> <p> When the transfer endpoint is a datastore location, the server can import the file directly from the storage backing without the overhead of streaming over HTTP.
+    attr_accessor :uri
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'uri' => :'uri',
-        :'ssl_certificate_thumbprint' => :'ssl_certificate_thumbprint'
+        :'ssl_certificate_thumbprint' => :'ssl_certificate_thumbprint',
+        :'uri' => :'uri'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'uri' => :'String',
-        :'ssl_certificate_thumbprint' => :'String'
+        :'ssl_certificate_thumbprint' => :'String',
+        :'uri' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'uri')
-        self.uri = attributes[:'uri']
-      end
-
       if attributes.has_key?(:'ssl_certificate_thumbprint')
         self.ssl_certificate_thumbprint = attributes[:'ssl_certificate_thumbprint']
+      end
+
+      if attributes.has_key?(:'uri')
+        self.uri = attributes[:'uri']
       end
     end
 
@@ -73,8 +73,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          uri == o.uri &&
-          ssl_certificate_thumbprint == o.ssl_certificate_thumbprint
+          ssl_certificate_thumbprint == o.ssl_certificate_thumbprint &&
+          uri == o.uri
     end
 
     # @see the `==` method
@@ -86,7 +86,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uri, ssl_certificate_thumbprint].hash
+      [ssl_certificate_thumbprint, uri].hash
     end
 
     # Builds the object from hash

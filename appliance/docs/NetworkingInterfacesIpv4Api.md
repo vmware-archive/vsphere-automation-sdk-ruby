@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::NetworkingInterfacesIpv4Api
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NetworkingInterfacesIpv4Api.md#get) | **GET** /appliance/networking/interfaces/{interface_name}/ipv4 | Get IPv4 network configuration for specific NIC.
-[**set**](NetworkingInterfacesIpv4Api.md#set) | **PUT** /appliance/networking/interfaces/{interface_name}/ipv4 | Set IPv4 network configuration for specific network interface.
+[**get**](NetworkingInterfacesIpv4Api.md#get) | **GET** /rest/appliance/networking/interfaces/{interface_name}/ipv4 | Get IPv4 network configuration for specific NIC.
+[**set**](NetworkingInterfacesIpv4Api.md#set) | **PUT** /rest/appliance/networking/interfaces/{interface_name}/ipv4 | Set IPv4 network configuration for specific network interface.
 
 
 # **get**
-> ApplianceNetworkingInterfacesIpv4Result get(interface_name)
+> ApplianceNetworkingInterfacesIpv4Resp get(interface_name)
 
 Get IPv4 network configuration for specific NIC.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNetworkingInterfacesIpv4Result**](ApplianceNetworkingInterfacesIpv4Result.md)
+[**ApplianceNetworkingInterfacesIpv4Resp**](ApplianceNetworkingInterfacesIpv4Resp.md)
 
 ### Authorization
 

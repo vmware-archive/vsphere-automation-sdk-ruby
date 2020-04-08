@@ -28,10 +28,16 @@ module VSphereAutomation
     # Comma-separated list of trap OIDs (object identifiers) for traps not to be sent by the agent. Use 'reset' to clear the setting.
     attr_accessor :notraps
 
+    # Set up pid
+    attr_accessor :pid
+
     # Set up a UDP port which the SNMP agent uses to listen on for polling requests. The default UDP port is 161.
     attr_accessor :port
 
     attr_accessor :privacy
+
+    # Set up remote users.
+    attr_accessor :remoteusers
 
     # System contact string as presented in sysContact.0. Up to 255 characters long.
     attr_accessor :syscontact
@@ -45,14 +51,8 @@ module VSphereAutomation
     # Set up to five local users.
     attr_accessor :users
 
-    # Set up remote users.
-    attr_accessor :remoteusers
-
     # Set up to three SNMPv3 notification targets. Format is: ip-or-hostname[@port]/remote-user/security-level/trap|inform[,...].
     attr_accessor :v3targets
-
-    # Set up pid
-    attr_accessor :pid
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -63,15 +63,15 @@ module VSphereAutomation
         :'engineid' => :'engineid',
         :'loglevel' => :'loglevel',
         :'notraps' => :'notraps',
+        :'pid' => :'pid',
         :'port' => :'port',
         :'privacy' => :'privacy',
+        :'remoteusers' => :'remoteusers',
         :'syscontact' => :'syscontact',
         :'syslocation' => :'syslocation',
         :'targets' => :'targets',
         :'users' => :'users',
-        :'remoteusers' => :'remoteusers',
-        :'v3targets' => :'v3targets',
-        :'pid' => :'pid'
+        :'v3targets' => :'v3targets'
       }
     end
 
@@ -84,15 +84,15 @@ module VSphereAutomation
         :'engineid' => :'String',
         :'loglevel' => :'String',
         :'notraps' => :'Array<String>',
+        :'pid' => :'String',
         :'port' => :'Integer',
         :'privacy' => :'ApplianceTechpreviewMonitoringSnmpSNMPPrivProto',
+        :'remoteusers' => :'Array<ApplianceTechpreviewMonitoringSnmpSNMPRemoteUser>',
         :'syscontact' => :'String',
         :'syslocation' => :'String',
         :'targets' => :'Array<ApplianceTechpreviewMonitoringSnmpSNMPv1TrapTarget>',
         :'users' => :'Array<ApplianceTechpreviewMonitoringSnmpSNMPUser>',
-        :'remoteusers' => :'Array<ApplianceTechpreviewMonitoringSnmpSNMPRemoteUser>',
-        :'v3targets' => :'Array<ApplianceTechpreviewMonitoringSnmpSNMPv3Target>',
-        :'pid' => :'String'
+        :'v3targets' => :'Array<ApplianceTechpreviewMonitoringSnmpSNMPv3Target>'
       }
     end
 
@@ -132,12 +132,22 @@ module VSphereAutomation
         end
       end
 
+      if attributes.has_key?(:'pid')
+        self.pid = attributes[:'pid']
+      end
+
       if attributes.has_key?(:'port')
         self.port = attributes[:'port']
       end
 
       if attributes.has_key?(:'privacy')
         self.privacy = attributes[:'privacy']
+      end
+
+      if attributes.has_key?(:'remoteusers')
+        if (value = attributes[:'remoteusers']).is_a?(Array)
+          self.remoteusers = value
+        end
       end
 
       if attributes.has_key?(:'syscontact')
@@ -160,20 +170,10 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'remoteusers')
-        if (value = attributes[:'remoteusers']).is_a?(Array)
-          self.remoteusers = value
-        end
-      end
-
       if attributes.has_key?(:'v3targets')
         if (value = attributes[:'v3targets']).is_a?(Array)
           self.v3targets = value
         end
-      end
-
-      if attributes.has_key?(:'pid')
-        self.pid = attributes[:'pid']
       end
     end
 
@@ -205,12 +205,20 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "notraps", notraps cannot be nil.')
       end
 
+      if @pid.nil?
+        invalid_properties.push('invalid value for "pid", pid cannot be nil.')
+      end
+
       if @port.nil?
         invalid_properties.push('invalid value for "port", port cannot be nil.')
       end
 
       if @privacy.nil?
         invalid_properties.push('invalid value for "privacy", privacy cannot be nil.')
+      end
+
+      if @remoteusers.nil?
+        invalid_properties.push('invalid value for "remoteusers", remoteusers cannot be nil.')
       end
 
       if @syscontact.nil?
@@ -229,16 +237,8 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "users", users cannot be nil.')
       end
 
-      if @remoteusers.nil?
-        invalid_properties.push('invalid value for "remoteusers", remoteusers cannot be nil.')
-      end
-
       if @v3targets.nil?
         invalid_properties.push('invalid value for "v3targets", v3targets cannot be nil.')
-      end
-
-      if @pid.nil?
-        invalid_properties.push('invalid value for "pid", pid cannot be nil.')
       end
 
       invalid_properties
@@ -253,15 +253,15 @@ module VSphereAutomation
       return false if @engineid.nil?
       return false if @loglevel.nil?
       return false if @notraps.nil?
+      return false if @pid.nil?
       return false if @port.nil?
       return false if @privacy.nil?
+      return false if @remoteusers.nil?
       return false if @syscontact.nil?
       return false if @syslocation.nil?
       return false if @targets.nil?
       return false if @users.nil?
-      return false if @remoteusers.nil?
       return false if @v3targets.nil?
-      return false if @pid.nil?
       true
     end
 
@@ -276,15 +276,15 @@ module VSphereAutomation
           engineid == o.engineid &&
           loglevel == o.loglevel &&
           notraps == o.notraps &&
+          pid == o.pid &&
           port == o.port &&
           privacy == o.privacy &&
+          remoteusers == o.remoteusers &&
           syscontact == o.syscontact &&
           syslocation == o.syslocation &&
           targets == o.targets &&
           users == o.users &&
-          remoteusers == o.remoteusers &&
-          v3targets == o.v3targets &&
-          pid == o.pid
+          v3targets == o.v3targets
     end
 
     # @see the `==` method
@@ -296,7 +296,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authentication, communities, enable, engineid, loglevel, notraps, port, privacy, syscontact, syslocation, targets, users, remoteusers, v3targets, pid].hash
+      [authentication, communities, enable, engineid, loglevel, notraps, pid, port, privacy, remoteusers, syscontact, syslocation, targets, users, v3targets].hash
     end
 
     # Builds the object from hash

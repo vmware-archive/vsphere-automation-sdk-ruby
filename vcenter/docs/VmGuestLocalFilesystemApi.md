@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::VmGuestLocalFilesystemApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmGuestLocalFilesystemApi.md#get) | **GET** /vcenter/vm/{vm}/guest/local-filesystem | Returns details of the local file systems in the guest operating system.
+[**get**](VmGuestLocalFilesystemApi.md#get) | **GET** /rest/vcenter/vm/{vm}/guest/local-filesystem | Returns details of the local file systems in the guest operating system.
 
 
 # **get**
-> VcenterVmGuestLocalFilesystemResult get(vm)
+> VcenterVmGuestLocalFilesystemResp get(vm)
 
 Returns details of the local file systems in the guest operating system.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmGuestLocalFilesystemResult**](VcenterVmGuestLocalFilesystemResult.md)
+[**VcenterVmGuestLocalFilesystemResp**](VcenterVmGuestLocalFilesystemResp.md)
 
 ### Authorization
 

@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::RecoveryBackupSystemNameApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](RecoveryBackupSystemNameApi.md#list) | **GET** /appliance/recovery/backup/system-name | Returns a list of system names for which backup archives exist under {@param.name locSpec}.
+[**list**](RecoveryBackupSystemNameApi.md#list) | **GET** /rest/appliance/recovery/backup/system-name | Returns a list of system names for which backup archives exist under {@param.name locSpec}.
 
 
 # **list**
-> ApplianceRecoveryBackupSystemNameListResult list(loc_spec_location, opts)
+> ApplianceRecoveryBackupSystemNameListResp list(loc_spec_location, opts)
 
 Returns a list of system names for which backup archives exist under {@param.name locSpec}.
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupSystemNameListResult**](ApplianceRecoveryBackupSystemNameListResult.md)
+[**ApplianceRecoveryBackupSystemNameListResp**](ApplianceRecoveryBackupSystemNameListResp.md)
 
 ### Authorization
 

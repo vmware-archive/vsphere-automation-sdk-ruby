@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves the fingerprint computed from the metamodel metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component element has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.metamodel.Component#get}.
     # @param component_id Identifier of the component element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelComponentFingerprintResult|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataMetamodelComponentFingerprintResp|VapiStdErrorsNotFoundError|]
     def fingerprint(component_id, opts = {})
       data, _status_code, _headers = fingerprint_with_http_info(component_id, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param component_id Identifier of the component element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelComponentFingerprintResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelComponentFingerprintResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def fingerprint_with_http_info(component_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelComponentApi.fingerprint ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'component_id' when calling MetadataMetamodelComponentApi.fingerprint"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/metamodel/component/id:{component_id}?~action=fingerprint'.sub('{' + 'component_id' + '}', component_id.to_s)
+      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/component/id:{component_id}?~action=fingerprint'.sub('{' + 'component_id' + '}', component_id.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelComponentFingerprintResult',
+	  '200' => 'VAPI::VapiMetadataMetamodelComponentFingerprintResp',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -73,7 +73,7 @@ module VSphereAutomation
     # Retrieves metamodel information about the component element corresponding to {@param.name componentId}. <p> The {@link ComponentData} contains the metamodel information about the component and it's fingerprint. It contains information about all the package elements that are contained in this component element.
     # @param component_id Identifier of the component element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelComponentResult|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataMetamodelComponentResp|VapiStdErrorsNotFoundError|]
     def get(component_id, opts = {})
       data, _status_code, _headers = get_with_http_info(component_id, opts)
       data
@@ -83,7 +83,7 @@ module VSphereAutomation
     # @api private
     # @param component_id Identifier of the component element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelComponentResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelComponentResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(component_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelComponentApi.get ...'
@@ -93,7 +93,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'component_id' when calling MetadataMetamodelComponentApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/metamodel/component/id:{component_id}'.sub('{' + 'component_id' + '}', component_id.to_s)
+      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/component/id:{component_id}'.sub('{' + 'component_id' + '}', component_id.to_s)
 
       # query parameters
       query_params = {}
@@ -116,7 +116,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelComponentResult',
+	  '200' => 'VAPI::VapiMetadataMetamodelComponentResp',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -126,7 +126,7 @@ module VSphereAutomation
     end
     # Returns the identifiers for the component elements that are registered with the infrastructure.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelComponentListResult|]
+    # @return [VapiMetadataMetamodelComponentListResp|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -135,13 +135,13 @@ module VSphereAutomation
     # Returns the identifiers for the component elements that are registered with the infrastructure.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelComponentListResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelComponentListResp|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelComponentApi.list ...'
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/metamodel/component'
+      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/component'
 
       # query parameters
       query_params = {}
@@ -164,7 +164,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelComponentListResult',
+	  '200' => 'VAPI::VapiMetadataMetamodelComponentListResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataMetamodelComponentApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

@@ -11,45 +11,45 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelPackageInfo
-    # Dot separated name of the package element. The segments in the name reflect the organization of the APIs. The format of each segment is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
-    attr_accessor :name
-
-    # Metamodel information of all the structure elements contained in the package element. The key in the {@term map} is the identifier of the structure element and the value in the {@term map} is the metamodel information for the structure element. <p> This does not include the structure elements contained in the service elements that are contained in this package element.
-    attr_accessor :structures
+    # English language documentation for a package. It can contain HTML markup and Javadoc tags. The first sentence of the package documentation is a complete sentence that identifies the package by name and summarizes the purpose of the package. <p> The primary purpose of a package documentation is to provide high-level context that will provide a framework in which the users can put the detail about the package contents.
+    attr_accessor :documentation
 
     # Metamodel information of all the enumeration elements contained in the package element. The key in the {@term map} is the identifier of the enumeration element and the value in the {@term map} is the metamodel information for the enumeration element. <p> This does not include the enumeration elements that are contained in the service elements of this package element or structure elements of this package element.
     attr_accessor :enumerations
 
-    # Metamodel information of all the service elements contained in the package element. The key in the {@term map} is the identifier of the service element and the value in the {@term map} is the metamodel information for the service element.
-    attr_accessor :services
-
     # Generic metadata elements for the package element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
     attr_accessor :metadata
 
-    # English language documentation for a package. It can contain HTML markup and Javadoc tags. The first sentence of the package documentation is a complete sentence that identifies the package by name and summarizes the purpose of the package. <p> The primary purpose of a package documentation is to provide high-level context that will provide a framework in which the users can put the detail about the package contents.
-    attr_accessor :documentation
+    # Dot separated name of the package element. The segments in the name reflect the organization of the APIs. The format of each segment is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
+    attr_accessor :name
+
+    # Metamodel information of all the service elements contained in the package element. The key in the {@term map} is the identifier of the service element and the value in the {@term map} is the metamodel information for the service element.
+    attr_accessor :services
+
+    # Metamodel information of all the structure elements contained in the package element. The key in the {@term map} is the identifier of the structure element and the value in the {@term map} is the metamodel information for the structure element. <p> This does not include the structure elements contained in the service elements that are contained in this package element.
+    attr_accessor :structures
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'structures' => :'structures',
+        :'documentation' => :'documentation',
         :'enumerations' => :'enumerations',
-        :'services' => :'services',
         :'metadata' => :'metadata',
-        :'documentation' => :'documentation'
+        :'name' => :'name',
+        :'services' => :'services',
+        :'structures' => :'structures'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'structures' => :'Array<VapiMetadataMetamodelPackageInfoStructures>',
+        :'documentation' => :'String',
         :'enumerations' => :'Array<VapiMetadataMetamodelPackageInfoEnumerations>',
-        :'services' => :'Array<VapiMetadataMetamodelPackageInfoServices>',
         :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
-        :'documentation' => :'String'
+        :'name' => :'String',
+        :'services' => :'Array<VapiMetadataMetamodelPackageInfoServices>',
+        :'structures' => :'Array<VapiMetadataMetamodelPackageInfoStructures>'
       }
     end
 
@@ -61,25 +61,13 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'structures')
-        if (value = attributes[:'structures']).is_a?(Array)
-          self.structures = value
-        end
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
       end
 
       if attributes.has_key?(:'enumerations')
         if (value = attributes[:'enumerations']).is_a?(Array)
           self.enumerations = value
-        end
-      end
-
-      if attributes.has_key?(:'services')
-        if (value = attributes[:'services']).is_a?(Array)
-          self.services = value
         end
       end
 
@@ -89,8 +77,20 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'services')
+        if (value = attributes[:'services']).is_a?(Array)
+          self.services = value
+        end
+      end
+
+      if attributes.has_key?(:'structures')
+        if (value = attributes[:'structures']).is_a?(Array)
+          self.structures = value
+        end
       end
     end
 
@@ -98,28 +98,28 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @structures.nil?
-        invalid_properties.push('invalid value for "structures", structures cannot be nil.')
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
       end
 
       if @enumerations.nil?
         invalid_properties.push('invalid value for "enumerations", enumerations cannot be nil.')
       end
 
-      if @services.nil?
-        invalid_properties.push('invalid value for "services", services cannot be nil.')
-      end
-
       if @metadata.nil?
         invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
       end
 
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @services.nil?
+        invalid_properties.push('invalid value for "services", services cannot be nil.')
+      end
+
+      if @structures.nil?
+        invalid_properties.push('invalid value for "structures", structures cannot be nil.')
       end
 
       invalid_properties
@@ -128,12 +128,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
-      return false if @structures.nil?
-      return false if @enumerations.nil?
-      return false if @services.nil?
-      return false if @metadata.nil?
       return false if @documentation.nil?
+      return false if @enumerations.nil?
+      return false if @metadata.nil?
+      return false if @name.nil?
+      return false if @services.nil?
+      return false if @structures.nil?
       true
     end
 
@@ -142,12 +142,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          structures == o.structures &&
+          documentation == o.documentation &&
           enumerations == o.enumerations &&
-          services == o.services &&
           metadata == o.metadata &&
-          documentation == o.documentation
+          name == o.name &&
+          services == o.services &&
+          structures == o.structures
     end
 
     # @see the `==` method
@@ -159,7 +159,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, structures, enumerations, services, metadata, documentation].hash
+      [documentation, enumerations, metadata, name, services, structures].hash
     end
 
     # Builds the object from hash

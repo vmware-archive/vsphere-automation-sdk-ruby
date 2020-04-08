@@ -11,8 +11,8 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupSchedulesInfo
-    # List of optional parts that will be included in backups based on this schedule details. Use the {@link appliance.recovery.backup.Parts#list} {@term operation} to get information about the supported parts.
-    attr_accessor :parts
+    # Enable or disable a schedule, by default when created a schedule will be enabled.
+    attr_accessor :enable
 
     # URL of the backup location.
     attr_accessor :location
@@ -20,8 +20,8 @@ module VSphereAutomation
     # Username for the given location.
     attr_accessor :location_user
 
-    # Enable or disable a schedule, by default when created a schedule will be enabled.
-    attr_accessor :enable
+    # List of optional parts that will be included in backups based on this schedule details. Use the {@link appliance.recovery.backup.Parts#list} {@term operation} to get information about the supported parts.
+    attr_accessor :parts
 
     attr_accessor :recurrence_info
 
@@ -30,10 +30,10 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'parts' => :'parts',
+        :'enable' => :'enable',
         :'location' => :'location',
         :'location_user' => :'location_user',
-        :'enable' => :'enable',
+        :'parts' => :'parts',
         :'recurrence_info' => :'recurrence_info',
         :'retention_info' => :'retention_info'
       }
@@ -42,10 +42,10 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'parts' => :'Array<String>',
+        :'enable' => :'Boolean',
         :'location' => :'String',
         :'location_user' => :'String',
-        :'enable' => :'Boolean',
+        :'parts' => :'Array<String>',
         :'recurrence_info' => :'ApplianceRecoveryBackupSchedulesRecurrenceInfo',
         :'retention_info' => :'ApplianceRecoveryBackupSchedulesRetentionInfo'
       }
@@ -59,10 +59,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'parts')
-        if (value = attributes[:'parts']).is_a?(Array)
-          self.parts = value
-        end
+      if attributes.has_key?(:'enable')
+        self.enable = attributes[:'enable']
       end
 
       if attributes.has_key?(:'location')
@@ -73,8 +71,10 @@ module VSphereAutomation
         self.location_user = attributes[:'location_user']
       end
 
-      if attributes.has_key?(:'enable')
-        self.enable = attributes[:'enable']
+      if attributes.has_key?(:'parts')
+        if (value = attributes[:'parts']).is_a?(Array)
+          self.parts = value
+        end
       end
 
       if attributes.has_key?(:'recurrence_info')
@@ -90,16 +90,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @parts.nil?
-        invalid_properties.push('invalid value for "parts", parts cannot be nil.')
+      if @enable.nil?
+        invalid_properties.push('invalid value for "enable", enable cannot be nil.')
       end
 
       if @location.nil?
         invalid_properties.push('invalid value for "location", location cannot be nil.')
       end
 
-      if @enable.nil?
-        invalid_properties.push('invalid value for "enable", enable cannot be nil.')
+      if @parts.nil?
+        invalid_properties.push('invalid value for "parts", parts cannot be nil.')
       end
 
       invalid_properties
@@ -108,9 +108,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @parts.nil?
-      return false if @location.nil?
       return false if @enable.nil?
+      return false if @location.nil?
+      return false if @parts.nil?
       true
     end
 
@@ -119,10 +119,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          parts == o.parts &&
+          enable == o.enable &&
           location == o.location &&
           location_user == o.location_user &&
-          enable == o.enable &&
+          parts == o.parts &&
           recurrence_info == o.recurrence_info &&
           retention_info == o.retention_info
     end
@@ -136,7 +136,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [parts, location, location_user, enable, recurrence_info, retention_info].hash
+      [enable, location, location_user, parts, recurrence_info, retention_info].hash
     end
 
     # Builds the object from hash

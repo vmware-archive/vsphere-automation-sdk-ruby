@@ -14,18 +14,18 @@ module VSphereAutomation
     # IP address of the configured network interface.
     attr_accessor :address
 
-    # The subnet mask of the interface.
-    attr_accessor :subnet_mask
-
     # The CIDR prefix of the interface. If unset , then the subnet mask is invalid.
     attr_accessor :prefix
+
+    # The subnet mask of the interface.
+    attr_accessor :subnet_mask
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'address' => :'address',
-        :'subnet_mask' => :'subnet_mask',
-        :'prefix' => :'prefix'
+        :'prefix' => :'prefix',
+        :'subnet_mask' => :'subnet_mask'
       }
     end
 
@@ -33,8 +33,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'address' => :'String',
-        :'subnet_mask' => :'String',
-        :'prefix' => :'Integer'
+        :'prefix' => :'Integer',
+        :'subnet_mask' => :'String'
       }
     end
 
@@ -50,12 +50,12 @@ module VSphereAutomation
         self.address = attributes[:'address']
       end
 
-      if attributes.has_key?(:'subnet_mask')
-        self.subnet_mask = attributes[:'subnet_mask']
-      end
-
       if attributes.has_key?(:'prefix')
         self.prefix = attributes[:'prefix']
+      end
+
+      if attributes.has_key?(:'subnet_mask')
+        self.subnet_mask = attributes[:'subnet_mask']
       end
     end
 
@@ -88,8 +88,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
-          subnet_mask == o.subnet_mask &&
-          prefix == o.prefix
+          prefix == o.prefix &&
+          subnet_mask == o.subnet_mask
     end
 
     # @see the `==` method
@@ -101,7 +101,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, subnet_mask, prefix].hash
+      [address, prefix, subnet_mask].hash
     end
 
     # Builds the object from hash

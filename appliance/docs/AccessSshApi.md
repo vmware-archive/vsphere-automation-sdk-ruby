@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::AccessSshApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](AccessSshApi.md#get) | **GET** /appliance/access/ssh | Get enabled state of the SSH-based controlled CLI.
-[**set**](AccessSshApi.md#set) | **PUT** /appliance/access/ssh | Set enabled state of the SSH-based controlled CLI.
+[**get**](AccessSshApi.md#get) | **GET** /rest/appliance/access/ssh | Get enabled state of the SSH-based controlled CLI.
+[**set**](AccessSshApi.md#set) | **PUT** /rest/appliance/access/ssh | Set enabled state of the SSH-based controlled CLI.
 
 
 # **get**
-> ApplianceAccessSshResult get
+> ApplianceAccessSshResp get
 
 Get enabled state of the SSH-based controlled CLI.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceAccessSshResult**](ApplianceAccessSshResult.md)
+[**ApplianceAccessSshResp**](ApplianceAccessSshResp.md)
 
 ### Authorization
 

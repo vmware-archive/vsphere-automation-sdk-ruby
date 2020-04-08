@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataPrivilegeOperationInfo
-    # List of all privileges assigned to the operation element.
-    attr_accessor :privileges
-
     # Privilege information of all the parameter elements of the operation element. For an explanation of containment of privilege information within parameter elements, see {@link vapi.metadata.privilege.PrivilegeInfo}.
     attr_accessor :privilege_info
+
+    # List of all privileges assigned to the operation element.
+    attr_accessor :privileges
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'privileges' => :'privileges',
-        :'privilege_info' => :'privilege_info'
+        :'privilege_info' => :'privilege_info',
+        :'privileges' => :'privileges'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'privileges' => :'Array<String>',
-        :'privilege_info' => :'Array<VapiMetadataPrivilegePrivilegeInfo>'
+        :'privilege_info' => :'Array<VapiMetadataPrivilegePrivilegeInfo>',
+        :'privileges' => :'Array<String>'
       }
     end
 
@@ -41,15 +41,15 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'privileges')
-        if (value = attributes[:'privileges']).is_a?(Array)
-          self.privileges = value
-        end
-      end
-
       if attributes.has_key?(:'privilege_info')
         if (value = attributes[:'privilege_info']).is_a?(Array)
           self.privilege_info = value
+        end
+      end
+
+      if attributes.has_key?(:'privileges')
+        if (value = attributes[:'privileges']).is_a?(Array)
+          self.privileges = value
         end
       end
     end
@@ -58,12 +58,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @privileges.nil?
-        invalid_properties.push('invalid value for "privileges", privileges cannot be nil.')
-      end
-
       if @privilege_info.nil?
         invalid_properties.push('invalid value for "privilege_info", privilege_info cannot be nil.')
+      end
+
+      if @privileges.nil?
+        invalid_properties.push('invalid value for "privileges", privileges cannot be nil.')
       end
 
       invalid_properties
@@ -72,8 +72,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @privileges.nil?
       return false if @privilege_info.nil?
+      return false if @privileges.nil?
       true
     end
 
@@ -82,8 +82,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          privileges == o.privileges &&
-          privilege_info == o.privilege_info
+          privilege_info == o.privilege_info &&
+          privileges == o.privileges
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [privileges, privilege_info].hash
+      [privilege_info, privileges].hash
     end
 
     # Builds the object from hash

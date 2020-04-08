@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareFloppyBackingSpec
-    attr_accessor :type
+    # Name of the device that should be used as the virtual floppy drive backing. If unset, the virtual floppy drive will be configured to automatically detect a suitable host device.
+    attr_accessor :host_device
 
     # Path of the image file that should be used as the virtual floppy drive backing. This field is optional and it is only relevant when the value of Floppy.BackingSpec.type is IMAGE_FILE.
     attr_accessor :image_file
 
-    # Name of the device that should be used as the virtual floppy drive backing. If unset, the virtual floppy drive will be configured to automatically detect a suitable host device.
-    attr_accessor :host_device
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
+        :'host_device' => :'host_device',
         :'image_file' => :'image_file',
-        :'host_device' => :'host_device'
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmHardwareFloppyBackingType',
+        :'host_device' => :'String',
         :'image_file' => :'String',
-        :'host_device' => :'String'
+        :'type' => :'VcenterVmHardwareFloppyBackingType'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'host_device')
+        self.host_device = attributes[:'host_device']
       end
 
       if attributes.has_key?(:'image_file')
         self.image_file = attributes[:'image_file']
       end
 
-      if attributes.has_key?(:'host_device')
-        self.host_device = attributes[:'host_device']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -81,9 +81,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
+          host_device == o.host_device &&
           image_file == o.image_file &&
-          host_device == o.host_device
+          type == o.type
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, image_file, host_device].hash
+      [host_device, image_file, type].hash
     end
 
     # Builds the object from hash

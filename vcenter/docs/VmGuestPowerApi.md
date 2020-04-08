@@ -1,17 +1,17 @@
 # VSphereAutomation::VCenter::VmGuestPowerApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmGuestPowerApi.md#get) | **GET** /vcenter/vm/{vm}/guest/power | Returns information about the guest operating system power state.
-[**reboot**](VmGuestPowerApi.md#reboot) | **POST** /vcenter/vm/{vm}/guest/power?action&#x3D;reboot | Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
-[**shutdown**](VmGuestPowerApi.md#shutdown) | **POST** /vcenter/vm/{vm}/guest/power?action&#x3D;shutdown | Issues a request to the guest operating system asking it to perform a clean shutdown of all services. This request returns immediately and does not wait for the guest operating system to complete the operation.
-[**standby**](VmGuestPowerApi.md#standby) | **POST** /vcenter/vm/{vm}/guest/power?action&#x3D;standby | Issues a request to the guest operating system asking it to perform a suspend operation.
+[**get**](VmGuestPowerApi.md#get) | **GET** /rest/vcenter/vm/{vm}/guest/power | Returns information about the guest operating system power state.
+[**reboot**](VmGuestPowerApi.md#reboot) | **POST** /rest/vcenter/vm/{vm}/guest/power?action&#x3D;reboot | Issues a request to the guest operating system asking it to perform a reboot. This request returns immediately and does not wait for the guest operating system to complete the operation.
+[**shutdown**](VmGuestPowerApi.md#shutdown) | **POST** /rest/vcenter/vm/{vm}/guest/power?action&#x3D;shutdown | Issues a request to the guest operating system asking it to perform a clean shutdown of all services. This request returns immediately and does not wait for the guest operating system to complete the operation.
+[**standby**](VmGuestPowerApi.md#standby) | **POST** /rest/vcenter/vm/{vm}/guest/power?action&#x3D;standby | Issues a request to the guest operating system asking it to perform a suspend operation.
 
 
 # **get**
-> VcenterVmGuestPowerResult get(vm)
+> VcenterVmGuestPowerResp get(vm)
 
 Returns information about the guest operating system power state.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmGuestPowerResult**](VcenterVmGuestPowerResult.md)
+[**VcenterVmGuestPowerResp**](VcenterVmGuestPowerResp.md)
 
 ### Authorization
 

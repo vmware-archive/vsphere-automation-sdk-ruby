@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::SystemUptimeApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](SystemUptimeApi.md#get) | **GET** /appliance/system/uptime | Get the system uptime.
+[**get**](SystemUptimeApi.md#get) | **GET** /rest/appliance/system/uptime | Get the system uptime.
 
 
 # **get**
-> ApplianceSystemUptimeResult get
+> ApplianceSystemUptimeResp get
 
 Get the system uptime.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceSystemUptimeResult**](ApplianceSystemUptimeResult.md)
+[**ApplianceSystemUptimeResp**](ApplianceSystemUptimeResp.md)
 
 ### Authorization
 

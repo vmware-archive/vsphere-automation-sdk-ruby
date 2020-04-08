@@ -11,49 +11,49 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupJobBackupRequest
-    # List of optional parts that will be included in the backup. Use the {@link appliance.recovery.backup.Parts#list} {@term operation} to get information about the supported parts.
-    attr_accessor :parts
-
     # Password for a backup piece. The backupPassword must adhere to the following password requirements: At least 8 characters, cannot be more than 20 characters in length. At least 1 uppercase letter. At least 1 lowercase letter. At least 1 numeric digit. At least 1 special character (i.e. any character not in [0-9,a-z,A-Z]). Only visible ASCII characters (for example, no space).
     attr_accessor :backup_password
-
-    attr_accessor :location_type
-
-    # Path or URL of the backup location.
-    attr_accessor :location
-
-    # Username for the given location.
-    attr_accessor :location_user
-
-    # Password for the given location.
-    attr_accessor :location_password
 
     # Custom comment provided by the user.
     attr_accessor :comment
 
+    # Path or URL of the backup location.
+    attr_accessor :location
+
+    # Password for the given location.
+    attr_accessor :location_password
+
+    attr_accessor :location_type
+
+    # Username for the given location.
+    attr_accessor :location_user
+
+    # List of optional parts that will be included in the backup. Use the {@link appliance.recovery.backup.Parts#list} {@term operation} to get information about the supported parts.
+    attr_accessor :parts
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'parts' => :'parts',
         :'backup_password' => :'backup_password',
-        :'location_type' => :'location_type',
+        :'comment' => :'comment',
         :'location' => :'location',
-        :'location_user' => :'location_user',
         :'location_password' => :'location_password',
-        :'comment' => :'comment'
+        :'location_type' => :'location_type',
+        :'location_user' => :'location_user',
+        :'parts' => :'parts'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'parts' => :'Array<String>',
         :'backup_password' => :'String',
-        :'location_type' => :'ApplianceRecoveryBackupJobLocationType',
+        :'comment' => :'String',
         :'location' => :'String',
-        :'location_user' => :'String',
         :'location_password' => :'String',
-        :'comment' => :'String'
+        :'location_type' => :'ApplianceRecoveryBackupJobLocationType',
+        :'location_user' => :'String',
+        :'parts' => :'Array<String>'
       }
     end
 
@@ -65,34 +65,34 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'parts')
-        if (value = attributes[:'parts']).is_a?(Array)
-          self.parts = value
-        end
-      end
-
       if attributes.has_key?(:'backup_password')
         self.backup_password = attributes[:'backup_password']
       end
 
-      if attributes.has_key?(:'location_type')
-        self.location_type = attributes[:'location_type']
+      if attributes.has_key?(:'comment')
+        self.comment = attributes[:'comment']
       end
 
       if attributes.has_key?(:'location')
         self.location = attributes[:'location']
       end
 
-      if attributes.has_key?(:'location_user')
-        self.location_user = attributes[:'location_user']
-      end
-
       if attributes.has_key?(:'location_password')
         self.location_password = attributes[:'location_password']
       end
 
-      if attributes.has_key?(:'comment')
-        self.comment = attributes[:'comment']
+      if attributes.has_key?(:'location_type')
+        self.location_type = attributes[:'location_type']
+      end
+
+      if attributes.has_key?(:'location_user')
+        self.location_user = attributes[:'location_user']
+      end
+
+      if attributes.has_key?(:'parts')
+        if (value = attributes[:'parts']).is_a?(Array)
+          self.parts = value
+        end
       end
     end
 
@@ -100,16 +100,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @parts.nil?
-        invalid_properties.push('invalid value for "parts", parts cannot be nil.')
+      if @location.nil?
+        invalid_properties.push('invalid value for "location", location cannot be nil.')
       end
 
       if @location_type.nil?
         invalid_properties.push('invalid value for "location_type", location_type cannot be nil.')
       end
 
-      if @location.nil?
-        invalid_properties.push('invalid value for "location", location cannot be nil.')
+      if @parts.nil?
+        invalid_properties.push('invalid value for "parts", parts cannot be nil.')
       end
 
       invalid_properties
@@ -118,9 +118,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @parts.nil?
-      return false if @location_type.nil?
       return false if @location.nil?
+      return false if @location_type.nil?
+      return false if @parts.nil?
       true
     end
 
@@ -129,13 +129,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          parts == o.parts &&
           backup_password == o.backup_password &&
-          location_type == o.location_type &&
+          comment == o.comment &&
           location == o.location &&
-          location_user == o.location_user &&
           location_password == o.location_password &&
-          comment == o.comment
+          location_type == o.location_type &&
+          location_user == o.location_user &&
+          parts == o.parts
     end
 
     # @see the `==` method
@@ -147,7 +147,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [parts, backup_password, location_type, location, location_user, location_password, comment].hash
+      [backup_password, comment, location, location_password, location_type, location_user, parts].hash
     end
 
     # Builds the object from hash

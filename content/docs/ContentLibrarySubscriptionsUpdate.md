@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscription** | **String** | subscription identifier. | 
 **spec** | [**ContentLibrarySubscriptionsUpdateSpec**](ContentLibrarySubscriptionsUpdateSpec.md) |  | 
+**subscription** | **String** | subscription identifier. | 
 
 

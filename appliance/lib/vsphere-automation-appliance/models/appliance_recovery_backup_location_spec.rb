@@ -14,18 +14,18 @@ module VSphereAutomation
     # Backup location URL.
     attr_accessor :location
 
-    # Username for the given location.
-    attr_accessor :location_user
-
     # Password for the given location.
     attr_accessor :location_password
+
+    # Username for the given location.
+    attr_accessor :location_user
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'location' => :'location',
-        :'location_user' => :'location_user',
-        :'location_password' => :'location_password'
+        :'location_password' => :'location_password',
+        :'location_user' => :'location_user'
       }
     end
 
@@ -33,8 +33,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'location' => :'String',
-        :'location_user' => :'String',
-        :'location_password' => :'String'
+        :'location_password' => :'String',
+        :'location_user' => :'String'
       }
     end
 
@@ -50,12 +50,12 @@ module VSphereAutomation
         self.location = attributes[:'location']
       end
 
-      if attributes.has_key?(:'location_user')
-        self.location_user = attributes[:'location_user']
-      end
-
       if attributes.has_key?(:'location_password')
         self.location_password = attributes[:'location_password']
+      end
+
+      if attributes.has_key?(:'location_user')
+        self.location_user = attributes[:'location_user']
       end
     end
 
@@ -83,8 +83,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           location == o.location &&
-          location_user == o.location_user &&
-          location_password == o.location_password
+          location_password == o.location_password &&
+          location_user == o.location_user
     end
 
     # @see the `==` method
@@ -96,7 +96,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [location, location_user, location_password].hash
+      [location, location_password, location_user].hash
     end
 
     # Builds the object from hash

@@ -1,16 +1,16 @@
 # VSphereAutomation::Appliance::NtpApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NtpApi.md#get) | **GET** /appliance/ntp | Get the NTP configuration status. If you run the &#39;timesync.get&#39; command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The &#39;ntp&#39; command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
-[**set**](NtpApi.md#set) | **PUT** /appliance/ntp | Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
-[**test**](NtpApi.md#test) | **POST** /appliance/ntp/test | Test the connection to a list of ntp servers.
+[**get**](NtpApi.md#get) | **GET** /rest/appliance/ntp | Get the NTP configuration status. If you run the &#39;timesync.get&#39; command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The &#39;ntp&#39; command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
+[**set**](NtpApi.md#set) | **PUT** /rest/appliance/ntp | Set NTP servers. This method updates old NTP servers from configuration and sets the input NTP servers in the configuration. If NTP based time synchronization is used internally, the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time synchronization is not used, this method only replaces servers in the NTP configuration.
+[**test**](NtpApi.md#test) | **POST** /rest/appliance/ntp/test | Test the connection to a list of ntp servers.
 
 
 # **get**
-> ApplianceNtpResult get
+> ApplianceNtpResp get
 
 Get the NTP configuration status. If you run the 'timesync.get' command, you can retrieve the current time synchronization method (NTP- or VMware Tools-based). The 'ntp' command always returns the NTP server information, even when the time synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based, the NTP server status is displayed as down.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNtpResult**](ApplianceNtpResult.md)
+[**ApplianceNtpResp**](ApplianceNtpResp.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ nil (empty response body)
 
 
 # **test**
-> ApplianceNtpTestResult test(request_body)
+> ApplianceNtpTestResp test(request_body)
 
 Test the connection to a list of ntp servers.
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNtpTestResult**](ApplianceNtpTestResult.md)
+[**ApplianceNtpTestResp**](ApplianceNtpTestResp.md)
 
 ### Authorization
 

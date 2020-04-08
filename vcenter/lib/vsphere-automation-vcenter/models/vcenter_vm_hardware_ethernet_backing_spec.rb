@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareEthernetBackingSpec
-    attr_accessor :type
+    # Key of the distributed virtual port that backs the virtual Ethernet adapter. Depending on the type of the Portgroup, the port may be specified using this field. If the portgroup type is early-binding (also known as static), a port is assigned when the Ethernet adapter is configured to use the port. The port may be either automatically or specifically assigned based on the value of this field. If the portgroup type is ephemeral, the port is created and assigned to a virtual machine when it is powered on and the Ethernet adapter is connected. This field cannot be specified as no free ports exist before use. May be used to specify a port when the network specified on the Ethernet.BackingSpec.network field is a static or early binding distributed portgroup. If unset, the port will be automatically assigned to the Ethernet adapter based on the policy embodied by the portgroup type.
+    attr_accessor :distributed_port
 
     # Identifier of the network that backs the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingSpec.type is one of STANDARD_PORTGROUP, DISTRIBUTED_PORTGROUP, or OPAQUE_NETWORK. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network.
     attr_accessor :network
 
-    # Key of the distributed virtual port that backs the virtual Ethernet adapter. Depending on the type of the Portgroup, the port may be specified using this field. If the portgroup type is early-binding (also known as static), a port is assigned when the Ethernet adapter is configured to use the port. The port may be either automatically or specifically assigned based on the value of this field. If the portgroup type is ephemeral, the port is created and assigned to a virtual machine when it is powered on and the Ethernet adapter is connected. This field cannot be specified as no free ports exist before use. May be used to specify a port when the network specified on the Ethernet.BackingSpec.network field is a static or early binding distributed portgroup. If unset, the port will be automatically assigned to the Ethernet adapter based on the policy embodied by the portgroup type.
-    attr_accessor :distributed_port
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
+        :'distributed_port' => :'distributed_port',
         :'network' => :'network',
-        :'distributed_port' => :'distributed_port'
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmHardwareEthernetBackingType',
+        :'distributed_port' => :'String',
         :'network' => :'String',
-        :'distributed_port' => :'String'
+        :'type' => :'VcenterVmHardwareEthernetBackingType'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'distributed_port')
+        self.distributed_port = attributes[:'distributed_port']
       end
 
       if attributes.has_key?(:'network')
         self.network = attributes[:'network']
       end
 
-      if attributes.has_key?(:'distributed_port')
-        self.distributed_port = attributes[:'distributed_port']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -81,9 +81,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
+          distributed_port == o.distributed_port &&
           network == o.network &&
-          distributed_port == o.distributed_port
+          type == o.type
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, network, distributed_port].hash
+      [distributed_port, network, type].hash
     end
 
     # Builds the object from hash

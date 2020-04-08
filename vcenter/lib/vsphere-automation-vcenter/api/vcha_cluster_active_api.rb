@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves information about the active node of a VCHA cluster.
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVchaClusterActiveGet] :request_body 
-    # @return [VcenterVchaClusterActiveResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterVchaClusterActiveResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -29,13 +29,13 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [VcenterVchaClusterActiveGet] :request_body 
-    # @return [Array<(VcenterVchaClusterActiveResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVchaClusterActiveResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterActiveApi.get ...'
       end
       # resource path
-      local_var_path = '/vcenter/vcha/cluster/active?action=get'
+      local_var_path = '/rest/vcenter/vcha/cluster/active?action=get'
 
       # query parameters
       query_params = {}
@@ -60,7 +60,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaClusterActiveResult',
+	  '200' => 'VCenter::VcenterVchaClusterActiveResp',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',

@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**label** | **String** | Device label. | 
-**backing** | [**VcenterVmHardwareParallelBackingInfo**](VcenterVmHardwareParallelBackingInfo.md) |  | 
-**state** | [**VcenterVmHardwareConnectionState**](VcenterVmHardwareConnectionState.md) |  | 
-**start_connected** | **Boolean** | Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on. | 
 **allow_guest_control** | **Boolean** | Flag indicating whether the guest can connect and disconnect the device. | 
+**backing** | [**VcenterVmHardwareParallelBackingInfo**](VcenterVmHardwareParallelBackingInfo.md) |  | 
+**label** | **String** | Device label. | 
+**start_connected** | **Boolean** | Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on. | 
+**state** | [**VcenterVmHardwareConnectionState**](VcenterVmHardwareConnectionState.md) |  | 
 
 

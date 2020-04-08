@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsDeploySpecVmHomeStoragePolicy
-    attr_accessor :type
-
     # Identifier for the storage policy to use.
     attr_accessor :policy
+
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'policy' => :'policy'
+        :'policy' => :'policy',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmTemplateLibraryItemsDeploySpecVmHomeStoragePolicyType',
-        :'policy' => :'String'
+        :'policy' => :'String',
+        :'type' => :'VcenterVmTemplateLibraryItemsDeploySpecVmHomeStoragePolicyType'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'policy')
         self.policy = attributes[:'policy']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -72,8 +72,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          policy == o.policy
+          policy == o.policy &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -85,7 +85,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, policy].hash
+      [policy, type].hash
     end
 
     # Builds the object from hash

@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareAdapterSataCreateSpec
-    attr_accessor :type
-
     # SATA bus number. If unset, the server will choose an available bus number; if none is available, the request will fail.
     attr_accessor :bus
 
     # Address of the SATA adapter on the PCI bus. If unset, the server will choose an available address when the virtual machine is powered on.
     attr_accessor :pci_slot_number
 
+    attr_accessor :type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
         :'bus' => :'bus',
-        :'pci_slot_number' => :'pci_slot_number'
+        :'pci_slot_number' => :'pci_slot_number',
+        :'type' => :'type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'VcenterVmHardwareAdapterSataType',
         :'bus' => :'Integer',
-        :'pci_slot_number' => :'Integer'
+        :'pci_slot_number' => :'Integer',
+        :'type' => :'VcenterVmHardwareAdapterSataType'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'bus')
         self.bus = attributes[:'bus']
       end
 
       if attributes.has_key?(:'pci_slot_number')
         self.pci_slot_number = attributes[:'pci_slot_number']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -76,9 +76,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
           bus == o.bus &&
-          pci_slot_number == o.pci_slot_number
+          pci_slot_number == o.pci_slot_number &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, bus, pci_slot_number].hash
+      [bus, pci_slot_number, type].hash
     end
 
     # Builds the object from hash

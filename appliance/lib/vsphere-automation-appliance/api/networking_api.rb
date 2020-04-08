@@ -16,9 +16,66 @@ module VSphereAutomation
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Changes the Hostname/IP of the management network of vCenter appliance. The Hostname/IP change invokes the PNID change process which involves LDAP entry modification, updating registry entries, configuration files modification and network configuration changes. vCenter server is expected to be down for few minutes during these changes
+    # @param request_body 
+    # @param [Hash] opts the optional parameters
+    # @return [ApplianceNetworkingChangeTaskResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
+    def change_task(request_body, opts = {})
+      data, _status_code, _headers = change_task_with_http_info(request_body, opts)
+      data
+    end
+
+    # Changes the Hostname/IP of the management network of vCenter appliance. The Hostname/IP change invokes the PNID change process which involves LDAP entry modification, updating registry entries, configuration files modification and network configuration changes. vCenter server is expected to be down for few minutes during these changes
+    # @api private
+    # @param request_body 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ApplianceNetworkingChangeTaskResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    def change_task_with_http_info(request_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NetworkingApi.change_task ...'
+      end
+      # verify the required parameter 'request_body' is set
+      if @api_client.config.client_side_validation && request_body.nil?
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingApi.change_task"
+      end
+      # resource path
+      local_var_path = '/rest/appliance/networking?action=change&vmw-task=true'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request_body)
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+	:return_type => {
+	  '200' => 'Appliance::ApplianceNetworkingChangeTaskResp',
+	  '400' => 'Appliance::VapiStdErrorsNotAllowedInCurrentStateError',
+	  '401' => 'Appliance::VapiStdErrorsUnauthenticatedError',
+	})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NetworkingApi#change_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Get Networking information for all configured interfaces.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingResp|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +84,13 @@ module VSphereAutomation
     # Get Networking information for all configured interfaces.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/networking'
+      local_var_path = '/rest/appliance/networking'
 
       # query parameters
       query_params = {}
@@ -56,7 +113,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingResult',
+	  '200' => 'Appliance::ApplianceNetworkingResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -81,7 +138,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: NetworkingApi.reset ...'
       end
       # resource path
-      local_var_path = '/appliance/networking?action=reset'
+      local_var_path = '/rest/appliance/networking?action=reset'
 
       # query parameters
       query_params = {}
@@ -131,7 +188,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingApi.update"
       end
       # resource path
-      local_var_path = '/appliance/networking'
+      local_var_path = '/rest/appliance/networking'
 
       # query parameters
       query_params = {}

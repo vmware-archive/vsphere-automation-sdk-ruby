@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param service_id Identifier of the service element.
     # @param operation_id Identifier of the operation element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelServiceOperationResult|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataMetamodelServiceOperationResp|VapiStdErrorsNotFoundError|]
     def get(service_id, operation_id, opts = {})
       data, _status_code, _headers = get_with_http_info(service_id, operation_id, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param service_id Identifier of the service element.
     # @param operation_id Identifier of the operation element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelServiceOperationResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelServiceOperationResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(service_id, operation_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelServiceOperationApi.get ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'operation_id' when calling MetadataMetamodelServiceOperationApi.get"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/metamodel/service/operation/id:{service_id}/id:{operation_id}'.sub('{' + 'service_id' + '}', service_id.to_s).sub('{' + 'operation_id' + '}', operation_id.to_s)
+      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/service/operation/id:{service_id}/id:{operation_id}'.sub('{' + 'service_id' + '}', service_id.to_s).sub('{' + 'operation_id' + '}', operation_id.to_s)
 
       # query parameters
       query_params = {}
@@ -68,7 +68,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelServiceOperationResult',
+	  '200' => 'VAPI::VapiMetadataMetamodelServiceOperationResp',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -79,7 +79,7 @@ module VSphereAutomation
     # Returns the identifiers for the operation elements that are defined in the scope of {@param.name serviceId}.
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelServiceOperationListResult|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataMetamodelServiceOperationListResp|VapiStdErrorsNotFoundError|]
     def list(service_id, opts = {})
       data, _status_code, _headers = list_with_http_info(service_id, opts)
       data
@@ -89,7 +89,7 @@ module VSphereAutomation
     # @api private
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelServiceOperationListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelServiceOperationListResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(service_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelServiceOperationApi.list ...'
@@ -99,7 +99,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service_id' when calling MetadataMetamodelServiceOperationApi.list"
       end
       # resource path
-      local_var_path = '/com/vmware/vapi/metadata/metamodel/service/operation'
+      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/service/operation'
 
       # query parameters
       query_params = {}
@@ -123,7 +123,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelServiceOperationListResult',
+	  '200' => 'VAPI::VapiMetadataMetamodelServiceOperationListResp',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

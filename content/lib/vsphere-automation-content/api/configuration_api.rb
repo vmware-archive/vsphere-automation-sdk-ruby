@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Retrieves the current configuration values.
     # @param [Hash] opts the optional parameters
-    # @return [ContentConfigurationResult|]
+    # @return [ContentConfigurationResp|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Retrieves the current configuration values.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentConfigurationResult|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentConfigurationResp|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ConfigurationApi.get ...'
       end
       # resource path
-      local_var_path = '/com/vmware/content/configuration?~action=get'
+      local_var_path = '/rest/com/vmware/content/configuration?~action=get'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentConfigurationResult',
+	  '200' => 'Content::ContentConfigurationResp',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ConfigurationApi#get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -86,7 +86,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling ConfigurationApi.update"
       end
       # resource path
-      local_var_path = '/com/vmware/content/configuration'
+      local_var_path = '/rest/com/vmware/content/configuration'
 
       # query parameters
       query_params = {}

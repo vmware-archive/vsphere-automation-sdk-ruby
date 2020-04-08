@@ -14,18 +14,18 @@ module VSphereAutomation
     # Whether the validation was succesful or not. In case of errors, the {@link #missingFiles} and {@link #invalidFiles} will contain at least one entry.
     attr_accessor :has_errors
 
-    # A {@term set} containing the names of the files that are required but the client hasn't added.
-    attr_accessor :missing_files
-
     # A {@term list} containing the files that have been identified as invalid and details about the error.
     attr_accessor :invalid_files
+
+    # A {@term set} containing the names of the files that are required but the client hasn't added.
+    attr_accessor :missing_files
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'has_errors' => :'has_errors',
-        :'missing_files' => :'missing_files',
-        :'invalid_files' => :'invalid_files'
+        :'invalid_files' => :'invalid_files',
+        :'missing_files' => :'missing_files'
       }
     end
 
@@ -33,8 +33,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'has_errors' => :'Boolean',
-        :'missing_files' => :'Array<String>',
-        :'invalid_files' => :'Array<ContentLibraryItemUpdatesessionFileValidationError>'
+        :'invalid_files' => :'Array<ContentLibraryItemUpdatesessionFileValidationError>',
+        :'missing_files' => :'Array<String>'
       }
     end
 
@@ -50,15 +50,15 @@ module VSphereAutomation
         self.has_errors = attributes[:'has_errors']
       end
 
-      if attributes.has_key?(:'missing_files')
-        if (value = attributes[:'missing_files']).is_a?(Array)
-          self.missing_files = value
-        end
-      end
-
       if attributes.has_key?(:'invalid_files')
         if (value = attributes[:'invalid_files']).is_a?(Array)
           self.invalid_files = value
+        end
+      end
+
+      if attributes.has_key?(:'missing_files')
+        if (value = attributes[:'missing_files']).is_a?(Array)
+          self.missing_files = value
         end
       end
     end
@@ -71,12 +71,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "has_errors", has_errors cannot be nil.')
       end
 
-      if @missing_files.nil?
-        invalid_properties.push('invalid value for "missing_files", missing_files cannot be nil.')
-      end
-
       if @invalid_files.nil?
         invalid_properties.push('invalid value for "invalid_files", invalid_files cannot be nil.')
+      end
+
+      if @missing_files.nil?
+        invalid_properties.push('invalid value for "missing_files", missing_files cannot be nil.')
       end
 
       invalid_properties
@@ -86,8 +86,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @has_errors.nil?
-      return false if @missing_files.nil?
       return false if @invalid_files.nil?
+      return false if @missing_files.nil?
       true
     end
 
@@ -97,8 +97,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           has_errors == o.has_errors &&
-          missing_files == o.missing_files &&
-          invalid_files == o.invalid_files
+          invalid_files == o.invalid_files &&
+          missing_files == o.missing_files
     end
 
     # @see the `==` method
@@ -110,7 +110,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [has_errors, missing_files, invalid_files].hash
+      [has_errors, invalid_files, missing_files].hash
     end
 
     # Builds the object from hash

@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::HealthSystemApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](HealthSystemApi.md#get) | **GET** /appliance/health/system | Get overall health of system.
-[**lastcheck**](HealthSystemApi.md#lastcheck) | **GET** /appliance/health/system/lastcheck | Get last check timestamp of the health of the system.
+[**get**](HealthSystemApi.md#get) | **GET** /rest/appliance/health/system | Get overall health of system.
+[**lastcheck**](HealthSystemApi.md#lastcheck) | **GET** /rest/appliance/health/system/lastcheck | Get last check timestamp of the health of the system.
 
 
 # **get**
-> ApplianceHealthSystemResult get
+> ApplianceHealthSystemResp get
 
 Get overall health of system.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthSystemResult**](ApplianceHealthSystemResult.md)
+[**ApplianceHealthSystemResp**](ApplianceHealthSystemResp.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 
 # **lastcheck**
-> ApplianceHealthSystemLastcheckResult lastcheck
+> ApplianceHealthSystemLastcheckResp lastcheck
 
 Get last check timestamp of the health of the system.
 
@@ -87,7 +87,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthSystemLastcheckResult**](ApplianceHealthSystemLastcheckResult.md)
+[**ApplianceHealthSystemLastcheckResp**](ApplianceHealthSystemLastcheckResp.md)
 
 ### Authorization
 

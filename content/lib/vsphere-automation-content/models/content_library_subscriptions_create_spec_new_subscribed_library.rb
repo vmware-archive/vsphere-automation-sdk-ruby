@@ -11,40 +11,40 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibrarySubscriptionsCreateSpecNewSubscribedLibrary
-    # Name of the subscribed library.
-    attr_accessor :name
+    # Specifies whether the library should participate in automatic library synchronization.
+    attr_accessor :automatic_sync_enabled
 
     # Description of the subscribed library.
     attr_accessor :description
 
-    # The list of default storage backings for this library. <p> The list must contain exactly one storage backing. Multiple default storage locations are not currently supported but may become supported in future releases.
-    attr_accessor :storage_backings
-
-    # Specifies whether the library should participate in automatic library synchronization.
-    attr_accessor :automatic_sync_enabled
+    # Name of the subscribed library.
+    attr_accessor :name
 
     # Specifies whether a library item's content will be synchronized only on demand.
     attr_accessor :on_demand
 
+    # The list of default storage backings for this library. <p> The list must contain exactly one storage backing. Multiple default storage locations are not currently supported but may become supported in future releases.
+    attr_accessor :storage_backings
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'description' => :'description',
-        :'storage_backings' => :'storage_backings',
         :'automatic_sync_enabled' => :'automatic_sync_enabled',
-        :'on_demand' => :'on_demand'
+        :'description' => :'description',
+        :'name' => :'name',
+        :'on_demand' => :'on_demand',
+        :'storage_backings' => :'storage_backings'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'description' => :'String',
-        :'storage_backings' => :'Array<ContentLibraryStorageBacking>',
         :'automatic_sync_enabled' => :'Boolean',
-        :'on_demand' => :'Boolean'
+        :'description' => :'String',
+        :'name' => :'String',
+        :'on_demand' => :'Boolean',
+        :'storage_backings' => :'Array<ContentLibraryStorageBacking>'
       }
     end
 
@@ -56,12 +56,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'automatic_sync_enabled')
+        self.automatic_sync_enabled = attributes[:'automatic_sync_enabled']
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'on_demand')
+        self.on_demand = attributes[:'on_demand']
       end
 
       if attributes.has_key?(:'storage_backings')
@@ -69,34 +77,26 @@ module VSphereAutomation
           self.storage_backings = value
         end
       end
-
-      if attributes.has_key?(:'automatic_sync_enabled')
-        self.automatic_sync_enabled = attributes[:'automatic_sync_enabled']
-      end
-
-      if attributes.has_key?(:'on_demand')
-        self.on_demand = attributes[:'on_demand']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @storage_backings.nil?
-        invalid_properties.push('invalid value for "storage_backings", storage_backings cannot be nil.')
-      end
-
       if @automatic_sync_enabled.nil?
         invalid_properties.push('invalid value for "automatic_sync_enabled", automatic_sync_enabled cannot be nil.')
       end
 
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
       if @on_demand.nil?
         invalid_properties.push('invalid value for "on_demand", on_demand cannot be nil.')
+      end
+
+      if @storage_backings.nil?
+        invalid_properties.push('invalid value for "storage_backings", storage_backings cannot be nil.')
       end
 
       invalid_properties
@@ -105,10 +105,10 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
-      return false if @storage_backings.nil?
       return false if @automatic_sync_enabled.nil?
+      return false if @name.nil?
       return false if @on_demand.nil?
+      return false if @storage_backings.nil?
       true
     end
 
@@ -117,11 +117,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          description == o.description &&
-          storage_backings == o.storage_backings &&
           automatic_sync_enabled == o.automatic_sync_enabled &&
-          on_demand == o.on_demand
+          description == o.description &&
+          name == o.name &&
+          on_demand == o.on_demand &&
+          storage_backings == o.storage_backings
     end
 
     # @see the `==` method
@@ -133,7 +133,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, description, storage_backings, automatic_sync_enabled, on_demand].hash
+      [automatic_sync_enabled, description, name, on_demand, storage_backings].hash
     end
 
     # Builds the object from hash

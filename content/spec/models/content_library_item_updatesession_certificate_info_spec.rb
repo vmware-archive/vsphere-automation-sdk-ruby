@@ -34,13 +34,13 @@ describe 'ContentLibraryItemUpdatesessionCertificateInfo' do
     end
   end
 
-  describe 'test attribute "subject"' do
+  describe 'test attribute "self_signed"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "self_signed"' do
+  describe 'test attribute "subject"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

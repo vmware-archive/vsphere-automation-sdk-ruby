@@ -14,16 +14,16 @@ module VSphereAutomation
     # Client-generated token used to retry a request if the client fails to get a response from the server. If the original request succeeded, the result of that request will be returned, otherwise the operation will be retried.
     attr_accessor :client_token
 
-    attr_accessor :target
-
     attr_accessor :deployment_spec
+
+    attr_accessor :target
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'client_token' => :'client_token',
-        :'target' => :'target',
-        :'deployment_spec' => :'deployment_spec'
+        :'deployment_spec' => :'deployment_spec',
+        :'target' => :'target'
       }
     end
 
@@ -31,8 +31,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'client_token' => :'String',
-        :'target' => :'VcenterOvfLibraryItemDeploymentTarget',
-        :'deployment_spec' => :'VcenterOvfLibraryItemResourcePoolDeploymentSpec'
+        :'deployment_spec' => :'VcenterOvfLibraryItemResourcePoolDeploymentSpec',
+        :'target' => :'VcenterOvfLibraryItemDeploymentTarget'
       }
     end
 
@@ -48,12 +48,12 @@ module VSphereAutomation
         self.client_token = attributes[:'client_token']
       end
 
-      if attributes.has_key?(:'target')
-        self.target = attributes[:'target']
-      end
-
       if attributes.has_key?(:'deployment_spec')
         self.deployment_spec = attributes[:'deployment_spec']
+      end
+
+      if attributes.has_key?(:'target')
+        self.target = attributes[:'target']
       end
     end
 
@@ -61,12 +61,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @target.nil?
-        invalid_properties.push('invalid value for "target", target cannot be nil.')
-      end
-
       if @deployment_spec.nil?
         invalid_properties.push('invalid value for "deployment_spec", deployment_spec cannot be nil.')
+      end
+
+      if @target.nil?
+        invalid_properties.push('invalid value for "target", target cannot be nil.')
       end
 
       invalid_properties
@@ -75,8 +75,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @target.nil?
       return false if @deployment_spec.nil?
+      return false if @target.nil?
       true
     end
 
@@ -86,8 +86,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           client_token == o.client_token &&
-          target == o.target &&
-          deployment_spec == o.deployment_spec
+          deployment_spec == o.deployment_spec &&
+          target == o.target
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [client_token, target, deployment_spec].hash
+      [client_token, deployment_spec, target].hash
     end
 
     # Builds the object from hash

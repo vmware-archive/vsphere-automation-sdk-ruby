@@ -1,16 +1,16 @@
 # VSphereAutomation::Appliance::LoggingForwardingApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](LoggingForwardingApi.md#get) | **GET** /appliance/logging/forwarding | Returns the configuration for forwarding log messages to remote logging servers.
-[**set**](LoggingForwardingApi.md#set) | **PUT** /appliance/logging/forwarding | Sets the configuration for forwarding log messages to remote log servers.
-[**test**](LoggingForwardingApi.md#test) | **POST** /appliance/logging/forwarding?action&#x3D;test | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \&quot;This is a diagnostic log test message from vCenter Server.\&quot;
+[**get**](LoggingForwardingApi.md#get) | **GET** /rest/appliance/logging/forwarding | Returns the configuration for forwarding log messages to remote logging servers.
+[**set**](LoggingForwardingApi.md#set) | **PUT** /rest/appliance/logging/forwarding | Sets the configuration for forwarding log messages to remote log servers.
+[**test**](LoggingForwardingApi.md#test) | **POST** /rest/appliance/logging/forwarding?action&#x3D;test | Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \&quot;This is a diagnostic log test message from vCenter Server.\&quot;
 
 
 # **get**
-> ApplianceLoggingForwardingResult get
+> ApplianceLoggingForwardingResp get
 
 Returns the configuration for forwarding log messages to remote logging servers.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceLoggingForwardingResult**](ApplianceLoggingForwardingResult.md)
+[**ApplianceLoggingForwardingResp**](ApplianceLoggingForwardingResp.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ nil (empty response body)
 
 
 # **test**
-> ApplianceLoggingForwardingTestResult test(opts)
+> ApplianceLoggingForwardingTestResp test(opts)
 
 Validates the current log forwarding configuration by checking the liveness of the remote machine and optionally sending a test diagnostic log message from the appliance to all configured logging servers to allow manual end-to-end validation. The message that is sent is: \"This is a diagnostic log test message from vCenter Server.\"
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceLoggingForwardingTestResult**](ApplianceLoggingForwardingTestResult.md)
+[**ApplianceLoggingForwardingTestResp**](ApplianceLoggingForwardingTestResp.md)
 
 ### Authorization
 

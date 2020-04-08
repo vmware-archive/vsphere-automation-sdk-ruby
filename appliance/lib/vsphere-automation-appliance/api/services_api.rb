@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns the state of a service.
     # @param service identifier of the service whose state is being queried.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceServicesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceServicesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def get(service, opts = {})
       data, _status_code, _headers = get_with_http_info(service, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param service identifier of the service whose state is being queried.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceServicesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceServicesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ServicesApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling ServicesApi.get"
       end
       # resource path
-      local_var_path = '/appliance/services/{service}'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/rest/appliance/services/{service}'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceServicesResult',
+	  '200' => 'Appliance::ApplianceServicesResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})
@@ -73,7 +73,7 @@ module VSphereAutomation
     end
     # Lists details of vCenter services.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceServicesListResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceServicesListResp|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -82,13 +82,13 @@ module VSphereAutomation
     # Lists details of vCenter services.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceServicesListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceServicesListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ServicesApi.list ...'
       end
       # resource path
-      local_var_path = '/appliance/services'
+      local_var_path = '/rest/appliance/services'
 
       # query parameters
       query_params = {}
@@ -111,7 +111,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceServicesListResult',
+	  '200' => 'Appliance::ApplianceServicesListResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -142,7 +142,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling ServicesApi.restart"
       end
       # resource path
-      local_var_path = '/appliance/services/{service}/restart'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/rest/appliance/services/{service}/restart'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}
@@ -192,7 +192,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling ServicesApi.start"
       end
       # resource path
-      local_var_path = '/appliance/services/{service}/start'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/rest/appliance/services/{service}/start'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}
@@ -242,7 +242,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling ServicesApi.stop"
       end
       # resource path
-      local_var_path = '/appliance/services/{service}/stop'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/rest/appliance/services/{service}/stop'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}

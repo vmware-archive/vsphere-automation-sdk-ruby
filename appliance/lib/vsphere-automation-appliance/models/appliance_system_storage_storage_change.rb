@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceSystemStorageStorageChange
-    # Original size of the partition in MB.
-    attr_accessor :old_size
-
     # Nedw size of the partition in MB.
     attr_accessor :new_size
+
+    # Original size of the partition in MB.
+    attr_accessor :old_size
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'old_size' => :'old_size',
-        :'new_size' => :'new_size'
+        :'new_size' => :'new_size',
+        :'old_size' => :'old_size'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'old_size' => :'Integer',
-        :'new_size' => :'Integer'
+        :'new_size' => :'Integer',
+        :'old_size' => :'Integer'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'old_size')
-        self.old_size = attributes[:'old_size']
-      end
-
       if attributes.has_key?(:'new_size')
         self.new_size = attributes[:'new_size']
+      end
+
+      if attributes.has_key?(:'old_size')
+        self.old_size = attributes[:'old_size']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @old_size.nil?
-        invalid_properties.push('invalid value for "old_size", old_size cannot be nil.')
-      end
-
       if @new_size.nil?
         invalid_properties.push('invalid value for "new_size", new_size cannot be nil.')
+      end
+
+      if @old_size.nil?
+        invalid_properties.push('invalid value for "old_size", old_size cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @old_size.nil?
       return false if @new_size.nil?
+      return false if @old_size.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          old_size == o.old_size &&
-          new_size == o.new_size
+          new_size == o.new_size &&
+          old_size == o.old_size
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [old_size, new_size].hash
+      [new_size, old_size].hash
     end
 
     # Builds the object from hash

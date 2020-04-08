@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'task' when calling TasksApi.cancel"
       end
       # resource path
-      local_var_path = '/cis/tasks/{task}?action=cancel'.sub('{' + 'task' + '}', task.to_s)
+      local_var_path = '/rest/cis/tasks/{task}?action=cancel'.sub('{' + 'task' + '}', task.to_s)
 
       # query parameters
       query_params = {}
@@ -71,7 +71,7 @@ module VSphereAutomation
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
     # @option opts [Boolean] :spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
-    # @return [CisTasksResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [CisTasksResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(task, opts = {})
       data, _status_code, _headers = get_with_http_info(task, opts)
       data
@@ -83,7 +83,7 @@ module VSphereAutomation
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
     # @option opts [Boolean] :spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
-    # @return [Array<(CisTasksResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTasksResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(task, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TasksApi.get ...'
@@ -93,7 +93,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'task' when calling TasksApi.get"
       end
       # resource path
-      local_var_path = '/cis/tasks/{task}'.sub('{' + 'task' + '}', task.to_s)
+      local_var_path = '/rest/cis/tasks/{task}'.sub('{' + 'task' + '}', task.to_s)
 
       # query parameters
       query_params = {}
@@ -118,7 +118,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTasksResult',
+	  '200' => 'CIS::CisTasksResp',
 	  '400' => 'CIS::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
@@ -133,13 +133,14 @@ module VSphereAutomation
     # Returns information about at most 1000 visible (subject to permission checks) tasks matching the Tasks.FilterSpec. All tasks must be in the same provider.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_spec_tasks Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task.
-    # @option opts [Boolean] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
-    # @option opts [Boolean] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
-    # @option opts [Array<String>] :filter_spec_services Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
+    # @option opts [Array<String>] :filter_spec_services Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for any service will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
+    # @option opts [Array<String>] :filter_spec_operations Identifiers of operations. Tasks created by these operations match the filter (see CommonInfo.operation).   Note that an operation identifier by itself is not globally unique. To filter on an operation, the identifier of the service interface containing the operation should also be specified in Tasks.FilterSpec.services.  If unset or empty, tasks associated with any operation will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.operation.
     # @option opts [Array<String>] :filter_spec_status Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter.
     # @option opts [Array<FilterSpecTargets>] :filter_spec_targets Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
     # @option opts [Array<String>] :filter_spec_users Users who must have initiated the operation for the associated task to match the filter (see CommonInfo.user). If unset or empty, tasks associated with operations initiated by any user match the filter.
-    # @return [CisTasksListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
+    # @option opts [Boolean] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+    # @option opts [Boolean] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+    # @return [CisTasksListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -149,13 +150,14 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_spec_tasks Identifiers of tasks that can match the filter. This field may be unset if Tasks.FilterSpec.services is specified. Currently all tasks must be from the same provider. If unset or empty, tasks with any identifier will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: cis.task. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: cis.task.
-    # @option opts [Boolean] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
-    # @option opts [Boolean] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
-    # @option opts [Array<String>] :filter_spec_services Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for all services will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
+    # @option opts [Array<String>] :filter_spec_services Identifiers of services. Tasks created by operations in these services match the filter (see CommonInfo.service). This field may be unset if Tasks.FilterSpec.tasks is specified. Currently all services must be from the same provider. If this field is unset or empty, tasks for any service will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.service. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.service.
+    # @option opts [Array<String>] :filter_spec_operations Identifiers of operations. Tasks created by these operations match the filter (see CommonInfo.operation).   Note that an operation identifier by itself is not globally unique. To filter on an operation, the identifier of the service interface containing the operation should also be specified in Tasks.FilterSpec.services.  If unset or empty, tasks associated with any operation will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vapi.operation.
     # @option opts [Array<String>] :filter_spec_status Status that a task must have to match the filter (see CommonInfo.status). If unset or empty, tasks with any status match the filter.
     # @option opts [Array<FilterSpecTargets>] :filter_spec_targets Identifiers of the targets the operation for the associated task created or was performed on (see CommonInfo.target). If unset or empty, tasks associated with operations on any target match the filter.
     # @option opts [Array<String>] :filter_spec_users Users who must have initiated the operation for the associated task to match the filter (see CommonInfo.user). If unset or empty, tasks associated with operations initiated by any user match the filter.
-    # @return [Array<(CisTasksListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @option opts [Boolean] :result_spec_return_all If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
+    # @option opts [Boolean] :result_spec_exclude_result If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+    # @return [Array<(CisTasksListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TasksApi.list ...'
@@ -164,17 +166,18 @@ module VSphereAutomation
         fail ArgumentError, 'invalid value for "filter_spec_status", must include one of PENDING, RUNNING, BLOCKED, SUCCEEDED, FAILED'
       end
       # resource path
-      local_var_path = '/cis/tasks'
+      local_var_path = '/rest/cis/tasks'
 
       # query parameters
       query_params = {}
       query_params[:'filter_spec.tasks'] = @api_client.build_collection_param(opts[:'filter_spec_tasks'], :multi) if !opts[:'filter_spec_tasks'].nil?
-      query_params[:'result_spec.return_all'] = opts[:'result_spec_return_all'] if !opts[:'result_spec_return_all'].nil?
-      query_params[:'result_spec.exclude_result'] = opts[:'result_spec_exclude_result'] if !opts[:'result_spec_exclude_result'].nil?
       query_params[:'filter_spec.services'] = @api_client.build_collection_param(opts[:'filter_spec_services'], :multi) if !opts[:'filter_spec_services'].nil?
+      query_params[:'filter_spec.operations'] = @api_client.build_collection_param(opts[:'filter_spec_operations'], :multi) if !opts[:'filter_spec_operations'].nil?
       query_params[:'filter_spec.status'] = @api_client.build_collection_param(opts[:'filter_spec_status'], :multi) if !opts[:'filter_spec_status'].nil?
       query_params[:'filter_spec.targets'] = @api_client.build_collection_param(opts[:'filter_spec_targets'], :multi) if !opts[:'filter_spec_targets'].nil?
       query_params[:'filter_spec.users'] = @api_client.build_collection_param(opts[:'filter_spec_users'], :multi) if !opts[:'filter_spec_users'].nil?
+      query_params[:'result_spec.return_all'] = opts[:'result_spec_return_all'] if !opts[:'result_spec_return_all'].nil?
+      query_params[:'result_spec.exclude_result'] = opts[:'result_spec_exclude_result'] if !opts[:'result_spec_exclude_result'].nil?
 
       # header parameters
       header_params = {}
@@ -194,7 +197,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTasksListResult',
+	  '200' => 'CIS::CisTasksListResp',
 	  '400' => 'CIS::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',

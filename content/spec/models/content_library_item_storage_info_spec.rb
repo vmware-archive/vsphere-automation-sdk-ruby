@@ -28,13 +28,7 @@ describe 'ContentLibraryItemStorageInfo' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibraryItemStorageInfo)
     end
   end
-  describe 'test attribute "storage_backing"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "storage_uris"' do
+  describe 'test attribute "cached"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -58,7 +52,19 @@ describe 'ContentLibraryItemStorageInfo' do
     end
   end
 
-  describe 'test attribute "cached"' do
+  describe 'test attribute "storage_backing"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "storage_policy_id"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "storage_uris"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

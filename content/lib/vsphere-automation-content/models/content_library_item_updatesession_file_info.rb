@@ -11,59 +11,59 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionFileInfo
-    # The name of the file.
-    attr_accessor :name
-
-    attr_accessor :source_type
-
-    # The file size, in bytes as received by the server. This {@term field} is guaranteed to be set when the server has completely received the file.
-    attr_accessor :size
-
-    attr_accessor :checksum_info
-
-    attr_accessor :source_endpoint
-
-    attr_accessor :upload_endpoint
-
     # The number of bytes of this file that have been received by the server.
     attr_accessor :bytes_transferred
 
-    attr_accessor :status
+    attr_accessor :checksum_info
 
     attr_accessor :error_message
 
     # Whether or not the file will be kept in storage upon update session completion. The flag is true for most files, and false for metadata files such as manifest and certificate file of update session with library item type OVF. Any file with {@link Info#keepInStorage} set to false will not show up in the list of files returned from {@link content.library.item.File#list} upon update session completion.
     attr_accessor :keep_in_storage
 
+    # The name of the file.
+    attr_accessor :name
+
+    # The file size, in bytes as received by the server. This {@term field} is guaranteed to be set when the server has completely received the file.
+    attr_accessor :size
+
+    attr_accessor :source_endpoint
+
+    attr_accessor :source_type
+
+    attr_accessor :status
+
+    attr_accessor :upload_endpoint
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'source_type' => :'source_type',
-        :'size' => :'size',
-        :'checksum_info' => :'checksum_info',
-        :'source_endpoint' => :'source_endpoint',
-        :'upload_endpoint' => :'upload_endpoint',
         :'bytes_transferred' => :'bytes_transferred',
-        :'status' => :'status',
+        :'checksum_info' => :'checksum_info',
         :'error_message' => :'error_message',
-        :'keep_in_storage' => :'keep_in_storage'
+        :'keep_in_storage' => :'keep_in_storage',
+        :'name' => :'name',
+        :'size' => :'size',
+        :'source_endpoint' => :'source_endpoint',
+        :'source_type' => :'source_type',
+        :'status' => :'status',
+        :'upload_endpoint' => :'upload_endpoint'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'source_type' => :'ContentLibraryItemUpdatesessionFileSourceType',
-        :'size' => :'Integer',
-        :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
-        :'source_endpoint' => :'ContentLibraryItemTransferEndpoint',
-        :'upload_endpoint' => :'ContentLibraryItemTransferEndpoint',
         :'bytes_transferred' => :'Integer',
-        :'status' => :'ContentLibraryItemTransferStatus',
+        :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
         :'error_message' => :'VapiStdLocalizableMessage',
-        :'keep_in_storage' => :'Boolean'
+        :'keep_in_storage' => :'Boolean',
+        :'name' => :'String',
+        :'size' => :'Integer',
+        :'source_endpoint' => :'ContentLibraryItemTransferEndpoint',
+        :'source_type' => :'ContentLibraryItemUpdatesessionFileSourceType',
+        :'status' => :'ContentLibraryItemTransferStatus',
+        :'upload_endpoint' => :'ContentLibraryItemTransferEndpoint'
       }
     end
 
@@ -75,36 +75,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'source_type')
-        self.source_type = attributes[:'source_type']
-      end
-
-      if attributes.has_key?(:'size')
-        self.size = attributes[:'size']
-      end
-
-      if attributes.has_key?(:'checksum_info')
-        self.checksum_info = attributes[:'checksum_info']
-      end
-
-      if attributes.has_key?(:'source_endpoint')
-        self.source_endpoint = attributes[:'source_endpoint']
-      end
-
-      if attributes.has_key?(:'upload_endpoint')
-        self.upload_endpoint = attributes[:'upload_endpoint']
-      end
-
       if attributes.has_key?(:'bytes_transferred')
         self.bytes_transferred = attributes[:'bytes_transferred']
       end
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.has_key?(:'checksum_info')
+        self.checksum_info = attributes[:'checksum_info']
       end
 
       if attributes.has_key?(:'error_message')
@@ -114,22 +90,46 @@ module VSphereAutomation
       if attributes.has_key?(:'keep_in_storage')
         self.keep_in_storage = attributes[:'keep_in_storage']
       end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'size')
+        self.size = attributes[:'size']
+      end
+
+      if attributes.has_key?(:'source_endpoint')
+        self.source_endpoint = attributes[:'source_endpoint']
+      end
+
+      if attributes.has_key?(:'source_type')
+        self.source_type = attributes[:'source_type']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.has_key?(:'upload_endpoint')
+        self.upload_endpoint = attributes[:'upload_endpoint']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @bytes_transferred.nil?
+        invalid_properties.push('invalid value for "bytes_transferred", bytes_transferred cannot be nil.')
+      end
+
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @source_type.nil?
         invalid_properties.push('invalid value for "source_type", source_type cannot be nil.')
-      end
-
-      if @bytes_transferred.nil?
-        invalid_properties.push('invalid value for "bytes_transferred", bytes_transferred cannot be nil.')
       end
 
       if @status.nil?
@@ -142,9 +142,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @bytes_transferred.nil?
       return false if @name.nil?
       return false if @source_type.nil?
-      return false if @bytes_transferred.nil?
       return false if @status.nil?
       true
     end
@@ -154,16 +154,16 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          source_type == o.source_type &&
-          size == o.size &&
-          checksum_info == o.checksum_info &&
-          source_endpoint == o.source_endpoint &&
-          upload_endpoint == o.upload_endpoint &&
           bytes_transferred == o.bytes_transferred &&
-          status == o.status &&
+          checksum_info == o.checksum_info &&
           error_message == o.error_message &&
-          keep_in_storage == o.keep_in_storage
+          keep_in_storage == o.keep_in_storage &&
+          name == o.name &&
+          size == o.size &&
+          source_endpoint == o.source_endpoint &&
+          source_type == o.source_type &&
+          status == o.status &&
+          upload_endpoint == o.upload_endpoint
     end
 
     # @see the `==` method
@@ -175,7 +175,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, source_type, size, checksum_info, source_endpoint, upload_endpoint, bytes_transferred, status, error_message, keep_in_storage].hash
+      [bytes_transferred, checksum_info, error_message, keep_in_storage, name, size, source_endpoint, source_type, status, upload_endpoint].hash
     end
 
     # Builds the object from hash

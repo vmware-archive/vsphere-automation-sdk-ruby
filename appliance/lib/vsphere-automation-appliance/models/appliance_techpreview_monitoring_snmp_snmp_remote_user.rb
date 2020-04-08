@@ -11,47 +11,47 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPRemoteUser
-    # SNMP Username
-    attr_accessor :username
-
-    attr_accessor :sec_level
-
-    attr_accessor :authentication
-
     # SNMP authorization key
     attr_accessor :auth_key
 
-    attr_accessor :privacy
-
-    # SNMP privacy key
-    attr_accessor :priv_key
+    attr_accessor :authentication
 
     # SNMP v3 engine id
     attr_accessor :engineid
 
+    # SNMP privacy key
+    attr_accessor :priv_key
+
+    attr_accessor :privacy
+
+    attr_accessor :sec_level
+
+    # SNMP Username
+    attr_accessor :username
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'username' => :'username',
-        :'sec_level' => :'sec_level',
-        :'authentication' => :'authentication',
         :'auth_key' => :'auth_key',
-        :'privacy' => :'privacy',
+        :'authentication' => :'authentication',
+        :'engineid' => :'engineid',
         :'priv_key' => :'priv_key',
-        :'engineid' => :'engineid'
+        :'privacy' => :'privacy',
+        :'sec_level' => :'sec_level',
+        :'username' => :'username'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'username' => :'String',
-        :'sec_level' => :'ApplianceTechpreviewMonitoringSnmpSNMPSecLevel',
-        :'authentication' => :'ApplianceTechpreviewMonitoringSnmpSNMPAuthProto',
         :'auth_key' => :'String',
-        :'privacy' => :'ApplianceTechpreviewMonitoringSnmpSNMPPrivProto',
+        :'authentication' => :'ApplianceTechpreviewMonitoringSnmpSNMPAuthProto',
+        :'engineid' => :'String',
         :'priv_key' => :'String',
-        :'engineid' => :'String'
+        :'privacy' => :'ApplianceTechpreviewMonitoringSnmpSNMPPrivProto',
+        :'sec_level' => :'ApplianceTechpreviewMonitoringSnmpSNMPSecLevel',
+        :'username' => :'String'
       }
     end
 
@@ -63,32 +63,32 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'username')
-        self.username = attributes[:'username']
-      end
-
-      if attributes.has_key?(:'sec_level')
-        self.sec_level = attributes[:'sec_level']
+      if attributes.has_key?(:'auth_key')
+        self.auth_key = attributes[:'auth_key']
       end
 
       if attributes.has_key?(:'authentication')
         self.authentication = attributes[:'authentication']
       end
 
-      if attributes.has_key?(:'auth_key')
-        self.auth_key = attributes[:'auth_key']
-      end
-
-      if attributes.has_key?(:'privacy')
-        self.privacy = attributes[:'privacy']
+      if attributes.has_key?(:'engineid')
+        self.engineid = attributes[:'engineid']
       end
 
       if attributes.has_key?(:'priv_key')
         self.priv_key = attributes[:'priv_key']
       end
 
-      if attributes.has_key?(:'engineid')
-        self.engineid = attributes[:'engineid']
+      if attributes.has_key?(:'privacy')
+        self.privacy = attributes[:'privacy']
+      end
+
+      if attributes.has_key?(:'sec_level')
+        self.sec_level = attributes[:'sec_level']
+      end
+
+      if attributes.has_key?(:'username')
+        self.username = attributes[:'username']
       end
     end
 
@@ -96,32 +96,32 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @username.nil?
-        invalid_properties.push('invalid value for "username", username cannot be nil.')
-      end
-
-      if @sec_level.nil?
-        invalid_properties.push('invalid value for "sec_level", sec_level cannot be nil.')
+      if @auth_key.nil?
+        invalid_properties.push('invalid value for "auth_key", auth_key cannot be nil.')
       end
 
       if @authentication.nil?
         invalid_properties.push('invalid value for "authentication", authentication cannot be nil.')
       end
 
-      if @auth_key.nil?
-        invalid_properties.push('invalid value for "auth_key", auth_key cannot be nil.')
-      end
-
-      if @privacy.nil?
-        invalid_properties.push('invalid value for "privacy", privacy cannot be nil.')
+      if @engineid.nil?
+        invalid_properties.push('invalid value for "engineid", engineid cannot be nil.')
       end
 
       if @priv_key.nil?
         invalid_properties.push('invalid value for "priv_key", priv_key cannot be nil.')
       end
 
-      if @engineid.nil?
-        invalid_properties.push('invalid value for "engineid", engineid cannot be nil.')
+      if @privacy.nil?
+        invalid_properties.push('invalid value for "privacy", privacy cannot be nil.')
+      end
+
+      if @sec_level.nil?
+        invalid_properties.push('invalid value for "sec_level", sec_level cannot be nil.')
+      end
+
+      if @username.nil?
+        invalid_properties.push('invalid value for "username", username cannot be nil.')
       end
 
       invalid_properties
@@ -130,13 +130,13 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @username.nil?
-      return false if @sec_level.nil?
-      return false if @authentication.nil?
       return false if @auth_key.nil?
-      return false if @privacy.nil?
-      return false if @priv_key.nil?
+      return false if @authentication.nil?
       return false if @engineid.nil?
+      return false if @priv_key.nil?
+      return false if @privacy.nil?
+      return false if @sec_level.nil?
+      return false if @username.nil?
       true
     end
 
@@ -145,13 +145,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          username == o.username &&
-          sec_level == o.sec_level &&
-          authentication == o.authentication &&
           auth_key == o.auth_key &&
-          privacy == o.privacy &&
+          authentication == o.authentication &&
+          engineid == o.engineid &&
           priv_key == o.priv_key &&
-          engineid == o.engineid
+          privacy == o.privacy &&
+          sec_level == o.sec_level &&
+          username == o.username
     end
 
     # @see the `==` method
@@ -163,7 +163,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [username, sec_level, authentication, auth_key, privacy, priv_key, engineid].hash
+      [auth_key, authentication, engineid, priv_key, privacy, sec_level, username].hash
     end
 
     # Builds the object from hash

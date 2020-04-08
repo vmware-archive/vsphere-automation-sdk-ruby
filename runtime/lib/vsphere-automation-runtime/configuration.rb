@@ -126,7 +126,7 @@ module VSphereAutomation
     def initialize
       @scheme = 'https'
       @host = '&lt;vcenter&gt;'
-      @base_path = '/rest'
+      @base_path = ''
       @api_key = {}
       @api_key_prefix = {}
       @timeout = nil

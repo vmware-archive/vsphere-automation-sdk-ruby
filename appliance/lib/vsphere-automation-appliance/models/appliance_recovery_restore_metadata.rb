@@ -11,55 +11,55 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryRestoreMetadata
-    # Time when this backup was completed.
-    attr_accessor :timestamp
-
-    # List of parts included in the backup.
-    attr_accessor :parts
-
-    # VCSA version
-    attr_accessor :version
+    # Does the VCSA match the deployment type, network properties            and version of backed up VC
+    attr_accessor :applicable
 
     # Box name is PNID/ FQDN etc
     attr_accessor :boxname
 
-    # Is SSO login required for the vCenter server.
-    attr_accessor :sso_login_required
-
     # Custom comment
     attr_accessor :comment
-
-    # Does the VCSA match the deployment type, network properties            and version of backed up VC
-    attr_accessor :applicable
 
     # Any messages if the backup is not aplicable
     attr_accessor :messages
 
+    # List of parts included in the backup.
+    attr_accessor :parts
+
+    # Is SSO login required for the vCenter server.
+    attr_accessor :sso_login_required
+
+    # Time when this backup was completed.
+    attr_accessor :timestamp
+
+    # VCSA version
+    attr_accessor :version
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'timestamp' => :'timestamp',
-        :'parts' => :'parts',
-        :'version' => :'version',
-        :'boxname' => :'boxname',
-        :'sso_login_required' => :'sso_login_required',
-        :'comment' => :'comment',
         :'applicable' => :'applicable',
-        :'messages' => :'messages'
+        :'boxname' => :'boxname',
+        :'comment' => :'comment',
+        :'messages' => :'messages',
+        :'parts' => :'parts',
+        :'sso_login_required' => :'sso_login_required',
+        :'timestamp' => :'timestamp',
+        :'version' => :'version'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'timestamp' => :'DateTime',
-        :'parts' => :'Array<String>',
-        :'version' => :'String',
-        :'boxname' => :'String',
-        :'sso_login_required' => :'Boolean',
-        :'comment' => :'String',
         :'applicable' => :'Boolean',
-        :'messages' => :'Array<ApplianceRecoveryRestoreLocalizableMessage>'
+        :'boxname' => :'String',
+        :'comment' => :'String',
+        :'messages' => :'Array<ApplianceRecoveryRestoreLocalizableMessage>',
+        :'parts' => :'Array<String>',
+        :'sso_login_required' => :'Boolean',
+        :'timestamp' => :'DateTime',
+        :'version' => :'String'
       }
     end
 
@@ -71,8 +71,22 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'timestamp')
-        self.timestamp = attributes[:'timestamp']
+      if attributes.has_key?(:'applicable')
+        self.applicable = attributes[:'applicable']
+      end
+
+      if attributes.has_key?(:'boxname')
+        self.boxname = attributes[:'boxname']
+      end
+
+      if attributes.has_key?(:'comment')
+        self.comment = attributes[:'comment']
+      end
+
+      if attributes.has_key?(:'messages')
+        if (value = attributes[:'messages']).is_a?(Array)
+          self.messages = value
+        end
       end
 
       if attributes.has_key?(:'parts')
@@ -81,30 +95,16 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
-      end
-
-      if attributes.has_key?(:'boxname')
-        self.boxname = attributes[:'boxname']
-      end
-
       if attributes.has_key?(:'sso_login_required')
         self.sso_login_required = attributes[:'sso_login_required']
       end
 
-      if attributes.has_key?(:'comment')
-        self.comment = attributes[:'comment']
+      if attributes.has_key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
       end
 
-      if attributes.has_key?(:'applicable')
-        self.applicable = attributes[:'applicable']
-      end
-
-      if attributes.has_key?(:'messages')
-        if (value = attributes[:'messages']).is_a?(Array)
-          self.messages = value
-        end
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
     end
 
@@ -112,16 +112,8 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @timestamp.nil?
-        invalid_properties.push('invalid value for "timestamp", timestamp cannot be nil.')
-      end
-
-      if @parts.nil?
-        invalid_properties.push('invalid value for "parts", parts cannot be nil.')
-      end
-
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
+      if @applicable.nil?
+        invalid_properties.push('invalid value for "applicable", applicable cannot be nil.')
       end
 
       if @boxname.nil?
@@ -132,12 +124,20 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "comment", comment cannot be nil.')
       end
 
-      if @applicable.nil?
-        invalid_properties.push('invalid value for "applicable", applicable cannot be nil.')
-      end
-
       if @messages.nil?
         invalid_properties.push('invalid value for "messages", messages cannot be nil.')
+      end
+
+      if @parts.nil?
+        invalid_properties.push('invalid value for "parts", parts cannot be nil.')
+      end
+
+      if @timestamp.nil?
+        invalid_properties.push('invalid value for "timestamp", timestamp cannot be nil.')
+      end
+
+      if @version.nil?
+        invalid_properties.push('invalid value for "version", version cannot be nil.')
       end
 
       invalid_properties
@@ -146,13 +146,13 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @timestamp.nil?
-      return false if @parts.nil?
-      return false if @version.nil?
+      return false if @applicable.nil?
       return false if @boxname.nil?
       return false if @comment.nil?
-      return false if @applicable.nil?
       return false if @messages.nil?
+      return false if @parts.nil?
+      return false if @timestamp.nil?
+      return false if @version.nil?
       true
     end
 
@@ -161,14 +161,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          timestamp == o.timestamp &&
-          parts == o.parts &&
-          version == o.version &&
-          boxname == o.boxname &&
-          sso_login_required == o.sso_login_required &&
-          comment == o.comment &&
           applicable == o.applicable &&
-          messages == o.messages
+          boxname == o.boxname &&
+          comment == o.comment &&
+          messages == o.messages &&
+          parts == o.parts &&
+          sso_login_required == o.sso_login_required &&
+          timestamp == o.timestamp &&
+          version == o.version
     end
 
     # @see the `==` method
@@ -180,7 +180,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [timestamp, parts, version, boxname, sso_login_required, comment, applicable, messages].hash
+      [applicable, boxname, comment, messages, parts, sso_login_required, timestamp, version].hash
     end
 
     # Builds the object from hash

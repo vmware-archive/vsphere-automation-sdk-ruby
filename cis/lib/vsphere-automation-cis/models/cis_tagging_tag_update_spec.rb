@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaggingTagUpdateSpec
-    # The display name of the tag.
-    attr_accessor :name
-
     # The description of the tag.
     attr_accessor :description
+
+    # The display name of the tag.
+    attr_accessor :name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'description' => :'description'
+        :'description' => :'description',
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'description' => :'String'
+        :'description' => :'String',
+        :'name' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
     end
 
@@ -68,8 +68,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          description == o.description
+          description == o.description &&
+          name == o.name
     end
 
     # @see the `==` method
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, description].hash
+      [description, name].hash
     end
 
     # Builds the object from hash

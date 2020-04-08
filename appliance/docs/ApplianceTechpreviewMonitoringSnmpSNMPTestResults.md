@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **Boolean** | Set success to true/false | 
 **message** | **String** | message | 
+**success** | **Boolean** | Set success to true/false | 
 
 

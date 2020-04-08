@@ -11,43 +11,43 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareSerialInfo
-    # Device label.
-    attr_accessor :label
-
-    # CPU yield behavior. If set to true, the virtual machine will periodically relinquish the processor if its sole task is polling the virtual serial port. The amount of time it takes to regain the processor will depend on the degree of other virtual machine activity on the host.
-    attr_accessor :yield_on_poll
+    # Flag indicating whether the guest can connect and disconnect the device.
+    attr_accessor :allow_guest_control
 
     attr_accessor :backing
 
-    attr_accessor :state
+    # Device label.
+    attr_accessor :label
 
     # Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on.
     attr_accessor :start_connected
 
-    # Flag indicating whether the guest can connect and disconnect the device.
-    attr_accessor :allow_guest_control
+    attr_accessor :state
+
+    # CPU yield behavior. If set to true, the virtual machine will periodically relinquish the processor if its sole task is polling the virtual serial port. The amount of time it takes to regain the processor will depend on the degree of other virtual machine activity on the host.
+    attr_accessor :yield_on_poll
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'label' => :'label',
-        :'yield_on_poll' => :'yield_on_poll',
+        :'allow_guest_control' => :'allow_guest_control',
         :'backing' => :'backing',
-        :'state' => :'state',
+        :'label' => :'label',
         :'start_connected' => :'start_connected',
-        :'allow_guest_control' => :'allow_guest_control'
+        :'state' => :'state',
+        :'yield_on_poll' => :'yield_on_poll'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'label' => :'String',
-        :'yield_on_poll' => :'Boolean',
+        :'allow_guest_control' => :'Boolean',
         :'backing' => :'VcenterVmHardwareSerialBackingInfo',
-        :'state' => :'VcenterVmHardwareConnectionState',
+        :'label' => :'String',
         :'start_connected' => :'Boolean',
-        :'allow_guest_control' => :'Boolean'
+        :'state' => :'VcenterVmHardwareConnectionState',
+        :'yield_on_poll' => :'Boolean'
       }
     end
 
@@ -59,28 +59,28 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'label')
-        self.label = attributes[:'label']
-      end
-
-      if attributes.has_key?(:'yield_on_poll')
-        self.yield_on_poll = attributes[:'yield_on_poll']
+      if attributes.has_key?(:'allow_guest_control')
+        self.allow_guest_control = attributes[:'allow_guest_control']
       end
 
       if attributes.has_key?(:'backing')
         self.backing = attributes[:'backing']
       end
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.has_key?(:'label')
+        self.label = attributes[:'label']
       end
 
       if attributes.has_key?(:'start_connected')
         self.start_connected = attributes[:'start_connected']
       end
 
-      if attributes.has_key?(:'allow_guest_control')
-        self.allow_guest_control = attributes[:'allow_guest_control']
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
+      end
+
+      if attributes.has_key?(:'yield_on_poll')
+        self.yield_on_poll = attributes[:'yield_on_poll']
       end
     end
 
@@ -88,28 +88,28 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @label.nil?
-        invalid_properties.push('invalid value for "label", label cannot be nil.')
-      end
-
-      if @yield_on_poll.nil?
-        invalid_properties.push('invalid value for "yield_on_poll", yield_on_poll cannot be nil.')
+      if @allow_guest_control.nil?
+        invalid_properties.push('invalid value for "allow_guest_control", allow_guest_control cannot be nil.')
       end
 
       if @backing.nil?
         invalid_properties.push('invalid value for "backing", backing cannot be nil.')
       end
 
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      if @label.nil?
+        invalid_properties.push('invalid value for "label", label cannot be nil.')
       end
 
       if @start_connected.nil?
         invalid_properties.push('invalid value for "start_connected", start_connected cannot be nil.')
       end
 
-      if @allow_guest_control.nil?
-        invalid_properties.push('invalid value for "allow_guest_control", allow_guest_control cannot be nil.')
+      if @state.nil?
+        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      end
+
+      if @yield_on_poll.nil?
+        invalid_properties.push('invalid value for "yield_on_poll", yield_on_poll cannot be nil.')
       end
 
       invalid_properties
@@ -118,12 +118,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @label.nil?
-      return false if @yield_on_poll.nil?
-      return false if @backing.nil?
-      return false if @state.nil?
-      return false if @start_connected.nil?
       return false if @allow_guest_control.nil?
+      return false if @backing.nil?
+      return false if @label.nil?
+      return false if @start_connected.nil?
+      return false if @state.nil?
+      return false if @yield_on_poll.nil?
       true
     end
 
@@ -132,12 +132,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          label == o.label &&
-          yield_on_poll == o.yield_on_poll &&
+          allow_guest_control == o.allow_guest_control &&
           backing == o.backing &&
-          state == o.state &&
+          label == o.label &&
           start_connected == o.start_connected &&
-          allow_guest_control == o.allow_guest_control
+          state == o.state &&
+          yield_on_poll == o.yield_on_poll
     end
 
     # @see the `==` method
@@ -149,7 +149,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [label, yield_on_poll, backing, state, start_connected, allow_guest_control].hash
+      [allow_guest_control, backing, label, start_connected, state, yield_on_poll].hash
     end
 
     # Builds the object from hash

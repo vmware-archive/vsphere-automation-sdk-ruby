@@ -1,16 +1,16 @@
 # VSphereAutomation::VAPI::MetadataCliCommandApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fingerprint**](MetadataCliCommandApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/cli/command?~action&#x3D;fingerprint | Returns the aggregate fingerprint of all the command metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for commands has been modified on the server.
-[**get**](MetadataCliCommandApi.md#get) | **POST** /com/vmware/vapi/metadata/cli/command?~action&#x3D;get | Retrieves information about a command including information about how to execute that command.
-[**list**](MetadataCliCommandApi.md#list) | **GET** /com/vmware/vapi/metadata/cli/command | Returns the identifiers of all commands, or commands in a specific namespace.
+[**fingerprint**](MetadataCliCommandApi.md#fingerprint) | **POST** /rest/com/vmware/vapi/metadata/cli/command?~action&#x3D;fingerprint | Returns the aggregate fingerprint of all the command metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for commands has been modified on the server.
+[**get**](MetadataCliCommandApi.md#get) | **POST** /rest/com/vmware/vapi/metadata/cli/command?~action&#x3D;get | Retrieves information about a command including information about how to execute that command.
+[**list**](MetadataCliCommandApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/cli/command | Returns the identifiers of all commands, or commands in a specific namespace.
 
 
 # **fingerprint**
-> VapiMetadataCliCommandFingerprintResult fingerprint
+> VapiMetadataCliCommandFingerprintResp fingerprint
 
 Returns the aggregate fingerprint of all the command metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for commands has been modified on the server.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataCliCommandFingerprintResult**](VapiMetadataCliCommandFingerprintResult.md)
+[**VapiMetadataCliCommandFingerprintResp**](VapiMetadataCliCommandFingerprintResp.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 
 # **get**
-> VapiMetadataCliCommandResult get(request_body)
+> VapiMetadataCliCommandResp get(request_body)
 
 Retrieves information about a command including information about how to execute that command.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataCliCommandResult**](VapiMetadataCliCommandResult.md)
+[**VapiMetadataCliCommandResp**](VapiMetadataCliCommandResp.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataCliCommandListResult list(opts)
+> VapiMetadataCliCommandListResp list(opts)
 
 Returns the identifiers of all commands, or commands in a specific namespace.
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataCliCommandListResult**](VapiMetadataCliCommandListResult.md)
+[**VapiMetadataCliCommandListResp**](VapiMetadataCliCommandListResp.md)
 
 ### Authorization
 

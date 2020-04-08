@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get swap health.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceHealthSwapResult|VapiStdErrorsErrorError|]
+    # @return [ApplianceHealthSwapResp|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get swap health.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceHealthSwapResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceHealthSwapResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthSwapApi.get ...'
       end
       # resource path
-      local_var_path = '/appliance/health/swap'
+      local_var_path = '/rest/appliance/health/swap'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceHealthSwapResult',
+	  '200' => 'Appliance::ApplianceHealthSwapResp',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

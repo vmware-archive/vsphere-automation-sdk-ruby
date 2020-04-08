@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::RecoveryBackupSchedulesApi
 
-All URIs are relative to *https://&lt;vcenter&gt;/rest*
+All URIs are relative to *https://&lt;vcenter&gt;*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](RecoveryBackupSchedulesApi.md#create) | **POST** /appliance/recovery/backup/schedules/{schedule} | Creates a schedule
-[**delete**](RecoveryBackupSchedulesApi.md#delete) | **DELETE** /appliance/recovery/backup/schedules/{schedule} | Deletes an existing schedule
-[**get**](RecoveryBackupSchedulesApi.md#get) | **GET** /appliance/recovery/backup/schedules/{schedule} | Returns an existing schedule information based on id
-[**list**](RecoveryBackupSchedulesApi.md#list) | **GET** /appliance/recovery/backup/schedules | Returns a list of existing schedules with details
-[**run**](RecoveryBackupSchedulesApi.md#run) | **POST** /appliance/recovery/backup/schedules/{schedule}?action&#x3D;run | Initiate backup with the specified schedule
-[**update**](RecoveryBackupSchedulesApi.md#update) | **PUT** /appliance/recovery/backup/schedules/update/{schedule} | Updates a schedule
+[**create**](RecoveryBackupSchedulesApi.md#create) | **POST** /rest/appliance/recovery/backup/schedules/{schedule} | Creates a schedule
+[**delete**](RecoveryBackupSchedulesApi.md#delete) | **DELETE** /rest/appliance/recovery/backup/schedules/{schedule} | Deletes an existing schedule
+[**get**](RecoveryBackupSchedulesApi.md#get) | **GET** /rest/appliance/recovery/backup/schedules/{schedule} | Returns an existing schedule information based on id
+[**list**](RecoveryBackupSchedulesApi.md#list) | **GET** /rest/appliance/recovery/backup/schedules | Returns a list of existing schedules with details
+[**run**](RecoveryBackupSchedulesApi.md#run) | **POST** /rest/appliance/recovery/backup/schedules/{schedule}?action&#x3D;run | Initiate backup with the specified schedule
+[**update**](RecoveryBackupSchedulesApi.md#update) | **PUT** /rest/appliance/recovery/backup/schedules/update/{schedule} | Updates a schedule
 
 
 # **create**
@@ -113,7 +113,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceRecoveryBackupSchedulesResult get(schedule)
+> ApplianceRecoveryBackupSchedulesResp get(schedule)
 
 Returns an existing schedule information based on id
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupSchedulesResult**](ApplianceRecoveryBackupSchedulesResult.md)
+[**ApplianceRecoveryBackupSchedulesResp**](ApplianceRecoveryBackupSchedulesResp.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceRecoveryBackupSchedulesListResult list
+> ApplianceRecoveryBackupSchedulesListResp list
 
 Returns a list of existing schedules with details
 
@@ -195,7 +195,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceRecoveryBackupSchedulesListResult**](ApplianceRecoveryBackupSchedulesListResult.md)
+[**ApplianceRecoveryBackupSchedulesListResp**](ApplianceRecoveryBackupSchedulesListResp.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ This endpoint does not need any parameter.
 
 
 # **run**
-> ApplianceRecoveryBackupSchedulesRunResult run(schedule, opts)
+> ApplianceRecoveryBackupSchedulesRunResp run(schedule, opts)
 
 Initiate backup with the specified schedule
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupSchedulesRunResult**](ApplianceRecoveryBackupSchedulesRunResult.md)
+[**ApplianceRecoveryBackupSchedulesRunResp**](ApplianceRecoveryBackupSchedulesRunResp.md)
 
 ### Authorization
 

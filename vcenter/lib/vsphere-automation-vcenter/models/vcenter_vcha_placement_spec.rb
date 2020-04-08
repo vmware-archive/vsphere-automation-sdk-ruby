@@ -11,41 +11,41 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaPlacementSpec
-    # The name of the VCHA node to be used for the virtual machine name.
-    attr_accessor :name
-
     # The identifier of the folder to deploy the VCHA node to. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder:VCenter.
     attr_accessor :folder
-
-    # The identifier of the host to deploy the VCHA node to. If unset, see vim.vm.RelocateSpec.host. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem:VCenter.
-    attr_accessor :host
-
-    # The identifier of the resource pool to deploy the VCHA node to. If unset, then the active node's resource pool will be used. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ResourcePool:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ResourcePool:VCenter.
-    attr_accessor :resource_pool
-
-    attr_accessor :ha_network_type
 
     # The identifier of the Network object used for the HA network.  If the PlacementSpec.ha-network field is set, then the {#link #haNetworkType} field must be set.  If the PlacementSpec.ha-network field is unset, then the PlacementSpec.ha-network-type field is ignored. If unset and the PlacementSpec.ha-network-type field is unset, then the same network present on the Active node virtual machine is used to deploy the virtual machine with an assumption that the network is present on the destination.  When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network:VCenter.
     attr_accessor :ha_network
 
-    attr_accessor :management_network_type
+    attr_accessor :ha_network_type
+
+    # The identifier of the host to deploy the VCHA node to. If unset, see vim.vm.RelocateSpec.host. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem:VCenter.
+    attr_accessor :host
 
     # The identifier of the Network object used for the Management network. If the PlacementSpec.management-network field is set, then the PlacementSpec.management-network-type field must be set.  If the PlacementSpec.management-network field is unset, then the PlacementSpec.management-network-type field is ignored. If unset and the PlacementSpec.management-network-type field is unset, then the same network present on the Active node virtual machine is used to deploy the virtual machine with an assumption that the network is present on the destination.  When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network:VCenter.
     attr_accessor :management_network
+
+    attr_accessor :management_network_type
+
+    # The name of the VCHA node to be used for the virtual machine name.
+    attr_accessor :name
+
+    # The identifier of the resource pool to deploy the VCHA node to. If unset, then the active node's resource pool will be used. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ResourcePool:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ResourcePool:VCenter.
+    attr_accessor :resource_pool
 
     attr_accessor :storage
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
         :'folder' => :'folder',
-        :'host' => :'host',
-        :'resource_pool' => :'resource_pool',
-        :'ha_network_type' => :'ha_network_type',
         :'ha_network' => :'ha_network',
-        :'management_network_type' => :'management_network_type',
+        :'ha_network_type' => :'ha_network_type',
+        :'host' => :'host',
         :'management_network' => :'management_network',
+        :'management_network_type' => :'management_network_type',
+        :'name' => :'name',
+        :'resource_pool' => :'resource_pool',
         :'storage' => :'storage'
       }
     end
@@ -53,14 +53,14 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
         :'folder' => :'String',
-        :'host' => :'String',
-        :'resource_pool' => :'String',
-        :'ha_network_type' => :'VcenterVchaNetworkType',
         :'ha_network' => :'String',
-        :'management_network_type' => :'VcenterVchaNetworkType',
+        :'ha_network_type' => :'VcenterVchaNetworkType',
+        :'host' => :'String',
         :'management_network' => :'String',
+        :'management_network_type' => :'VcenterVchaNetworkType',
+        :'name' => :'String',
+        :'resource_pool' => :'String',
         :'storage' => :'VcenterVchaDiskSpec'
       }
     end
@@ -73,36 +73,36 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'folder')
         self.folder = attributes[:'folder']
-      end
-
-      if attributes.has_key?(:'host')
-        self.host = attributes[:'host']
-      end
-
-      if attributes.has_key?(:'resource_pool')
-        self.resource_pool = attributes[:'resource_pool']
-      end
-
-      if attributes.has_key?(:'ha_network_type')
-        self.ha_network_type = attributes[:'ha_network_type']
       end
 
       if attributes.has_key?(:'ha_network')
         self.ha_network = attributes[:'ha_network']
       end
 
-      if attributes.has_key?(:'management_network_type')
-        self.management_network_type = attributes[:'management_network_type']
+      if attributes.has_key?(:'ha_network_type')
+        self.ha_network_type = attributes[:'ha_network_type']
+      end
+
+      if attributes.has_key?(:'host')
+        self.host = attributes[:'host']
       end
 
       if attributes.has_key?(:'management_network')
         self.management_network = attributes[:'management_network']
+      end
+
+      if attributes.has_key?(:'management_network_type')
+        self.management_network_type = attributes[:'management_network_type']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'resource_pool')
+        self.resource_pool = attributes[:'resource_pool']
       end
 
       if attributes.has_key?(:'storage')
@@ -114,12 +114,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       if @folder.nil?
         invalid_properties.push('invalid value for "folder", folder cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       invalid_properties
@@ -128,8 +128,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
       return false if @folder.nil?
+      return false if @name.nil?
       true
     end
 
@@ -138,14 +138,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
           folder == o.folder &&
-          host == o.host &&
-          resource_pool == o.resource_pool &&
-          ha_network_type == o.ha_network_type &&
           ha_network == o.ha_network &&
-          management_network_type == o.management_network_type &&
+          ha_network_type == o.ha_network_type &&
+          host == o.host &&
           management_network == o.management_network &&
+          management_network_type == o.management_network_type &&
+          name == o.name &&
+          resource_pool == o.resource_pool &&
           storage == o.storage
     end
 
@@ -158,7 +158,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, folder, host, resource_pool, ha_network_type, ha_network, management_network_type, management_network, storage].hash
+      [folder, ha_network, ha_network_type, host, management_network, management_network_type, name, resource_pool, storage].hash
     end
 
     # Builds the object from hash

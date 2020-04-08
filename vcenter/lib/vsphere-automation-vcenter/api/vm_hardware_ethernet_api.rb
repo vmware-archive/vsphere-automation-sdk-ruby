@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'nic' when calling VmHardwareEthernetApi.connect"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/ethernet/{nic}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/ethernet/{nic}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
 
       # query parameters
       query_params = {}
@@ -76,7 +76,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareEthernetCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareEthernetCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(vm, request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(vm, request_body, opts)
       data
@@ -87,7 +87,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareEthernetCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareEthernetCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(vm, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.create ...'
@@ -101,7 +101,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareEthernetApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/ethernet'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/ethernet'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -126,7 +126,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareEthernetCreateResult',
+	  '200' => 'VCenter::VcenterVmHardwareEthernetCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsUnsupportedError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -167,7 +167,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'nic' when calling VmHardwareEthernetApi.delete"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/ethernet/{nic}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/ethernet/{nic}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
 
       # query parameters
       query_params = {}
@@ -223,7 +223,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'nic' when calling VmHardwareEthernetApi.disconnect"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/ethernet/{nic}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/ethernet/{nic}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
 
       # query parameters
       query_params = {}
@@ -254,7 +254,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareEthernetResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareEthernetResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, nic, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, nic, opts)
       data
@@ -265,7 +265,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param nic Virtual Ethernet adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareEthernetResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareEthernetResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, nic, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.get ...'
@@ -279,7 +279,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'nic' when calling VmHardwareEthernetApi.get"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/ethernet/{nic}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/ethernet/{nic}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
 
       # query parameters
       query_params = {}
@@ -302,7 +302,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareEthernetResult',
+	  '200' => 'VCenter::VcenterVmHardwareEthernetResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -317,7 +317,7 @@ module VSphereAutomation
     # Returns commonly used information about the virtual Ethernet adapters belonging to the virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareEthernetListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareEthernetListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def list(vm, opts = {})
       data, _status_code, _headers = list_with_http_info(vm, opts)
       data
@@ -327,7 +327,7 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareEthernetListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareEthernetListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareEthernetApi.list ...'
@@ -337,7 +337,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareEthernetApi.list"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/ethernet'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/ethernet'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -360,7 +360,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareEthernetListResult',
+	  '200' => 'VCenter::VcenterVmHardwareEthernetListResp',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -407,7 +407,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareEthernetApi.update"
       end
       # resource path
-      local_var_path = '/vcenter/vm/{vm}/hardware/ethernet/{nic}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
+      local_var_path = '/rest/vcenter/vm/{vm}/hardware/ethernet/{nic}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'nic' + '}', nic.to_s)
 
       # query parameters
       query_params = {}

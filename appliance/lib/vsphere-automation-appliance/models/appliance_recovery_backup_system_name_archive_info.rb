@@ -11,8 +11,8 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupSystemNameArchiveInfo
-    # Time when this backup was completed.
-    attr_accessor :timestamp
+    # Custom comment added by the user for this backup.
+    attr_accessor :comment
 
     # Backup location URL.
     attr_accessor :location
@@ -20,36 +20,36 @@ module VSphereAutomation
     # List of parts included in the backup.
     attr_accessor :parts
 
-    # The version of the appliance represented by the backup.
-    attr_accessor :version
-
     # The system name identifier of the appliance represented by the backup.
     attr_accessor :system_name
 
-    # Custom comment added by the user for this backup.
-    attr_accessor :comment
+    # Time when this backup was completed.
+    attr_accessor :timestamp
+
+    # The version of the appliance represented by the backup.
+    attr_accessor :version
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'timestamp' => :'timestamp',
+        :'comment' => :'comment',
         :'location' => :'location',
         :'parts' => :'parts',
-        :'version' => :'version',
         :'system_name' => :'system_name',
-        :'comment' => :'comment'
+        :'timestamp' => :'timestamp',
+        :'version' => :'version'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'timestamp' => :'DateTime',
+        :'comment' => :'String',
         :'location' => :'String',
         :'parts' => :'Array<String>',
-        :'version' => :'String',
         :'system_name' => :'String',
-        :'comment' => :'String'
+        :'timestamp' => :'DateTime',
+        :'version' => :'String'
       }
     end
 
@@ -61,8 +61,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'timestamp')
-        self.timestamp = attributes[:'timestamp']
+      if attributes.has_key?(:'comment')
+        self.comment = attributes[:'comment']
       end
 
       if attributes.has_key?(:'location')
@@ -75,16 +75,16 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
-      end
-
       if attributes.has_key?(:'system_name')
         self.system_name = attributes[:'system_name']
       end
 
-      if attributes.has_key?(:'comment')
-        self.comment = attributes[:'comment']
+      if attributes.has_key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
+
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
     end
 
@@ -92,8 +92,8 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @timestamp.nil?
-        invalid_properties.push('invalid value for "timestamp", timestamp cannot be nil.')
+      if @comment.nil?
+        invalid_properties.push('invalid value for "comment", comment cannot be nil.')
       end
 
       if @location.nil?
@@ -104,16 +104,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "parts", parts cannot be nil.')
       end
 
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
-      end
-
       if @system_name.nil?
         invalid_properties.push('invalid value for "system_name", system_name cannot be nil.')
       end
 
-      if @comment.nil?
-        invalid_properties.push('invalid value for "comment", comment cannot be nil.')
+      if @timestamp.nil?
+        invalid_properties.push('invalid value for "timestamp", timestamp cannot be nil.')
+      end
+
+      if @version.nil?
+        invalid_properties.push('invalid value for "version", version cannot be nil.')
       end
 
       invalid_properties
@@ -122,12 +122,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @timestamp.nil?
+      return false if @comment.nil?
       return false if @location.nil?
       return false if @parts.nil?
-      return false if @version.nil?
       return false if @system_name.nil?
-      return false if @comment.nil?
+      return false if @timestamp.nil?
+      return false if @version.nil?
       true
     end
 
@@ -136,12 +136,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          timestamp == o.timestamp &&
+          comment == o.comment &&
           location == o.location &&
           parts == o.parts &&
-          version == o.version &&
           system_name == o.system_name &&
-          comment == o.comment
+          timestamp == o.timestamp &&
+          version == o.version
     end
 
     # @see the `==` method
@@ -153,7 +153,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [timestamp, location, parts, version, system_name, comment].hash
+      [comment, location, parts, system_name, timestamp, version].hash
     end
 
     # Builds the object from hash

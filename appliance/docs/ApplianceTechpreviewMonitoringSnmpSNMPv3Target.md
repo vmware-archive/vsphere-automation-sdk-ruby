@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ApplianceTechpreviewMonitoringSnmpSNMPv3Notfication**](ApplianceTechpreviewMonitoringSnmpSNMPv3Notfication.md) |  | 
-**sec_level** | [**ApplianceTechpreviewMonitoringSnmpSNMPSecLevel**](ApplianceTechpreviewMonitoringSnmpSNMPSecLevel.md) |  | 
 **ip** | **String** | SNMP target ip | 
 **port** | **Integer** | SNMP target port | 
+**sec_level** | [**ApplianceTechpreviewMonitoringSnmpSNMPSecLevel**](ApplianceTechpreviewMonitoringSnmpSNMPSecLevel.md) |  | 
+**type** | [**ApplianceTechpreviewMonitoringSnmpSNMPv3Notfication**](ApplianceTechpreviewMonitoringSnmpSNMPv3Notfication.md) |  | 
 **user** | **String** | SNMP User | 
 
 

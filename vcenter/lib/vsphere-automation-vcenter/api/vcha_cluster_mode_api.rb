@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Retrieves the current mode of a VCHA cluster.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVchaClusterModeResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
+    # @return [VcenterVchaClusterModeResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Retrieves the current mode of a VCHA cluster.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVchaClusterModeResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVchaClusterModeResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterModeApi.get ...'
       end
       # resource path
-      local_var_path = '/vcenter/vcha/cluster/mode'
+      local_var_path = '/rest/vcenter/vcha/cluster/mode'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaClusterModeResult',
+	  '200' => 'VCenter::VcenterVchaClusterModeResp',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	})
@@ -68,9 +68,9 @@ module VSphereAutomation
     # Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:  enabled -> disabled - Allowed only in healthy and degraded states.  enabled -> maintenance - Allowed only in healthy state.  disabled -> enabled - Allowed only in healthy state.  maintenance -> enabled - Allowed only in healthy state with all nodes are running the same version.  maintenance -> disabled - Allowed only in healthy state with all nodes are running the same version.  All other transitions are not allowed.   VCHA Cluster configuration remains intact in any of the cluster modes. 
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVchaClusterModeSetTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
-    def settask(request_body, opts = {})
-      data, _status_code, _headers = settask_with_http_info(request_body, opts)
+    # @return [VcenterVchaClusterModeSetTaskResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
+    def set_task(request_body, opts = {})
+      data, _status_code, _headers = set_task_with_http_info(request_body, opts)
       data
     end
 
@@ -78,17 +78,17 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVchaClusterModeSetTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def settask_with_http_info(request_body, opts = {})
+    # @return [Array<(VcenterVchaClusterModeSetTaskResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    def set_task_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: VchaClusterModeApi.settask ...'
+        @api_client.config.logger.debug 'Calling API: VchaClusterModeApi.set_task ...'
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
-        fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterModeApi.settask"
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterModeApi.set_task"
       end
       # resource path
-      local_var_path = '/vcenter/vcha/cluster/mode?vmw-task=true'
+      local_var_path = '/rest/vcenter/vcha/cluster/mode?vmw-task=true'
 
       # query parameters
       query_params = {}
@@ -113,12 +113,12 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaClusterModeSetTaskResult',
+	  '200' => 'VCenter::VcenterVchaClusterModeSetTaskResp',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: VchaClusterModeApi#settask\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: VchaClusterModeApi#set_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -11,14 +11,14 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryModel
-    # An identifier which uniquely identifies this {@name LibraryModel}.
-    attr_accessor :id
-
     # The date and time when this library was created.
     attr_accessor :creation_time
 
     # A human-readable description for this library.
     attr_accessor :description
+
+    # An identifier which uniquely identifies this {@name LibraryModel}.
+    attr_accessor :id
 
     # The date and time when this library was last updated. <p> This {@term field} is updated automatically when the library properties are changed. This {@term field} is not affected by adding, removing, or modifying a library item or its content within the library. Tagging the library or syncing the subscribed library does not alter this {@term field}.
     attr_accessor :last_modified_time
@@ -29,58 +29,58 @@ module VSphereAutomation
     # The name of the library. <p> A Library is identified by a human-readable name. Library names cannot be undefined or an empty string. Names do not have to be unique.
     attr_accessor :name
 
-    # The list of default storage backings which are available for this library. <p> A {@link StorageBacking} defines a default storage location which can be used to store files for library items in this library. Some library items, for instance, virtual machine template items, support files that may be distributed across various storage backings. One or more item files may or may not be located on the default storage backing. <p> Multiple default storage locations are not currently supported but may become supported in future releases.
-    attr_accessor :storage_backings
-
-    attr_accessor :type
-
     attr_accessor :optimization_info
 
-    # A version number which is updated on metadata changes. This value allows clients to detect concurrent updates and prevent accidental clobbering of data. <p> This value represents a number which is incremented every time library properties, such as name or description, are changed. It is not incremented by changes to a library item within the library, including adding or removing items. It is also not affected by tagging the library.
-    attr_accessor :version
-
     attr_accessor :publish_info
-
-    attr_accessor :subscription_info
 
     # The unique identifier of the vCenter server where the library exists.
     attr_accessor :server_guid
 
+    # The list of default storage backings which are available for this library. <p> A {@link StorageBacking} defines a default storage location which can be used to store files for library items in this library. Some library items, for instance, virtual machine template items, support files that may be distributed across various storage backings. One or more item files may or may not be located on the default storage backing. <p> Multiple default storage locations are not currently supported but may become supported in future releases.
+    attr_accessor :storage_backings
+
+    attr_accessor :subscription_info
+
+    attr_accessor :type
+
+    # A version number which is updated on metadata changes. This value allows clients to detect concurrent updates and prevent accidental clobbering of data. <p> This value represents a number which is incremented every time library properties, such as name or description, are changed. It is not incremented by changes to a library item within the library, including adding or removing items. It is also not affected by tagging the library.
+    attr_accessor :version
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
         :'creation_time' => :'creation_time',
         :'description' => :'description',
+        :'id' => :'id',
         :'last_modified_time' => :'last_modified_time',
         :'last_sync_time' => :'last_sync_time',
         :'name' => :'name',
-        :'storage_backings' => :'storage_backings',
-        :'type' => :'type',
         :'optimization_info' => :'optimization_info',
-        :'version' => :'version',
         :'publish_info' => :'publish_info',
+        :'server_guid' => :'server_guid',
+        :'storage_backings' => :'storage_backings',
         :'subscription_info' => :'subscription_info',
-        :'server_guid' => :'server_guid'
+        :'type' => :'type',
+        :'version' => :'version'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
         :'creation_time' => :'DateTime',
         :'description' => :'String',
+        :'id' => :'String',
         :'last_modified_time' => :'DateTime',
         :'last_sync_time' => :'DateTime',
         :'name' => :'String',
-        :'storage_backings' => :'Array<ContentLibraryStorageBacking>',
-        :'type' => :'ContentLibraryModelLibraryType',
         :'optimization_info' => :'ContentLibraryOptimizationInfo',
-        :'version' => :'String',
         :'publish_info' => :'ContentLibraryPublishInfo',
+        :'server_guid' => :'String',
+        :'storage_backings' => :'Array<ContentLibraryStorageBacking>',
         :'subscription_info' => :'ContentLibrarySubscriptionInfo',
-        :'server_guid' => :'String'
+        :'type' => :'ContentLibraryModelLibraryType',
+        :'version' => :'String'
       }
     end
 
@@ -92,16 +92,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
-      end
-
       if attributes.has_key?(:'creation_time')
         self.creation_time = attributes[:'creation_time']
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
       end
 
       if attributes.has_key?(:'last_modified_time')
@@ -116,34 +116,34 @@ module VSphereAutomation
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'storage_backings')
-        if (value = attributes[:'storage_backings']).is_a?(Array)
-          self.storage_backings = value
-        end
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'optimization_info')
         self.optimization_info = attributes[:'optimization_info']
-      end
-
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
       end
 
       if attributes.has_key?(:'publish_info')
         self.publish_info = attributes[:'publish_info']
       end
 
+      if attributes.has_key?(:'server_guid')
+        self.server_guid = attributes[:'server_guid']
+      end
+
+      if attributes.has_key?(:'storage_backings')
+        if (value = attributes[:'storage_backings']).is_a?(Array)
+          self.storage_backings = value
+        end
+      end
+
       if attributes.has_key?(:'subscription_info')
         self.subscription_info = attributes[:'subscription_info']
       end
 
-      if attributes.has_key?(:'server_guid')
-        self.server_guid = attributes[:'server_guid']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
+
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
     end
 
@@ -165,19 +165,19 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
           creation_time == o.creation_time &&
           description == o.description &&
+          id == o.id &&
           last_modified_time == o.last_modified_time &&
           last_sync_time == o.last_sync_time &&
           name == o.name &&
-          storage_backings == o.storage_backings &&
-          type == o.type &&
           optimization_info == o.optimization_info &&
-          version == o.version &&
           publish_info == o.publish_info &&
+          server_guid == o.server_guid &&
+          storage_backings == o.storage_backings &&
           subscription_info == o.subscription_info &&
-          server_guid == o.server_guid
+          type == o.type &&
+          version == o.version
     end
 
     # @see the `==` method
@@ -189,7 +189,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, creation_time, description, last_modified_time, last_sync_time, name, storage_backings, type, optimization_info, version, publish_info, subscription_info, server_guid].hash
+      [creation_time, description, id, last_modified_time, last_sync_time, name, optimization_info, publish_info, server_guid, storage_backings, subscription_info, type, version].hash
     end
 
     # Builds the object from hash

@@ -11,6 +11,18 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelServiceInfo
+    # Metamodel information of all the constant elements contained in the service element. The key in the {@term map} is the name of the constant element and the value in the {@term map} is the metamodel information for the contant element.
+    attr_accessor :constants
+
+    # English language documentation for the service element. It can contain HTML markup and Javadoc tags. The first sentence of the service documentation is a complete sentence that identifies the service by name and summarizes the purpose of the service. The remaining part of the documentation provides a summary of how to use the operations defined in the service.
+    attr_accessor :documentation
+
+    # Metamodel information of all the enumeration elements contained in the service element. The key in the {@term map} is the identifier of the enumeration element and the value in the {@term map} is the metamodel information for the enumeration element.
+    attr_accessor :enumerations
+
+    # Generic metadata elements for the service element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
+    attr_accessor :metadata
+
     # Dot separated name of the service element. The segments in the name reflect the organization of the APIs. The format of each segment is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
     attr_accessor :name
 
@@ -20,41 +32,29 @@ module VSphereAutomation
     # Metamodel information of all the structure elements contained in the service element. The key in the {@term map} is the identifier of the structure element and the value in the {@term map} is the metamodel information for the structure element.
     attr_accessor :structures
 
-    # Metamodel information of all the enumeration elements contained in the service element. The key in the {@term map} is the identifier of the enumeration element and the value in the {@term map} is the metamodel information for the enumeration element.
-    attr_accessor :enumerations
-
-    # Metamodel information of all the constant elements contained in the service element. The key in the {@term map} is the name of the constant element and the value in the {@term map} is the metamodel information for the contant element.
-    attr_accessor :constants
-
-    # Generic metadata elements for the service element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
-    attr_accessor :metadata
-
-    # English language documentation for the service element. It can contain HTML markup and Javadoc tags. The first sentence of the service documentation is a complete sentence that identifies the service by name and summarizes the purpose of the service. The remaining part of the documentation provides a summary of how to use the operations defined in the service.
-    attr_accessor :documentation
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'constants' => :'constants',
+        :'documentation' => :'documentation',
+        :'enumerations' => :'enumerations',
+        :'metadata' => :'metadata',
         :'name' => :'name',
         :'operations' => :'operations',
-        :'structures' => :'structures',
-        :'enumerations' => :'enumerations',
-        :'constants' => :'constants',
-        :'metadata' => :'metadata',
-        :'documentation' => :'documentation'
+        :'structures' => :'structures'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'constants' => :'Array<VapiMetadataMetamodelServiceInfoConstants>',
+        :'documentation' => :'String',
+        :'enumerations' => :'Array<VapiMetadataMetamodelPackageInfoEnumerations>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'name' => :'String',
         :'operations' => :'Array<VapiMetadataMetamodelServiceInfoOperations>',
-        :'structures' => :'Array<VapiMetadataMetamodelPackageInfoStructures>',
-        :'enumerations' => :'Array<VapiMetadataMetamodelPackageInfoEnumerations>',
-        :'constants' => :'Array<VapiMetadataMetamodelServiceInfoConstants>',
-        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
-        :'documentation' => :'String'
+        :'structures' => :'Array<VapiMetadataMetamodelPackageInfoStructures>'
       }
     end
 
@@ -65,6 +65,28 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'constants')
+        if (value = attributes[:'constants']).is_a?(Array)
+          self.constants = value
+        end
+      end
+
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
+      end
+
+      if attributes.has_key?(:'enumerations')
+        if (value = attributes[:'enumerations']).is_a?(Array)
+          self.enumerations = value
+        end
+      end
+
+      if attributes.has_key?(:'metadata')
+        if (value = attributes[:'metadata']).is_a?(Array)
+          self.metadata = value
+        end
+      end
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
@@ -81,34 +103,28 @@ module VSphereAutomation
           self.structures = value
         end
       end
-
-      if attributes.has_key?(:'enumerations')
-        if (value = attributes[:'enumerations']).is_a?(Array)
-          self.enumerations = value
-        end
-      end
-
-      if attributes.has_key?(:'constants')
-        if (value = attributes[:'constants']).is_a?(Array)
-          self.constants = value
-        end
-      end
-
-      if attributes.has_key?(:'metadata')
-        if (value = attributes[:'metadata']).is_a?(Array)
-          self.metadata = value
-        end
-      end
-
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @constants.nil?
+        invalid_properties.push('invalid value for "constants", constants cannot be nil.')
+      end
+
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      end
+
+      if @enumerations.nil?
+        invalid_properties.push('invalid value for "enumerations", enumerations cannot be nil.')
+      end
+
+      if @metadata.nil?
+        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
+      end
+
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
@@ -121,35 +137,19 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "structures", structures cannot be nil.')
       end
 
-      if @enumerations.nil?
-        invalid_properties.push('invalid value for "enumerations", enumerations cannot be nil.')
-      end
-
-      if @constants.nil?
-        invalid_properties.push('invalid value for "constants", constants cannot be nil.')
-      end
-
-      if @metadata.nil?
-        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
-      end
-
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @constants.nil?
+      return false if @documentation.nil?
+      return false if @enumerations.nil?
+      return false if @metadata.nil?
       return false if @name.nil?
       return false if @operations.nil?
       return false if @structures.nil?
-      return false if @enumerations.nil?
-      return false if @constants.nil?
-      return false if @metadata.nil?
-      return false if @documentation.nil?
       true
     end
 
@@ -158,13 +158,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          constants == o.constants &&
+          documentation == o.documentation &&
+          enumerations == o.enumerations &&
+          metadata == o.metadata &&
           name == o.name &&
           operations == o.operations &&
-          structures == o.structures &&
-          enumerations == o.enumerations &&
-          constants == o.constants &&
-          metadata == o.metadata &&
-          documentation == o.documentation
+          structures == o.structures
     end
 
     # @see the `==` method
@@ -176,7 +176,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, operations, structures, enumerations, constants, metadata, documentation].hash
+      [constants, documentation, enumerations, metadata, name, operations, structures].hash
     end
 
     # Builds the object from hash

@@ -11,20 +11,16 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentInfo
-    attr_accessor :state
-
-    attr_accessor :progress
-
-    # The ordered list of subtasks for this deployment operation.
-    attr_accessor :subtask_order
-
-    # The map of the deployment subtasks and their status infomation.
-    attr_accessor :subtasks
+    # Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses.
+    attr_accessor :cancelable
 
     attr_accessor :description
 
-    # Identifier of the service containing the operation.
-    attr_accessor :service
+    # Time when the operation is completed.
+    attr_accessor :end_time
+
+    # Description of the error if the operation status is \"FAILED\".
+    attr_accessor :error
 
     # Identifier of the operation associated with the task.
     attr_accessor :operation
@@ -32,21 +28,25 @@ module VSphereAutomation
     # Parent of the current task.
     attr_accessor :parent
 
-    attr_accessor :target
+    attr_accessor :progress
 
-    attr_accessor :status
-
-    # Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses.
-    attr_accessor :cancelable
-
-    # Description of the error if the operation status is \"FAILED\".
-    attr_accessor :error
+    # Identifier of the service containing the operation.
+    attr_accessor :service
 
     # Time when the operation is started.
     attr_accessor :start_time
 
-    # Time when the operation is completed.
-    attr_accessor :end_time
+    attr_accessor :state
+
+    attr_accessor :status
+
+    # The ordered list of subtasks for this deployment operation.
+    attr_accessor :subtask_order
+
+    # The map of the deployment subtasks and their status infomation.
+    attr_accessor :subtasks
+
+    attr_accessor :target
 
     # Name of the user who performed the operation.
     attr_accessor :user
@@ -54,20 +54,20 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'state' => :'state',
-        :'progress' => :'progress',
-        :'subtask_order' => :'subtask_order',
-        :'subtasks' => :'subtasks',
+        :'cancelable' => :'cancelable',
         :'description' => :'description',
-        :'service' => :'service',
+        :'end_time' => :'end_time',
+        :'error' => :'error',
         :'operation' => :'operation',
         :'parent' => :'parent',
-        :'target' => :'target',
-        :'status' => :'status',
-        :'cancelable' => :'cancelable',
-        :'error' => :'error',
+        :'progress' => :'progress',
+        :'service' => :'service',
         :'start_time' => :'start_time',
-        :'end_time' => :'end_time',
+        :'state' => :'state',
+        :'status' => :'status',
+        :'subtask_order' => :'subtask_order',
+        :'subtasks' => :'subtasks',
+        :'target' => :'target',
         :'user' => :'user'
       }
     end
@@ -75,20 +75,20 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'state' => :'VcenterDeploymentApplianceState',
-        :'progress' => :'CisTaskProgress',
-        :'subtask_order' => :'Array<String>',
-        :'subtasks' => :'Array<VcenterDeploymentInfoSubtasks>',
+        :'cancelable' => :'Boolean',
         :'description' => :'VapiStdLocalizableMessage',
-        :'service' => :'String',
+        :'end_time' => :'DateTime',
+        :'error' => :'String',
         :'operation' => :'String',
         :'parent' => :'String',
-        :'target' => :'VapiStdDynamicID',
-        :'status' => :'CisTaskStatus',
-        :'cancelable' => :'Boolean',
-        :'error' => :'String',
+        :'progress' => :'CisTaskProgress',
+        :'service' => :'String',
         :'start_time' => :'DateTime',
-        :'end_time' => :'DateTime',
+        :'state' => :'VcenterDeploymentApplianceState',
+        :'status' => :'CisTaskStatus',
+        :'subtask_order' => :'Array<String>',
+        :'subtasks' => :'Array<VcenterDeploymentInfoSubtasks>',
+        :'target' => :'VapiStdDynamicID',
         :'user' => :'String'
       }
     end
@@ -101,12 +101,48 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.has_key?(:'cancelable')
+        self.cancelable = attributes[:'cancelable']
+      end
+
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'end_time')
+        self.end_time = attributes[:'end_time']
+      end
+
+      if attributes.has_key?(:'error')
+        self.error = attributes[:'error']
+      end
+
+      if attributes.has_key?(:'operation')
+        self.operation = attributes[:'operation']
+      end
+
+      if attributes.has_key?(:'parent')
+        self.parent = attributes[:'parent']
       end
 
       if attributes.has_key?(:'progress')
         self.progress = attributes[:'progress']
+      end
+
+      if attributes.has_key?(:'service')
+        self.service = attributes[:'service']
+      end
+
+      if attributes.has_key?(:'start_time')
+        self.start_time = attributes[:'start_time']
+      end
+
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
 
       if attributes.has_key?(:'subtask_order')
@@ -121,44 +157,8 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'service')
-        self.service = attributes[:'service']
-      end
-
-      if attributes.has_key?(:'operation')
-        self.operation = attributes[:'operation']
-      end
-
-      if attributes.has_key?(:'parent')
-        self.parent = attributes[:'parent']
-      end
-
       if attributes.has_key?(:'target')
         self.target = attributes[:'target']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'cancelable')
-        self.cancelable = attributes[:'cancelable']
-      end
-
-      if attributes.has_key?(:'error')
-        self.error = attributes[:'error']
-      end
-
-      if attributes.has_key?(:'start_time')
-        self.start_time = attributes[:'start_time']
-      end
-
-      if attributes.has_key?(:'end_time')
-        self.end_time = attributes[:'end_time']
       end
 
       if attributes.has_key?(:'user')
@@ -170,28 +170,28 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      if @cancelable.nil?
+        invalid_properties.push('invalid value for "cancelable", cancelable cannot be nil.')
       end
 
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
-      if @service.nil?
-        invalid_properties.push('invalid value for "service", service cannot be nil.')
-      end
-
       if @operation.nil?
         invalid_properties.push('invalid value for "operation", operation cannot be nil.')
       end
 
-      if @status.nil?
-        invalid_properties.push('invalid value for "status", status cannot be nil.')
+      if @service.nil?
+        invalid_properties.push('invalid value for "service", service cannot be nil.')
       end
 
-      if @cancelable.nil?
-        invalid_properties.push('invalid value for "cancelable", cancelable cannot be nil.')
+      if @state.nil?
+        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      end
+
+      if @status.nil?
+        invalid_properties.push('invalid value for "status", status cannot be nil.')
       end
 
       invalid_properties
@@ -200,12 +200,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @state.nil?
-      return false if @description.nil?
-      return false if @service.nil?
-      return false if @operation.nil?
-      return false if @status.nil?
       return false if @cancelable.nil?
+      return false if @description.nil?
+      return false if @operation.nil?
+      return false if @service.nil?
+      return false if @state.nil?
+      return false if @status.nil?
       true
     end
 
@@ -214,20 +214,20 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          state == o.state &&
-          progress == o.progress &&
-          subtask_order == o.subtask_order &&
-          subtasks == o.subtasks &&
+          cancelable == o.cancelable &&
           description == o.description &&
-          service == o.service &&
+          end_time == o.end_time &&
+          error == o.error &&
           operation == o.operation &&
           parent == o.parent &&
-          target == o.target &&
-          status == o.status &&
-          cancelable == o.cancelable &&
-          error == o.error &&
+          progress == o.progress &&
+          service == o.service &&
           start_time == o.start_time &&
-          end_time == o.end_time &&
+          state == o.state &&
+          status == o.status &&
+          subtask_order == o.subtask_order &&
+          subtasks == o.subtasks &&
+          target == o.target &&
           user == o.user
     end
 
@@ -240,7 +240,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [state, progress, subtask_order, subtasks, description, service, operation, parent, target, status, cancelable, error, start_time, end_time, user].hash
+      [cancelable, description, end_time, error, operation, parent, progress, service, start_time, state, status, subtask_order, subtasks, target, user].hash
     end
 
     # Builds the object from hash

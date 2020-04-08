@@ -16,20 +16,20 @@ module VSphereAutomation
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Generates a CSR with the given Spec.
+    # Generates a CSR with the given Spec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterCertificateManagementVcenterTlsCsrCreateResult|VapiStdErrorsErrorError|]
+    # @return [VcenterCertificateManagementVcenterTlsCsrCreateResp|VapiStdErrorsErrorError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
     end
 
-    # Generates a CSR with the given Spec.
+    # Generates a CSR with the given Spec. if you do not have all of the privileges described as follows:     -  Operation execution requires CertificateManagement.Manage and CertificateManagement.Administer.  
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterCertificateManagementVcenterTlsCsrCreateResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterCertificateManagementVcenterTlsCsrCreateResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CertificateManagementVcenterTlsCsrApi.create ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling CertificateManagementVcenterTlsCsrApi.create"
       end
       # resource path
-      local_var_path = '/vcenter/certificate-management/vcenter/tls-csr'
+      local_var_path = '/rest/vcenter/certificate-management/vcenter/tls-csr'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterCertificateManagementVcenterTlsCsrCreateResult',
+	  '200' => 'VCenter::VcenterCertificateManagementVcenterTlsCsrCreateResp',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
