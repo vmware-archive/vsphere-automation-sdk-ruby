@@ -9,14 +9,14 @@ The vSphere Automation SDK for Ruby can be installed from [RubyGems](https://rub
 To use the entire SDK from a single gem, use:
 
 ```ruby
-gem 'vsphere-automation-sdk', '~> 0.5.0'
+gem 'vsphere-automation-sdk', '~> 0.4.6'
 ```
 
 The components are modular so you can choose to only install the components you need, for example:
 
 ```ruby
-gem 'vsphere-automation-cis', '~> 0.5.0'
-gem 'vsphere-automation-vcenter', '~> 0.5.0'
+gem 'vsphere-automation-cis', '~> 0.4.6'
+gem 'vsphere-automation-vcenter', '~> 0.4.6'
 ```
 
 ## Migration
