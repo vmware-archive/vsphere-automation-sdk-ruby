@@ -1,5 +1,6 @@
 {{> api_info}}
 
+require 'cgi'
 require 'uri'
 
 module VSphereAutomation
@@ -165,7 +166,11 @@ module VSphereAutomation
 
     def base_url
       url = "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      URI.encode(url)
+      if RUBY_VERSION.to_f < 2.7
+        URI.encode(url)
+      else
+        CGI.escapeHTML(url)
+      end
     end
 
     # Gets API key (with prefix if set).
