@@ -19,7 +19,7 @@ module VSphereAutomation
     # Get information about a particular network interface.
     # @param interface_name Network interface, for example, \&quot;nic0\&quot;.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingInterfacesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceNetworkingInterfacesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def get(interface_name, opts = {})
       data, _status_code, _headers = get_with_http_info(interface_name, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param interface_name Network interface, for example, \&quot;nic0\&quot;.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingInterfacesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingInterfacesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(interface_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'interface_name' when calling NetworkingInterfacesApi.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/interfaces/{interface_name}'.sub('{' + 'interface_name' + '}', interface_name.to_s)
+      local_var_path = '/appliance/networking/interfaces/{interface_name}'.sub('{' + 'interface_name' + '}', interface_name.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingInterfacesResp',
+	  '200' => 'Appliance::ApplianceNetworkingInterfacesResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})
@@ -73,7 +73,7 @@ module VSphereAutomation
     end
     # Get list of available network interfaces, including those that are not yet configured.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingInterfacesListResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingInterfacesListResult|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -82,13 +82,13 @@ module VSphereAutomation
     # Get list of available network interfaces, including those that are not yet configured.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingInterfacesListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingInterfacesListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/interfaces'
+      local_var_path = '/appliance/networking/interfaces'
 
       # query parameters
       query_params = {}
@@ -111,7 +111,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingInterfacesListResp',
+	  '200' => 'Appliance::ApplianceNetworkingInterfacesListResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

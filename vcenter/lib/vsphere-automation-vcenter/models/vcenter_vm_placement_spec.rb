@@ -11,40 +11,40 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVMPlacementSpec
-    # Cluster into which the virtual machine should be placed.   If VM.ComputePlacementSpec.cluster and VM.ComputePlacementSpec.resource-pool are both specified, VM.ComputePlacementSpec.resource-pool must belong to VM.ComputePlacementSpec.cluster.    If VM.ComputePlacementSpec.cluster and VM.ComputePlacementSpec.host are both specified, VM.ComputePlacementSpec.host must be a member of VM.ComputePlacementSpec.cluster.  If VM.ComputePlacementSpec.resource-pool or VM.ComputePlacementSpec.host is specified, it is recommended that this field be unset. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ClusterComputeResource.
+    # Virtual machine folder into which the virtual machine should be placed. This field is currently required. In the future, if this field is unset, the system will attempt to choose a suitable folder for the virtual machine; if a folder cannot be chosen, the virtual machine creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder.
+    attr_accessor :folder
+
+    # Resource pool into which the virtual machine should be placed. This field is currently required if both VM.PlacementSpec.host and VM.PlacementSpec.cluster are unset. In the future, if this field is unset, the system will attempt to choose a suitable resource pool for the virtual machine; if a resource pool cannot be chosen, the virtual machine creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ResourcePool.
+    attr_accessor :resource_pool
+
+    # Host onto which the virtual machine should be placed.   If VM.PlacementSpec.host and VM.PlacementSpec.resource-pool are both specified, VM.PlacementSpec.resource-pool must belong to VM.PlacementSpec.host.    If VM.PlacementSpec.host and VM.PlacementSpec.cluster are both specified, VM.PlacementSpec.host must be a member of VM.PlacementSpec.cluster.  This field may be unset if VM.PlacementSpec.resource-pool or VM.PlacementSpec.cluster is specified. If unset, the system will attempt to choose a suitable host for the virtual machine; if a host cannot be chosen, the virtual machine creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem.
+    attr_accessor :host
+
+    # Cluster into which the virtual machine should be placed.   If VM.PlacementSpec.cluster and VM.PlacementSpec.resource-pool are both specified, VM.PlacementSpec.resource-pool must belong to VM.PlacementSpec.cluster.    If VM.PlacementSpec.cluster and VM.PlacementSpec.host are both specified, VM.PlacementSpec.host must be a member of VM.PlacementSpec.cluster.  If VM.PlacementSpec.resource-pool or VM.PlacementSpec.host is specified, it is recommended that this field be unset. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ClusterComputeResource.
     attr_accessor :cluster
 
     # Datastore on which the virtual machine's configuration state should be stored. This datastore will also be used for any virtual disks that are created as part of the virtual machine creation operation. This field is currently required. In the future, if this field is unset, the system will attempt to choose suitable storage for the virtual machine; if storage cannot be chosen, the virtual machine creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Datastore. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Datastore.
     attr_accessor :datastore
 
-    # Virtual machine folder into which the virtual machine should be placed. This field is currently required. In the future, if this field is unset, the system will attempt to choose a suitable folder for the virtual machine; if a folder cannot be chosen, the virtual machine creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder.
-    attr_accessor :folder
-
-    # Host onto which the virtual machine should be placed.   If VM.ComputePlacementSpec.host and VM.ComputePlacementSpec.resource-pool are both specified, VM.ComputePlacementSpec.resource-pool must belong to VM.ComputePlacementSpec.host.    If VM.ComputePlacementSpec.host and VM.ComputePlacementSpec.cluster are both specified, VM.ComputePlacementSpec.host must be a member of VM.ComputePlacementSpec.cluster.  This field may be unset if VM.ComputePlacementSpec.resource-pool or VM.ComputePlacementSpec.cluster is specified. If unset, the system will attempt to choose a suitable host for the virtual machine; if a host cannot be chosen, the virtual machine creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem.
-    attr_accessor :host
-
-    # Resource pool into which the virtual machine should be placed. This field is currently required if both VM.ComputePlacementSpec.host and VM.ComputePlacementSpec.cluster are unset. In the future, if this field is unset, the system will attempt to choose a suitable resource pool for the virtual machine; if a resource pool cannot be chosen, the virtual machine creation operation will fail. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ResourcePool.
-    attr_accessor :resource_pool
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cluster' => :'cluster',
-        :'datastore' => :'datastore',
         :'folder' => :'folder',
+        :'resource_pool' => :'resource_pool',
         :'host' => :'host',
-        :'resource_pool' => :'resource_pool'
+        :'cluster' => :'cluster',
+        :'datastore' => :'datastore'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cluster' => :'String',
-        :'datastore' => :'String',
         :'folder' => :'String',
+        :'resource_pool' => :'String',
         :'host' => :'String',
-        :'resource_pool' => :'String'
+        :'cluster' => :'String',
+        :'datastore' => :'String'
       }
     end
 
@@ -56,24 +56,24 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cluster')
-        self.cluster = attributes[:'cluster']
-      end
-
-      if attributes.has_key?(:'datastore')
-        self.datastore = attributes[:'datastore']
-      end
-
       if attributes.has_key?(:'folder')
         self.folder = attributes[:'folder']
+      end
+
+      if attributes.has_key?(:'resource_pool')
+        self.resource_pool = attributes[:'resource_pool']
       end
 
       if attributes.has_key?(:'host')
         self.host = attributes[:'host']
       end
 
-      if attributes.has_key?(:'resource_pool')
-        self.resource_pool = attributes[:'resource_pool']
+      if attributes.has_key?(:'cluster')
+        self.cluster = attributes[:'cluster']
+      end
+
+      if attributes.has_key?(:'datastore')
+        self.datastore = attributes[:'datastore']
       end
     end
 
@@ -95,11 +95,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cluster == o.cluster &&
-          datastore == o.datastore &&
           folder == o.folder &&
+          resource_pool == o.resource_pool &&
           host == o.host &&
-          resource_pool == o.resource_pool
+          cluster == o.cluster &&
+          datastore == o.datastore
     end
 
     # @see the `==` method
@@ -111,7 +111,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cluster, datastore, folder, host, resource_pool].hash
+      [folder, resource_pool, host, cluster, datastore].hash
     end
 
     # Builds the object from hash

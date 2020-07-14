@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::LocalAccountsPolicyApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](LocalAccountsPolicyApi.md#get) | **GET** /rest/appliance/local-accounts/global-policy | Get the global password policy.
-[**set**](LocalAccountsPolicyApi.md#set) | **PUT** /rest/appliance/local-accounts/global-policy | Set the global password policy.
+[**get**](LocalAccountsPolicyApi.md#get) | **GET** /appliance/local-accounts/global-policy | Get the global password policy.
+[**set**](LocalAccountsPolicyApi.md#set) | **PUT** /appliance/local-accounts/global-policy | Set the global password policy.
 
 
 # **get**
-> ApplianceLocalAccountsPolicyResp get
+> ApplianceLocalAccountsPolicyResult get
 
 Get the global password policy.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceLocalAccountsPolicyResp**](ApplianceLocalAccountsPolicyResp.md)
+[**ApplianceLocalAccountsPolicyResult**](ApplianceLocalAccountsPolicyResult.md)
 
 ### Authorization
 

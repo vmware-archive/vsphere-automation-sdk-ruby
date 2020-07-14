@@ -1,14 +1,14 @@
 # VSphereAutomation::VAPI::MetadataMetamodelResourceModelApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](MetadataMetamodelResourceModelApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/metamodel/resource/model | Returns the set of identifiers for the structure elements that are models for the resource type corresponding to {@param.name resourceId}. &lt;p&gt; The {@link vapi.metadata.metamodel.Structure} {@term service} provides {@term operations} to retrieve more details about the structure elements corresponding to the identifiers returned by this {@term operation}.
+[**list**](MetadataMetamodelResourceModelApi.md#list) | **GET** /com/vmware/vapi/metadata/metamodel/resource/model | Returns the set of identifiers for the structure elements that are models for the resource type corresponding to {@param.name resourceId}. &lt;p&gt; The {@link vapi.metadata.metamodel.Structure} {@term service} provides {@term operations} to retrieve more details about the structure elements corresponding to the identifiers returned by this {@term operation}.
 
 
 # **list**
-> VapiMetadataMetamodelResourceModelListResp list(resource_id)
+> VapiMetadataMetamodelResourceModelListResult list(resource_id)
 
 Returns the set of identifiers for the structure elements that are models for the resource type corresponding to {@param.name resourceId}. <p> The {@link vapi.metadata.metamodel.Structure} {@term service} provides {@term operations} to retrieve more details about the structure elements corresponding to the identifiers returned by this {@term operation}.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelResourceModelListResp**](VapiMetadataMetamodelResourceModelListResp.md)
+[**VapiMetadataMetamodelResourceModelListResult**](VapiMetadataMetamodelResourceModelListResult.md)
 
 ### Authorization
 

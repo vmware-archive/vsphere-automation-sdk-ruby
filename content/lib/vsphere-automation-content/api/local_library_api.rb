@@ -19,7 +19,7 @@ module VSphereAutomation
     # Creates a new local library.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentLocalLibraryCreateResp|VapiStdErrorsUnsupportedError|]
+    # @return [ContentLocalLibraryCreateResult|VapiStdErrorsUnsupportedError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLocalLibraryCreateResp|VapiStdErrorsUnsupportedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLocalLibraryCreateResult|VapiStdErrorsUnsupportedError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.create ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalLibraryApi.create"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/local-library'
+      local_var_path = '/com/vmware/content/local-library'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLocalLibraryCreateResp',
+	  '200' => 'Content::ContentLocalLibraryCreateResult',
 	  '400' => 'Content::VapiStdErrorsUnsupportedError',
 	})
       if @api_client.config.debugging
@@ -75,7 +75,7 @@ module VSphereAutomation
     # Deletes the specified local library. <p> Deleting a local library will remove the entry immediately and begin an asynchronous task to remove all cached content for the library. If the asynchronous task fails, file content may remain on the storage backing. This content will require manual removal.
     # @param library_id Identifier of the local library to delete.
     # @param [Hash] opts the optional parameters
-    # @return [|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil]
+    # @return [|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|nil]
     def delete(library_id, opts = {})
       delete_with_http_info(library_id, opts)
       nil
@@ -85,7 +85,7 @@ module VSphereAutomation
     # @api private
     # @param library_id Identifier of the local library to delete.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.delete ...'
@@ -95,7 +95,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_id' when calling LocalLibraryApi.delete"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/local-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/com/vmware/content/local-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
@@ -125,7 +125,7 @@ module VSphereAutomation
     # Returns a given local library.
     # @param library_id Identifier of the local library to return.
     # @param [Hash] opts the optional parameters
-    # @return [ContentLocalLibraryResp|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|]
+    # @return [ContentLocalLibraryResult|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|]
     def get(library_id, opts = {})
       data, _status_code, _headers = get_with_http_info(library_id, opts)
       data
@@ -135,7 +135,7 @@ module VSphereAutomation
     # @api private
     # @param library_id Identifier of the local library to return.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLocalLibraryResp|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLocalLibraryResult|VapiStdErrorsInvalidElementTypeError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(library_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.get ...'
@@ -145,7 +145,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_id' when calling LocalLibraryApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/local-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/com/vmware/content/local-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
@@ -168,7 +168,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLocalLibraryResp',
+	  '200' => 'Content::ContentLocalLibraryResult',
 	  '400' => 'Content::VapiStdErrorsInvalidElementTypeError',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
@@ -179,7 +179,7 @@ module VSphereAutomation
     end
     # Returns the identifiers of all local libraries in the Content Library.
     # @param [Hash] opts the optional parameters
-    # @return [ContentLocalLibraryListResp|]
+    # @return [ContentLocalLibraryListResult|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -188,13 +188,13 @@ module VSphereAutomation
     # Returns the identifiers of all local libraries in the Content Library.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLocalLibraryListResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLocalLibraryListResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalLibraryApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/local-library'
+      local_var_path = '/com/vmware/content/local-library'
 
       # query parameters
       query_params = {}
@@ -217,7 +217,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLocalLibraryListResp',
+	  '200' => 'Content::ContentLocalLibraryListResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocalLibraryApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -249,7 +249,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_id' when calling LocalLibraryApi.publish"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/local-library/id:{library_id}?~action=publish'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/com/vmware/content/local-library/id:{library_id}?~action=publish'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}
@@ -307,7 +307,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalLibraryApi.update"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/local-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
+      local_var_path = '/com/vmware/content/local-library/id:{library_id}'.sub('{' + 'library_id' + '}', library_id.to_s)
 
       # query parameters
       query_params = {}

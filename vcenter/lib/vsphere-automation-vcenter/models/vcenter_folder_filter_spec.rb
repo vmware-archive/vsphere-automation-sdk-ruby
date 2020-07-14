@@ -11,39 +11,39 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterFolderFilterSpec
-    # Datacenters that must contain the folder for the folder to match the filter. If unset or empty, folder in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    attr_accessor :datacenters
-
     # Identifiers of folders that can match the filter. If unset or empty, folders with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     attr_accessor :folders
 
     # Names that folders must have to match the filter (see Folder.Summary.name). If unset or empty, folders with any name match the filter.
     attr_accessor :names
 
+    attr_accessor :type
+
     # Folders that must contain the folder for the folder to match the filter. If unset or empty, folder in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     attr_accessor :parent_folders
 
-    attr_accessor :type
+    # Datacenters that must contain the folder for the folder to match the filter. If unset or empty, folder in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
+    attr_accessor :datacenters
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'datacenters' => :'datacenters',
         :'folders' => :'folders',
         :'names' => :'names',
+        :'type' => :'type',
         :'parent_folders' => :'parent_folders',
-        :'type' => :'type'
+        :'datacenters' => :'datacenters'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'datacenters' => :'Array<String>',
         :'folders' => :'Array<String>',
         :'names' => :'Array<String>',
+        :'type' => :'VcenterFolderType',
         :'parent_folders' => :'Array<String>',
-        :'type' => :'VcenterFolderType'
+        :'datacenters' => :'Array<String>'
       }
     end
 
@@ -54,12 +54,6 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'datacenters')
-        if (value = attributes[:'datacenters']).is_a?(Array)
-          self.datacenters = value
-        end
-      end
 
       if attributes.has_key?(:'folders')
         if (value = attributes[:'folders']).is_a?(Array)
@@ -73,14 +67,20 @@ module VSphereAutomation
         end
       end
 
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
+
       if attributes.has_key?(:'parent_folders')
         if (value = attributes[:'parent_folders']).is_a?(Array)
           self.parent_folders = value
         end
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'datacenters')
+        if (value = attributes[:'datacenters']).is_a?(Array)
+          self.datacenters = value
+        end
       end
     end
 
@@ -102,11 +102,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          datacenters == o.datacenters &&
           folders == o.folders &&
           names == o.names &&
+          type == o.type &&
           parent_folders == o.parent_folders &&
-          type == o.type
+          datacenters == o.datacenters
     end
 
     # @see the `==` method
@@ -118,7 +118,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [datacenters, folders, names, parent_folders, type].hash
+      [folders, names, type, parent_folders, datacenters].hash
     end
 
     # Builds the object from hash

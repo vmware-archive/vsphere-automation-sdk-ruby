@@ -17,39 +17,39 @@ module VSphereAutomation
     # The HTTPS port of the source appliance.
     attr_accessor :https_port
 
-    # The password of the root user on the source appliance.
-    attr_accessor :root_password
-
-    # MD5 thumbprint of the server SSH key will be used for verification.
-    attr_accessor :ssh_thumbprint
-
-    # Appliance SSH verification should be enabled or disabled. By default it is disabled and will not use any verification. If thumbprint is provided, thumbprint verification will be performed.
-    attr_accessor :ssh_verify
-
     # SHA1 thumbprint of the server SSL certificate will be used for verification.
     attr_accessor :ssl_thumbprint
 
     # SSL verification should be enabled or disabled for the source appliance validations. By default it is enabled and will use SSL certificate for verification. If thumbprint is provided, will use thumbprint for the verification.
     attr_accessor :ssl_verify
 
+    # The SSO administrator account on the source appliance.
+    attr_accessor :sso_admin_username
+
     # The SSO administrator account password.
     attr_accessor :sso_admin_password
 
-    # The SSO administrator account on the source appliance.
-    attr_accessor :sso_admin_username
+    # The password of the root user on the source appliance.
+    attr_accessor :root_password
+
+    # Appliance SSH verification should be enabled or disabled. By default it is disabled and will not use any verification. If thumbprint is provided, thumbprint verification will be performed.
+    attr_accessor :ssh_verify
+
+    # MD5 thumbprint of the server SSH key will be used for verification.
+    attr_accessor :ssh_thumbprint
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'hostname' => :'hostname',
         :'https_port' => :'https_port',
-        :'root_password' => :'root_password',
-        :'ssh_thumbprint' => :'ssh_thumbprint',
-        :'ssh_verify' => :'ssh_verify',
         :'ssl_thumbprint' => :'ssl_thumbprint',
         :'ssl_verify' => :'ssl_verify',
+        :'sso_admin_username' => :'sso_admin_username',
         :'sso_admin_password' => :'sso_admin_password',
-        :'sso_admin_username' => :'sso_admin_username'
+        :'root_password' => :'root_password',
+        :'ssh_verify' => :'ssh_verify',
+        :'ssh_thumbprint' => :'ssh_thumbprint'
       }
     end
 
@@ -58,13 +58,13 @@ module VSphereAutomation
       {
         :'hostname' => :'String',
         :'https_port' => :'Integer',
-        :'root_password' => :'String',
-        :'ssh_thumbprint' => :'String',
-        :'ssh_verify' => :'Boolean',
         :'ssl_thumbprint' => :'String',
         :'ssl_verify' => :'Boolean',
+        :'sso_admin_username' => :'String',
         :'sso_admin_password' => :'String',
-        :'sso_admin_username' => :'String'
+        :'root_password' => :'String',
+        :'ssh_verify' => :'Boolean',
+        :'ssh_thumbprint' => :'String'
       }
     end
 
@@ -84,18 +84,6 @@ module VSphereAutomation
         self.https_port = attributes[:'https_port']
       end
 
-      if attributes.has_key?(:'root_password')
-        self.root_password = attributes[:'root_password']
-      end
-
-      if attributes.has_key?(:'ssh_thumbprint')
-        self.ssh_thumbprint = attributes[:'ssh_thumbprint']
-      end
-
-      if attributes.has_key?(:'ssh_verify')
-        self.ssh_verify = attributes[:'ssh_verify']
-      end
-
       if attributes.has_key?(:'ssl_thumbprint')
         self.ssl_thumbprint = attributes[:'ssl_thumbprint']
       end
@@ -104,12 +92,24 @@ module VSphereAutomation
         self.ssl_verify = attributes[:'ssl_verify']
       end
 
+      if attributes.has_key?(:'sso_admin_username')
+        self.sso_admin_username = attributes[:'sso_admin_username']
+      end
+
       if attributes.has_key?(:'sso_admin_password')
         self.sso_admin_password = attributes[:'sso_admin_password']
       end
 
-      if attributes.has_key?(:'sso_admin_username')
-        self.sso_admin_username = attributes[:'sso_admin_username']
+      if attributes.has_key?(:'root_password')
+        self.root_password = attributes[:'root_password']
+      end
+
+      if attributes.has_key?(:'ssh_verify')
+        self.ssh_verify = attributes[:'ssh_verify']
+      end
+
+      if attributes.has_key?(:'ssh_thumbprint')
+        self.ssh_thumbprint = attributes[:'ssh_thumbprint']
       end
     end
 
@@ -121,16 +121,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "hostname", hostname cannot be nil.')
       end
 
-      if @root_password.nil?
-        invalid_properties.push('invalid value for "root_password", root_password cannot be nil.')
+      if @sso_admin_username.nil?
+        invalid_properties.push('invalid value for "sso_admin_username", sso_admin_username cannot be nil.')
       end
 
       if @sso_admin_password.nil?
         invalid_properties.push('invalid value for "sso_admin_password", sso_admin_password cannot be nil.')
       end
 
-      if @sso_admin_username.nil?
-        invalid_properties.push('invalid value for "sso_admin_username", sso_admin_username cannot be nil.')
+      if @root_password.nil?
+        invalid_properties.push('invalid value for "root_password", root_password cannot be nil.')
       end
 
       invalid_properties
@@ -140,9 +140,9 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @hostname.nil?
-      return false if @root_password.nil?
-      return false if @sso_admin_password.nil?
       return false if @sso_admin_username.nil?
+      return false if @sso_admin_password.nil?
+      return false if @root_password.nil?
       true
     end
 
@@ -153,13 +153,13 @@ module VSphereAutomation
       self.class == o.class &&
           hostname == o.hostname &&
           https_port == o.https_port &&
-          root_password == o.root_password &&
-          ssh_thumbprint == o.ssh_thumbprint &&
-          ssh_verify == o.ssh_verify &&
           ssl_thumbprint == o.ssl_thumbprint &&
           ssl_verify == o.ssl_verify &&
+          sso_admin_username == o.sso_admin_username &&
           sso_admin_password == o.sso_admin_password &&
-          sso_admin_username == o.sso_admin_username
+          root_password == o.root_password &&
+          ssh_verify == o.ssh_verify &&
+          ssh_thumbprint == o.ssh_thumbprint
     end
 
     # @see the `==` method
@@ -171,7 +171,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [hostname, https_port, root_password, ssh_thumbprint, ssh_verify, ssl_thumbprint, ssl_verify, sso_admin_password, sso_admin_username].hash
+      [hostname, https_port, ssl_thumbprint, ssl_verify, sso_admin_username, sso_admin_password, root_password, ssh_verify, ssh_thumbprint].hash
     end
 
     # Builds the object from hash

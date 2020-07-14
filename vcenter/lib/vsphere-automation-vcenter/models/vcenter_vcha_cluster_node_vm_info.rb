@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterNodeVmInfo
-    # BIOS UUID for the node.
-    attr_accessor :bios_uuid
-
     # The identifier of the virtual machine of the VCHA node. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: VirtualMachine:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: VirtualMachine:VCenter.
     attr_accessor :vm
+
+    # BIOS UUID for the node.
+    attr_accessor :bios_uuid
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'bios_uuid' => :'bios_uuid',
-        :'vm' => :'vm'
+        :'vm' => :'vm',
+        :'bios_uuid' => :'bios_uuid'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'bios_uuid' => :'String',
-        :'vm' => :'String'
+        :'vm' => :'String',
+        :'bios_uuid' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'bios_uuid')
-        self.bios_uuid = attributes[:'bios_uuid']
-      end
-
       if attributes.has_key?(:'vm')
         self.vm = attributes[:'vm']
+      end
+
+      if attributes.has_key?(:'bios_uuid')
+        self.bios_uuid = attributes[:'bios_uuid']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @bios_uuid.nil?
-        invalid_properties.push('invalid value for "bios_uuid", bios_uuid cannot be nil.')
-      end
-
       if @vm.nil?
         invalid_properties.push('invalid value for "vm", vm cannot be nil.')
+      end
+
+      if @bios_uuid.nil?
+        invalid_properties.push('invalid value for "bios_uuid", bios_uuid cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @bios_uuid.nil?
       return false if @vm.nil?
+      return false if @bios_uuid.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          bios_uuid == o.bios_uuid &&
-          vm == o.vm
+          vm == o.vm &&
+          bios_uuid == o.bios_uuid
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bios_uuid, vm].hash
+      [vm, bios_uuid].hash
     end
 
     # Builds the object from hash

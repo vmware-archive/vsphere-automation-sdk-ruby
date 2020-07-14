@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param library_item_id Identifier of the library item whose file information should be returned.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemFileResp|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemFileResult|VapiStdErrorsNotFoundError|]
     def get(library_item_id, request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(library_item_id, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param library_item_id Identifier of the library item whose file information should be returned.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemFileResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemFileResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(library_item_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemFileApi.get ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemFileApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/file/id:{library_item_id}?~action=get'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/file/id:{library_item_id}?~action=get'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemFileResp',
+	  '200' => 'Content::ContentLibraryItemFileResult',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Lists all of the files that are stored within a given library item.
     # @param library_item_id Identifier of the library item whose files should be listed.
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemFileListResp|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemFileListResult|VapiStdErrorsNotFoundError|]
     def list(library_item_id, opts = {})
       data, _status_code, _headers = list_with_http_info(library_item_id, opts)
       data
@@ -91,7 +91,7 @@ module VSphereAutomation
     # @api private
     # @param library_item_id Identifier of the library item whose files should be listed.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemFileListResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemFileListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemFileApi.list ...'
@@ -101,7 +101,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_item_id' when calling LibraryItemFileApi.list"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/file'
+      local_var_path = '/com/vmware/content/library/item/file'
 
       # query parameters
       query_params = {}
@@ -125,7 +125,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemFileListResp',
+	  '200' => 'Content::ContentLibraryItemFileListResult',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

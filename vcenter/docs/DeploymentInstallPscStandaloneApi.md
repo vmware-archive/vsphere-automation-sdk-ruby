@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::DeploymentInstallPscStandaloneApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](DeploymentInstallPscStandaloneApi.md#check) | **POST** /rest/vcenter/deployment/install/psc/standalone?action&#x3D;check | Checks that the information to configure a non-replicated PSC satisfies the requirements.
+[**check**](DeploymentInstallPscStandaloneApi.md#check) | **POST** /vcenter/deployment/install/psc/standalone?action&#x3D;check | Checks that the information to configure a non-replicated PSC satisfies the requirements.
 
 
 # **check**
-> VcenterDeploymentInstallPscStandaloneCheckResp check(request_body)
+> VcenterDeploymentInstallPscStandaloneCheckResult check(request_body)
 
 Checks that the information to configure a non-replicated PSC satisfies the requirements.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDeploymentInstallPscStandaloneCheckResp**](VcenterDeploymentInstallPscStandaloneCheckResp.md)
+[**VcenterDeploymentInstallPscStandaloneCheckResult**](VcenterDeploymentInstallPscStandaloneCheckResult.md)
 
 ### Authorization
 

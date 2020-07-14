@@ -34,7 +34,7 @@ def generate_gem(component, output_dir)
 end
 
 def generate_gems(output_dir)
-  %i[appliance cis content esx runtime vapi vcenter vstats].map do |c|
+  %i[appliance cis content runtime vapi vcenter].map do |c|
     puts "\n\nGenerating #{c} gem\n\n"
     generate_gem(c, output_dir)
   end

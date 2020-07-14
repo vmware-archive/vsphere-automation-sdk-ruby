@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::VmHardwareCdromApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**connect**](VmHardwareCdromApi.md#connect) | **POST** /rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom}/connect | Connects a virtual CD-ROM device of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Cdrom.update operation may be used to configure the virtual CD-ROM device to start in the connected state when the virtual machine is powered on. 
-[**create**](VmHardwareCdromApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/cdrom | Adds a virtual CD-ROM device to the virtual machine.
-[**delete**](VmHardwareCdromApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom} | Removes a virtual CD-ROM device from the virtual machine.
-[**disconnect**](VmHardwareCdromApi.md#disconnect) | **POST** /rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom}/disconnect | Disconnects a virtual CD-ROM device of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the CD-ROM device is not connected to its backing resource.   For a powered-off virtual machine, the Cdrom.update operation may be used to configure the virtual CD-ROM device to start in the disconnected state when the virtual machine is powered on. 
-[**get**](VmHardwareCdromApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom} | Returns information about a virtual CD-ROM device.
-[**list**](VmHardwareCdromApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/cdrom | Returns commonly used information about the virtual CD-ROM devices belonging to the virtual machine.
-[**update**](VmHardwareCdromApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/cdrom/{cdrom} | Updates the configuration of a virtual CD-ROM device.
+[**connect**](VmHardwareCdromApi.md#connect) | **POST** /vcenter/vm/{vm}/hardware/cdrom/{cdrom}/connect | Connects a virtual CD-ROM device of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Cdrom.update operation may be used to configure the virtual CD-ROM device to start in the connected state when the virtual machine is powered on. 
+[**create**](VmHardwareCdromApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/cdrom | Adds a virtual CD-ROM device to the virtual machine.
+[**delete**](VmHardwareCdromApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/cdrom/{cdrom} | Removes a virtual CD-ROM device from the virtual machine.
+[**disconnect**](VmHardwareCdromApi.md#disconnect) | **POST** /vcenter/vm/{vm}/hardware/cdrom/{cdrom}/disconnect | Disconnects a virtual CD-ROM device of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the CD-ROM device is not connected to its backing resource.   For a powered-off virtual machine, the Cdrom.update operation may be used to configure the virtual CD-ROM device to start in the disconnected state when the virtual machine is powered on. 
+[**get**](VmHardwareCdromApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/cdrom/{cdrom} | Returns information about a virtual CD-ROM device.
+[**list**](VmHardwareCdromApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/cdrom | Returns commonly used information about the virtual CD-ROM devices belonging to the virtual machine.
+[**update**](VmHardwareCdromApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/cdrom/{cdrom} | Updates the configuration of a virtual CD-ROM device.
 
 
 # **connect**
@@ -65,7 +65,7 @@ nil (empty response body)
 
 
 # **create**
-> VcenterVmHardwareCdromCreateResp create(vm, request_body)
+> VcenterVmHardwareCdromCreateResult create(vm, request_body)
 
 Adds a virtual CD-ROM device to the virtual machine.
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareCdromCreateResp**](VcenterVmHardwareCdromCreateResp.md)
+[**VcenterVmHardwareCdromCreateResult**](VcenterVmHardwareCdromCreateResult.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareCdromResp get(vm, cdrom)
+> VcenterVmHardwareCdromResult get(vm, cdrom)
 
 Returns information about a virtual CD-ROM device.
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareCdromResp**](VcenterVmHardwareCdromResp.md)
+[**VcenterVmHardwareCdromResult**](VcenterVmHardwareCdromResult.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareCdromListResp list(vm)
+> VcenterVmHardwareCdromListResult list(vm)
 
 Returns commonly used information about the virtual CD-ROM devices belonging to the virtual machine.
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareCdromListResp**](VcenterVmHardwareCdromListResp.md)
+[**VcenterVmHardwareCdromListResult**](VcenterVmHardwareCdromListResult.md)
 
 ### Authorization
 

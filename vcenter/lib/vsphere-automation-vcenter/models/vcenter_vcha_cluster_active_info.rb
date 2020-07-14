@@ -11,17 +11,17 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterActiveInfo
-    attr_accessor :ha
-
     attr_accessor :management
+
+    attr_accessor :ha
 
     attr_accessor :placement
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'ha' => :'ha',
         :'management' => :'management',
+        :'ha' => :'ha',
         :'placement' => :'placement'
       }
     end
@@ -29,8 +29,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'ha' => :'VcenterVchaIpSpec',
         :'management' => :'VcenterVchaIpSpec',
+        :'ha' => :'VcenterVchaIpSpec',
         :'placement' => :'VcenterVchaPlacementInfo'
       }
     end
@@ -43,12 +43,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ha')
-        self.ha = attributes[:'ha']
-      end
-
       if attributes.has_key?(:'management')
         self.management = attributes[:'management']
+      end
+
+      if attributes.has_key?(:'ha')
+        self.ha = attributes[:'ha']
       end
 
       if attributes.has_key?(:'placement')
@@ -79,8 +79,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          ha == o.ha &&
           management == o.management &&
+          ha == o.ha &&
           placement == o.placement
     end
 
@@ -93,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ha, management, placement].hash
+      [management, ha, placement].hash
     end
 
     # Builds the object from hash

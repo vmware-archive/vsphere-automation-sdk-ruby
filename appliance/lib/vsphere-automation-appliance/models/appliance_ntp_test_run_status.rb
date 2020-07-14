@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceNtpTestRunStatus
-    attr_accessor :message
-
     # Server name associated with the test run.
     attr_accessor :server
 
     attr_accessor :status
 
+    attr_accessor :message
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'message' => :'message',
         :'server' => :'server',
-        :'status' => :'status'
+        :'status' => :'status',
+        :'message' => :'message'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'message' => :'ApplianceNtpLocalizableMessage',
         :'server' => :'String',
-        :'status' => :'ApplianceNtpServerStatus'
+        :'status' => :'ApplianceNtpServerStatus',
+        :'message' => :'ApplianceNtpLocalizableMessage'
       }
     end
 
@@ -44,10 +44,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'message')
-        self.message = attributes[:'message']
-      end
-
       if attributes.has_key?(:'server')
         self.server = attributes[:'server']
       end
@@ -55,16 +51,16 @@ module VSphereAutomation
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
       end
+
+      if attributes.has_key?(:'message')
+        self.message = attributes[:'message']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @message.nil?
-        invalid_properties.push('invalid value for "message", message cannot be nil.')
-      end
-
       if @server.nil?
         invalid_properties.push('invalid value for "server", server cannot be nil.')
       end
@@ -73,15 +69,19 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "status", status cannot be nil.')
       end
 
+      if @message.nil?
+        invalid_properties.push('invalid value for "message", message cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @message.nil?
       return false if @server.nil?
       return false if @status.nil?
+      return false if @message.nil?
       true
     end
 
@@ -90,9 +90,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          message == o.message &&
           server == o.server &&
-          status == o.status
+          status == o.status &&
+          message == o.message
     end
 
     # @see the `==` method
@@ -104,7 +104,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [message, server, status].hash
+      [server, status, message].hash
     end
 
     # Builds the object from hash

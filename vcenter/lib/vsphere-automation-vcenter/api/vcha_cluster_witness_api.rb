@@ -19,7 +19,7 @@ module VSphereAutomation
     # Validates the specified witness node's placement configuration.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVchaClusterWitnessCheckResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterVchaClusterWitnessCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def check(request_body, opts = {})
       data, _status_code, _headers = check_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVchaClusterWitnessCheckResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVchaClusterWitnessCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def check_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterWitnessApi.check ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterWitnessApi.check"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vcha/cluster/witness?action=check'
+      local_var_path = '/vcenter/vcha/cluster/witness?action=check'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaClusterWitnessCheckResp',
+	  '200' => 'VCenter::VcenterVchaClusterWitnessCheckResult',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
@@ -77,9 +77,9 @@ module VSphereAutomation
     # Creates the witness node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVchaClusterWitnessRedeployTaskResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
-    def redeploy_task(request_body, opts = {})
-      data, _status_code, _headers = redeploy_task_with_http_info(request_body, opts)
+    # @return [VcenterVchaClusterWitnessRedeployTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
+    def redeploytask(request_body, opts = {})
+      data, _status_code, _headers = redeploytask_with_http_info(request_body, opts)
       data
     end
 
@@ -87,17 +87,17 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVchaClusterWitnessRedeployTaskResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def redeploy_task_with_http_info(request_body, opts = {})
+    # @return [Array<(VcenterVchaClusterWitnessRedeployTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    def redeploytask_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: VchaClusterWitnessApi.redeploy_task ...'
+        @api_client.config.logger.debug 'Calling API: VchaClusterWitnessApi.redeploytask ...'
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
-        fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterWitnessApi.redeploy_task"
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterWitnessApi.redeploytask"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vcha/cluster/witness?action=redeploy&vmw-task=true'
+      local_var_path = '/vcenter/vcha/cluster/witness?action=redeploy&vmw-task=true'
 
       # query parameters
       query_params = {}
@@ -122,12 +122,12 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaClusterWitnessRedeployTaskResp',
+	  '200' => 'VCenter::VcenterVchaClusterWitnessRedeployTaskResult',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: VchaClusterWitnessApi#redeploy_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: VchaClusterWitnessApi#redeploytask\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

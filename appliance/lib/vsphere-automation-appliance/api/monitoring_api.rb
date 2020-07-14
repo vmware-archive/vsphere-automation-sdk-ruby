@@ -19,7 +19,7 @@ module VSphereAutomation
     # Get monitored item info
     # @param stat_id statistic item id
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceMonitoringResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceMonitoringResult|VapiStdErrorsErrorError|]
     def get(stat_id, opts = {})
       data, _status_code, _headers = get_with_http_info(stat_id, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param stat_id statistic item id
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceMonitoringResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceMonitoringResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(stat_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MonitoringApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'stat_id' when calling MonitoringApi.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/monitoring/{stat_id}'.sub('{' + 'stat_id' + '}', stat_id.to_s)
+      local_var_path = '/appliance/monitoring/{stat_id}'.sub('{' + 'stat_id' + '}', stat_id.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceMonitoringResp',
+	  '200' => 'Appliance::ApplianceMonitoringResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -72,7 +72,7 @@ module VSphereAutomation
     end
     # Get monitored items list
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceMonitoringListResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceMonitoringListResult|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -81,13 +81,13 @@ module VSphereAutomation
     # Get monitored items list
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceMonitoringListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceMonitoringListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MonitoringApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/monitoring'
+      local_var_path = '/appliance/monitoring'
 
       # query parameters
       query_params = {}
@@ -110,7 +110,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceMonitoringListResp',
+	  '200' => 'Appliance::ApplianceMonitoringListResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -125,7 +125,7 @@ module VSphereAutomation
     # @param item_start_time Start time in UTC
     # @param item_end_time End time in UTC
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceMonitoringQueryResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceMonitoringQueryResult|VapiStdErrorsErrorError|]
     def query(item_names, item_interval, item_function, item_start_time, item_end_time, opts = {})
       data, _status_code, _headers = query_with_http_info(item_names, item_interval, item_function, item_start_time, item_end_time, opts)
       data
@@ -139,7 +139,7 @@ module VSphereAutomation
     # @param item_start_time Start time in UTC
     # @param item_end_time End time in UTC
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceMonitoringQueryResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceMonitoringQueryResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def query_with_http_info(item_names, item_interval, item_function, item_start_time, item_end_time, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MonitoringApi.query ...'
@@ -173,7 +173,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'item_end_time' when calling MonitoringApi.query"
       end
       # resource path
-      local_var_path = '/rest/appliance/monitoring/query'
+      local_var_path = '/appliance/monitoring/query'
 
       # query parameters
       query_params = {}
@@ -201,7 +201,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceMonitoringQueryResp',
+	  '200' => 'Appliance::ApplianceMonitoringQueryResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

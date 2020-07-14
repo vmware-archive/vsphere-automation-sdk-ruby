@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves information about the service element corresponding to {@param.name serviceId}. <p> The {@link ServiceInfo} contains the metamodel information for the operation elements, structure elements and enumeration elements contained in the service element.
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelServiceResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataMetamodelServiceResult|VapiStdErrorsNotFoundError|]
     def get(service_id, opts = {})
       data, _status_code, _headers = get_with_http_info(service_id, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelServiceResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelServiceResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(service_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelServiceApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service_id' when calling MetadataMetamodelServiceApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/service/id:{service_id}'.sub('{' + 'service_id' + '}', service_id.to_s)
+      local_var_path = '/com/vmware/vapi/metadata/metamodel/service/id:{service_id}'.sub('{' + 'service_id' + '}', service_id.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelServiceResp',
+	  '200' => 'VAPI::VapiMetadataMetamodelServiceResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -72,7 +72,7 @@ module VSphereAutomation
     end
     # Returns the identifiers for the service elements that are currently registered with the infrastructure. <p> The list of service elements is an aggregate list of all the service elements contained in all the package elements.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelServiceListResp|]
+    # @return [VapiMetadataMetamodelServiceListResult|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -81,13 +81,13 @@ module VSphereAutomation
     # Returns the identifiers for the service elements that are currently registered with the infrastructure. &lt;p&gt; The list of service elements is an aggregate list of all the service elements contained in all the package elements.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelServiceListResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelServiceListResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelServiceApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/service'
+      local_var_path = '/com/vmware/vapi/metadata/metamodel/service'
 
       # query parameters
       query_params = {}
@@ -110,7 +110,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelServiceListResp',
+	  '200' => 'VAPI::VapiMetadataMetamodelServiceListResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataMetamodelServiceApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

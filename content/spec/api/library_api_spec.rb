@@ -32,7 +32,7 @@ describe 'LibraryApi' do
   # Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryFindResp]
+  # @return [ContentLibraryFindResult]
   describe 'find test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -43,7 +43,7 @@ describe 'LibraryApi' do
   # Returns a given {@link LibraryModel}.
   # @param library_id Identifier of the library to return.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryResp]
+  # @return [ContentLibraryResult]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -53,7 +53,7 @@ describe 'LibraryApi' do
   # unit tests for list
   # Returns the identifiers of all libraries of any type in the Content Library.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryListResp]
+  # @return [ContentLibraryListResult]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

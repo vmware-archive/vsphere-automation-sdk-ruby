@@ -11,55 +11,50 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceUpdatePolicyInfo
-    # Automatically stage the latest update if available.
-    attr_accessor :auto_stage
-
-    # Is the appliance updated automatically. If {@term set} the appliance may ignore the check schedule or auto-stage settings.
-    attr_accessor :auto_update
-
-    # Indicates whether certificates will be checked during patching. <p> Warning: If this {@term field} is set to false, an insecure connection is made to the update repository which can potentially put the appliance security at risk.
-    attr_accessor :certificate_check
-
-    # Schedule when the automatic check will be run.
-    attr_accessor :check_schedule
-
     # Current appliance update custom repository URL.
     attr_accessor :custom_url
 
     # Current appliance update default repository URL.
     attr_accessor :default_url
 
-    # Whether API client should allow the user to start update manually
-    attr_accessor :manual_control
-
     # Username for the update repository
     attr_accessor :username
+
+    # Schedule when the automatic check will be run.
+    attr_accessor :check_schedule
+
+    # Automatically stage the latest update if available.
+    attr_accessor :auto_stage
+
+    # Is the appliance updated automatically. If {@term set} the appliance may ignore the check schedule or auto-stage settings.
+    attr_accessor :auto_update
+
+    # Whether API client should allow the user to start update manually
+    attr_accessor :manual_control
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'auto_stage' => :'auto_stage',
-        :'auto_update' => :'auto_update',
-        :'certificate_check' => :'certificate_check',
-        :'check_schedule' => :'check_schedule',
         :'custom_url' => :'custom_URL',
         :'default_url' => :'default_URL',
-        :'manual_control' => :'manual_control',
-        :'username' => :'username'
+        :'username' => :'username',
+        :'check_schedule' => :'check_schedule',
+        :'auto_stage' => :'auto_stage',
+        :'auto_update' => :'auto_update',
+        :'manual_control' => :'manual_control'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'auto_stage' => :'Boolean',
-        :'auto_update' => :'Boolean',
-        :'certificate_check' => :'Boolean',
-        :'check_schedule' => :'Array<ApplianceUpdatePolicyTime>',
         :'custom_url' => :'String',
         :'default_url' => :'String',
-        :'manual_control' => :'Boolean',
-        :'username' => :'String'
+        :'username' => :'String',
+        :'check_schedule' => :'Array<ApplianceUpdatePolicyTime>',
+        :'auto_stage' => :'Boolean',
+        :'auto_update' => :'Boolean',
+        :'manual_control' => :'Boolean'
       }
     end
 
@@ -71,24 +66,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'auto_stage')
-        self.auto_stage = attributes[:'auto_stage']
-      end
-
-      if attributes.has_key?(:'auto_update')
-        self.auto_update = attributes[:'auto_update']
-      end
-
-      if attributes.has_key?(:'certificate_check')
-        self.certificate_check = attributes[:'certificate_check']
-      end
-
-      if attributes.has_key?(:'check_schedule')
-        if (value = attributes[:'check_schedule']).is_a?(Array)
-          self.check_schedule = value
-        end
-      end
-
       if attributes.has_key?(:'custom_URL')
         self.custom_url = attributes[:'custom_URL']
       end
@@ -97,12 +74,26 @@ module VSphereAutomation
         self.default_url = attributes[:'default_URL']
       end
 
-      if attributes.has_key?(:'manual_control')
-        self.manual_control = attributes[:'manual_control']
-      end
-
       if attributes.has_key?(:'username')
         self.username = attributes[:'username']
+      end
+
+      if attributes.has_key?(:'check_schedule')
+        if (value = attributes[:'check_schedule']).is_a?(Array)
+          self.check_schedule = value
+        end
+      end
+
+      if attributes.has_key?(:'auto_stage')
+        self.auto_stage = attributes[:'auto_stage']
+      end
+
+      if attributes.has_key?(:'auto_update')
+        self.auto_update = attributes[:'auto_update']
+      end
+
+      if attributes.has_key?(:'manual_control')
+        self.manual_control = attributes[:'manual_control']
       end
     end
 
@@ -110,24 +101,20 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @auto_stage.nil?
-        invalid_properties.push('invalid value for "auto_stage", auto_stage cannot be nil.')
-      end
-
-      if @auto_update.nil?
-        invalid_properties.push('invalid value for "auto_update", auto_update cannot be nil.')
-      end
-
-      if @certificate_check.nil?
-        invalid_properties.push('invalid value for "certificate_check", certificate_check cannot be nil.')
+      if @default_url.nil?
+        invalid_properties.push('invalid value for "default_url", default_url cannot be nil.')
       end
 
       if @check_schedule.nil?
         invalid_properties.push('invalid value for "check_schedule", check_schedule cannot be nil.')
       end
 
-      if @default_url.nil?
-        invalid_properties.push('invalid value for "default_url", default_url cannot be nil.')
+      if @auto_stage.nil?
+        invalid_properties.push('invalid value for "auto_stage", auto_stage cannot be nil.')
+      end
+
+      if @auto_update.nil?
+        invalid_properties.push('invalid value for "auto_update", auto_update cannot be nil.')
       end
 
       if @manual_control.nil?
@@ -140,11 +127,10 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @default_url.nil?
+      return false if @check_schedule.nil?
       return false if @auto_stage.nil?
       return false if @auto_update.nil?
-      return false if @certificate_check.nil?
-      return false if @check_schedule.nil?
-      return false if @default_url.nil?
       return false if @manual_control.nil?
       true
     end
@@ -154,14 +140,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          auto_stage == o.auto_stage &&
-          auto_update == o.auto_update &&
-          certificate_check == o.certificate_check &&
-          check_schedule == o.check_schedule &&
           custom_url == o.custom_url &&
           default_url == o.default_url &&
-          manual_control == o.manual_control &&
-          username == o.username
+          username == o.username &&
+          check_schedule == o.check_schedule &&
+          auto_stage == o.auto_stage &&
+          auto_update == o.auto_update &&
+          manual_control == o.manual_control
     end
 
     # @see the `==` method
@@ -173,7 +158,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [auto_stage, auto_update, certificate_check, check_schedule, custom_url, default_url, manual_control, username].hash
+      [custom_url, default_url, username, check_schedule, auto_stage, auto_update, manual_control].hash
     end
 
     # Builds the object from hash

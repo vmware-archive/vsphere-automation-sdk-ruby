@@ -32,7 +32,7 @@ describe 'LocalLibraryApi' do
   # Creates a new local library.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLocalLibraryCreateResp]
+  # @return [ContentLocalLibraryCreateResult]
   describe 'create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -54,7 +54,7 @@ describe 'LocalLibraryApi' do
   # Returns a given local library.
   # @param library_id Identifier of the local library to return.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLocalLibraryResp]
+  # @return [ContentLocalLibraryResult]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -64,7 +64,7 @@ describe 'LocalLibraryApi' do
   # unit tests for list
   # Returns the identifiers of all local libraries in the Content Library.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLocalLibraryListResp]
+  # @return [ContentLocalLibraryListResult]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

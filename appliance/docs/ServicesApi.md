@@ -1,18 +1,18 @@
 # VSphereAutomation::Appliance::ServicesApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](ServicesApi.md#get) | **GET** /rest/appliance/services/{service} | Returns the state of a service.
-[**list**](ServicesApi.md#list) | **GET** /rest/appliance/services | Lists details of vCenter services.
-[**restart**](ServicesApi.md#restart) | **POST** /rest/appliance/services/{service}/restart | Restarts a service
-[**start**](ServicesApi.md#start) | **POST** /rest/appliance/services/{service}/start | Starts a service
-[**stop**](ServicesApi.md#stop) | **POST** /rest/appliance/services/{service}/stop | Stops a service
+[**get**](ServicesApi.md#get) | **GET** /appliance/services/{service} | Returns the state of a service.
+[**list**](ServicesApi.md#list) | **GET** /appliance/services | Lists details of vCenter services.
+[**restart**](ServicesApi.md#restart) | **POST** /appliance/services/{service}/restart | Restarts a service
+[**start**](ServicesApi.md#start) | **POST** /appliance/services/{service}/start | Starts a service
+[**stop**](ServicesApi.md#stop) | **POST** /appliance/services/{service}/stop | Stops a service
 
 
 # **get**
-> ApplianceServicesResp get(service)
+> ApplianceServicesResult get(service)
 
 Returns the state of a service.
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceServicesResp**](ApplianceServicesResp.md)
+[**ApplianceServicesResult**](ApplianceServicesResult.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceServicesListResp list
+> ApplianceServicesListResult list
 
 Lists details of vCenter services.
 
@@ -94,7 +94,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceServicesListResp**](ApplianceServicesListResp.md)
+[**ApplianceServicesListResult**](ApplianceServicesListResult.md)
 
 ### Authorization
 

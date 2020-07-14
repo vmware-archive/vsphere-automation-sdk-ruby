@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Returns the aggregate fingerprint of all the command metadata from all the metadata sources. <p> The fingerprint provides clients an efficient way to check if the metadata for commands has been modified on the server.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataCliCommandFingerprintResp|]
+    # @return [VapiMetadataCliCommandFingerprintResult|]
     def fingerprint(opts = {})
       data, _status_code, _headers = fingerprint_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Returns the aggregate fingerprint of all the command metadata from all the metadata sources. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for commands has been modified on the server.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataCliCommandFingerprintResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataCliCommandFingerprintResult|, Fixnum, Hash)>]  data, response status code and response headers
     def fingerprint_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliCommandApi.fingerprint ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/cli/command?~action=fingerprint'
+      local_var_path = '/com/vmware/vapi/metadata/cli/command?~action=fingerprint'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataCliCommandFingerprintResp',
+	  '200' => 'VAPI::VapiMetadataCliCommandFingerprintResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataCliCommandApi#fingerprint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -66,7 +66,7 @@ module VSphereAutomation
     # Retrieves information about a command including information about how to execute that command.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataCliCommandResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataCliCommandResult|VapiStdErrorsNotFoundError|]
     def get(request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(request_body, opts)
       data
@@ -76,7 +76,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataCliCommandResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataCliCommandResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliCommandApi.get ...'
@@ -86,7 +86,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling MetadataCliCommandApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/cli/command?~action=get'
+      local_var_path = '/com/vmware/vapi/metadata/cli/command?~action=get'
 
       # query parameters
       query_params = {}
@@ -111,7 +111,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataCliCommandResp',
+	  '200' => 'VAPI::VapiMetadataCliCommandResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -122,7 +122,7 @@ module VSphereAutomation
     # Returns the identifiers of all commands, or commands in a specific namespace.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :path The dot-separated path of the namespace for which command identifiers should be returned.
-    # @return [VapiMetadataCliCommandListResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataCliCommandListResult|VapiStdErrorsNotFoundError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -132,13 +132,13 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [String] :path The dot-separated path of the namespace for which command identifiers should be returned.
-    # @return [Array<(VapiMetadataCliCommandListResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataCliCommandListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataCliCommandApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/cli/command'
+      local_var_path = '/com/vmware/vapi/metadata/cli/command'
 
       # query parameters
       query_params = {}
@@ -162,7 +162,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataCliCommandListResp',
+	  '200' => 'VAPI::VapiMetadataCliCommandListResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

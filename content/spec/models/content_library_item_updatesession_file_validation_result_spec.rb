@@ -34,13 +34,13 @@ describe 'ContentLibraryItemUpdatesessionFileValidationResult' do
     end
   end
 
-  describe 'test attribute "invalid_files"' do
+  describe 'test attribute "missing_files"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "missing_files"' do
+  describe 'test attribute "invalid_files"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -20,13 +20,13 @@ module VSphereAutomation
     # Rough estimate of time to rollback the update (minutes).
     attr_accessor :estimated_time_to_rollback
 
+    # Is reboot required to install the update.
+    attr_accessor :reboot_required
+
     attr_accessor :issues
 
     # List of questions that must be answered to install the update.
     attr_accessor :questions
-
-    # Is reboot required to install the update.
-    attr_accessor :reboot_required
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -34,9 +34,9 @@ module VSphereAutomation
         :'check_time' => :'check_time',
         :'estimated_time_to_install' => :'estimated_time_to_install',
         :'estimated_time_to_rollback' => :'estimated_time_to_rollback',
+        :'reboot_required' => :'reboot_required',
         :'issues' => :'issues',
-        :'questions' => :'questions',
-        :'reboot_required' => :'reboot_required'
+        :'questions' => :'questions'
       }
     end
 
@@ -46,9 +46,9 @@ module VSphereAutomation
         :'check_time' => :'DateTime',
         :'estimated_time_to_install' => :'Integer',
         :'estimated_time_to_rollback' => :'Integer',
+        :'reboot_required' => :'Boolean',
         :'issues' => :'ApplianceNotifications',
-        :'questions' => :'Array<ApplianceUpdatePendingQuestion>',
-        :'reboot_required' => :'Boolean'
+        :'questions' => :'Array<ApplianceUpdatePendingQuestion>'
       }
     end
 
@@ -72,6 +72,10 @@ module VSphereAutomation
         self.estimated_time_to_rollback = attributes[:'estimated_time_to_rollback']
       end
 
+      if attributes.has_key?(:'reboot_required')
+        self.reboot_required = attributes[:'reboot_required']
+      end
+
       if attributes.has_key?(:'issues')
         self.issues = attributes[:'issues']
       end
@@ -80,10 +84,6 @@ module VSphereAutomation
         if (value = attributes[:'questions']).is_a?(Array)
           self.questions = value
         end
-      end
-
-      if attributes.has_key?(:'reboot_required')
-        self.reboot_required = attributes[:'reboot_required']
       end
     end
 
@@ -95,12 +95,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "check_time", check_time cannot be nil.')
       end
 
-      if @questions.nil?
-        invalid_properties.push('invalid value for "questions", questions cannot be nil.')
-      end
-
       if @reboot_required.nil?
         invalid_properties.push('invalid value for "reboot_required", reboot_required cannot be nil.')
+      end
+
+      if @questions.nil?
+        invalid_properties.push('invalid value for "questions", questions cannot be nil.')
       end
 
       invalid_properties
@@ -110,8 +110,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @check_time.nil?
-      return false if @questions.nil?
       return false if @reboot_required.nil?
+      return false if @questions.nil?
       true
     end
 
@@ -123,9 +123,9 @@ module VSphereAutomation
           check_time == o.check_time &&
           estimated_time_to_install == o.estimated_time_to_install &&
           estimated_time_to_rollback == o.estimated_time_to_rollback &&
+          reboot_required == o.reboot_required &&
           issues == o.issues &&
-          questions == o.questions &&
-          reboot_required == o.reboot_required
+          questions == o.questions
     end
 
     # @see the `==` method
@@ -137,7 +137,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [check_time, estimated_time_to_install, estimated_time_to_rollback, issues, questions, reboot_required].hash
+      [check_time, estimated_time_to_install, estimated_time_to_rollback, reboot_required, issues, questions].hash
     end
 
     # Builds the object from hash

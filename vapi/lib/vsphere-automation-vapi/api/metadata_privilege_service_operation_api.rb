@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param service_id Identifier of the service element.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataPrivilegeServiceOperationResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataPrivilegeServiceOperationResult|VapiStdErrorsNotFoundError|]
     def get(service_id, request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(service_id, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param service_id Identifier of the service element.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataPrivilegeServiceOperationResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataPrivilegeServiceOperationResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(service_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataPrivilegeServiceOperationApi.get ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling MetadataPrivilegeServiceOperationApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}?~action=get'.sub('{' + 'service_id' + '}', service_id.to_s)
+      local_var_path = '/com/vmware/vapi/metadata/privilege/service/operation/id:{service_id}?~action=get'.sub('{' + 'service_id' + '}', service_id.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataPrivilegeServiceOperationResp',
+	  '200' => 'VAPI::VapiMetadataPrivilegeServiceOperationResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Returns the identifiers for the operation elements contained in the service element corresponding to {@param.name serviceId} that have privilege information.
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataPrivilegeServiceOperationListResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataPrivilegeServiceOperationListResult|VapiStdErrorsNotFoundError|]
     def list(service_id, opts = {})
       data, _status_code, _headers = list_with_http_info(service_id, opts)
       data
@@ -91,7 +91,7 @@ module VSphereAutomation
     # @api private
     # @param service_id Identifier of the service element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataPrivilegeServiceOperationListResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataPrivilegeServiceOperationListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(service_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataPrivilegeServiceOperationApi.list ...'
@@ -101,7 +101,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service_id' when calling MetadataPrivilegeServiceOperationApi.list"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/privilege/service/operation'
+      local_var_path = '/com/vmware/vapi/metadata/privilege/service/operation'
 
       # query parameters
       query_params = {}
@@ -125,7 +125,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataPrivilegeServiceOperationListResp',
+	  '200' => 'VAPI::VapiMetadataPrivilegeServiceOperationListResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

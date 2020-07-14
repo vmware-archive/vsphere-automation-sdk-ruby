@@ -11,6 +11,9 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibrarySubscriptionsSummary
+    # Identifier of the subscription.
+    attr_accessor :subscription
+
     # Identifier of the subscribed library.
     attr_accessor :subscribed_library
 
@@ -20,26 +23,23 @@ module VSphereAutomation
     # Hostname of the vCenter instance where the subscribed library exists.
     attr_accessor :subscribed_library_vcenter_hostname
 
-    # Identifier of the subscription.
-    attr_accessor :subscription
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'subscription' => :'subscription',
         :'subscribed_library' => :'subscribed_library',
         :'subscribed_library_name' => :'subscribed_library_name',
-        :'subscribed_library_vcenter_hostname' => :'subscribed_library_vcenter_hostname',
-        :'subscription' => :'subscription'
+        :'subscribed_library_vcenter_hostname' => :'subscribed_library_vcenter_hostname'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'subscription' => :'String',
         :'subscribed_library' => :'String',
         :'subscribed_library_name' => :'String',
-        :'subscribed_library_vcenter_hostname' => :'String',
-        :'subscription' => :'String'
+        :'subscribed_library_vcenter_hostname' => :'String'
       }
     end
 
@@ -50,6 +50,10 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'subscription')
+        self.subscription = attributes[:'subscription']
+      end
 
       if attributes.has_key?(:'subscribed_library')
         self.subscribed_library = attributes[:'subscribed_library']
@@ -62,16 +66,16 @@ module VSphereAutomation
       if attributes.has_key?(:'subscribed_library_vcenter_hostname')
         self.subscribed_library_vcenter_hostname = attributes[:'subscribed_library_vcenter_hostname']
       end
-
-      if attributes.has_key?(:'subscription')
-        self.subscription = attributes[:'subscription']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @subscription.nil?
+        invalid_properties.push('invalid value for "subscription", subscription cannot be nil.')
+      end
+
       if @subscribed_library.nil?
         invalid_properties.push('invalid value for "subscribed_library", subscribed_library cannot be nil.')
       end
@@ -80,19 +84,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "subscribed_library_name", subscribed_library_name cannot be nil.')
       end
 
-      if @subscription.nil?
-        invalid_properties.push('invalid value for "subscription", subscription cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @subscription.nil?
       return false if @subscribed_library.nil?
       return false if @subscribed_library_name.nil?
-      return false if @subscription.nil?
       true
     end
 
@@ -101,10 +101,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          subscription == o.subscription &&
           subscribed_library == o.subscribed_library &&
           subscribed_library_name == o.subscribed_library_name &&
-          subscribed_library_vcenter_hostname == o.subscribed_library_vcenter_hostname &&
-          subscription == o.subscription
+          subscribed_library_vcenter_hostname == o.subscribed_library_vcenter_hostname
     end
 
     # @see the `==` method
@@ -116,7 +116,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [subscribed_library, subscribed_library_name, subscribed_library_vcenter_hostname, subscription].hash
+      [subscription, subscribed_library, subscribed_library_name, subscribed_library_vcenter_hostname].hash
     end
 
     # Builds the object from hash

@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareParallelUpdateSpec
-    # Flag indicating whether the guest can connect and disconnect the device. If unset, the value is unchanged.
-    attr_accessor :allow_guest_control
-
     attr_accessor :backing
 
     # Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on. If unset, the value is unchanged.
     attr_accessor :start_connected
 
+    # Flag indicating whether the guest can connect and disconnect the device. If unset, the value is unchanged.
+    attr_accessor :allow_guest_control
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'allow_guest_control' => :'allow_guest_control',
         :'backing' => :'backing',
-        :'start_connected' => :'start_connected'
+        :'start_connected' => :'start_connected',
+        :'allow_guest_control' => :'allow_guest_control'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'allow_guest_control' => :'Boolean',
         :'backing' => :'VcenterVmHardwareParallelBackingSpec',
-        :'start_connected' => :'Boolean'
+        :'start_connected' => :'Boolean',
+        :'allow_guest_control' => :'Boolean'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'allow_guest_control')
-        self.allow_guest_control = attributes[:'allow_guest_control']
-      end
-
       if attributes.has_key?(:'backing')
         self.backing = attributes[:'backing']
       end
 
       if attributes.has_key?(:'start_connected')
         self.start_connected = attributes[:'start_connected']
+      end
+
+      if attributes.has_key?(:'allow_guest_control')
+        self.allow_guest_control = attributes[:'allow_guest_control']
       end
     end
 
@@ -76,9 +76,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          allow_guest_control == o.allow_guest_control &&
           backing == o.backing &&
-          start_connected == o.start_connected
+          start_connected == o.start_connected &&
+          allow_guest_control == o.allow_guest_control
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_guest_control, backing, start_connected].hash
+      [backing, start_connected, allow_guest_control].hash
     end
 
     # Builds the object from hash

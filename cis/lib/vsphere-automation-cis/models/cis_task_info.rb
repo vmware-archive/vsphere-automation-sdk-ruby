@@ -11,16 +11,12 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaskInfo
-    # Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses.
-    attr_accessor :cancelable
+    attr_accessor :progress
 
     attr_accessor :description
 
-    # Time when the operation is completed. This field is optional and it is only relevant when the value of CommonInfo.status is one of SUCCEEDED or FAILED.
-    attr_accessor :end_time
-
-    # Description of the error if the operation status is \"FAILED\". If unset the description of why the operation failed will be included in the result of the operation (see Info.result).
-    attr_accessor :error
+    # Identifier of the service containing the operation. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vapi.service. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vapi.service.
+    attr_accessor :service
 
     # Identifier of the operation associated with the task. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vapi.operation. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vapi.operation.
     attr_accessor :operation
@@ -28,20 +24,21 @@ module VSphereAutomation
     # Parent of the current task. This field will be unset if the task has no parent. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: cis.task. When operations return a value of this structure as a result, the field will be an identifier for the resource type: cis.task.
     attr_accessor :parent
 
-    attr_accessor :progress
+    attr_accessor :target
 
-    # Result of the operation. If an operation reports partial results before it completes, this field could be set before the CommonInfo.status has the value SUCCEEDED. The value could change as the operation progresses. This field will be unset if the operation does not return a result or if the result is not available at the current step of the operation.
-    attr_accessor :result
+    attr_accessor :status
 
-    # Identifier of the service containing the operation. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vapi.service. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vapi.service.
-    attr_accessor :service
+    # Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses.
+    attr_accessor :cancelable
+
+    # Description of the error if the operation status is \"FAILED\". If unset the description of why the operation failed will be included in the result of the operation (see Info.result).
+    attr_accessor :error
 
     # Time when the operation is started. This field is optional and it is only relevant when the value of CommonInfo.status is one of RUNNING, BLOCKED, SUCCEEDED, or FAILED.
     attr_accessor :start_time
 
-    attr_accessor :status
-
-    attr_accessor :target
+    # Time when the operation is completed. This field is optional and it is only relevant when the value of CommonInfo.status is one of SUCCEEDED or FAILED.
+    attr_accessor :end_time
 
     # Name of the user who performed the operation. This field will be unset if the operation is performed by the system.
     attr_accessor :user
@@ -49,18 +46,17 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cancelable' => :'cancelable',
+        :'progress' => :'progress',
         :'description' => :'description',
-        :'end_time' => :'end_time',
-        :'error' => :'error',
+        :'service' => :'service',
         :'operation' => :'operation',
         :'parent' => :'parent',
-        :'progress' => :'progress',
-        :'result' => :'result',
-        :'service' => :'service',
-        :'start_time' => :'start_time',
-        :'status' => :'status',
         :'target' => :'target',
+        :'status' => :'status',
+        :'cancelable' => :'cancelable',
+        :'error' => :'error',
+        :'start_time' => :'start_time',
+        :'end_time' => :'end_time',
         :'user' => :'user'
       }
     end
@@ -68,18 +64,17 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cancelable' => :'Boolean',
+        :'progress' => :'CisTaskProgress',
         :'description' => :'VapiStdLocalizableMessage',
-        :'end_time' => :'DateTime',
-        :'error' => :'String',
+        :'service' => :'String',
         :'operation' => :'String',
         :'parent' => :'String',
-        :'progress' => :'CisTaskProgress',
-        :'result' => :'Object',
-        :'service' => :'String',
-        :'start_time' => :'DateTime',
-        :'status' => :'CisTaskStatus',
         :'target' => :'VapiStdDynamicID',
+        :'status' => :'CisTaskStatus',
+        :'cancelable' => :'Boolean',
+        :'error' => :'String',
+        :'start_time' => :'DateTime',
+        :'end_time' => :'DateTime',
         :'user' => :'String'
       }
     end
@@ -92,20 +87,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cancelable')
-        self.cancelable = attributes[:'cancelable']
+      if attributes.has_key?(:'progress')
+        self.progress = attributes[:'progress']
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'end_time')
-        self.end_time = attributes[:'end_time']
-      end
-
-      if attributes.has_key?(:'error')
-        self.error = attributes[:'error']
+      if attributes.has_key?(:'service')
+        self.service = attributes[:'service']
       end
 
       if attributes.has_key?(:'operation')
@@ -116,28 +107,28 @@ module VSphereAutomation
         self.parent = attributes[:'parent']
       end
 
-      if attributes.has_key?(:'progress')
-        self.progress = attributes[:'progress']
-      end
-
-      if attributes.has_key?(:'result')
-        self.result = attributes[:'result']
-      end
-
-      if attributes.has_key?(:'service')
-        self.service = attributes[:'service']
-      end
-
-      if attributes.has_key?(:'start_time')
-        self.start_time = attributes[:'start_time']
+      if attributes.has_key?(:'target')
+        self.target = attributes[:'target']
       end
 
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
       end
 
-      if attributes.has_key?(:'target')
-        self.target = attributes[:'target']
+      if attributes.has_key?(:'cancelable')
+        self.cancelable = attributes[:'cancelable']
+      end
+
+      if attributes.has_key?(:'error')
+        self.error = attributes[:'error']
+      end
+
+      if attributes.has_key?(:'start_time')
+        self.start_time = attributes[:'start_time']
+      end
+
+      if attributes.has_key?(:'end_time')
+        self.end_time = attributes[:'end_time']
       end
 
       if attributes.has_key?(:'user')
@@ -149,24 +140,24 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @cancelable.nil?
-        invalid_properties.push('invalid value for "cancelable", cancelable cannot be nil.')
-      end
-
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
-      if @operation.nil?
-        invalid_properties.push('invalid value for "operation", operation cannot be nil.')
       end
 
       if @service.nil?
         invalid_properties.push('invalid value for "service", service cannot be nil.')
       end
 
+      if @operation.nil?
+        invalid_properties.push('invalid value for "operation", operation cannot be nil.')
+      end
+
       if @status.nil?
         invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
+      if @cancelable.nil?
+        invalid_properties.push('invalid value for "cancelable", cancelable cannot be nil.')
       end
 
       invalid_properties
@@ -175,11 +166,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @cancelable.nil?
       return false if @description.nil?
-      return false if @operation.nil?
       return false if @service.nil?
+      return false if @operation.nil?
       return false if @status.nil?
+      return false if @cancelable.nil?
       true
     end
 
@@ -188,18 +179,17 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cancelable == o.cancelable &&
+          progress == o.progress &&
           description == o.description &&
-          end_time == o.end_time &&
-          error == o.error &&
+          service == o.service &&
           operation == o.operation &&
           parent == o.parent &&
-          progress == o.progress &&
-          result == o.result &&
-          service == o.service &&
-          start_time == o.start_time &&
-          status == o.status &&
           target == o.target &&
+          status == o.status &&
+          cancelable == o.cancelable &&
+          error == o.error &&
+          start_time == o.start_time &&
+          end_time == o.end_time &&
           user == o.user
     end
 
@@ -212,7 +202,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cancelable, description, end_time, error, operation, parent, progress, result, service, start_time, status, target, user].hash
+      [progress, description, service, operation, parent, target, status, cancelable, error, start_time, end_time, user].hash
     end
 
     # Builds the object from hash

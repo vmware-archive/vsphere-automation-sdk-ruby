@@ -11,33 +11,33 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesIpv6AddressInfo
+    attr_accessor :origin
+
+    attr_accessor :status
+
     # The IPv6 address, for example, fc00:10:20:83:20c:29ff:fe94:bb5a.
     attr_accessor :address
-
-    attr_accessor :origin
 
     # The IPv6 CIDR prefix, for example, 64.
     attr_accessor :prefix
 
-    attr_accessor :status
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'address' => :'address',
         :'origin' => :'origin',
-        :'prefix' => :'prefix',
-        :'status' => :'status'
+        :'status' => :'status',
+        :'address' => :'address',
+        :'prefix' => :'prefix'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'address' => :'String',
         :'origin' => :'ApplianceNetworkingInterfacesIpv6Origin',
-        :'prefix' => :'Integer',
-        :'status' => :'ApplianceNetworkingInterfacesIpv6Status'
+        :'status' => :'ApplianceNetworkingInterfacesIpv6Status',
+        :'address' => :'String',
+        :'prefix' => :'Integer'
       }
     end
 
@@ -49,20 +49,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
       if attributes.has_key?(:'origin')
         self.origin = attributes[:'origin']
       end
 
-      if attributes.has_key?(:'prefix')
-        self.prefix = attributes[:'prefix']
-      end
-
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
+      end
+
+      if attributes.has_key?(:'address')
+        self.address = attributes[:'address']
+      end
+
+      if attributes.has_key?(:'prefix')
+        self.prefix = attributes[:'prefix']
       end
     end
 
@@ -70,20 +70,20 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @address.nil?
-        invalid_properties.push('invalid value for "address", address cannot be nil.')
-      end
-
       if @origin.nil?
         invalid_properties.push('invalid value for "origin", origin cannot be nil.')
       end
 
-      if @prefix.nil?
-        invalid_properties.push('invalid value for "prefix", prefix cannot be nil.')
-      end
-
       if @status.nil?
         invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
+      if @address.nil?
+        invalid_properties.push('invalid value for "address", address cannot be nil.')
+      end
+
+      if @prefix.nil?
+        invalid_properties.push('invalid value for "prefix", prefix cannot be nil.')
       end
 
       invalid_properties
@@ -92,10 +92,10 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @address.nil?
       return false if @origin.nil?
-      return false if @prefix.nil?
       return false if @status.nil?
+      return false if @address.nil?
+      return false if @prefix.nil?
       true
     end
 
@@ -104,10 +104,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          address == o.address &&
           origin == o.origin &&
-          prefix == o.prefix &&
-          status == o.status
+          status == o.status &&
+          address == o.address &&
+          prefix == o.prefix
     end
 
     # @see the `==` method
@@ -119,7 +119,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, origin, prefix, status].hash
+      [origin, status, address, prefix].hash
     end
 
     # Builds the object from hash

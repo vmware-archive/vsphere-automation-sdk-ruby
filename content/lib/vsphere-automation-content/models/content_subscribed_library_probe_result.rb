@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentSubscribedLibraryProbeResult
-    # If the probe result is in an error status, this {@term field} will contain the detailed error messages.
-    attr_accessor :error_messages
+    attr_accessor :status
 
     # The SSL thumbprint for the remote endpoint.
     attr_accessor :ssl_thumbprint
 
-    attr_accessor :status
+    # If the probe result is in an error status, this {@term field} will contain the detailed error messages.
+    attr_accessor :error_messages
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'error_messages' => :'error_messages',
+        :'status' => :'status',
         :'ssl_thumbprint' => :'ssl_thumbprint',
-        :'status' => :'status'
+        :'error_messages' => :'error_messages'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'error_messages' => :'Array<VapiStdLocalizableMessage>',
+        :'status' => :'ContentSubscribedLibraryProbeResultStatus',
         :'ssl_thumbprint' => :'String',
-        :'status' => :'ContentSubscribedLibraryProbeResultStatus'
+        :'error_messages' => :'Array<VapiStdLocalizableMessage>'
       }
     end
 
@@ -45,18 +45,18 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'error_messages')
-        if (value = attributes[:'error_messages']).is_a?(Array)
-          self.error_messages = value
-        end
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
 
       if attributes.has_key?(:'ssl_thumbprint')
         self.ssl_thumbprint = attributes[:'ssl_thumbprint']
       end
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.has_key?(:'error_messages')
+        if (value = attributes[:'error_messages']).is_a?(Array)
+          self.error_messages = value
+        end
       end
     end
 
@@ -64,12 +64,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @error_messages.nil?
-        invalid_properties.push('invalid value for "error_messages", error_messages cannot be nil.')
-      end
-
       if @status.nil?
         invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
+      if @error_messages.nil?
+        invalid_properties.push('invalid value for "error_messages", error_messages cannot be nil.')
       end
 
       invalid_properties
@@ -78,8 +78,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @error_messages.nil?
       return false if @status.nil?
+      return false if @error_messages.nil?
       true
     end
 
@@ -88,9 +88,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          error_messages == o.error_messages &&
+          status == o.status &&
           ssl_thumbprint == o.ssl_thumbprint &&
-          status == o.status
+          error_messages == o.error_messages
     end
 
     # @see the `==` method
@@ -102,7 +102,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [error_messages, ssl_thumbprint, status].hash
+      [status, ssl_thumbprint, error_messages].hash
     end
 
     # Builds the object from hash

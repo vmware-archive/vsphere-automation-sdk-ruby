@@ -13,13 +13,8 @@ module VSphereAutomation
     class VcenterOvfOvfWarning
     attr_accessor :category
 
-    # Represents a server {@link Error}.
-    attr_accessor :error
-
     # {@term List} of parse issues (see {@link ParseIssue}).
     attr_accessor :issues
-
-    attr_accessor :message
 
     # The name of input parameter.
     attr_accessor :name
@@ -27,15 +22,20 @@ module VSphereAutomation
     # The value of input parameter.
     attr_accessor :value
 
+    attr_accessor :message
+
+    # Represents a server {@link Error}.
+    attr_accessor :error
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'category' => :'category',
-        :'error' => :'error',
         :'issues' => :'issues',
-        :'message' => :'message',
         :'name' => :'name',
-        :'value' => :'value'
+        :'value' => :'value',
+        :'message' => :'message',
+        :'error' => :'error'
       }
     end
 
@@ -43,11 +43,11 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'category' => :'VcenterOvfOvfMessageCategory',
-        :'error' => :'Object',
         :'issues' => :'Array<VcenterOvfParseIssue>',
-        :'message' => :'VapiStdLocalizableMessage',
         :'name' => :'String',
-        :'value' => :'String'
+        :'value' => :'String',
+        :'message' => :'VapiStdLocalizableMessage',
+        :'error' => :'Object'
       }
     end
 
@@ -63,18 +63,10 @@ module VSphereAutomation
         self.category = attributes[:'category']
       end
 
-      if attributes.has_key?(:'error')
-        self.error = attributes[:'error']
-      end
-
       if attributes.has_key?(:'issues')
         if (value = attributes[:'issues']).is_a?(Array)
           self.issues = value
         end
-      end
-
-      if attributes.has_key?(:'message')
-        self.message = attributes[:'message']
       end
 
       if attributes.has_key?(:'name')
@@ -83,6 +75,14 @@ module VSphereAutomation
 
       if attributes.has_key?(:'value')
         self.value = attributes[:'value']
+      end
+
+      if attributes.has_key?(:'message')
+        self.message = attributes[:'message']
+      end
+
+      if attributes.has_key?(:'error')
+        self.error = attributes[:'error']
       end
     end
 
@@ -110,11 +110,11 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           category == o.category &&
-          error == o.error &&
           issues == o.issues &&
-          message == o.message &&
           name == o.name &&
-          value == o.value
+          value == o.value &&
+          message == o.message &&
+          error == o.error
     end
 
     # @see the `==` method
@@ -126,7 +126,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [category, error, issues, message, name, value].hash
+      [category, issues, name, value, message, error].hash
     end
 
     # Builds the object from hash

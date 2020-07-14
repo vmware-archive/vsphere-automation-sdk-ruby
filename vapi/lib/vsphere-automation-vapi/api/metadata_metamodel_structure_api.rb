@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves information about the structure element corresponding to {@param.name structureId}. <p> The {@link StructureInfo} contains the metamodel information about the structure element. It contains information about all the field elements and enumeration elements contained in this structure element.
     # @param structure_id Identifier of the structure element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelStructureResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataMetamodelStructureResult|VapiStdErrorsNotFoundError|]
     def get(structure_id, opts = {})
       data, _status_code, _headers = get_with_http_info(structure_id, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param structure_id Identifier of the structure element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelStructureResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelStructureResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(structure_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelStructureApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'structure_id' when calling MetadataMetamodelStructureApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/structure/id:{structure_id}'.sub('{' + 'structure_id' + '}', structure_id.to_s)
+      local_var_path = '/com/vmware/vapi/metadata/metamodel/structure/id:{structure_id}'.sub('{' + 'structure_id' + '}', structure_id.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelStructureResp',
+	  '200' => 'VAPI::VapiMetadataMetamodelStructureResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -72,7 +72,7 @@ module VSphereAutomation
     end
     # Returns the identifiers for the structure elements that are contained in all the package elements and service elements.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelStructureListResp|]
+    # @return [VapiMetadataMetamodelStructureListResult|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -81,13 +81,13 @@ module VSphereAutomation
     # Returns the identifiers for the structure elements that are contained in all the package elements and service elements.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelStructureListResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelStructureListResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelStructureApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/structure'
+      local_var_path = '/com/vmware/vapi/metadata/metamodel/structure'
 
       # query parameters
       query_params = {}
@@ -110,7 +110,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelStructureListResp',
+	  '200' => 'VAPI::VapiMetadataMetamodelStructureListResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataMetamodelStructureApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

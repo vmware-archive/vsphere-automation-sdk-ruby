@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterGuestCustomizationSpecsSummary
-    attr_accessor :os_type
+    # Name of the guest customization specification. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vcenter.guest.CustomizationSpec. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vcenter.guest.CustomizationSpec.
+    attr_accessor :name
 
     # Description of the guest customization specification.
     attr_accessor :description
 
+    attr_accessor :os_type
+
     # Date and tme when this guest customization specification was last modified.
     attr_accessor :last_modified
-
-    # Name of the guest customization specification. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vcenter.guest.CustomizationSpec. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vcenter.guest.CustomizationSpec.
-    attr_accessor :name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'os_type' => :'OS_type',
+        :'name' => :'name',
         :'description' => :'description',
-        :'last_modified' => :'last_modified',
-        :'name' => :'name'
+        :'os_type' => :'OS_type',
+        :'last_modified' => :'last_modified'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'os_type' => :'VcenterGuestCustomizationSpecsOsType',
+        :'name' => :'String',
         :'description' => :'String',
-        :'last_modified' => :'DateTime',
-        :'name' => :'String'
+        :'os_type' => :'VcenterGuestCustomizationSpecsOsType',
+        :'last_modified' => :'DateTime'
       }
     end
 
@@ -50,20 +50,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'OS_type')
-        self.os_type = attributes[:'OS_type']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'last_modified')
-        self.last_modified = attributes[:'last_modified']
+      if attributes.has_key?(:'OS_type')
+        self.os_type = attributes[:'OS_type']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'last_modified')
+        self.last_modified = attributes[:'last_modified']
       end
     end
 
@@ -71,20 +71,20 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @os_type.nil?
-        invalid_properties.push('invalid value for "os_type", os_type cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
-      if @last_modified.nil?
-        invalid_properties.push('invalid value for "last_modified", last_modified cannot be nil.')
+      if @os_type.nil?
+        invalid_properties.push('invalid value for "os_type", os_type cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @last_modified.nil?
+        invalid_properties.push('invalid value for "last_modified", last_modified cannot be nil.')
       end
 
       invalid_properties
@@ -93,10 +93,10 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @os_type.nil?
-      return false if @description.nil?
-      return false if @last_modified.nil?
       return false if @name.nil?
+      return false if @description.nil?
+      return false if @os_type.nil?
+      return false if @last_modified.nil?
       true
     end
 
@@ -105,10 +105,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          os_type == o.os_type &&
+          name == o.name &&
           description == o.description &&
-          last_modified == o.last_modified &&
-          name == o.name
+          os_type == o.os_type &&
+          last_modified == o.last_modified
     end
 
     # @see the `==` method
@@ -120,7 +120,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [os_type, description, last_modified, name].hash
+      [name, description, os_type, last_modified].hash
     end
 
     # Builds the object from hash

@@ -1,7 +1,5 @@
 # vSphere Automation SDK
 
-The vSphere Automation SDK for Ruby is a group of gems that together allow you to interface with the vSphere APIs. The current version of this gem works with vSphere 7.0.
-
 ## Installation
 
 The vSphere Automation SDK for Ruby can be installed from [RubyGems](https://rubygems.org). It is available as a single gem containing all parts of the SDK or as individual components.
@@ -52,7 +50,5 @@ The available components include
 | [Appliance](appliance/) | `vsphere-automation-appliance` | `VSphereAutomation::Appliance` |
 | [CIS](cis/)             | `vsphere-automation-cis`       | `VSphereAutomation::CIS`       |
 | [Content](content/)     | `vsphere-automation-content`   | `VSphereAutomation::Content`   |
-| [ESX](esx/)             | `vsphere-automation-esx`       | `VSphereAutomation::ESX`       |
 | [VAPI](vapi/)           | `vsphere-automation-vapi`      | `VSphereAutomation::VAPI`      |
 | [vCenter](vcenter/)     | `vsphere-automation-vcenter`   | `VSphereAutomation::VCenter`   |
-| [vStats](vstats/)       | `vsphere-automation-vstats`    | `VSphereAutomation::VStats`    |

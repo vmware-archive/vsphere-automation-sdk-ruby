@@ -1,16 +1,16 @@
 # VSphereAutomation::Appliance::SystemStorageApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](SystemStorageApi.md#list) | **GET** /rest/appliance/system/storage | Get disk to partition mapping.
-[**resize**](SystemStorageApi.md#resize) | **POST** /rest/appliance/system/storage/resize | Resize all partitions to 100 percent of disk size.
-[**resize_ex**](SystemStorageApi.md#resize_ex) | **POST** /rest/appliance/system/storage?action&#x3D;resize-ex | Resize all partitions to 100 percent of disk size.
+[**list**](SystemStorageApi.md#list) | **GET** /appliance/system/storage | Get disk to partition mapping.
+[**resize**](SystemStorageApi.md#resize) | **POST** /appliance/system/storage/resize | Resize all partitions to 100 percent of disk size.
+[**resize_ex**](SystemStorageApi.md#resize_ex) | **POST** /appliance/system/storage?action&#x3D;resize-ex | Resize all partitions to 100 percent of disk size.
 
 
 # **list**
-> ApplianceSystemStorageListResp list
+> ApplianceSystemStorageListResult list
 
 Get disk to partition mapping.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceSystemStorageListResp**](ApplianceSystemStorageListResp.md)
+[**ApplianceSystemStorageListResult**](ApplianceSystemStorageListResult.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ nil (empty response body)
 
 
 # **resize_ex**
-> ApplianceSystemStorageResizeExResp resize_ex
+> ApplianceSystemStorageResizeExResult resize_ex
 
 Resize all partitions to 100 percent of disk size.
 
@@ -133,7 +133,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceSystemStorageResizeExResp**](ApplianceSystemStorageResizeExResp.md)
+[**ApplianceSystemStorageResizeExResult**](ApplianceSystemStorageResizeExResult.md)
 
 ### Authorization
 

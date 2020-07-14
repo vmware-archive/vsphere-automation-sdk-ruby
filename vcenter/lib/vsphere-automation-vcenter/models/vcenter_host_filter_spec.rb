@@ -11,50 +11,50 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterHostFilterSpec
-    # Clusters that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any cluster and hosts that are not in a cluster match the filter. If this field is not empty and Host.FilterSpec.standalone is true, no hosts will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
-    attr_accessor :clusters
-
-    # Connection states that a host must be in to match the filter (see Host.Summary.connection-state. If unset or empty, hosts in any connection state match the filter.
-    attr_accessor :connection_states
-
-    # Datacenters that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    attr_accessor :datacenters
-
-    # Folders that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
-    attr_accessor :folders
-
     # Identifiers of hosts that can match the filter. If unset or empty, hosts with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
     attr_accessor :hosts
 
     # Names that hosts must have to match the filter (see Host.Summary.name). If unset or empty, hosts with any name match the filter.
     attr_accessor :names
 
+    # Folders that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
+    attr_accessor :folders
+
+    # Datacenters that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
+    attr_accessor :datacenters
+
     # If true, only hosts that are not part of a cluster can match the filter, and if false, only hosts that are are part of a cluster can match the filter. If unset Hosts can match filter independent of whether they are part of a cluster or not. If this field is true and Host.FilterSpec.clusters os not empty, no hosts will match the filter.
     attr_accessor :standalone
+
+    # Clusters that must contain the hosts for the hosts to match the filter. If unset or empty, hosts in any cluster and hosts that are not in a cluster match the filter. If this field is not empty and Host.FilterSpec.standalone is true, no hosts will match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
+    attr_accessor :clusters
+
+    # Connection states that a host must be in to match the filter (see Host.Summary.connection-state. If unset or empty, hosts in any connection state match the filter.
+    attr_accessor :connection_states
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'clusters' => :'clusters',
-        :'connection_states' => :'connection_states',
-        :'datacenters' => :'datacenters',
-        :'folders' => :'folders',
         :'hosts' => :'hosts',
         :'names' => :'names',
-        :'standalone' => :'standalone'
+        :'folders' => :'folders',
+        :'datacenters' => :'datacenters',
+        :'standalone' => :'standalone',
+        :'clusters' => :'clusters',
+        :'connection_states' => :'connection_states'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'clusters' => :'Array<String>',
-        :'connection_states' => :'Array<VcenterHostConnectionState>',
-        :'datacenters' => :'Array<String>',
-        :'folders' => :'Array<String>',
         :'hosts' => :'Array<String>',
         :'names' => :'Array<String>',
-        :'standalone' => :'Boolean'
+        :'folders' => :'Array<String>',
+        :'datacenters' => :'Array<String>',
+        :'standalone' => :'Boolean',
+        :'clusters' => :'Array<String>',
+        :'connection_states' => :'Array<VcenterHostConnectionState>'
       }
     end
 
@@ -65,30 +65,6 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'clusters')
-        if (value = attributes[:'clusters']).is_a?(Array)
-          self.clusters = value
-        end
-      end
-
-      if attributes.has_key?(:'connection_states')
-        if (value = attributes[:'connection_states']).is_a?(Array)
-          self.connection_states = value
-        end
-      end
-
-      if attributes.has_key?(:'datacenters')
-        if (value = attributes[:'datacenters']).is_a?(Array)
-          self.datacenters = value
-        end
-      end
-
-      if attributes.has_key?(:'folders')
-        if (value = attributes[:'folders']).is_a?(Array)
-          self.folders = value
-        end
-      end
 
       if attributes.has_key?(:'hosts')
         if (value = attributes[:'hosts']).is_a?(Array)
@@ -102,8 +78,32 @@ module VSphereAutomation
         end
       end
 
+      if attributes.has_key?(:'folders')
+        if (value = attributes[:'folders']).is_a?(Array)
+          self.folders = value
+        end
+      end
+
+      if attributes.has_key?(:'datacenters')
+        if (value = attributes[:'datacenters']).is_a?(Array)
+          self.datacenters = value
+        end
+      end
+
       if attributes.has_key?(:'standalone')
         self.standalone = attributes[:'standalone']
+      end
+
+      if attributes.has_key?(:'clusters')
+        if (value = attributes[:'clusters']).is_a?(Array)
+          self.clusters = value
+        end
+      end
+
+      if attributes.has_key?(:'connection_states')
+        if (value = attributes[:'connection_states']).is_a?(Array)
+          self.connection_states = value
+        end
       end
     end
 
@@ -125,13 +125,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          clusters == o.clusters &&
-          connection_states == o.connection_states &&
-          datacenters == o.datacenters &&
-          folders == o.folders &&
           hosts == o.hosts &&
           names == o.names &&
-          standalone == o.standalone
+          folders == o.folders &&
+          datacenters == o.datacenters &&
+          standalone == o.standalone &&
+          clusters == o.clusters &&
+          connection_states == o.connection_states
     end
 
     # @see the `==` method
@@ -143,7 +143,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [clusters, connection_states, datacenters, folders, hosts, names, standalone].hash
+      [hosts, names, folders, datacenters, standalone, clusters, connection_states].hash
     end
 
     # Builds the object from hash

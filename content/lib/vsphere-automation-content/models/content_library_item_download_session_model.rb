@@ -11,48 +11,48 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemDownloadSessionModel
-    # The progress that has been made with the download. This property is to be updated by the client during the download process to indicate the progress of its work in completing the download. The initial progress is 0 until updated by the client. The maximum value is 100, which indicates that the download is complete.
-    attr_accessor :client_progress
-
-    attr_accessor :error_message
-
-    # Indicates the time after which the session will expire. The session is guaranteed not to expire before this time.
-    attr_accessor :expiration_time
-
     # The identifier of this download session.
     attr_accessor :id
-
-    # The content version of the library item whose content is being downloaded. This value is the {@link ItemModel#contentVersion} at the time when the session is created for the library item.
-    attr_accessor :library_item_content_version
 
     # The identifier of the library item whose content is being downloaded.
     attr_accessor :library_item_id
 
+    # The content version of the library item whose content is being downloaded. This value is the {@link ItemModel#contentVersion} at the time when the session is created for the library item.
+    attr_accessor :library_item_content_version
+
+    attr_accessor :error_message
+
+    # The progress that has been made with the download. This property is to be updated by the client during the download process to indicate the progress of its work in completing the download. The initial progress is 0 until updated by the client. The maximum value is 100, which indicates that the download is complete.
+    attr_accessor :client_progress
+
     attr_accessor :state
+
+    # Indicates the time after which the session will expire. The session is guaranteed not to expire before this time.
+    attr_accessor :expiration_time
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'client_progress' => :'client_progress',
-        :'error_message' => :'error_message',
-        :'expiration_time' => :'expiration_time',
         :'id' => :'id',
-        :'library_item_content_version' => :'library_item_content_version',
         :'library_item_id' => :'library_item_id',
-        :'state' => :'state'
+        :'library_item_content_version' => :'library_item_content_version',
+        :'error_message' => :'error_message',
+        :'client_progress' => :'client_progress',
+        :'state' => :'state',
+        :'expiration_time' => :'expiration_time'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'client_progress' => :'Integer',
-        :'error_message' => :'VapiStdLocalizableMessage',
-        :'expiration_time' => :'DateTime',
         :'id' => :'String',
-        :'library_item_content_version' => :'String',
         :'library_item_id' => :'String',
-        :'state' => :'ContentLibraryItemDownloadSessionModelState'
+        :'library_item_content_version' => :'String',
+        :'error_message' => :'VapiStdLocalizableMessage',
+        :'client_progress' => :'Integer',
+        :'state' => :'ContentLibraryItemDownloadSessionModelState',
+        :'expiration_time' => :'DateTime'
       }
     end
 
@@ -64,32 +64,32 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'client_progress')
-        self.client_progress = attributes[:'client_progress']
-      end
-
-      if attributes.has_key?(:'error_message')
-        self.error_message = attributes[:'error_message']
-      end
-
-      if attributes.has_key?(:'expiration_time')
-        self.expiration_time = attributes[:'expiration_time']
-      end
-
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'library_item_content_version')
-        self.library_item_content_version = attributes[:'library_item_content_version']
       end
 
       if attributes.has_key?(:'library_item_id')
         self.library_item_id = attributes[:'library_item_id']
       end
 
+      if attributes.has_key?(:'library_item_content_version')
+        self.library_item_content_version = attributes[:'library_item_content_version']
+      end
+
+      if attributes.has_key?(:'error_message')
+        self.error_message = attributes[:'error_message']
+      end
+
+      if attributes.has_key?(:'client_progress')
+        self.client_progress = attributes[:'client_progress']
+      end
+
       if attributes.has_key?(:'state')
         self.state = attributes[:'state']
+      end
+
+      if attributes.has_key?(:'expiration_time')
+        self.expiration_time = attributes[:'expiration_time']
       end
     end
 
@@ -111,13 +111,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          client_progress == o.client_progress &&
-          error_message == o.error_message &&
-          expiration_time == o.expiration_time &&
           id == o.id &&
-          library_item_content_version == o.library_item_content_version &&
           library_item_id == o.library_item_id &&
-          state == o.state
+          library_item_content_version == o.library_item_content_version &&
+          error_message == o.error_message &&
+          client_progress == o.client_progress &&
+          state == o.state &&
+          expiration_time == o.expiration_time
     end
 
     # @see the `==` method
@@ -129,7 +129,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [client_progress, error_message, expiration_time, id, library_item_content_version, library_item_id, state].hash
+      [id, library_item_id, library_item_content_version, error_message, client_progress, state, expiration_time].hash
     end
 
     # Builds the object from hash

@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'activation_id' when calling VcenterActivationApi.cancel"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/vcenter/activation/id:{activation_id}?~action=cancel'.sub('{' + 'activation_id' + '}', activation_id.to_s)
+      local_var_path = '/com/vmware/vapi/vcenter/activation/id:{activation_id}?~action=cancel'.sub('{' + 'activation_id' + '}', activation_id.to_s)
 
       # query parameters
       query_params = {}

@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentQuestionAnswerSpec
-    # The answer value.
-    attr_accessor :answer_val
-
     # Id of the question being answered.
     attr_accessor :question_id
+
+    # The answer value.
+    attr_accessor :answer_val
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'answer_val' => :'answer_val',
-        :'question_id' => :'question_id'
+        :'question_id' => :'question_id',
+        :'answer_val' => :'answer_val'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'answer_val' => :'String',
-        :'question_id' => :'String'
+        :'question_id' => :'String',
+        :'answer_val' => :'String'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'answer_val')
-        self.answer_val = attributes[:'answer_val']
-      end
-
       if attributes.has_key?(:'question_id')
         self.question_id = attributes[:'question_id']
+      end
+
+      if attributes.has_key?(:'answer_val')
+        self.answer_val = attributes[:'answer_val']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @answer_val.nil?
-        invalid_properties.push('invalid value for "answer_val", answer_val cannot be nil.')
-      end
-
       if @question_id.nil?
         invalid_properties.push('invalid value for "question_id", question_id cannot be nil.')
+      end
+
+      if @answer_val.nil?
+        invalid_properties.push('invalid value for "answer_val", answer_val cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @answer_val.nil?
       return false if @question_id.nil?
+      return false if @answer_val.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          answer_val == o.answer_val &&
-          question_id == o.question_id
+          question_id == o.question_id &&
+          answer_val == o.answer_val
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [answer_val, question_id].hash
+      [question_id, answer_val].hash
     end
 
     # Builds the object from hash

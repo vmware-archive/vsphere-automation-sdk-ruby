@@ -11,47 +11,47 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceUpdatePendingQuestion
-    # List of allowed values
-    attr_accessor :allowed_values
-
     # ID of the data item
     attr_accessor :data_item
 
-    # Default answer
-    attr_accessor :default_answer
+    attr_accessor :text
 
     attr_accessor :description
+
+    attr_accessor :type
+
+    # List of allowed values
+    attr_accessor :allowed_values
 
     # Regexp to validate the input
     attr_accessor :regexp
 
-    attr_accessor :text
-
-    attr_accessor :type
+    # Default answer
+    attr_accessor :default_answer
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'allowed_values' => :'allowed_values',
         :'data_item' => :'data_item',
-        :'default_answer' => :'default_answer',
-        :'description' => :'description',
-        :'regexp' => :'regexp',
         :'text' => :'text',
-        :'type' => :'type'
+        :'description' => :'description',
+        :'type' => :'type',
+        :'allowed_values' => :'allowed_values',
+        :'regexp' => :'regexp',
+        :'default_answer' => :'default_answer'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'allowed_values' => :'Array<String>',
         :'data_item' => :'String',
-        :'default_answer' => :'String',
-        :'description' => :'VapiStdLocalizableMessage',
-        :'regexp' => :'String',
         :'text' => :'VapiStdLocalizableMessage',
-        :'type' => :'ApplianceUpdatePendingQuestionInputType'
+        :'description' => :'VapiStdLocalizableMessage',
+        :'type' => :'ApplianceUpdatePendingQuestionInputType',
+        :'allowed_values' => :'Array<String>',
+        :'regexp' => :'String',
+        :'default_answer' => :'String'
       }
     end
 
@@ -63,34 +63,34 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'allowed_values')
-        if (value = attributes[:'allowed_values']).is_a?(Array)
-          self.allowed_values = value
-        end
-      end
-
       if attributes.has_key?(:'data_item')
         self.data_item = attributes[:'data_item']
-      end
-
-      if attributes.has_key?(:'default_answer')
-        self.default_answer = attributes[:'default_answer']
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'regexp')
-        self.regexp = attributes[:'regexp']
       end
 
       if attributes.has_key?(:'text')
         self.text = attributes[:'text']
       end
 
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.has_key?(:'allowed_values')
+        if (value = attributes[:'allowed_values']).is_a?(Array)
+          self.allowed_values = value
+        end
+      end
+
+      if attributes.has_key?(:'regexp')
+        self.regexp = attributes[:'regexp']
+      end
+
+      if attributes.has_key?(:'default_answer')
+        self.default_answer = attributes[:'default_answer']
       end
     end
 
@@ -102,12 +102,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "data_item", data_item cannot be nil.')
       end
 
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
       if @text.nil?
         invalid_properties.push('invalid value for "text", text cannot be nil.')
+      end
+
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
       if @type.nil?
@@ -121,8 +121,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @data_item.nil?
-      return false if @description.nil?
       return false if @text.nil?
+      return false if @description.nil?
       return false if @type.nil?
       true
     end
@@ -132,13 +132,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          allowed_values == o.allowed_values &&
           data_item == o.data_item &&
-          default_answer == o.default_answer &&
-          description == o.description &&
-          regexp == o.regexp &&
           text == o.text &&
-          type == o.type
+          description == o.description &&
+          type == o.type &&
+          allowed_values == o.allowed_values &&
+          regexp == o.regexp &&
+          default_answer == o.default_answer
     end
 
     # @see the `==` method
@@ -150,7 +150,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allowed_values, data_item, default_answer, description, regexp, text, type].hash
+      [data_item, text, description, type, allowed_values, regexp, default_answer].hash
     end
 
     # Builds the object from hash

@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareSerialUpdateSpec
-    # Flag indicating whether the guest can connect and disconnect the device. If unset, the value is unchanged.
-    attr_accessor :allow_guest_control
+    # CPU yield behavior. If set to true, the virtual machine will periodically relinquish the processor if its sole task is polling the virtual serial port. The amount of time it takes to regain the processor will depend on the degree of other virtual machine activity on the host.   This field may be modified at any time, and changes applied to a connected virtual serial port take effect immediately.  If unset, the value is unchanged.
+    attr_accessor :yield_on_poll
 
     attr_accessor :backing
 
     # Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on. If unset, the value is unchanged.
     attr_accessor :start_connected
 
-    # CPU yield behavior. If set to true, the virtual machine will periodically relinquish the processor if its sole task is polling the virtual serial port. The amount of time it takes to regain the processor will depend on the degree of other virtual machine activity on the host.   This field may be modified at any time, and changes applied to a connected virtual serial port take effect immediately.  If unset, the value is unchanged.
-    attr_accessor :yield_on_poll
+    # Flag indicating whether the guest can connect and disconnect the device. If unset, the value is unchanged.
+    attr_accessor :allow_guest_control
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'allow_guest_control' => :'allow_guest_control',
+        :'yield_on_poll' => :'yield_on_poll',
         :'backing' => :'backing',
         :'start_connected' => :'start_connected',
-        :'yield_on_poll' => :'yield_on_poll'
+        :'allow_guest_control' => :'allow_guest_control'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'allow_guest_control' => :'Boolean',
+        :'yield_on_poll' => :'Boolean',
         :'backing' => :'VcenterVmHardwareSerialBackingSpec',
         :'start_connected' => :'Boolean',
-        :'yield_on_poll' => :'Boolean'
+        :'allow_guest_control' => :'Boolean'
       }
     end
 
@@ -50,8 +50,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'allow_guest_control')
-        self.allow_guest_control = attributes[:'allow_guest_control']
+      if attributes.has_key?(:'yield_on_poll')
+        self.yield_on_poll = attributes[:'yield_on_poll']
       end
 
       if attributes.has_key?(:'backing')
@@ -62,8 +62,8 @@ module VSphereAutomation
         self.start_connected = attributes[:'start_connected']
       end
 
-      if attributes.has_key?(:'yield_on_poll')
-        self.yield_on_poll = attributes[:'yield_on_poll']
+      if attributes.has_key?(:'allow_guest_control')
+        self.allow_guest_control = attributes[:'allow_guest_control']
       end
     end
 
@@ -85,10 +85,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          allow_guest_control == o.allow_guest_control &&
+          yield_on_poll == o.yield_on_poll &&
           backing == o.backing &&
           start_connected == o.start_connected &&
-          yield_on_poll == o.yield_on_poll
+          allow_guest_control == o.allow_guest_control
     end
 
     # @see the `==` method
@@ -100,7 +100,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_guest_control, backing, start_connected, yield_on_poll].hash
+      [yield_on_poll, backing, start_connected, allow_guest_control].hash
     end
 
     # Builds the object from hash

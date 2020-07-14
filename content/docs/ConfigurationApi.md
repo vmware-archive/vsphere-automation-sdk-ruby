@@ -1,15 +1,15 @@
 # VSphereAutomation::Content::ConfigurationApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](ConfigurationApi.md#get) | **POST** /rest/com/vmware/content/configuration?~action&#x3D;get | Retrieves the current configuration values.
-[**update**](ConfigurationApi.md#update) | **PATCH** /rest/com/vmware/content/configuration | Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn&#39;t guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
+[**get**](ConfigurationApi.md#get) | **POST** /com/vmware/content/configuration?~action&#x3D;get | Retrieves the current configuration values.
+[**update**](ConfigurationApi.md#update) | **PATCH** /com/vmware/content/configuration | Updates the configuration. The update is incremental. Any {@term field} in the {@link ConfigurationModel} {@term structure} that is {@term unset} will not be modified. Note that this update {@term operation} doesn&#39;t guarantee an atomic change of all the properties. In the case of a system crash or failure, some of the properties could be left unchanged while others may be updated.
 
 
 # **get**
-> ContentConfigurationResp get
+> ContentConfigurationResult get
 
 Retrieves the current configuration values.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ContentConfigurationResp**](ContentConfigurationResp.md)
+[**ContentConfigurationResult**](ContentConfigurationResult.md)
 
 ### Authorization
 

@@ -11,6 +11,9 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareMemoryInfo
+    # Memory size in mebibytes.
+    attr_accessor :size_mi_b
+
     # Flag indicating whether adding memory while the virtual machine is running is enabled.   Some guest operating systems may consume more resources or perform less efficiently when they run on hardware that supports adding memory while the machine is running. 
     attr_accessor :hot_add_enabled
 
@@ -20,26 +23,23 @@ module VSphereAutomation
     # The maximum amount of memory, in mebibytes, that can be added to a running virtual machine. Only set when Memory.Info.hot-add-enabled is true and the virtual machine is running.
     attr_accessor :hot_add_limit_mi_b
 
-    # Memory size in mebibytes.
-    attr_accessor :size_mi_b
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'size_mi_b' => :'size_MiB',
         :'hot_add_enabled' => :'hot_add_enabled',
         :'hot_add_increment_size_mi_b' => :'hot_add_increment_size_MiB',
-        :'hot_add_limit_mi_b' => :'hot_add_limit_MiB',
-        :'size_mi_b' => :'size_MiB'
+        :'hot_add_limit_mi_b' => :'hot_add_limit_MiB'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'size_mi_b' => :'Integer',
         :'hot_add_enabled' => :'Boolean',
         :'hot_add_increment_size_mi_b' => :'Integer',
-        :'hot_add_limit_mi_b' => :'Integer',
-        :'size_mi_b' => :'Integer'
+        :'hot_add_limit_mi_b' => :'Integer'
       }
     end
 
@@ -50,6 +50,10 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'size_MiB')
+        self.size_mi_b = attributes[:'size_MiB']
+      end
 
       if attributes.has_key?(:'hot_add_enabled')
         self.hot_add_enabled = attributes[:'hot_add_enabled']
@@ -62,22 +66,18 @@ module VSphereAutomation
       if attributes.has_key?(:'hot_add_limit_MiB')
         self.hot_add_limit_mi_b = attributes[:'hot_add_limit_MiB']
       end
-
-      if attributes.has_key?(:'size_MiB')
-        self.size_mi_b = attributes[:'size_MiB']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @hot_add_enabled.nil?
-        invalid_properties.push('invalid value for "hot_add_enabled", hot_add_enabled cannot be nil.')
-      end
-
       if @size_mi_b.nil?
         invalid_properties.push('invalid value for "size_mi_b", size_mi_b cannot be nil.')
+      end
+
+      if @hot_add_enabled.nil?
+        invalid_properties.push('invalid value for "hot_add_enabled", hot_add_enabled cannot be nil.')
       end
 
       invalid_properties
@@ -86,8 +86,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @hot_add_enabled.nil?
       return false if @size_mi_b.nil?
+      return false if @hot_add_enabled.nil?
       true
     end
 
@@ -96,10 +96,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          size_mi_b == o.size_mi_b &&
           hot_add_enabled == o.hot_add_enabled &&
           hot_add_increment_size_mi_b == o.hot_add_increment_size_mi_b &&
-          hot_add_limit_mi_b == o.hot_add_limit_mi_b &&
-          size_mi_b == o.size_mi_b
+          hot_add_limit_mi_b == o.hot_add_limit_mi_b
     end
 
     # @see the `==` method
@@ -111,7 +111,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [hot_add_enabled, hot_add_increment_size_mi_b, hot_add_limit_mi_b, size_mi_b].hash
+      [size_mi_b, hot_add_enabled, hot_add_increment_size_mi_b, hot_add_limit_mi_b].hash
     end
 
     # Builds the object from hash

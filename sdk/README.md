@@ -3,7 +3,7 @@
 The Ruby gem for the vSphere  API
 
 - API version: 2.0.0
-- Package version: 0.5.0
+- Package version: 0.4.6
 
 ## Installation
 
@@ -40,3 +40,5 @@ Class | Method | HTTP request | Description
 
 
 ## Documentation for Models
+
+

@@ -1,119 +1,17 @@
 # VSphereAutomation::VCenter::ResourcePoolApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](ResourcePoolApi.md#create) | **POST** /rest/vcenter/resource-pool | Creates a resource pool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the attribute ResourcePool.CreateSpec.parent requires Resource.CreatePool.  
-[**delete**](ResourcePoolApi.md#delete) | **DELETE** /rest/vcenter/resource-pool/{resource_pool} | Deletes a resource pool.
-[**get**](ResourcePoolApi.md#get) | **GET** /rest/vcenter/resource-pool/{resource_pool} | Retrieves information about the resource pool indicated by resourcePool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the parameter resourcePool requires System.Read.  
-[**list**](ResourcePoolApi.md#list) | **GET** /rest/vcenter/resource-pool | Returns information about at most 1000 visible (subject to permission checks) resource pools in vCenter matching the ResourcePool.FilterSpec.
-[**update**](ResourcePoolApi.md#update) | **PATCH** /rest/vcenter/resource-pool/{resource_pool} | Updates the configuration of a resource pool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the parameter resourcePool requires Resource.EditPool.  
-
-
-# **create**
-> VcenterResourcePoolCreateResp create(request_body)
-
-Creates a resource pool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the attribute ResourcePool.CreateSpec.parent requires Resource.CreatePool.  
-
-### Example
-```ruby
-# load the gem
-require 'vsphere-automation-vcenter'
-# setup authorization
-VSphereAutomation::Configuration.new.tap do |config|
-  # Configure API key authorization: api_key
-  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
-end
-
-api_instance = VSphereAutomation::VCenter::ResourcePoolApi.new
-request_body = VCenter::VcenterResourcePoolCreate.new # VcenterResourcePoolCreate | 
-
-begin
-  #Creates a resource pool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the attribute ResourcePool.CreateSpec.parent requires Resource.CreatePool.  
-  result = api_instance.create(request_body)
-  p result
-rescue VSphereAutomation::ApiError => e
-  puts "Exception when calling ResourcePoolApi->create: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request_body** | [**VcenterResourcePoolCreate**](VcenterResourcePoolCreate.md)|  | 
-
-### Return type
-
-[**VcenterResourcePoolCreateResp**](VcenterResourcePoolCreateResp.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **delete**
-> delete(resource_pool)
-
-Deletes a resource pool.
-
-### Example
-```ruby
-# load the gem
-require 'vsphere-automation-vcenter'
-# setup authorization
-VSphereAutomation::Configuration.new.tap do |config|
-  # Configure API key authorization: api_key
-  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
-end
-
-api_instance = VSphereAutomation::VCenter::ResourcePoolApi.new
-resource_pool = 'resource_pool_example' # String | Identifier of the resource pool to be deleted. The parameter must be an identifier for the resource type: ResourcePool.
-
-begin
-  #Deletes a resource pool.
-  api_instance.delete(resource_pool)
-rescue VSphereAutomation::ApiError => e
-  puts "Exception when calling ResourcePoolApi->delete: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resource_pool** | **String**| Identifier of the resource pool to be deleted. The parameter must be an identifier for the resource type: ResourcePool. | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+[**get**](ResourcePoolApi.md#get) | **GET** /vcenter/resource-pool/{resource_pool} | Retrieves information about the resource pool indicated by resourcePool.
+[**list**](ResourcePoolApi.md#list) | **GET** /vcenter/resource-pool | Returns information about at most 1000 visible (subject to permission checks) resource pools in vCenter matching the ResourcePool.FilterSpec.
 
 
 # **get**
-> VcenterResourcePoolResp get(resource_pool)
+> VcenterResourcePoolResult get(resource_pool)
 
-Retrieves information about the resource pool indicated by resourcePool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the parameter resourcePool requires System.Read.  
+Retrieves information about the resource pool indicated by resourcePool.
 
 ### Example
 ```ruby
@@ -131,7 +29,7 @@ api_instance = VSphereAutomation::VCenter::ResourcePoolApi.new
 resource_pool = 'resource_pool_example' # String | Identifier of the resource pool for which information should be retrieved. The parameter must be an identifier for the resource type: ResourcePool.
 
 begin
-  #Retrieves information about the resource pool indicated by resourcePool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the parameter resourcePool requires System.Read.  
+  #Retrieves information about the resource pool indicated by resourcePool.
   result = api_instance.get(resource_pool)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -147,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterResourcePoolResp**](VcenterResourcePoolResp.md)
+[**VcenterResourcePoolResult**](VcenterResourcePoolResult.md)
 
 ### Authorization
 
@@ -161,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterResourcePoolListResp list(opts)
+> VcenterResourcePoolListResult list(opts)
 
 Returns information about at most 1000 visible (subject to permission checks) resource pools in vCenter matching the ResourcePool.FilterSpec.
 
@@ -209,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterResourcePoolListResp**](VcenterResourcePoolListResp.md)
+[**VcenterResourcePoolListResult**](VcenterResourcePoolListResult.md)
 
 ### Authorization
 
@@ -218,57 +116,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **update**
-> update(resource_pool, request_body)
-
-Updates the configuration of a resource pool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the parameter resourcePool requires Resource.EditPool.  
-
-### Example
-```ruby
-# load the gem
-require 'vsphere-automation-vcenter'
-# setup authorization
-VSphereAutomation::Configuration.new.tap do |config|
-  # Configure API key authorization: api_key
-  config.api_key['vmware-api-session-id'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['vmware-api-session-id'] = 'Bearer'
-end
-
-api_instance = VSphereAutomation::VCenter::ResourcePoolApi.new
-resource_pool = 'resource_pool_example' # String | Identifier of the resource pool. The parameter must be an identifier for the resource type: ResourcePool.
-request_body = VCenter::VcenterResourcePoolUpdate.new # VcenterResourcePoolUpdate | 
-
-begin
-  #Updates the configuration of a resource pool. if you do not have all of the privileges described as follows:     -  The resource ResourcePool referenced by the parameter resourcePool requires Resource.EditPool.  
-  api_instance.update(resource_pool, request_body)
-rescue VSphereAutomation::ApiError => e
-  puts "Exception when calling ResourcePoolApi->update: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resource_pool** | **String**| Identifier of the resource pool. The parameter must be an identifier for the resource type: ResourcePool. | 
- **request_body** | [**VcenterResourcePoolUpdate**](VcenterResourcePoolUpdate.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 

@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get the Fully Qualified Doman Name.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingDnsHostnameResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingDnsHostnameResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get the Fully Qualified Doman Name.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingDnsHostnameResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingDnsHostnameResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsHostnameApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/dns/hostname'
+      local_var_path = '/appliance/networking/dns/hostname'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingDnsHostnameResp',
+	  '200' => 'Appliance::ApplianceNetworkingDnsHostnameResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -87,7 +87,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsHostnameApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/dns/hostname'
+      local_var_path = '/appliance/networking/dns/hostname'
 
       # query parameters
       query_params = {}
@@ -119,7 +119,7 @@ module VSphereAutomation
     # Test the Fully Qualified Domain Name.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingDnsHostnameTestResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingDnsHostnameTestResult|VapiStdErrorsErrorError|]
     def test(request_body, opts = {})
       data, _status_code, _headers = test_with_http_info(request_body, opts)
       data
@@ -129,7 +129,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingDnsHostnameTestResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingDnsHostnameTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def test_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsHostnameApi.test ...'
@@ -139,7 +139,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsHostnameApi.test"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/dns/hostname/test'
+      local_var_path = '/appliance/networking/dns/hostname/test'
 
       # query parameters
       query_params = {}
@@ -164,7 +164,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingDnsHostnameTestResp',
+	  '200' => 'Appliance::ApplianceNetworkingDnsHostnameTestResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

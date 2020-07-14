@@ -11,27 +11,27 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterPassiveSpec
-    attr_accessor :failover_ip
+    attr_accessor :placement
 
     attr_accessor :ha_ip
 
-    attr_accessor :placement
+    attr_accessor :failover_ip
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'failover_ip' => :'failover_ip',
+        :'placement' => :'placement',
         :'ha_ip' => :'ha_ip',
-        :'placement' => :'placement'
+        :'failover_ip' => :'failover_ip'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'failover_ip' => :'VcenterVchaIpSpec',
+        :'placement' => :'VcenterVchaPlacementSpec',
         :'ha_ip' => :'VcenterVchaIpSpec',
-        :'placement' => :'VcenterVchaPlacementSpec'
+        :'failover_ip' => :'VcenterVchaIpSpec'
       }
     end
 
@@ -43,16 +43,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'failover_ip')
-        self.failover_ip = attributes[:'failover_ip']
+      if attributes.has_key?(:'placement')
+        self.placement = attributes[:'placement']
       end
 
       if attributes.has_key?(:'ha_ip')
         self.ha_ip = attributes[:'ha_ip']
       end
 
-      if attributes.has_key?(:'placement')
-        self.placement = attributes[:'placement']
+      if attributes.has_key?(:'failover_ip')
+        self.failover_ip = attributes[:'failover_ip']
       end
     end
 
@@ -79,9 +79,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          failover_ip == o.failover_ip &&
+          placement == o.placement &&
           ha_ip == o.ha_ip &&
-          placement == o.placement
+          failover_ip == o.failover_ip
     end
 
     # @see the `==` method
@@ -93,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [failover_ip, ha_ip, placement].hash
+      [placement, ha_ip, failover_ip].hash
     end
 
     # Builds the object from hash

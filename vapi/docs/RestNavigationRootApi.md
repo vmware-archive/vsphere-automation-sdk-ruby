@@ -1,16 +1,16 @@
 # VSphereAutomation::VAPI::RestNavigationRootApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](RestNavigationRootApi.md#get) | **GET** /rest/com/vmware/vapi/rest/navigation/root | Retrieves information about a vAPI REST Root.
+[**get**](RestNavigationRootApi.md#get) | **GET** /com/vmware/vapi/rest/navigation/root | Retrieves information about a vAPI REST {@link Root}.
 
 
 # **get**
-> VapiRestNavigationRootResp get(opts)
+> VapiRestNavigationRootResult get(opts)
 
-Retrieves information about a vAPI REST Root.
+Retrieves information about a vAPI REST {@link Root}.
 
 ### Example
 ```ruby
@@ -26,11 +26,11 @@ end
 
 api_instance = VSphereAutomation::VAPI::RestNavigationRootApi.new
 opts = {
-  base_url: 'base_url_example' # String | Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
+  base_url: 'base_url_example' # String | Base URL.
 }
 
 begin
-  #Retrieves information about a vAPI REST Root.
+  #Retrieves information about a vAPI REST {@link Root}.
   result = api_instance.get(opts)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -42,11 +42,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **base_url** | **String**| Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs. | [optional] 
+ **base_url** | **String**| Base URL. | [optional] 
 
 ### Return type
 
-[**VapiRestNavigationRootResp**](VapiRestNavigationRootResp.md)
+[**VapiRestNavigationRootResult**](VapiRestNavigationRootResult.md)
 
 ### Authorization
 

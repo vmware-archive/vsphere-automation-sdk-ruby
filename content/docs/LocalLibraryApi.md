@@ -1,19 +1,19 @@
 # VSphereAutomation::Content::LocalLibraryApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](LocalLibraryApi.md#create) | **POST** /rest/com/vmware/content/local-library | Creates a new local library.
-[**delete**](LocalLibraryApi.md#delete) | **DELETE** /rest/com/vmware/content/local-library/id:{library_id} | Deletes the specified local library. &lt;p&gt; Deleting a local library will remove the entry immediately and begin an asynchronous task to remove all cached content for the library. If the asynchronous task fails, file content may remain on the storage backing. This content will require manual removal.
-[**get**](LocalLibraryApi.md#get) | **GET** /rest/com/vmware/content/local-library/id:{library_id} | Returns a given local library.
-[**list**](LocalLibraryApi.md#list) | **GET** /rest/com/vmware/content/local-library | Returns the identifiers of all local libraries in the Content Library.
-[**publish**](LocalLibraryApi.md#publish) | **POST** /rest/com/vmware/content/local-library/id:{library_id}?~action&#x3D;publish | Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.
-[**update**](LocalLibraryApi.md#update) | **PATCH** /rest/com/vmware/content/local-library/id:{library_id} | Updates the properties of a local library. &lt;p&gt; This is an incremental update to the local library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
+[**create**](LocalLibraryApi.md#create) | **POST** /com/vmware/content/local-library | Creates a new local library.
+[**delete**](LocalLibraryApi.md#delete) | **DELETE** /com/vmware/content/local-library/id:{library_id} | Deletes the specified local library. &lt;p&gt; Deleting a local library will remove the entry immediately and begin an asynchronous task to remove all cached content for the library. If the asynchronous task fails, file content may remain on the storage backing. This content will require manual removal.
+[**get**](LocalLibraryApi.md#get) | **GET** /com/vmware/content/local-library/id:{library_id} | Returns a given local library.
+[**list**](LocalLibraryApi.md#list) | **GET** /com/vmware/content/local-library | Returns the identifiers of all local libraries in the Content Library.
+[**publish**](LocalLibraryApi.md#publish) | **POST** /com/vmware/content/local-library/id:{library_id}?~action&#x3D;publish | Publishes the library to specified subscriptions. If no subscriptions are specified, then publishes the library to all its subscriptions.
+[**update**](LocalLibraryApi.md#update) | **PATCH** /com/vmware/content/local-library/id:{library_id} | Updates the properties of a local library. &lt;p&gt; This is an incremental update to the local library. {@term Fields} that are {@term unset} in the update specification will be left unchanged.
 
 
 # **create**
-> ContentLocalLibraryCreateResp create(request_body)
+> ContentLocalLibraryCreateResult create(request_body)
 
 Creates a new local library.
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLocalLibraryCreateResp**](ContentLocalLibraryCreateResp.md)
+[**ContentLocalLibraryCreateResult**](ContentLocalLibraryCreateResult.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ nil (empty response body)
 
 
 # **get**
-> ContentLocalLibraryResp get(library_id)
+> ContentLocalLibraryResult get(library_id)
 
 Returns a given local library.
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLocalLibraryResp**](ContentLocalLibraryResp.md)
+[**ContentLocalLibraryResult**](ContentLocalLibraryResult.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ContentLocalLibraryListResp list
+> ContentLocalLibraryListResult list
 
 Returns the identifiers of all local libraries in the Content Library.
 
@@ -194,7 +194,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ContentLocalLibraryListResp**](ContentLocalLibraryListResp.md)
+[**ContentLocalLibraryListResult**](ContentLocalLibraryListResult.md)
 
 ### Authorization
 

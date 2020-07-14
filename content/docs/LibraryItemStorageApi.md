@@ -1,15 +1,15 @@
 # VSphereAutomation::Content::LibraryItemStorageApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](LibraryItemStorageApi.md#get) | **POST** /rest/com/vmware/content/library/item/storage/id:{library_item_id}?~action&#x3D;get | Retrieves the storage information for a specific file in a library item.
-[**list**](LibraryItemStorageApi.md#list) | **GET** /rest/com/vmware/content/library/item/storage | Lists all storage items for a given library item.
+[**get**](LibraryItemStorageApi.md#get) | **POST** /com/vmware/content/library/item/storage/id:{library_item_id}?~action&#x3D;get | Retrieves the storage information for a specific file in a library item.
+[**list**](LibraryItemStorageApi.md#list) | **GET** /com/vmware/content/library/item/storage | Lists all storage items for a given library item.
 
 
 # **get**
-> ContentLibraryItemStorageResp get(library_item_id, request_body)
+> ContentLibraryItemStorageResult get(library_item_id, request_body)
 
 Retrieves the storage information for a specific file in a library item.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemStorageResp**](ContentLibraryItemStorageResp.md)
+[**ContentLibraryItemStorageResult**](ContentLibraryItemStorageResult.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ContentLibraryItemStorageListResp list(library_item_id)
+> ContentLibraryItemStorageListResult list(library_item_id)
 
 Lists all storage items for a given library item.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemStorageListResp**](ContentLibraryItemStorageListResp.md)
+[**ContentLibraryItemStorageListResult**](ContentLibraryItemStorageListResult.md)
 
 ### Authorization
 

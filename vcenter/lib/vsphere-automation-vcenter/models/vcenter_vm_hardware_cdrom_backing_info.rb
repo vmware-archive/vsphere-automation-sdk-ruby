@@ -11,38 +11,38 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareCdromBackingInfo
+    attr_accessor :type
+
+    # Path of the image file backing the virtual CD-ROM device. This field is optional and it is only relevant when the value of Cdrom.BackingInfo.type is ISO_FILE.
+    attr_accessor :iso_file
+
+    # Name of the host device backing the virtual CD-ROM device.    This field will be unset if Cdrom.BackingInfo.auto-detect is true and the virtual CD-ROM device is not connected or no suitable device is available on the host.
+    attr_accessor :host_device
+
     # Flag indicating whether the virtual CD-ROM device is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Cdrom.BackingInfo.type is HOST_DEVICE.
     attr_accessor :auto_detect
 
     attr_accessor :device_access_type
 
-    # Name of the host device backing the virtual CD-ROM device.    This field will be unset if Cdrom.BackingInfo.auto-detect is true and the virtual CD-ROM device is not connected or no suitable device is available on the host.
-    attr_accessor :host_device
-
-    # Path of the image file backing the virtual CD-ROM device. This field is optional and it is only relevant when the value of Cdrom.BackingInfo.type is ISO_FILE.
-    attr_accessor :iso_file
-
-    attr_accessor :type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'auto_detect' => :'auto_detect',
-        :'device_access_type' => :'device_access_type',
-        :'host_device' => :'host_device',
+        :'type' => :'type',
         :'iso_file' => :'iso_file',
-        :'type' => :'type'
+        :'host_device' => :'host_device',
+        :'auto_detect' => :'auto_detect',
+        :'device_access_type' => :'device_access_type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'auto_detect' => :'Boolean',
-        :'device_access_type' => :'VcenterVmHardwareCdromDeviceAccessType',
-        :'host_device' => :'String',
+        :'type' => :'VcenterVmHardwareCdromBackingType',
         :'iso_file' => :'String',
-        :'type' => :'VcenterVmHardwareCdromBackingType'
+        :'host_device' => :'String',
+        :'auto_detect' => :'Boolean',
+        :'device_access_type' => :'VcenterVmHardwareCdromDeviceAccessType'
       }
     end
 
@@ -54,24 +54,24 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'auto_detect')
-        self.auto_detect = attributes[:'auto_detect']
-      end
-
-      if attributes.has_key?(:'device_access_type')
-        self.device_access_type = attributes[:'device_access_type']
-      end
-
-      if attributes.has_key?(:'host_device')
-        self.host_device = attributes[:'host_device']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'iso_file')
         self.iso_file = attributes[:'iso_file']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'host_device')
+        self.host_device = attributes[:'host_device']
+      end
+
+      if attributes.has_key?(:'auto_detect')
+        self.auto_detect = attributes[:'auto_detect']
+      end
+
+      if attributes.has_key?(:'device_access_type')
+        self.device_access_type = attributes[:'device_access_type']
       end
     end
 
@@ -98,11 +98,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          auto_detect == o.auto_detect &&
-          device_access_type == o.device_access_type &&
-          host_device == o.host_device &&
+          type == o.type &&
           iso_file == o.iso_file &&
-          type == o.type
+          host_device == o.host_device &&
+          auto_detect == o.auto_detect &&
+          device_access_type == o.device_access_type
     end
 
     # @see the `==` method
@@ -114,7 +114,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [auto_detect, device_access_type, host_device, iso_file, type].hash
+      [type, iso_file, host_device, auto_detect, device_access_type].hash
     end
 
     # Builds the object from hash

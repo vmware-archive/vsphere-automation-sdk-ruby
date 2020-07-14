@@ -1,20 +1,20 @@
 # VSphereAutomation::CIS::TaggingTagAssociationApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach**](TaggingTagAssociationApi.md#attach) | **POST** /rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;attach | Attaches the given tag to the input object. The tag needs to meet the cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) criteria in order to be eligible for attachment. If the tag is already attached to the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
-[**attach_multiple_tags_to_object**](TaggingTagAssociationApi.md#attach_multiple_tags_to_object) | **POST** /rest/com/vmware/cis/tagging/tag-association?~action&#x3D;attach-multiple-tags-to-object | Attaches the given tags to the input object. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege on each tag.
-[**attach_tag_to_multiple_objects**](TaggingTagAssociationApi.md#attach_tag_to_multiple_objects) | **POST** /rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;attach-tag-to-multiple-objects | Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
-[**detach**](TaggingTagAssociationApi.md#detach) | **POST** /rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;detach | Detaches the tag from the given object. If the tag is already removed from the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
-[**detach_multiple_tags_from_object**](TaggingTagAssociationApi.md#detach_multiple_tags_from_object) | **POST** /rest/com/vmware/cis/tagging/tag-association?~action&#x3D;detach-multiple-tags-from-object | Detaches the given tags from the input object. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege each tag.
-[**detach_tag_from_multiple_objects**](TaggingTagAssociationApi.md#detach_tag_from_multiple_objects) | **POST** /rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;detach-tag-from-multiple-objects | Detaches the given tag from the input objects. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
-[**list_attachable_tags**](TaggingTagAssociationApi.md#list_attachable_tags) | **POST** /rest/com/vmware/cis/tagging/tag-association?~action&#x3D;list-attachable-tags | Fetches the {@term list} of attachable tags for the given object, omitting the tags that have already been attached. Criteria for attachability is calculated based on tagging cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) constructs. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have read privileges.
-[**list_attached_objects**](TaggingTagAssociationApi.md#list_attached_objects) | **POST** /rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;list-attached-objects | Fetches the {@term list} of attached objects for the given tag. To invoke this {@term operation}, you need the read privilege on the input tag. Only those objects for which you have the read privilege will be returned.
-[**list_attached_objects_on_tags**](TaggingTagAssociationApi.md#list_attached_objects_on_tags) | **POST** /rest/com/vmware/cis/tagging/tag-association?~action&#x3D;list-attached-objects-on-tags | Fetches the {@term list} of {@link TagToObjects} describing the input tag identifiers and the objects they are attached to. To invoke this {@term operation}, you need the read privilege on each input tag. The {@link TagToObjects#objectIds} will only contain those objects for which you have the read privilege.
-[**list_attached_tags**](TaggingTagAssociationApi.md#list_attached_tags) | **POST** /rest/com/vmware/cis/tagging/tag-association?~action&#x3D;list-attached-tags | Fetches the {@term list} of tags attached to the given object. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have the read privileges.
-[**list_attached_tags_on_objects**](TaggingTagAssociationApi.md#list_attached_tags_on_objects) | **POST** /rest/com/vmware/cis/tagging/tag-association?~action&#x3D;list-attached-tags-on-objects | Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
+[**attach**](TaggingTagAssociationApi.md#attach) | **POST** /com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;attach | Attaches the given tag to the input object. The tag needs to meet the cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) criteria in order to be eligible for attachment. If the tag is already attached to the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
+[**attach_multiple_tags_to_object**](TaggingTagAssociationApi.md#attach_multiple_tags_to_object) | **POST** /com/vmware/cis/tagging/tag-association?~action&#x3D;attach-multiple-tags-to-object | Attaches the given tags to the input object. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege on each tag.
+[**attach_tag_to_multiple_objects**](TaggingTagAssociationApi.md#attach_tag_to_multiple_objects) | **POST** /com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;attach-tag-to-multiple-objects | Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
+[**detach**](TaggingTagAssociationApi.md#detach) | **POST** /com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;detach | Detaches the tag from the given object. If the tag is already removed from the object, then this {@term operation} is a no-op and an error will not be thrown. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on the object.
+[**detach_multiple_tags_from_object**](TaggingTagAssociationApi.md#detach_multiple_tags_from_object) | **POST** /com/vmware/cis/tagging/tag-association?~action&#x3D;detach-multiple-tags-from-object | Detaches the given tags from the input object. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege each tag.
+[**detach_tag_from_multiple_objects**](TaggingTagAssociationApi.md#detach_tag_from_multiple_objects) | **POST** /com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;detach-tag-from-multiple-objects | Detaches the given tag from the input objects. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
+[**list_attachable_tags**](TaggingTagAssociationApi.md#list_attachable_tags) | **POST** /com/vmware/cis/tagging/tag-association?~action&#x3D;list-attachable-tags | Fetches the {@term list} of attachable tags for the given object, omitting the tags that have already been attached. Criteria for attachability is calculated based on tagging cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) constructs. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have read privileges.
+[**list_attached_objects**](TaggingTagAssociationApi.md#list_attached_objects) | **POST** /com/vmware/cis/tagging/tag-association/id:{tag_id}?~action&#x3D;list-attached-objects | Fetches the {@term list} of attached objects for the given tag. To invoke this {@term operation}, you need the read privilege on the input tag. Only those objects for which you have the read privilege will be returned.
+[**list_attached_objects_on_tags**](TaggingTagAssociationApi.md#list_attached_objects_on_tags) | **POST** /com/vmware/cis/tagging/tag-association?~action&#x3D;list-attached-objects-on-tags | Fetches the {@term list} of {@link TagToObjects} describing the input tag identifiers and the objects they are attached to. To invoke this {@term operation}, you need the read privilege on each input tag. The {@link TagToObjects#objectIds} will only contain those objects for which you have the read privilege.
+[**list_attached_tags**](TaggingTagAssociationApi.md#list_attached_tags) | **POST** /com/vmware/cis/tagging/tag-association?~action&#x3D;list-attached-tags | Fetches the {@term list} of tags attached to the given object. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have the read privileges.
+[**list_attached_tags_on_objects**](TaggingTagAssociationApi.md#list_attached_tags_on_objects) | **POST** /com/vmware/cis/tagging/tag-association?~action&#x3D;list-attached-tags-on-objects | Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
 
 
 # **attach**
@@ -69,7 +69,7 @@ nil (empty response body)
 
 
 # **attach_multiple_tags_to_object**
-> CisTaggingTagAssociationAttachMultipleTagsToObjectResp attach_multiple_tags_to_object(request_body)
+> CisTaggingTagAssociationAttachMultipleTagsToObjectResult attach_multiple_tags_to_object(request_body)
 
 Attaches the given tags to the input object. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege on each tag.
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationAttachMultipleTagsToObjectResp**](CisTaggingTagAssociationAttachMultipleTagsToObjectResp.md)
+[**CisTaggingTagAssociationAttachMultipleTagsToObjectResult**](CisTaggingTagAssociationAttachMultipleTagsToObjectResult.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 
 # **attach_tag_to_multiple_objects**
-> CisTaggingTagAssociationAttachTagToMultipleObjectsResp attach_tag_to_multiple_objects(tag_id, request_body)
+> CisTaggingTagAssociationAttachTagToMultipleObjectsResult attach_tag_to_multiple_objects(tag_id, request_body)
 
 Attaches the given tag to the input objects. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationAttachTagToMultipleObjectsResp**](CisTaggingTagAssociationAttachTagToMultipleObjectsResp.md)
+[**CisTaggingTagAssociationAttachTagToMultipleObjectsResult**](CisTaggingTagAssociationAttachTagToMultipleObjectsResult.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ nil (empty response body)
 
 
 # **detach_multiple_tags_from_object**
-> CisTaggingTagAssociationDetachMultipleTagsFromObjectResp detach_multiple_tags_from_object(request_body)
+> CisTaggingTagAssociationDetachMultipleTagsFromObjectResult detach_multiple_tags_from_object(request_body)
 
 Detaches the given tags from the input object. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege each tag.
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationDetachMultipleTagsFromObjectResp**](CisTaggingTagAssociationDetachMultipleTagsFromObjectResp.md)
+[**CisTaggingTagAssociationDetachMultipleTagsFromObjectResult**](CisTaggingTagAssociationDetachMultipleTagsFromObjectResult.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 
 # **detach_tag_from_multiple_objects**
-> CisTaggingTagAssociationDetachTagFromMultipleObjectsResp detach_tag_from_multiple_objects(tag_id, request_body)
+> CisTaggingTagAssociationDetachTagFromMultipleObjectsResult detach_tag_from_multiple_objects(tag_id, request_body)
 
 Detaches the given tag from the input objects. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the attach tag privilege on the tag and the read privilege on each object.
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationDetachTagFromMultipleObjectsResp**](CisTaggingTagAssociationDetachTagFromMultipleObjectsResp.md)
+[**CisTaggingTagAssociationDetachTagFromMultipleObjectsResult**](CisTaggingTagAssociationDetachTagFromMultipleObjectsResult.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 
 # **list_attachable_tags**
-> CisTaggingTagAssociationListAttachableTagsResp list_attachable_tags(request_body)
+> CisTaggingTagAssociationListAttachableTagsResult list_attachable_tags(request_body)
 
 Fetches the {@term list} of attachable tags for the given object, omitting the tags that have already been attached. Criteria for attachability is calculated based on tagging cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) constructs. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have read privileges.
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationListAttachableTagsResp**](CisTaggingTagAssociationListAttachableTagsResp.md)
+[**CisTaggingTagAssociationListAttachableTagsResult**](CisTaggingTagAssociationListAttachableTagsResult.md)
 
 ### Authorization
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 
 # **list_attached_objects**
-> CisTaggingTagAssociationListAttachedObjectsResp list_attached_objects(tag_id)
+> CisTaggingTagAssociationListAttachedObjectsResult list_attached_objects(tag_id)
 
 Fetches the {@term list} of attached objects for the given tag. To invoke this {@term operation}, you need the read privilege on the input tag. Only those objects for which you have the read privilege will be returned.
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationListAttachedObjectsResp**](CisTaggingTagAssociationListAttachedObjectsResp.md)
+[**CisTaggingTagAssociationListAttachedObjectsResult**](CisTaggingTagAssociationListAttachedObjectsResult.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 
 # **list_attached_objects_on_tags**
-> CisTaggingTagAssociationListAttachedObjectsOnTagsResp list_attached_objects_on_tags(request_body)
+> CisTaggingTagAssociationListAttachedObjectsOnTagsResult list_attached_objects_on_tags(request_body)
 
 Fetches the {@term list} of {@link TagToObjects} describing the input tag identifiers and the objects they are attached to. To invoke this {@term operation}, you need the read privilege on each input tag. The {@link TagToObjects#objectIds} will only contain those objects for which you have the read privilege.
 
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationListAttachedObjectsOnTagsResp**](CisTaggingTagAssociationListAttachedObjectsOnTagsResp.md)
+[**CisTaggingTagAssociationListAttachedObjectsOnTagsResult**](CisTaggingTagAssociationListAttachedObjectsOnTagsResult.md)
 
 ### Authorization
 
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 
 # **list_attached_tags**
-> CisTaggingTagAssociationListAttachedTagsResp list_attached_tags(request_body)
+> CisTaggingTagAssociationListAttachedTagsResult list_attached_tags(request_body)
 
 Fetches the {@term list} of tags attached to the given object. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have the read privileges.
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationListAttachedTagsResp**](CisTaggingTagAssociationListAttachedTagsResp.md)
+[**CisTaggingTagAssociationListAttachedTagsResult**](CisTaggingTagAssociationListAttachedTagsResult.md)
 
 ### Authorization
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 
 # **list_attached_tags_on_objects**
-> CisTaggingTagAssociationListAttachedTagsOnObjectsResp list_attached_tags_on_objects(request_body)
+> CisTaggingTagAssociationListAttachedTagsOnObjectsResult list_attached_tags_on_objects(request_body)
 
 Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingTagAssociationListAttachedTagsOnObjectsResp**](CisTaggingTagAssociationListAttachedTagsOnObjectsResp.md)
+[**CisTaggingTagAssociationListAttachedTagsOnObjectsResult**](CisTaggingTagAssociationListAttachedTagsOnObjectsResult.md)
 
 ### Authorization
 

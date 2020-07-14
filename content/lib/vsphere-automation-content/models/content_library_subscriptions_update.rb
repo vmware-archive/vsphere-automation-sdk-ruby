@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibrarySubscriptionsUpdate
-    attr_accessor :spec
-
     # subscription identifier.
     attr_accessor :subscription
+
+    attr_accessor :spec
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'spec' => :'spec',
-        :'subscription' => :'subscription'
+        :'subscription' => :'subscription',
+        :'spec' => :'spec'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'spec' => :'ContentLibrarySubscriptionsUpdateSpec',
-        :'subscription' => :'String'
+        :'subscription' => :'String',
+        :'spec' => :'ContentLibrarySubscriptionsUpdateSpec'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'spec')
-        self.spec = attributes[:'spec']
-      end
-
       if attributes.has_key?(:'subscription')
         self.subscription = attributes[:'subscription']
+      end
+
+      if attributes.has_key?(:'spec')
+        self.spec = attributes[:'spec']
       end
     end
 
@@ -53,12 +53,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @spec.nil?
-        invalid_properties.push('invalid value for "spec", spec cannot be nil.')
-      end
-
       if @subscription.nil?
         invalid_properties.push('invalid value for "subscription", subscription cannot be nil.')
+      end
+
+      if @spec.nil?
+        invalid_properties.push('invalid value for "spec", spec cannot be nil.')
       end
 
       invalid_properties
@@ -67,8 +67,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @spec.nil?
       return false if @subscription.nil?
+      return false if @spec.nil?
       true
     end
 
@@ -77,8 +77,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          spec == o.spec &&
-          subscription == o.subscription
+          subscription == o.subscription &&
+          spec == o.spec
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [spec, subscription].hash
+      [subscription, spec].hash
     end
 
     # Builds the object from hash

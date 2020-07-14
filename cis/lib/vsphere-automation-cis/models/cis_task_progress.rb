@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaskProgress
+    # Total amount of the work for the operation.
+    attr_accessor :total
+
     # The amount of work completed for the operation. The value can only be incremented.
     attr_accessor :completed
 
     attr_accessor :message
 
-    # Total amount of the work for the operation.
-    attr_accessor :total
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'total' => :'total',
         :'completed' => :'completed',
-        :'message' => :'message',
-        :'total' => :'total'
+        :'message' => :'message'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'total' => :'Integer',
         :'completed' => :'Integer',
-        :'message' => :'VapiStdLocalizableMessage',
-        :'total' => :'Integer'
+        :'message' => :'VapiStdLocalizableMessage'
       }
     end
 
@@ -45,6 +45,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'total')
+        self.total = attributes[:'total']
+      end
+
       if attributes.has_key?(:'completed')
         self.completed = attributes[:'completed']
       end
@@ -52,16 +56,16 @@ module VSphereAutomation
       if attributes.has_key?(:'message')
         self.message = attributes[:'message']
       end
-
-      if attributes.has_key?(:'total')
-        self.total = attributes[:'total']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @total.nil?
+        invalid_properties.push('invalid value for "total", total cannot be nil.')
+      end
+
       if @completed.nil?
         invalid_properties.push('invalid value for "completed", completed cannot be nil.')
       end
@@ -70,19 +74,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "message", message cannot be nil.')
       end
 
-      if @total.nil?
-        invalid_properties.push('invalid value for "total", total cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @total.nil?
       return false if @completed.nil?
       return false if @message.nil?
-      return false if @total.nil?
       true
     end
 
@@ -91,9 +91,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          total == o.total &&
           completed == o.completed &&
-          message == o.message &&
-          total == o.total
+          message == o.message
     end
 
     # @see the `==` method
@@ -105,7 +105,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [completed, message, total].hash
+      [total, completed, message].hash
     end
 
     # Builds the object from hash

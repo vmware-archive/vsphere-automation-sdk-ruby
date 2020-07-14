@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmPowerInfo
+    attr_accessor :state
+
     # Flag indicating whether the virtual machine was powered off cleanly. This field may be used to detect that the virtual machine crashed unexpectedly and should be restarted. This field is optional and it is only relevant when the value of Power.Info.state is POWERED_OFF.
     attr_accessor :clean_power_off
-
-    attr_accessor :state
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'clean_power_off' => :'clean_power_off',
-        :'state' => :'state'
+        :'state' => :'state',
+        :'clean_power_off' => :'clean_power_off'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'clean_power_off' => :'Boolean',
-        :'state' => :'VcenterVmPowerState'
+        :'state' => :'VcenterVmPowerState',
+        :'clean_power_off' => :'Boolean'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'clean_power_off')
-        self.clean_power_off = attributes[:'clean_power_off']
-      end
-
       if attributes.has_key?(:'state')
         self.state = attributes[:'state']
+      end
+
+      if attributes.has_key?(:'clean_power_off')
+        self.clean_power_off = attributes[:'clean_power_off']
       end
     end
 
@@ -72,8 +72,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          clean_power_off == o.clean_power_off &&
-          state == o.state
+          state == o.state &&
+          clean_power_off == o.clean_power_off
     end
 
     # @see the `==` method
@@ -85,7 +85,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [clean_power_off, state].hash
+      [state, clean_power_off].hash
     end
 
     # Builds the object from hash

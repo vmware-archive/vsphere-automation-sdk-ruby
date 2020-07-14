@@ -1,17 +1,17 @@
 # VSphereAutomation::Content::LibraryApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find**](LibraryApi.md#find) | **POST** /rest/com/vmware/content/library?~action&#x3D;find | Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
-[**get**](LibraryApi.md#get) | **GET** /rest/com/vmware/content/library/id:{library_id} | Returns a given {@link LibraryModel}.
-[**list**](LibraryApi.md#list) | **GET** /rest/com/vmware/content/library | Returns the identifiers of all libraries of any type in the Content Library.
-[**update**](LibraryApi.md#update) | **PATCH** /rest/com/vmware/content/library/id:{library_id} | Updates the properties of a library. &lt;p&gt; This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
+[**find**](LibraryApi.md#find) | **POST** /com/vmware/content/library?~action&#x3D;find | Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
+[**get**](LibraryApi.md#get) | **GET** /com/vmware/content/library/id:{library_id} | Returns a given {@link LibraryModel}.
+[**list**](LibraryApi.md#list) | **GET** /com/vmware/content/library | Returns the identifiers of all libraries of any type in the Content Library.
+[**update**](LibraryApi.md#update) | **PATCH** /com/vmware/content/library/id:{library_id} | Updates the properties of a library. &lt;p&gt; This is an incremental update to the library. Any {@term field} in the {@link LibraryModel} {@term structure} that is {@term unset} will not be modified. &lt;p&gt; This {@term operation} will only update the common properties for all library types. This will not, for example, update the {@link LibraryModel#publishInfo} of a local library, nor the {@link LibraryModel#subscriptionInfo} of a subscribed library. Specific properties are updated in {@link LocalLibrary#update} and {@link SubscribedLibrary#update}.
 
 
 # **find**
-> ContentLibraryFindResp find(request_body)
+> ContentLibraryFindResult find(request_body)
 
 Returns a list of all the visible (as determined by authorization policy) libraries matching the requested {@link Library.FindSpec}.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryFindResp**](ContentLibraryFindResp.md)
+[**ContentLibraryFindResult**](ContentLibraryFindResult.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> ContentLibraryResp get(library_id)
+> ContentLibraryResult get(library_id)
 
 Returns a given {@link LibraryModel}.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryResp**](ContentLibraryResp.md)
+[**ContentLibraryResult**](ContentLibraryResult.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ContentLibraryListResp list
+> ContentLibraryListResult list
 
 Returns the identifiers of all libraries of any type in the Content Library.
 
@@ -143,7 +143,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ContentLibraryListResp**](ContentLibraryListResp.md)
+[**ContentLibraryListResult**](ContentLibraryListResult.md)
 
 ### Authorization
 

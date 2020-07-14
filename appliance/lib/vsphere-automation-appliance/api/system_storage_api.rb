@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get disk to partition mapping.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceSystemStorageListResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceSystemStorageListResult|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get disk to partition mapping.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceSystemStorageListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceSystemStorageListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemStorageApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/system/storage'
+      local_var_path = '/appliance/system/storage'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceSystemStorageListResp',
+	  '200' => 'Appliance::ApplianceSystemStorageListResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -81,7 +81,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: SystemStorageApi.resize ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/system/storage/resize'
+      local_var_path = '/appliance/system/storage/resize'
 
       # query parameters
       query_params = {}
@@ -110,7 +110,7 @@ module VSphereAutomation
     end
     # Resize all partitions to 100 percent of disk size.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceSystemStorageResizeExResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceSystemStorageResizeExResult|VapiStdErrorsErrorError|]
     def resize_ex(opts = {})
       data, _status_code, _headers = resize_ex_with_http_info(opts)
       data
@@ -119,13 +119,13 @@ module VSphereAutomation
     # Resize all partitions to 100 percent of disk size.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceSystemStorageResizeExResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceSystemStorageResizeExResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def resize_ex_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemStorageApi.resize_ex ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/system/storage?action=resize-ex'
+      local_var_path = '/appliance/system/storage?action=resize-ex'
 
       # query parameters
       query_params = {}
@@ -148,7 +148,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceSystemStorageResizeExResp',
+	  '200' => 'Appliance::ApplianceSystemStorageResizeExResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

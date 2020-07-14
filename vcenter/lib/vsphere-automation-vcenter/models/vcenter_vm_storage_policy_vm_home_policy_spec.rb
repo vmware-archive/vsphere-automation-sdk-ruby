@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmStoragePolicyVmHomePolicySpec
+    attr_accessor :type
+
     # Storage Policy identification. This field is optional and it is only relevant when the value of Policy.VmHomePolicySpec.type is USE_SPECIFIED_POLICY. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vcenter.StoragePolicy. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vcenter.StoragePolicy.
     attr_accessor :policy
-
-    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'policy' => :'policy',
-        :'type' => :'type'
+        :'type' => :'type',
+        :'policy' => :'policy'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'policy' => :'String',
-        :'type' => :'VcenterVmStoragePolicyVmHomePolicySpecPolicyType'
+        :'type' => :'VcenterVmStoragePolicyVmHomePolicySpecPolicyType',
+        :'policy' => :'String'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'policy')
-        self.policy = attributes[:'policy']
-      end
-
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.has_key?(:'policy')
+        self.policy = attributes[:'policy']
       end
     end
 
@@ -72,8 +72,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          policy == o.policy &&
-          type == o.type
+          type == o.type &&
+          policy == o.policy
     end
 
     # @see the `==` method
@@ -85,7 +85,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [policy, type].hash
+      [type, policy].hash
     end
 
     # Builds the object from hash

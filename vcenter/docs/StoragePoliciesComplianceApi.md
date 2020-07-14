@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::StoragePoliciesComplianceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](StoragePoliciesComplianceApi.md#list) | **GET** /rest/vcenter/storage/policies/entities/compliance | Returns compliance information about entities matching the filter Compliance.FilterSpec. Entities without storage policy association are not returned.
+[**list**](StoragePoliciesComplianceApi.md#list) | **GET** /vcenter/storage/policies/entities/compliance | Returns compliance information about entities matching the filter Compliance.FilterSpec. Entities without storage policy association are not returned.
 
 
 # **list**
-> VcenterStoragePoliciesComplianceListResp list(opts)
+> VcenterStoragePoliciesComplianceListResult list(opts)
 
 Returns compliance information about entities matching the filter Compliance.FilterSpec. Entities without storage policy association are not returned.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterStoragePoliciesComplianceListResp**](VcenterStoragePoliciesComplianceListResp.md)
+[**VcenterStoragePoliciesComplianceListResult**](VcenterStoragePoliciesComplianceListResult.md)
 
 ### Authorization
 

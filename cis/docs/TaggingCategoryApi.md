@@ -1,18 +1,18 @@
 # VSphereAutomation::CIS::TaggingCategoryApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_to_used_by**](TaggingCategoryApi.md#add_to_used_by) | **POST** /rest/com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;add-to-used-by | Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
-[**create**](TaggingCategoryApi.md#create) | **POST** /rest/com/vmware/cis/tagging/category | Creates a category. To invoke this {@term operation}, you need the create category privilege.
-[**delete**](TaggingCategoryApi.md#delete) | **DELETE** /rest/com/vmware/cis/tagging/category/id:{category_id} | Deletes an existing category. To invoke this {@term operation}, you need the delete privilege on the category.
-[**get**](TaggingCategoryApi.md#get) | **GET** /rest/com/vmware/cis/tagging/category/id:{category_id} | Fetches the category information for the given category identifier. In order to view the category information, you need the read privilege on the category.
-[**list**](TaggingCategoryApi.md#list) | **GET** /rest/com/vmware/cis/tagging/category | Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
-[**list_used_categories**](TaggingCategoryApi.md#list_used_categories) | **POST** /rest/com/vmware/cis/tagging/category?~action&#x3D;list-used-categories | Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
-[**remove_from_used_by**](TaggingCategoryApi.md#remove_from_used_by) | **POST** /rest/com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;remove-from-used-by | Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
-[**revoke_propagating_permissions**](TaggingCategoryApi.md#revoke_propagating_permissions) | **POST** /rest/com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;revoke-propagating-permissions | Revokes all propagating permissions on the given category. You should then attach a direct permission with tagging privileges on the given category. To invoke this {@term operation}, you need category related privileges (direct or propagating) on the concerned category.
-[**update**](TaggingCategoryApi.md#update) | **PATCH** /rest/com/vmware/cis/tagging/category/id:{category_id} | Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
+[**add_to_used_by**](TaggingCategoryApi.md#add_to_used_by) | **POST** /com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;add-to-used-by | Adds the {@param.name usedByEntity} to the {@link CategoryModel#usedBy} subscribers {@term set} for the specified category. If the {@param.name usedByEntity} is already in the {@term set}, then this becomes an idempotent no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
+[**create**](TaggingCategoryApi.md#create) | **POST** /com/vmware/cis/tagging/category | Creates a category. To invoke this {@term operation}, you need the create category privilege.
+[**delete**](TaggingCategoryApi.md#delete) | **DELETE** /com/vmware/cis/tagging/category/id:{category_id} | Deletes an existing category. To invoke this {@term operation}, you need the delete privilege on the category.
+[**get**](TaggingCategoryApi.md#get) | **GET** /com/vmware/cis/tagging/category/id:{category_id} | Fetches the category information for the given category identifier. In order to view the category information, you need the read privilege on the category.
+[**list**](TaggingCategoryApi.md#list) | **GET** /com/vmware/cis/tagging/category | Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
+[**list_used_categories**](TaggingCategoryApi.md#list_used_categories) | **POST** /com/vmware/cis/tagging/category?~action&#x3D;list-used-categories | Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
+[**remove_from_used_by**](TaggingCategoryApi.md#remove_from_used_by) | **POST** /com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;remove-from-used-by | Removes the {@param.name usedByEntity} from the {@link CategoryModel#usedBy} subscribers {@term set}. If the {@param.name usedByEntity} is not using this category, then this becomes a no-op. To invoke this {@term operation}, you need the modify {@link CategoryModel#usedBy} privilege on the category.
+[**revoke_propagating_permissions**](TaggingCategoryApi.md#revoke_propagating_permissions) | **POST** /com/vmware/cis/tagging/category/id:{category_id}?~action&#x3D;revoke-propagating-permissions | Revokes all propagating permissions on the given category. You should then attach a direct permission with tagging privileges on the given category. To invoke this {@term operation}, you need category related privileges (direct or propagating) on the concerned category.
+[**update**](TaggingCategoryApi.md#update) | **PATCH** /com/vmware/cis/tagging/category/id:{category_id} | Updates an existing category. To invoke this {@term operation}, you need the edit privilege on the category.
 
 
 # **add_to_used_by**
@@ -67,7 +67,7 @@ nil (empty response body)
 
 
 # **create**
-> CisTaggingCategoryCreateResp create(request_body)
+> CisTaggingCategoryCreateResult create(request_body)
 
 Creates a category. To invoke this {@term operation}, you need the create category privilege.
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingCategoryCreateResp**](CisTaggingCategoryCreateResp.md)
+[**CisTaggingCategoryCreateResult**](CisTaggingCategoryCreateResult.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ nil (empty response body)
 
 
 # **get**
-> CisTaggingCategoryResp get(category_id)
+> CisTaggingCategoryResult get(category_id)
 
 Fetches the category information for the given category identifier. In order to view the category information, you need the read privilege on the category.
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingCategoryResp**](CisTaggingCategoryResp.md)
+[**CisTaggingCategoryResult**](CisTaggingCategoryResult.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> CisTaggingCategoryListResp list
+> CisTaggingCategoryListResult list
 
 Enumerates the categories in the system. To invoke this {@term operation}, you need the read privilege on the individual categories. The {@term list} will only contain those categories for which you have read privileges.
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CisTaggingCategoryListResp**](CisTaggingCategoryListResp.md)
+[**CisTaggingCategoryListResult**](CisTaggingCategoryListResult.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ This endpoint does not need any parameter.
 
 
 # **list_used_categories**
-> CisTaggingCategoryListUsedCategoriesResp list_used_categories(request_body)
+> CisTaggingCategoryListUsedCategoriesResult list_used_categories(request_body)
 
 Enumerates all categories for which the {@param.name usedByEntity} is part of the {@link CategoryModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual categories.
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CisTaggingCategoryListUsedCategoriesResp**](CisTaggingCategoryListUsedCategoriesResp.md)
+[**CisTaggingCategoryListUsedCategoriesResult**](CisTaggingCategoryListUsedCategoriesResult.md)
 
 ### Authorization
 

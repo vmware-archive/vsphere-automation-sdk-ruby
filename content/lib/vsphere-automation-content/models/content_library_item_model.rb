@@ -11,10 +11,13 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemModel
-    # The status that indicates whether the library item is on disk or not. The library item is cached when all its files are on disk.
-    attr_accessor :cached
+    # A unique identifier for this library item.
+    attr_accessor :id
 
-    # The latest version of the file content list of this library item.
+    # The identifier of the {@link LibraryModel} to which this item belongs.
+    attr_accessor :library_id
+
+    # The version of the file content list of this library item.
     attr_accessor :content_version
 
     # The date and time when this library item was created.
@@ -23,17 +26,11 @@ module VSphereAutomation
     # A human-readable description for this library item.
     attr_accessor :description
 
-    # A unique identifier for this library item.
-    attr_accessor :id
-
     # The date and time when the metadata for this library item was last changed. <p> This {@term field} is affected by changes to the properties or file content of this item. It is not modified by changes to the tags of the item, or by changes to the library which owns this item.
     attr_accessor :last_modified_time
 
     # The date and time when this library item was last synchronized. <p> This {@term field} is updated every time a synchronization is triggered on the library item, including when a synchronization is triggered on the library to which this item belongs. The value is {@term unset} for a library item that belongs to a local library.
     attr_accessor :last_sync_time
-
-    # The identifier of the {@link LibraryModel} to which this item belongs.
-    attr_accessor :library_id
 
     # A version number for the metadata of this library item. <p> This value is incremented with each change to the metadata of this item. Changes to name, description, and so on will increment this value. The value is not incremented by changes to the content or tags of the item or the library which owns it.
     attr_accessor :metadata_version
@@ -41,11 +38,11 @@ module VSphereAutomation
     # A human-readable name for this library item. <p> The name may not be {@term unset} or an empty string. The name does not have to be unique, even within the same library.
     attr_accessor :name
 
+    # The status that indicates whether the library item is on disk or not. The library item is cached when all its files are on disk.
+    attr_accessor :cached
+
     # The library item size, in bytes. The size is the sum of the size used on the storage backing for all the files in the item. When the library item is not cached, the size is 0.
     attr_accessor :size
-
-    # The identifier of the {@link ItemModel} to which this item is synchronized to if the item belongs to a subscribed library. The value is {@term unset} for a library item that belongs to a local library.
-    attr_accessor :source_id
 
     # An optional type identifier which indicates the type adapter plugin to use. <p> This {@term field} may be set to a non-empty string value that corresponds to an identifier supported by a type adapter plugin present in the Content Library Service. A type adapter plugin, if present for the specified type, can provide additional information and services around the item content. A type adapter can guide the upload process by creating file entries that are in need of being uploaded to complete an item. <p> The types and plugins supported by the Content Library Service can be queried using the {@link Type} {@term service}.
     attr_accessor :type
@@ -53,43 +50,46 @@ module VSphereAutomation
     # A version number that is updated on metadata changes. This value is used to validate update requests to provide optimistic concurrency of changes. <p> This value represents a number that is incremented every time library item properties, such as name or description, are changed. It is not incremented by changes to the file content of the library item, including adding or removing files. It is also not affected by tagging the library item.
     attr_accessor :version
 
+    # The identifier of the {@link ItemModel} to which this item is synchronized to if the item belongs to a subscribed library. The value is {@term unset} for a library item that belongs to a local library.
+    attr_accessor :source_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cached' => :'cached',
+        :'id' => :'id',
+        :'library_id' => :'library_id',
         :'content_version' => :'content_version',
         :'creation_time' => :'creation_time',
         :'description' => :'description',
-        :'id' => :'id',
         :'last_modified_time' => :'last_modified_time',
         :'last_sync_time' => :'last_sync_time',
-        :'library_id' => :'library_id',
         :'metadata_version' => :'metadata_version',
         :'name' => :'name',
+        :'cached' => :'cached',
         :'size' => :'size',
-        :'source_id' => :'source_id',
         :'type' => :'type',
-        :'version' => :'version'
+        :'version' => :'version',
+        :'source_id' => :'source_id'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cached' => :'Boolean',
+        :'id' => :'String',
+        :'library_id' => :'String',
         :'content_version' => :'String',
         :'creation_time' => :'DateTime',
         :'description' => :'String',
-        :'id' => :'String',
         :'last_modified_time' => :'DateTime',
         :'last_sync_time' => :'DateTime',
-        :'library_id' => :'String',
         :'metadata_version' => :'String',
         :'name' => :'String',
+        :'cached' => :'Boolean',
         :'size' => :'Integer',
-        :'source_id' => :'String',
         :'type' => :'String',
-        :'version' => :'String'
+        :'version' => :'String',
+        :'source_id' => :'String'
       }
     end
 
@@ -101,8 +101,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cached')
-        self.cached = attributes[:'cached']
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'library_id')
+        self.library_id = attributes[:'library_id']
       end
 
       if attributes.has_key?(:'content_version')
@@ -117,20 +121,12 @@ module VSphereAutomation
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
-      end
-
       if attributes.has_key?(:'last_modified_time')
         self.last_modified_time = attributes[:'last_modified_time']
       end
 
       if attributes.has_key?(:'last_sync_time')
         self.last_sync_time = attributes[:'last_sync_time']
-      end
-
-      if attributes.has_key?(:'library_id')
-        self.library_id = attributes[:'library_id']
       end
 
       if attributes.has_key?(:'metadata_version')
@@ -141,12 +137,12 @@ module VSphereAutomation
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'size')
-        self.size = attributes[:'size']
+      if attributes.has_key?(:'cached')
+        self.cached = attributes[:'cached']
       end
 
-      if attributes.has_key?(:'source_id')
-        self.source_id = attributes[:'source_id']
+      if attributes.has_key?(:'size')
+        self.size = attributes[:'size']
       end
 
       if attributes.has_key?(:'type')
@@ -155,6 +151,10 @@ module VSphereAutomation
 
       if attributes.has_key?(:'version')
         self.version = attributes[:'version']
+      end
+
+      if attributes.has_key?(:'source_id')
+        self.source_id = attributes[:'source_id']
       end
     end
 
@@ -176,20 +176,20 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cached == o.cached &&
+          id == o.id &&
+          library_id == o.library_id &&
           content_version == o.content_version &&
           creation_time == o.creation_time &&
           description == o.description &&
-          id == o.id &&
           last_modified_time == o.last_modified_time &&
           last_sync_time == o.last_sync_time &&
-          library_id == o.library_id &&
           metadata_version == o.metadata_version &&
           name == o.name &&
+          cached == o.cached &&
           size == o.size &&
-          source_id == o.source_id &&
           type == o.type &&
-          version == o.version
+          version == o.version &&
+          source_id == o.source_id
     end
 
     # @see the `==` method
@@ -201,7 +201,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cached, content_version, creation_time, description, id, last_modified_time, last_sync_time, library_id, metadata_version, name, size, source_id, type, version].hash
+      [id, library_id, content_version, creation_time, description, last_modified_time, last_sync_time, metadata_version, name, cached, size, type, version, source_id].hash
     end
 
     # Builds the object from hash

@@ -11,12 +11,13 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataCliCommandInfo
+    attr_accessor :identity
+
     # The text description displayed to the user in help output.
     attr_accessor :description
 
-    attr_accessor :formatter
-
-    attr_accessor :identity
+    # The service identifier that contains the operations for this CLI command.
+    attr_accessor :service_id
 
     # The operation identifier corresponding to this CLI command.
     attr_accessor :operation_id
@@ -24,35 +25,34 @@ module VSphereAutomation
     # The input for this command.
     attr_accessor :options
 
+    attr_accessor :formatter
+
     # List of output structure name and output field info.
     attr_accessor :output_field_list
-
-    # The service identifier that contains the operations for this CLI command.
-    attr_accessor :service_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'description' => :'description',
-        :'formatter' => :'formatter',
         :'identity' => :'identity',
+        :'description' => :'description',
+        :'service_id' => :'service_id',
         :'operation_id' => :'operation_id',
         :'options' => :'options',
-        :'output_field_list' => :'output_field_list',
-        :'service_id' => :'service_id'
+        :'formatter' => :'formatter',
+        :'output_field_list' => :'output_field_list'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'description' => :'String',
-        :'formatter' => :'VapiMetadataCliCommandFormatterType',
         :'identity' => :'VapiMetadataCliCommandIdentity',
+        :'description' => :'String',
+        :'service_id' => :'String',
         :'operation_id' => :'String',
         :'options' => :'Array<VapiMetadataCliCommandOptionInfo>',
-        :'output_field_list' => :'Array<VapiMetadataCliCommandOutputInfo>',
-        :'service_id' => :'String'
+        :'formatter' => :'VapiMetadataCliCommandFormatterType',
+        :'output_field_list' => :'Array<VapiMetadataCliCommandOutputInfo>'
       }
     end
 
@@ -64,16 +64,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'identity')
+        self.identity = attributes[:'identity']
+      end
+
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'formatter')
-        self.formatter = attributes[:'formatter']
-      end
-
-      if attributes.has_key?(:'identity')
-        self.identity = attributes[:'identity']
+      if attributes.has_key?(:'service_id')
+        self.service_id = attributes[:'service_id']
       end
 
       if attributes.has_key?(:'operation_id')
@@ -86,14 +86,14 @@ module VSphereAutomation
         end
       end
 
+      if attributes.has_key?(:'formatter')
+        self.formatter = attributes[:'formatter']
+      end
+
       if attributes.has_key?(:'output_field_list')
         if (value = attributes[:'output_field_list']).is_a?(Array)
           self.output_field_list = value
         end
-      end
-
-      if attributes.has_key?(:'service_id')
-        self.service_id = attributes[:'service_id']
       end
     end
 
@@ -101,12 +101,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @identity.nil?
+        invalid_properties.push('invalid value for "identity", identity cannot be nil.')
+      end
+
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
-      if @identity.nil?
-        invalid_properties.push('invalid value for "identity", identity cannot be nil.')
+      if @service_id.nil?
+        invalid_properties.push('invalid value for "service_id", service_id cannot be nil.')
       end
 
       if @operation_id.nil?
@@ -121,22 +125,18 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "output_field_list", output_field_list cannot be nil.')
       end
 
-      if @service_id.nil?
-        invalid_properties.push('invalid value for "service_id", service_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @description.nil?
       return false if @identity.nil?
+      return false if @description.nil?
+      return false if @service_id.nil?
       return false if @operation_id.nil?
       return false if @options.nil?
       return false if @output_field_list.nil?
-      return false if @service_id.nil?
       true
     end
 
@@ -145,13 +145,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          description == o.description &&
-          formatter == o.formatter &&
           identity == o.identity &&
+          description == o.description &&
+          service_id == o.service_id &&
           operation_id == o.operation_id &&
           options == o.options &&
-          output_field_list == o.output_field_list &&
-          service_id == o.service_id
+          formatter == o.formatter &&
+          output_field_list == o.output_field_list
     end
 
     # @see the `==` method
@@ -163,7 +163,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, formatter, identity, operation_id, options, output_field_list, service_id].hash
+      [identity, description, service_id, operation_id, options, formatter, output_field_list].hash
     end
 
     # Builds the object from hash

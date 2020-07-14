@@ -16,20 +16,20 @@ module VSphereAutomation
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Returns the power state information of a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
+    # Returns the power state information of a virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmPowerResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmPowerResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, opts)
       data
     end
 
-    # Returns the power state information of a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
+    # Returns the power state information of a virtual machine.
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmPowerResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmPowerResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmPowerApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmPowerApi.get"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/power'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/power'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmPowerResp',
+	  '200' => 'VCenter::VcenterVmPowerResult',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -74,7 +74,7 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Resets a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Reset.  
+    # Resets a powered-on virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsResourceBusyError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
@@ -83,7 +83,7 @@ module VSphereAutomation
       nil
     end
 
-    # Resets a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Reset.  
+    # Resets a powered-on virtual machine.
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
@@ -97,7 +97,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmPowerApi.reset"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/power/reset'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/power/reset'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -124,7 +124,7 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Powers on a powered-off or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOn.  
+    # Powers on a powered-off or suspended virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsResourceBusyError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
@@ -133,7 +133,7 @@ module VSphereAutomation
       nil
     end
 
-    # Powers on a powered-off or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOn.  
+    # Powers on a powered-off or suspended virtual machine.
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
@@ -147,7 +147,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmPowerApi.start"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/power/start'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/power/start'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -174,7 +174,7 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Powers off a powered-on or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOff.  
+    # Powers off a powered-on or suspended virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsResourceBusyError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
@@ -183,7 +183,7 @@ module VSphereAutomation
       nil
     end
 
-    # Powers off a powered-on or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOff.  
+    # Powers off a powered-on or suspended virtual machine.
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
@@ -197,7 +197,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmPowerApi.stop"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/power/stop'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/power/stop'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -224,7 +224,7 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Suspends a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Suspend.  
+    # Suspends a powered-on virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
     # @return [|VapiStdErrorsResourceBusyError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|nil]
@@ -233,7 +233,7 @@ module VSphereAutomation
       nil
     end
 
-    # Suspends a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Suspend.  
+    # Suspends a powered-on virtual machine.
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
@@ -247,7 +247,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmPowerApi.suspend"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/power/suspend'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/power/suspend'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}

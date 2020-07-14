@@ -14,23 +14,23 @@ module VSphereAutomation
     # Device label.
     attr_accessor :label
 
-    # Address of the SCSI adapter on the PCI bus. If the PCI address is invalid, the server will change it when the VM is started or as the device is hot added. May be unset if the virtual machine has never been powered on since the adapter was created.
-    attr_accessor :pci_slot_number
+    attr_accessor :type
 
     attr_accessor :scsi
 
-    attr_accessor :sharing
+    # Address of the SCSI adapter on the PCI bus. If the PCI address is invalid, the server will change it when the VM is started or as the device is hot added. May be unset if the virtual machine has never been powered on since the adapter was created.
+    attr_accessor :pci_slot_number
 
-    attr_accessor :type
+    attr_accessor :sharing
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'label' => :'label',
-        :'pci_slot_number' => :'pci_slot_number',
+        :'type' => :'type',
         :'scsi' => :'scsi',
-        :'sharing' => :'sharing',
-        :'type' => :'type'
+        :'pci_slot_number' => :'pci_slot_number',
+        :'sharing' => :'sharing'
       }
     end
 
@@ -38,10 +38,10 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'label' => :'String',
-        :'pci_slot_number' => :'Integer',
+        :'type' => :'VcenterVmHardwareAdapterScsiType',
         :'scsi' => :'VcenterVmHardwareScsiAddressInfo',
-        :'sharing' => :'VcenterVmHardwareAdapterScsiSharing',
-        :'type' => :'VcenterVmHardwareAdapterScsiType'
+        :'pci_slot_number' => :'Integer',
+        :'sharing' => :'VcenterVmHardwareAdapterScsiSharing'
       }
     end
 
@@ -57,20 +57,20 @@ module VSphereAutomation
         self.label = attributes[:'label']
       end
 
-      if attributes.has_key?(:'pci_slot_number')
-        self.pci_slot_number = attributes[:'pci_slot_number']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'scsi')
         self.scsi = attributes[:'scsi']
       end
 
-      if attributes.has_key?(:'sharing')
-        self.sharing = attributes[:'sharing']
+      if attributes.has_key?(:'pci_slot_number')
+        self.pci_slot_number = attributes[:'pci_slot_number']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'sharing')
+        self.sharing = attributes[:'sharing']
       end
     end
 
@@ -82,16 +82,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "label", label cannot be nil.')
       end
 
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      end
+
       if @scsi.nil?
         invalid_properties.push('invalid value for "scsi", scsi cannot be nil.')
       end
 
       if @sharing.nil?
         invalid_properties.push('invalid value for "sharing", sharing cannot be nil.')
-      end
-
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       invalid_properties
@@ -101,9 +101,9 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @label.nil?
+      return false if @type.nil?
       return false if @scsi.nil?
       return false if @sharing.nil?
-      return false if @type.nil?
       true
     end
 
@@ -113,10 +113,10 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           label == o.label &&
-          pci_slot_number == o.pci_slot_number &&
+          type == o.type &&
           scsi == o.scsi &&
-          sharing == o.sharing &&
-          type == o.type
+          pci_slot_number == o.pci_slot_number &&
+          sharing == o.sharing
     end
 
     # @see the `==` method
@@ -128,7 +128,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [label, pci_slot_number, scsi, sharing, type].hash
+      [label, type, scsi, pci_slot_number, sharing].hash
     end
 
     # Builds the object from hash

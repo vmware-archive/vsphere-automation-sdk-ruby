@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaVcCredentialsApi.validate"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vcha/vc-credentials?action=validate'
+      local_var_path = '/vcenter/vcha/vc-credentials?action=validate'
 
       # query parameters
       query_params = {}

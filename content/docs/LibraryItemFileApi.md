@@ -1,15 +1,15 @@
 # VSphereAutomation::Content::LibraryItemFileApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](LibraryItemFileApi.md#get) | **POST** /rest/com/vmware/content/library/item/file/id:{library_item_id}?~action&#x3D;get | Retrieves the information for a single file in a library item by its name.
-[**list**](LibraryItemFileApi.md#list) | **GET** /rest/com/vmware/content/library/item/file | Lists all of the files that are stored within a given library item.
+[**get**](LibraryItemFileApi.md#get) | **POST** /com/vmware/content/library/item/file/id:{library_item_id}?~action&#x3D;get | Retrieves the information for a single file in a library item by its name.
+[**list**](LibraryItemFileApi.md#list) | **GET** /com/vmware/content/library/item/file | Lists all of the files that are stored within a given library item.
 
 
 # **get**
-> ContentLibraryItemFileResp get(library_item_id, request_body)
+> ContentLibraryItemFileResult get(library_item_id, request_body)
 
 Retrieves the information for a single file in a library item by its name.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemFileResp**](ContentLibraryItemFileResp.md)
+[**ContentLibraryItemFileResult**](ContentLibraryItemFileResult.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ContentLibraryItemFileListResp list(library_item_id)
+> ContentLibraryItemFileListResult list(library_item_id)
 
 Lists all of the files that are stored within a given library item.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemFileListResp**](ContentLibraryItemFileListResp.md)
+[**ContentLibraryItemFileListResult**](ContentLibraryItemFileListResult.md)
 
 ### Authorization
 

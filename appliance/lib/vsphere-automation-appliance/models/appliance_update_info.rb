@@ -11,9 +11,6 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceUpdateInfo
-    # Timestamp of latest query to update repository.
-    attr_accessor :latest_query_time
-
     attr_accessor :state
 
     attr_accessor :task
@@ -21,23 +18,26 @@ module VSphereAutomation
     # Version of base appliance if state is UP_TO_DATE Version of update being staged or installed if state is INSTALL_IN_PROGRESS or STAGE_IN_PROGRESS Version of update staged if state is UPDATES_PENDING Version of update failed if state is INSTALL_FAILED or ROLLBACK_IN_PROGRESS
     attr_accessor :version
 
+    # Timestamp of latest query to update repository.
+    attr_accessor :latest_query_time
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'latest_query_time' => :'latest_query_time',
         :'state' => :'state',
         :'task' => :'task',
-        :'version' => :'version'
+        :'version' => :'version',
+        :'latest_query_time' => :'latest_query_time'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'latest_query_time' => :'DateTime',
         :'state' => :'ApplianceUpdateState',
         :'task' => :'ApplianceTaskInfo',
-        :'version' => :'String'
+        :'version' => :'String',
+        :'latest_query_time' => :'DateTime'
       }
     end
 
@@ -49,10 +49,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'latest_query_time')
-        self.latest_query_time = attributes[:'latest_query_time']
-      end
-
       if attributes.has_key?(:'state')
         self.state = attributes[:'state']
       end
@@ -63,6 +59,10 @@ module VSphereAutomation
 
       if attributes.has_key?(:'version')
         self.version = attributes[:'version']
+      end
+
+      if attributes.has_key?(:'latest_query_time')
+        self.latest_query_time = attributes[:'latest_query_time']
       end
     end
 
@@ -94,10 +94,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          latest_query_time == o.latest_query_time &&
           state == o.state &&
           task == o.task &&
-          version == o.version
+          version == o.version &&
+          latest_query_time == o.latest_query_time
     end
 
     # @see the `==` method
@@ -109,7 +109,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [latest_query_time, state, task, version].hash
+      [state, task, version, latest_query_time].hash
     end
 
     # Builds the object from hash

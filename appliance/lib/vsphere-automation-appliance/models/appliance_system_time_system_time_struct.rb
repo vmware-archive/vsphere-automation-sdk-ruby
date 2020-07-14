@@ -11,11 +11,11 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceSystemTimeSystemTimeStruct
-    # date format: Thu 07-31-2014
-    attr_accessor :date
-
     # seconds since the epoch
     attr_accessor :seconds_since_epoch
+
+    # date format: Thu 07-31-2014
+    attr_accessor :date
 
     # time format: 18:18:32
     attr_accessor :time
@@ -26,8 +26,8 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'date' => :'date',
         :'seconds_since_epoch' => :'seconds_since_epoch',
+        :'date' => :'date',
         :'time' => :'time',
         :'timezone' => :'timezone'
       }
@@ -36,8 +36,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'date' => :'String',
         :'seconds_since_epoch' => :'Float',
+        :'date' => :'String',
         :'time' => :'String',
         :'timezone' => :'String'
       }
@@ -51,12 +51,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'date')
-        self.date = attributes[:'date']
-      end
-
       if attributes.has_key?(:'seconds_since_epoch')
         self.seconds_since_epoch = attributes[:'seconds_since_epoch']
+      end
+
+      if attributes.has_key?(:'date')
+        self.date = attributes[:'date']
       end
 
       if attributes.has_key?(:'time')
@@ -72,12 +72,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @date.nil?
-        invalid_properties.push('invalid value for "date", date cannot be nil.')
-      end
-
       if @seconds_since_epoch.nil?
         invalid_properties.push('invalid value for "seconds_since_epoch", seconds_since_epoch cannot be nil.')
+      end
+
+      if @date.nil?
+        invalid_properties.push('invalid value for "date", date cannot be nil.')
       end
 
       if @time.nil?
@@ -94,8 +94,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @date.nil?
       return false if @seconds_since_epoch.nil?
+      return false if @date.nil?
       return false if @time.nil?
       return false if @timezone.nil?
       true
@@ -106,8 +106,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          date == o.date &&
           seconds_since_epoch == o.seconds_since_epoch &&
+          date == o.date &&
           time == o.time &&
           timezone == o.timezone
     end
@@ -121,7 +121,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [date, seconds_since_epoch, time, timezone].hash
+      [seconds_since_epoch, date, time, timezone].hash
     end
 
     # Builds the object from hash

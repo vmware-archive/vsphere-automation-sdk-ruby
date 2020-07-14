@@ -1,13 +1,13 @@
 # VSphereAutomation::VCenter::DeploymentUpgradeApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](DeploymentUpgradeApi.md#cancel) | **POST** /rest/vcenter/deployment/upgrade?action&#x3D;cancel | Cancel the appliance upgrade that is in progress.
-[**check**](DeploymentUpgradeApi.md#check) | **POST** /rest/vcenter/deployment/upgrade?action&#x3D;check | Run sanity checks using the UpgradeSpec parameters passed.
-[**get**](DeploymentUpgradeApi.md#get) | **GET** /rest/vcenter/deployment/upgrade | Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
-[**start**](DeploymentUpgradeApi.md#start) | **POST** /rest/vcenter/deployment/upgrade?action&#x3D;start | Start the appliance installation.
+[**cancel**](DeploymentUpgradeApi.md#cancel) | **POST** /vcenter/deployment/upgrade?action&#x3D;cancel | Cancel the appliance upgrade that is in progress.
+[**check**](DeploymentUpgradeApi.md#check) | **POST** /vcenter/deployment/upgrade?action&#x3D;check | Run sanity checks using the UpgradeSpec parameters passed.
+[**get**](DeploymentUpgradeApi.md#get) | **GET** /vcenter/deployment/upgrade | Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
+[**start**](DeploymentUpgradeApi.md#start) | **POST** /vcenter/deployment/upgrade?action&#x3D;start | Start the appliance installation.
 
 
 # **cancel**
@@ -56,7 +56,7 @@ nil (empty response body)
 
 
 # **check**
-> VcenterDeploymentUpgradeCheckResp check(request_body)
+> VcenterDeploymentUpgradeCheckResult check(request_body)
 
 Run sanity checks using the UpgradeSpec parameters passed.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDeploymentUpgradeCheckResp**](VcenterDeploymentUpgradeCheckResp.md)
+[**VcenterDeploymentUpgradeCheckResult**](VcenterDeploymentUpgradeCheckResult.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> VcenterDeploymentUpgradeResp get
+> VcenterDeploymentUpgradeResult get
 
 Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterDeploymentUpgradeResp**](VcenterDeploymentUpgradeResp.md)
+[**VcenterDeploymentUpgradeResult**](VcenterDeploymentUpgradeResult.md)
 
 ### Authorization
 

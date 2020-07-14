@@ -11,46 +11,41 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVMInfo
+    attr_accessor :guest_os
+
+    # Virtual machine name.
+    attr_accessor :name
+
+    attr_accessor :power_state
+
+    attr_accessor :hardware
+
     attr_accessor :boot
 
     # Boot device configuration. If the list has no entries, a server-specific default boot sequence is used.
     attr_accessor :boot_devices
 
-    # List of CD-ROMs. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Cdrom. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Cdrom.
-    attr_accessor :cdroms
-
     attr_accessor :cpu
+
+    attr_accessor :memory
 
     # List of disks. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Disk. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Disk.
     attr_accessor :disks
 
-    # List of floppy drives. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Floppy. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Floppy.
-    attr_accessor :floppies
-
-    attr_accessor :guest_os
-
-    attr_accessor :hardware
-
-    attr_accessor :identity
-
-    # Indicates whether the virtual machine is frozen for instant clone, or not. This field is optional because it was added in a newer version than its parent node.
-    attr_accessor :instant_clone_frozen
-
-    attr_accessor :memory
-
-    # Virtual machine name.
-    attr_accessor :name
-
     # List of Ethernet adapters. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Ethernet. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     attr_accessor :nics
 
-    # List of NVMe adapters. Warning: This attribute is part of a new feature in development. It may be changed at any time and may not have all supported functionality implemented. This field is optional because it was added in a newer version than its parent node. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.NvmeAdapter. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.NvmeAdapter.
-    attr_accessor :nvme_adapters
+    # List of CD-ROMs. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Cdrom. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Cdrom.
+    attr_accessor :cdroms
+
+    # List of floppy drives. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.Floppy. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.Floppy.
+    attr_accessor :floppies
 
     # List of parallel ports. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.ParallelPort. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.ParallelPort.
     attr_accessor :parallel_ports
 
-    attr_accessor :power_state
+    # List of serial ports. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.SerialPort. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
+    attr_accessor :serial_ports
 
     # List of SATA adapters. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.SataAdapter. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.SataAdapter.
     attr_accessor :sata_adapters
@@ -58,56 +53,47 @@ module VSphereAutomation
     # List of SCSI adapters. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.ScsiAdapter.
     attr_accessor :scsi_adapters
 
-    # List of serial ports. When clients pass a value of this structure as a parameter, the key in the field map must be an identifier for the resource type: vcenter.vm.hardware.SerialPort. When operations return a value of this structure as a result, the key in the field map will be an identifier for the resource type: vcenter.vm.hardware.SerialPort.
-    attr_accessor :serial_ports
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'guest_os' => :'guest_OS',
+        :'name' => :'name',
+        :'power_state' => :'power_state',
+        :'hardware' => :'hardware',
         :'boot' => :'boot',
         :'boot_devices' => :'boot_devices',
-        :'cdroms' => :'cdroms',
         :'cpu' => :'cpu',
-        :'disks' => :'disks',
-        :'floppies' => :'floppies',
-        :'guest_os' => :'guest_OS',
-        :'hardware' => :'hardware',
-        :'identity' => :'identity',
-        :'instant_clone_frozen' => :'instant_clone_frozen',
         :'memory' => :'memory',
-        :'name' => :'name',
+        :'disks' => :'disks',
         :'nics' => :'nics',
-        :'nvme_adapters' => :'nvme_adapters',
+        :'cdroms' => :'cdroms',
+        :'floppies' => :'floppies',
         :'parallel_ports' => :'parallel_ports',
-        :'power_state' => :'power_state',
+        :'serial_ports' => :'serial_ports',
         :'sata_adapters' => :'sata_adapters',
-        :'scsi_adapters' => :'scsi_adapters',
-        :'serial_ports' => :'serial_ports'
+        :'scsi_adapters' => :'scsi_adapters'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'guest_os' => :'VcenterVmGuestOS',
+        :'name' => :'String',
+        :'power_state' => :'VcenterVmPowerState',
+        :'hardware' => :'VcenterVmHardwareInfo',
         :'boot' => :'VcenterVmHardwareBootInfo',
         :'boot_devices' => :'Array<VcenterVmHardwareBootDeviceEntry>',
-        :'cdroms' => :'Array<VcenterVMInfoCdroms>',
         :'cpu' => :'VcenterVmHardwareCpuInfo',
-        :'disks' => :'Array<VcenterVMInfoDisks>',
-        :'floppies' => :'Array<VcenterVMInfoFloppies>',
-        :'guest_os' => :'VcenterVmGuestOS',
-        :'hardware' => :'VcenterVmHardwareInfo',
-        :'identity' => :'VcenterVmIdentityInfo',
-        :'instant_clone_frozen' => :'Boolean',
         :'memory' => :'VcenterVmHardwareMemoryInfo',
-        :'name' => :'String',
+        :'disks' => :'Array<VcenterVMInfoDisks>',
         :'nics' => :'Array<VcenterVMInfoNics>',
-        :'nvme_adapters' => :'Array<VcenterVMInfoNvmeAdapters>',
+        :'cdroms' => :'Array<VcenterVMInfoCdroms>',
+        :'floppies' => :'Array<VcenterVMInfoFloppies>',
         :'parallel_ports' => :'Array<VcenterVMInfoParallelPorts>',
-        :'power_state' => :'VcenterVmPowerState',
+        :'serial_ports' => :'Array<VcenterVMInfoSerialPorts>',
         :'sata_adapters' => :'Array<VcenterVMInfoSataAdapters>',
-        :'scsi_adapters' => :'Array<VcenterVMInfoScsiAdapters>',
-        :'serial_ports' => :'Array<VcenterVMInfoSerialPorts>'
+        :'scsi_adapters' => :'Array<VcenterVMInfoScsiAdapters>'
       }
     end
 
@@ -119,6 +105,22 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'guest_OS')
+        self.guest_os = attributes[:'guest_OS']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'power_state')
+        self.power_state = attributes[:'power_state']
+      end
+
+      if attributes.has_key?(:'hardware')
+        self.hardware = attributes[:'hardware']
+      end
+
       if attributes.has_key?(:'boot')
         self.boot = attributes[:'boot']
       end
@@ -129,19 +131,29 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'cdroms')
-        if (value = attributes[:'cdroms']).is_a?(Array)
-          self.cdroms = value
-        end
-      end
-
       if attributes.has_key?(:'cpu')
         self.cpu = attributes[:'cpu']
+      end
+
+      if attributes.has_key?(:'memory')
+        self.memory = attributes[:'memory']
       end
 
       if attributes.has_key?(:'disks')
         if (value = attributes[:'disks']).is_a?(Array)
           self.disks = value
+        end
+      end
+
+      if attributes.has_key?(:'nics')
+        if (value = attributes[:'nics']).is_a?(Array)
+          self.nics = value
+        end
+      end
+
+      if attributes.has_key?(:'cdroms')
+        if (value = attributes[:'cdroms']).is_a?(Array)
+          self.cdroms = value
         end
       end
 
@@ -151,50 +163,16 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'guest_OS')
-        self.guest_os = attributes[:'guest_OS']
-      end
-
-      if attributes.has_key?(:'hardware')
-        self.hardware = attributes[:'hardware']
-      end
-
-      if attributes.has_key?(:'identity')
-        self.identity = attributes[:'identity']
-      end
-
-      if attributes.has_key?(:'instant_clone_frozen')
-        self.instant_clone_frozen = attributes[:'instant_clone_frozen']
-      end
-
-      if attributes.has_key?(:'memory')
-        self.memory = attributes[:'memory']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'nics')
-        if (value = attributes[:'nics']).is_a?(Array)
-          self.nics = value
-        end
-      end
-
-      if attributes.has_key?(:'nvme_adapters')
-        if (value = attributes[:'nvme_adapters']).is_a?(Array)
-          self.nvme_adapters = value
-        end
-      end
-
       if attributes.has_key?(:'parallel_ports')
         if (value = attributes[:'parallel_ports']).is_a?(Array)
           self.parallel_ports = value
         end
       end
 
-      if attributes.has_key?(:'power_state')
-        self.power_state = attributes[:'power_state']
+      if attributes.has_key?(:'serial_ports')
+        if (value = attributes[:'serial_ports']).is_a?(Array)
+          self.serial_ports = value
+        end
       end
 
       if attributes.has_key?(:'sata_adapters')
@@ -208,18 +186,28 @@ module VSphereAutomation
           self.scsi_adapters = value
         end
       end
-
-      if attributes.has_key?(:'serial_ports')
-        if (value = attributes[:'serial_ports']).is_a?(Array)
-          self.serial_ports = value
-        end
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @guest_os.nil?
+        invalid_properties.push('invalid value for "guest_os", guest_os cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @power_state.nil?
+        invalid_properties.push('invalid value for "power_state", power_state cannot be nil.')
+      end
+
+      if @hardware.nil?
+        invalid_properties.push('invalid value for "hardware", hardware cannot be nil.')
+      end
+
       if @boot.nil?
         invalid_properties.push('invalid value for "boot", boot cannot be nil.')
       end
@@ -228,48 +216,36 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "boot_devices", boot_devices cannot be nil.')
       end
 
-      if @cdroms.nil?
-        invalid_properties.push('invalid value for "cdroms", cdroms cannot be nil.')
-      end
-
       if @cpu.nil?
         invalid_properties.push('invalid value for "cpu", cpu cannot be nil.')
-      end
-
-      if @disks.nil?
-        invalid_properties.push('invalid value for "disks", disks cannot be nil.')
-      end
-
-      if @floppies.nil?
-        invalid_properties.push('invalid value for "floppies", floppies cannot be nil.')
-      end
-
-      if @guest_os.nil?
-        invalid_properties.push('invalid value for "guest_os", guest_os cannot be nil.')
-      end
-
-      if @hardware.nil?
-        invalid_properties.push('invalid value for "hardware", hardware cannot be nil.')
       end
 
       if @memory.nil?
         invalid_properties.push('invalid value for "memory", memory cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @disks.nil?
+        invalid_properties.push('invalid value for "disks", disks cannot be nil.')
       end
 
       if @nics.nil?
         invalid_properties.push('invalid value for "nics", nics cannot be nil.')
       end
 
+      if @cdroms.nil?
+        invalid_properties.push('invalid value for "cdroms", cdroms cannot be nil.')
+      end
+
+      if @floppies.nil?
+        invalid_properties.push('invalid value for "floppies", floppies cannot be nil.')
+      end
+
       if @parallel_ports.nil?
         invalid_properties.push('invalid value for "parallel_ports", parallel_ports cannot be nil.')
       end
 
-      if @power_state.nil?
-        invalid_properties.push('invalid value for "power_state", power_state cannot be nil.')
+      if @serial_ports.nil?
+        invalid_properties.push('invalid value for "serial_ports", serial_ports cannot be nil.')
       end
 
       if @sata_adapters.nil?
@@ -280,32 +256,28 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "scsi_adapters", scsi_adapters cannot be nil.')
       end
 
-      if @serial_ports.nil?
-        invalid_properties.push('invalid value for "serial_ports", serial_ports cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @guest_os.nil?
+      return false if @name.nil?
+      return false if @power_state.nil?
+      return false if @hardware.nil?
       return false if @boot.nil?
       return false if @boot_devices.nil?
-      return false if @cdroms.nil?
       return false if @cpu.nil?
-      return false if @disks.nil?
-      return false if @floppies.nil?
-      return false if @guest_os.nil?
-      return false if @hardware.nil?
       return false if @memory.nil?
-      return false if @name.nil?
+      return false if @disks.nil?
       return false if @nics.nil?
+      return false if @cdroms.nil?
+      return false if @floppies.nil?
       return false if @parallel_ports.nil?
-      return false if @power_state.nil?
+      return false if @serial_ports.nil?
       return false if @sata_adapters.nil?
       return false if @scsi_adapters.nil?
-      return false if @serial_ports.nil?
       true
     end
 
@@ -314,25 +286,22 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          guest_os == o.guest_os &&
+          name == o.name &&
+          power_state == o.power_state &&
+          hardware == o.hardware &&
           boot == o.boot &&
           boot_devices == o.boot_devices &&
-          cdroms == o.cdroms &&
           cpu == o.cpu &&
-          disks == o.disks &&
-          floppies == o.floppies &&
-          guest_os == o.guest_os &&
-          hardware == o.hardware &&
-          identity == o.identity &&
-          instant_clone_frozen == o.instant_clone_frozen &&
           memory == o.memory &&
-          name == o.name &&
+          disks == o.disks &&
           nics == o.nics &&
-          nvme_adapters == o.nvme_adapters &&
+          cdroms == o.cdroms &&
+          floppies == o.floppies &&
           parallel_ports == o.parallel_ports &&
-          power_state == o.power_state &&
+          serial_ports == o.serial_ports &&
           sata_adapters == o.sata_adapters &&
-          scsi_adapters == o.scsi_adapters &&
-          serial_ports == o.serial_ports
+          scsi_adapters == o.scsi_adapters
     end
 
     # @see the `==` method
@@ -344,7 +313,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [boot, boot_devices, cdroms, cpu, disks, floppies, guest_os, hardware, identity, instant_clone_frozen, memory, name, nics, nvme_adapters, parallel_ports, power_state, sata_adapters, scsi_adapters, serial_ports].hash
+      [guest_os, name, power_state, hardware, boot, boot_devices, cpu, memory, disks, nics, cdroms, floppies, parallel_ports, serial_ports, sata_adapters, scsi_adapters].hash
     end
 
     # Builds the object from hash

@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
+    # @return [|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
     def attach(tag_id, request_body, opts = {})
       attach_with_http_info(tag_id, request_body, opts)
       nil
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def attach_with_http_info(tag_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.attach ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.attach"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -77,7 +77,7 @@ module VSphereAutomation
     # Attaches the given tags to the input object. If a tag is already attached to the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege on each tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationAttachMultipleTagsToObjectResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
+    # @return [CisTaggingTagAssociationAttachMultipleTagsToObjectResult|VapiStdErrorsUnauthorizedError|]
     def attach_multiple_tags_to_object(request_body, opts = {})
       data, _status_code, _headers = attach_multiple_tags_to_object_with_http_info(request_body, opts)
       data
@@ -87,7 +87,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationAttachMultipleTagsToObjectResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationAttachMultipleTagsToObjectResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def attach_multiple_tags_to_object_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.attach_multiple_tags_to_object ...'
@@ -97,7 +97,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.attach_multiple_tags_to_object"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association?~action=attach-multiple-tags-to-object'
+      local_var_path = '/com/vmware/cis/tagging/tag-association?~action=attach-multiple-tags-to-object'
 
       # query parameters
       query_params = {}
@@ -122,8 +122,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationAttachMultipleTagsToObjectResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationAttachMultipleTagsToObjectResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging
@@ -135,7 +134,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationAttachTagToMultipleObjectsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [CisTaggingTagAssociationAttachTagToMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def attach_tag_to_multiple_objects(tag_id, request_body, opts = {})
       data, _status_code, _headers = attach_tag_to_multiple_objects_with_http_info(tag_id, request_body, opts)
       data
@@ -146,7 +145,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationAttachTagToMultipleObjectsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationAttachTagToMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def attach_tag_to_multiple_objects_with_http_info(tag_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.attach_tag_to_multiple_objects ...'
@@ -160,7 +159,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.attach_tag_to_multiple_objects"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach-tag-to-multiple-objects'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=attach-tag-to-multiple-objects'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -185,8 +184,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationAttachTagToMultipleObjectsResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationAttachTagToMultipleObjectsResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	  '404' => 'CIS::VapiStdErrorsNotFoundError',
 	})
@@ -199,7 +197,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
+    # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
     def detach(tag_id, request_body, opts = {})
       detach_with_http_info(tag_id, request_body, opts)
       nil
@@ -210,7 +208,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def detach_with_http_info(tag_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.detach ...'
@@ -224,7 +222,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.detach"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=detach'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=detach'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -256,7 +254,7 @@ module VSphereAutomation
     # Detaches the given tags from the input object. If a tag is already removed from the object, then the individual {@term operation} is a no-op and an error will not be added to {@link BatchResult#errorMessages}. To invoke this {@term operation}, you need the read privilege on the object and the attach tag privilege each tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationDetachMultipleTagsFromObjectResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
+    # @return [CisTaggingTagAssociationDetachMultipleTagsFromObjectResult|VapiStdErrorsUnauthorizedError|]
     def detach_multiple_tags_from_object(request_body, opts = {})
       data, _status_code, _headers = detach_multiple_tags_from_object_with_http_info(request_body, opts)
       data
@@ -266,7 +264,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationDetachMultipleTagsFromObjectResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationDetachMultipleTagsFromObjectResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def detach_multiple_tags_from_object_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.detach_multiple_tags_from_object ...'
@@ -276,7 +274,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.detach_multiple_tags_from_object"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association?~action=detach-multiple-tags-from-object'
+      local_var_path = '/com/vmware/cis/tagging/tag-association?~action=detach-multiple-tags-from-object'
 
       # query parameters
       query_params = {}
@@ -301,8 +299,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationDetachMultipleTagsFromObjectResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationDetachMultipleTagsFromObjectResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging
@@ -314,7 +311,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationDetachTagFromMultipleObjectsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [CisTaggingTagAssociationDetachTagFromMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def detach_tag_from_multiple_objects(tag_id, request_body, opts = {})
       data, _status_code, _headers = detach_tag_from_multiple_objects_with_http_info(tag_id, request_body, opts)
       data
@@ -325,7 +322,7 @@ module VSphereAutomation
     # @param tag_id The identifier of the input tag.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationDetachTagFromMultipleObjectsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationDetachTagFromMultipleObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def detach_tag_from_multiple_objects_with_http_info(tag_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.detach_tag_from_multiple_objects ...'
@@ -339,7 +336,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.detach_tag_from_multiple_objects"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=detach-tag-from-multiple-objects'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=detach-tag-from-multiple-objects'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -364,8 +361,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationDetachTagFromMultipleObjectsResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationDetachTagFromMultipleObjectsResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	  '404' => 'CIS::VapiStdErrorsNotFoundError',
 	})
@@ -377,7 +373,7 @@ module VSphereAutomation
     # Fetches the {@term list} of attachable tags for the given object, omitting the tags that have already been attached. Criteria for attachability is calculated based on tagging cardinality ({@link CategoryModel#cardinality}) and associability ({@link CategoryModel#associableTypes}) constructs. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have read privileges.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationListAttachableTagsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
+    # @return [CisTaggingTagAssociationListAttachableTagsResult|VapiStdErrorsUnauthorizedError|]
     def list_attachable_tags(request_body, opts = {})
       data, _status_code, _headers = list_attachable_tags_with_http_info(request_body, opts)
       data
@@ -387,7 +383,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationListAttachableTagsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationListAttachableTagsResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_attachable_tags_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attachable_tags ...'
@@ -397,7 +393,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.list_attachable_tags"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association?~action=list-attachable-tags'
+      local_var_path = '/com/vmware/cis/tagging/tag-association?~action=list-attachable-tags'
 
       # query parameters
       query_params = {}
@@ -422,8 +418,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationListAttachableTagsResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationListAttachableTagsResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging
@@ -434,7 +429,7 @@ module VSphereAutomation
     # Fetches the {@term list} of attached objects for the given tag. To invoke this {@term operation}, you need the read privilege on the input tag. Only those objects for which you have the read privilege will be returned.
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationListAttachedObjectsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [CisTaggingTagAssociationListAttachedObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def list_attached_objects(tag_id, opts = {})
       data, _status_code, _headers = list_attached_objects_with_http_info(tag_id, opts)
       data
@@ -444,7 +439,7 @@ module VSphereAutomation
     # @api private
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationListAttachedObjectsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationListAttachedObjectsResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_attached_objects_with_http_info(tag_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_objects ...'
@@ -454,7 +449,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'tag_id' when calling TaggingTagAssociationApi.list_attached_objects"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=list-attached-objects'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag-association/id:{tag_id}?~action=list-attached-objects'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -477,8 +472,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationListAttachedObjectsResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationListAttachedObjectsResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	  '404' => 'CIS::VapiStdErrorsNotFoundError',
 	})
@@ -490,7 +484,7 @@ module VSphereAutomation
     # Fetches the {@term list} of {@link TagToObjects} describing the input tag identifiers and the objects they are attached to. To invoke this {@term operation}, you need the read privilege on each input tag. The {@link TagToObjects#objectIds} will only contain those objects for which you have the read privilege.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationListAttachedObjectsOnTagsResp|VapiStdErrorsUnauthenticatedError|]
+    # @return [CisTaggingTagAssociationListAttachedObjectsOnTagsResult|]
     def list_attached_objects_on_tags(request_body, opts = {})
       data, _status_code, _headers = list_attached_objects_on_tags_with_http_info(request_body, opts)
       data
@@ -500,7 +494,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationListAttachedObjectsOnTagsResp|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationListAttachedObjectsOnTagsResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_attached_objects_on_tags_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_objects_on_tags ...'
@@ -510,7 +504,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.list_attached_objects_on_tags"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association?~action=list-attached-objects-on-tags'
+      local_var_path = '/com/vmware/cis/tagging/tag-association?~action=list-attached-objects-on-tags'
 
       # query parameters
       query_params = {}
@@ -535,8 +529,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationListAttachedObjectsOnTagsResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationListAttachedObjectsOnTagsResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaggingTagAssociationApi#list_attached_objects_on_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -546,7 +539,7 @@ module VSphereAutomation
     # Fetches the {@term list} of tags attached to the given object. To invoke this {@term operation}, you need the read privilege on the input object. The {@term list} will only contain those tags for which you have the read privileges.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationListAttachedTagsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
+    # @return [CisTaggingTagAssociationListAttachedTagsResult|VapiStdErrorsUnauthorizedError|]
     def list_attached_tags(request_body, opts = {})
       data, _status_code, _headers = list_attached_tags_with_http_info(request_body, opts)
       data
@@ -556,7 +549,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationListAttachedTagsResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationListAttachedTagsResult|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_attached_tags_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_tags ...'
@@ -566,7 +559,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.list_attached_tags"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association?~action=list-attached-tags'
+      local_var_path = '/com/vmware/cis/tagging/tag-association?~action=list-attached-tags'
 
       # query parameters
       query_params = {}
@@ -591,8 +584,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationListAttachedTagsResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationListAttachedTagsResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging
@@ -603,7 +595,7 @@ module VSphereAutomation
     # Fetches the {@term list} of {@link ObjectToTags} describing the input object identifiers and the tags attached to each object. To invoke this {@term operation}, you need the read privilege on each input object. The {@link ObjectToTags#tagIds} will only contain those tags for which you have the read privilege.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagAssociationListAttachedTagsOnObjectsResp|VapiStdErrorsUnauthenticatedError|]
+    # @return [CisTaggingTagAssociationListAttachedTagsOnObjectsResult|]
     def list_attached_tags_on_objects(request_body, opts = {})
       data, _status_code, _headers = list_attached_tags_on_objects_with_http_info(request_body, opts)
       data
@@ -613,7 +605,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagAssociationListAttachedTagsOnObjectsResp|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagAssociationListAttachedTagsOnObjectsResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_attached_tags_on_objects_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagAssociationApi.list_attached_tags_on_objects ...'
@@ -623,7 +615,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagAssociationApi.list_attached_tags_on_objects"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag-association?~action=list-attached-tags-on-objects'
+      local_var_path = '/com/vmware/cis/tagging/tag-association?~action=list-attached-tags-on-objects'
 
       # query parameters
       query_params = {}
@@ -648,8 +640,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagAssociationListAttachedTagsOnObjectsResp',
-	  '401' => 'CIS::VapiStdErrorsUnauthenticatedError',
+	  '200' => 'CIS::CisTaggingTagAssociationListAttachedTagsOnObjectsResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaggingTagAssociationApi#list_attached_tags_on_objects\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

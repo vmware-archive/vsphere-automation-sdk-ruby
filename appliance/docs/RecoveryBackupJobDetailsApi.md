@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::RecoveryBackupJobDetailsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](RecoveryBackupJobDetailsApi.md#list) | **GET** /rest/appliance/recovery/backup/job/details | Returns detailed information about the current and historical backup jobs.
+[**list**](RecoveryBackupJobDetailsApi.md#list) | **GET** /appliance/recovery/backup/job/details | Returns detailed information about the current and historical backup jobs.
 
 
 # **list**
-> ApplianceRecoveryBackupJobDetailsListResp list(opts)
+> ApplianceRecoveryBackupJobDetailsListResult list(opts)
 
 Returns detailed information about the current and historical backup jobs.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupJobDetailsListResp**](ApplianceRecoveryBackupJobDetailsListResp.md)
+[**ApplianceRecoveryBackupJobDetailsListResult**](ApplianceRecoveryBackupJobDetailsListResult.md)
 
 ### Authorization
 

@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataAuthenticationAuthenticationInfo
-    # String identifier of the authentication scheme. <p> Following are the supported authentication schemes by the infrastructure: <ul> <li>The identifier {@code vapi.std.security.saml_hok_token} for SAML holder of key token based authentication mechanism. </li> <li>The identifier {@code vapi.std.security.bearer_token} for SAML bearer token based authentication mechanism. </li> <li>The identifier {@code vapi.std.security.session_id} for session based authentication mechanism. </li> <li>The identifier {@code vapi.std.security.user_pass} for username and password based authentication mechanism. </li> </ul>
-    attr_accessor :scheme
-
     attr_accessor :scheme_type
 
     # In a session aware authentication scheme, a session manager is required that supports {@code create}, {@code delete} and {@code keepAlive} {@term operations}. The fully qualified {@term service} name of the session manager is provided in {@link AuthenticationInfo#sessionManager} {@term field}. This {@term service} is responsible for handling sessions.
     attr_accessor :session_manager
 
+    # String identifier of the authentication scheme. <p> Following are the supported authentication schemes by the infrastructure: <ul> <li>The identifier {@code vapi.std.security.saml_hok_token} for SAML holder of key token based authentication mechanism. </li> <li>The identifier {@code vapi.std.security.bearer_token} for SAML bearer token based authentication mechanism. </li> <li>The identifier {@code vapi.std.security.session_id} for session based authentication mechanism. </li> <li>The identifier {@code vapi.std.security.user_pass} for username and password based authentication mechanism. </li> </ul>
+    attr_accessor :scheme
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'scheme' => :'scheme',
         :'scheme_type' => :'scheme_type',
-        :'session_manager' => :'session_manager'
+        :'session_manager' => :'session_manager',
+        :'scheme' => :'scheme'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'scheme' => :'String',
         :'scheme_type' => :'VapiMetadataAuthenticationAuthenticationInfoSchemeType',
-        :'session_manager' => :'String'
+        :'session_manager' => :'String',
+        :'scheme' => :'String'
       }
     end
 
@@ -45,10 +45,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'scheme')
-        self.scheme = attributes[:'scheme']
-      end
-
       if attributes.has_key?(:'scheme_type')
         self.scheme_type = attributes[:'scheme_type']
       end
@@ -56,18 +52,22 @@ module VSphereAutomation
       if attributes.has_key?(:'session_manager')
         self.session_manager = attributes[:'session_manager']
       end
+
+      if attributes.has_key?(:'scheme')
+        self.scheme = attributes[:'scheme']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @scheme.nil?
-        invalid_properties.push('invalid value for "scheme", scheme cannot be nil.')
-      end
-
       if @scheme_type.nil?
         invalid_properties.push('invalid value for "scheme_type", scheme_type cannot be nil.')
+      end
+
+      if @scheme.nil?
+        invalid_properties.push('invalid value for "scheme", scheme cannot be nil.')
       end
 
       invalid_properties
@@ -76,8 +76,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @scheme.nil?
       return false if @scheme_type.nil?
+      return false if @scheme.nil?
       true
     end
 
@@ -86,9 +86,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          scheme == o.scheme &&
           scheme_type == o.scheme_type &&
-          session_manager == o.session_manager
+          session_manager == o.session_manager &&
+          scheme == o.scheme
     end
 
     # @see the `==` method
@@ -100,7 +100,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [scheme, scheme_type, session_manager].hash
+      [scheme_type, session_manager, scheme].hash
     end
 
     # Builds the object from hash

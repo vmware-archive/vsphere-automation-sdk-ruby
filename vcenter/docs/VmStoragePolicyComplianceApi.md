@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VmStoragePolicyComplianceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check**](VmStoragePolicyComplianceApi.md#check) | **POST** /rest/vcenter/vm/{vm}/storage/policy/compliance?action&#x3D;check | Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
-[**get**](VmStoragePolicyComplianceApi.md#get) | **GET** /rest/vcenter/vm/{vm}/storage/policy/compliance | Returns the cached storage policy compliance information of a virtual machine.
+[**check**](VmStoragePolicyComplianceApi.md#check) | **POST** /vcenter/vm/{vm}/storage/policy/compliance?action&#x3D;check | Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
+[**get**](VmStoragePolicyComplianceApi.md#get) | **GET** /vcenter/vm/{vm}/storage/policy/compliance | Returns the cached storage policy compliance information of a virtual machine.
 
 
 # **check**
-> VcenterVmStoragePolicyComplianceCheckResp check(vm, opts)
+> VcenterVmStoragePolicyComplianceCheckResult check(vm, opts)
 
 Returns the storage policy Compliance Compliance.Info of a virtual machine after explicitly re-computing compliance check.
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmStoragePolicyComplianceCheckResp**](VcenterVmStoragePolicyComplianceCheckResp.md)
+[**VcenterVmStoragePolicyComplianceCheckResult**](VcenterVmStoragePolicyComplianceCheckResult.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> VcenterVmStoragePolicyComplianceResp get(vm)
+> VcenterVmStoragePolicyComplianceResult get(vm)
 
 Returns the cached storage policy compliance information of a virtual machine.
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmStoragePolicyComplianceResp**](VcenterVmStoragePolicyComplianceResp.md)
+[**VcenterVmStoragePolicyComplianceResult**](VcenterVmStoragePolicyComplianceResult.md)
 
 ### Authorization
 

@@ -11,32 +11,32 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsInfo
+    attr_accessor :guest_os
+
     attr_accessor :cpu
+
+    attr_accessor :memory
+
+    attr_accessor :vm_home_storage
 
     # Storage information about the virtual machine template's virtual disks.
     attr_accessor :disks
 
-    attr_accessor :guest_os
-
-    attr_accessor :memory
-
     # Information about the virtual machine template's virtual ethernet adapters.
     attr_accessor :nics
 
-    attr_accessor :vm_home_storage
-
-    # Identifier of the latest virtual machine template contained in the library item. This {@term field} is the managed object identifier used to identify the virtual machine template in the vSphere Management (SOAP) API.
+    # Identifier of the virtual machine template contained in the library item. This field is used to identify the virtual machine template in legacy APIs.
     attr_accessor :vm_template
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cpu' => :'cpu',
-        :'disks' => :'disks',
         :'guest_os' => :'guest_OS',
+        :'cpu' => :'cpu',
         :'memory' => :'memory',
-        :'nics' => :'nics',
         :'vm_home_storage' => :'vm_home_storage',
+        :'disks' => :'disks',
+        :'nics' => :'nics',
         :'vm_template' => :'vm_template'
       }
     end
@@ -44,12 +44,12 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cpu' => :'VcenterVmTemplateLibraryItemsCpuInfo',
-        :'disks' => :'Array<VcenterVmTemplateLibraryItemsInfoDisks>',
         :'guest_os' => :'VcenterVmGuestOS',
+        :'cpu' => :'VcenterVmTemplateLibraryItemsCpuInfo',
         :'memory' => :'VcenterVmTemplateLibraryItemsMemoryInfo',
-        :'nics' => :'Array<VcenterVmTemplateLibraryItemsInfoNics>',
         :'vm_home_storage' => :'VcenterVmTemplateLibraryItemsVmHomeStorageInfo',
+        :'disks' => :'Array<VcenterVmTemplateLibraryItemsInfoDisks>',
+        :'nics' => :'Array<VcenterVmTemplateLibraryItemsInfoNics>',
         :'vm_template' => :'String'
       }
     end
@@ -62,8 +62,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'guest_OS')
+        self.guest_os = attributes[:'guest_OS']
+      end
+
       if attributes.has_key?(:'cpu')
         self.cpu = attributes[:'cpu']
+      end
+
+      if attributes.has_key?(:'memory')
+        self.memory = attributes[:'memory']
+      end
+
+      if attributes.has_key?(:'vm_home_storage')
+        self.vm_home_storage = attributes[:'vm_home_storage']
       end
 
       if attributes.has_key?(:'disks')
@@ -72,22 +84,10 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'guest_OS')
-        self.guest_os = attributes[:'guest_OS']
-      end
-
-      if attributes.has_key?(:'memory')
-        self.memory = attributes[:'memory']
-      end
-
       if attributes.has_key?(:'nics')
         if (value = attributes[:'nics']).is_a?(Array)
           self.nics = value
         end
-      end
-
-      if attributes.has_key?(:'vm_home_storage')
-        self.vm_home_storage = attributes[:'vm_home_storage']
       end
 
       if attributes.has_key?(:'vm_template')
@@ -99,28 +99,28 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @cpu.nil?
-        invalid_properties.push('invalid value for "cpu", cpu cannot be nil.')
-      end
-
-      if @disks.nil?
-        invalid_properties.push('invalid value for "disks", disks cannot be nil.')
-      end
-
       if @guest_os.nil?
         invalid_properties.push('invalid value for "guest_os", guest_os cannot be nil.')
+      end
+
+      if @cpu.nil?
+        invalid_properties.push('invalid value for "cpu", cpu cannot be nil.')
       end
 
       if @memory.nil?
         invalid_properties.push('invalid value for "memory", memory cannot be nil.')
       end
 
-      if @nics.nil?
-        invalid_properties.push('invalid value for "nics", nics cannot be nil.')
-      end
-
       if @vm_home_storage.nil?
         invalid_properties.push('invalid value for "vm_home_storage", vm_home_storage cannot be nil.')
+      end
+
+      if @disks.nil?
+        invalid_properties.push('invalid value for "disks", disks cannot be nil.')
+      end
+
+      if @nics.nil?
+        invalid_properties.push('invalid value for "nics", nics cannot be nil.')
       end
 
       if @vm_template.nil?
@@ -133,12 +133,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @cpu.nil?
-      return false if @disks.nil?
       return false if @guest_os.nil?
+      return false if @cpu.nil?
       return false if @memory.nil?
-      return false if @nics.nil?
       return false if @vm_home_storage.nil?
+      return false if @disks.nil?
+      return false if @nics.nil?
       return false if @vm_template.nil?
       true
     end
@@ -148,12 +148,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cpu == o.cpu &&
-          disks == o.disks &&
           guest_os == o.guest_os &&
+          cpu == o.cpu &&
           memory == o.memory &&
-          nics == o.nics &&
           vm_home_storage == o.vm_home_storage &&
+          disks == o.disks &&
+          nics == o.nics &&
           vm_template == o.vm_template
     end
 
@@ -166,7 +166,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cpu, disks, guest_os, memory, nics, vm_home_storage, vm_template].hash
+      [guest_os, cpu, memory, vm_home_storage, disks, nics, vm_template].hash
     end
 
     # Builds the object from hash

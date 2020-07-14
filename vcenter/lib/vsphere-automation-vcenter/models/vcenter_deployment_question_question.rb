@@ -11,38 +11,38 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentQuestionQuestion
-    # Default answer value.
-    attr_accessor :default_answer
-
     # Id of the question raised.
     attr_accessor :id
-
-    # Possible answers values.
-    attr_accessor :possible_answers
 
     attr_accessor :question
 
     attr_accessor :type
 
+    # Default answer value.
+    attr_accessor :default_answer
+
+    # Possible answers values.
+    attr_accessor :possible_answers
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'default_answer' => :'default_answer',
         :'id' => :'id',
-        :'possible_answers' => :'possible_answers',
         :'question' => :'question',
-        :'type' => :'type'
+        :'type' => :'type',
+        :'default_answer' => :'default_answer',
+        :'possible_answers' => :'possible_answers'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'default_answer' => :'String',
         :'id' => :'String',
-        :'possible_answers' => :'Array<String>',
         :'question' => :'VapiStdLocalizableMessage',
-        :'type' => :'VcenterDeploymentQuestionQuestionType'
+        :'type' => :'VcenterDeploymentQuestionQuestionType',
+        :'default_answer' => :'String',
+        :'possible_answers' => :'Array<String>'
       }
     end
 
@@ -54,18 +54,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'default_answer')
-        self.default_answer = attributes[:'default_answer']
-      end
-
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'possible_answers')
-        if (value = attributes[:'possible_answers']).is_a?(Array)
-          self.possible_answers = value
-        end
       end
 
       if attributes.has_key?(:'question')
@@ -75,22 +65,24 @@ module VSphereAutomation
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
       end
+
+      if attributes.has_key?(:'default_answer')
+        self.default_answer = attributes[:'default_answer']
+      end
+
+      if attributes.has_key?(:'possible_answers')
+        if (value = attributes[:'possible_answers']).is_a?(Array)
+          self.possible_answers = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @default_answer.nil?
-        invalid_properties.push('invalid value for "default_answer", default_answer cannot be nil.')
-      end
-
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @possible_answers.nil?
-        invalid_properties.push('invalid value for "possible_answers", possible_answers cannot be nil.')
       end
 
       if @question.nil?
@@ -101,17 +93,25 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
+      if @default_answer.nil?
+        invalid_properties.push('invalid value for "default_answer", default_answer cannot be nil.')
+      end
+
+      if @possible_answers.nil?
+        invalid_properties.push('invalid value for "possible_answers", possible_answers cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @default_answer.nil?
       return false if @id.nil?
-      return false if @possible_answers.nil?
       return false if @question.nil?
       return false if @type.nil?
+      return false if @default_answer.nil?
+      return false if @possible_answers.nil?
       true
     end
 
@@ -120,11 +120,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_answer == o.default_answer &&
           id == o.id &&
-          possible_answers == o.possible_answers &&
           question == o.question &&
-          type == o.type
+          type == o.type &&
+          default_answer == o.default_answer &&
+          possible_answers == o.possible_answers
     end
 
     # @see the `==` method
@@ -136,7 +136,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_answer, id, possible_answers, question, type].hash
+      [id, question, type, default_answer, possible_answers].hash
     end
 
     # Builds the object from hash

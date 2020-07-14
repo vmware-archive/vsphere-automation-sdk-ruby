@@ -14,18 +14,18 @@ module VSphereAutomation
     # IP address of the configured network interface.
     attr_accessor :address
 
-    # The CIDR prefix of the interface. If unset , then the subnet mask is invalid.
-    attr_accessor :prefix
-
     # The subnet mask of the interface.
     attr_accessor :subnet_mask
+
+    # The CIDR prefix of the interface. If unset , then the subnet mask is invalid.
+    attr_accessor :prefix
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'address' => :'address',
-        :'prefix' => :'prefix',
-        :'subnet_mask' => :'subnet_mask'
+        :'subnet_mask' => :'subnet_mask',
+        :'prefix' => :'prefix'
       }
     end
 
@@ -33,8 +33,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'address' => :'String',
-        :'prefix' => :'Integer',
-        :'subnet_mask' => :'String'
+        :'subnet_mask' => :'String',
+        :'prefix' => :'Integer'
       }
     end
 
@@ -50,12 +50,12 @@ module VSphereAutomation
         self.address = attributes[:'address']
       end
 
-      if attributes.has_key?(:'prefix')
-        self.prefix = attributes[:'prefix']
-      end
-
       if attributes.has_key?(:'subnet_mask')
         self.subnet_mask = attributes[:'subnet_mask']
+      end
+
+      if attributes.has_key?(:'prefix')
+        self.prefix = attributes[:'prefix']
       end
     end
 
@@ -88,8 +88,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
-          prefix == o.prefix &&
-          subnet_mask == o.subnet_mask
+          subnet_mask == o.subnet_mask &&
+          prefix == o.prefix
     end
 
     # @see the `==` method
@@ -101,7 +101,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, prefix, subnet_mask].hash
+      [address, subnet_mask, prefix].hash
     end
 
     # Builds the object from hash

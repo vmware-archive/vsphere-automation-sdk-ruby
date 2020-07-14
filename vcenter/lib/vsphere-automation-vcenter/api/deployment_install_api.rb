@@ -33,7 +33,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.cancel ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/install?action=cancel'
+      local_var_path = '/vcenter/deployment/install?action=cancel'
 
       # query parameters
       query_params = {}
@@ -63,7 +63,7 @@ module VSphereAutomation
     # Run sanity checks using the InstallSpec parameters passed.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentInstallCheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
+    # @return [VcenterDeploymentInstallCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
     def check(request_body, opts = {})
       data, _status_code, _headers = check_with_http_info(request_body, opts)
       data
@@ -73,7 +73,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentInstallCheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentInstallCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
     def check_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.check ...'
@@ -83,7 +83,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentInstallApi.check"
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/install?action=check'
+      local_var_path = '/vcenter/deployment/install?action=check'
 
       # query parameters
       query_params = {}
@@ -108,7 +108,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentInstallCheckResp',
+	  '200' => 'VCenter::VcenterDeploymentInstallCheckResult',
 	  '400' => 'VCenter::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	})
@@ -119,7 +119,7 @@ module VSphereAutomation
     end
     # Get the parameters used to configure the ongoing appliance installation.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentInstallResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
+    # @return [VcenterDeploymentInstallResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -128,13 +128,13 @@ module VSphereAutomation
     # Get the parameters used to configure the ongoing appliance installation.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentInstallResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentInstallResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentInstallApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/install'
+      local_var_path = '/vcenter/deployment/install'
 
       # query parameters
       query_params = {}
@@ -157,7 +157,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentInstallResp',
+	  '200' => 'VCenter::VcenterDeploymentInstallResult',
 	  '400' => 'VCenter::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	})
@@ -189,7 +189,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentInstallApi.start"
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/install?action=start'
+      local_var_path = '/vcenter/deployment/install?action=start'
 
       # query parameters
       query_params = {}

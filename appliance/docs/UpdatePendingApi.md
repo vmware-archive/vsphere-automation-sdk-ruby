@@ -1,20 +1,20 @@
 # VSphereAutomation::Appliance::UpdatePendingApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](UpdatePendingApi.md#get) | **GET** /rest/appliance/update/pending/{version} | Gets update information
-[**install**](UpdatePendingApi.md#install) | **POST** /rest/appliance/update/pending/{version}?action&#x3D;install | Starts operation of installing the appliance update. Will fail is the update is not staged
-[**list**](UpdatePendingApi.md#list) | **GET** /rest/appliance/update/pending | Checks if new updates are available.
-[**precheck**](UpdatePendingApi.md#precheck) | **POST** /rest/appliance/update/pending/{version}?action&#x3D;precheck | Runs update precheck
-[**stage**](UpdatePendingApi.md#stage) | **POST** /rest/appliance/update/pending/{version}?action&#x3D;stage | Starts staging the appliance update. The updates are searched for in the following order: staged, CDROM, URL
-[**stage_and_install**](UpdatePendingApi.md#stage_and_install) | **POST** /rest/appliance/update/pending/{version}?action&#x3D;stage-and-install | Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
-[**validate**](UpdatePendingApi.md#validate) | **POST** /rest/appliance/update/pending/{version}?action&#x3D;validate | Validates the user provided data before the update installation.
+[**get**](UpdatePendingApi.md#get) | **GET** /appliance/update/pending/{version} | Gets update information
+[**install**](UpdatePendingApi.md#install) | **POST** /appliance/update/pending/{version}?action&#x3D;install | Starts operation of installing the appliance update. Will fail is the update is not staged
+[**list**](UpdatePendingApi.md#list) | **GET** /appliance/update/pending | Checks if new updates are available.
+[**precheck**](UpdatePendingApi.md#precheck) | **POST** /appliance/update/pending/{version}?action&#x3D;precheck | Runs update precheck
+[**stage**](UpdatePendingApi.md#stage) | **POST** /appliance/update/pending/{version}?action&#x3D;stage | Starts staging the appliance update. The updates are searched for in the following order: staged, CDROM, URL
+[**stage_and_install**](UpdatePendingApi.md#stage_and_install) | **POST** /appliance/update/pending/{version}?action&#x3D;stage-and-install | Starts operation of installing the appliance update. Will stage update if not already staged The updates are searched for in the following order: staged, CDROM, URL
+[**validate**](UpdatePendingApi.md#validate) | **POST** /appliance/update/pending/{version}?action&#x3D;validate | Validates the user provided data before the update installation.
 
 
 # **get**
-> ApplianceUpdatePendingResp get(version)
+> ApplianceUpdatePendingResult get(version)
 
 Gets update information
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceUpdatePendingResp**](ApplianceUpdatePendingResp.md)
+[**ApplianceUpdatePendingResult**](ApplianceUpdatePendingResult.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ nil (empty response body)
 
 
 # **list**
-> ApplianceUpdatePendingListResp list(source_type, opts)
+> ApplianceUpdatePendingListResult list(source_type, opts)
 
 Checks if new updates are available.
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceUpdatePendingListResp**](ApplianceUpdatePendingListResp.md)
+[**ApplianceUpdatePendingListResult**](ApplianceUpdatePendingListResult.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 
 # **precheck**
-> ApplianceUpdatePendingPrecheckResp precheck(version)
+> ApplianceUpdatePendingPrecheckResult precheck(version)
 
 Runs update precheck
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceUpdatePendingPrecheckResp**](ApplianceUpdatePendingPrecheckResp.md)
+[**ApplianceUpdatePendingPrecheckResult**](ApplianceUpdatePendingPrecheckResult.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ nil (empty response body)
 
 
 # **validate**
-> ApplianceUpdatePendingValidateResp validate(version, request_body)
+> ApplianceUpdatePendingValidateResult validate(version, request_body)
 
 Validates the user provided data before the update installation.
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceUpdatePendingValidateResp**](ApplianceUpdatePendingValidateResp.md)
+[**ApplianceUpdatePendingValidateResult**](ApplianceUpdatePendingValidateResult.md)
 
 ### Authorization
 

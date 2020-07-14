@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentQuestionApi.answer"
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/question?action=answer'
+      local_var_path = '/vcenter/deployment/question?action=answer'
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
     end
     # Get the question that was raised during the configuration.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentQuestionResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|]
+    # @return [VcenterDeploymentQuestionResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -79,13 +79,13 @@ module VSphereAutomation
     # Get the question that was raised during the configuration.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentQuestionResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentQuestionResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsInternalServerErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentQuestionApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/question'
+      local_var_path = '/vcenter/deployment/question'
 
       # query parameters
       query_params = {}
@@ -108,7 +108,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentQuestionResp',
+	  '200' => 'VCenter::VcenterDeploymentQuestionResult',
 	  '400' => 'VCenter::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '500' => 'VCenter::VapiStdErrorsInternalServerErrorError',

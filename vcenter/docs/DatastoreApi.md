@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::DatastoreApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](DatastoreApi.md#get) | **GET** /rest/vcenter/datastore/{datastore} | Retrieves information about the datastore indicated by datastore.
-[**list**](DatastoreApi.md#list) | **GET** /rest/vcenter/datastore | Returns information about at most 2500 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
+[**get**](DatastoreApi.md#get) | **GET** /vcenter/datastore/{datastore} | Retrieves information about the datastore indicated by datastore.
+[**list**](DatastoreApi.md#list) | **GET** /vcenter/datastore | Returns information about at most 1000 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
 
 
 # **get**
-> VcenterDatastoreResp get(datastore)
+> VcenterDatastoreResult get(datastore)
 
 Retrieves information about the datastore indicated by datastore.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDatastoreResp**](VcenterDatastoreResp.md)
+[**VcenterDatastoreResult**](VcenterDatastoreResult.md)
 
 ### Authorization
 
@@ -59,9 +59,9 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterDatastoreListResp list(opts)
+> VcenterDatastoreListResult list(opts)
 
-Returns information about at most 2500 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
+Returns information about at most 1000 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
 
 ### Example
 ```ruby
@@ -85,7 +85,7 @@ opts = {
 }
 
 begin
-  #Returns information about at most 2500 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
+  #Returns information about at most 1000 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
   result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDatastoreListResp**](VcenterDatastoreListResp.md)
+[**VcenterDatastoreListResult**](VcenterDatastoreListResult.md)
 
 ### Authorization
 

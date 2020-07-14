@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryRestoreJobRestoreJobStatus
+    attr_accessor :state
+
     # list of messages
     attr_accessor :messages
 
     # percentage complete
     attr_accessor :progress
 
-    attr_accessor :state
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'state' => :'state',
         :'messages' => :'messages',
-        :'progress' => :'progress',
-        :'state' => :'state'
+        :'progress' => :'progress'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'state' => :'ApplianceRecoveryRestoreJobBackupRestoreProcessState',
         :'messages' => :'Array<ApplianceRecoveryRestoreJobLocalizableMessage>',
-        :'progress' => :'Integer',
-        :'state' => :'ApplianceRecoveryRestoreJobBackupRestoreProcessState'
+        :'progress' => :'Integer'
       }
     end
 
@@ -45,6 +45,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'state')
+        self.state = attributes[:'state']
+      end
+
       if attributes.has_key?(:'messages')
         if (value = attributes[:'messages']).is_a?(Array)
           self.messages = value
@@ -54,16 +58,16 @@ module VSphereAutomation
       if attributes.has_key?(:'progress')
         self.progress = attributes[:'progress']
       end
-
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @state.nil?
+        invalid_properties.push('invalid value for "state", state cannot be nil.')
+      end
+
       if @messages.nil?
         invalid_properties.push('invalid value for "messages", messages cannot be nil.')
       end
@@ -72,19 +76,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "progress", progress cannot be nil.')
       end
 
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @state.nil?
       return false if @messages.nil?
       return false if @progress.nil?
-      return false if @state.nil?
       true
     end
 
@@ -93,9 +93,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          state == o.state &&
           messages == o.messages &&
-          progress == o.progress &&
-          state == o.state
+          progress == o.progress
     end
 
     # @see the `==` method
@@ -107,7 +107,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [messages, progress, state].hash
+      [state, messages, progress].hash
     end
 
     # Builds the object from hash

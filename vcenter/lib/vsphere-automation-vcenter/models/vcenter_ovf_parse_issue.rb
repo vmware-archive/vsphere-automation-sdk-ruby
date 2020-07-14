@@ -13,14 +13,14 @@ module VSphereAutomation
     class VcenterOvfParseIssue
     attr_accessor :category
 
-    # The position in the line (see {@link #lineNumber}) (or -1 if not applicable).
-    attr_accessor :column_number
-
     # The name of the file in which the parse issue was found.
     attr_accessor :file
 
     # The line number of the line in the file (see {@link #file}) where the parse issue was found (or -1 if not applicable).
     attr_accessor :line_number
+
+    # The position in the line (see {@link #lineNumber}) (or -1 if not applicable).
+    attr_accessor :column_number
 
     attr_accessor :message
 
@@ -28,9 +28,9 @@ module VSphereAutomation
     def self.attribute_map
       {
         :'category' => :'category',
-        :'column_number' => :'column_number',
         :'file' => :'file',
         :'line_number' => :'line_number',
+        :'column_number' => :'column_number',
         :'message' => :'message'
       }
     end
@@ -39,9 +39,9 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'category' => :'VcenterOvfParseIssueCategory',
-        :'column_number' => :'Integer',
         :'file' => :'String',
         :'line_number' => :'Integer',
+        :'column_number' => :'Integer',
         :'message' => :'VapiStdLocalizableMessage'
       }
     end
@@ -58,16 +58,16 @@ module VSphereAutomation
         self.category = attributes[:'category']
       end
 
-      if attributes.has_key?(:'column_number')
-        self.column_number = attributes[:'column_number']
-      end
-
       if attributes.has_key?(:'file')
         self.file = attributes[:'file']
       end
 
       if attributes.has_key?(:'line_number')
         self.line_number = attributes[:'line_number']
+      end
+
+      if attributes.has_key?(:'column_number')
+        self.column_number = attributes[:'column_number']
       end
 
       if attributes.has_key?(:'message')
@@ -83,16 +83,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "category", category cannot be nil.')
       end
 
-      if @column_number.nil?
-        invalid_properties.push('invalid value for "column_number", column_number cannot be nil.')
-      end
-
       if @file.nil?
         invalid_properties.push('invalid value for "file", file cannot be nil.')
       end
 
       if @line_number.nil?
         invalid_properties.push('invalid value for "line_number", line_number cannot be nil.')
+      end
+
+      if @column_number.nil?
+        invalid_properties.push('invalid value for "column_number", column_number cannot be nil.')
       end
 
       if @message.nil?
@@ -106,9 +106,9 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @category.nil?
-      return false if @column_number.nil?
       return false if @file.nil?
       return false if @line_number.nil?
+      return false if @column_number.nil?
       return false if @message.nil?
       true
     end
@@ -119,9 +119,9 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           category == o.category &&
-          column_number == o.column_number &&
           file == o.file &&
           line_number == o.line_number &&
+          column_number == o.column_number &&
           message == o.message
     end
 
@@ -134,7 +134,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [category, column_number, file, line_number, message].hash
+      [category, file, line_number, column_number, message].hash
     end
 
     # Builds the object from hash

@@ -11,14 +11,8 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterResourcePoolFilterSpec
-    # Clusters that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any cluster match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
-    attr_accessor :clusters
-
-    # Datacenters that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    attr_accessor :datacenters
-
-    # Hosts that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any host match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
-    attr_accessor :hosts
+    # Identifiers of resource pools that can match the filter. If unset or empty, resource pools with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ResourcePool.
+    attr_accessor :resource_pools
 
     # Names that resource pools must have to match the filter (see ResourcePool.Info.name). If unset or empty, resource pools with any name match the filter.
     attr_accessor :names
@@ -26,30 +20,36 @@ module VSphereAutomation
     # Resource pools that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any resource pool match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ResourcePool.
     attr_accessor :parent_resource_pools
 
-    # Identifiers of resource pools that can match the filter. If unset or empty, resource pools with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ResourcePool. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ResourcePool.
-    attr_accessor :resource_pools
+    # Datacenters that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
+    attr_accessor :datacenters
+
+    # Hosts that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any host match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: HostSystem. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: HostSystem.
+    attr_accessor :hosts
+
+    # Clusters that must contain the resource pool for the resource pool to match the filter. If unset or empty, resource pools in any cluster match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
+    attr_accessor :clusters
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'clusters' => :'clusters',
-        :'datacenters' => :'datacenters',
-        :'hosts' => :'hosts',
+        :'resource_pools' => :'resource_pools',
         :'names' => :'names',
         :'parent_resource_pools' => :'parent_resource_pools',
-        :'resource_pools' => :'resource_pools'
+        :'datacenters' => :'datacenters',
+        :'hosts' => :'hosts',
+        :'clusters' => :'clusters'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'clusters' => :'Array<String>',
-        :'datacenters' => :'Array<String>',
-        :'hosts' => :'Array<String>',
+        :'resource_pools' => :'Array<String>',
         :'names' => :'Array<String>',
         :'parent_resource_pools' => :'Array<String>',
-        :'resource_pools' => :'Array<String>'
+        :'datacenters' => :'Array<String>',
+        :'hosts' => :'Array<String>',
+        :'clusters' => :'Array<String>'
       }
     end
 
@@ -61,21 +61,9 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'clusters')
-        if (value = attributes[:'clusters']).is_a?(Array)
-          self.clusters = value
-        end
-      end
-
-      if attributes.has_key?(:'datacenters')
-        if (value = attributes[:'datacenters']).is_a?(Array)
-          self.datacenters = value
-        end
-      end
-
-      if attributes.has_key?(:'hosts')
-        if (value = attributes[:'hosts']).is_a?(Array)
-          self.hosts = value
+      if attributes.has_key?(:'resource_pools')
+        if (value = attributes[:'resource_pools']).is_a?(Array)
+          self.resource_pools = value
         end
       end
 
@@ -91,9 +79,21 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'resource_pools')
-        if (value = attributes[:'resource_pools']).is_a?(Array)
-          self.resource_pools = value
+      if attributes.has_key?(:'datacenters')
+        if (value = attributes[:'datacenters']).is_a?(Array)
+          self.datacenters = value
+        end
+      end
+
+      if attributes.has_key?(:'hosts')
+        if (value = attributes[:'hosts']).is_a?(Array)
+          self.hosts = value
+        end
+      end
+
+      if attributes.has_key?(:'clusters')
+        if (value = attributes[:'clusters']).is_a?(Array)
+          self.clusters = value
         end
       end
     end
@@ -116,12 +116,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          clusters == o.clusters &&
-          datacenters == o.datacenters &&
-          hosts == o.hosts &&
+          resource_pools == o.resource_pools &&
           names == o.names &&
           parent_resource_pools == o.parent_resource_pools &&
-          resource_pools == o.resource_pools
+          datacenters == o.datacenters &&
+          hosts == o.hosts &&
+          clusters == o.clusters
     end
 
     # @see the `==` method
@@ -133,7 +133,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [clusters, datacenters, hosts, names, parent_resource_pools, resource_pools].hash
+      [resource_pools, names, parent_resource_pools, datacenters, hosts, clusters].hash
     end
 
     # Builds the object from hash

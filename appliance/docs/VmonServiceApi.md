@@ -1,19 +1,19 @@
 # VSphereAutomation::Appliance::VmonServiceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmonServiceApi.md#get) | **GET** /rest/appliance/vmon/service/{service} | Returns the state of a service.
-[**list_details**](VmonServiceApi.md#list_details) | **GET** /rest/appliance/vmon/service | Lists details of services managed by vMon.
-[**restart**](VmonServiceApi.md#restart) | **POST** /rest/appliance/vmon/service/{service}/restart | Restarts a service
-[**start**](VmonServiceApi.md#start) | **POST** /rest/appliance/vmon/service/{service}/start | Starts a service
-[**stop**](VmonServiceApi.md#stop) | **POST** /rest/appliance/vmon/service/{service}/stop | Stops a service
-[**update**](VmonServiceApi.md#update) | **PATCH** /rest/appliance/vmon/service/{service} | Updates the properties of a service.
+[**get**](VmonServiceApi.md#get) | **GET** /appliance/vmon/service/{service} | Returns the state of a service.
+[**list_details**](VmonServiceApi.md#list_details) | **GET** /appliance/vmon/service | Lists details of services managed by vMon.
+[**restart**](VmonServiceApi.md#restart) | **POST** /appliance/vmon/service/{service}/restart | Restarts a service
+[**start**](VmonServiceApi.md#start) | **POST** /appliance/vmon/service/{service}/start | Starts a service
+[**stop**](VmonServiceApi.md#stop) | **POST** /appliance/vmon/service/{service}/stop | Stops a service
+[**update**](VmonServiceApi.md#update) | **PATCH** /appliance/vmon/service/{service} | Updates the properties of a service.
 
 
 # **get**
-> ApplianceVmonServiceResp get(service)
+> ApplianceVmonServiceResult get(service)
 
 Returns the state of a service.
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceVmonServiceResp**](ApplianceVmonServiceResp.md)
+[**ApplianceVmonServiceResult**](ApplianceVmonServiceResult.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 
 # **list_details**
-> ApplianceVmonServiceListDetailsResp list_details
+> ApplianceVmonServiceListDetailsResult list_details
 
 Lists details of services managed by vMon.
 
@@ -95,7 +95,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceVmonServiceListDetailsResp**](ApplianceVmonServiceListDetailsResp.md)
+[**ApplianceVmonServiceListDetailsResult**](ApplianceVmonServiceListDetailsResult.md)
 
 ### Authorization
 

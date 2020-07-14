@@ -43,7 +43,7 @@ describe 'LibraryItemDownloadSessionApi' do
   # Creates a new download session.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemDownloadSessionCreateResp]
+  # @return [ContentLibraryItemDownloadSessionCreateResult]
   describe 'create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -77,7 +77,7 @@ describe 'LibraryItemDownloadSessionApi' do
   # Gets the download session with the specified identifier, including the most up-to-date status information for the session.
   # @param download_session_id Identifier of the download session to retrieve.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemDownloadSessionResp]
+  # @return [ContentLibraryItemDownloadSessionResult]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -100,7 +100,7 @@ describe 'LibraryItemDownloadSessionApi' do
   # Lists the identifiers of the download sessions created by the calling user. Optionally may filter by library item.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :library_item_id Library item identifier on which to filter results.
-  # @return [ContentLibraryItemDownloadSessionListResp]
+  # @return [ContentLibraryItemDownloadSessionListResult]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

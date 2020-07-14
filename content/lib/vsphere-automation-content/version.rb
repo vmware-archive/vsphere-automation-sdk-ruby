@@ -8,6 +8,6 @@
 
 module VSphereAutomation
   module Content
-    VERSION = '0.5.0'
+    VERSION = '0.4.6'
   end
 end

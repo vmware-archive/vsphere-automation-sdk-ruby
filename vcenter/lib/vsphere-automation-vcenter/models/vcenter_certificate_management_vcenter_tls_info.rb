@@ -11,26 +11,8 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterCertificateManagementVcenterTlsInfo
-    # Collection of authority information access URI.
-    attr_accessor :authority_information_access_uri
-
-    # TLS certificate in PEM format.
-    attr_accessor :cert
-
-    # Collection of extended keyusage that contains details for which the certificate can be used for.
-    attr_accessor :extended_key_usage
-
-    # Certificate constraints isCA from the critical BasicConstraints extension, (OID = 2.5.29.19).
-    attr_accessor :is_ca
-
-    # Issuer (issuer distinguished name) value from the certificate.
-    attr_accessor :issuer_dn
-
-    # Collection of keyusage contained in the certificate.
-    attr_accessor :key_usage
-
-    # Certificate constraints path length from the critical BasicConstraints extension, (OID = 2.5.29.19).
-    attr_accessor :path_length_constraint
+    # Version (version number) value from the certificate.
+    attr_accessor :version
 
     # SerialNumber value from the certificate.
     attr_accessor :serial_number
@@ -38,14 +20,8 @@ module VSphereAutomation
     # Signature algorithm name from the certificate.
     attr_accessor :signature_algorithm
 
-    # Collection of subject alternative names.
-    attr_accessor :subject_alternative_name
-
-    # Subject (subject distinguished name) value from the certificate.
-    attr_accessor :subject_dn
-
-    # Thumbprint value from the certificate.
-    attr_accessor :thumbprint
+    # Issuer (issuer distinguished name) value from the certificate.
+    attr_accessor :issuer_dn
 
     # validFrom specify the start date of the certificate.
     attr_accessor :valid_from
@@ -53,48 +29,67 @@ module VSphereAutomation
     # validTo specify the end date of the certificate.
     attr_accessor :valid_to
 
-    # Version (version number) value from the certificate.
-    attr_accessor :version
+    # Subject (subject distinguished name) value from the certificate.
+    attr_accessor :subject_dn
+
+    # Thumbprint value from the certificate.
+    attr_accessor :thumbprint
+
+    # Certificate constraints path length from the critical BasicConstraints extension, (OID = 2.5.29.19).
+    attr_accessor :basic_constraints
+
+    # Collection of keyusage contained in the certificate.
+    attr_accessor :key_usage
+
+    # Collection of extended keyusage that contains details for which the certificate can be used for.
+    attr_accessor :extended_key_usage
+
+    # Collection of subject alternative names.
+    attr_accessor :subject_alternative_name
+
+    # Collection of authority information access URI.
+    attr_accessor :authority_information_access_uri
+
+    # TLS certificate in PEM format.
+    attr_accessor :cert
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'authority_information_access_uri' => :'authority_information_access_uri',
-        :'cert' => :'cert',
-        :'extended_key_usage' => :'extended_key_usage',
-        :'is_ca' => :'is_CA',
-        :'issuer_dn' => :'issuer_dn',
-        :'key_usage' => :'key_usage',
-        :'path_length_constraint' => :'path_length_constraint',
+        :'version' => :'version',
         :'serial_number' => :'serial_number',
         :'signature_algorithm' => :'signature_algorithm',
-        :'subject_alternative_name' => :'subject_alternative_name',
-        :'subject_dn' => :'subject_dn',
-        :'thumbprint' => :'thumbprint',
+        :'issuer_dn' => :'issuer_dn',
         :'valid_from' => :'valid_from',
         :'valid_to' => :'valid_to',
-        :'version' => :'version'
+        :'subject_dn' => :'subject_dn',
+        :'thumbprint' => :'thumbprint',
+        :'basic_constraints' => :'basic_constraints',
+        :'key_usage' => :'key_usage',
+        :'extended_key_usage' => :'extended_key_usage',
+        :'subject_alternative_name' => :'subject_alternative_name',
+        :'authority_information_access_uri' => :'authority_information_access_uri',
+        :'cert' => :'cert'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'authority_information_access_uri' => :'Array<String>',
-        :'cert' => :'String',
-        :'extended_key_usage' => :'Array<String>',
-        :'is_ca' => :'Boolean',
-        :'issuer_dn' => :'String',
-        :'key_usage' => :'Array<String>',
-        :'path_length_constraint' => :'Integer',
+        :'version' => :'Integer',
         :'serial_number' => :'String',
         :'signature_algorithm' => :'String',
-        :'subject_alternative_name' => :'Array<String>',
-        :'subject_dn' => :'String',
-        :'thumbprint' => :'String',
+        :'issuer_dn' => :'String',
         :'valid_from' => :'DateTime',
         :'valid_to' => :'DateTime',
-        :'version' => :'Integer'
+        :'subject_dn' => :'String',
+        :'thumbprint' => :'String',
+        :'basic_constraints' => :'Integer',
+        :'key_usage' => :'Array<String>',
+        :'extended_key_usage' => :'Array<String>',
+        :'subject_alternative_name' => :'Array<String>',
+        :'authority_information_access_uri' => :'Array<String>',
+        :'cert' => :'String'
       }
     end
 
@@ -106,38 +101,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'authority_information_access_uri')
-        if (value = attributes[:'authority_information_access_uri']).is_a?(Array)
-          self.authority_information_access_uri = value
-        end
-      end
-
-      if attributes.has_key?(:'cert')
-        self.cert = attributes[:'cert']
-      end
-
-      if attributes.has_key?(:'extended_key_usage')
-        if (value = attributes[:'extended_key_usage']).is_a?(Array)
-          self.extended_key_usage = value
-        end
-      end
-
-      if attributes.has_key?(:'is_CA')
-        self.is_ca = attributes[:'is_CA']
-      end
-
-      if attributes.has_key?(:'issuer_dn')
-        self.issuer_dn = attributes[:'issuer_dn']
-      end
-
-      if attributes.has_key?(:'key_usage')
-        if (value = attributes[:'key_usage']).is_a?(Array)
-          self.key_usage = value
-        end
-      end
-
-      if attributes.has_key?(:'path_length_constraint')
-        self.path_length_constraint = attributes[:'path_length_constraint']
+      if attributes.has_key?(:'version')
+        self.version = attributes[:'version']
       end
 
       if attributes.has_key?(:'serial_number')
@@ -148,18 +113,8 @@ module VSphereAutomation
         self.signature_algorithm = attributes[:'signature_algorithm']
       end
 
-      if attributes.has_key?(:'subject_alternative_name')
-        if (value = attributes[:'subject_alternative_name']).is_a?(Array)
-          self.subject_alternative_name = value
-        end
-      end
-
-      if attributes.has_key?(:'subject_dn')
-        self.subject_dn = attributes[:'subject_dn']
-      end
-
-      if attributes.has_key?(:'thumbprint')
-        self.thumbprint = attributes[:'thumbprint']
+      if attributes.has_key?(:'issuer_dn')
+        self.issuer_dn = attributes[:'issuer_dn']
       end
 
       if attributes.has_key?(:'valid_from')
@@ -170,8 +125,44 @@ module VSphereAutomation
         self.valid_to = attributes[:'valid_to']
       end
 
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
+      if attributes.has_key?(:'subject_dn')
+        self.subject_dn = attributes[:'subject_dn']
+      end
+
+      if attributes.has_key?(:'thumbprint')
+        self.thumbprint = attributes[:'thumbprint']
+      end
+
+      if attributes.has_key?(:'basic_constraints')
+        self.basic_constraints = attributes[:'basic_constraints']
+      end
+
+      if attributes.has_key?(:'key_usage')
+        if (value = attributes[:'key_usage']).is_a?(Array)
+          self.key_usage = value
+        end
+      end
+
+      if attributes.has_key?(:'extended_key_usage')
+        if (value = attributes[:'extended_key_usage']).is_a?(Array)
+          self.extended_key_usage = value
+        end
+      end
+
+      if attributes.has_key?(:'subject_alternative_name')
+        if (value = attributes[:'subject_alternative_name']).is_a?(Array)
+          self.subject_alternative_name = value
+        end
+      end
+
+      if attributes.has_key?(:'authority_information_access_uri')
+        if (value = attributes[:'authority_information_access_uri']).is_a?(Array)
+          self.authority_information_access_uri = value
+        end
+      end
+
+      if attributes.has_key?(:'cert')
+        self.cert = attributes[:'cert']
       end
     end
 
@@ -179,32 +170,8 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @authority_information_access_uri.nil?
-        invalid_properties.push('invalid value for "authority_information_access_uri", authority_information_access_uri cannot be nil.')
-      end
-
-      if @cert.nil?
-        invalid_properties.push('invalid value for "cert", cert cannot be nil.')
-      end
-
-      if @extended_key_usage.nil?
-        invalid_properties.push('invalid value for "extended_key_usage", extended_key_usage cannot be nil.')
-      end
-
-      if @is_ca.nil?
-        invalid_properties.push('invalid value for "is_ca", is_ca cannot be nil.')
-      end
-
-      if @issuer_dn.nil?
-        invalid_properties.push('invalid value for "issuer_dn", issuer_dn cannot be nil.')
-      end
-
-      if @key_usage.nil?
-        invalid_properties.push('invalid value for "key_usage", key_usage cannot be nil.')
-      end
-
-      if @path_length_constraint.nil?
-        invalid_properties.push('invalid value for "path_length_constraint", path_length_constraint cannot be nil.')
+      if @version.nil?
+        invalid_properties.push('invalid value for "version", version cannot be nil.')
       end
 
       if @serial_number.nil?
@@ -215,16 +182,8 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "signature_algorithm", signature_algorithm cannot be nil.')
       end
 
-      if @subject_alternative_name.nil?
-        invalid_properties.push('invalid value for "subject_alternative_name", subject_alternative_name cannot be nil.')
-      end
-
-      if @subject_dn.nil?
-        invalid_properties.push('invalid value for "subject_dn", subject_dn cannot be nil.')
-      end
-
-      if @thumbprint.nil?
-        invalid_properties.push('invalid value for "thumbprint", thumbprint cannot be nil.')
+      if @issuer_dn.nil?
+        invalid_properties.push('invalid value for "issuer_dn", issuer_dn cannot be nil.')
       end
 
       if @valid_from.nil?
@@ -235,8 +194,36 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "valid_to", valid_to cannot be nil.')
       end
 
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
+      if @subject_dn.nil?
+        invalid_properties.push('invalid value for "subject_dn", subject_dn cannot be nil.')
+      end
+
+      if @thumbprint.nil?
+        invalid_properties.push('invalid value for "thumbprint", thumbprint cannot be nil.')
+      end
+
+      if @basic_constraints.nil?
+        invalid_properties.push('invalid value for "basic_constraints", basic_constraints cannot be nil.')
+      end
+
+      if @key_usage.nil?
+        invalid_properties.push('invalid value for "key_usage", key_usage cannot be nil.')
+      end
+
+      if @extended_key_usage.nil?
+        invalid_properties.push('invalid value for "extended_key_usage", extended_key_usage cannot be nil.')
+      end
+
+      if @subject_alternative_name.nil?
+        invalid_properties.push('invalid value for "subject_alternative_name", subject_alternative_name cannot be nil.')
+      end
+
+      if @authority_information_access_uri.nil?
+        invalid_properties.push('invalid value for "authority_information_access_uri", authority_information_access_uri cannot be nil.')
+      end
+
+      if @cert.nil?
+        invalid_properties.push('invalid value for "cert", cert cannot be nil.')
       end
 
       invalid_properties
@@ -245,21 +232,20 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @authority_information_access_uri.nil?
-      return false if @cert.nil?
-      return false if @extended_key_usage.nil?
-      return false if @is_ca.nil?
-      return false if @issuer_dn.nil?
-      return false if @key_usage.nil?
-      return false if @path_length_constraint.nil?
+      return false if @version.nil?
       return false if @serial_number.nil?
       return false if @signature_algorithm.nil?
-      return false if @subject_alternative_name.nil?
-      return false if @subject_dn.nil?
-      return false if @thumbprint.nil?
+      return false if @issuer_dn.nil?
       return false if @valid_from.nil?
       return false if @valid_to.nil?
-      return false if @version.nil?
+      return false if @subject_dn.nil?
+      return false if @thumbprint.nil?
+      return false if @basic_constraints.nil?
+      return false if @key_usage.nil?
+      return false if @extended_key_usage.nil?
+      return false if @subject_alternative_name.nil?
+      return false if @authority_information_access_uri.nil?
+      return false if @cert.nil?
       true
     end
 
@@ -268,21 +254,20 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          authority_information_access_uri == o.authority_information_access_uri &&
-          cert == o.cert &&
-          extended_key_usage == o.extended_key_usage &&
-          is_ca == o.is_ca &&
-          issuer_dn == o.issuer_dn &&
-          key_usage == o.key_usage &&
-          path_length_constraint == o.path_length_constraint &&
+          version == o.version &&
           serial_number == o.serial_number &&
           signature_algorithm == o.signature_algorithm &&
-          subject_alternative_name == o.subject_alternative_name &&
-          subject_dn == o.subject_dn &&
-          thumbprint == o.thumbprint &&
+          issuer_dn == o.issuer_dn &&
           valid_from == o.valid_from &&
           valid_to == o.valid_to &&
-          version == o.version
+          subject_dn == o.subject_dn &&
+          thumbprint == o.thumbprint &&
+          basic_constraints == o.basic_constraints &&
+          key_usage == o.key_usage &&
+          extended_key_usage == o.extended_key_usage &&
+          subject_alternative_name == o.subject_alternative_name &&
+          authority_information_access_uri == o.authority_information_access_uri &&
+          cert == o.cert
     end
 
     # @see the `==` method
@@ -294,7 +279,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [authority_information_access_uri, cert, extended_key_usage, is_ca, issuer_dn, key_usage, path_length_constraint, serial_number, signature_algorithm, subject_alternative_name, subject_dn, thumbprint, valid_from, valid_to, version].hash
+      [version, serial_number, signature_algorithm, issuer_dn, valid_from, valid_to, subject_dn, thumbprint, basic_constraints, key_usage, extended_key_usage, subject_alternative_name, authority_information_access_uri, cert].hash
     end
 
     # Builds the object from hash

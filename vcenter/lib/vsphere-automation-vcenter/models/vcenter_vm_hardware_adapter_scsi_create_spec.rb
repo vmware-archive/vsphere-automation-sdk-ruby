@@ -11,6 +11,8 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareAdapterScsiCreateSpec
+    attr_accessor :type
+
     # SCSI bus number. If unset, the server will choose an available bus number; if none is available, the request will fail.
     attr_accessor :bus
 
@@ -19,25 +21,23 @@ module VSphereAutomation
 
     attr_accessor :sharing
 
-    attr_accessor :type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'type' => :'type',
         :'bus' => :'bus',
         :'pci_slot_number' => :'pci_slot_number',
-        :'sharing' => :'sharing',
-        :'type' => :'type'
+        :'sharing' => :'sharing'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'type' => :'VcenterVmHardwareAdapterScsiType',
         :'bus' => :'Integer',
         :'pci_slot_number' => :'Integer',
-        :'sharing' => :'VcenterVmHardwareAdapterScsiSharing',
-        :'type' => :'VcenterVmHardwareAdapterScsiType'
+        :'sharing' => :'VcenterVmHardwareAdapterScsiSharing'
       }
     end
 
@@ -49,6 +49,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
+
       if attributes.has_key?(:'bus')
         self.bus = attributes[:'bus']
       end
@@ -59,10 +63,6 @@ module VSphereAutomation
 
       if attributes.has_key?(:'sharing')
         self.sharing = attributes[:'sharing']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
       end
     end
 
@@ -84,10 +84,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          type == o.type &&
           bus == o.bus &&
           pci_slot_number == o.pci_slot_number &&
-          sharing == o.sharing &&
-          type == o.type
+          sharing == o.sharing
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bus, pci_slot_number, sharing, type].hash
+      [type, bus, pci_slot_number, sharing].hash
     end
 
     # Builds the object from hash

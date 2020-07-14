@@ -33,7 +33,7 @@ describe 'LibraryItemUpdatesessionFileApi' do
   # @param update_session_id Identifier of the update session to be modified.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemUpdatesessionFileAddResp]
+  # @return [ContentLibraryItemUpdatesessionFileAddResult]
   describe 'add test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -45,7 +45,7 @@ describe 'LibraryItemUpdatesessionFileApi' do
   # @param update_session_id Identifier of the update session.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemUpdatesessionFileResp]
+  # @return [ContentLibraryItemUpdatesessionFileResult]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -56,7 +56,7 @@ describe 'LibraryItemUpdatesessionFileApi' do
   # Lists all files in the library item associated with the update session.
   # @param update_session_id Identifier of the update session.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemUpdatesessionFileListResp]
+  # @return [ContentLibraryItemUpdatesessionFileListResult]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -79,7 +79,7 @@ describe 'LibraryItemUpdatesessionFileApi' do
   # Validates the files in the update session with the referenced identifier and ensures all necessary files are received. In the case where a file is missing, this {@term operation} will return its name in the {@link ValidationResult#missingFiles} set. The user can add the missing files and try re-validating. For other type of errors, {@link ValidationResult#invalidFiles} will contain the list of invalid files.
   # @param update_session_id Identifier of the update session to validate.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemUpdatesessionFileValidateResp]
+  # @return [ContentLibraryItemUpdatesessionFileValidateResult]
   describe 'validate test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

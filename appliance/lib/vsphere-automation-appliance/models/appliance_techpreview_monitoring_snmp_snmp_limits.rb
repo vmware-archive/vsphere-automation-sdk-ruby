@@ -11,14 +11,11 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPLimits
-    # Set up max buffer size
-    attr_accessor :max_buffer_size
-
     # Set up maximum communities limit
     attr_accessor :max_communities
 
-    # Set up max community length
-    attr_accessor :max_community_length
+    # Set up max trap destinations limit
+    attr_accessor :max_trap_destinations_v1
 
     # Set up max destinations limit
     attr_accessor :max_destinations_v3
@@ -26,30 +23,33 @@ module VSphereAutomation
     # Set up max notification Filters
     attr_accessor :max_notification_filters
 
-    # Set up max trap destinations limit
-    attr_accessor :max_trap_destinations_v1
+    # Set up max community length
+    attr_accessor :max_community_length
+
+    # Set up max buffer size
+    attr_accessor :max_buffer_size
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'max_buffer_size' => :'max_buffer_size',
         :'max_communities' => :'max_communities',
-        :'max_community_length' => :'max_community_length',
+        :'max_trap_destinations_v1' => :'max_trap_destinations_v1',
         :'max_destinations_v3' => :'max_destinations_v3',
         :'max_notification_filters' => :'max_notification_filters',
-        :'max_trap_destinations_v1' => :'max_trap_destinations_v1'
+        :'max_community_length' => :'max_community_length',
+        :'max_buffer_size' => :'max_buffer_size'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'max_buffer_size' => :'Integer',
         :'max_communities' => :'Integer',
-        :'max_community_length' => :'Integer',
+        :'max_trap_destinations_v1' => :'Integer',
         :'max_destinations_v3' => :'Integer',
         :'max_notification_filters' => :'Integer',
-        :'max_trap_destinations_v1' => :'Integer'
+        :'max_community_length' => :'Integer',
+        :'max_buffer_size' => :'Integer'
       }
     end
 
@@ -61,16 +61,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'max_buffer_size')
-        self.max_buffer_size = attributes[:'max_buffer_size']
-      end
-
       if attributes.has_key?(:'max_communities')
         self.max_communities = attributes[:'max_communities']
       end
 
-      if attributes.has_key?(:'max_community_length')
-        self.max_community_length = attributes[:'max_community_length']
+      if attributes.has_key?(:'max_trap_destinations_v1')
+        self.max_trap_destinations_v1 = attributes[:'max_trap_destinations_v1']
       end
 
       if attributes.has_key?(:'max_destinations_v3')
@@ -81,8 +77,12 @@ module VSphereAutomation
         self.max_notification_filters = attributes[:'max_notification_filters']
       end
 
-      if attributes.has_key?(:'max_trap_destinations_v1')
-        self.max_trap_destinations_v1 = attributes[:'max_trap_destinations_v1']
+      if attributes.has_key?(:'max_community_length')
+        self.max_community_length = attributes[:'max_community_length']
+      end
+
+      if attributes.has_key?(:'max_buffer_size')
+        self.max_buffer_size = attributes[:'max_buffer_size']
       end
     end
 
@@ -90,16 +90,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @max_buffer_size.nil?
-        invalid_properties.push('invalid value for "max_buffer_size", max_buffer_size cannot be nil.')
-      end
-
       if @max_communities.nil?
         invalid_properties.push('invalid value for "max_communities", max_communities cannot be nil.')
       end
 
-      if @max_community_length.nil?
-        invalid_properties.push('invalid value for "max_community_length", max_community_length cannot be nil.')
+      if @max_trap_destinations_v1.nil?
+        invalid_properties.push('invalid value for "max_trap_destinations_v1", max_trap_destinations_v1 cannot be nil.')
       end
 
       if @max_destinations_v3.nil?
@@ -110,8 +106,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "max_notification_filters", max_notification_filters cannot be nil.')
       end
 
-      if @max_trap_destinations_v1.nil?
-        invalid_properties.push('invalid value for "max_trap_destinations_v1", max_trap_destinations_v1 cannot be nil.')
+      if @max_community_length.nil?
+        invalid_properties.push('invalid value for "max_community_length", max_community_length cannot be nil.')
+      end
+
+      if @max_buffer_size.nil?
+        invalid_properties.push('invalid value for "max_buffer_size", max_buffer_size cannot be nil.')
       end
 
       invalid_properties
@@ -120,12 +120,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @max_buffer_size.nil?
       return false if @max_communities.nil?
-      return false if @max_community_length.nil?
+      return false if @max_trap_destinations_v1.nil?
       return false if @max_destinations_v3.nil?
       return false if @max_notification_filters.nil?
-      return false if @max_trap_destinations_v1.nil?
+      return false if @max_community_length.nil?
+      return false if @max_buffer_size.nil?
       true
     end
 
@@ -134,12 +134,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          max_buffer_size == o.max_buffer_size &&
           max_communities == o.max_communities &&
-          max_community_length == o.max_community_length &&
+          max_trap_destinations_v1 == o.max_trap_destinations_v1 &&
           max_destinations_v3 == o.max_destinations_v3 &&
           max_notification_filters == o.max_notification_filters &&
-          max_trap_destinations_v1 == o.max_trap_destinations_v1
+          max_community_length == o.max_community_length &&
+          max_buffer_size == o.max_buffer_size
     end
 
     # @see the `==` method
@@ -151,7 +151,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [max_buffer_size, max_communities, max_community_length, max_destinations_v3, max_notification_filters, max_trap_destinations_v1].hash
+      [max_communities, max_trap_destinations_v1, max_destinations_v3, max_notification_filters, max_community_length, max_buffer_size].hash
     end
 
     # Builds the object from hash

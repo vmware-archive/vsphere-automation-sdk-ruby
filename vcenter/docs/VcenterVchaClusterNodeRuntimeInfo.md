@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**placement** | [**VcenterVchaPlacementInfo**](VcenterVchaPlacementInfo.md) |  | [optional] 
-**role** | [**VcenterVchaClusterNodeRole**](VcenterVchaClusterNodeRole.md) |  | [optional] 
 **state** | [**VcenterVchaClusterNodeState**](VcenterVchaClusterNodeState.md) |  | [optional] 
+**role** | [**VcenterVchaClusterNodeRole**](VcenterVchaClusterNodeRole.md) |  | [optional] 
+**placement** | [**VcenterVchaPlacementInfo**](VcenterVchaPlacementInfo.md) |  | [optional] 
 
 

@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::FolderApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](FolderApi.md#list) | **GET** /rest/vcenter/folder | Returns information about at most 1000 visible (subject to permission checks) folders in vCenter matching the Folder.FilterSpec.
+[**list**](FolderApi.md#list) | **GET** /vcenter/folder | Returns information about at most 1000 visible (subject to permission checks) folders in vCenter matching the Folder.FilterSpec.
 
 
 # **list**
-> VcenterFolderListResp list(opts)
+> VcenterFolderListResult list(opts)
 
 Returns information about at most 1000 visible (subject to permission checks) folders in vCenter matching the Folder.FilterSpec.
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterFolderListResp**](VcenterFolderListResp.md)
+[**VcenterFolderListResult**](VcenterFolderListResult.md)
 
 ### Authorization
 

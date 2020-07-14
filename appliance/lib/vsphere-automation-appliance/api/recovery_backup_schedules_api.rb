@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryBackupSchedulesApi.create"
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/schedules/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
+      local_var_path = '/appliance/recovery/backup/schedules/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
 
       # query parameters
       query_params = {}
@@ -97,7 +97,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'schedule' when calling RecoveryBackupSchedulesApi.delete"
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/schedules/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
+      local_var_path = '/appliance/recovery/backup/schedules/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
 
       # query parameters
       query_params = {}
@@ -127,7 +127,7 @@ module VSphereAutomation
     # Returns an existing schedule information based on id
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryBackupSchedulesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceRecoveryBackupSchedulesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def get(schedule, opts = {})
       data, _status_code, _headers = get_with_http_info(schedule, opts)
       data
@@ -137,7 +137,7 @@ module VSphereAutomation
     # @api private
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryBackupSchedulesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryBackupSchedulesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(schedule, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.get ...'
@@ -147,7 +147,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'schedule' when calling RecoveryBackupSchedulesApi.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/schedules/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
+      local_var_path = '/appliance/recovery/backup/schedules/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
 
       # query parameters
       query_params = {}
@@ -170,7 +170,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryBackupSchedulesResp',
+	  '200' => 'Appliance::ApplianceRecoveryBackupSchedulesResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})
@@ -181,7 +181,7 @@ module VSphereAutomation
     end
     # Returns a list of existing schedules with details
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryBackupSchedulesListResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryBackupSchedulesListResult|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -190,13 +190,13 @@ module VSphereAutomation
     # Returns a list of existing schedules with details
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryBackupSchedulesListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryBackupSchedulesListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/schedules'
+      local_var_path = '/appliance/recovery/backup/schedules'
 
       # query parameters
       query_params = {}
@@ -219,7 +219,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryBackupSchedulesListResp',
+	  '200' => 'Appliance::ApplianceRecoveryBackupSchedulesListResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -231,7 +231,7 @@ module VSphereAutomation
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceRecoveryBackupSchedulesRun] :request_body 
-    # @return [ApplianceRecoveryBackupSchedulesRunResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceRecoveryBackupSchedulesRunResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def run(schedule, opts = {})
       data, _status_code, _headers = run_with_http_info(schedule, opts)
       data
@@ -242,7 +242,7 @@ module VSphereAutomation
     # @param schedule Identifier of the schedule
     # @param [Hash] opts the optional parameters
     # @option opts [ApplianceRecoveryBackupSchedulesRun] :request_body 
-    # @return [Array<(ApplianceRecoveryBackupSchedulesRunResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryBackupSchedulesRunResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def run_with_http_info(schedule, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupSchedulesApi.run ...'
@@ -252,7 +252,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'schedule' when calling RecoveryBackupSchedulesApi.run"
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/schedules/{schedule}?action=run'.sub('{' + 'schedule' + '}', schedule.to_s)
+      local_var_path = '/appliance/recovery/backup/schedules/{schedule}?action=run'.sub('{' + 'schedule' + '}', schedule.to_s)
 
       # query parameters
       query_params = {}
@@ -277,7 +277,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryBackupSchedulesRunResp',
+	  '200' => 'Appliance::ApplianceRecoveryBackupSchedulesRunResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})
@@ -315,7 +315,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling RecoveryBackupSchedulesApi.update"
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/schedules/update/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
+      local_var_path = '/appliance/recovery/backup/schedules/update/{schedule}'.sub('{' + 'schedule' + '}', schedule.to_s)
 
       # query parameters
       query_params = {}

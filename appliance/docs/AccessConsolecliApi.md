@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::AccessConsolecliApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](AccessConsolecliApi.md#get) | **GET** /rest/appliance/access/consolecli | Get enabled state of the console-based controlled CLI (TTY1).
-[**set**](AccessConsolecliApi.md#set) | **PUT** /rest/appliance/access/consolecli | Set enabled state of the console-based controlled CLI (TTY1).
+[**get**](AccessConsolecliApi.md#get) | **GET** /appliance/access/consolecli | Get enabled state of the console-based controlled CLI (TTY1).
+[**set**](AccessConsolecliApi.md#set) | **PUT** /appliance/access/consolecli | Set enabled state of the console-based controlled CLI (TTY1).
 
 
 # **get**
-> ApplianceAccessConsolecliResp get
+> ApplianceAccessConsolecliResult get
 
 Get enabled state of the console-based controlled CLI (TTY1).
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceAccessConsolecliResp**](ApplianceAccessConsolecliResp.md)
+[**ApplianceAccessConsolecliResult**](ApplianceAccessConsolecliResult.md)
 
 ### Authorization
 

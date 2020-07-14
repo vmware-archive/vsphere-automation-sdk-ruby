@@ -33,7 +33,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.cancel ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/history?action=cancel'
+      local_var_path = '/vcenter/deployment/history?action=cancel'
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
     end
     # Get the current status of the vCenter historical data import.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentImportHistoryResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
+    # @return [VcenterDeploymentImportHistoryResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -71,13 +71,13 @@ module VSphereAutomation
     # Get the current status of the vCenter historical data import.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentImportHistoryResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentImportHistoryResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/history'
+      local_var_path = '/vcenter/deployment/history'
 
       # query parameters
       query_params = {}
@@ -100,7 +100,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentImportHistoryResp',
+	  '200' => 'VCenter::VcenterDeploymentImportHistoryResult',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -127,7 +127,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.pause ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/history?action=pause'
+      local_var_path = '/vcenter/deployment/history?action=pause'
 
       # query parameters
       query_params = {}
@@ -171,7 +171,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.resume ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/history?action=resume'
+      local_var_path = '/vcenter/deployment/history?action=resume'
 
       # query parameters
       query_params = {}
@@ -217,7 +217,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: DeploymentImportHistoryApi.start ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/history?action=start'
+      local_var_path = '/vcenter/deployment/history?action=start'
 
       # query parameters
       query_params = {}

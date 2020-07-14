@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemCreateResult
-    attr_accessor :error
+    # Whether the {@name LibraryItem#create} {@term operation} completed successfully.
+    attr_accessor :succeeded
 
     # Identifier of the created or updated library item.
     attr_accessor :ovf_library_item_id
 
-    # Whether the {@name LibraryItem#create} {@term operation} completed successfully.
-    attr_accessor :succeeded
+    attr_accessor :error
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'error' => :'error',
+        :'succeeded' => :'succeeded',
         :'ovf_library_item_id' => :'ovf_library_item_id',
-        :'succeeded' => :'succeeded'
+        :'error' => :'error'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'error' => :'VcenterOvfLibraryItemResultInfo',
+        :'succeeded' => :'Boolean',
         :'ovf_library_item_id' => :'String',
-        :'succeeded' => :'Boolean'
+        :'error' => :'VcenterOvfLibraryItemResultInfo'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'error')
-        self.error = attributes[:'error']
+      if attributes.has_key?(:'succeeded')
+        self.succeeded = attributes[:'succeeded']
       end
 
       if attributes.has_key?(:'ovf_library_item_id')
         self.ovf_library_item_id = attributes[:'ovf_library_item_id']
       end
 
-      if attributes.has_key?(:'succeeded')
-        self.succeeded = attributes[:'succeeded']
+      if attributes.has_key?(:'error')
+        self.error = attributes[:'error']
       end
     end
 
@@ -81,9 +81,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          error == o.error &&
+          succeeded == o.succeeded &&
           ovf_library_item_id == o.ovf_library_item_id &&
-          succeeded == o.succeeded
+          error == o.error
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [error, ovf_library_item_id, succeeded].hash
+      [succeeded, ovf_library_item_id, error].hash
     end
 
     # Builds the object from hash

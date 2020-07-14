@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::VmHardwareParallelApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**connect**](VmHardwareParallelApi.md#connect) | **POST** /rest/vcenter/vm/{vm}/hardware/parallel/{port}/connect | Connects a virtual parallel port of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Parallel.update operation may be used to configure the virtual parallel port to start in the connected state when the virtual machine is powered on. 
-[**create**](VmHardwareParallelApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/parallel | Adds a virtual parallel port to the virtual machine.
-[**delete**](VmHardwareParallelApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/parallel/{port} | Removes a virtual parallel port from the virtual machine.
-[**disconnect**](VmHardwareParallelApi.md#disconnect) | **POST** /rest/vcenter/vm/{vm}/hardware/parallel/{port}/disconnect | Disconnects a virtual parallel port of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the parallel port is not connected to its backing.   For a powered-off virtual machine, the Parallel.update operation may be used to configure the virtual parallel port to start in the disconnected state when the virtual machine is powered on. 
-[**get**](VmHardwareParallelApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/parallel/{port} | Returns information about a virtual parallel port.
-[**list**](VmHardwareParallelApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/parallel | Returns commonly used information about the virtual parallel ports belonging to the virtual machine.
-[**update**](VmHardwareParallelApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/parallel/{port} | Updates the configuration of a virtual parallel port.
+[**connect**](VmHardwareParallelApi.md#connect) | **POST** /vcenter/vm/{vm}/hardware/parallel/{port}/connect | Connects a virtual parallel port of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Parallel.update operation may be used to configure the virtual parallel port to start in the connected state when the virtual machine is powered on. 
+[**create**](VmHardwareParallelApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/parallel | Adds a virtual parallel port to the virtual machine.
+[**delete**](VmHardwareParallelApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/parallel/{port} | Removes a virtual parallel port from the virtual machine.
+[**disconnect**](VmHardwareParallelApi.md#disconnect) | **POST** /vcenter/vm/{vm}/hardware/parallel/{port}/disconnect | Disconnects a virtual parallel port of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the parallel port is not connected to its backing.   For a powered-off virtual machine, the Parallel.update operation may be used to configure the virtual parallel port to start in the disconnected state when the virtual machine is powered on. 
+[**get**](VmHardwareParallelApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/parallel/{port} | Returns information about a virtual parallel port.
+[**list**](VmHardwareParallelApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/parallel | Returns commonly used information about the virtual parallel ports belonging to the virtual machine.
+[**update**](VmHardwareParallelApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/parallel/{port} | Updates the configuration of a virtual parallel port.
 
 
 # **connect**
@@ -65,7 +65,7 @@ nil (empty response body)
 
 
 # **create**
-> VcenterVmHardwareParallelCreateResp create(vm, request_body)
+> VcenterVmHardwareParallelCreateResult create(vm, request_body)
 
 Adds a virtual parallel port to the virtual machine.
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareParallelCreateResp**](VcenterVmHardwareParallelCreateResp.md)
+[**VcenterVmHardwareParallelCreateResult**](VcenterVmHardwareParallelCreateResult.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareParallelResp get(vm, port)
+> VcenterVmHardwareParallelResult get(vm, port)
 
 Returns information about a virtual parallel port.
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareParallelResp**](VcenterVmHardwareParallelResp.md)
+[**VcenterVmHardwareParallelResult**](VcenterVmHardwareParallelResult.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareParallelListResp list(vm)
+> VcenterVmHardwareParallelListResult list(vm)
 
 Returns commonly used information about the virtual parallel ports belonging to the virtual machine.
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareParallelListResp**](VcenterVmHardwareParallelListResp.md)
+[**VcenterVmHardwareParallelListResult**](VcenterVmHardwareParallelListResult.md)
 
 ### Authorization
 

@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentInstallVcsaEmbeddedSpec
-    # Whether CEIP should be enabled or disabled.
-    attr_accessor :ceip_enabled
+    attr_accessor :standalone
 
     attr_accessor :replicated
 
-    attr_accessor :standalone
+    # Whether CEIP should be enabled or disabled.
+    attr_accessor :ceip_enabled
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'ceip_enabled' => :'ceip_enabled',
+        :'standalone' => :'standalone',
         :'replicated' => :'replicated',
-        :'standalone' => :'standalone'
+        :'ceip_enabled' => :'ceip_enabled'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'ceip_enabled' => :'Boolean',
+        :'standalone' => :'VcenterDeploymentStandaloneSpec',
         :'replicated' => :'VcenterDeploymentReplicatedSpec',
-        :'standalone' => :'VcenterDeploymentStandaloneSpec'
+        :'ceip_enabled' => :'Boolean'
       }
     end
 
@@ -44,16 +44,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ceip_enabled')
-        self.ceip_enabled = attributes[:'ceip_enabled']
+      if attributes.has_key?(:'standalone')
+        self.standalone = attributes[:'standalone']
       end
 
       if attributes.has_key?(:'replicated')
         self.replicated = attributes[:'replicated']
       end
 
-      if attributes.has_key?(:'standalone')
-        self.standalone = attributes[:'standalone']
+      if attributes.has_key?(:'ceip_enabled')
+        self.ceip_enabled = attributes[:'ceip_enabled']
       end
     end
 
@@ -80,9 +80,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          ceip_enabled == o.ceip_enabled &&
+          standalone == o.standalone &&
           replicated == o.replicated &&
-          standalone == o.standalone
+          ceip_enabled == o.ceip_enabled
     end
 
     # @see the `==` method
@@ -94,7 +94,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ceip_enabled, replicated, standalone].hash
+      [standalone, replicated, ceip_enabled].hash
     end
 
     # Builds the object from hash

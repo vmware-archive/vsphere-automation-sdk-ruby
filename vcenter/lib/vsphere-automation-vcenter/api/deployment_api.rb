@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get the current status of the appliance deployment.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterDeploymentResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsNotFoundError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get the current status of the appliance deployment.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment'
+      local_var_path = '/vcenter/deployment'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentResp',
+	  '200' => 'VCenter::VcenterDeploymentResult',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	})
@@ -82,7 +82,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: DeploymentApi.rollback ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment?action=rollback'
+      local_var_path = '/vcenter/deployment?action=rollback'
 
       # query parameters
       query_params = {}

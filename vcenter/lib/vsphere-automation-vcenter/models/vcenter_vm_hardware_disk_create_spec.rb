@@ -11,43 +11,39 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareDiskCreateSpec
-    attr_accessor :backing
+    attr_accessor :type
 
     attr_accessor :ide
 
-    attr_accessor :new_vmdk
-
-    attr_accessor :nvme
+    attr_accessor :scsi
 
     attr_accessor :sata
 
-    attr_accessor :scsi
+    attr_accessor :backing
 
-    attr_accessor :type
+    attr_accessor :new_vmdk
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'backing' => :'backing',
+        :'type' => :'type',
         :'ide' => :'ide',
-        :'new_vmdk' => :'new_vmdk',
-        :'nvme' => :'nvme',
-        :'sata' => :'sata',
         :'scsi' => :'scsi',
-        :'type' => :'type'
+        :'sata' => :'sata',
+        :'backing' => :'backing',
+        :'new_vmdk' => :'new_vmdk'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'backing' => :'VcenterVmHardwareDiskBackingSpec',
+        :'type' => :'VcenterVmHardwareDiskHostBusAdapterType',
         :'ide' => :'VcenterVmHardwareIdeAddressSpec',
-        :'new_vmdk' => :'VcenterVmHardwareDiskVmdkCreateSpec',
-        :'nvme' => :'VcenterVmHardwareNvmeAddressSpec',
-        :'sata' => :'VcenterVmHardwareSataAddressSpec',
         :'scsi' => :'VcenterVmHardwareScsiAddressSpec',
-        :'type' => :'VcenterVmHardwareDiskHostBusAdapterType'
+        :'sata' => :'VcenterVmHardwareSataAddressSpec',
+        :'backing' => :'VcenterVmHardwareDiskBackingSpec',
+        :'new_vmdk' => :'VcenterVmHardwareDiskVmdkCreateSpec'
       }
     end
 
@@ -59,32 +55,28 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'backing')
-        self.backing = attributes[:'backing']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'ide')
         self.ide = attributes[:'ide']
       end
 
-      if attributes.has_key?(:'new_vmdk')
-        self.new_vmdk = attributes[:'new_vmdk']
-      end
-
-      if attributes.has_key?(:'nvme')
-        self.nvme = attributes[:'nvme']
+      if attributes.has_key?(:'scsi')
+        self.scsi = attributes[:'scsi']
       end
 
       if attributes.has_key?(:'sata')
         self.sata = attributes[:'sata']
       end
 
-      if attributes.has_key?(:'scsi')
-        self.scsi = attributes[:'scsi']
+      if attributes.has_key?(:'backing')
+        self.backing = attributes[:'backing']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'new_vmdk')
+        self.new_vmdk = attributes[:'new_vmdk']
       end
     end
 
@@ -106,13 +98,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          backing == o.backing &&
+          type == o.type &&
           ide == o.ide &&
-          new_vmdk == o.new_vmdk &&
-          nvme == o.nvme &&
-          sata == o.sata &&
           scsi == o.scsi &&
-          type == o.type
+          sata == o.sata &&
+          backing == o.backing &&
+          new_vmdk == o.new_vmdk
     end
 
     # @see the `==` method
@@ -124,7 +115,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [backing, ide, new_vmdk, nvme, sata, scsi, type].hash
+      [type, ide, scsi, sata, backing, new_vmdk].hash
     end
 
     # Builds the object from hash

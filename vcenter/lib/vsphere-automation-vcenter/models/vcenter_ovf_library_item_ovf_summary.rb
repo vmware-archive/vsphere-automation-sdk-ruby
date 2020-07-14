@@ -11,17 +11,14 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemOvfSummary
-    # End User License Agreements specified in the OVF descriptor. All end user license agreements must be accepted in order for the {@name LibraryItem#deploy} {@term operation} to succeed. See {@link ResourcePoolDeploymentSpec#acceptAllEula}.
-    attr_accessor :eul_as
-
-    # Additional OVF parameters which can be specified for the deployment target. These OVF parameters can be inspected, optionally modified, and used as values in {@link ResourcePoolDeploymentSpec#additionalParameters} for the {@name LibraryItem#deploy} {@term operation}.
-    attr_accessor :additional_params
+    # Default name for the virtual machine or virtual appliance.
+    attr_accessor :name
 
     # Default annotation for the virtual machine or virtual appliance.
     attr_accessor :annotation
 
-    # Default name for the virtual machine or virtual appliance.
-    attr_accessor :name
+    # End User License Agreements specified in the OVF descriptor. All end user license agreements must be accepted in order for the {@name LibraryItem#deploy} {@term operation} to succeed. See {@link ResourcePoolDeploymentSpec#acceptAllEula}.
+    attr_accessor :eul_as
 
     # Section identifiers for sections of type ovf:NetworkSection in the OVF descriptor. These identifiers can be used as keys in {@link ResourcePoolDeploymentSpec#networkMappings}.
     attr_accessor :networks
@@ -29,27 +26,30 @@ module VSphereAutomation
     # Section identifiers for sections of type vmw:StorageGroupSection in the OVF descriptor. These identifiers can be used as keys in {@link ResourcePoolDeploymentSpec#storageMappings}.
     attr_accessor :storage_groups
 
+    # Additional OVF parameters which can be specified for the deployment target. These OVF parameters can be inspected, optionally modified, and used as values in {@link ResourcePoolDeploymentSpec#additionalParameters} for the {@name LibraryItem#deploy} {@term operation}.
+    attr_accessor :additional_params
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'eul_as' => :'EULAs',
-        :'additional_params' => :'additional_params',
-        :'annotation' => :'annotation',
         :'name' => :'name',
+        :'annotation' => :'annotation',
+        :'eul_as' => :'EULAs',
         :'networks' => :'networks',
-        :'storage_groups' => :'storage_groups'
+        :'storage_groups' => :'storage_groups',
+        :'additional_params' => :'additional_params'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'eul_as' => :'Array<String>',
-        :'additional_params' => :'Array<Object>',
-        :'annotation' => :'String',
         :'name' => :'String',
+        :'annotation' => :'String',
+        :'eul_as' => :'Array<String>',
         :'networks' => :'Array<String>',
-        :'storage_groups' => :'Array<String>'
+        :'storage_groups' => :'Array<String>',
+        :'additional_params' => :'Array<Object>'
       }
     end
 
@@ -61,24 +61,18 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'EULAs')
-        if (value = attributes[:'EULAs']).is_a?(Array)
-          self.eul_as = value
-        end
-      end
-
-      if attributes.has_key?(:'additional_params')
-        if (value = attributes[:'additional_params']).is_a?(Array)
-          self.additional_params = value
-        end
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'annotation')
         self.annotation = attributes[:'annotation']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'EULAs')
+        if (value = attributes[:'EULAs']).is_a?(Array)
+          self.eul_as = value
+        end
       end
 
       if attributes.has_key?(:'networks')
@@ -90,6 +84,12 @@ module VSphereAutomation
       if attributes.has_key?(:'storage_groups')
         if (value = attributes[:'storage_groups']).is_a?(Array)
           self.storage_groups = value
+        end
+      end
+
+      if attributes.has_key?(:'additional_params')
+        if (value = attributes[:'additional_params']).is_a?(Array)
+          self.additional_params = value
         end
       end
     end
@@ -117,12 +117,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          eul_as == o.eul_as &&
-          additional_params == o.additional_params &&
-          annotation == o.annotation &&
           name == o.name &&
+          annotation == o.annotation &&
+          eul_as == o.eul_as &&
           networks == o.networks &&
-          storage_groups == o.storage_groups
+          storage_groups == o.storage_groups &&
+          additional_params == o.additional_params
     end
 
     # @see the `==` method
@@ -134,7 +134,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [eul_as, additional_params, annotation, name, networks, storage_groups].hash
+      [name, annotation, eul_as, networks, storage_groups, additional_params].hash
     end
 
     # Builds the object from hash

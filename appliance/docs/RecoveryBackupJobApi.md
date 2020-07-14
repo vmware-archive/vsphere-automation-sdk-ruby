@@ -1,17 +1,17 @@
 # VSphereAutomation::Appliance::RecoveryBackupJobApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](RecoveryBackupJobApi.md#cancel) | **POST** /rest/appliance/recovery/backup/job/{id}/cancel | Cancel the backup job.
-[**create**](RecoveryBackupJobApi.md#create) | **POST** /rest/appliance/recovery/backup/job | Initiate backup.
-[**get**](RecoveryBackupJobApi.md#get) | **GET** /rest/appliance/recovery/backup/job/{id} | See backup job progress/result.
-[**list**](RecoveryBackupJobApi.md#list) | **GET** /rest/appliance/recovery/backup/job | Get list of backup jobs
+[**cancel**](RecoveryBackupJobApi.md#cancel) | **POST** /appliance/recovery/backup/job/{id}/cancel | Cancel the backup job.
+[**create**](RecoveryBackupJobApi.md#create) | **POST** /appliance/recovery/backup/job | Initiate backup.
+[**get**](RecoveryBackupJobApi.md#get) | **GET** /appliance/recovery/backup/job/{id} | See backup job progress/result.
+[**list**](RecoveryBackupJobApi.md#list) | **GET** /appliance/recovery/backup/job | Get list of backup jobs
 
 
 # **cancel**
-> ApplianceRecoveryBackupJobCancelResp cancel(id)
+> ApplianceRecoveryBackupJobCancelResult cancel(id)
 
 Cancel the backup job.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupJobCancelResp**](ApplianceRecoveryBackupJobCancelResp.md)
+[**ApplianceRecoveryBackupJobCancelResult**](ApplianceRecoveryBackupJobCancelResult.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 
 # **create**
-> ApplianceRecoveryBackupJobCreateResp create(request_body)
+> ApplianceRecoveryBackupJobCreateResult create(request_body)
 
 Initiate backup.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupJobCreateResp**](ApplianceRecoveryBackupJobCreateResp.md)
+[**ApplianceRecoveryBackupJobCreateResult**](ApplianceRecoveryBackupJobCreateResult.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> ApplianceRecoveryBackupJobResp get(id)
+> ApplianceRecoveryBackupJobResult get(id)
 
 See backup job progress/result.
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupJobResp**](ApplianceRecoveryBackupJobResp.md)
+[**ApplianceRecoveryBackupJobResult**](ApplianceRecoveryBackupJobResult.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceRecoveryBackupJobListResp list
+> ApplianceRecoveryBackupJobListResult list
 
 Get list of backup jobs
 
@@ -193,7 +193,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceRecoveryBackupJobListResp**](ApplianceRecoveryBackupJobListResp.md)
+[**ApplianceRecoveryBackupJobListResult**](ApplianceRecoveryBackupJobListResult.md)
 
 ### Authorization
 

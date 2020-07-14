@@ -33,7 +33,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: DeploymentUpgradeApi.cancel ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/upgrade?action=cancel'
+      local_var_path = '/vcenter/deployment/upgrade?action=cancel'
 
       # query parameters
       query_params = {}
@@ -63,7 +63,7 @@ module VSphereAutomation
     # Run sanity checks using the UpgradeSpec parameters passed.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentUpgradeCheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
+    # @return [VcenterDeploymentUpgradeCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
     def check(request_body, opts = {})
       data, _status_code, _headers = check_with_http_info(request_body, opts)
       data
@@ -73,7 +73,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentUpgradeCheckResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentUpgradeCheckResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
     def check_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentUpgradeApi.check ...'
@@ -83,7 +83,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentUpgradeApi.check"
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/upgrade?action=check'
+      local_var_path = '/vcenter/deployment/upgrade?action=check'
 
       # query parameters
       query_params = {}
@@ -108,7 +108,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentUpgradeCheckResp',
+	  '200' => 'VCenter::VcenterDeploymentUpgradeCheckResult',
 	  '400' => 'VCenter::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	})
@@ -119,7 +119,7 @@ module VSphereAutomation
     end
     # Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDeploymentUpgradeResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
+    # @return [VcenterDeploymentUpgradeResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -128,13 +128,13 @@ module VSphereAutomation
     # Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDeploymentUpgradeResp|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDeploymentUpgradeResult|VapiStdErrorsNotAllowedInCurrentStateError|VapiStdErrorsUnauthenticatedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DeploymentUpgradeApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/upgrade'
+      local_var_path = '/vcenter/deployment/upgrade'
 
       # query parameters
       query_params = {}
@@ -157,7 +157,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDeploymentUpgradeResp',
+	  '200' => 'VCenter::VcenterDeploymentUpgradeResult',
 	  '400' => 'VCenter::VapiStdErrorsNotAllowedInCurrentStateError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	})
@@ -189,7 +189,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling DeploymentUpgradeApi.start"
       end
       # resource path
-      local_var_path = '/rest/vcenter/deployment/upgrade?action=start'
+      local_var_path = '/vcenter/deployment/upgrade?action=start'
 
       # query parameters
       query_params = {}

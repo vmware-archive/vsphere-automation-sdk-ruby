@@ -11,37 +11,37 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaIpSpec
-    # The IP address of the Gateway for this interface. If unset, gateway will not be used for the network interface.
-    attr_accessor :default_gateway
-
-    # The list of IP addresses of the DNS servers for this interface. This list is a comma separated list. If unset, DNS servers will not be used for the network interface.
-    attr_accessor :dns_servers
-
     attr_accessor :ip_family
 
     attr_accessor :ipv4
 
     attr_accessor :ipv6
 
+    # The IP address of the Gateway for this interface. If unset, gateway will not be used for the network interface.
+    attr_accessor :default_gateway
+
+    # The list of IP addresses of the DNS servers for this interface. This list is a comma separated list. If unset, DNS servers will not be used for the network interface.
+    attr_accessor :dns_servers
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'default_gateway' => :'default_gateway',
-        :'dns_servers' => :'dns_servers',
         :'ip_family' => :'ip_family',
         :'ipv4' => :'ipv4',
-        :'ipv6' => :'ipv6'
+        :'ipv6' => :'ipv6',
+        :'default_gateway' => :'default_gateway',
+        :'dns_servers' => :'dns_servers'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'default_gateway' => :'String',
-        :'dns_servers' => :'Array<String>',
         :'ip_family' => :'VcenterVchaIpFamily',
         :'ipv4' => :'VcenterVchaIpv4Spec',
-        :'ipv6' => :'VcenterVchaIpv6Spec'
+        :'ipv6' => :'VcenterVchaIpv6Spec',
+        :'default_gateway' => :'String',
+        :'dns_servers' => :'Array<String>'
       }
     end
 
@@ -53,16 +53,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'default_gateway')
-        self.default_gateway = attributes[:'default_gateway']
-      end
-
-      if attributes.has_key?(:'dns_servers')
-        if (value = attributes[:'dns_servers']).is_a?(Array)
-          self.dns_servers = value
-        end
-      end
-
       if attributes.has_key?(:'ip_family')
         self.ip_family = attributes[:'ip_family']
       end
@@ -73,6 +63,16 @@ module VSphereAutomation
 
       if attributes.has_key?(:'ipv6')
         self.ipv6 = attributes[:'ipv6']
+      end
+
+      if attributes.has_key?(:'default_gateway')
+        self.default_gateway = attributes[:'default_gateway']
+      end
+
+      if attributes.has_key?(:'dns_servers')
+        if (value = attributes[:'dns_servers']).is_a?(Array)
+          self.dns_servers = value
+        end
       end
     end
 
@@ -99,11 +99,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_gateway == o.default_gateway &&
-          dns_servers == o.dns_servers &&
           ip_family == o.ip_family &&
           ipv4 == o.ipv4 &&
-          ipv6 == o.ipv6
+          ipv6 == o.ipv6 &&
+          default_gateway == o.default_gateway &&
+          dns_servers == o.dns_servers
     end
 
     # @see the `==` method
@@ -115,7 +115,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_gateway, dns_servers, ip_family, ipv4, ipv6].hash
+      [ip_family, ipv4, ipv6, default_gateway, dns_servers].hash
     end
 
     # Builds the object from hash

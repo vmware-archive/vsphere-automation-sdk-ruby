@@ -14,22 +14,22 @@ module VSphereAutomation
     # Identifiers of clusters that can match the filter. If unset or empty, clusters with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: ClusterComputeResource. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: ClusterComputeResource.
     attr_accessor :clusters
 
-    # Datacenters that must contain the cluster for the cluster to match the filter. If unset or empty, clusters in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    attr_accessor :datacenters
+    # Names that clusters must have to match the filter (see Cluster.Info.name). If unset or empty, clusters with any name match the filter.
+    attr_accessor :names
 
     # Folders that must contain the cluster for the cluster to match the filter. If unset or empty, clusters in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     attr_accessor :folders
 
-    # Names that clusters must have to match the filter (see Cluster.Info.name). If unset or empty, clusters with any name match the filter.
-    attr_accessor :names
+    # Datacenters that must contain the cluster for the cluster to match the filter. If unset or empty, clusters in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
+    attr_accessor :datacenters
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'clusters' => :'clusters',
-        :'datacenters' => :'datacenters',
+        :'names' => :'names',
         :'folders' => :'folders',
-        :'names' => :'names'
+        :'datacenters' => :'datacenters'
       }
     end
 
@@ -37,9 +37,9 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'clusters' => :'Array<String>',
-        :'datacenters' => :'Array<String>',
+        :'names' => :'Array<String>',
         :'folders' => :'Array<String>',
-        :'names' => :'Array<String>'
+        :'datacenters' => :'Array<String>'
       }
     end
 
@@ -57,9 +57,9 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'datacenters')
-        if (value = attributes[:'datacenters']).is_a?(Array)
-          self.datacenters = value
+      if attributes.has_key?(:'names')
+        if (value = attributes[:'names']).is_a?(Array)
+          self.names = value
         end
       end
 
@@ -69,9 +69,9 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'names')
-        if (value = attributes[:'names']).is_a?(Array)
-          self.names = value
+      if attributes.has_key?(:'datacenters')
+        if (value = attributes[:'datacenters']).is_a?(Array)
+          self.datacenters = value
         end
       end
     end
@@ -95,9 +95,9 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           clusters == o.clusters &&
-          datacenters == o.datacenters &&
+          names == o.names &&
           folders == o.folders &&
-          names == o.names
+          datacenters == o.datacenters
     end
 
     # @see the `==` method
@@ -109,7 +109,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [clusters, datacenters, folders, names].hash
+      [clusters, names, folders, datacenters].hash
     end
 
     # Builds the object from hash

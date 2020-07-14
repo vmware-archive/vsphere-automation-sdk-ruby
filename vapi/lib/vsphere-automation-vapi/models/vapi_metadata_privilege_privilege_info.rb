@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataPrivilegePrivilegeInfo
-    # List of privileges assigned to the entity that is being referred by {@link #propertyPath}.
-    attr_accessor :privileges
-
     # The {@name #propertyPath} points to an entity that is used in the operation element. An entity can either be present in one of the parameter elements or if a parameter is a structure element, it could also be present in one of the field elements. <p> If the privilege is assigned to an entity used in the parameter, {@name #propertyPath} will just contain the name of the parameter field. If the privilege is assigned to an entity in one of the field elements of a parameter element that is a structure element, then {@name #propertyPath} will contain a path to the field element starting from the parameter name.
     attr_accessor :property_path
+
+    # List of privileges assigned to the entity that is being referred by {@link #propertyPath}.
+    attr_accessor :privileges
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'privileges' => :'privileges',
-        :'property_path' => :'property_path'
+        :'property_path' => :'property_path',
+        :'privileges' => :'privileges'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'privileges' => :'Array<String>',
-        :'property_path' => :'String'
+        :'property_path' => :'String',
+        :'privileges' => :'Array<String>'
       }
     end
 
@@ -41,14 +41,14 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'property_path')
+        self.property_path = attributes[:'property_path']
+      end
+
       if attributes.has_key?(:'privileges')
         if (value = attributes[:'privileges']).is_a?(Array)
           self.privileges = value
         end
-      end
-
-      if attributes.has_key?(:'property_path')
-        self.property_path = attributes[:'property_path']
       end
     end
 
@@ -56,12 +56,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @privileges.nil?
-        invalid_properties.push('invalid value for "privileges", privileges cannot be nil.')
-      end
-
       if @property_path.nil?
         invalid_properties.push('invalid value for "property_path", property_path cannot be nil.')
+      end
+
+      if @privileges.nil?
+        invalid_properties.push('invalid value for "privileges", privileges cannot be nil.')
       end
 
       invalid_properties
@@ -70,8 +70,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @privileges.nil?
       return false if @property_path.nil?
+      return false if @privileges.nil?
       true
     end
 
@@ -80,8 +80,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          privileges == o.privileges &&
-          property_path == o.property_path
+          property_path == o.property_path &&
+          privileges == o.privileges
     end
 
     # @see the `==` method
@@ -93,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [privileges, property_path].hash
+      [property_path, privileges].hash
     end
 
     # Builds the object from hash

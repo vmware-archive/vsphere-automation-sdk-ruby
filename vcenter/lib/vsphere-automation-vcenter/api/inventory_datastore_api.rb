@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns datastore information for the specified datastores. The key in the {@term result} {@term map} is the datastore identifier and the value in the {@term map} is the datastore information.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterInventoryDatastoreFindResp|VapiStdErrorsNotFoundError|]
+    # @return [VcenterInventoryDatastoreFindResult|VapiStdErrorsNotFoundError|]
     def find(request_body, opts = {})
       data, _status_code, _headers = find_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterInventoryDatastoreFindResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterInventoryDatastoreFindResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def find_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InventoryDatastoreApi.find ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling InventoryDatastoreApi.find"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vcenter/inventory/datastore?~action=find'
+      local_var_path = '/com/vmware/vcenter/inventory/datastore?~action=find'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterInventoryDatastoreFindResp',
+	  '200' => 'VCenter::VcenterInventoryDatastoreFindResult',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

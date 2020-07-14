@@ -14,18 +14,18 @@ module VSphereAutomation
     # Identifiers of datacenters that can match the filter. If unset or empty, datacenters with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
     attr_accessor :datacenters
 
-    # Folders that must contain the datacenters for the datacenter to match the filter. If unset or empty, datacenters in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
-    attr_accessor :folders
-
     # Names that datacenters must have to match the filter (see Datacenter.Info.name). If unset or empty, datacenters with any name match the filter.
     attr_accessor :names
+
+    # Folders that must contain the datacenters for the datacenter to match the filter. If unset or empty, datacenters in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
+    attr_accessor :folders
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'datacenters' => :'datacenters',
-        :'folders' => :'folders',
-        :'names' => :'names'
+        :'names' => :'names',
+        :'folders' => :'folders'
       }
     end
 
@@ -33,8 +33,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'datacenters' => :'Array<String>',
-        :'folders' => :'Array<String>',
-        :'names' => :'Array<String>'
+        :'names' => :'Array<String>',
+        :'folders' => :'Array<String>'
       }
     end
 
@@ -52,15 +52,15 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'folders')
-        if (value = attributes[:'folders']).is_a?(Array)
-          self.folders = value
-        end
-      end
-
       if attributes.has_key?(:'names')
         if (value = attributes[:'names']).is_a?(Array)
           self.names = value
+        end
+      end
+
+      if attributes.has_key?(:'folders')
+        if (value = attributes[:'folders']).is_a?(Array)
+          self.folders = value
         end
       end
     end
@@ -84,8 +84,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           datacenters == o.datacenters &&
-          folders == o.folders &&
-          names == o.names
+          names == o.names &&
+          folders == o.folders
     end
 
     # @see the `==` method
@@ -97,7 +97,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [datacenters, folders, names].hash
+      [datacenters, names, folders].hash
     end
 
     # Builds the object from hash

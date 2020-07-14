@@ -11,48 +11,48 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareEthernetUpdateSpec
-    # Flag indicating whether the guest can connect and disconnect the device. If unset, the value is unchanged.
-    attr_accessor :allow_guest_control
+    # Flag indicating whether Universal Pass-Through (UPT) compatibility should be enabled on this virtual Ethernet adapter.   This field may be modified at any time, and changes will be applied the next time the virtual machine is powered on.  If unset, the value is unchanged. Must be unset if the emulation type of the virtual Ethernet adapter is not VMXNET3.
+    attr_accessor :upt_compatibility_enabled
 
-    attr_accessor :backing
+    attr_accessor :mac_type
 
     # MAC address.   This field may be modified at any time, and changes will be applied the next time the virtual machine is powered on.  If unset, the value is unchanged. Must be specified if Ethernet.UpdateSpec.mac-type is MANUAL. Must be unset if the MAC address type is not MANUAL.
     attr_accessor :mac_address
 
-    attr_accessor :mac_type
+    # Flag indicating whether wake-on-LAN shoud be enabled on this virtual Ethernet adapter.   This field may be modified at any time, and changes will be applied the next time the virtual machine is powered on.  If unset, the value is unchanged.
+    attr_accessor :wake_on_lan_enabled
+
+    attr_accessor :backing
 
     # Flag indicating whether the virtual device should be connected whenever the virtual machine is powered on. If unset, the value is unchanged.
     attr_accessor :start_connected
 
-    # Flag indicating whether Universal Pass-Through (UPT) compatibility should be enabled on this virtual Ethernet adapter.   This field may be modified at any time, and changes will be applied the next time the virtual machine is powered on.  If unset, the value is unchanged. Must be unset if the emulation type of the virtual Ethernet adapter is not VMXNET3.
-    attr_accessor :upt_compatibility_enabled
-
-    # Flag indicating whether wake-on-LAN shoud be enabled on this virtual Ethernet adapter.   This field may be modified at any time, and changes will be applied the next time the virtual machine is powered on.  If unset, the value is unchanged.
-    attr_accessor :wake_on_lan_enabled
+    # Flag indicating whether the guest can connect and disconnect the device. If unset, the value is unchanged.
+    attr_accessor :allow_guest_control
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'allow_guest_control' => :'allow_guest_control',
-        :'backing' => :'backing',
-        :'mac_address' => :'mac_address',
-        :'mac_type' => :'mac_type',
-        :'start_connected' => :'start_connected',
         :'upt_compatibility_enabled' => :'upt_compatibility_enabled',
-        :'wake_on_lan_enabled' => :'wake_on_lan_enabled'
+        :'mac_type' => :'mac_type',
+        :'mac_address' => :'mac_address',
+        :'wake_on_lan_enabled' => :'wake_on_lan_enabled',
+        :'backing' => :'backing',
+        :'start_connected' => :'start_connected',
+        :'allow_guest_control' => :'allow_guest_control'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'allow_guest_control' => :'Boolean',
-        :'backing' => :'VcenterVmHardwareEthernetBackingSpec',
-        :'mac_address' => :'String',
-        :'mac_type' => :'VcenterVmHardwareEthernetMacAddressType',
-        :'start_connected' => :'Boolean',
         :'upt_compatibility_enabled' => :'Boolean',
-        :'wake_on_lan_enabled' => :'Boolean'
+        :'mac_type' => :'VcenterVmHardwareEthernetMacAddressType',
+        :'mac_address' => :'String',
+        :'wake_on_lan_enabled' => :'Boolean',
+        :'backing' => :'VcenterVmHardwareEthernetBackingSpec',
+        :'start_connected' => :'Boolean',
+        :'allow_guest_control' => :'Boolean'
       }
     end
 
@@ -64,32 +64,32 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'allow_guest_control')
-        self.allow_guest_control = attributes[:'allow_guest_control']
-      end
-
-      if attributes.has_key?(:'backing')
-        self.backing = attributes[:'backing']
-      end
-
-      if attributes.has_key?(:'mac_address')
-        self.mac_address = attributes[:'mac_address']
+      if attributes.has_key?(:'upt_compatibility_enabled')
+        self.upt_compatibility_enabled = attributes[:'upt_compatibility_enabled']
       end
 
       if attributes.has_key?(:'mac_type')
         self.mac_type = attributes[:'mac_type']
       end
 
-      if attributes.has_key?(:'start_connected')
-        self.start_connected = attributes[:'start_connected']
-      end
-
-      if attributes.has_key?(:'upt_compatibility_enabled')
-        self.upt_compatibility_enabled = attributes[:'upt_compatibility_enabled']
+      if attributes.has_key?(:'mac_address')
+        self.mac_address = attributes[:'mac_address']
       end
 
       if attributes.has_key?(:'wake_on_lan_enabled')
         self.wake_on_lan_enabled = attributes[:'wake_on_lan_enabled']
+      end
+
+      if attributes.has_key?(:'backing')
+        self.backing = attributes[:'backing']
+      end
+
+      if attributes.has_key?(:'start_connected')
+        self.start_connected = attributes[:'start_connected']
+      end
+
+      if attributes.has_key?(:'allow_guest_control')
+        self.allow_guest_control = attributes[:'allow_guest_control']
       end
     end
 
@@ -111,13 +111,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          allow_guest_control == o.allow_guest_control &&
-          backing == o.backing &&
-          mac_address == o.mac_address &&
-          mac_type == o.mac_type &&
-          start_connected == o.start_connected &&
           upt_compatibility_enabled == o.upt_compatibility_enabled &&
-          wake_on_lan_enabled == o.wake_on_lan_enabled
+          mac_type == o.mac_type &&
+          mac_address == o.mac_address &&
+          wake_on_lan_enabled == o.wake_on_lan_enabled &&
+          backing == o.backing &&
+          start_connected == o.start_connected &&
+          allow_guest_control == o.allow_guest_control
     end
 
     # @see the `==` method
@@ -129,7 +129,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_guest_control, backing, mac_address, mac_type, start_connected, upt_compatibility_enabled, wake_on_lan_enabled].hash
+      [upt_compatibility_enabled, mac_type, mac_address, wake_on_lan_enabled, backing, start_connected, allow_guest_control].hash
     end
 
     # Builds the object from hash

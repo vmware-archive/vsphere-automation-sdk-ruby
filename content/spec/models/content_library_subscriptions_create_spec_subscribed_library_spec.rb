@@ -28,7 +28,7 @@ describe 'ContentLibrarySubscriptionsCreateSpecSubscribedLibrary' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibrarySubscriptionsCreateSpecSubscribedLibrary)
     end
   end
-  describe 'test attribute "location"' do
+  describe 'test attribute "target"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -40,25 +40,25 @@ describe 'ContentLibrarySubscriptionsCreateSpecSubscribedLibrary' do
     end
   end
 
-  describe 'test attribute "placement"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   describe 'test attribute "subscribed_library"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "target"' do
+  describe 'test attribute "location"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
   describe 'test attribute "vcenter"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "placement"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

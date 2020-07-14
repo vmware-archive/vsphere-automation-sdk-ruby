@@ -28,13 +28,13 @@ describe 'ContentLibraryItemUpdatesessionPreviewInfo' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibraryItemUpdatesessionPreviewInfo)
     end
   end
-  describe 'test attribute "certificate_info"' do
+  describe 'test attribute "state"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "state"' do
+  describe 'test attribute "certificate_info"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -11,39 +11,39 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVMSummary
-    # Number of CPU cores. This field will be unset if the virtual machine configuration is not available. For example, the configuration information would be unavailable if the server is unable to access the virtual machine files on disk, and is often also unavailable during the intial phases of virtual machine creation.
-    attr_accessor :cpu_count
-
-    # Memory size in mebibytes. This field will be unset if the virtual machine configuration is not available. For example, the configuration information would be unavailable if the server is unable to access the virtual machine files on disk, and is often also unavailable during the intial phases of virtual machine creation.
-    attr_accessor :memory_size_mi_b
+    # Identifier of the virtual machine. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will be an identifier for the resource type: VirtualMachine.
+    attr_accessor :vm
 
     # Name of the Virtual machine.
     attr_accessor :name
 
     attr_accessor :power_state
 
-    # Identifier of the virtual machine. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: VirtualMachine. When operations return a value of this structure as a result, the field will be an identifier for the resource type: VirtualMachine.
-    attr_accessor :vm
+    # Number of CPU cores. This field will be unset if the virtual machine configuration is not available. For example, the configuration information would be unavailable if the server is unable to access the virtual machine files on disk, and is often also unavailable during the intial phases of virtual machine creation.
+    attr_accessor :cpu_count
+
+    # Memory size in mebibytes. This field will be unset if the virtual machine configuration is not available. For example, the configuration information would be unavailable if the server is unable to access the virtual machine files on disk, and is often also unavailable during the intial phases of virtual machine creation.
+    attr_accessor :memory_size_mi_b
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cpu_count' => :'cpu_count',
-        :'memory_size_mi_b' => :'memory_size_MiB',
+        :'vm' => :'vm',
         :'name' => :'name',
         :'power_state' => :'power_state',
-        :'vm' => :'vm'
+        :'cpu_count' => :'cpu_count',
+        :'memory_size_mi_b' => :'memory_size_MiB'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cpu_count' => :'Integer',
-        :'memory_size_mi_b' => :'Integer',
+        :'vm' => :'String',
         :'name' => :'String',
         :'power_state' => :'VcenterVmPowerState',
-        :'vm' => :'String'
+        :'cpu_count' => :'Integer',
+        :'memory_size_mi_b' => :'Integer'
       }
     end
 
@@ -55,12 +55,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cpu_count')
-        self.cpu_count = attributes[:'cpu_count']
-      end
-
-      if attributes.has_key?(:'memory_size_MiB')
-        self.memory_size_mi_b = attributes[:'memory_size_MiB']
+      if attributes.has_key?(:'vm')
+        self.vm = attributes[:'vm']
       end
 
       if attributes.has_key?(:'name')
@@ -71,8 +67,12 @@ module VSphereAutomation
         self.power_state = attributes[:'power_state']
       end
 
-      if attributes.has_key?(:'vm')
-        self.vm = attributes[:'vm']
+      if attributes.has_key?(:'cpu_count')
+        self.cpu_count = attributes[:'cpu_count']
+      end
+
+      if attributes.has_key?(:'memory_size_MiB')
+        self.memory_size_mi_b = attributes[:'memory_size_MiB']
       end
     end
 
@@ -80,6 +80,10 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @vm.nil?
+        invalid_properties.push('invalid value for "vm", vm cannot be nil.')
+      end
+
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
@@ -88,19 +92,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "power_state", power_state cannot be nil.')
       end
 
-      if @vm.nil?
-        invalid_properties.push('invalid value for "vm", vm cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @vm.nil?
       return false if @name.nil?
       return false if @power_state.nil?
-      return false if @vm.nil?
       true
     end
 
@@ -109,11 +109,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cpu_count == o.cpu_count &&
-          memory_size_mi_b == o.memory_size_mi_b &&
+          vm == o.vm &&
           name == o.name &&
           power_state == o.power_state &&
-          vm == o.vm
+          cpu_count == o.cpu_count &&
+          memory_size_mi_b == o.memory_size_mi_b
     end
 
     # @see the `==` method
@@ -125,7 +125,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cpu_count, memory_size_mi_b, name, power_state, vm].hash
+      [vm, name, power_state, cpu_count, memory_size_mi_b].hash
     end
 
     # Builds the object from hash

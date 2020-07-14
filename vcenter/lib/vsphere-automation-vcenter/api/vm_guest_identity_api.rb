@@ -19,7 +19,7 @@ module VSphereAutomation
     # Return information about the guest.
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmGuestIdentityResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmGuestIdentityResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param vm Identifier of the virtual machine. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmGuestIdentityResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmGuestIdentityResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmGuestIdentityApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmGuestIdentityApi.get"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/guest/identity'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/guest/identity'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmGuestIdentityResp',
+	  '200' => 'VCenter::VcenterVmGuestIdentityResult',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	  '503' => 'VCenter::VapiStdErrorsServiceUnavailableError',

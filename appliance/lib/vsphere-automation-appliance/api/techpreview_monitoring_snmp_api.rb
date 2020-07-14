@@ -33,7 +33,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.disable ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp/disable'
+      local_var_path = '/appliance/techpreview/monitoring/snmp/disable'
 
       # query parameters
       query_params = {}
@@ -77,7 +77,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.enable ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp/enable'
+      local_var_path = '/appliance/techpreview/monitoring/snmp/enable'
 
       # query parameters
       query_params = {}
@@ -106,7 +106,7 @@ module VSphereAutomation
     end
     # Return an SNMP agent configuration.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceTechpreviewMonitoringSnmpResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceTechpreviewMonitoringSnmpResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -115,13 +115,13 @@ module VSphereAutomation
     # Return an SNMP agent configuration.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceTechpreviewMonitoringSnmpResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceTechpreviewMonitoringSnmpResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp'
+      local_var_path = '/appliance/techpreview/monitoring/snmp'
 
       # query parameters
       query_params = {}
@@ -144,7 +144,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpResp',
+	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -155,7 +155,7 @@ module VSphereAutomation
     # Generate localized keys for secure SNMPv3 communications.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceTechpreviewMonitoringSnmpHashResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceTechpreviewMonitoringSnmpHashResult|VapiStdErrorsErrorError|]
     def hash(request_body, opts = {})
       data, _status_code, _headers = hash_with_http_info(request_body, opts)
       data
@@ -165,7 +165,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceTechpreviewMonitoringSnmpHashResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceTechpreviewMonitoringSnmpHashResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def hash_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.hash ...'
@@ -175,7 +175,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TechpreviewMonitoringSnmpApi.hash"
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp/hash'
+      local_var_path = '/appliance/techpreview/monitoring/snmp/hash'
 
       # query parameters
       query_params = {}
@@ -200,7 +200,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpHashResp',
+	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpHashResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -210,7 +210,7 @@ module VSphereAutomation
     end
     # Get SNMP limits information.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceTechpreviewMonitoringSnmpLimitsResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceTechpreviewMonitoringSnmpLimitsResult|VapiStdErrorsErrorError|]
     def limits(opts = {})
       data, _status_code, _headers = limits_with_http_info(opts)
       data
@@ -219,13 +219,13 @@ module VSphereAutomation
     # Get SNMP limits information.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceTechpreviewMonitoringSnmpLimitsResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceTechpreviewMonitoringSnmpLimitsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def limits_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.limits ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp/limits'
+      local_var_path = '/appliance/techpreview/monitoring/snmp/limits'
 
       # query parameters
       query_params = {}
@@ -248,7 +248,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpLimitsResp',
+	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpLimitsResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -273,7 +273,7 @@ module VSphereAutomation
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.reset ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp/reset'
+      local_var_path = '/appliance/techpreview/monitoring/snmp/reset'
 
       # query parameters
       query_params = {}
@@ -323,7 +323,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TechpreviewMonitoringSnmpApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp'
+      local_var_path = '/appliance/techpreview/monitoring/snmp'
 
       # query parameters
       query_params = {}
@@ -354,7 +354,7 @@ module VSphereAutomation
     end
     # Generate diagnostics report for snmp agent.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceTechpreviewMonitoringSnmpStatsResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceTechpreviewMonitoringSnmpStatsResult|VapiStdErrorsErrorError|]
     def stats(opts = {})
       data, _status_code, _headers = stats_with_http_info(opts)
       data
@@ -363,13 +363,13 @@ module VSphereAutomation
     # Generate diagnostics report for snmp agent.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceTechpreviewMonitoringSnmpStatsResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceTechpreviewMonitoringSnmpStatsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def stats_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.stats ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp/stats'
+      local_var_path = '/appliance/techpreview/monitoring/snmp/stats'
 
       # query parameters
       query_params = {}
@@ -392,7 +392,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpStatsResp',
+	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpStatsResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -402,7 +402,7 @@ module VSphereAutomation
     end
     # Send a warmStart notification to all configured traps and inform destinations (see RFC 3418).
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceTechpreviewMonitoringSnmpTestResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceTechpreviewMonitoringSnmpTestResult|VapiStdErrorsErrorError|]
     def test(opts = {})
       data, _status_code, _headers = test_with_http_info(opts)
       data
@@ -411,13 +411,13 @@ module VSphereAutomation
     # Send a warmStart notification to all configured traps and inform destinations (see RFC 3418).
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceTechpreviewMonitoringSnmpTestResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceTechpreviewMonitoringSnmpTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def test_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewMonitoringSnmpApi.test ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/monitoring/snmp/test'
+      local_var_path = '/appliance/techpreview/monitoring/snmp/test'
 
       # query parameters
       query_params = {}
@@ -440,7 +440,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpTestResp',
+	  '200' => 'Appliance::ApplianceTechpreviewMonitoringSnmpTestResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

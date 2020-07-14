@@ -11,26 +11,14 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemResourcePoolDeploymentSpec
-    # Whether to accept all End User License Agreements. See {@link OvfSummary#eulas}.
-    attr_accessor :accept_all_eula
-
-    # Additional OVF parameters that may be needed for the deployment. Additional OVF parameters may be required by the OVF descriptor of the OVF package in the library item. Examples of OVF parameters that can be specified through this {@term field} include, but are not limited to: <ul> <li>{@link DeploymentOptionParams}</li> <li>{@link ExtraConfigParams}</li> <li>{@link IpAllocationParams}</li> <li>{@link PropertyParams}</li> <li>{@link ScaleOutParams}</li> <li>{@link VcenterExtensionParams}</li> </ul>
-    attr_accessor :additional_parameters
+    # Name assigned to the deployed target virtual machine or virtual appliance.
+    attr_accessor :name
 
     # Annotation assigned to the deployed target virtual machine or virtual appliance.
     attr_accessor :annotation
 
-    # Default datastore to use for all sections of type vmw:StorageSection in the OVF descriptor.
-    attr_accessor :default_datastore_id
-
-    # Flags to be use for deployment. The supported flag values can be obtained using {@link ImportFlag#list}.
-    attr_accessor :flags
-
-    # The locale to use for parsing the OVF descriptor.
-    attr_accessor :locale
-
-    # Name assigned to the deployed target virtual machine or virtual appliance.
-    attr_accessor :name
+    # Whether to accept all End User License Agreements. See {@link OvfSummary#eulas}.
+    attr_accessor :accept_all_eula
 
     # Specification of the target network to use for sections of type ovf:NetworkSection in the OVF descriptor. The key in the {@term map} is the section identifier of the ovf:NetworkSection section in the OVF descriptor and the value is the target network to be used for deployment.
     attr_accessor :network_mappings
@@ -38,42 +26,54 @@ module VSphereAutomation
     # Specification of the target storage to use for sections of type vmw:StorageGroupSection in the OVF descriptor. The key in the {@term map} is the section identifier of the ovf:StorageGroupSection section in the OVF descriptor and the value is the target storage specification to be used for deployment. See {@link StorageGroupMapping}.
     attr_accessor :storage_mappings
 
+    attr_accessor :storage_provisioning
+
     # Default storage profile to use for all sections of type vmw:StorageSection in the OVF descriptor.
     attr_accessor :storage_profile_id
 
-    attr_accessor :storage_provisioning
+    # The locale to use for parsing the OVF descriptor.
+    attr_accessor :locale
+
+    # Flags to be use for deployment. The supported flag values can be obtained using {@link ImportFlag#list}.
+    attr_accessor :flags
+
+    # Additional OVF parameters that may be needed for the deployment. Additional OVF parameters may be required by the OVF descriptor of the OVF package in the library item. Examples of OVF parameters that can be specified through this {@term field} include, but are not limited to: <ul> <li>{@link DeploymentOptionParams}</li> <li>{@link ExtraConfigParams}</li> <li>{@link IpAllocationParams}</li> <li>{@link PropertyParams}</li> <li>{@link ScaleOutParams}</li> <li>{@link VcenterExtensionParams}</li> </ul>
+    attr_accessor :additional_parameters
+
+    # Default datastore to use for all sections of type vmw:StorageSection in the OVF descriptor.
+    attr_accessor :default_datastore_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'accept_all_eula' => :'accept_all_EULA',
-        :'additional_parameters' => :'additional_parameters',
-        :'annotation' => :'annotation',
-        :'default_datastore_id' => :'default_datastore_id',
-        :'flags' => :'flags',
-        :'locale' => :'locale',
         :'name' => :'name',
+        :'annotation' => :'annotation',
+        :'accept_all_eula' => :'accept_all_EULA',
         :'network_mappings' => :'network_mappings',
         :'storage_mappings' => :'storage_mappings',
+        :'storage_provisioning' => :'storage_provisioning',
         :'storage_profile_id' => :'storage_profile_id',
-        :'storage_provisioning' => :'storage_provisioning'
+        :'locale' => :'locale',
+        :'flags' => :'flags',
+        :'additional_parameters' => :'additional_parameters',
+        :'default_datastore_id' => :'default_datastore_id'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'accept_all_eula' => :'Boolean',
-        :'additional_parameters' => :'Array<Object>',
-        :'annotation' => :'String',
-        :'default_datastore_id' => :'String',
-        :'flags' => :'Array<String>',
-        :'locale' => :'String',
         :'name' => :'String',
-        :'network_mappings' => :'Array<VcenterLcmDestinationApplianceOvftoolArguments>',
+        :'annotation' => :'String',
+        :'accept_all_eula' => :'Boolean',
+        :'network_mappings' => :'Array<VcenterOvfLibraryItemResourcePoolDeploymentSpecNetworkMappings>',
         :'storage_mappings' => :'Array<VcenterOvfLibraryItemResourcePoolDeploymentSpecStorageMappings>',
+        :'storage_provisioning' => :'VcenterOvfDiskProvisioningType',
         :'storage_profile_id' => :'String',
-        :'storage_provisioning' => :'VcenterOvfDiskProvisioningType'
+        :'locale' => :'String',
+        :'flags' => :'Array<String>',
+        :'additional_parameters' => :'Array<Object>',
+        :'default_datastore_id' => :'String'
       }
     end
 
@@ -85,36 +85,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'accept_all_EULA')
-        self.accept_all_eula = attributes[:'accept_all_EULA']
-      end
-
-      if attributes.has_key?(:'additional_parameters')
-        if (value = attributes[:'additional_parameters']).is_a?(Array)
-          self.additional_parameters = value
-        end
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'annotation')
         self.annotation = attributes[:'annotation']
       end
 
-      if attributes.has_key?(:'default_datastore_id')
-        self.default_datastore_id = attributes[:'default_datastore_id']
-      end
-
-      if attributes.has_key?(:'flags')
-        if (value = attributes[:'flags']).is_a?(Array)
-          self.flags = value
-        end
-      end
-
-      if attributes.has_key?(:'locale')
-        self.locale = attributes[:'locale']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'accept_all_EULA')
+        self.accept_all_eula = attributes[:'accept_all_EULA']
       end
 
       if attributes.has_key?(:'network_mappings')
@@ -129,12 +109,32 @@ module VSphereAutomation
         end
       end
 
+      if attributes.has_key?(:'storage_provisioning')
+        self.storage_provisioning = attributes[:'storage_provisioning']
+      end
+
       if attributes.has_key?(:'storage_profile_id')
         self.storage_profile_id = attributes[:'storage_profile_id']
       end
 
-      if attributes.has_key?(:'storage_provisioning')
-        self.storage_provisioning = attributes[:'storage_provisioning']
+      if attributes.has_key?(:'locale')
+        self.locale = attributes[:'locale']
+      end
+
+      if attributes.has_key?(:'flags')
+        if (value = attributes[:'flags']).is_a?(Array)
+          self.flags = value
+        end
+      end
+
+      if attributes.has_key?(:'additional_parameters')
+        if (value = attributes[:'additional_parameters']).is_a?(Array)
+          self.additional_parameters = value
+        end
+      end
+
+      if attributes.has_key?(:'default_datastore_id')
+        self.default_datastore_id = attributes[:'default_datastore_id']
       end
     end
 
@@ -161,17 +161,17 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          accept_all_eula == o.accept_all_eula &&
-          additional_parameters == o.additional_parameters &&
-          annotation == o.annotation &&
-          default_datastore_id == o.default_datastore_id &&
-          flags == o.flags &&
-          locale == o.locale &&
           name == o.name &&
+          annotation == o.annotation &&
+          accept_all_eula == o.accept_all_eula &&
           network_mappings == o.network_mappings &&
           storage_mappings == o.storage_mappings &&
+          storage_provisioning == o.storage_provisioning &&
           storage_profile_id == o.storage_profile_id &&
-          storage_provisioning == o.storage_provisioning
+          locale == o.locale &&
+          flags == o.flags &&
+          additional_parameters == o.additional_parameters &&
+          default_datastore_id == o.default_datastore_id
     end
 
     # @see the `==` method
@@ -183,7 +183,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [accept_all_eula, additional_parameters, annotation, default_datastore_id, flags, locale, name, network_mappings, storage_mappings, storage_profile_id, storage_provisioning].hash
+      [name, annotation, accept_all_eula, network_mappings, storage_mappings, storage_provisioning, storage_profile_id, locale, flags, additional_parameters, default_datastore_id].hash
     end
 
     # Builds the object from hash

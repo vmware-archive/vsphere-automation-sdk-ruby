@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataAuthenticationPackageApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataAuthenticationPackageApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/authentication/package/id:{package_id} | Retrieves authentication information about the package element corresponding to {@param.name packageId}.
-[**list**](MetadataAuthenticationPackageApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/authentication/package | Returns the identifiers for the package elements that have authentication information.
+[**get**](MetadataAuthenticationPackageApi.md#get) | **GET** /com/vmware/vapi/metadata/authentication/package/id:{package_id} | Retrieves authentication information about the package element corresponding to {@param.name packageId}.
+[**list**](MetadataAuthenticationPackageApi.md#list) | **GET** /com/vmware/vapi/metadata/authentication/package | Returns the identifiers for the package elements that have authentication information.
 
 
 # **get**
-> VapiMetadataAuthenticationPackageResp get(package_id)
+> VapiMetadataAuthenticationPackageResult get(package_id)
 
 Retrieves authentication information about the package element corresponding to {@param.name packageId}.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataAuthenticationPackageResp**](VapiMetadataAuthenticationPackageResp.md)
+[**VapiMetadataAuthenticationPackageResult**](VapiMetadataAuthenticationPackageResult.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataAuthenticationPackageListResp list
+> VapiMetadataAuthenticationPackageListResult list
 
 Returns the identifiers for the package elements that have authentication information.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataAuthenticationPackageListResp**](VapiMetadataAuthenticationPackageListResp.md)
+[**VapiMetadataAuthenticationPackageListResult**](VapiMetadataAuthenticationPackageListResult.md)
 
 ### Authorization
 

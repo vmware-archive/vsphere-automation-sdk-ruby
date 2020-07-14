@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryBackupSchedulesRecurrenceInfo
-    # Day of week when the backup should be run. Days can be specified as list of days.
-    attr_accessor :days
+    # Minute when backup should run.
+    attr_accessor :minute
 
     # Hour when backup should run. The hour should be specified in 24-hour clock format.
     attr_accessor :hour
 
-    # Minute when backup should run.
-    attr_accessor :minute
+    # Day of week when the backup should be run. Days can be specified as list of days.
+    attr_accessor :days
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'days' => :'days',
+        :'minute' => :'minute',
         :'hour' => :'hour',
-        :'minute' => :'minute'
+        :'days' => :'days'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'days' => :'Array<ApplianceRecoveryBackupSchedulesDayOfWeek>',
+        :'minute' => :'Integer',
         :'hour' => :'Integer',
-        :'minute' => :'Integer'
+        :'days' => :'Array<ApplianceRecoveryBackupSchedulesDayOfWeek>'
       }
     end
 
@@ -46,18 +46,18 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'days')
-        if (value = attributes[:'days']).is_a?(Array)
-          self.days = value
-        end
+      if attributes.has_key?(:'minute')
+        self.minute = attributes[:'minute']
       end
 
       if attributes.has_key?(:'hour')
         self.hour = attributes[:'hour']
       end
 
-      if attributes.has_key?(:'minute')
-        self.minute = attributes[:'minute']
+      if attributes.has_key?(:'days')
+        if (value = attributes[:'days']).is_a?(Array)
+          self.days = value
+        end
       end
     end
 
@@ -65,12 +65,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @hour.nil?
-        invalid_properties.push('invalid value for "hour", hour cannot be nil.')
-      end
-
       if @minute.nil?
         invalid_properties.push('invalid value for "minute", minute cannot be nil.')
+      end
+
+      if @hour.nil?
+        invalid_properties.push('invalid value for "hour", hour cannot be nil.')
       end
 
       invalid_properties
@@ -79,8 +79,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @hour.nil?
       return false if @minute.nil?
+      return false if @hour.nil?
       true
     end
 
@@ -89,9 +89,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          days == o.days &&
+          minute == o.minute &&
           hour == o.hour &&
-          minute == o.minute
+          days == o.days
     end
 
     # @see the `==` method
@@ -103,7 +103,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [days, hour, minute].hash
+      [minute, hour, days].hash
     end
 
     # Builds the object from hash

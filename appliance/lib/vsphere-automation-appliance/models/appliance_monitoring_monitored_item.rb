@@ -11,17 +11,8 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceMonitoringMonitoredItem
-    # category Ex: network, storage etc
-    attr_accessor :category
-
-    # monitored item description Ex: applmgmt.mon.descr.net.rx.packetRate.eth0
-    attr_accessor :description
-
     # monitored item ID Ex: CPU, MEMORY
     attr_accessor :id
-
-    # instance name Ex: eth0
-    attr_accessor :instance
 
     # monitored item name Ex: \"Network write speed\"
     attr_accessor :name
@@ -29,27 +20,36 @@ module VSphereAutomation
     # Y-axis label EX: \"Mbps\", \"%\"
     attr_accessor :units
 
+    # category Ex: network, storage etc
+    attr_accessor :category
+
+    # instance name Ex: eth0
+    attr_accessor :instance
+
+    # monitored item description Ex: applmgmt.mon.descr.net.rx.packetRate.eth0
+    attr_accessor :description
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'category' => :'category',
-        :'description' => :'description',
         :'id' => :'id',
-        :'instance' => :'instance',
         :'name' => :'name',
-        :'units' => :'units'
+        :'units' => :'units',
+        :'category' => :'category',
+        :'instance' => :'instance',
+        :'description' => :'description'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'category' => :'String',
-        :'description' => :'String',
         :'id' => :'String',
-        :'instance' => :'String',
         :'name' => :'String',
-        :'units' => :'String'
+        :'units' => :'String',
+        :'category' => :'String',
+        :'instance' => :'String',
+        :'description' => :'String'
       }
     end
 
@@ -61,20 +61,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'category')
-        self.category = attributes[:'category']
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'instance')
-        self.instance = attributes[:'instance']
       end
 
       if attributes.has_key?(:'name')
@@ -84,26 +72,26 @@ module VSphereAutomation
       if attributes.has_key?(:'units')
         self.units = attributes[:'units']
       end
+
+      if attributes.has_key?(:'category')
+        self.category = attributes[:'category']
+      end
+
+      if attributes.has_key?(:'instance')
+        self.instance = attributes[:'instance']
+      end
+
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @category.nil?
-        invalid_properties.push('invalid value for "category", category cannot be nil.')
-      end
-
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @instance.nil?
-        invalid_properties.push('invalid value for "instance", instance cannot be nil.')
       end
 
       if @name.nil?
@@ -114,18 +102,30 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "units", units cannot be nil.')
       end
 
+      if @category.nil?
+        invalid_properties.push('invalid value for "category", category cannot be nil.')
+      end
+
+      if @instance.nil?
+        invalid_properties.push('invalid value for "instance", instance cannot be nil.')
+      end
+
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @category.nil?
-      return false if @description.nil?
       return false if @id.nil?
-      return false if @instance.nil?
       return false if @name.nil?
       return false if @units.nil?
+      return false if @category.nil?
+      return false if @instance.nil?
+      return false if @description.nil?
       true
     end
 
@@ -134,12 +134,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          category == o.category &&
-          description == o.description &&
           id == o.id &&
-          instance == o.instance &&
           name == o.name &&
-          units == o.units
+          units == o.units &&
+          category == o.category &&
+          instance == o.instance &&
+          description == o.description
     end
 
     # @see the `==` method
@@ -151,7 +151,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [category, description, id, instance, name, units].hash
+      [id, name, units, category, instance, description].hash
     end
 
     # Builds the object from hash

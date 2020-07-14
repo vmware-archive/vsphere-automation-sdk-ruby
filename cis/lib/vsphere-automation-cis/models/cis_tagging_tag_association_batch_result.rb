@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaggingTagAssociationBatchResult
-    # The {@term list} of error messages.
-    attr_accessor :error_messages
-
     # This is true if the batch {@term operation} completed without any errors. Otherwise it is false and all or some {@term operations} have failed.
     attr_accessor :success
+
+    # The {@term list} of error messages.
+    attr_accessor :error_messages
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'error_messages' => :'error_messages',
-        :'success' => :'success'
+        :'success' => :'success',
+        :'error_messages' => :'error_messages'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'error_messages' => :'Array<VapiStdLocalizableMessage>',
-        :'success' => :'Boolean'
+        :'success' => :'Boolean',
+        :'error_messages' => :'Array<VapiStdLocalizableMessage>'
       }
     end
 
@@ -41,14 +41,14 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'success')
+        self.success = attributes[:'success']
+      end
+
       if attributes.has_key?(:'error_messages')
         if (value = attributes[:'error_messages']).is_a?(Array)
           self.error_messages = value
         end
-      end
-
-      if attributes.has_key?(:'success')
-        self.success = attributes[:'success']
       end
     end
 
@@ -56,12 +56,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @error_messages.nil?
-        invalid_properties.push('invalid value for "error_messages", error_messages cannot be nil.')
-      end
-
       if @success.nil?
         invalid_properties.push('invalid value for "success", success cannot be nil.')
+      end
+
+      if @error_messages.nil?
+        invalid_properties.push('invalid value for "error_messages", error_messages cannot be nil.')
       end
 
       invalid_properties
@@ -70,8 +70,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @error_messages.nil?
       return false if @success.nil?
+      return false if @error_messages.nil?
       true
     end
 
@@ -80,8 +80,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          error_messages == o.error_messages &&
-          success == o.success
+          success == o.success &&
+          error_messages == o.error_messages
     end
 
     # @see the `==` method
@@ -93,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [error_messages, success].hash
+      [success, error_messages].hash
     end
 
     # Builds the object from hash

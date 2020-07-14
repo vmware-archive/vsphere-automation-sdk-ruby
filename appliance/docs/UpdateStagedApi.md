@@ -1,11 +1,11 @@
 # VSphereAutomation::Appliance::UpdateStagedApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete**](UpdateStagedApi.md#delete) | **DELETE** /rest/appliance/update/staged | Deletes the staged update
-[**get**](UpdateStagedApi.md#get) | **GET** /rest/appliance/update/staged | Gets the current status of the staged update
+[**delete**](UpdateStagedApi.md#delete) | **DELETE** /appliance/update/staged | Deletes the staged update
+[**get**](UpdateStagedApi.md#get) | **GET** /appliance/update/staged | Gets the current status of the staged update
 
 
 # **delete**
@@ -54,7 +54,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceUpdateStagedResp get
+> ApplianceUpdateStagedResult get
 
 Gets the current status of the staged update
 
@@ -86,7 +86,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceUpdateStagedResp**](ApplianceUpdateStagedResp.md)
+[**ApplianceUpdateStagedResult**](ApplianceUpdateStagedResult.md)
 
 ### Authorization
 

@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmStoragePolicyComplianceVmComplianceInfo
+    attr_accessor :status
+
     # Date and time of the most recent compliance check.
     attr_accessor :check_time
-
-    # The exception that caused the compliance check to fail. There can be more than one cause, since a policy can contain capabilities from multiple providers. If empty, it implies no failures while retrieving compliance.
-    attr_accessor :failure_cause
 
     # Identifier of the storage policy associated with the virtual machine. If unset SPBM is unable to retrieve or determine the associated policy, Compliance.VmComplianceInfo.failure-cause is set in such casses. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vcenter.StoragePolicy. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vcenter.StoragePolicy.
     attr_accessor :policy
 
-    attr_accessor :status
+    # The exception that caused the compliance check to fail. There can be more than one cause, since a policy can contain capabilities from multiple providers. If empty, it implies no failures while retrieving compliance.
+    attr_accessor :failure_cause
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'status' => :'status',
         :'check_time' => :'check_time',
-        :'failure_cause' => :'failure_cause',
         :'policy' => :'policy',
-        :'status' => :'status'
+        :'failure_cause' => :'failure_cause'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'status' => :'VcenterVmStoragePolicyComplianceStatus',
         :'check_time' => :'DateTime',
-        :'failure_cause' => :'Array<VapiStdLocalizableMessage>',
         :'policy' => :'String',
-        :'status' => :'VcenterVmStoragePolicyComplianceStatus'
+        :'failure_cause' => :'Array<VapiStdLocalizableMessage>'
       }
     end
 
@@ -50,8 +50,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
+
       if attributes.has_key?(:'check_time')
         self.check_time = attributes[:'check_time']
+      end
+
+      if attributes.has_key?(:'policy')
+        self.policy = attributes[:'policy']
       end
 
       if attributes.has_key?(:'failure_cause')
@@ -59,20 +67,16 @@ module VSphereAutomation
           self.failure_cause = value
         end
       end
-
-      if attributes.has_key?(:'policy')
-        self.policy = attributes[:'policy']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @status.nil?
+        invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
       if @check_time.nil?
         invalid_properties.push('invalid value for "check_time", check_time cannot be nil.')
       end
@@ -81,19 +85,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "failure_cause", failure_cause cannot be nil.')
       end
 
-      if @status.nil?
-        invalid_properties.push('invalid value for "status", status cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @status.nil?
       return false if @check_time.nil?
       return false if @failure_cause.nil?
-      return false if @status.nil?
       true
     end
 
@@ -102,10 +102,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          status == o.status &&
           check_time == o.check_time &&
-          failure_cause == o.failure_cause &&
           policy == o.policy &&
-          status == o.status
+          failure_cause == o.failure_cause
     end
 
     # @see the `==` method
@@ -117,7 +117,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [check_time, failure_cause, policy, status].hash
+      [status, check_time, policy, failure_cause].hash
     end
 
     # Builds the object from hash

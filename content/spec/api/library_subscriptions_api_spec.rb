@@ -33,7 +33,7 @@ describe 'LibrarySubscriptionsApi' do
   # @param library Identifier of the published library.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibrarySubscriptionsCreateResp]
+  # @return [ContentLibrarySubscriptionsCreateResult]
   describe 'create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -57,7 +57,7 @@ describe 'LibrarySubscriptionsApi' do
   # @param library Identifier of the published library.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibrarySubscriptionsResp]
+  # @return [ContentLibrarySubscriptionsResult]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -68,7 +68,7 @@ describe 'LibrarySubscriptionsApi' do
   # Lists the subscriptions of the published library.
   # @param library Identifier of the published library.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibrarySubscriptionsListResp]
+  # @return [ContentLibrarySubscriptionsListResult]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

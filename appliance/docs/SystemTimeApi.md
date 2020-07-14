@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::SystemTimeApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](SystemTimeApi.md#get) | **GET** /rest/appliance/system/time | Get system time.
+[**get**](SystemTimeApi.md#get) | **GET** /appliance/system/time | Get system time.
 
 
 # **get**
-> ApplianceSystemTimeResp get
+> ApplianceSystemTimeResult get
 
 Get system time.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceSystemTimeResp**](ApplianceSystemTimeResp.md)
+[**ApplianceSystemTimeResult**](ApplianceSystemTimeResult.md)
 
 ### Authorization
 

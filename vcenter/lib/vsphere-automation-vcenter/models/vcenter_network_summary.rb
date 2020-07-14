@@ -11,19 +11,19 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterNetworkSummary
-    # Name of the network.
-    attr_accessor :name
-
     # Identifier of the network. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network.
     attr_accessor :network
+
+    # Name of the network.
+    attr_accessor :name
 
     attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
         :'network' => :'network',
+        :'name' => :'name',
         :'type' => :'type'
       }
     end
@@ -31,8 +31,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
         :'network' => :'String',
+        :'name' => :'String',
         :'type' => :'VcenterNetworkType'
       }
     end
@@ -45,12 +45,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'network')
         self.network = attributes[:'network']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'type')
@@ -62,12 +62,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       if @network.nil?
         invalid_properties.push('invalid value for "network", network cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @type.nil?
@@ -80,8 +80,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
       return false if @network.nil?
+      return false if @name.nil?
       return false if @type.nil?
       true
     end
@@ -91,8 +91,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
           network == o.network &&
+          name == o.name &&
           type == o.type
     end
 
@@ -105,7 +105,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, network, type].hash
+      [network, name, type].hash
     end
 
     # Builds the object from hash

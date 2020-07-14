@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns the state of a service.
     # @param service identifier of the service whose state is being queried. The parameter must be an identifier for the resource type: appliance.vmon.Service.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceVmonServiceResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceVmonServiceResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def get(service, opts = {})
       data, _status_code, _headers = get_with_http_info(service, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param service identifier of the service whose state is being queried. The parameter must be an identifier for the resource type: appliance.vmon.Service.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceVmonServiceResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceVmonServiceResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(service, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling VmonServiceApi.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/vmon/service/{service}'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/appliance/vmon/service/{service}'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceVmonServiceResp',
+	  '200' => 'Appliance::ApplianceVmonServiceResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})
@@ -73,7 +73,7 @@ module VSphereAutomation
     end
     # Lists details of services managed by vMon.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceVmonServiceListDetailsResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceVmonServiceListDetailsResult|VapiStdErrorsErrorError|]
     def list_details(opts = {})
       data, _status_code, _headers = list_details_with_http_info(opts)
       data
@@ -82,13 +82,13 @@ module VSphereAutomation
     # Lists details of services managed by vMon.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceVmonServiceListDetailsResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceVmonServiceListDetailsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_details_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmonServiceApi.list_details ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/vmon/service'
+      local_var_path = '/appliance/vmon/service'
 
       # query parameters
       query_params = {}
@@ -111,7 +111,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceVmonServiceListDetailsResp',
+	  '200' => 'Appliance::ApplianceVmonServiceListDetailsResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -142,7 +142,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling VmonServiceApi.restart"
       end
       # resource path
-      local_var_path = '/rest/appliance/vmon/service/{service}/restart'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/appliance/vmon/service/{service}/restart'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}
@@ -192,7 +192,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling VmonServiceApi.start"
       end
       # resource path
-      local_var_path = '/rest/appliance/vmon/service/{service}/start'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/appliance/vmon/service/{service}/start'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}
@@ -242,7 +242,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'service' when calling VmonServiceApi.stop"
       end
       # resource path
-      local_var_path = '/rest/appliance/vmon/service/{service}/stop'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/appliance/vmon/service/{service}/stop'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}
@@ -298,7 +298,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmonServiceApi.update"
       end
       # resource path
-      local_var_path = '/rest/appliance/vmon/service/{service}'.sub('{' + 'service' + '}', service.to_s)
+      local_var_path = '/appliance/vmon/service/{service}'.sub('{' + 'service' + '}', service.to_s)
 
       # query parameters
       query_params = {}

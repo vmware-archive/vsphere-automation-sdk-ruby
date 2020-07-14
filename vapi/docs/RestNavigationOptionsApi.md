@@ -1,14 +1,14 @@
 # VSphereAutomation::VAPI::RestNavigationOptionsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](RestNavigationOptionsApi.md#get) | **POST** /rest/com/vmware/vapi/rest/navigation/options?~action&#x3D;get | Retrieves operations for specific URL.
+[**get**](RestNavigationOptionsApi.md#get) | **POST** /com/vmware/vapi/rest/navigation/options?~action&#x3D;get | Retrieves operations for specific URL.
 
 
 # **get**
-> VapiRestNavigationOptionsResp get(request_body)
+> VapiRestNavigationOptionsResult get(request_body)
 
 Retrieves operations for specific URL.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiRestNavigationOptionsResp**](VapiRestNavigationOptionsResp.md)
+[**VapiRestNavigationOptionsResult**](VapiRestNavigationOptionsResult.md)
 
 ### Authorization
 

@@ -11,6 +11,11 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDatastoreInfo
+    # Name of the datastore.
+    attr_accessor :name
+
+    attr_accessor :type
+
     # Whether or not this datastore is accessible.
     attr_accessor :accessible
 
@@ -20,35 +25,30 @@ module VSphereAutomation
     # Whether or not ore than one host in the datacenter has been configured with access to the datastore.
     attr_accessor :multiple_host_access
 
-    # Name of the datastore.
-    attr_accessor :name
-
     # Whether or not the datastore supports thin provisioning on a per file basis. When thin provisioning is used, backing storage is lazily allocated.
     attr_accessor :thin_provisioning_supported
-
-    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'name' => :'name',
+        :'type' => :'type',
         :'accessible' => :'accessible',
         :'free_space' => :'free_space',
         :'multiple_host_access' => :'multiple_host_access',
-        :'name' => :'name',
-        :'thin_provisioning_supported' => :'thin_provisioning_supported',
-        :'type' => :'type'
+        :'thin_provisioning_supported' => :'thin_provisioning_supported'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'name' => :'String',
+        :'type' => :'VcenterDatastoreType',
         :'accessible' => :'Boolean',
         :'free_space' => :'Integer',
         :'multiple_host_access' => :'Boolean',
-        :'name' => :'String',
-        :'thin_provisioning_supported' => :'Boolean',
-        :'type' => :'VcenterDatastoreType'
+        :'thin_provisioning_supported' => :'Boolean'
       }
     end
 
@@ -59,6 +59,14 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
 
       if attributes.has_key?(:'accessible')
         self.accessible = attributes[:'accessible']
@@ -72,16 +80,8 @@ module VSphereAutomation
         self.multiple_host_access = attributes[:'multiple_host_access']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'thin_provisioning_supported')
         self.thin_provisioning_supported = attributes[:'thin_provisioning_supported']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
       end
     end
 
@@ -89,6 +89,14 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      end
+
       if @accessible.nil?
         invalid_properties.push('invalid value for "accessible", accessible cannot be nil.')
       end
@@ -97,16 +105,8 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "multiple_host_access", multiple_host_access cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       if @thin_provisioning_supported.nil?
         invalid_properties.push('invalid value for "thin_provisioning_supported", thin_provisioning_supported cannot be nil.')
-      end
-
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       invalid_properties
@@ -115,11 +115,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @name.nil?
+      return false if @type.nil?
       return false if @accessible.nil?
       return false if @multiple_host_access.nil?
-      return false if @name.nil?
       return false if @thin_provisioning_supported.nil?
-      return false if @type.nil?
       true
     end
 
@@ -128,12 +128,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          name == o.name &&
+          type == o.type &&
           accessible == o.accessible &&
           free_space == o.free_space &&
           multiple_host_access == o.multiple_host_access &&
-          name == o.name &&
-          thin_provisioning_supported == o.thin_provisioning_supported &&
-          type == o.type
+          thin_provisioning_supported == o.thin_provisioning_supported
     end
 
     # @see the `==` method
@@ -145,7 +145,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [accessible, free_space, multiple_host_access, name, thin_provisioning_supported, type].hash
+      [name, type, accessible, free_space, multiple_host_access, thin_provisioning_supported].hash
     end
 
     # Builds the object from hash

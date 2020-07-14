@@ -33,7 +33,7 @@ describe 'LibraryItemApi' do
   # @param source_library_item_id Identifier of the existing library item from which the content will be copied.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemCopyResp]
+  # @return [ContentLibraryItemCopyResult]
   describe 'copy test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -44,7 +44,7 @@ describe 'LibraryItemApi' do
   # Creates a new library item. &lt;p&gt; A new library item is created without any content. After creation, content can be added through the {@link UpdateSession} and {@link File} {@term services}. &lt;p&gt; A library item cannot be created in a subscribed library.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemCreateResp]
+  # @return [ContentLibraryItemCreateResult]
   describe 'create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -66,7 +66,7 @@ describe 'LibraryItemApi' do
   # Returns identifiers of all the visible (as determined by authorization policy) library items matching the requested {@link Item.FindSpec}.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemFindResp]
+  # @return [ContentLibraryItemFindResult]
   describe 'find test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -77,7 +77,7 @@ describe 'LibraryItemApi' do
   # Returns the {@link ItemModel} with the given identifier.
   # @param library_item_id Identifier of the library item to return.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemResp]
+  # @return [ContentLibraryItemResult]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -88,7 +88,7 @@ describe 'LibraryItemApi' do
   # Returns the identifiers of all items in the given library.
   # @param library_id Identifier of the library whose items should be returned.
   # @param [Hash] opts the optional parameters
-  # @return [ContentLibraryItemListResp]
+  # @return [ContentLibraryItemListResult]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

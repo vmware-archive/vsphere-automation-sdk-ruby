@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareBootDeviceEntry
-    # Virtual disk device. List of virtual disks in boot order. This field is optional and it is only relevant when the value of Device.Entry.type is DISK. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.vm.hardware.Disk. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.vm.hardware.Disk.
-    attr_accessor :disks
+    attr_accessor :type
 
     # Virtual Ethernet device. Ethernet device to use as boot device for this entry. This field is optional and it is only relevant when the value of Device.Entry.type is ETHERNET. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vcenter.vm.hardware.Ethernet. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vcenter.vm.hardware.Ethernet.
     attr_accessor :nic
 
-    attr_accessor :type
+    # Virtual disk device. List of virtual disks in boot order. This field is optional and it is only relevant when the value of Device.Entry.type is DISK. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.vm.hardware.Disk. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.vm.hardware.Disk.
+    attr_accessor :disks
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'disks' => :'disks',
+        :'type' => :'type',
         :'nic' => :'nic',
-        :'type' => :'type'
+        :'disks' => :'disks'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'disks' => :'Array<String>',
+        :'type' => :'VcenterVmHardwareBootDeviceType',
         :'nic' => :'String',
-        :'type' => :'VcenterVmHardwareBootDeviceType'
+        :'disks' => :'Array<String>'
       }
     end
 
@@ -45,18 +45,18 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'disks')
-        if (value = attributes[:'disks']).is_a?(Array)
-          self.disks = value
-        end
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'nic')
         self.nic = attributes[:'nic']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'disks')
+        if (value = attributes[:'disks']).is_a?(Array)
+          self.disks = value
+        end
       end
     end
 
@@ -83,9 +83,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          disks == o.disks &&
+          type == o.type &&
           nic == o.nic &&
-          type == o.type
+          disks == o.disks
     end
 
     # @see the `==` method
@@ -97,7 +97,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [disks, nic, type].hash
+      [type, nic, disks].hash
     end
 
     # Builds the object from hash

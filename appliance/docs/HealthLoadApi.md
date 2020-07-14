@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::HealthLoadApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](HealthLoadApi.md#get) | **GET** /rest/appliance/health/load | Get load health.
+[**get**](HealthLoadApi.md#get) | **GET** /appliance/health/load | Get load health.
 
 
 # **get**
-> ApplianceHealthLoadResp get
+> ApplianceHealthLoadResult get
 
 Get load health.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthLoadResp**](ApplianceHealthLoadResp.md)
+[**ApplianceHealthLoadResult**](ApplianceHealthLoadResult.md)
 
 ### Authorization
 

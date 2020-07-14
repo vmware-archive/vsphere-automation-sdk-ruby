@@ -14,18 +14,14 @@ module VSphereAutomation
     # Certificate string in PEM format.
     attr_accessor :cert
 
-    # Private key string in PEM format. If unset the private key from the certificate store will be used. It is required when replacing the certificate with a third party signed certificate.
+    # Private key string in PEM format. If unset, defaults to use the private key from VECS store.
     attr_accessor :key
-
-    # Third party Root CA certificate in PEM format. If unset the new third party root CA certificate will not be added to the trust store. It is required when replacing the certificate with a third party signed certificate if the root certificate of the third party is not already a trusted root.
-    attr_accessor :root_cert
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'cert' => :'cert',
-        :'key' => :'key',
-        :'root_cert' => :'root_cert'
+        :'key' => :'key'
       }
     end
 
@@ -33,8 +29,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'cert' => :'String',
-        :'key' => :'String',
-        :'root_cert' => :'String'
+        :'key' => :'String'
       }
     end
 
@@ -52,10 +47,6 @@ module VSphereAutomation
 
       if attributes.has_key?(:'key')
         self.key = attributes[:'key']
-      end
-
-      if attributes.has_key?(:'root_cert')
-        self.root_cert = attributes[:'root_cert']
       end
     end
 
@@ -83,8 +74,7 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           cert == o.cert &&
-          key == o.key &&
-          root_cert == o.root_cert
+          key == o.key
     end
 
     # @see the `==` method
@@ -96,7 +86,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cert, key, root_cert].hash
+      [cert, key].hash
     end
 
     # Builds the object from hash

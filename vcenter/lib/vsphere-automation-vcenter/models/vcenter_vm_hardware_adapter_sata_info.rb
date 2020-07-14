@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareAdapterSataInfo
-    # SATA bus number.
-    attr_accessor :bus
-
     # Device label.
     attr_accessor :label
+
+    attr_accessor :type
+
+    # SATA bus number.
+    attr_accessor :bus
 
     # Address of the SATA adapter on the PCI bus. May be unset if the virtual machine has never been powered on since the adapter was created.
     attr_accessor :pci_slot_number
 
-    attr_accessor :type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'bus' => :'bus',
         :'label' => :'label',
-        :'pci_slot_number' => :'pci_slot_number',
-        :'type' => :'type'
+        :'type' => :'type',
+        :'bus' => :'bus',
+        :'pci_slot_number' => :'pci_slot_number'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'bus' => :'Integer',
         :'label' => :'String',
-        :'pci_slot_number' => :'Integer',
-        :'type' => :'VcenterVmHardwareAdapterSataType'
+        :'type' => :'VcenterVmHardwareAdapterSataType',
+        :'bus' => :'Integer',
+        :'pci_slot_number' => :'Integer'
       }
     end
 
@@ -50,20 +50,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'bus')
-        self.bus = attributes[:'bus']
-      end
-
       if attributes.has_key?(:'label')
         self.label = attributes[:'label']
       end
 
-      if attributes.has_key?(:'pci_slot_number')
-        self.pci_slot_number = attributes[:'pci_slot_number']
-      end
-
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.has_key?(:'bus')
+        self.bus = attributes[:'bus']
+      end
+
+      if attributes.has_key?(:'pci_slot_number')
+        self.pci_slot_number = attributes[:'pci_slot_number']
       end
     end
 
@@ -71,10 +71,6 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @bus.nil?
-        invalid_properties.push('invalid value for "bus", bus cannot be nil.')
-      end
-
       if @label.nil?
         invalid_properties.push('invalid value for "label", label cannot be nil.')
       end
@@ -83,15 +79,19 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
+      if @bus.nil?
+        invalid_properties.push('invalid value for "bus", bus cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @bus.nil?
       return false if @label.nil?
       return false if @type.nil?
+      return false if @bus.nil?
       true
     end
 
@@ -100,10 +100,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          bus == o.bus &&
           label == o.label &&
-          pci_slot_number == o.pci_slot_number &&
-          type == o.type
+          type == o.type &&
+          bus == o.bus &&
+          pci_slot_number == o.pci_slot_number
     end
 
     # @see the `==` method
@@ -115,7 +115,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bus, label, pci_slot_number, type].hash
+      [label, type, bus, pci_slot_number].hash
     end
 
     # Builds the object from hash

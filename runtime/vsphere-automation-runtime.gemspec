@@ -24,12 +24,12 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.3"
 
   s.add_development_dependency 'bundler', '~> 2.0'
-  s.add_development_dependency 'pry', '~> 0.13.0'
-  s.add_development_dependency 'rake', '~> 13.0'
-  s.add_development_dependency 'rspec', '~> 3.9'
-  s.add_development_dependency 'rubocop', '~> 0.81.0'
-  s.add_development_dependency 'vcr', '~> 5.1'
-  s.add_development_dependency 'webmock', '~> 3.8'
+  s.add_development_dependency 'pry', '~> 0.12.2'
+  s.add_development_dependency 'rake', '~> 12.3'
+  s.add_development_dependency 'rspec', '~> 3.7'
+  s.add_development_dependency 'rubocop', '~> 0.73.0'
+  s.add_development_dependency 'vcr', '~> 5.0'
+  s.add_development_dependency 'webmock', '~> 3.6'
 
   s.files = Dir.glob('lib/**/*') << 'LICENSE'
   s.require_paths = ['lib']

@@ -11,17 +11,7 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareEthernetBackingInfo
-    # Server-generated cookie that identifies the connection to the port. This ookie may be used to verify that the virtual machine is the rightful owner of the port. This field will be unset if the virtual Ethernet device is not bound to a distributed virtual port; this can happen if the virtual machine is powered off or the virtual Ethernet device is not connected.
-    attr_accessor :connection_cookie
-
-    # Key of the distributed virtual port that backs the virtual Ethernet adapter. This field will be unset if the virtual Ethernet device is not bound to a distributed virtual port; this can happen if the virtual machine is powered off or the virtual Ethernet device is not connected.
-    attr_accessor :distributed_port
-
-    # UUID of the distributed virtual switch that backs the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is DISTRIBUTED_PORTGROUP.
-    attr_accessor :distributed_switch_uuid
-
-    # Name of the device backing the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is HOST_DEVICE.
-    attr_accessor :host_device
+    attr_accessor :type
 
     # Identifier of the network backing the virtual Ethernet adapter. If unset, the identifier of the network backing could not be determined. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network.
     attr_accessor :network
@@ -29,41 +19,51 @@ module VSphereAutomation
     # Name of the standard portgroup backing the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is STANDARD_PORTGROUP.
     attr_accessor :network_name
 
-    # Identifier of the opaque network that backs the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is OPAQUE_NETWORK.
-    attr_accessor :opaque_network_id
+    # Name of the device backing the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is HOST_DEVICE.
+    attr_accessor :host_device
+
+    # UUID of the distributed virtual switch that backs the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is DISTRIBUTED_PORTGROUP.
+    attr_accessor :distributed_switch_uuid
+
+    # Key of the distributed virtual port that backs the virtual Ethernet adapter. This field will be unset if the virtual Ethernet device is not bound to a distributed virtual port; this can happen if the virtual machine is powered off or the virtual Ethernet device is not connected.
+    attr_accessor :distributed_port
+
+    # Server-generated cookie that identifies the connection to the port. This ookie may be used to verify that the virtual machine is the rightful owner of the port. This field will be unset if the virtual Ethernet device is not bound to a distributed virtual port; this can happen if the virtual machine is powered off or the virtual Ethernet device is not connected.
+    attr_accessor :connection_cookie
 
     # Type of the opaque network that backs the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is OPAQUE_NETWORK.
     attr_accessor :opaque_network_type
 
-    attr_accessor :type
+    # Identifier of the opaque network that backs the virtual Ethernet adapter. This field is optional and it is only relevant when the value of Ethernet.BackingInfo.type is OPAQUE_NETWORK.
+    attr_accessor :opaque_network_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'connection_cookie' => :'connection_cookie',
-        :'distributed_port' => :'distributed_port',
-        :'distributed_switch_uuid' => :'distributed_switch_uuid',
-        :'host_device' => :'host_device',
+        :'type' => :'type',
         :'network' => :'network',
         :'network_name' => :'network_name',
-        :'opaque_network_id' => :'opaque_network_id',
+        :'host_device' => :'host_device',
+        :'distributed_switch_uuid' => :'distributed_switch_uuid',
+        :'distributed_port' => :'distributed_port',
+        :'connection_cookie' => :'connection_cookie',
         :'opaque_network_type' => :'opaque_network_type',
-        :'type' => :'type'
+        :'opaque_network_id' => :'opaque_network_id'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'connection_cookie' => :'Integer',
-        :'distributed_port' => :'String',
-        :'distributed_switch_uuid' => :'String',
-        :'host_device' => :'String',
+        :'type' => :'VcenterVmHardwareEthernetBackingType',
         :'network' => :'String',
         :'network_name' => :'String',
-        :'opaque_network_id' => :'String',
+        :'host_device' => :'String',
+        :'distributed_switch_uuid' => :'String',
+        :'distributed_port' => :'String',
+        :'connection_cookie' => :'Integer',
         :'opaque_network_type' => :'String',
-        :'type' => :'VcenterVmHardwareEthernetBackingType'
+        :'opaque_network_id' => :'String'
       }
     end
 
@@ -75,20 +75,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'connection_cookie')
-        self.connection_cookie = attributes[:'connection_cookie']
-      end
-
-      if attributes.has_key?(:'distributed_port')
-        self.distributed_port = attributes[:'distributed_port']
-      end
-
-      if attributes.has_key?(:'distributed_switch_uuid')
-        self.distributed_switch_uuid = attributes[:'distributed_switch_uuid']
-      end
-
-      if attributes.has_key?(:'host_device')
-        self.host_device = attributes[:'host_device']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'network')
@@ -99,16 +87,28 @@ module VSphereAutomation
         self.network_name = attributes[:'network_name']
       end
 
-      if attributes.has_key?(:'opaque_network_id')
-        self.opaque_network_id = attributes[:'opaque_network_id']
+      if attributes.has_key?(:'host_device')
+        self.host_device = attributes[:'host_device']
+      end
+
+      if attributes.has_key?(:'distributed_switch_uuid')
+        self.distributed_switch_uuid = attributes[:'distributed_switch_uuid']
+      end
+
+      if attributes.has_key?(:'distributed_port')
+        self.distributed_port = attributes[:'distributed_port']
+      end
+
+      if attributes.has_key?(:'connection_cookie')
+        self.connection_cookie = attributes[:'connection_cookie']
       end
 
       if attributes.has_key?(:'opaque_network_type')
         self.opaque_network_type = attributes[:'opaque_network_type']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'opaque_network_id')
+        self.opaque_network_id = attributes[:'opaque_network_id']
       end
     end
 
@@ -135,15 +135,15 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          connection_cookie == o.connection_cookie &&
-          distributed_port == o.distributed_port &&
-          distributed_switch_uuid == o.distributed_switch_uuid &&
-          host_device == o.host_device &&
+          type == o.type &&
           network == o.network &&
           network_name == o.network_name &&
-          opaque_network_id == o.opaque_network_id &&
+          host_device == o.host_device &&
+          distributed_switch_uuid == o.distributed_switch_uuid &&
+          distributed_port == o.distributed_port &&
+          connection_cookie == o.connection_cookie &&
           opaque_network_type == o.opaque_network_type &&
-          type == o.type
+          opaque_network_id == o.opaque_network_id
     end
 
     # @see the `==` method
@@ -155,7 +155,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [connection_cookie, distributed_port, distributed_switch_uuid, host_device, network, network_name, opaque_network_id, opaque_network_type, type].hash
+      [type, network, network_name, host_device, distributed_switch_uuid, distributed_port, connection_cookie, opaque_network_type, opaque_network_id].hash
     end
 
     # Builds the object from hash

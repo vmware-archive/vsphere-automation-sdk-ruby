@@ -11,19 +11,19 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareDiskVmdkCreateSpec
-    # Capacity of the virtual disk backing in bytes. If unset, defaults to a guest-specific capacity.
-    attr_accessor :capacity
-
     # Base name of the VMDK file. The name should not include the '.vmdk' file extension. If unset, a name (derived from the name of the virtual machine) will be chosen by the server.
     attr_accessor :name
+
+    # Capacity of the virtual disk backing in bytes. If unset, defaults to a guest-specific capacity.
+    attr_accessor :capacity
 
     attr_accessor :storage_policy
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'capacity' => :'capacity',
         :'name' => :'name',
+        :'capacity' => :'capacity',
         :'storage_policy' => :'storage_policy'
       }
     end
@@ -31,8 +31,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'capacity' => :'Integer',
         :'name' => :'String',
+        :'capacity' => :'Integer',
         :'storage_policy' => :'VcenterVmHardwareDiskStoragePolicySpec'
       }
     end
@@ -45,12 +45,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'capacity')
-        self.capacity = attributes[:'capacity']
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'capacity')
+        self.capacity = attributes[:'capacity']
       end
 
       if attributes.has_key?(:'storage_policy')
@@ -76,8 +76,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          capacity == o.capacity &&
           name == o.name &&
+          capacity == o.capacity &&
           storage_policy == o.storage_policy
     end
 
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [capacity, name, storage_policy].hash
+      [name, capacity, storage_policy].hash
     end
 
     # Builds the object from hash

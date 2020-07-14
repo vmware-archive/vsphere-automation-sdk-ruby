@@ -1,19 +1,19 @@
 # VSphereAutomation::VCenter::ServicesServiceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](ServicesServiceApi.md#get) | **GET** /rest/vcenter/services/{service} | Returns the state of a service.
-[**list_details**](ServicesServiceApi.md#list_details) | **GET** /rest/vcenter/services | Lists details of vCenter services.
-[**restart**](ServicesServiceApi.md#restart) | **POST** /rest/vcenter/services/{service}/restart | Restarts a service
-[**start**](ServicesServiceApi.md#start) | **POST** /rest/vcenter/services/{service}/start | Starts a service
-[**stop**](ServicesServiceApi.md#stop) | **POST** /rest/vcenter/services/{service}/stop | Stops a service
-[**update**](ServicesServiceApi.md#update) | **PATCH** /rest/vcenter/services/{service} | Updates the properties of a service.
+[**get**](ServicesServiceApi.md#get) | **GET** /vcenter/services/{service} | Returns the state of a service.
+[**list_details**](ServicesServiceApi.md#list_details) | **GET** /vcenter/services | Lists details of vCenter services.
+[**restart**](ServicesServiceApi.md#restart) | **POST** /vcenter/services/{service}/restart | Restarts a service
+[**start**](ServicesServiceApi.md#start) | **POST** /vcenter/services/{service}/start | Starts a service
+[**stop**](ServicesServiceApi.md#stop) | **POST** /vcenter/services/{service}/stop | Stops a service
+[**update**](ServicesServiceApi.md#update) | **PATCH** /vcenter/services/{service} | Updates the properties of a service.
 
 
 # **get**
-> VcenterServicesServiceResp get(service)
+> VcenterServicesServiceResult get(service)
 
 Returns the state of a service.
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterServicesServiceResp**](VcenterServicesServiceResp.md)
+[**VcenterServicesServiceResult**](VcenterServicesServiceResult.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 
 # **list_details**
-> VcenterServicesServiceListDetailsResp list_details
+> VcenterServicesServiceListDetailsResult list_details
 
 Lists details of vCenter services.
 
@@ -95,7 +95,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterServicesServiceListDetailsResp**](VcenterServicesServiceListDetailsResp.md)
+[**VcenterServicesServiceListDetailsResult**](VcenterServicesServiceListDetailsResult.md)
 
 ### Authorization
 

@@ -1,16 +1,16 @@
 # VSphereAutomation::Appliance::NetworkingDnsHostnameApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NetworkingDnsHostnameApi.md#get) | **GET** /rest/appliance/networking/dns/hostname | Get the Fully Qualified Doman Name.
-[**set**](NetworkingDnsHostnameApi.md#set) | **PUT** /rest/appliance/networking/dns/hostname | Set the Fully Qualified Domain Name.
-[**test**](NetworkingDnsHostnameApi.md#test) | **POST** /rest/appliance/networking/dns/hostname/test | Test the Fully Qualified Domain Name.
+[**get**](NetworkingDnsHostnameApi.md#get) | **GET** /appliance/networking/dns/hostname | Get the Fully Qualified Doman Name.
+[**set**](NetworkingDnsHostnameApi.md#set) | **PUT** /appliance/networking/dns/hostname | Set the Fully Qualified Domain Name.
+[**test**](NetworkingDnsHostnameApi.md#test) | **POST** /appliance/networking/dns/hostname/test | Test the Fully Qualified Domain Name.
 
 
 # **get**
-> ApplianceNetworkingDnsHostnameResp get
+> ApplianceNetworkingDnsHostnameResult get
 
 Get the Fully Qualified Doman Name.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNetworkingDnsHostnameResp**](ApplianceNetworkingDnsHostnameResp.md)
+[**ApplianceNetworkingDnsHostnameResult**](ApplianceNetworkingDnsHostnameResult.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ nil (empty response body)
 
 
 # **test**
-> ApplianceNetworkingDnsHostnameTestResp test(request_body)
+> ApplianceNetworkingDnsHostnameTestResult test(request_body)
 
 Test the Fully Qualified Domain Name.
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNetworkingDnsHostnameTestResp**](ApplianceNetworkingDnsHostnameTestResp.md)
+[**ApplianceNetworkingDnsHostnameTestResult**](ApplianceNetworkingDnsHostnameTestResult.md)
 
 ### Authorization
 

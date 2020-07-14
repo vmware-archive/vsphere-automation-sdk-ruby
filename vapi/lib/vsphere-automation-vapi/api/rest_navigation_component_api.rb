@@ -16,26 +16,26 @@ module VSphereAutomation
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Gets list of all vAPI REST Components.
+    # Gets list of all vAPI REST {@link Component}s.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :base_url Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
-    # @return [VapiRestNavigationComponentListResp|]
+    # @option opts [String] :base_url Base URL.
+    # @return [VapiRestNavigationComponentListResult|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
     end
 
-    # Gets list of all vAPI REST Components.
+    # Gets list of all vAPI REST {@link Component}s.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :base_url Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
-    # @return [Array<(VapiRestNavigationComponentListResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @option opts [String] :base_url Base URL.
+    # @return [Array<(VapiRestNavigationComponentListResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationComponentApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/rest/navigation/component'
+      local_var_path = '/com/vmware/vapi/rest/navigation/component'
 
       # query parameters
       query_params = {}
@@ -59,7 +59,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiRestNavigationComponentListResp',
+	  '200' => 'VAPI::VapiRestNavigationComponentListResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RestNavigationComponentApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

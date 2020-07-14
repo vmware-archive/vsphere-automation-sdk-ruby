@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::HealthMemApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](HealthMemApi.md#get) | **GET** /rest/appliance/health/mem | Get memory health.
+[**get**](HealthMemApi.md#get) | **GET** /appliance/health/mem | Get memory health.
 
 
 # **get**
-> ApplianceHealthMemResp get
+> ApplianceHealthMemResult get
 
 Get memory health.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthMemResp**](ApplianceHealthMemResp.md)
+[**ApplianceHealthMemResult**](ApplianceHealthMemResult.md)
 
 ### Authorization
 

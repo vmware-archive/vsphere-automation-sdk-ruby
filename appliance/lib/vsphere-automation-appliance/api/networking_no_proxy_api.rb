@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Returns servers for which no proxy configuration will be applied.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingNoProxyResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingNoProxyResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Returns servers for which no proxy configuration will be applied.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingNoProxyResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingNoProxyResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingNoProxyApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/noproxy'
+      local_var_path = '/appliance/networking/noproxy'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingNoProxyResp',
+	  '200' => 'Appliance::ApplianceNetworkingNoProxyResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -87,7 +87,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingNoProxyApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/noproxy'
+      local_var_path = '/appliance/networking/noproxy'
 
       # query parameters
       query_params = {}

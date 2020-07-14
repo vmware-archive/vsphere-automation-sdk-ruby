@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::HealthStorageApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](HealthStorageApi.md#get) | **GET** /rest/appliance/health/storage | Get storage health.
+[**get**](HealthStorageApi.md#get) | **GET** /appliance/health/storage | Get storage health.
 
 
 # **get**
-> ApplianceHealthStorageResp get
+> ApplianceHealthStorageResult get
 
 Get storage health.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthStorageResp**](ApplianceHealthStorageResp.md)
+[**ApplianceHealthStorageResult**](ApplianceHealthStorageResult.md)
 
 ### Authorization
 

@@ -1,18 +1,18 @@
 # VSphereAutomation::VCenter::VmHardwareAdapterScsiApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](VmHardwareAdapterScsiApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/adapter/scsi | Adds a virtual SCSI adapter to the virtual machine.
-[**delete**](VmHardwareAdapterScsiApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/adapter/scsi/{adapter} | Removes a virtual SCSI adapter from the virtual machine.
-[**get**](VmHardwareAdapterScsiApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/adapter/scsi/{adapter} | Returns information about a virtual SCSI adapter.
-[**list**](VmHardwareAdapterScsiApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/adapter/scsi | Returns commonly used information about the virtual SCSI adapters belonging to the virtual machine.
-[**update**](VmHardwareAdapterScsiApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/adapter/scsi/{adapter} | Updates the configuration of a virtual SCSI adapter.
+[**create**](VmHardwareAdapterScsiApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/adapter/scsi | Adds a virtual SCSI adapter to the virtual machine.
+[**delete**](VmHardwareAdapterScsiApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/adapter/scsi/{adapter} | Removes a virtual SCSI adapter from the virtual machine.
+[**get**](VmHardwareAdapterScsiApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/adapter/scsi/{adapter} | Returns information about a virtual SCSI adapter.
+[**list**](VmHardwareAdapterScsiApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/adapter/scsi | Returns commonly used information about the virtual SCSI adapters belonging to the virtual machine.
+[**update**](VmHardwareAdapterScsiApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/adapter/scsi/{adapter} | Updates the configuration of a virtual SCSI adapter.
 
 
 # **create**
-> VcenterVmHardwareAdapterScsiCreateResp create(vm, request_body)
+> VcenterVmHardwareAdapterScsiCreateResult create(vm, request_body)
 
 Adds a virtual SCSI adapter to the virtual machine.
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareAdapterScsiCreateResp**](VcenterVmHardwareAdapterScsiCreateResp.md)
+[**VcenterVmHardwareAdapterScsiCreateResult**](VcenterVmHardwareAdapterScsiCreateResult.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareAdapterScsiResp get(vm, adapter)
+> VcenterVmHardwareAdapterScsiResult get(vm, adapter)
 
 Returns information about a virtual SCSI adapter.
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareAdapterScsiResp**](VcenterVmHardwareAdapterScsiResp.md)
+[**VcenterVmHardwareAdapterScsiResult**](VcenterVmHardwareAdapterScsiResult.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareAdapterScsiListResp list(vm)
+> VcenterVmHardwareAdapterScsiListResult list(vm)
 
 Returns commonly used information about the virtual SCSI adapters belonging to the virtual machine.
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareAdapterScsiListResp**](VcenterVmHardwareAdapterScsiListResp.md)
+[**VcenterVmHardwareAdapterScsiListResult**](VcenterVmHardwareAdapterScsiListResult.md)
 
 ### Authorization
 

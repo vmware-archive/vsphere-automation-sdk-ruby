@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataMetamodelServiceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataMetamodelServiceApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/metamodel/service/id:{service_id} | Retrieves information about the service element corresponding to {@param.name serviceId}. &lt;p&gt; The {@link ServiceInfo} contains the metamodel information for the operation elements, structure elements and enumeration elements contained in the service element.
-[**list**](MetadataMetamodelServiceApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/metamodel/service | Returns the identifiers for the service elements that are currently registered with the infrastructure. &lt;p&gt; The list of service elements is an aggregate list of all the service elements contained in all the package elements.
+[**get**](MetadataMetamodelServiceApi.md#get) | **GET** /com/vmware/vapi/metadata/metamodel/service/id:{service_id} | Retrieves information about the service element corresponding to {@param.name serviceId}. &lt;p&gt; The {@link ServiceInfo} contains the metamodel information for the operation elements, structure elements and enumeration elements contained in the service element.
+[**list**](MetadataMetamodelServiceApi.md#list) | **GET** /com/vmware/vapi/metadata/metamodel/service | Returns the identifiers for the service elements that are currently registered with the infrastructure. &lt;p&gt; The list of service elements is an aggregate list of all the service elements contained in all the package elements.
 
 
 # **get**
-> VapiMetadataMetamodelServiceResp get(service_id)
+> VapiMetadataMetamodelServiceResult get(service_id)
 
 Retrieves information about the service element corresponding to {@param.name serviceId}. <p> The {@link ServiceInfo} contains the metamodel information for the operation elements, structure elements and enumeration elements contained in the service element.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataMetamodelServiceResp**](VapiMetadataMetamodelServiceResp.md)
+[**VapiMetadataMetamodelServiceResult**](VapiMetadataMetamodelServiceResult.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataMetamodelServiceListResp list
+> VapiMetadataMetamodelServiceListResult list
 
 Returns the identifiers for the service elements that are currently registered with the infrastructure. <p> The list of service elements is an aggregate list of all the service elements contained in all the package elements.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataMetamodelServiceListResp**](VapiMetadataMetamodelServiceListResp.md)
+[**VapiMetadataMetamodelServiceListResult**](VapiMetadataMetamodelServiceListResult.md)
 
 ### Authorization
 

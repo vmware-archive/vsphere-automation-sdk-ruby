@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiRestNavigationLink
+    attr_accessor :method
+
     # URL that should be called.
     attr_accessor :href
 
     attr_accessor :metadata
 
-    attr_accessor :method
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'method' => :'method',
         :'href' => :'href',
-        :'metadata' => :'metadata',
-        :'method' => :'method'
+        :'metadata' => :'metadata'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'method' => :'VapiRestNavigationHttpMethod',
         :'href' => :'String',
-        :'metadata' => :'VapiRestNavigationReference',
-        :'method' => :'VapiRestNavigationHttpMethod'
+        :'metadata' => :'VapiRestNavigationReference'
       }
     end
 
@@ -44,6 +44,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'method')
+        self.method = attributes[:'method']
+      end
+
       if attributes.has_key?(:'href')
         self.href = attributes[:'href']
       end
@@ -51,16 +55,16 @@ module VSphereAutomation
       if attributes.has_key?(:'metadata')
         self.metadata = attributes[:'metadata']
       end
-
-      if attributes.has_key?(:'method')
-        self.method = attributes[:'method']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @method.nil?
+        invalid_properties.push('invalid value for "method", method cannot be nil.')
+      end
+
       if @href.nil?
         invalid_properties.push('invalid value for "href", href cannot be nil.')
       end
@@ -69,19 +73,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
       end
 
-      if @method.nil?
-        invalid_properties.push('invalid value for "method", method cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @method.nil?
       return false if @href.nil?
       return false if @metadata.nil?
-      return false if @method.nil?
       true
     end
 
@@ -90,9 +90,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          method == o.method &&
           href == o.href &&
-          metadata == o.metadata &&
-          method == o.method
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -104,7 +104,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [href, metadata, method].hash
+      [method, href, metadata].hash
     end
 
     # Builds the object from hash

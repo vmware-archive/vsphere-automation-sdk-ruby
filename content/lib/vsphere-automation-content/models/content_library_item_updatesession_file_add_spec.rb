@@ -11,37 +11,37 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionFileAddSpec
-    attr_accessor :checksum_info
-
     # The name of the file being uploaded.
     attr_accessor :name
+
+    attr_accessor :source_type
+
+    attr_accessor :source_endpoint
 
     # The file size, in bytes.
     attr_accessor :size
 
-    attr_accessor :source_endpoint
-
-    attr_accessor :source_type
+    attr_accessor :checksum_info
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'checksum_info' => :'checksum_info',
         :'name' => :'name',
-        :'size' => :'size',
+        :'source_type' => :'source_type',
         :'source_endpoint' => :'source_endpoint',
-        :'source_type' => :'source_type'
+        :'size' => :'size',
+        :'checksum_info' => :'checksum_info'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'checksum_info' => :'ContentLibraryItemFileChecksumInfo',
         :'name' => :'String',
-        :'size' => :'Integer',
+        :'source_type' => :'ContentLibraryItemUpdatesessionFileSourceType',
         :'source_endpoint' => :'ContentLibraryItemTransferEndpoint',
-        :'source_type' => :'ContentLibraryItemUpdatesessionFileSourceType'
+        :'size' => :'Integer',
+        :'checksum_info' => :'ContentLibraryItemFileChecksumInfo'
       }
     end
 
@@ -53,24 +53,24 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'checksum_info')
-        self.checksum_info = attributes[:'checksum_info']
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'size')
-        self.size = attributes[:'size']
+      if attributes.has_key?(:'source_type')
+        self.source_type = attributes[:'source_type']
       end
 
       if attributes.has_key?(:'source_endpoint')
         self.source_endpoint = attributes[:'source_endpoint']
       end
 
-      if attributes.has_key?(:'source_type')
-        self.source_type = attributes[:'source_type']
+      if attributes.has_key?(:'size')
+        self.size = attributes[:'size']
+      end
+
+      if attributes.has_key?(:'checksum_info')
+        self.checksum_info = attributes[:'checksum_info']
       end
     end
 
@@ -102,11 +102,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          checksum_info == o.checksum_info &&
           name == o.name &&
-          size == o.size &&
+          source_type == o.source_type &&
           source_endpoint == o.source_endpoint &&
-          source_type == o.source_type
+          size == o.size &&
+          checksum_info == o.checksum_info
     end
 
     # @see the `==` method
@@ -118,7 +118,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [checksum_info, name, size, source_endpoint, source_type].hash
+      [name, source_type, source_endpoint, size, checksum_info].hash
     end
 
     # Builds the object from hash

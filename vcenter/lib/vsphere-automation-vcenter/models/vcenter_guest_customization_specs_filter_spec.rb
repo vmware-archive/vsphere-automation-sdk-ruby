@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterGuestCustomizationSpecsFilterSpec
-    attr_accessor :os_type
-
     # Names that guest customization specifications must have to match the filter (see CustomizationSpecs.Summary.name). If unset or empty, guest customization specifications with any name match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: vcenter.guest.CustomizationSpec. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: vcenter.guest.CustomizationSpec.
     attr_accessor :names
+
+    attr_accessor :os_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'os_type' => :'OS_type',
-        :'names' => :'names'
+        :'names' => :'names',
+        :'os_type' => :'OS_type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'os_type' => :'VcenterGuestCustomizationSpecsOsType',
-        :'names' => :'Array<String>'
+        :'names' => :'Array<String>',
+        :'os_type' => :'VcenterGuestCustomizationSpecsOsType'
       }
     end
 
@@ -40,14 +40,14 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'OS_type')
-        self.os_type = attributes[:'OS_type']
-      end
-
       if attributes.has_key?(:'names')
         if (value = attributes[:'names']).is_a?(Array)
           self.names = value
         end
+      end
+
+      if attributes.has_key?(:'OS_type')
+        self.os_type = attributes[:'OS_type']
       end
     end
 
@@ -69,8 +69,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          os_type == o.os_type &&
-          names == o.names
+          names == o.names &&
+          os_type == o.os_type
     end
 
     # @see the `==` method
@@ -82,7 +82,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [os_type, names].hash
+      [names, os_type].hash
     end
 
     # Builds the object from hash

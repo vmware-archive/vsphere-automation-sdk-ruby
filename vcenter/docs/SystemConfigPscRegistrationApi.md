@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::SystemConfigPscRegistrationApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](SystemConfigPscRegistrationApi.md#get) | **GET** /rest/vcenter/system-config/psc-registration | Get information of the PSC that this appliance is registered with.
-[**repoint**](SystemConfigPscRegistrationApi.md#repoint) | **POST** /rest/vcenter/system-config/psc-registration | Repoint this vCenter Server appliance to a different external PSC.
+[**get**](SystemConfigPscRegistrationApi.md#get) | **GET** /vcenter/system-config/psc-registration | Get information of the PSC that this appliance is registered with.
+[**repoint**](SystemConfigPscRegistrationApi.md#repoint) | **POST** /vcenter/system-config/psc-registration | Repoint this vCenter Server appliance to a different external PSC.
 
 
 # **get**
-> VcenterSystemConfigPscRegistrationResp get
+> VcenterSystemConfigPscRegistrationResult get
 
 Get information of the PSC that this appliance is registered with.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterSystemConfigPscRegistrationResp**](VcenterSystemConfigPscRegistrationResp.md)
+[**VcenterSystemConfigPscRegistrationResult**](VcenterSystemConfigPscRegistrationResult.md)
 
 ### Authorization
 

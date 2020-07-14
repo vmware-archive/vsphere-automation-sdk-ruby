@@ -14,24 +14,24 @@ module VSphereAutomation
     # Documentation of the service.
     attr_accessor :documentation
 
+    # Name of the service.
+    attr_accessor :name
+
+    attr_accessor :method
+
     # URL to get service information.
     attr_accessor :href
 
     attr_accessor :metadata
 
-    attr_accessor :method
-
-    # Name of the service.
-    attr_accessor :name
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'documentation' => :'documentation',
-        :'href' => :'href',
-        :'metadata' => :'metadata',
+        :'name' => :'name',
         :'method' => :'method',
-        :'name' => :'name'
+        :'href' => :'href',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -39,10 +39,10 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'documentation' => :'String',
-        :'href' => :'String',
-        :'metadata' => :'VapiRestNavigationReference',
+        :'name' => :'String',
         :'method' => :'VapiRestNavigationHttpMethod',
-        :'name' => :'String'
+        :'href' => :'String',
+        :'metadata' => :'VapiRestNavigationReference'
       }
     end
 
@@ -58,20 +58,20 @@ module VSphereAutomation
         self.documentation = attributes[:'documentation']
       end
 
-      if attributes.has_key?(:'href')
-        self.href = attributes[:'href']
-      end
-
-      if attributes.has_key?(:'metadata')
-        self.metadata = attributes[:'metadata']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'method')
         self.method = attributes[:'method']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'href')
+        self.href = attributes[:'href']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -83,20 +83,20 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
       end
 
-      if @href.nil?
-        invalid_properties.push('invalid value for "href", href cannot be nil.')
-      end
-
-      if @metadata.nil?
-        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @method.nil?
         invalid_properties.push('invalid value for "method", method cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @href.nil?
+        invalid_properties.push('invalid value for "href", href cannot be nil.')
+      end
+
+      if @metadata.nil?
+        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
       end
 
       invalid_properties
@@ -106,10 +106,10 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @documentation.nil?
+      return false if @name.nil?
+      return false if @method.nil?
       return false if @href.nil?
       return false if @metadata.nil?
-      return false if @method.nil?
-      return false if @name.nil?
       true
     end
 
@@ -119,10 +119,10 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           documentation == o.documentation &&
-          href == o.href &&
-          metadata == o.metadata &&
+          name == o.name &&
           method == o.method &&
-          name == o.name
+          href == o.href &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -134,7 +134,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [documentation, href, metadata, method, name].hash
+      [documentation, name, method, href, metadata].hash
     end
 
     # Builds the object from hash

@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**checksum_info** | [**ContentLibraryItemFileChecksumInfo**](ContentLibraryItemFileChecksumInfo.md) |  | [optional] 
 **name** | **String** | The name of the file being uploaded. | 
-**size** | **Integer** | The file size, in bytes. | [optional] 
-**source_endpoint** | [**ContentLibraryItemTransferEndpoint**](ContentLibraryItemTransferEndpoint.md) |  | [optional] 
 **source_type** | [**ContentLibraryItemUpdatesessionFileSourceType**](ContentLibraryItemUpdatesessionFileSourceType.md) |  | 
+**source_endpoint** | [**ContentLibraryItemTransferEndpoint**](ContentLibraryItemTransferEndpoint.md) |  | [optional] 
+**size** | **Integer** | The file size, in bytes. | [optional] 
+**checksum_info** | [**ContentLibraryItemFileChecksumInfo**](ContentLibraryItemFileChecksumInfo.md) |  | [optional] 
 
 

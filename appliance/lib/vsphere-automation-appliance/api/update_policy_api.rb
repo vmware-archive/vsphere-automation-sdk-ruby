@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Gets the automatic update checking and staging policy.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceUpdatePolicyResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
+    # @return [ApplianceUpdatePolicyResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Gets the automatic update checking and staging policy.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceUpdatePolicyResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceUpdatePolicyResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UpdatePolicyApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/update/policy'
+      local_var_path = '/appliance/update/policy'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceUpdatePolicyResp',
+	  '200' => 'Appliance::ApplianceUpdatePolicyResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '401' => 'Appliance::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'Appliance::VapiStdErrorsUnauthorizedError',
@@ -89,7 +89,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling UpdatePolicyApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/update/policy'
+      local_var_path = '/appliance/update/policy'
 
       # query parameters
       query_params = {}

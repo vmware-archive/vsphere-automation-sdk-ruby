@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterStoragePoliciesSummary
-    # Description of the storage policy.
-    attr_accessor :description
+    # Identifier of the storage policy. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vcenter.StoragePolicy. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vcenter.StoragePolicy.
+    attr_accessor :policy
 
     # Name of the storage policy.
     attr_accessor :name
 
-    # Identifier of the storage policy. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: vcenter.StoragePolicy. When operations return a value of this structure as a result, the field will be an identifier for the resource type: vcenter.StoragePolicy.
-    attr_accessor :policy
+    # Description of the storage policy.
+    attr_accessor :description
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'description' => :'description',
+        :'policy' => :'policy',
         :'name' => :'name',
-        :'policy' => :'policy'
+        :'description' => :'description'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'description' => :'String',
+        :'policy' => :'String',
         :'name' => :'String',
-        :'policy' => :'String'
+        :'description' => :'String'
       }
     end
 
@@ -46,16 +46,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.has_key?(:'policy')
+        self.policy = attributes[:'policy']
       end
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'policy')
-        self.policy = attributes[:'policy']
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
       end
     end
 
@@ -63,16 +63,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      if @policy.nil?
+        invalid_properties.push('invalid value for "policy", policy cannot be nil.')
       end
 
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @policy.nil?
-        invalid_properties.push('invalid value for "policy", policy cannot be nil.')
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
       invalid_properties
@@ -81,9 +81,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @description.nil?
-      return false if @name.nil?
       return false if @policy.nil?
+      return false if @name.nil?
+      return false if @description.nil?
       true
     end
 
@@ -92,9 +92,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          description == o.description &&
+          policy == o.policy &&
           name == o.name &&
-          policy == o.policy
+          description == o.description
     end
 
     # @see the `==` method
@@ -106,7 +106,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, name, policy].hash
+      [policy, name, description].hash
     end
 
     # Builds the object from hash

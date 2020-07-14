@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param library_item_id Identifier of the library item whose storage information should be retrieved.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemStorageResp|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemStorageResult|VapiStdErrorsNotFoundError|]
     def get(library_item_id, request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(library_item_id, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param library_item_id Identifier of the library item whose storage information should be retrieved.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemStorageResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemStorageResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(library_item_id, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemStorageApi.get ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemStorageApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/storage/id:{library_item_id}?~action=get'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/storage/id:{library_item_id}?~action=get'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemStorageResp',
+	  '200' => 'Content::ContentLibraryItemStorageResult',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Lists all storage items for a given library item.
     # @param library_item_id Identifier of the library item whose storage information should be listed.
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemStorageListResp|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemStorageListResult|VapiStdErrorsNotFoundError|]
     def list(library_item_id, opts = {})
       data, _status_code, _headers = list_with_http_info(library_item_id, opts)
       data
@@ -91,7 +91,7 @@ module VSphereAutomation
     # @api private
     # @param library_item_id Identifier of the library item whose storage information should be listed.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemStorageListResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemStorageListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(library_item_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemStorageApi.list ...'
@@ -101,7 +101,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_item_id' when calling LibraryItemStorageApi.list"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/storage'
+      local_var_path = '/com/vmware/content/library/item/storage'
 
       # query parameters
       query_params = {}
@@ -125,7 +125,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemStorageListResp',
+	  '200' => 'Content::ContentLibraryItemStorageListResult',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

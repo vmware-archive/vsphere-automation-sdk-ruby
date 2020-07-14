@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterOvfLibraryItemCreateSpec
+    # Name to use in the OVF descriptor stored in the library item.
+    attr_accessor :name
+
     # Description to use in the OVF descriptor stored in the library item.
     attr_accessor :description
 
     # Flags to use for OVF package creation. The supported flags can be obtained using {@link ExportFlag#list}.
     attr_accessor :flags
 
-    # Name to use in the OVF descriptor stored in the library item.
-    attr_accessor :name
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'name' => :'name',
         :'description' => :'description',
-        :'flags' => :'flags',
-        :'name' => :'name'
+        :'flags' => :'flags'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'name' => :'String',
         :'description' => :'String',
-        :'flags' => :'Array<String>',
-        :'name' => :'String'
+        :'flags' => :'Array<String>'
       }
     end
 
@@ -46,6 +46,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
@@ -54,10 +58,6 @@ module VSphereAutomation
         if (value = attributes[:'flags']).is_a?(Array)
           self.flags = value
         end
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
       end
     end
 
@@ -79,9 +79,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          name == o.name &&
           description == o.description &&
-          flags == o.flags &&
-          name == o.name
+          flags == o.flags
     end
 
     # @see the `==` method
@@ -93,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, flags, name].hash
+      [name, description, flags].hash
     end
 
     # Builds the object from hash

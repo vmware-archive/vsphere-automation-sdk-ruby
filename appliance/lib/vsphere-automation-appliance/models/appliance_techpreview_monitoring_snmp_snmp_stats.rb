@@ -11,14 +11,41 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPStats
+    # System uptime
+    attr_accessor :sysuptime
+
+    # Last updated time
+    attr_accessor :worstrtimelast
+
     # Average response time
     attr_accessor :avgresponsetime
 
-    # No of ave:rage var binds
-    attr_accessor :avgvarbinds
+    # Response time
+    attr_accessor :worstresponsetime
 
-    # No of parse errors
-    attr_accessor :inasnparseerrs
+    # No of input packets
+    attr_accessor :inpkts
+
+    # No of output packets
+    attr_accessor :outpkts
+
+    # No of stats not in time window
+    attr_accessor :usmstatsnotintimewindows
+
+    # No of usm stats unknown
+    attr_accessor :usmstatsunknownusernames
+
+    # No of usm stats unknown engine ids
+    attr_accessor :usmstatsunknownengineids
+
+    # No of wrogn digests
+    attr_accessor :usmstatswrongdigests
+
+    # No. of decryption errors
+    attr_accessor :usmstatsdecryptionerrors
+
+    # No of bad versions
+    attr_accessor :inbadversions
 
     # No of bad community names
     attr_accessor :inbadcommunitynames
@@ -26,26 +53,26 @@ module VSphereAutomation
     # No of bad community uses
     attr_accessor :inbadcommunityuses
 
-    # No of bad values
-    attr_accessor :inbadvalues
-
-    # No of bad versions
-    attr_accessor :inbadversions
-
-    # No of gen errors
-    attr_accessor :ingenerrs
-
-    # No of no such names
-    attr_accessor :innosuchnames
-
-    # No of input packets
-    attr_accessor :inpkts
+    # No of parse errors
+    attr_accessor :inasnparseerrs
 
     # No of too bigs
     attr_accessor :intoobigs
 
-    # No of max var binds
-    attr_accessor :maxvarbinds
+    # No of no such names
+    attr_accessor :innosuchnames
+
+    # No of bad values
+    attr_accessor :inbadvalues
+
+    # No of gen errors
+    attr_accessor :ingenerrs
+
+    # No out output too bigs
+    attr_accessor :outtoobigs
+
+    # No of no such names
+    attr_accessor :outnosuchnames
 
     # No of bad values
     attr_accessor :outbadvalues
@@ -53,108 +80,81 @@ module VSphereAutomation
     # No of gen errors
     attr_accessor :outgenerrs
 
-    # No of no such names
-    attr_accessor :outnosuchnames
-
-    # No of output packets
-    attr_accessor :outpkts
-
-    # No out output too bigs
-    attr_accessor :outtoobigs
-
     # No of output traps
     attr_accessor :outtraps
 
     # No of silent drops
     attr_accessor :silentdrops
 
-    # System uptime
-    attr_accessor :sysuptime
+    # No of ave:rage var binds
+    attr_accessor :avgvarbinds
 
-    # No. of decryption errors
-    attr_accessor :usmstatsdecryptionerrors
-
-    # No of stats not in time window
-    attr_accessor :usmstatsnotintimewindows
-
-    # No of usm stats unknown engine ids
-    attr_accessor :usmstatsunknownengineids
-
-    # No of usm stats unknown
-    attr_accessor :usmstatsunknownusernames
-
-    # No of wrogn digests
-    attr_accessor :usmstatswrongdigests
-
-    # Response time
-    attr_accessor :worstresponsetime
-
-    # Last updated time
-    attr_accessor :worstrtimelast
+    # No of max var binds
+    attr_accessor :maxvarbinds
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'sysuptime' => :'sysuptime',
+        :'worstrtimelast' => :'worstrtimelast',
         :'avgresponsetime' => :'avgresponsetime',
-        :'avgvarbinds' => :'avgvarbinds',
-        :'inasnparseerrs' => :'inasnparseerrs',
+        :'worstresponsetime' => :'worstresponsetime',
+        :'inpkts' => :'inpkts',
+        :'outpkts' => :'outpkts',
+        :'usmstatsnotintimewindows' => :'usmstatsnotintimewindows',
+        :'usmstatsunknownusernames' => :'usmstatsunknownusernames',
+        :'usmstatsunknownengineids' => :'usmstatsunknownengineids',
+        :'usmstatswrongdigests' => :'usmstatswrongdigests',
+        :'usmstatsdecryptionerrors' => :'usmstatsdecryptionerrors',
+        :'inbadversions' => :'inbadversions',
         :'inbadcommunitynames' => :'inbadcommunitynames',
         :'inbadcommunityuses' => :'inbadcommunityuses',
-        :'inbadvalues' => :'inbadvalues',
-        :'inbadversions' => :'inbadversions',
-        :'ingenerrs' => :'ingenerrs',
-        :'innosuchnames' => :'innosuchnames',
-        :'inpkts' => :'inpkts',
+        :'inasnparseerrs' => :'inasnparseerrs',
         :'intoobigs' => :'intoobigs',
-        :'maxvarbinds' => :'maxvarbinds',
+        :'innosuchnames' => :'innosuchnames',
+        :'inbadvalues' => :'inbadvalues',
+        :'ingenerrs' => :'ingenerrs',
+        :'outtoobigs' => :'outtoobigs',
+        :'outnosuchnames' => :'outnosuchnames',
         :'outbadvalues' => :'outbadvalues',
         :'outgenerrs' => :'outgenerrs',
-        :'outnosuchnames' => :'outnosuchnames',
-        :'outpkts' => :'outpkts',
-        :'outtoobigs' => :'outtoobigs',
         :'outtraps' => :'outtraps',
         :'silentdrops' => :'silentdrops',
-        :'sysuptime' => :'sysuptime',
-        :'usmstatsdecryptionerrors' => :'usmstatsdecryptionerrors',
-        :'usmstatsnotintimewindows' => :'usmstatsnotintimewindows',
-        :'usmstatsunknownengineids' => :'usmstatsunknownengineids',
-        :'usmstatsunknownusernames' => :'usmstatsunknownusernames',
-        :'usmstatswrongdigests' => :'usmstatswrongdigests',
-        :'worstresponsetime' => :'worstresponsetime',
-        :'worstrtimelast' => :'worstrtimelast'
+        :'avgvarbinds' => :'avgvarbinds',
+        :'maxvarbinds' => :'maxvarbinds'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'sysuptime' => :'String',
+        :'worstrtimelast' => :'String',
         :'avgresponsetime' => :'String',
-        :'avgvarbinds' => :'Integer',
-        :'inasnparseerrs' => :'Integer',
+        :'worstresponsetime' => :'String',
+        :'inpkts' => :'Integer',
+        :'outpkts' => :'Integer',
+        :'usmstatsnotintimewindows' => :'Integer',
+        :'usmstatsunknownusernames' => :'Integer',
+        :'usmstatsunknownengineids' => :'Integer',
+        :'usmstatswrongdigests' => :'Integer',
+        :'usmstatsdecryptionerrors' => :'Integer',
+        :'inbadversions' => :'Integer',
         :'inbadcommunitynames' => :'Integer',
         :'inbadcommunityuses' => :'Integer',
-        :'inbadvalues' => :'Integer',
-        :'inbadversions' => :'Integer',
-        :'ingenerrs' => :'Integer',
-        :'innosuchnames' => :'Integer',
-        :'inpkts' => :'Integer',
+        :'inasnparseerrs' => :'Integer',
         :'intoobigs' => :'Integer',
-        :'maxvarbinds' => :'Integer',
+        :'innosuchnames' => :'Integer',
+        :'inbadvalues' => :'Integer',
+        :'ingenerrs' => :'Integer',
+        :'outtoobigs' => :'Integer',
+        :'outnosuchnames' => :'Integer',
         :'outbadvalues' => :'Integer',
         :'outgenerrs' => :'Integer',
-        :'outnosuchnames' => :'Integer',
-        :'outpkts' => :'Integer',
-        :'outtoobigs' => :'Integer',
         :'outtraps' => :'Integer',
         :'silentdrops' => :'Integer',
-        :'sysuptime' => :'String',
-        :'usmstatsdecryptionerrors' => :'Integer',
-        :'usmstatsnotintimewindows' => :'Integer',
-        :'usmstatsunknownengineids' => :'Integer',
-        :'usmstatsunknownusernames' => :'Integer',
-        :'usmstatswrongdigests' => :'Integer',
-        :'worstresponsetime' => :'String',
-        :'worstrtimelast' => :'String'
+        :'avgvarbinds' => :'Integer',
+        :'maxvarbinds' => :'Integer'
       }
     end
 
@@ -166,16 +166,52 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'sysuptime')
+        self.sysuptime = attributes[:'sysuptime']
+      end
+
+      if attributes.has_key?(:'worstrtimelast')
+        self.worstrtimelast = attributes[:'worstrtimelast']
+      end
+
       if attributes.has_key?(:'avgresponsetime')
         self.avgresponsetime = attributes[:'avgresponsetime']
       end
 
-      if attributes.has_key?(:'avgvarbinds')
-        self.avgvarbinds = attributes[:'avgvarbinds']
+      if attributes.has_key?(:'worstresponsetime')
+        self.worstresponsetime = attributes[:'worstresponsetime']
       end
 
-      if attributes.has_key?(:'inasnparseerrs')
-        self.inasnparseerrs = attributes[:'inasnparseerrs']
+      if attributes.has_key?(:'inpkts')
+        self.inpkts = attributes[:'inpkts']
+      end
+
+      if attributes.has_key?(:'outpkts')
+        self.outpkts = attributes[:'outpkts']
+      end
+
+      if attributes.has_key?(:'usmstatsnotintimewindows')
+        self.usmstatsnotintimewindows = attributes[:'usmstatsnotintimewindows']
+      end
+
+      if attributes.has_key?(:'usmstatsunknownusernames')
+        self.usmstatsunknownusernames = attributes[:'usmstatsunknownusernames']
+      end
+
+      if attributes.has_key?(:'usmstatsunknownengineids')
+        self.usmstatsunknownengineids = attributes[:'usmstatsunknownengineids']
+      end
+
+      if attributes.has_key?(:'usmstatswrongdigests')
+        self.usmstatswrongdigests = attributes[:'usmstatswrongdigests']
+      end
+
+      if attributes.has_key?(:'usmstatsdecryptionerrors')
+        self.usmstatsdecryptionerrors = attributes[:'usmstatsdecryptionerrors']
+      end
+
+      if attributes.has_key?(:'inbadversions')
+        self.inbadversions = attributes[:'inbadversions']
       end
 
       if attributes.has_key?(:'inbadcommunitynames')
@@ -186,32 +222,32 @@ module VSphereAutomation
         self.inbadcommunityuses = attributes[:'inbadcommunityuses']
       end
 
-      if attributes.has_key?(:'inbadvalues')
-        self.inbadvalues = attributes[:'inbadvalues']
-      end
-
-      if attributes.has_key?(:'inbadversions')
-        self.inbadversions = attributes[:'inbadversions']
-      end
-
-      if attributes.has_key?(:'ingenerrs')
-        self.ingenerrs = attributes[:'ingenerrs']
-      end
-
-      if attributes.has_key?(:'innosuchnames')
-        self.innosuchnames = attributes[:'innosuchnames']
-      end
-
-      if attributes.has_key?(:'inpkts')
-        self.inpkts = attributes[:'inpkts']
+      if attributes.has_key?(:'inasnparseerrs')
+        self.inasnparseerrs = attributes[:'inasnparseerrs']
       end
 
       if attributes.has_key?(:'intoobigs')
         self.intoobigs = attributes[:'intoobigs']
       end
 
-      if attributes.has_key?(:'maxvarbinds')
-        self.maxvarbinds = attributes[:'maxvarbinds']
+      if attributes.has_key?(:'innosuchnames')
+        self.innosuchnames = attributes[:'innosuchnames']
+      end
+
+      if attributes.has_key?(:'inbadvalues')
+        self.inbadvalues = attributes[:'inbadvalues']
+      end
+
+      if attributes.has_key?(:'ingenerrs')
+        self.ingenerrs = attributes[:'ingenerrs']
+      end
+
+      if attributes.has_key?(:'outtoobigs')
+        self.outtoobigs = attributes[:'outtoobigs']
+      end
+
+      if attributes.has_key?(:'outnosuchnames')
+        self.outnosuchnames = attributes[:'outnosuchnames']
       end
 
       if attributes.has_key?(:'outbadvalues')
@@ -222,18 +258,6 @@ module VSphereAutomation
         self.outgenerrs = attributes[:'outgenerrs']
       end
 
-      if attributes.has_key?(:'outnosuchnames')
-        self.outnosuchnames = attributes[:'outnosuchnames']
-      end
-
-      if attributes.has_key?(:'outpkts')
-        self.outpkts = attributes[:'outpkts']
-      end
-
-      if attributes.has_key?(:'outtoobigs')
-        self.outtoobigs = attributes[:'outtoobigs']
-      end
-
       if attributes.has_key?(:'outtraps')
         self.outtraps = attributes[:'outtraps']
       end
@@ -242,36 +266,12 @@ module VSphereAutomation
         self.silentdrops = attributes[:'silentdrops']
       end
 
-      if attributes.has_key?(:'sysuptime')
-        self.sysuptime = attributes[:'sysuptime']
+      if attributes.has_key?(:'avgvarbinds')
+        self.avgvarbinds = attributes[:'avgvarbinds']
       end
 
-      if attributes.has_key?(:'usmstatsdecryptionerrors')
-        self.usmstatsdecryptionerrors = attributes[:'usmstatsdecryptionerrors']
-      end
-
-      if attributes.has_key?(:'usmstatsnotintimewindows')
-        self.usmstatsnotintimewindows = attributes[:'usmstatsnotintimewindows']
-      end
-
-      if attributes.has_key?(:'usmstatsunknownengineids')
-        self.usmstatsunknownengineids = attributes[:'usmstatsunknownengineids']
-      end
-
-      if attributes.has_key?(:'usmstatsunknownusernames')
-        self.usmstatsunknownusernames = attributes[:'usmstatsunknownusernames']
-      end
-
-      if attributes.has_key?(:'usmstatswrongdigests')
-        self.usmstatswrongdigests = attributes[:'usmstatswrongdigests']
-      end
-
-      if attributes.has_key?(:'worstresponsetime')
-        self.worstresponsetime = attributes[:'worstresponsetime']
-      end
-
-      if attributes.has_key?(:'worstrtimelast')
-        self.worstrtimelast = attributes[:'worstrtimelast']
+      if attributes.has_key?(:'maxvarbinds')
+        self.maxvarbinds = attributes[:'maxvarbinds']
       end
     end
 
@@ -279,16 +279,52 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @sysuptime.nil?
+        invalid_properties.push('invalid value for "sysuptime", sysuptime cannot be nil.')
+      end
+
+      if @worstrtimelast.nil?
+        invalid_properties.push('invalid value for "worstrtimelast", worstrtimelast cannot be nil.')
+      end
+
       if @avgresponsetime.nil?
         invalid_properties.push('invalid value for "avgresponsetime", avgresponsetime cannot be nil.')
       end
 
-      if @avgvarbinds.nil?
-        invalid_properties.push('invalid value for "avgvarbinds", avgvarbinds cannot be nil.')
+      if @worstresponsetime.nil?
+        invalid_properties.push('invalid value for "worstresponsetime", worstresponsetime cannot be nil.')
       end
 
-      if @inasnparseerrs.nil?
-        invalid_properties.push('invalid value for "inasnparseerrs", inasnparseerrs cannot be nil.')
+      if @inpkts.nil?
+        invalid_properties.push('invalid value for "inpkts", inpkts cannot be nil.')
+      end
+
+      if @outpkts.nil?
+        invalid_properties.push('invalid value for "outpkts", outpkts cannot be nil.')
+      end
+
+      if @usmstatsnotintimewindows.nil?
+        invalid_properties.push('invalid value for "usmstatsnotintimewindows", usmstatsnotintimewindows cannot be nil.')
+      end
+
+      if @usmstatsunknownusernames.nil?
+        invalid_properties.push('invalid value for "usmstatsunknownusernames", usmstatsunknownusernames cannot be nil.')
+      end
+
+      if @usmstatsunknownengineids.nil?
+        invalid_properties.push('invalid value for "usmstatsunknownengineids", usmstatsunknownengineids cannot be nil.')
+      end
+
+      if @usmstatswrongdigests.nil?
+        invalid_properties.push('invalid value for "usmstatswrongdigests", usmstatswrongdigests cannot be nil.')
+      end
+
+      if @usmstatsdecryptionerrors.nil?
+        invalid_properties.push('invalid value for "usmstatsdecryptionerrors", usmstatsdecryptionerrors cannot be nil.')
+      end
+
+      if @inbadversions.nil?
+        invalid_properties.push('invalid value for "inbadversions", inbadversions cannot be nil.')
       end
 
       if @inbadcommunitynames.nil?
@@ -299,32 +335,32 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "inbadcommunityuses", inbadcommunityuses cannot be nil.')
       end
 
-      if @inbadvalues.nil?
-        invalid_properties.push('invalid value for "inbadvalues", inbadvalues cannot be nil.')
-      end
-
-      if @inbadversions.nil?
-        invalid_properties.push('invalid value for "inbadversions", inbadversions cannot be nil.')
-      end
-
-      if @ingenerrs.nil?
-        invalid_properties.push('invalid value for "ingenerrs", ingenerrs cannot be nil.')
-      end
-
-      if @innosuchnames.nil?
-        invalid_properties.push('invalid value for "innosuchnames", innosuchnames cannot be nil.')
-      end
-
-      if @inpkts.nil?
-        invalid_properties.push('invalid value for "inpkts", inpkts cannot be nil.')
+      if @inasnparseerrs.nil?
+        invalid_properties.push('invalid value for "inasnparseerrs", inasnparseerrs cannot be nil.')
       end
 
       if @intoobigs.nil?
         invalid_properties.push('invalid value for "intoobigs", intoobigs cannot be nil.')
       end
 
-      if @maxvarbinds.nil?
-        invalid_properties.push('invalid value for "maxvarbinds", maxvarbinds cannot be nil.')
+      if @innosuchnames.nil?
+        invalid_properties.push('invalid value for "innosuchnames", innosuchnames cannot be nil.')
+      end
+
+      if @inbadvalues.nil?
+        invalid_properties.push('invalid value for "inbadvalues", inbadvalues cannot be nil.')
+      end
+
+      if @ingenerrs.nil?
+        invalid_properties.push('invalid value for "ingenerrs", ingenerrs cannot be nil.')
+      end
+
+      if @outtoobigs.nil?
+        invalid_properties.push('invalid value for "outtoobigs", outtoobigs cannot be nil.')
+      end
+
+      if @outnosuchnames.nil?
+        invalid_properties.push('invalid value for "outnosuchnames", outnosuchnames cannot be nil.')
       end
 
       if @outbadvalues.nil?
@@ -335,18 +371,6 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "outgenerrs", outgenerrs cannot be nil.')
       end
 
-      if @outnosuchnames.nil?
-        invalid_properties.push('invalid value for "outnosuchnames", outnosuchnames cannot be nil.')
-      end
-
-      if @outpkts.nil?
-        invalid_properties.push('invalid value for "outpkts", outpkts cannot be nil.')
-      end
-
-      if @outtoobigs.nil?
-        invalid_properties.push('invalid value for "outtoobigs", outtoobigs cannot be nil.')
-      end
-
       if @outtraps.nil?
         invalid_properties.push('invalid value for "outtraps", outtraps cannot be nil.')
       end
@@ -355,36 +379,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "silentdrops", silentdrops cannot be nil.')
       end
 
-      if @sysuptime.nil?
-        invalid_properties.push('invalid value for "sysuptime", sysuptime cannot be nil.')
+      if @avgvarbinds.nil?
+        invalid_properties.push('invalid value for "avgvarbinds", avgvarbinds cannot be nil.')
       end
 
-      if @usmstatsdecryptionerrors.nil?
-        invalid_properties.push('invalid value for "usmstatsdecryptionerrors", usmstatsdecryptionerrors cannot be nil.')
-      end
-
-      if @usmstatsnotintimewindows.nil?
-        invalid_properties.push('invalid value for "usmstatsnotintimewindows", usmstatsnotintimewindows cannot be nil.')
-      end
-
-      if @usmstatsunknownengineids.nil?
-        invalid_properties.push('invalid value for "usmstatsunknownengineids", usmstatsunknownengineids cannot be nil.')
-      end
-
-      if @usmstatsunknownusernames.nil?
-        invalid_properties.push('invalid value for "usmstatsunknownusernames", usmstatsunknownusernames cannot be nil.')
-      end
-
-      if @usmstatswrongdigests.nil?
-        invalid_properties.push('invalid value for "usmstatswrongdigests", usmstatswrongdigests cannot be nil.')
-      end
-
-      if @worstresponsetime.nil?
-        invalid_properties.push('invalid value for "worstresponsetime", worstresponsetime cannot be nil.')
-      end
-
-      if @worstrtimelast.nil?
-        invalid_properties.push('invalid value for "worstrtimelast", worstrtimelast cannot be nil.')
+      if @maxvarbinds.nil?
+        invalid_properties.push('invalid value for "maxvarbinds", maxvarbinds cannot be nil.')
       end
 
       invalid_properties
@@ -393,33 +393,33 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @sysuptime.nil?
+      return false if @worstrtimelast.nil?
       return false if @avgresponsetime.nil?
-      return false if @avgvarbinds.nil?
-      return false if @inasnparseerrs.nil?
+      return false if @worstresponsetime.nil?
+      return false if @inpkts.nil?
+      return false if @outpkts.nil?
+      return false if @usmstatsnotintimewindows.nil?
+      return false if @usmstatsunknownusernames.nil?
+      return false if @usmstatsunknownengineids.nil?
+      return false if @usmstatswrongdigests.nil?
+      return false if @usmstatsdecryptionerrors.nil?
+      return false if @inbadversions.nil?
       return false if @inbadcommunitynames.nil?
       return false if @inbadcommunityuses.nil?
-      return false if @inbadvalues.nil?
-      return false if @inbadversions.nil?
-      return false if @ingenerrs.nil?
-      return false if @innosuchnames.nil?
-      return false if @inpkts.nil?
+      return false if @inasnparseerrs.nil?
       return false if @intoobigs.nil?
-      return false if @maxvarbinds.nil?
+      return false if @innosuchnames.nil?
+      return false if @inbadvalues.nil?
+      return false if @ingenerrs.nil?
+      return false if @outtoobigs.nil?
+      return false if @outnosuchnames.nil?
       return false if @outbadvalues.nil?
       return false if @outgenerrs.nil?
-      return false if @outnosuchnames.nil?
-      return false if @outpkts.nil?
-      return false if @outtoobigs.nil?
       return false if @outtraps.nil?
       return false if @silentdrops.nil?
-      return false if @sysuptime.nil?
-      return false if @usmstatsdecryptionerrors.nil?
-      return false if @usmstatsnotintimewindows.nil?
-      return false if @usmstatsunknownengineids.nil?
-      return false if @usmstatsunknownusernames.nil?
-      return false if @usmstatswrongdigests.nil?
-      return false if @worstresponsetime.nil?
-      return false if @worstrtimelast.nil?
+      return false if @avgvarbinds.nil?
+      return false if @maxvarbinds.nil?
       true
     end
 
@@ -428,33 +428,33 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          sysuptime == o.sysuptime &&
+          worstrtimelast == o.worstrtimelast &&
           avgresponsetime == o.avgresponsetime &&
-          avgvarbinds == o.avgvarbinds &&
-          inasnparseerrs == o.inasnparseerrs &&
+          worstresponsetime == o.worstresponsetime &&
+          inpkts == o.inpkts &&
+          outpkts == o.outpkts &&
+          usmstatsnotintimewindows == o.usmstatsnotintimewindows &&
+          usmstatsunknownusernames == o.usmstatsunknownusernames &&
+          usmstatsunknownengineids == o.usmstatsunknownengineids &&
+          usmstatswrongdigests == o.usmstatswrongdigests &&
+          usmstatsdecryptionerrors == o.usmstatsdecryptionerrors &&
+          inbadversions == o.inbadversions &&
           inbadcommunitynames == o.inbadcommunitynames &&
           inbadcommunityuses == o.inbadcommunityuses &&
-          inbadvalues == o.inbadvalues &&
-          inbadversions == o.inbadversions &&
-          ingenerrs == o.ingenerrs &&
-          innosuchnames == o.innosuchnames &&
-          inpkts == o.inpkts &&
+          inasnparseerrs == o.inasnparseerrs &&
           intoobigs == o.intoobigs &&
-          maxvarbinds == o.maxvarbinds &&
+          innosuchnames == o.innosuchnames &&
+          inbadvalues == o.inbadvalues &&
+          ingenerrs == o.ingenerrs &&
+          outtoobigs == o.outtoobigs &&
+          outnosuchnames == o.outnosuchnames &&
           outbadvalues == o.outbadvalues &&
           outgenerrs == o.outgenerrs &&
-          outnosuchnames == o.outnosuchnames &&
-          outpkts == o.outpkts &&
-          outtoobigs == o.outtoobigs &&
           outtraps == o.outtraps &&
           silentdrops == o.silentdrops &&
-          sysuptime == o.sysuptime &&
-          usmstatsdecryptionerrors == o.usmstatsdecryptionerrors &&
-          usmstatsnotintimewindows == o.usmstatsnotintimewindows &&
-          usmstatsunknownengineids == o.usmstatsunknownengineids &&
-          usmstatsunknownusernames == o.usmstatsunknownusernames &&
-          usmstatswrongdigests == o.usmstatswrongdigests &&
-          worstresponsetime == o.worstresponsetime &&
-          worstrtimelast == o.worstrtimelast
+          avgvarbinds == o.avgvarbinds &&
+          maxvarbinds == o.maxvarbinds
     end
 
     # @see the `==` method
@@ -466,7 +466,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [avgresponsetime, avgvarbinds, inasnparseerrs, inbadcommunitynames, inbadcommunityuses, inbadvalues, inbadversions, ingenerrs, innosuchnames, inpkts, intoobigs, maxvarbinds, outbadvalues, outgenerrs, outnosuchnames, outpkts, outtoobigs, outtraps, silentdrops, sysuptime, usmstatsdecryptionerrors, usmstatsnotintimewindows, usmstatsunknownengineids, usmstatsunknownusernames, usmstatswrongdigests, worstresponsetime, worstrtimelast].hash
+      [sysuptime, worstrtimelast, avgresponsetime, worstresponsetime, inpkts, outpkts, usmstatsnotintimewindows, usmstatsunknownusernames, usmstatsunknownengineids, usmstatswrongdigests, usmstatsdecryptionerrors, inbadversions, inbadcommunitynames, inbadcommunityuses, inasnparseerrs, intoobigs, innosuchnames, inbadvalues, ingenerrs, outtoobigs, outnosuchnames, outbadvalues, outgenerrs, outtraps, silentdrops, avgvarbinds, maxvarbinds].hash
     end
 
     # Builds the object from hash

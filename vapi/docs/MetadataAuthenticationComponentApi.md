@@ -1,16 +1,16 @@
 # VSphereAutomation::VAPI::MetadataAuthenticationComponentApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fingerprint**](MetadataAuthenticationComponentApi.md#fingerprint) | **POST** /rest/com/vmware/vapi/metadata/authentication/component/id:{component_id}?~action&#x3D;fingerprint | Retrieves the fingerprint computed from the authentication metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.authentication.Component#get}.
-[**get**](MetadataAuthenticationComponentApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/authentication/component/id:{component_id} | Retrieves authentication information about the component element corresponding to {@param.name componentId}. &lt;p&gt; The {@link ComponentData} contains the authentication information about the component element and it&#39;s fingerprint. It contains information about all the package elements that belong to this component element.
-[**list**](MetadataAuthenticationComponentApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/authentication/component | Returns the identifiers for the component elements that have authentication information.
+[**fingerprint**](MetadataAuthenticationComponentApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/authentication/component/id:{component_id}?~action&#x3D;fingerprint | Retrieves the fingerprint computed from the authentication metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.authentication.Component#get}.
+[**get**](MetadataAuthenticationComponentApi.md#get) | **GET** /com/vmware/vapi/metadata/authentication/component/id:{component_id} | Retrieves authentication information about the component element corresponding to {@param.name componentId}. &lt;p&gt; The {@link ComponentData} contains the authentication information about the component element and it&#39;s fingerprint. It contains information about all the package elements that belong to this component element.
+[**list**](MetadataAuthenticationComponentApi.md#list) | **GET** /com/vmware/vapi/metadata/authentication/component | Returns the identifiers for the component elements that have authentication information.
 
 
 # **fingerprint**
-> VapiMetadataAuthenticationComponentFingerprintResp fingerprint(component_id)
+> VapiMetadataAuthenticationComponentFingerprintResult fingerprint(component_id)
 
 Retrieves the fingerprint computed from the authentication metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.authentication.Component#get}.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataAuthenticationComponentFingerprintResp**](VapiMetadataAuthenticationComponentFingerprintResp.md)
+[**VapiMetadataAuthenticationComponentFingerprintResult**](VapiMetadataAuthenticationComponentFingerprintResult.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> VapiMetadataAuthenticationComponentResp get(component_id)
+> VapiMetadataAuthenticationComponentResult get(component_id)
 
 Retrieves authentication information about the component element corresponding to {@param.name componentId}. <p> The {@link ComponentData} contains the authentication information about the component element and it's fingerprint. It contains information about all the package elements that belong to this component element.
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataAuthenticationComponentResp**](VapiMetadataAuthenticationComponentResp.md)
+[**VapiMetadataAuthenticationComponentResult**](VapiMetadataAuthenticationComponentResult.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataAuthenticationComponentListResp list
+> VapiMetadataAuthenticationComponentListResult list
 
 Returns the identifiers for the component elements that have authentication information.
 
@@ -142,7 +142,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataAuthenticationComponentListResp**](VapiMetadataAuthenticationComponentListResp.md)
+[**VapiMetadataAuthenticationComponentListResult**](VapiMetadataAuthenticationComponentListResult.md)
 
 ### Authorization
 

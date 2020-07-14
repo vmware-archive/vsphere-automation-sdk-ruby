@@ -1,16 +1,16 @@
 # VSphereAutomation::VAPI::MetadataPrivilegeComponentApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fingerprint**](MetadataPrivilegeComponentApi.md#fingerprint) | **POST** /rest/com/vmware/vapi/metadata/privilege/component/id:{component_id}?~action&#x3D;fingerprint | Retrieves the fingerprint computed from the privilege metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.privilege.Component#get}.
-[**get**](MetadataPrivilegeComponentApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/privilege/component/id:{component_id} | Retrieves privilege information about the component element corresponding to {@param.name componentId}. &lt;p&gt; The {@link ComponentData} contains the privilege information about the component element and its fingerprint. It contains information about all the package elements that belong to this component element.
-[**list**](MetadataPrivilegeComponentApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/privilege/component | Returns the identifiers for the component elements that have privilege information.
+[**fingerprint**](MetadataPrivilegeComponentApi.md#fingerprint) | **POST** /com/vmware/vapi/metadata/privilege/component/id:{component_id}?~action&#x3D;fingerprint | Retrieves the fingerprint computed from the privilege metadata of the component element corresponding to {@param.name componentId}. &lt;p&gt; The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.privilege.Component#get}.
+[**get**](MetadataPrivilegeComponentApi.md#get) | **GET** /com/vmware/vapi/metadata/privilege/component/id:{component_id} | Retrieves privilege information about the component element corresponding to {@param.name componentId}. &lt;p&gt; The {@link ComponentData} contains the privilege information about the component element and its fingerprint. It contains information about all the package elements that belong to this component element.
+[**list**](MetadataPrivilegeComponentApi.md#list) | **GET** /com/vmware/vapi/metadata/privilege/component | Returns the identifiers for the component elements that have privilege information.
 
 
 # **fingerprint**
-> VapiMetadataPrivilegeComponentFingerprintResp fingerprint(component_id)
+> VapiMetadataPrivilegeComponentFingerprintResult fingerprint(component_id)
 
 Retrieves the fingerprint computed from the privilege metadata of the component element corresponding to {@param.name componentId}. <p> The fingerprint provides clients an efficient way to check if the metadata for a particular component has been modified on the server. The client can do this by comparing the result of this operation with the fingerprint returned in the result of {@link vapi.metadata.privilege.Component#get}.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataPrivilegeComponentFingerprintResp**](VapiMetadataPrivilegeComponentFingerprintResp.md)
+[**VapiMetadataPrivilegeComponentFingerprintResult**](VapiMetadataPrivilegeComponentFingerprintResult.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> VapiMetadataPrivilegeComponentResp get(component_id)
+> VapiMetadataPrivilegeComponentResult get(component_id)
 
 Retrieves privilege information about the component element corresponding to {@param.name componentId}. <p> The {@link ComponentData} contains the privilege information about the component element and its fingerprint. It contains information about all the package elements that belong to this component element.
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataPrivilegeComponentResp**](VapiMetadataPrivilegeComponentResp.md)
+[**VapiMetadataPrivilegeComponentResult**](VapiMetadataPrivilegeComponentResult.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataPrivilegeComponentListResp list
+> VapiMetadataPrivilegeComponentListResult list
 
 Returns the identifiers for the component elements that have privilege information.
 
@@ -142,7 +142,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataPrivilegeComponentListResp**](VapiMetadataPrivilegeComponentListResp.md)
+[**VapiMetadataPrivilegeComponentListResult**](VapiMetadataPrivilegeComponentListResult.md)
 
 ### Authorization
 

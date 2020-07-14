@@ -72,26 +72,9 @@ module VSphereAutomation
       @cookie = cookie_from_response(response)
       api_key_from_response(response)
 
-      return_type = get_return_type(opts, response.code)
+      return_type = opts.fetch(:return_type, {}).fetch(response.code, nil)
       data = deserialize(response, return_type)
       [data, Integer(response.code), response.each_header.to_h]
-    end
-
-    # Returns the expected type of the response body
-    #
-    # @params opts [Hash] options from the API call
-    # @params code [String] HTTP response code
-    # @return [String] the return type of the response body
-    def get_return_type(opts, code)
-      return_type = opts.fetch(:return_type, {}).fetch(code, nil)
-
-      if return_type.include?('Array<')
-        return return_type.gsub!(/(.*)Array<(.*)>/, 'Array<\1\2>')
-      elsif return_type.include?('Hash<String')
-        return return_type.gsub(/(.*)Hash<String, (.*)>/, 'Hash<String, \1\2>')
-      else
-        return return_type
-      end
     end
 
     # Takes an object and returns the object as an HTTP body
@@ -234,7 +217,7 @@ module VSphereAutomation
         # e.g. Hash<String, Integer>
         sub_type = $1
         {}.tap do |hash|
-          data.each { |k, v| hash[k.to_s] = convert_to_type(v, sub_type) }
+          data.each { |k, v| hash[k] = convert_to_type(v, sub_type) }
         end
       else
         # models, e.g. Pet

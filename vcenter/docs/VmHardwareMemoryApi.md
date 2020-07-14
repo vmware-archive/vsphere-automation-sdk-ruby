@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VmHardwareMemoryApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmHardwareMemoryApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/memory | Returns the memory-related settings of a virtual machine.
-[**update**](VmHardwareMemoryApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/memory | Updates the memory-related settings of a virtual machine.
+[**get**](VmHardwareMemoryApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/memory | Returns the memory-related settings of a virtual machine.
+[**update**](VmHardwareMemoryApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/memory | Updates the memory-related settings of a virtual machine.
 
 
 # **get**
-> VcenterVmHardwareMemoryResp get(vm)
+> VcenterVmHardwareMemoryResult get(vm)
 
 Returns the memory-related settings of a virtual machine.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareMemoryResp**](VcenterVmHardwareMemoryResp.md)
+[**VcenterVmHardwareMemoryResult**](VcenterVmHardwareMemoryResult.md)
 
 ### Authorization
 

@@ -11,20 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaPlacementInfo
-    # BIOS UUID for the node. If unset, the information is currently unavailable.
-    attr_accessor :bios_uuid
+    # The name of the Management vCenter server of the VCHA node.
+    attr_accessor :management_vcenter_name
 
-    # The identifier of the cluster of which PlacementInfo.host is member. If unset, PlacementInfo.host is a standalone host. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ClusterComputeResource:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ClusterComputeResource:VCenter.
-    attr_accessor :cluster
-
-    # The name of the cluster of which PlacementInfo.host is member. If unset, PlacementInfo.host is a standalone host.
-    attr_accessor :cluster_name
+    # The virtual machine name of the VCHA node.
+    attr_accessor :vm_name
 
     # The identifier of the datacenter of the VCHA node. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Datacenter:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Datacenter:VCenter.
     attr_accessor :datacenter
 
     # The name of the datacenter of the VCHA node.
     attr_accessor :datacenter_name
+
+    # The identifier of the host of the VCHA node. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem:VCenter.
+    attr_accessor :host
+
+    # The name of the host of the VCHA node.
+    attr_accessor :host_name
+
+    # The identifier of the cluster of which PlacementInfo.host is member. If unset, PlacementInfo.host is a standalone host. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: ClusterComputeResource:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: ClusterComputeResource:VCenter.
+    attr_accessor :cluster
+
+    # The name of the cluster of which PlacementInfo.host is member. If unset, PlacementInfo.host is a standalone host.
+    attr_accessor :cluster_name
 
     # The identifier of the Network object used for the HA network. If unset, the information is currently unavailable or the haNetwork is not configured. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network:VCenter.
     attr_accessor :ha_network
@@ -34,12 +43,6 @@ module VSphereAutomation
 
     attr_accessor :ha_network_type
 
-    # The identifier of the host of the VCHA node. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem:VCenter.
-    attr_accessor :host
-
-    # The name of the host of the VCHA node.
-    attr_accessor :host_name
-
     # The identifier of the Network object used for the Management network. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Network:VCenter. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Network:VCenter.
     attr_accessor :management_network
 
@@ -48,60 +51,52 @@ module VSphereAutomation
 
     attr_accessor :management_network_type
 
-    # The hostname of the vCenter server that is managing the VCHA node.
-    attr_accessor :management_vcenter_name
-
-    # The unique identifier of the vCenter server that is managing the VCHA node. This field is optional because it was added in a newer version than its parent node.
-    attr_accessor :management_vcenter_server_guid
-
     attr_accessor :storage
 
-    # The virtual machine name of the VCHA node.
-    attr_accessor :vm_name
+    # BIOS UUID for the node. If unset, the information is currently unavailable.
+    attr_accessor :bios_uuid
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'bios_uuid' => :'bios_uuid',
-        :'cluster' => :'cluster',
-        :'cluster_name' => :'cluster_name',
+        :'management_vcenter_name' => :'management_vcenter_name',
+        :'vm_name' => :'vm_name',
         :'datacenter' => :'datacenter',
         :'datacenter_name' => :'datacenter_name',
+        :'host' => :'host',
+        :'host_name' => :'host_name',
+        :'cluster' => :'cluster',
+        :'cluster_name' => :'cluster_name',
         :'ha_network' => :'ha_network',
         :'ha_network_name' => :'ha_network_name',
         :'ha_network_type' => :'ha_network_type',
-        :'host' => :'host',
-        :'host_name' => :'host_name',
         :'management_network' => :'management_network',
         :'management_network_name' => :'management_network_name',
         :'management_network_type' => :'management_network_type',
-        :'management_vcenter_name' => :'management_vcenter_name',
-        :'management_vcenter_server_guid' => :'management_vcenter_server_guid',
         :'storage' => :'storage',
-        :'vm_name' => :'vm_name'
+        :'bios_uuid' => :'bios_uuid'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'bios_uuid' => :'String',
-        :'cluster' => :'String',
-        :'cluster_name' => :'String',
+        :'management_vcenter_name' => :'String',
+        :'vm_name' => :'String',
         :'datacenter' => :'String',
         :'datacenter_name' => :'String',
+        :'host' => :'String',
+        :'host_name' => :'String',
+        :'cluster' => :'String',
+        :'cluster_name' => :'String',
         :'ha_network' => :'String',
         :'ha_network_name' => :'String',
         :'ha_network_type' => :'VcenterVchaNetworkType',
-        :'host' => :'String',
-        :'host_name' => :'String',
         :'management_network' => :'String',
         :'management_network_name' => :'String',
         :'management_network_type' => :'VcenterVchaNetworkType',
-        :'management_vcenter_name' => :'String',
-        :'management_vcenter_server_guid' => :'String',
         :'storage' => :'VcenterVchaDiskInfo',
-        :'vm_name' => :'String'
+        :'bios_uuid' => :'String'
       }
     end
 
@@ -113,16 +108,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'bios_uuid')
-        self.bios_uuid = attributes[:'bios_uuid']
+      if attributes.has_key?(:'management_vcenter_name')
+        self.management_vcenter_name = attributes[:'management_vcenter_name']
       end
 
-      if attributes.has_key?(:'cluster')
-        self.cluster = attributes[:'cluster']
-      end
-
-      if attributes.has_key?(:'cluster_name')
-        self.cluster_name = attributes[:'cluster_name']
+      if attributes.has_key?(:'vm_name')
+        self.vm_name = attributes[:'vm_name']
       end
 
       if attributes.has_key?(:'datacenter')
@@ -131,6 +122,22 @@ module VSphereAutomation
 
       if attributes.has_key?(:'datacenter_name')
         self.datacenter_name = attributes[:'datacenter_name']
+      end
+
+      if attributes.has_key?(:'host')
+        self.host = attributes[:'host']
+      end
+
+      if attributes.has_key?(:'host_name')
+        self.host_name = attributes[:'host_name']
+      end
+
+      if attributes.has_key?(:'cluster')
+        self.cluster = attributes[:'cluster']
+      end
+
+      if attributes.has_key?(:'cluster_name')
+        self.cluster_name = attributes[:'cluster_name']
       end
 
       if attributes.has_key?(:'ha_network')
@@ -145,14 +152,6 @@ module VSphereAutomation
         self.ha_network_type = attributes[:'ha_network_type']
       end
 
-      if attributes.has_key?(:'host')
-        self.host = attributes[:'host']
-      end
-
-      if attributes.has_key?(:'host_name')
-        self.host_name = attributes[:'host_name']
-      end
-
       if attributes.has_key?(:'management_network')
         self.management_network = attributes[:'management_network']
       end
@@ -165,20 +164,12 @@ module VSphereAutomation
         self.management_network_type = attributes[:'management_network_type']
       end
 
-      if attributes.has_key?(:'management_vcenter_name')
-        self.management_vcenter_name = attributes[:'management_vcenter_name']
-      end
-
-      if attributes.has_key?(:'management_vcenter_server_guid')
-        self.management_vcenter_server_guid = attributes[:'management_vcenter_server_guid']
-      end
-
       if attributes.has_key?(:'storage')
         self.storage = attributes[:'storage']
       end
 
-      if attributes.has_key?(:'vm_name')
-        self.vm_name = attributes[:'vm_name']
+      if attributes.has_key?(:'bios_uuid')
+        self.bios_uuid = attributes[:'bios_uuid']
       end
     end
 
@@ -186,6 +177,14 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @management_vcenter_name.nil?
+        invalid_properties.push('invalid value for "management_vcenter_name", management_vcenter_name cannot be nil.')
+      end
+
+      if @vm_name.nil?
+        invalid_properties.push('invalid value for "vm_name", vm_name cannot be nil.')
+      end
+
       if @datacenter.nil?
         invalid_properties.push('invalid value for "datacenter", datacenter cannot be nil.')
       end
@@ -214,16 +213,8 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "management_network_type", management_network_type cannot be nil.')
       end
 
-      if @management_vcenter_name.nil?
-        invalid_properties.push('invalid value for "management_vcenter_name", management_vcenter_name cannot be nil.')
-      end
-
       if @storage.nil?
         invalid_properties.push('invalid value for "storage", storage cannot be nil.')
-      end
-
-      if @vm_name.nil?
-        invalid_properties.push('invalid value for "vm_name", vm_name cannot be nil.')
       end
 
       invalid_properties
@@ -232,6 +223,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @management_vcenter_name.nil?
+      return false if @vm_name.nil?
       return false if @datacenter.nil?
       return false if @datacenter_name.nil?
       return false if @host.nil?
@@ -239,9 +232,7 @@ module VSphereAutomation
       return false if @management_network.nil?
       return false if @management_network_name.nil?
       return false if @management_network_type.nil?
-      return false if @management_vcenter_name.nil?
       return false if @storage.nil?
-      return false if @vm_name.nil?
       true
     end
 
@@ -250,23 +241,22 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          bios_uuid == o.bios_uuid &&
-          cluster == o.cluster &&
-          cluster_name == o.cluster_name &&
+          management_vcenter_name == o.management_vcenter_name &&
+          vm_name == o.vm_name &&
           datacenter == o.datacenter &&
           datacenter_name == o.datacenter_name &&
+          host == o.host &&
+          host_name == o.host_name &&
+          cluster == o.cluster &&
+          cluster_name == o.cluster_name &&
           ha_network == o.ha_network &&
           ha_network_name == o.ha_network_name &&
           ha_network_type == o.ha_network_type &&
-          host == o.host &&
-          host_name == o.host_name &&
           management_network == o.management_network &&
           management_network_name == o.management_network_name &&
           management_network_type == o.management_network_type &&
-          management_vcenter_name == o.management_vcenter_name &&
-          management_vcenter_server_guid == o.management_vcenter_server_guid &&
           storage == o.storage &&
-          vm_name == o.vm_name
+          bios_uuid == o.bios_uuid
     end
 
     # @see the `==` method
@@ -278,7 +268,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bios_uuid, cluster, cluster_name, datacenter, datacenter_name, ha_network, ha_network_name, ha_network_type, host, host_name, management_network, management_network_name, management_network_type, management_vcenter_name, management_vcenter_server_guid, storage, vm_name].hash
+      [management_vcenter_name, vm_name, datacenter, datacenter_name, host, host_name, cluster, cluster_name, ha_network, ha_network_name, ha_network_type, management_network, management_network_name, management_network_type, storage, bios_uuid].hash
     end
 
     # Builds the object from hash

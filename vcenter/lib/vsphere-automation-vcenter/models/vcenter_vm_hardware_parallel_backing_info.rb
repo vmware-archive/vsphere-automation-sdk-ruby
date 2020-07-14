@@ -11,8 +11,7 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareParallelBackingInfo
-    # Flag indicating whether the virtual parallel port is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Parallel.BackingInfo.type is HOST_DEVICE.
-    attr_accessor :auto_detect
+    attr_accessor :type
 
     # Path of the file backing the virtual parallel port. This field is optional and it is only relevant when the value of Parallel.BackingInfo.type is FILE.
     attr_accessor :file
@@ -20,25 +19,26 @@ module VSphereAutomation
     # Name of the device backing the virtual parallel port.    This field will be unset if Parallel.BackingInfo.auto-detect is true and the virtual parallel port is not connected or no suitable device is available on the host.
     attr_accessor :host_device
 
-    attr_accessor :type
+    # Flag indicating whether the virtual parallel port is configured to automatically detect a suitable host device. This field is optional and it is only relevant when the value of Parallel.BackingInfo.type is HOST_DEVICE.
+    attr_accessor :auto_detect
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'auto_detect' => :'auto_detect',
+        :'type' => :'type',
         :'file' => :'file',
         :'host_device' => :'host_device',
-        :'type' => :'type'
+        :'auto_detect' => :'auto_detect'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'auto_detect' => :'Boolean',
+        :'type' => :'VcenterVmHardwareParallelBackingType',
         :'file' => :'String',
         :'host_device' => :'String',
-        :'type' => :'VcenterVmHardwareParallelBackingType'
+        :'auto_detect' => :'Boolean'
       }
     end
 
@@ -50,8 +50,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'auto_detect')
-        self.auto_detect = attributes[:'auto_detect']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'file')
@@ -62,8 +62,8 @@ module VSphereAutomation
         self.host_device = attributes[:'host_device']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'auto_detect')
+        self.auto_detect = attributes[:'auto_detect']
       end
     end
 
@@ -90,10 +90,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          auto_detect == o.auto_detect &&
+          type == o.type &&
           file == o.file &&
           host_device == o.host_device &&
-          type == o.type
+          auto_detect == o.auto_detect
     end
 
     # @see the `==` method
@@ -105,7 +105,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [auto_detect, file, host_device, type].hash
+      [type, file, host_device, auto_detect].hash
     end
 
     # Builds the object from hash

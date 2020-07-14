@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareMemoryUpdateSpec
-    # Flag indicating whether adding memory while the virtual machine is running should be enabled.   Some guest operating systems may consume more resources or perform less efficiently when they run on hardware that supports adding memory while the machine is running.    This field may only be modified if the virtual machine is not powered on.  If unset, the value is unchanged.
-    attr_accessor :hot_add_enabled
-
     # New memory size in mebibytes.   The supported range of memory sizes is constrained by the configured guest operating system and virtual hardware version of the virtual machine.    If the virtual machine is running, this value may only be changed if Memory.Info.hot-add-enabled is true, and the new memory size must satisfy the constraints specified by Memory.Info.hot-add-increment-size-mib and Memory.Info.hot-add-limit-mib.  If unset, the value is unchanged.
     attr_accessor :size_mi_b
+
+    # Flag indicating whether adding memory while the virtual machine is running should be enabled.   Some guest operating systems may consume more resources or perform less efficiently when they run on hardware that supports adding memory while the machine is running.    This field may only be modified if the virtual machine is not powered on.  If unset, the value is unchanged.
+    attr_accessor :hot_add_enabled
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'hot_add_enabled' => :'hot_add_enabled',
-        :'size_mi_b' => :'size_MiB'
+        :'size_mi_b' => :'size_MiB',
+        :'hot_add_enabled' => :'hot_add_enabled'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'hot_add_enabled' => :'Boolean',
-        :'size_mi_b' => :'Integer'
+        :'size_mi_b' => :'Integer',
+        :'hot_add_enabled' => :'Boolean'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'hot_add_enabled')
-        self.hot_add_enabled = attributes[:'hot_add_enabled']
-      end
-
       if attributes.has_key?(:'size_MiB')
         self.size_mi_b = attributes[:'size_MiB']
+      end
+
+      if attributes.has_key?(:'hot_add_enabled')
+        self.hot_add_enabled = attributes[:'hot_add_enabled']
       end
     end
 
@@ -68,8 +68,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          hot_add_enabled == o.hot_add_enabled &&
-          size_mi_b == o.size_mi_b
+          size_mi_b == o.size_mi_b &&
+          hot_add_enabled == o.hot_add_enabled
     end
 
     # @see the `==` method
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [hot_add_enabled, size_mi_b].hash
+      [size_mi_b, hot_add_enabled].hash
     end
 
     # Builds the object from hash

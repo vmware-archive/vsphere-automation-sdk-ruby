@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelComponentData
+    attr_accessor :info
+
     # Fingerprint of the metamodel metadata of the component component. <p> Metamodel information could change when there is an infrastructure update and new functionality is added to an existing component. <p> Since the data present in {@link ComponentData#info} could be quite large, {@name #fingerprint} provides a convenient way to check if the data for a particular component is updated. <p> You should store the fingerprint associated with a component. After an update, by invoking the {@link vapi.metadata.metamodel.Component#fingerprint} {@term operation}, you can retrieve the new fingerprint for the component. If the new fingerprint and the previously stored fingerprint do not match, clients can use the {@link vapi.metadata.metamodel.Component#get} to retrieve the new metamodel information for the component.
     attr_accessor :fingerprint
-
-    attr_accessor :info
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'fingerprint' => :'fingerprint',
-        :'info' => :'info'
+        :'info' => :'info',
+        :'fingerprint' => :'fingerprint'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'fingerprint' => :'String',
-        :'info' => :'VapiMetadataMetamodelComponentInfo'
+        :'info' => :'VapiMetadataMetamodelComponentInfo',
+        :'fingerprint' => :'String'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'fingerprint')
-        self.fingerprint = attributes[:'fingerprint']
-      end
-
       if attributes.has_key?(:'info')
         self.info = attributes[:'info']
+      end
+
+      if attributes.has_key?(:'fingerprint')
+        self.fingerprint = attributes[:'fingerprint']
       end
     end
 
@@ -53,12 +53,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @fingerprint.nil?
-        invalid_properties.push('invalid value for "fingerprint", fingerprint cannot be nil.')
-      end
-
       if @info.nil?
         invalid_properties.push('invalid value for "info", info cannot be nil.')
+      end
+
+      if @fingerprint.nil?
+        invalid_properties.push('invalid value for "fingerprint", fingerprint cannot be nil.')
       end
 
       invalid_properties
@@ -67,8 +67,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @fingerprint.nil?
       return false if @info.nil?
+      return false if @fingerprint.nil?
       true
     end
 
@@ -77,8 +77,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          fingerprint == o.fingerprint &&
-          info == o.info
+          info == o.info &&
+          fingerprint == o.fingerprint
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fingerprint, info].hash
+      [info, fingerprint].hash
     end
 
     # Builds the object from hash

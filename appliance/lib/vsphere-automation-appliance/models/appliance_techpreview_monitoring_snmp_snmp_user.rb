@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceTechpreviewMonitoringSnmpSNMPUser
+    # SNMP Username
+    attr_accessor :username
+
+    attr_accessor :sec_level
+
     # SNMP authorization key
     attr_accessor :auth_key
 
     # SNMP privacy key
     attr_accessor :priv_key
 
-    attr_accessor :sec_level
-
-    # SNMP Username
-    attr_accessor :username
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'auth_key' => :'auth_key',
-        :'priv_key' => :'priv_key',
+        :'username' => :'username',
         :'sec_level' => :'sec_level',
-        :'username' => :'username'
+        :'auth_key' => :'auth_key',
+        :'priv_key' => :'priv_key'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'auth_key' => :'String',
-        :'priv_key' => :'String',
+        :'username' => :'String',
         :'sec_level' => :'ApplianceTechpreviewMonitoringSnmpSNMPSecLevel',
-        :'username' => :'String'
+        :'auth_key' => :'String',
+        :'priv_key' => :'String'
       }
     end
 
@@ -50,6 +50,14 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'username')
+        self.username = attributes[:'username']
+      end
+
+      if attributes.has_key?(:'sec_level')
+        self.sec_level = attributes[:'sec_level']
+      end
+
       if attributes.has_key?(:'auth_key')
         self.auth_key = attributes[:'auth_key']
       end
@@ -57,20 +65,20 @@ module VSphereAutomation
       if attributes.has_key?(:'priv_key')
         self.priv_key = attributes[:'priv_key']
       end
-
-      if attributes.has_key?(:'sec_level')
-        self.sec_level = attributes[:'sec_level']
-      end
-
-      if attributes.has_key?(:'username')
-        self.username = attributes[:'username']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @username.nil?
+        invalid_properties.push('invalid value for "username", username cannot be nil.')
+      end
+
+      if @sec_level.nil?
+        invalid_properties.push('invalid value for "sec_level", sec_level cannot be nil.')
+      end
+
       if @auth_key.nil?
         invalid_properties.push('invalid value for "auth_key", auth_key cannot be nil.')
       end
@@ -79,24 +87,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "priv_key", priv_key cannot be nil.')
       end
 
-      if @sec_level.nil?
-        invalid_properties.push('invalid value for "sec_level", sec_level cannot be nil.')
-      end
-
-      if @username.nil?
-        invalid_properties.push('invalid value for "username", username cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @username.nil?
+      return false if @sec_level.nil?
       return false if @auth_key.nil?
       return false if @priv_key.nil?
-      return false if @sec_level.nil?
-      return false if @username.nil?
       true
     end
 
@@ -105,10 +105,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          auth_key == o.auth_key &&
-          priv_key == o.priv_key &&
+          username == o.username &&
           sec_level == o.sec_level &&
-          username == o.username
+          auth_key == o.auth_key &&
+          priv_key == o.priv_key
     end
 
     # @see the `==` method
@@ -120,7 +120,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [auth_key, priv_key, sec_level, username].hash
+      [username, sec_level, auth_key, priv_key].hash
     end
 
     # Builds the object from hash

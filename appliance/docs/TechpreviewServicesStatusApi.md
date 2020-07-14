@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::TechpreviewServicesStatusApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](TechpreviewServicesStatusApi.md#get) | **POST** /rest/appliance/techpreview/services/status/get | Get status of a service.
+[**get**](TechpreviewServicesStatusApi.md#get) | **POST** /appliance/techpreview/services/status/get | Get status of a service.
 
 
 # **get**
-> ApplianceTechpreviewServicesStatusResp get(request_body)
+> ApplianceTechpreviewServicesStatusResult get(request_body)
 
 Get status of a service.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceTechpreviewServicesStatusResp**](ApplianceTechpreviewServicesStatusResp.md)
+[**ApplianceTechpreviewServicesStatusResult**](ApplianceTechpreviewServicesStatusResult.md)
 
 ### Authorization
 

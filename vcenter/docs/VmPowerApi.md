@@ -1,20 +1,20 @@
 # VSphereAutomation::VCenter::VmPowerApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmPowerApi.md#get) | **GET** /rest/vcenter/vm/{vm}/power | Returns the power state information of a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
-[**reset**](VmPowerApi.md#reset) | **POST** /rest/vcenter/vm/{vm}/power/reset | Resets a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Reset.  
-[**start**](VmPowerApi.md#start) | **POST** /rest/vcenter/vm/{vm}/power/start | Powers on a powered-off or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOn.  
-[**stop**](VmPowerApi.md#stop) | **POST** /rest/vcenter/vm/{vm}/power/stop | Powers off a powered-on or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOff.  
-[**suspend**](VmPowerApi.md#suspend) | **POST** /rest/vcenter/vm/{vm}/power/suspend | Suspends a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Suspend.  
+[**get**](VmPowerApi.md#get) | **GET** /vcenter/vm/{vm}/power | Returns the power state information of a virtual machine.
+[**reset**](VmPowerApi.md#reset) | **POST** /vcenter/vm/{vm}/power/reset | Resets a powered-on virtual machine.
+[**start**](VmPowerApi.md#start) | **POST** /vcenter/vm/{vm}/power/start | Powers on a powered-off or suspended virtual machine.
+[**stop**](VmPowerApi.md#stop) | **POST** /vcenter/vm/{vm}/power/stop | Powers off a powered-on or suspended virtual machine.
+[**suspend**](VmPowerApi.md#suspend) | **POST** /vcenter/vm/{vm}/power/suspend | Suspends a powered-on virtual machine.
 
 
 # **get**
-> VcenterVmPowerResp get(vm)
+> VcenterVmPowerResult get(vm)
 
-Returns the power state information of a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
+Returns the power state information of a virtual machine.
 
 ### Example
 ```ruby
@@ -32,7 +32,7 @@ api_instance = VSphereAutomation::VCenter::VmPowerApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 
 begin
-  #Returns the power state information of a virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires System.Read.  
+  #Returns the power state information of a virtual machine.
   result = api_instance.get(vm)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmPowerResp**](VcenterVmPowerResp.md)
+[**VcenterVmPowerResult**](VcenterVmPowerResult.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 # **reset**
 > reset(vm)
 
-Resets a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Reset.  
+Resets a powered-on virtual machine.
 
 ### Example
 ```ruby
@@ -82,7 +82,7 @@ api_instance = VSphereAutomation::VCenter::VmPowerApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 
 begin
-  #Resets a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Reset.  
+  #Resets a powered-on virtual machine.
   api_instance.reset(vm)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmPowerApi->reset: #{e}"
@@ -113,7 +113,7 @@ nil (empty response body)
 # **start**
 > start(vm)
 
-Powers on a powered-off or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOn.  
+Powers on a powered-off or suspended virtual machine.
 
 ### Example
 ```ruby
@@ -131,7 +131,7 @@ api_instance = VSphereAutomation::VCenter::VmPowerApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 
 begin
-  #Powers on a powered-off or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOn.  
+  #Powers on a powered-off or suspended virtual machine.
   api_instance.start(vm)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmPowerApi->start: #{e}"
@@ -162,7 +162,7 @@ nil (empty response body)
 # **stop**
 > stop(vm)
 
-Powers off a powered-on or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOff.  
+Powers off a powered-on or suspended virtual machine.
 
 ### Example
 ```ruby
@@ -180,7 +180,7 @@ api_instance = VSphereAutomation::VCenter::VmPowerApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 
 begin
-  #Powers off a powered-on or suspended virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.PowerOff.  
+  #Powers off a powered-on or suspended virtual machine.
   api_instance.stop(vm)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmPowerApi->stop: #{e}"
@@ -211,7 +211,7 @@ nil (empty response body)
 # **suspend**
 > suspend(vm)
 
-Suspends a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Suspend.  
+Suspends a powered-on virtual machine.
 
 ### Example
 ```ruby
@@ -229,7 +229,7 @@ api_instance = VSphereAutomation::VCenter::VmPowerApi.new
 vm = 'vm_example' # String | Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
 
 begin
-  #Suspends a powered-on virtual machine. if you do not have all of the privileges described as follows:     -  The resource VirtualMachine referenced by the parameter vm requires VirtualMachine.Interact.Suspend.  
+  #Suspends a powered-on virtual machine.
   api_instance.suspend(vm)
 rescue VSphereAutomation::ApiError => e
   puts "Exception when calling VmPowerApi->suspend: #{e}"

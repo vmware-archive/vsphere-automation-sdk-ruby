@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::VchaClusterDeploymentTypeApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VchaClusterDeploymentTypeApi.md#get) | **GET** /rest/vcenter/vcha/cluster/deployment-type | Retrieves the deployment type of a VCHA cluster.
+[**get**](VchaClusterDeploymentTypeApi.md#get) | **GET** /vcenter/vcha/cluster/deployment-type | Retrieves the deployment type of a VCHA cluster.
 
 
 # **get**
-> VcenterVchaClusterDeploymentTypeResp get
+> VcenterVchaClusterDeploymentTypeResult get
 
 Retrieves the deployment type of a VCHA cluster.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterVchaClusterDeploymentTypeResp**](VcenterVchaClusterDeploymentTypeResp.md)
+[**VcenterVchaClusterDeploymentTypeResult**](VcenterVchaClusterDeploymentTypeResult.md)
 
 ### Authorization
 

@@ -11,14 +11,14 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDatacenterInfo
+    # The name of the datacenter.
+    attr_accessor :name
+
     # The root datastore folder associated with the datacenter. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder.
     attr_accessor :datastore_folder
 
     # The root host and cluster folder associated with the datacenter. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder.
     attr_accessor :host_folder
-
-    # The name of the datacenter.
-    attr_accessor :name
 
     # The root network folder associated with the datacenter. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Folder. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Folder.
     attr_accessor :network_folder
@@ -29,9 +29,9 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'name' => :'name',
         :'datastore_folder' => :'datastore_folder',
         :'host_folder' => :'host_folder',
-        :'name' => :'name',
         :'network_folder' => :'network_folder',
         :'vm_folder' => :'vm_folder'
       }
@@ -40,9 +40,9 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'name' => :'String',
         :'datastore_folder' => :'String',
         :'host_folder' => :'String',
-        :'name' => :'String',
         :'network_folder' => :'String',
         :'vm_folder' => :'String'
       }
@@ -56,16 +56,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
       if attributes.has_key?(:'datastore_folder')
         self.datastore_folder = attributes[:'datastore_folder']
       end
 
       if attributes.has_key?(:'host_folder')
         self.host_folder = attributes[:'host_folder']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'network_folder')
@@ -81,16 +81,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
       if @datastore_folder.nil?
         invalid_properties.push('invalid value for "datastore_folder", datastore_folder cannot be nil.')
       end
 
       if @host_folder.nil?
         invalid_properties.push('invalid value for "host_folder", host_folder cannot be nil.')
-      end
-
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @network_folder.nil?
@@ -107,9 +107,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @name.nil?
       return false if @datastore_folder.nil?
       return false if @host_folder.nil?
-      return false if @name.nil?
       return false if @network_folder.nil?
       return false if @vm_folder.nil?
       true
@@ -120,9 +120,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          name == o.name &&
           datastore_folder == o.datastore_folder &&
           host_folder == o.host_folder &&
-          name == o.name &&
           network_folder == o.network_folder &&
           vm_folder == o.vm_folder
     end
@@ -136,7 +136,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [datastore_folder, host_folder, name, network_folder, vm_folder].hash
+      [name, datastore_folder, host_folder, network_folder, vm_folder].hash
     end
 
     # Builds the object from hash

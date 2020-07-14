@@ -1,18 +1,18 @@
 # VSphereAutomation::Appliance::TechpreviewMonitoringSnmpApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**disable**](TechpreviewMonitoringSnmpApi.md#disable) | **POST** /rest/appliance/techpreview/monitoring/snmp/disable | Stop an enabled SNMP agent.
-[**enable**](TechpreviewMonitoringSnmpApi.md#enable) | **POST** /rest/appliance/techpreview/monitoring/snmp/enable | Start a disabled SNMP agent.
-[**get**](TechpreviewMonitoringSnmpApi.md#get) | **GET** /rest/appliance/techpreview/monitoring/snmp | Return an SNMP agent configuration.
-[**hash**](TechpreviewMonitoringSnmpApi.md#hash) | **POST** /rest/appliance/techpreview/monitoring/snmp/hash | Generate localized keys for secure SNMPv3 communications.
-[**limits**](TechpreviewMonitoringSnmpApi.md#limits) | **GET** /rest/appliance/techpreview/monitoring/snmp/limits | Get SNMP limits information.
-[**reset**](TechpreviewMonitoringSnmpApi.md#reset) | **POST** /rest/appliance/techpreview/monitoring/snmp/reset | Restore settings to factory defaults.
-[**set**](TechpreviewMonitoringSnmpApi.md#set) | **PUT** /rest/appliance/techpreview/monitoring/snmp | Set SNMP configuration.
-[**stats**](TechpreviewMonitoringSnmpApi.md#stats) | **GET** /rest/appliance/techpreview/monitoring/snmp/stats | Generate diagnostics report for snmp agent.
-[**test**](TechpreviewMonitoringSnmpApi.md#test) | **POST** /rest/appliance/techpreview/monitoring/snmp/test | Send a warmStart notification to all configured traps and inform destinations (see RFC 3418).
+[**disable**](TechpreviewMonitoringSnmpApi.md#disable) | **POST** /appliance/techpreview/monitoring/snmp/disable | Stop an enabled SNMP agent.
+[**enable**](TechpreviewMonitoringSnmpApi.md#enable) | **POST** /appliance/techpreview/monitoring/snmp/enable | Start a disabled SNMP agent.
+[**get**](TechpreviewMonitoringSnmpApi.md#get) | **GET** /appliance/techpreview/monitoring/snmp | Return an SNMP agent configuration.
+[**hash**](TechpreviewMonitoringSnmpApi.md#hash) | **POST** /appliance/techpreview/monitoring/snmp/hash | Generate localized keys for secure SNMPv3 communications.
+[**limits**](TechpreviewMonitoringSnmpApi.md#limits) | **GET** /appliance/techpreview/monitoring/snmp/limits | Get SNMP limits information.
+[**reset**](TechpreviewMonitoringSnmpApi.md#reset) | **POST** /appliance/techpreview/monitoring/snmp/reset | Restore settings to factory defaults.
+[**set**](TechpreviewMonitoringSnmpApi.md#set) | **PUT** /appliance/techpreview/monitoring/snmp | Set SNMP configuration.
+[**stats**](TechpreviewMonitoringSnmpApi.md#stats) | **GET** /appliance/techpreview/monitoring/snmp/stats | Generate diagnostics report for snmp agent.
+[**test**](TechpreviewMonitoringSnmpApi.md#test) | **POST** /appliance/techpreview/monitoring/snmp/test | Send a warmStart notification to all configured traps and inform destinations (see RFC 3418).
 
 
 # **disable**
@@ -106,7 +106,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceTechpreviewMonitoringSnmpResp get
+> ApplianceTechpreviewMonitoringSnmpResult get
 
 Return an SNMP agent configuration.
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceTechpreviewMonitoringSnmpResp**](ApplianceTechpreviewMonitoringSnmpResp.md)
+[**ApplianceTechpreviewMonitoringSnmpResult**](ApplianceTechpreviewMonitoringSnmpResult.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 
 
 # **hash**
-> ApplianceTechpreviewMonitoringSnmpHashResp hash(request_body)
+> ApplianceTechpreviewMonitoringSnmpHashResult hash(request_body)
 
 Generate localized keys for secure SNMPv3 communications.
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceTechpreviewMonitoringSnmpHashResp**](ApplianceTechpreviewMonitoringSnmpHashResp.md)
+[**ApplianceTechpreviewMonitoringSnmpHashResult**](ApplianceTechpreviewMonitoringSnmpHashResult.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 
 # **limits**
-> ApplianceTechpreviewMonitoringSnmpLimitsResp limits
+> ApplianceTechpreviewMonitoringSnmpLimitsResult limits
 
 Get SNMP limits information.
 
@@ -234,7 +234,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceTechpreviewMonitoringSnmpLimitsResp**](ApplianceTechpreviewMonitoringSnmpLimitsResp.md)
+[**ApplianceTechpreviewMonitoringSnmpLimitsResult**](ApplianceTechpreviewMonitoringSnmpLimitsResult.md)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ nil (empty response body)
 
 
 # **stats**
-> ApplianceTechpreviewMonitoringSnmpStatsResp stats
+> ApplianceTechpreviewMonitoringSnmpStatsResult stats
 
 Generate diagnostics report for snmp agent.
 
@@ -374,7 +374,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceTechpreviewMonitoringSnmpStatsResp**](ApplianceTechpreviewMonitoringSnmpStatsResp.md)
+[**ApplianceTechpreviewMonitoringSnmpStatsResult**](ApplianceTechpreviewMonitoringSnmpStatsResult.md)
 
 ### Authorization
 
@@ -388,7 +388,7 @@ This endpoint does not need any parameter.
 
 
 # **test**
-> ApplianceTechpreviewMonitoringSnmpTestResp test
+> ApplianceTechpreviewMonitoringSnmpTestResult test
 
 Send a warmStart notification to all configured traps and inform destinations (see RFC 3418).
 
@@ -420,7 +420,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceTechpreviewMonitoringSnmpTestResp**](ApplianceTechpreviewMonitoringSnmpTestResp.md)
+[**ApplianceTechpreviewMonitoringSnmpTestResult**](ApplianceTechpreviewMonitoringSnmpTestResult.md)
 
 ### Authorization
 

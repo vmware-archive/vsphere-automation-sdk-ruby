@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'protocol' when calling NetworkingProxyApi.delete"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/proxy/{protocol}'.sub('{' + 'protocol' + '}', protocol.to_s)
+      local_var_path = '/appliance/networking/proxy/{protocol}'.sub('{' + 'protocol' + '}', protocol.to_s)
 
       # query parameters
       query_params = {}
@@ -69,7 +69,7 @@ module VSphereAutomation
     # Gets the proxy configuration for a specific protocol.
     # @param protocol The protocol whose proxy configuration is requested.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingProxyResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingProxyResult|VapiStdErrorsErrorError|]
     def get(protocol, opts = {})
       data, _status_code, _headers = get_with_http_info(protocol, opts)
       data
@@ -79,7 +79,7 @@ module VSphereAutomation
     # @api private
     # @param protocol The protocol whose proxy configuration is requested.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingProxyResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingProxyResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(protocol, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.get ...'
@@ -89,7 +89,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'protocol' when calling NetworkingProxyApi.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/proxy/{protocol}'.sub('{' + 'protocol' + '}', protocol.to_s)
+      local_var_path = '/appliance/networking/proxy/{protocol}'.sub('{' + 'protocol' + '}', protocol.to_s)
 
       # query parameters
       query_params = {}
@@ -112,7 +112,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingProxyResp',
+	  '200' => 'Appliance::ApplianceNetworkingProxyResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -122,7 +122,7 @@ module VSphereAutomation
     end
     # Gets proxy configuration for all configured protocols.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingProxyListResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingProxyListResult|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -131,13 +131,13 @@ module VSphereAutomation
     # Gets proxy configuration for all configured protocols.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingProxyListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingProxyListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/proxy'
+      local_var_path = '/appliance/networking/proxy'
 
       # query parameters
       query_params = {}
@@ -160,7 +160,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingProxyListResp',
+	  '200' => 'Appliance::ApplianceNetworkingProxyListResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -197,7 +197,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingProxyApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/proxy/{protocol}'.sub('{' + 'protocol' + '}', protocol.to_s)
+      local_var_path = '/appliance/networking/proxy/{protocol}'.sub('{' + 'protocol' + '}', protocol.to_s)
 
       # query parameters
       query_params = {}
@@ -230,7 +230,7 @@ module VSphereAutomation
     # @param protocol Protocol whose proxy is to be tested.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingProxyTestResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingProxyTestResult|VapiStdErrorsErrorError|]
     def test(protocol, request_body, opts = {})
       data, _status_code, _headers = test_with_http_info(protocol, request_body, opts)
       data
@@ -241,7 +241,7 @@ module VSphereAutomation
     # @param protocol Protocol whose proxy is to be tested.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingProxyTestResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingProxyTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def test_with_http_info(protocol, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingProxyApi.test ...'
@@ -255,7 +255,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingProxyApi.test"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/proxy/{protocol}?action=test'.sub('{' + 'protocol' + '}', protocol.to_s)
+      local_var_path = '/appliance/networking/proxy/{protocol}?action=test'.sub('{' + 'protocol' + '}', protocol.to_s)
 
       # query parameters
       query_params = {}
@@ -280,7 +280,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingProxyTestResp',
+	  '200' => 'Appliance::ApplianceNetworkingProxyTestResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

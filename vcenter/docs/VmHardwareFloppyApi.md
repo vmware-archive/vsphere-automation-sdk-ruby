@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::VmHardwareFloppyApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**connect**](VmHardwareFloppyApi.md#connect) | **POST** /rest/vcenter/vm/{vm}/hardware/floppy/{floppy}/connect | Connects a virtual floppy drive of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Floppy.update operation may be used to configure the virtual floppy drive to start in the connected state when the virtual machine is powered on. 
-[**create**](VmHardwareFloppyApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/floppy | Adds a virtual floppy drive to the virtual machine.
-[**delete**](VmHardwareFloppyApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/floppy/{floppy} | Removes a virtual floppy drive from the virtual machine.
-[**disconnect**](VmHardwareFloppyApi.md#disconnect) | **POST** /rest/vcenter/vm/{vm}/hardware/floppy/{floppy}/disconnect | Disconnects a virtual floppy drive of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the floppy drive is not connected to its backing resource.   For a powered-off virtual machine, the Floppy.update operation may be used to configure the virtual floppy floppy to start in the disconnected state when the virtual machine is powered on. 
-[**get**](VmHardwareFloppyApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/floppy/{floppy} | Returns information about a virtual floppy drive.
-[**list**](VmHardwareFloppyApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/floppy | Returns commonly used information about the virtual floppy drives belonging to the virtual machine.
-[**update**](VmHardwareFloppyApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/floppy/{floppy} | Updates the configuration of a virtual floppy drive.
+[**connect**](VmHardwareFloppyApi.md#connect) | **POST** /vcenter/vm/{vm}/hardware/floppy/{floppy}/connect | Connects a virtual floppy drive of a powered-on virtual machine to its backing. Connecting the virtual device makes the backing accessible from the perspective of the guest operating system.   For a powered-off virtual machine, the Floppy.update operation may be used to configure the virtual floppy drive to start in the connected state when the virtual machine is powered on. 
+[**create**](VmHardwareFloppyApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/floppy | Adds a virtual floppy drive to the virtual machine.
+[**delete**](VmHardwareFloppyApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/floppy/{floppy} | Removes a virtual floppy drive from the virtual machine.
+[**disconnect**](VmHardwareFloppyApi.md#disconnect) | **POST** /vcenter/vm/{vm}/hardware/floppy/{floppy}/disconnect | Disconnects a virtual floppy drive of a powered-on virtual machine from its backing. The virtual device is still present and its backing configuration is unchanged, but from the perspective of the guest operating system, the floppy drive is not connected to its backing resource.   For a powered-off virtual machine, the Floppy.update operation may be used to configure the virtual floppy floppy to start in the disconnected state when the virtual machine is powered on. 
+[**get**](VmHardwareFloppyApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/floppy/{floppy} | Returns information about a virtual floppy drive.
+[**list**](VmHardwareFloppyApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/floppy | Returns commonly used information about the virtual floppy drives belonging to the virtual machine.
+[**update**](VmHardwareFloppyApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/floppy/{floppy} | Updates the configuration of a virtual floppy drive.
 
 
 # **connect**
@@ -65,7 +65,7 @@ nil (empty response body)
 
 
 # **create**
-> VcenterVmHardwareFloppyCreateResp create(vm, request_body)
+> VcenterVmHardwareFloppyCreateResult create(vm, request_body)
 
 Adds a virtual floppy drive to the virtual machine.
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareFloppyCreateResp**](VcenterVmHardwareFloppyCreateResp.md)
+[**VcenterVmHardwareFloppyCreateResult**](VcenterVmHardwareFloppyCreateResult.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareFloppyResp get(vm, floppy)
+> VcenterVmHardwareFloppyResult get(vm, floppy)
 
 Returns information about a virtual floppy drive.
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareFloppyResp**](VcenterVmHardwareFloppyResp.md)
+[**VcenterVmHardwareFloppyResult**](VcenterVmHardwareFloppyResult.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareFloppyListResp list(vm)
+> VcenterVmHardwareFloppyListResult list(vm)
 
 Returns commonly used information about the virtual floppy drives belonging to the virtual machine.
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareFloppyListResp**](VcenterVmHardwareFloppyListResp.md)
+[**VcenterVmHardwareFloppyListResult**](VcenterVmHardwareFloppyListResult.md)
 
 ### Authorization
 

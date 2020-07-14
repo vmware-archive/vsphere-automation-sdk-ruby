@@ -17,9 +17,6 @@ module VSphereAutomation
     # The HTTPS port of the container.
     attr_accessor :https_port
 
-    # The administrator account password.
-    attr_accessor :password
-
     # SHA1 thumbprint of the server SSL certificate will be used for verification.
     attr_accessor :ssl_thumbprint
 
@@ -29,15 +26,18 @@ module VSphereAutomation
     # The administrator account on the host.
     attr_accessor :username
 
+    # The administrator account password.
+    attr_accessor :password
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'hostname' => :'hostname',
         :'https_port' => :'https_port',
-        :'password' => :'password',
         :'ssl_thumbprint' => :'ssl_thumbprint',
         :'ssl_verify' => :'ssl_verify',
-        :'username' => :'username'
+        :'username' => :'username',
+        :'password' => :'password'
       }
     end
 
@@ -46,10 +46,10 @@ module VSphereAutomation
       {
         :'hostname' => :'String',
         :'https_port' => :'Integer',
-        :'password' => :'String',
         :'ssl_thumbprint' => :'String',
         :'ssl_verify' => :'Boolean',
-        :'username' => :'String'
+        :'username' => :'String',
+        :'password' => :'String'
       }
     end
 
@@ -69,10 +69,6 @@ module VSphereAutomation
         self.https_port = attributes[:'https_port']
       end
 
-      if attributes.has_key?(:'password')
-        self.password = attributes[:'password']
-      end
-
       if attributes.has_key?(:'ssl_thumbprint')
         self.ssl_thumbprint = attributes[:'ssl_thumbprint']
       end
@@ -84,6 +80,10 @@ module VSphereAutomation
       if attributes.has_key?(:'username')
         self.username = attributes[:'username']
       end
+
+      if attributes.has_key?(:'password')
+        self.password = attributes[:'password']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -94,12 +94,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "hostname", hostname cannot be nil.')
       end
 
-      if @password.nil?
-        invalid_properties.push('invalid value for "password", password cannot be nil.')
-      end
-
       if @username.nil?
         invalid_properties.push('invalid value for "username", username cannot be nil.')
+      end
+
+      if @password.nil?
+        invalid_properties.push('invalid value for "password", password cannot be nil.')
       end
 
       invalid_properties
@@ -109,8 +109,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @hostname.nil?
-      return false if @password.nil?
       return false if @username.nil?
+      return false if @password.nil?
       true
     end
 
@@ -121,10 +121,10 @@ module VSphereAutomation
       self.class == o.class &&
           hostname == o.hostname &&
           https_port == o.https_port &&
-          password == o.password &&
           ssl_thumbprint == o.ssl_thumbprint &&
           ssl_verify == o.ssl_verify &&
-          username == o.username
+          username == o.username &&
+          password == o.password
     end
 
     # @see the `==` method
@@ -136,7 +136,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [hostname, https_port, password, ssl_thumbprint, ssl_verify, username].hash
+      [hostname, https_port, ssl_thumbprint, ssl_verify, username, password].hash
     end
 
     # Builds the object from hash

@@ -11,6 +11,8 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelPrimitiveValue
+    attr_accessor :type
+
     # Boolean value of the constant.
     attr_accessor :boolean_value
 
@@ -23,27 +25,25 @@ module VSphereAutomation
     # String value of the constant.
     attr_accessor :string_value
 
-    attr_accessor :type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'type' => :'type',
         :'boolean_value' => :'boolean_value',
         :'double_value' => :'double_value',
         :'long_value' => :'long_value',
-        :'string_value' => :'string_value',
-        :'type' => :'type'
+        :'string_value' => :'string_value'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'type' => :'VapiMetadataMetamodelPrimitiveValueType',
         :'boolean_value' => :'Boolean',
         :'double_value' => :'Float',
         :'long_value' => :'Integer',
-        :'string_value' => :'String',
-        :'type' => :'VapiMetadataMetamodelPrimitiveValueType'
+        :'string_value' => :'String'
       }
     end
 
@@ -54,6 +54,10 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
 
       if attributes.has_key?(:'boolean_value')
         self.boolean_value = attributes[:'boolean_value']
@@ -69,10 +73,6 @@ module VSphereAutomation
 
       if attributes.has_key?(:'string_value')
         self.string_value = attributes[:'string_value']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
       end
     end
 
@@ -99,11 +99,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          type == o.type &&
           boolean_value == o.boolean_value &&
           double_value == o.double_value &&
           long_value == o.long_value &&
-          string_value == o.string_value &&
-          type == o.type
+          string_value == o.string_value
     end
 
     # @see the `==` method
@@ -115,7 +115,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [boolean_value, double_value, long_value, string_value, type].hash
+      [type, boolean_value, double_value, long_value, string_value].hash
     end
 
     # Builds the object from hash

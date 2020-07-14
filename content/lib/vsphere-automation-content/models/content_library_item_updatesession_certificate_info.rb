@@ -14,11 +14,11 @@ module VSphereAutomation
     # Certificate issuer. For example: /C=US/ST=California/L=Palo Alto/O=VMware, Inc.
     attr_accessor :issuer
 
-    # Whether the certificate is self-signed.
-    attr_accessor :self_signed
-
     # Certificate subject. For example: C=US/ST=Massachusetts/L=Hopkinton/O=EMC Corporation/OU=EMC Avamar/CN=EMC Corporation.
     attr_accessor :subject
+
+    # Whether the certificate is self-signed.
+    attr_accessor :self_signed
 
     # The X509 representation of the certificate.
     attr_accessor :x509
@@ -27,8 +27,8 @@ module VSphereAutomation
     def self.attribute_map
       {
         :'issuer' => :'issuer',
-        :'self_signed' => :'self_signed',
         :'subject' => :'subject',
+        :'self_signed' => :'self_signed',
         :'x509' => :'x509'
       }
     end
@@ -37,8 +37,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'issuer' => :'String',
-        :'self_signed' => :'Boolean',
         :'subject' => :'String',
+        :'self_signed' => :'Boolean',
         :'x509' => :'String'
       }
     end
@@ -55,12 +55,12 @@ module VSphereAutomation
         self.issuer = attributes[:'issuer']
       end
 
-      if attributes.has_key?(:'self_signed')
-        self.self_signed = attributes[:'self_signed']
-      end
-
       if attributes.has_key?(:'subject')
         self.subject = attributes[:'subject']
+      end
+
+      if attributes.has_key?(:'self_signed')
+        self.self_signed = attributes[:'self_signed']
       end
 
       if attributes.has_key?(:'x509')
@@ -76,12 +76,12 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "issuer", issuer cannot be nil.')
       end
 
-      if @self_signed.nil?
-        invalid_properties.push('invalid value for "self_signed", self_signed cannot be nil.')
-      end
-
       if @subject.nil?
         invalid_properties.push('invalid value for "subject", subject cannot be nil.')
+      end
+
+      if @self_signed.nil?
+        invalid_properties.push('invalid value for "self_signed", self_signed cannot be nil.')
       end
 
       if @x509.nil?
@@ -95,8 +95,8 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @issuer.nil?
-      return false if @self_signed.nil?
       return false if @subject.nil?
+      return false if @self_signed.nil?
       return false if @x509.nil?
       true
     end
@@ -107,8 +107,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           issuer == o.issuer &&
-          self_signed == o.self_signed &&
           subject == o.subject &&
+          self_signed == o.self_signed &&
           x509 == o.x509
     end
 
@@ -121,7 +121,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [issuer, self_signed, subject, x509].hash
+      [issuer, subject, self_signed, x509].hash
     end
 
     # Builds the object from hash

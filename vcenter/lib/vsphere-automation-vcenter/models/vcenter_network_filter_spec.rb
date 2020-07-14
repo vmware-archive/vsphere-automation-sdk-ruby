@@ -11,40 +11,40 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterNetworkFilterSpec
-    # Datacenters that must contain the network for the network to match the filter. If unset or empty, networks in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    attr_accessor :datacenters
-
-    # Folders that must contain the network for the network to match the filter. If unset or empty, networks in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
-    attr_accessor :folders
+    # Identifiers of networks that can match the filter. If unset or empty, networks with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Network. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Network.
+    attr_accessor :networks
 
     # Names that networks must have to match the filter (see Network.Summary.name). If unset or empty, networks with any name match the filter.
     attr_accessor :names
 
-    # Identifiers of networks that can match the filter. If unset or empty, networks with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Network. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Network.
-    attr_accessor :networks
-
     # Types that networks must have to match the filter (see Network.Summary.type). If unset, networks with any type match the filter.
     attr_accessor :types
+
+    # Folders that must contain the network for the network to match the filter. If unset or empty, networks in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
+    attr_accessor :folders
+
+    # Datacenters that must contain the network for the network to match the filter. If unset or empty, networks in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
+    attr_accessor :datacenters
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'datacenters' => :'datacenters',
-        :'folders' => :'folders',
-        :'names' => :'names',
         :'networks' => :'networks',
-        :'types' => :'types'
+        :'names' => :'names',
+        :'types' => :'types',
+        :'folders' => :'folders',
+        :'datacenters' => :'datacenters'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'datacenters' => :'Array<String>',
-        :'folders' => :'Array<String>',
-        :'names' => :'Array<String>',
         :'networks' => :'Array<String>',
-        :'types' => :'Array<VcenterNetworkType>'
+        :'names' => :'Array<String>',
+        :'types' => :'Array<VcenterNetworkType>',
+        :'folders' => :'Array<String>',
+        :'datacenters' => :'Array<String>'
       }
     end
 
@@ -56,15 +56,9 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'datacenters')
-        if (value = attributes[:'datacenters']).is_a?(Array)
-          self.datacenters = value
-        end
-      end
-
-      if attributes.has_key?(:'folders')
-        if (value = attributes[:'folders']).is_a?(Array)
-          self.folders = value
+      if attributes.has_key?(:'networks')
+        if (value = attributes[:'networks']).is_a?(Array)
+          self.networks = value
         end
       end
 
@@ -74,15 +68,21 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'networks')
-        if (value = attributes[:'networks']).is_a?(Array)
-          self.networks = value
-        end
-      end
-
       if attributes.has_key?(:'types')
         if (value = attributes[:'types']).is_a?(Array)
           self.types = value
+        end
+      end
+
+      if attributes.has_key?(:'folders')
+        if (value = attributes[:'folders']).is_a?(Array)
+          self.folders = value
+        end
+      end
+
+      if attributes.has_key?(:'datacenters')
+        if (value = attributes[:'datacenters']).is_a?(Array)
+          self.datacenters = value
         end
       end
     end
@@ -105,11 +105,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          datacenters == o.datacenters &&
-          folders == o.folders &&
-          names == o.names &&
           networks == o.networks &&
-          types == o.types
+          names == o.names &&
+          types == o.types &&
+          folders == o.folders &&
+          datacenters == o.datacenters
     end
 
     # @see the `==` method
@@ -121,7 +121,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [datacenters, folders, names, networks, types].hash
+      [networks, names, types, folders, datacenters].hash
     end
 
     # Builds the object from hash

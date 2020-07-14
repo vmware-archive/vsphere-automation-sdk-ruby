@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::LocalAccountsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](LocalAccountsApi.md#create) | **POST** /rest/appliance/local-accounts/{username} | Create a new local user account.
-[**delete**](LocalAccountsApi.md#delete) | **DELETE** /rest/appliance/local-accounts/{username} | Delete a local user account.
-[**get**](LocalAccountsApi.md#get) | **GET** /rest/appliance/local-accounts/{username} | Get the local user account information.
-[**list**](LocalAccountsApi.md#list) | **GET** /rest/appliance/local-accounts | Get a list of the local user accounts.
-[**set**](LocalAccountsApi.md#set) | **PUT** /rest/appliance/local-accounts/{username} | Set local user account properties.
-[**update**](LocalAccountsApi.md#update) | **PATCH** /rest/appliance/local-accounts/{username} | Update selected fields in local user account properties.
+[**create**](LocalAccountsApi.md#create) | **POST** /appliance/local-accounts/{username} | Create a new local user account.
+[**delete**](LocalAccountsApi.md#delete) | **DELETE** /appliance/local-accounts/{username} | Delete a local user account.
+[**get**](LocalAccountsApi.md#get) | **GET** /appliance/local-accounts/{username} | Get the local user account information.
+[**list**](LocalAccountsApi.md#list) | **GET** /appliance/local-accounts | Get a list of the local user accounts.
+[**set**](LocalAccountsApi.md#set) | **PUT** /appliance/local-accounts/{username} | Set local user account properties.
+[**update**](LocalAccountsApi.md#update) | **PATCH** /appliance/local-accounts/{username} | Update selected fields in local user account properties.
 
 
 # **create**
@@ -113,7 +113,7 @@ nil (empty response body)
 
 
 # **get**
-> ApplianceLocalAccountsResp get(username)
+> ApplianceLocalAccountsResult get(username)
 
 Get the local user account information.
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceLocalAccountsResp**](ApplianceLocalAccountsResp.md)
+[**ApplianceLocalAccountsResult**](ApplianceLocalAccountsResult.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceLocalAccountsListResp list
+> ApplianceLocalAccountsListResult list
 
 Get a list of the local user accounts.
 
@@ -195,7 +195,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceLocalAccountsListResp**](ApplianceLocalAccountsListResp.md)
+[**ApplianceLocalAccountsListResult**](ApplianceLocalAccountsListResult.md)
 
 ### Authorization
 

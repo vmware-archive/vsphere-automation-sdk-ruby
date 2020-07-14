@@ -32,7 +32,7 @@ describe 'SubscribedLibraryApi' do
   # Creates a new subscribed library. &lt;p&gt; Once created, the subscribed library will be empty. If the {@link LibraryModel#subscriptionInfo} property is set, the Content Library Service will attempt to synchronize to the remote source. This is an asynchronous operation so the content of the published library may not immediately appear.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentSubscribedLibraryCreateResp]
+  # @return [ContentSubscribedLibraryCreateResult]
   describe 'create test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -65,7 +65,7 @@ describe 'SubscribedLibraryApi' do
   # Returns a given subscribed library.
   # @param library_id Identifier of the subscribed library to return.
   # @param [Hash] opts the optional parameters
-  # @return [ContentSubscribedLibraryResp]
+  # @return [ContentSubscribedLibraryResult]
   describe 'get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -75,7 +75,7 @@ describe 'SubscribedLibraryApi' do
   # unit tests for list
   # Returns the identifiers of all subscribed libraries in the Content Library.
   # @param [Hash] opts the optional parameters
-  # @return [ContentSubscribedLibraryListResp]
+  # @return [ContentSubscribedLibraryListResult]
   describe 'list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -86,7 +86,7 @@ describe 'SubscribedLibraryApi' do
   # Probes remote library subscription information, including URL, SSL certificate and password. The resulting {@link ProbeResult} {@term structure} describes whether or not the subscription configuration is successful.
   # @param request_body 
   # @param [Hash] opts the optional parameters
-  # @return [ContentSubscribedLibraryProbeResp]
+  # @return [ContentSubscribedLibraryProbeResult]
   describe 'probe test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

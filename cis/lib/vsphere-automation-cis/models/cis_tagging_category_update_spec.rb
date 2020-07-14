@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaggingCategoryUpdateSpec
-    # Object types to which this category's tags can be attached. <p> The {@term set} of associable types cannot be updated incrementally. For example, if {@link #associableTypes} originally contains {A,B,C} and you want to add D, then you need to pass {A,B,C,D} in your update specification. You also cannot remove any item from this {@term set}. For example, if you have {A,B,C}, then you cannot remove say {A} from it. Similarly, if you start with an empty {@term set}, then that implies that you can tag any object and hence you cannot later pass say {A}, because that would be restricting the type of objects you want to tag. Thus, associable types can only grow and not shrink.
-    attr_accessor :associable_types
-
-    attr_accessor :cardinality
+    # The display name of the category.
+    attr_accessor :name
 
     # The description of the category.
     attr_accessor :description
 
-    # The display name of the category.
-    attr_accessor :name
+    attr_accessor :cardinality
+
+    # Object types to which this category's tags can be attached. <p> The {@term set} of associable types cannot be updated incrementally. For example, if {@link #associableTypes} originally contains {A,B,C} and you want to add D, then you need to pass {A,B,C,D} in your update specification. You also cannot remove any item from this {@term set}. For example, if you have {A,B,C}, then you cannot remove say {A} from it. Similarly, if you start with an empty {@term set}, then that implies that you can tag any object and hence you cannot later pass say {A}, because that would be restricting the type of objects you want to tag. Thus, associable types can only grow and not shrink.
+    attr_accessor :associable_types
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'associable_types' => :'associable_types',
-        :'cardinality' => :'cardinality',
+        :'name' => :'name',
         :'description' => :'description',
-        :'name' => :'name'
+        :'cardinality' => :'cardinality',
+        :'associable_types' => :'associable_types'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'associable_types' => :'Array<String>',
-        :'cardinality' => :'CisTaggingCategoryModelCardinality',
+        :'name' => :'String',
         :'description' => :'String',
-        :'name' => :'String'
+        :'cardinality' => :'CisTaggingCategoryModelCardinality',
+        :'associable_types' => :'Array<String>'
       }
     end
 
@@ -50,22 +50,22 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'associable_types')
-        if (value = attributes[:'associable_types']).is_a?(Array)
-          self.associable_types = value
-        end
-      end
-
-      if attributes.has_key?(:'cardinality')
-        self.cardinality = attributes[:'cardinality']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'cardinality')
+        self.cardinality = attributes[:'cardinality']
+      end
+
+      if attributes.has_key?(:'associable_types')
+        if (value = attributes[:'associable_types']).is_a?(Array)
+          self.associable_types = value
+        end
       end
     end
 
@@ -87,10 +87,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          associable_types == o.associable_types &&
-          cardinality == o.cardinality &&
+          name == o.name &&
           description == o.description &&
-          name == o.name
+          cardinality == o.cardinality &&
+          associable_types == o.associable_types
     end
 
     # @see the `==` method
@@ -102,7 +102,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [associable_types, cardinality, description, name].hash
+      [name, description, cardinality, associable_types].hash
     end
 
     # Builds the object from hash

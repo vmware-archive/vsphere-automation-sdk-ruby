@@ -1,16 +1,16 @@
 # VSphereAutomation::Content::LibraryItemDownloadsessionFileApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](LibraryItemDownloadsessionFileApi.md#get) | **POST** /rest/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action&#x3D;get | Retrieves file download information for a specific file.
-[**list**](LibraryItemDownloadsessionFileApi.md#list) | **GET** /rest/com/vmware/content/library/item/downloadsession/file | Lists the information of all the files in the library item associated with the download session.
-[**prepare**](LibraryItemDownloadsessionFileApi.md#prepare) | **POST** /rest/com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action&#x3D;prepare | Requests a file to be prepared for download.
+[**get**](LibraryItemDownloadsessionFileApi.md#get) | **POST** /com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action&#x3D;get | Retrieves file download information for a specific file.
+[**list**](LibraryItemDownloadsessionFileApi.md#list) | **GET** /com/vmware/content/library/item/downloadsession/file | Lists the information of all the files in the library item associated with the download session.
+[**prepare**](LibraryItemDownloadsessionFileApi.md#prepare) | **POST** /com/vmware/content/library/item/downloadsession/file/id:{download_session_id}?~action&#x3D;prepare | Requests a file to be prepared for download.
 
 
 # **get**
-> ContentLibraryItemDownloadsessionFileResp get(download_session_id, request_body)
+> ContentLibraryItemDownloadsessionFileResult get(download_session_id, request_body)
 
 Retrieves file download information for a specific file.
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemDownloadsessionFileResp**](ContentLibraryItemDownloadsessionFileResp.md)
+[**ContentLibraryItemDownloadsessionFileResult**](ContentLibraryItemDownloadsessionFileResult.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ContentLibraryItemDownloadsessionFileListResp list(download_session_id)
+> ContentLibraryItemDownloadsessionFileListResult list(download_session_id)
 
 Lists the information of all the files in the library item associated with the download session.
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemDownloadsessionFileListResp**](ContentLibraryItemDownloadsessionFileListResp.md)
+[**ContentLibraryItemDownloadsessionFileListResult**](ContentLibraryItemDownloadsessionFileListResult.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 
 # **prepare**
-> ContentLibraryItemDownloadsessionFilePrepareResp prepare(download_session_id, request_body)
+> ContentLibraryItemDownloadsessionFilePrepareResult prepare(download_session_id, request_body)
 
 Requests a file to be prepared for download.
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentLibraryItemDownloadsessionFilePrepareResp**](ContentLibraryItemDownloadsessionFilePrepareResp.md)
+[**ContentLibraryItemDownloadsessionFilePrepareResult**](ContentLibraryItemDownloadsessionFilePrepareResult.md)
 
 ### Authorization
 

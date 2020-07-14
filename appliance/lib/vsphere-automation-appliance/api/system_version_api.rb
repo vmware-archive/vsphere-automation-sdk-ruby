@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get the version.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceSystemVersionResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceSystemVersionResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get the version.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceSystemVersionResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceSystemVersionResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemVersionApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/system/version'
+      local_var_path = '/appliance/system/version'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceSystemVersionResp',
+	  '200' => 'Appliance::ApplianceSystemVersionResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

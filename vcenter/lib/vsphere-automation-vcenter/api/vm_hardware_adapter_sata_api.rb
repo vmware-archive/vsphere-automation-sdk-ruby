@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareAdapterSataCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareAdapterSataCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(vm, request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(vm, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareAdapterSataCreateResp|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareAdapterSataCreateResult|VapiStdErrorsUnsupportedError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(vm, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterSataApi.create ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareAdapterSataApi.create"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/adapter/sata'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/adapter/sata'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareAdapterSataCreateResp',
+	  '200' => 'VCenter::VcenterVmHardwareAdapterSataCreateResult',
 	  '400' => 'VCenter::VapiStdErrorsUnsupportedError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -111,7 +111,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'adapter' when calling VmHardwareAdapterSataApi.delete"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/adapter/sata/{adapter}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'adapter' + '}', adapter.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/adapter/sata/{adapter}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'adapter' + '}', adapter.to_s)
 
       # query parameters
       query_params = {}
@@ -142,7 +142,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param adapter Virtual SATA adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SataAdapter.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareAdapterSataResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareAdapterSataResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, adapter, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, adapter, opts)
       data
@@ -153,7 +153,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param adapter Virtual SATA adapter identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.SataAdapter.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareAdapterSataResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareAdapterSataResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, adapter, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterSataApi.get ...'
@@ -167,7 +167,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'adapter' when calling VmHardwareAdapterSataApi.get"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/adapter/sata/{adapter}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'adapter' + '}', adapter.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/adapter/sata/{adapter}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'adapter' + '}', adapter.to_s)
 
       # query parameters
       query_params = {}
@@ -190,7 +190,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareAdapterSataResp',
+	  '200' => 'VCenter::VcenterVmHardwareAdapterSataResult',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -205,7 +205,7 @@ module VSphereAutomation
     # Returns commonly used information about the virtual SATA adapters belonging to the virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareAdapterSataListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareAdapterSataListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def list(vm, opts = {})
       data, _status_code, _headers = list_with_http_info(vm, opts)
       data
@@ -215,7 +215,7 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareAdapterSataListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareAdapterSataListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareAdapterSataApi.list ...'
@@ -225,7 +225,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareAdapterSataApi.list"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/adapter/sata'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/adapter/sata'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -248,7 +248,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareAdapterSataListResp',
+	  '200' => 'VCenter::VcenterVmHardwareAdapterSataListResult',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

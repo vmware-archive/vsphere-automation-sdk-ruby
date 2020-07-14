@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::RecoveryBackupPartsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](RecoveryBackupPartsApi.md#get) | **GET** /rest/appliance/recovery/backup/parts/{id} | Gets the size (in MB) of the part.
-[**list**](RecoveryBackupPartsApi.md#list) | **GET** /rest/appliance/recovery/backup/parts | Gets a list of the backup parts.
+[**get**](RecoveryBackupPartsApi.md#get) | **GET** /appliance/recovery/backup/parts/{id} | Gets the size (in MB) of the part.
+[**list**](RecoveryBackupPartsApi.md#list) | **GET** /appliance/recovery/backup/parts | Gets a list of the backup parts.
 
 
 # **get**
-> ApplianceRecoveryBackupPartsResp get(id)
+> ApplianceRecoveryBackupPartsResult get(id)
 
 Gets the size (in MB) of the part.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceRecoveryBackupPartsResp**](ApplianceRecoveryBackupPartsResp.md)
+[**ApplianceRecoveryBackupPartsResult**](ApplianceRecoveryBackupPartsResult.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceRecoveryBackupPartsListResp list
+> ApplianceRecoveryBackupPartsListResult list
 
 Gets a list of the backup parts.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceRecoveryBackupPartsListResp**](ApplianceRecoveryBackupPartsListResp.md)
+[**ApplianceRecoveryBackupPartsListResult**](ApplianceRecoveryBackupPartsListResult.md)
 
 ### Authorization
 

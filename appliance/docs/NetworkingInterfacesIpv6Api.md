@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::NetworkingInterfacesIpv6Api
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NetworkingInterfacesIpv6Api.md#get) | **GET** /rest/appliance/networking/interfaces/{interface_name}/ipv6 | Get IPv6 network configuration for specific interface.
-[**set**](NetworkingInterfacesIpv6Api.md#set) | **PUT** /rest/appliance/networking/interfaces/{interface_name}/ipv6 | Set IPv6 network configuration for specific interface.
+[**get**](NetworkingInterfacesIpv6Api.md#get) | **GET** /appliance/networking/interfaces/{interface_name}/ipv6 | Get IPv6 network configuration for specific interface.
+[**set**](NetworkingInterfacesIpv6Api.md#set) | **PUT** /appliance/networking/interfaces/{interface_name}/ipv6 | Set IPv6 network configuration for specific interface.
 
 
 # **get**
-> ApplianceNetworkingInterfacesIpv6Resp get(interface_name)
+> ApplianceNetworkingInterfacesIpv6Result get(interface_name)
 
 Get IPv6 network configuration for specific interface.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNetworkingInterfacesIpv6Resp**](ApplianceNetworkingInterfacesIpv6Resp.md)
+[**ApplianceNetworkingInterfacesIpv6Result**](ApplianceNetworkingInterfacesIpv6Result.md)
 
 ### Authorization
 

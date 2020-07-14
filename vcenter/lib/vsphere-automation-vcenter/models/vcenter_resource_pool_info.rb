@@ -11,10 +11,6 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterResourcePoolInfo
-    attr_accessor :cpu_allocation
-
-    attr_accessor :memory_allocation
-
     # Name of the vCenter Server resource pool.
     attr_accessor :name
 
@@ -24,8 +20,6 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cpu_allocation' => :'cpu_allocation',
-        :'memory_allocation' => :'memory_allocation',
         :'name' => :'name',
         :'resource_pools' => :'resource_pools'
       }
@@ -34,8 +28,6 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cpu_allocation' => :'VcenterResourcePoolResourceAllocationInfo',
-        :'memory_allocation' => :'VcenterResourcePoolResourceAllocationInfo',
         :'name' => :'String',
         :'resource_pools' => :'Array<String>'
       }
@@ -48,14 +40,6 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'cpu_allocation')
-        self.cpu_allocation = attributes[:'cpu_allocation']
-      end
-
-      if attributes.has_key?(:'memory_allocation')
-        self.memory_allocation = attributes[:'memory_allocation']
-      end
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
@@ -96,8 +80,6 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cpu_allocation == o.cpu_allocation &&
-          memory_allocation == o.memory_allocation &&
           name == o.name &&
           resource_pools == o.resource_pools
     end
@@ -111,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cpu_allocation, memory_allocation, name, resource_pools].hash
+      [name, resource_pools].hash
     end
 
     # Builds the object from hash

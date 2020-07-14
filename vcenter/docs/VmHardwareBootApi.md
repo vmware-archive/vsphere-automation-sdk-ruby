@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::VmHardwareBootApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmHardwareBootApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/boot | Returns the boot-related settings of a virtual machine.
-[**update**](VmHardwareBootApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/boot | Updates the boot-related settings of a virtual machine.
+[**get**](VmHardwareBootApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/boot | Returns the boot-related settings of a virtual machine.
+[**update**](VmHardwareBootApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/boot | Updates the boot-related settings of a virtual machine.
 
 
 # **get**
-> VcenterVmHardwareBootResp get(vm)
+> VcenterVmHardwareBootResult get(vm)
 
 Returns the boot-related settings of a virtual machine.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareBootResp**](VcenterVmHardwareBootResp.md)
+[**VcenterVmHardwareBootResult**](VcenterVmHardwareBootResult.md)
 
 ### Authorization
 

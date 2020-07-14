@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentNotifications
-    # Error notification messages reported.
-    attr_accessor :errors
-
     # Info notification messages reported.
     attr_accessor :info
 
     # Warning notification messages reported.
     attr_accessor :warnings
 
+    # Error notification messages reported.
+    attr_accessor :errors
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'errors' => :'errors',
         :'info' => :'info',
-        :'warnings' => :'warnings'
+        :'warnings' => :'warnings',
+        :'errors' => :'errors'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'errors' => :'Array<VcenterDeploymentNotification>',
         :'info' => :'Array<VcenterDeploymentNotification>',
-        :'warnings' => :'Array<VcenterDeploymentNotification>'
+        :'warnings' => :'Array<VcenterDeploymentNotification>',
+        :'errors' => :'Array<VcenterDeploymentNotification>'
       }
     end
 
@@ -46,12 +46,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'errors')
-        if (value = attributes[:'errors']).is_a?(Array)
-          self.errors = value
-        end
-      end
-
       if attributes.has_key?(:'info')
         if (value = attributes[:'info']).is_a?(Array)
           self.info = value
@@ -61,6 +55,12 @@ module VSphereAutomation
       if attributes.has_key?(:'warnings')
         if (value = attributes[:'warnings']).is_a?(Array)
           self.warnings = value
+        end
+      end
+
+      if attributes.has_key?(:'errors')
+        if (value = attributes[:'errors']).is_a?(Array)
+          self.errors = value
         end
       end
     end
@@ -83,9 +83,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          errors == o.errors &&
           info == o.info &&
-          warnings == o.warnings
+          warnings == o.warnings &&
+          errors == o.errors
     end
 
     # @see the `==` method
@@ -97,7 +97,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [errors, info, warnings].hash
+      [info, warnings, errors].hash
     end
 
     # Builds the object from hash

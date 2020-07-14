@@ -19,7 +19,7 @@ module VSphereAutomation
     # Gets the size (in MB) of the part.
     # @param id Identifier of the part.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryBackupPartsResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryBackupPartsResult|VapiStdErrorsErrorError|]
     def get(id, opts = {})
       data, _status_code, _headers = get_with_http_info(id, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param id Identifier of the part.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryBackupPartsResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryBackupPartsResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupPartsApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'id' when calling RecoveryBackupPartsApi.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/parts/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/appliance/recovery/backup/parts/{id}'.sub('{' + 'id' + '}', id.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryBackupPartsResp',
+	  '200' => 'Appliance::ApplianceRecoveryBackupPartsResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -72,7 +72,7 @@ module VSphereAutomation
     end
     # Gets a list of the backup parts.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceRecoveryBackupPartsListResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceRecoveryBackupPartsListResult|VapiStdErrorsErrorError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -81,13 +81,13 @@ module VSphereAutomation
     # Gets a list of the backup parts.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceRecoveryBackupPartsListResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceRecoveryBackupPartsListResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RecoveryBackupPartsApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/recovery/backup/parts'
+      local_var_path = '/appliance/recovery/backup/parts'
 
       # query parameters
       query_params = {}
@@ -110,7 +110,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceRecoveryBackupPartsListResp',
+	  '200' => 'Appliance::ApplianceRecoveryBackupPartsListResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

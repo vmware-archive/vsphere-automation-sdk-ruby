@@ -19,7 +19,7 @@ module VSphereAutomation
     # Get health messages.
     # @param item ID of the data item
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceHealthMessagesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceHealthMessagesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def messages(item, opts = {})
       data, _status_code, _headers = messages_with_http_info(item, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param item ID of the data item
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceHealthMessagesResp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceHealthMessagesResult|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def messages_with_http_info(item, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthApi.messages ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'item' when calling HealthApi.messages"
       end
       # resource path
-      local_var_path = '/rest/appliance/health/{item}/messages'.sub('{' + 'item' + '}', item.to_s)
+      local_var_path = '/appliance/health/{item}/messages'.sub('{' + 'item' + '}', item.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceHealthMessagesResp',
+	  '200' => 'Appliance::ApplianceHealthMessagesResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})

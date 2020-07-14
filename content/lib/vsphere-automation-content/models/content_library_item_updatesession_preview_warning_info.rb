@@ -11,28 +11,28 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemUpdatesessionPreviewWarningInfo
-    # Indicates if this warning will be ignored during session complete operation.
-    attr_accessor :ignored
+    attr_accessor :type
 
     attr_accessor :message
 
-    attr_accessor :type
+    # Indicates if this warning will be ignored during session complete operation.
+    attr_accessor :ignored
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'ignored' => :'ignored',
+        :'type' => :'type',
         :'message' => :'message',
-        :'type' => :'type'
+        :'ignored' => :'ignored'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'ignored' => :'Boolean',
+        :'type' => :'ContentLibraryItemUpdatesessionWarningType',
         :'message' => :'VapiStdLocalizableMessage',
-        :'type' => :'ContentLibraryItemUpdatesessionWarningType'
+        :'ignored' => :'Boolean'
       }
     end
 
@@ -44,16 +44,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ignored')
-        self.ignored = attributes[:'ignored']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'message')
         self.message = attributes[:'message']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'ignored')
+        self.ignored = attributes[:'ignored']
       end
     end
 
@@ -61,16 +61,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @ignored.nil?
-        invalid_properties.push('invalid value for "ignored", ignored cannot be nil.')
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       if @message.nil?
         invalid_properties.push('invalid value for "message", message cannot be nil.')
       end
 
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      if @ignored.nil?
+        invalid_properties.push('invalid value for "ignored", ignored cannot be nil.')
       end
 
       invalid_properties
@@ -79,9 +79,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @ignored.nil?
-      return false if @message.nil?
       return false if @type.nil?
+      return false if @message.nil?
+      return false if @ignored.nil?
       true
     end
 
@@ -90,9 +90,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          ignored == o.ignored &&
+          type == o.type &&
           message == o.message &&
-          type == o.type
+          ignored == o.ignored
     end
 
     # @see the `==` method
@@ -104,7 +104,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ignored, message, type].hash
+      [type, message, ignored].hash
     end
 
     # Builds the object from hash

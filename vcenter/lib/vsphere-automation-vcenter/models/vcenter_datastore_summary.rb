@@ -11,39 +11,39 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDatastoreSummary
-    # Capacity of this datastore, in bytes.   The server periodically updates this value.  This field will be unset if the capacity of this datastore is not known.
-    attr_accessor :capacity
-
     # Identifier of the datastore. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: Datastore. When operations return a value of this structure as a result, the field will be an identifier for the resource type: Datastore.
     attr_accessor :datastore
-
-    # Available space of this datastore, in bytes.   The server periodically updates this value.  This field will be unset if the available space of this datastore is not known.
-    attr_accessor :free_space
 
     # Name of the datastore.
     attr_accessor :name
 
     attr_accessor :type
 
+    # Available space of this datastore, in bytes.   The server periodically updates this value.  This field will be unset if the available space of this datastore is not known.
+    attr_accessor :free_space
+
+    # Capacity of this datastore, in bytes.   The server periodically updates this value.  This field will be unset if the capacity of this datastore is not known.
+    attr_accessor :capacity
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'capacity' => :'capacity',
         :'datastore' => :'datastore',
-        :'free_space' => :'free_space',
         :'name' => :'name',
-        :'type' => :'type'
+        :'type' => :'type',
+        :'free_space' => :'free_space',
+        :'capacity' => :'capacity'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'capacity' => :'Integer',
         :'datastore' => :'String',
-        :'free_space' => :'Integer',
         :'name' => :'String',
-        :'type' => :'VcenterDatastoreType'
+        :'type' => :'VcenterDatastoreType',
+        :'free_space' => :'Integer',
+        :'capacity' => :'Integer'
       }
     end
 
@@ -55,16 +55,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'capacity')
-        self.capacity = attributes[:'capacity']
-      end
-
       if attributes.has_key?(:'datastore')
         self.datastore = attributes[:'datastore']
-      end
-
-      if attributes.has_key?(:'free_space')
-        self.free_space = attributes[:'free_space']
       end
 
       if attributes.has_key?(:'name')
@@ -73,6 +65,14 @@ module VSphereAutomation
 
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.has_key?(:'free_space')
+        self.free_space = attributes[:'free_space']
+      end
+
+      if attributes.has_key?(:'capacity')
+        self.capacity = attributes[:'capacity']
       end
     end
 
@@ -109,11 +109,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          capacity == o.capacity &&
           datastore == o.datastore &&
-          free_space == o.free_space &&
           name == o.name &&
-          type == o.type
+          type == o.type &&
+          free_space == o.free_space &&
+          capacity == o.capacity
     end
 
     # @see the `==` method
@@ -125,7 +125,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [capacity, datastore, free_space, name, type].hash
+      [datastore, name, type, free_space, capacity].hash
     end
 
     # Builds the object from hash

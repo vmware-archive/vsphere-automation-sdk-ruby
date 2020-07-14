@@ -11,18 +11,18 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterUndeploySpec
+    attr_accessor :vc_spec
+
     # Flag controlling in what circumstances the virtual machines will be deleted. For this flag to take effect, the VCHA cluster should have been successfully configured using automatic deployment.     -  If true, the Cluster.UndeploySpec.vms field will be ignored, the VCHA cluster specific information is removed, and the passive and witness virtual machines will be deleted.    -  If false, the Cluster.UndeploySpec.vms field contains the information identifying the passive and witness virtual machines.        =  If the Cluster.UndeploySpec.vms field is set, then it will be validated prior to deleting the passive and witness virtual machines and VCHA cluster specific information is removed.      =  If the Cluster.UndeploySpec.vms field is unset, then the passive and witness virtual machines will not be deleted. The customer should delete them in order to cleanup completely. VCHA cluster specific information is removed.    If unset, the Cluster.UndeploySpec.vms field contains the information identifying the passive and witness virtual machines.     -  If the Cluster.UndeploySpec.vms field is set, then it will be validated prior to deleting the passive and witness virtual machines. VCHA cluster specific information is removed.    -  If the Cluster.UndeploySpec.vms field is unset, then the passive and witness virtual machines will not be deleted. The customer should delete them in order to cleanup completely. VCHA cluster specific information is removed. 
     attr_accessor :force_delete
-
-    attr_accessor :vc_spec
 
     attr_accessor :vms
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'force_delete' => :'force_delete',
         :'vc_spec' => :'vc_spec',
+        :'force_delete' => :'force_delete',
         :'vms' => :'vms'
       }
     end
@@ -30,8 +30,8 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'force_delete' => :'Boolean',
         :'vc_spec' => :'VcenterVchaCredentialsSpec',
+        :'force_delete' => :'Boolean',
         :'vms' => :'VcenterVchaClusterVmInfo'
       }
     end
@@ -44,12 +44,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'force_delete')
-        self.force_delete = attributes[:'force_delete']
-      end
-
       if attributes.has_key?(:'vc_spec')
         self.vc_spec = attributes[:'vc_spec']
+      end
+
+      if attributes.has_key?(:'force_delete')
+        self.force_delete = attributes[:'force_delete']
       end
 
       if attributes.has_key?(:'vms')
@@ -75,8 +75,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          force_delete == o.force_delete &&
           vc_spec == o.vc_spec &&
+          force_delete == o.force_delete &&
           vms == o.vms
     end
 
@@ -89,7 +89,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [force_delete, vc_spec, vms].hash
+      [vc_spec, force_delete, vms].hash
     end
 
     # Builds the object from hash

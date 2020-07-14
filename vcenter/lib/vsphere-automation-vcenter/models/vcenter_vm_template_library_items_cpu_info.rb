@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsCpuInfo
-    # Number of CPU cores per socket.
-    attr_accessor :cores_per_socket
-
     # Number of CPU cores.
     attr_accessor :count
+
+    # Number of CPU cores per socket.
+    attr_accessor :cores_per_socket
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cores_per_socket' => :'cores_per_socket',
-        :'count' => :'count'
+        :'count' => :'count',
+        :'cores_per_socket' => :'cores_per_socket'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cores_per_socket' => :'Integer',
-        :'count' => :'Integer'
+        :'count' => :'Integer',
+        :'cores_per_socket' => :'Integer'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cores_per_socket')
-        self.cores_per_socket = attributes[:'cores_per_socket']
-      end
-
       if attributes.has_key?(:'count')
         self.count = attributes[:'count']
+      end
+
+      if attributes.has_key?(:'cores_per_socket')
+        self.cores_per_socket = attributes[:'cores_per_socket']
       end
     end
 
@@ -54,12 +54,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @cores_per_socket.nil?
-        invalid_properties.push('invalid value for "cores_per_socket", cores_per_socket cannot be nil.')
-      end
-
       if @count.nil?
         invalid_properties.push('invalid value for "count", count cannot be nil.')
+      end
+
+      if @cores_per_socket.nil?
+        invalid_properties.push('invalid value for "cores_per_socket", cores_per_socket cannot be nil.')
       end
 
       invalid_properties
@@ -68,8 +68,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @cores_per_socket.nil?
       return false if @count.nil?
+      return false if @cores_per_socket.nil?
       true
     end
 
@@ -78,8 +78,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cores_per_socket == o.cores_per_socket &&
-          count == o.count
+          count == o.count &&
+          cores_per_socket == o.cores_per_socket
     end
 
     # @see the `==` method
@@ -91,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cores_per_socket, count].hash
+      [count, cores_per_socket].hash
     end
 
     # Builds the object from hash

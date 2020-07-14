@@ -1,15 +1,15 @@
 # VSphereAutomation::VAPI::MetadataPrivilegePackageApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](MetadataPrivilegePackageApi.md#get) | **GET** /rest/com/vmware/vapi/metadata/privilege/package/id:{package_id} | Retrieves privilege information about the package element corresponding to {@param.name packageId}.
-[**list**](MetadataPrivilegePackageApi.md#list) | **GET** /rest/com/vmware/vapi/metadata/privilege/package | Returns the identifiers for the package elements that have privilege information.
+[**get**](MetadataPrivilegePackageApi.md#get) | **GET** /com/vmware/vapi/metadata/privilege/package/id:{package_id} | Retrieves privilege information about the package element corresponding to {@param.name packageId}.
+[**list**](MetadataPrivilegePackageApi.md#list) | **GET** /com/vmware/vapi/metadata/privilege/package | Returns the identifiers for the package elements that have privilege information.
 
 
 # **get**
-> VapiMetadataPrivilegePackageResp get(package_id)
+> VapiMetadataPrivilegePackageResult get(package_id)
 
 Retrieves privilege information about the package element corresponding to {@param.name packageId}.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VapiMetadataPrivilegePackageResp**](VapiMetadataPrivilegePackageResp.md)
+[**VapiMetadataPrivilegePackageResult**](VapiMetadataPrivilegePackageResult.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiMetadataPrivilegePackageListResp list
+> VapiMetadataPrivilegePackageListResult list
 
 Returns the identifiers for the package elements that have privilege information.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VapiMetadataPrivilegePackageListResp**](VapiMetadataPrivilegePackageListResp.md)
+[**VapiMetadataPrivilegePackageListResult**](VapiMetadataPrivilegePackageListResult.md)
 
 ### Authorization
 

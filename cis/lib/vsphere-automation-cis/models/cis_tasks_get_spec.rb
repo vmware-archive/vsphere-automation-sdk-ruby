@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTasksGetSpec
-    # If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
-    attr_accessor :exclude_result
-
     # If true, all data, including operation-specific data, will be returned, otherwise only the data described in Info will be returned. If unset, only the data described in Info will be returned.
     attr_accessor :return_all
+
+    # If true, the result will not be included in the task information, otherwise it will be included. If unset, the result of the operation will be included in the task information.
+    attr_accessor :exclude_result
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'exclude_result' => :'exclude_result',
-        :'return_all' => :'return_all'
+        :'return_all' => :'return_all',
+        :'exclude_result' => :'exclude_result'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'exclude_result' => :'Boolean',
-        :'return_all' => :'Boolean'
+        :'return_all' => :'Boolean',
+        :'exclude_result' => :'Boolean'
       }
     end
 
@@ -41,12 +41,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'exclude_result')
-        self.exclude_result = attributes[:'exclude_result']
-      end
-
       if attributes.has_key?(:'return_all')
         self.return_all = attributes[:'return_all']
+      end
+
+      if attributes.has_key?(:'exclude_result')
+        self.exclude_result = attributes[:'exclude_result']
       end
     end
 
@@ -68,8 +68,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          exclude_result == o.exclude_result &&
-          return_all == o.return_all
+          return_all == o.return_all &&
+          exclude_result == o.exclude_result
     end
 
     # @see the `==` method
@@ -81,7 +81,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [exclude_result, return_all].hash
+      [return_all, exclude_result].hash
     end
 
     # Builds the object from hash

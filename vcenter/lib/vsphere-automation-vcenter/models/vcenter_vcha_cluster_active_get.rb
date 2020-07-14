@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterActiveGet
+    attr_accessor :vc_spec
+
     # If true, then return only the information that does not require connecting to the Active vCenter Server.   If false or unset, then return all the information. If unset, then return all the information.
     attr_accessor :partial
-
-    attr_accessor :vc_spec
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'partial' => :'partial',
-        :'vc_spec' => :'vc_spec'
+        :'vc_spec' => :'vc_spec',
+        :'partial' => :'partial'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'partial' => :'Boolean',
-        :'vc_spec' => :'VcenterVchaCredentialsSpec'
+        :'vc_spec' => :'VcenterVchaCredentialsSpec',
+        :'partial' => :'Boolean'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'partial')
-        self.partial = attributes[:'partial']
-      end
-
       if attributes.has_key?(:'vc_spec')
         self.vc_spec = attributes[:'vc_spec']
+      end
+
+      if attributes.has_key?(:'partial')
+        self.partial = attributes[:'partial']
       end
     end
 
@@ -67,8 +67,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          partial == o.partial &&
-          vc_spec == o.vc_spec
+          vc_spec == o.vc_spec &&
+          partial == o.partial
     end
 
     # @see the `==` method
@@ -80,7 +80,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [partial, vc_spec].hash
+      [vc_spec, partial].hash
     end
 
     # Builds the object from hash

@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get time zone.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceSystemTimeTimezoneResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceSystemTimeTimezoneResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get time zone.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceSystemTimeTimezoneResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceSystemTimeTimezoneResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SystemTimeTimezoneApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/system/time/timezone'
+      local_var_path = '/appliance/system/time/timezone'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceSystemTimeTimezoneResp',
+	  '200' => 'Appliance::ApplianceSystemTimeTimezoneResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -87,7 +87,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling SystemTimeTimezoneApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/system/time/timezone'
+      local_var_path = '/appliance/system/time/timezone'
 
       # query parameters
       query_params = {}

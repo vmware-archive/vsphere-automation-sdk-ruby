@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::VchaCapabilitiesApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VchaCapabilitiesApi.md#get) | **GET** /rest/vcenter/vcha/capabilities | Gets the capabilities of the active node of a VCHA cluster.
+[**get**](VchaCapabilitiesApi.md#get) | **GET** /vcenter/vcha/capabilities | Gets the capabilities of the active node of a VCHA cluster.
 
 
 # **get**
-> VcenterVchaCapabilitiesResp get
+> VcenterVchaCapabilitiesResult get
 
 Gets the capabilities of the active node of a VCHA cluster.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterVchaCapabilitiesResp**](VcenterVchaCapabilitiesResp.md)
+[**VcenterVchaCapabilitiesResult**](VcenterVchaCapabilitiesResult.md)
 
 ### Authorization
 

@@ -16,24 +16,24 @@ module VSphereAutomation
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Gets List of all Operations about a vAPI REST Resource. Information is searched for by typeId and instanceId is used only in URLs.
-    # @param type_id Resource type id. The parameter must be an identifier for the resource type: vapi.resource.
-    # @param instance_id Resource instance id. If you provide instanceId parameter then returned URLs will be prepopulated with it. If instanceId parameter is unset then URLs will become URI templates with id place holders as per RFC 6570. The parameter must be an identifier for the resource type: vapi.resource.
+    # Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
+    # @param type_id Resource type id.
+    # @param instance_id Resource instance id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :base_url Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
-    # @return [VapiRestNavigationResourceResp|]
+    # @option opts [String] :base_url Base URL.
+    # @return [VapiRestNavigationResourceResult|]
     def get(type_id, instance_id, opts = {})
       data, _status_code, _headers = get_with_http_info(type_id, instance_id, opts)
       data
     end
 
-    # Gets List of all Operations about a vAPI REST Resource. Information is searched for by typeId and instanceId is used only in URLs.
+    # Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
     # @api private
-    # @param type_id Resource type id. The parameter must be an identifier for the resource type: vapi.resource.
-    # @param instance_id Resource instance id. If you provide instanceId parameter then returned URLs will be prepopulated with it. If instanceId parameter is unset then URLs will become URI templates with id place holders as per RFC 6570. The parameter must be an identifier for the resource type: vapi.resource.
+    # @param type_id Resource type id.
+    # @param instance_id Resource instance id.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :base_url Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
-    # @return [Array<(VapiRestNavigationResourceResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @option opts [String] :base_url Base URL.
+    # @return [Array<(VapiRestNavigationResourceResult|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(type_id, instance_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationResourceApi.get ...'
@@ -47,7 +47,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'instance_id' when calling RestNavigationResourceApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/rest/navigation/resource/id:{type_id}/id:{instance_id}'.sub('{' + 'type_id' + '}', type_id.to_s).sub('{' + 'instance_id' + '}', instance_id.to_s)
+      local_var_path = '/com/vmware/vapi/rest/navigation/resource/id:{type_id}/id:{instance_id}'.sub('{' + 'type_id' + '}', type_id.to_s).sub('{' + 'instance_id' + '}', instance_id.to_s)
 
       # query parameters
       query_params = {}
@@ -71,33 +71,33 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiRestNavigationResourceResp',
+	  '200' => 'VAPI::VapiRestNavigationResourceResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RestNavigationResourceApi#get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
-    # Gets list of all vAPI REST Resources.
+    # Gets list of all vAPI REST {@link Resource}s.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :base_url Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
-    # @return [VapiRestNavigationResourceListResp|]
+    # @option opts [String] :base_url Base URL.
+    # @return [VapiRestNavigationResourceListResult|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
     end
 
-    # Gets list of all vAPI REST Resources.
+    # Gets list of all vAPI REST {@link Resource}s.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :base_url Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
-    # @return [Array<(VapiRestNavigationResourceListResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @option opts [String] :base_url Base URL.
+    # @return [Array<(VapiRestNavigationResourceListResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationResourceApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/rest/navigation/resource'
+      local_var_path = '/com/vmware/vapi/rest/navigation/resource'
 
       # query parameters
       query_params = {}
@@ -121,7 +121,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiRestNavigationResourceListResp',
+	  '200' => 'VAPI::VapiRestNavigationResourceListResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RestNavigationResourceApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

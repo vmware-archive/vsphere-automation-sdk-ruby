@@ -11,14 +11,16 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelStructureInfo
-    # Metamodel information of all the constant elements contained in the structure element. The key in the {@term map} is the name of the constant element and the value in the {@term map} is the metamodel information for the constant element.
-    attr_accessor :constants
+    # Dot separated name of the structure element. The segments in the name reflect the organization of the APIs. The format of each segment is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
+    attr_accessor :name
 
-    # English language documentation for a structure element. It can contain HTML markup and Javadoc tags. The first sentence of the structure documentation is a complete sentence that identifies the structure by name and summarizes the purpose of the structure.
-    attr_accessor :documentation
+    attr_accessor :type
 
     # Metamodel information of all the enumeration elements contained in the structure element. The key in the {@term map} is the identifier of the enumeration element and the value is the metamodel information of the enumeration element.
     attr_accessor :enumerations
+
+    # Metamodel information of all the constant elements contained in the structure element. The key in the {@term map} is the name of the constant element and the value in the {@term map} is the metamodel information for the constant element.
+    attr_accessor :constants
 
     # Metamodel information of all the field elements. The order of the field elements in the list matches the order in which the fields are defined in the service.
     attr_accessor :fields
@@ -26,34 +28,32 @@ module VSphereAutomation
     # Generic metadata elements for the structure element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
     attr_accessor :metadata
 
-    # Dot separated name of the structure element. The segments in the name reflect the organization of the APIs. The format of each segment is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
-    attr_accessor :name
-
-    attr_accessor :type
+    # English language documentation for a structure element. It can contain HTML markup and Javadoc tags. The first sentence of the structure documentation is a complete sentence that identifies the structure by name and summarizes the purpose of the structure.
+    attr_accessor :documentation
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'constants' => :'constants',
-        :'documentation' => :'documentation',
+        :'name' => :'name',
+        :'type' => :'type',
         :'enumerations' => :'enumerations',
+        :'constants' => :'constants',
         :'fields' => :'fields',
         :'metadata' => :'metadata',
-        :'name' => :'name',
-        :'type' => :'type'
+        :'documentation' => :'documentation'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'constants' => :'Array<VapiMetadataMetamodelServiceInfoConstants>',
-        :'documentation' => :'String',
+        :'name' => :'String',
+        :'type' => :'VapiMetadataMetamodelStructureInfoType',
         :'enumerations' => :'Array<VapiMetadataMetamodelPackageInfoEnumerations>',
+        :'constants' => :'Array<VapiMetadataMetamodelServiceInfoConstants>',
         :'fields' => :'Array<VapiMetadataMetamodelFieldInfo>',
         :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
-        :'name' => :'String',
-        :'type' => :'VapiMetadataMetamodelStructureInfoType'
+        :'documentation' => :'String'
       }
     end
 
@@ -65,19 +65,23 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'constants')
-        if (value = attributes[:'constants']).is_a?(Array)
-          self.constants = value
-        end
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'enumerations')
         if (value = attributes[:'enumerations']).is_a?(Array)
           self.enumerations = value
+        end
+      end
+
+      if attributes.has_key?(:'constants')
+        if (value = attributes[:'constants']).is_a?(Array)
+          self.constants = value
         end
       end
 
@@ -93,12 +97,8 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
       end
     end
 
@@ -106,16 +106,20 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @constants.nil?
-        invalid_properties.push('invalid value for "constants", constants cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       if @enumerations.nil?
         invalid_properties.push('invalid value for "enumerations", enumerations cannot be nil.')
+      end
+
+      if @constants.nil?
+        invalid_properties.push('invalid value for "constants", constants cannot be nil.')
       end
 
       if @fields.nil?
@@ -126,12 +130,8 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
       end
 
       invalid_properties
@@ -140,13 +140,13 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @constants.nil?
-      return false if @documentation.nil?
-      return false if @enumerations.nil?
-      return false if @fields.nil?
-      return false if @metadata.nil?
       return false if @name.nil?
       return false if @type.nil?
+      return false if @enumerations.nil?
+      return false if @constants.nil?
+      return false if @fields.nil?
+      return false if @metadata.nil?
+      return false if @documentation.nil?
       true
     end
 
@@ -155,13 +155,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          constants == o.constants &&
-          documentation == o.documentation &&
+          name == o.name &&
+          type == o.type &&
           enumerations == o.enumerations &&
+          constants == o.constants &&
           fields == o.fields &&
           metadata == o.metadata &&
-          name == o.name &&
-          type == o.type
+          documentation == o.documentation
     end
 
     # @see the `==` method
@@ -173,7 +173,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [constants, documentation, enumerations, fields, metadata, name, type].hash
+      [name, type, enumerations, constants, fields, metadata, documentation].hash
     end
 
     # Builds the object from hash

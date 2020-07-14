@@ -14,22 +14,14 @@ module VSphereAutomation
     # Total capacity of the file system, in bytes.
     attr_accessor :capacity
 
-    # Filesystem type, if known. For example, ext3 or NTFS. set if VMware Tools reports a value.
-    attr_accessor :filesystem
-
     # Free space on the file system, in bytes.
     attr_accessor :free_space
-
-    # VirtualDisks backing the guest partition, if known. This field is optional because it was added in a newer version than its parent node.
-    attr_accessor :mappings
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'capacity' => :'capacity',
-        :'filesystem' => :'filesystem',
-        :'free_space' => :'free_space',
-        :'mappings' => :'mappings'
+        :'free_space' => :'free_space'
       }
     end
 
@@ -37,9 +29,7 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'capacity' => :'Integer',
-        :'filesystem' => :'String',
-        :'free_space' => :'Integer',
-        :'mappings' => :'Array<VcenterVmGuestLocalFilesystemVirtualDiskMapping>'
+        :'free_space' => :'Integer'
       }
     end
 
@@ -55,18 +45,8 @@ module VSphereAutomation
         self.capacity = attributes[:'capacity']
       end
 
-      if attributes.has_key?(:'filesystem')
-        self.filesystem = attributes[:'filesystem']
-      end
-
       if attributes.has_key?(:'free_space')
         self.free_space = attributes[:'free_space']
-      end
-
-      if attributes.has_key?(:'mappings')
-        if (value = attributes[:'mappings']).is_a?(Array)
-          self.mappings = value
-        end
       end
     end
 
@@ -99,9 +79,7 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           capacity == o.capacity &&
-          filesystem == o.filesystem &&
-          free_space == o.free_space &&
-          mappings == o.mappings
+          free_space == o.free_space
     end
 
     # @see the `==` method
@@ -113,7 +91,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [capacity, filesystem, free_space, mappings].hash
+      [capacity, free_space].hash
     end
 
     # Builds the object from hash

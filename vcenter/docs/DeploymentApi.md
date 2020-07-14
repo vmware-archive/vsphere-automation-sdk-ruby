@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::DeploymentApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](DeploymentApi.md#get) | **GET** /rest/vcenter/deployment | Get the current status of the appliance deployment.
-[**rollback**](DeploymentApi.md#rollback) | **POST** /rest/vcenter/deployment?action&#x3D;rollback | Rollback a failed appliance so it can be configured once again.
+[**get**](DeploymentApi.md#get) | **GET** /vcenter/deployment | Get the current status of the appliance deployment.
+[**rollback**](DeploymentApi.md#rollback) | **POST** /vcenter/deployment?action&#x3D;rollback | Rollback a failed appliance so it can be configured once again.
 
 
 # **get**
-> VcenterDeploymentResp get
+> VcenterDeploymentResult get
 
 Get the current status of the appliance deployment.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterDeploymentResp**](VcenterDeploymentResp.md)
+[**VcenterDeploymentResult**](VcenterDeploymentResult.md)
 
 ### Authorization
 

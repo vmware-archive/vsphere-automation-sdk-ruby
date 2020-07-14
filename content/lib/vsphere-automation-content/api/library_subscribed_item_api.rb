@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'library_item_id' when calling LibrarySubscribedItemApi.evict"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=evict'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
+      local_var_path = '/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=evict'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
 
       # query parameters
       query_params = {}
@@ -95,7 +95,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibrarySubscribedItemApi.sync"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=sync'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
+      local_var_path = '/com/vmware/content/library/subscribed-item/id:{library_item_id}?~action=sync'.sub('{' + 'library_item_id' + '}', library_item_id.to_s)
 
       # query parameters
       query_params = {}

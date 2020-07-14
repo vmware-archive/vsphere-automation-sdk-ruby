@@ -1,17 +1,17 @@
 # VSphereAutomation::VAPI::RestNavigationResourceApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](RestNavigationResourceApi.md#get) | **GET** /rest/com/vmware/vapi/rest/navigation/resource/id:{type_id}/id:{instance_id} | Gets List of all Operations about a vAPI REST Resource. Information is searched for by typeId and instanceId is used only in URLs.
-[**list**](RestNavigationResourceApi.md#list) | **GET** /rest/com/vmware/vapi/rest/navigation/resource | Gets list of all vAPI REST Resources.
+[**get**](RestNavigationResourceApi.md#get) | **GET** /com/vmware/vapi/rest/navigation/resource/id:{type_id}/id:{instance_id} | Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
+[**list**](RestNavigationResourceApi.md#list) | **GET** /com/vmware/vapi/rest/navigation/resource | Gets list of all vAPI REST {@link Resource}s.
 
 
 # **get**
-> VapiRestNavigationResourceResp get(type_id, instance_id, opts)
+> VapiRestNavigationResourceResult get(type_id, instance_id, opts)
 
-Gets List of all Operations about a vAPI REST Resource. Information is searched for by typeId and instanceId is used only in URLs.
+Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
 
 ### Example
 ```ruby
@@ -26,14 +26,14 @@ VSphereAutomation::Configuration.new.tap do |config|
 end
 
 api_instance = VSphereAutomation::VAPI::RestNavigationResourceApi.new
-type_id = 'type_id_example' # String | Resource type id. The parameter must be an identifier for the resource type: vapi.resource.
-instance_id = 'instance_id_example' # String | Resource instance id. If you provide instanceId parameter then returned URLs will be prepopulated with it. If instanceId parameter is unset then URLs will become URI templates with id place holders as per RFC 6570. The parameter must be an identifier for the resource type: vapi.resource.
+type_id = 'type_id_example' # String | Resource type id.
+instance_id = 'instance_id_example' # String | Resource instance id.
 opts = {
-  base_url: 'base_url_example' # String | Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
+  base_url: 'base_url_example' # String | Base URL.
 }
 
 begin
-  #Gets List of all Operations about a vAPI REST Resource. Information is searched for by typeId and instanceId is used only in URLs.
+  #Gets {@link List} of all {@link Operation}s about a vAPI REST {@link Resource}. Information is searched for by {@param.name typeId} and {@param.name instanceId} is used only in URLs.
   result = api_instance.get(type_id, instance_id, opts)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -45,13 +45,13 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type_id** | **String**| Resource type id. The parameter must be an identifier for the resource type: vapi.resource. | 
- **instance_id** | **String**| Resource instance id. If you provide instanceId parameter then returned URLs will be prepopulated with it. If instanceId parameter is unset then URLs will become URI templates with id place holders as per RFC 6570. The parameter must be an identifier for the resource type: vapi.resource. | 
- **base_url** | **String**| Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs. | [optional] 
+ **type_id** | **String**| Resource type id. | 
+ **instance_id** | **String**| Resource instance id. | 
+ **base_url** | **String**| Base URL. | [optional] 
 
 ### Return type
 
-[**VapiRestNavigationResourceResp**](VapiRestNavigationResourceResp.md)
+[**VapiRestNavigationResourceResult**](VapiRestNavigationResourceResult.md)
 
 ### Authorization
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VapiRestNavigationResourceListResp list(opts)
+> VapiRestNavigationResourceListResult list(opts)
 
-Gets list of all vAPI REST Resources.
+Gets list of all vAPI REST {@link Resource}s.
 
 ### Example
 ```ruby
@@ -83,11 +83,11 @@ end
 
 api_instance = VSphereAutomation::VAPI::RestNavigationResourceApi.new
 opts = {
-  base_url: 'base_url_example' # String | Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs.
+  base_url: 'base_url_example' # String | Base URL.
 }
 
 begin
-  #Gets list of all vAPI REST Resources.
+  #Gets list of all vAPI REST {@link Resource}s.
   result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -99,11 +99,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **base_url** | **String**| Base URL. The {param.name baseUrl} parameter is used by the service to produce absolute URLs. If unset then the service will produce relative URLs. | [optional] 
+ **base_url** | **String**| Base URL. | [optional] 
 
 ### Return type
 
-[**VapiRestNavigationResourceListResp**](VapiRestNavigationResourceListResp.md)
+[**VapiRestNavigationResourceListResult**](VapiRestNavigationResourceListResult.md)
 
 ### Authorization
 

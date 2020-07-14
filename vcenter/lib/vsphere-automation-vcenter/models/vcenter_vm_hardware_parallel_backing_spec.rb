@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareParallelBackingSpec
+    attr_accessor :type
+
     # Path of the file that should be used as the virtual parallel port backing. This field is optional and it is only relevant when the value of Parallel.BackingSpec.type is FILE.
     attr_accessor :file
 
     # Name of the device that should be used as the virtual parallel port backing. If unset, the virtual parallel port will be configured to automatically detect a suitable host device.
     attr_accessor :host_device
 
-    attr_accessor :type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'type' => :'type',
         :'file' => :'file',
-        :'host_device' => :'host_device',
-        :'type' => :'type'
+        :'host_device' => :'host_device'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'type' => :'VcenterVmHardwareParallelBackingType',
         :'file' => :'String',
-        :'host_device' => :'String',
-        :'type' => :'VcenterVmHardwareParallelBackingType'
+        :'host_device' => :'String'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
+
       if attributes.has_key?(:'file')
         self.file = attributes[:'file']
       end
 
       if attributes.has_key?(:'host_device')
         self.host_device = attributes[:'host_device']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
       end
     end
 
@@ -81,9 +81,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          type == o.type &&
           file == o.file &&
-          host_device == o.host_device &&
-          type == o.type
+          host_device == o.host_device
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [file, host_device, type].hash
+      [type, file, host_device].hash
     end
 
     # Builds the object from hash

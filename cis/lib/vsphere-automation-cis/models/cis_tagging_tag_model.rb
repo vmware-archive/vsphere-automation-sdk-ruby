@@ -11,17 +11,17 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaggingTagModel
-    # The identifier of the parent category in which this tag will be created.
-    attr_accessor :category_id
-
-    # The description of the tag.
-    attr_accessor :description
-
     # The unique identifier of the tag.
     attr_accessor :id
 
+    # The identifier of the parent category in which this tag will be created.
+    attr_accessor :category_id
+
     # The display name of the tag.
     attr_accessor :name
+
+    # The description of the tag.
+    attr_accessor :description
 
     # The {@term set} of users that can use this tag. To add users to this, you need to have the edit privilege on the tag. Similarly, to unsubscribe from this tag, you need the edit privilege on the tag. You should not modify other users subscription from this {@term set}.
     attr_accessor :used_by
@@ -29,10 +29,10 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'category_id' => :'category_id',
-        :'description' => :'description',
         :'id' => :'id',
+        :'category_id' => :'category_id',
         :'name' => :'name',
+        :'description' => :'description',
         :'used_by' => :'used_by'
       }
     end
@@ -40,10 +40,10 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'category_id' => :'String',
-        :'description' => :'String',
         :'id' => :'String',
+        :'category_id' => :'String',
         :'name' => :'String',
+        :'description' => :'String',
         :'used_by' => :'Array<String>'
       }
     end
@@ -56,20 +56,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'category_id')
-        self.category_id = attributes[:'category_id']
-      end
-
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
       end
 
+      if attributes.has_key?(:'category_id')
+        self.category_id = attributes[:'category_id']
+      end
+
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
       end
 
       if attributes.has_key?(:'used_by')
@@ -83,20 +83,20 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @category_id.nil?
-        invalid_properties.push('invalid value for "category_id", category_id cannot be nil.')
-      end
-
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
+      if @category_id.nil?
+        invalid_properties.push('invalid value for "category_id", category_id cannot be nil.')
+      end
+
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
       if @used_by.nil?
@@ -109,10 +109,10 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @category_id.nil?
-      return false if @description.nil?
       return false if @id.nil?
+      return false if @category_id.nil?
       return false if @name.nil?
+      return false if @description.nil?
       return false if @used_by.nil?
       true
     end
@@ -122,10 +122,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          category_id == o.category_id &&
-          description == o.description &&
           id == o.id &&
+          category_id == o.category_id &&
           name == o.name &&
+          description == o.description &&
           used_by == o.used_by
     end
 
@@ -138,7 +138,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [category_id, description, id, name, used_by].hash
+      [id, category_id, name, description, used_by].hash
     end
 
     # Builds the object from hash

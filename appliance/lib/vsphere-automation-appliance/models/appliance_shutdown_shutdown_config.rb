@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceShutdownShutdownConfig
+    # Shutdown time.
+    attr_accessor :shutdown_time
+
     # The pending shutdown operation. The string values for pending operations can be 'poweroff', 'reboot' or ''.
     attr_accessor :action
 
     # The reason behind the shutdown action
     attr_accessor :reason
 
-    # Shutdown time.
-    attr_accessor :shutdown_time
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'shutdown_time' => :'shutdown_time',
         :'action' => :'action',
-        :'reason' => :'reason',
-        :'shutdown_time' => :'shutdown_time'
+        :'reason' => :'reason'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'shutdown_time' => :'DateTime',
         :'action' => :'String',
-        :'reason' => :'String',
-        :'shutdown_time' => :'DateTime'
+        :'reason' => :'String'
       }
     end
 
@@ -46,16 +46,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'shutdown_time')
+        self.shutdown_time = attributes[:'shutdown_time']
+      end
+
       if attributes.has_key?(:'action')
         self.action = attributes[:'action']
       end
 
       if attributes.has_key?(:'reason')
         self.reason = attributes[:'reason']
-      end
-
-      if attributes.has_key?(:'shutdown_time')
-        self.shutdown_time = attributes[:'shutdown_time']
       end
     end
 
@@ -87,9 +87,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          shutdown_time == o.shutdown_time &&
           action == o.action &&
-          reason == o.reason &&
-          shutdown_time == o.shutdown_time
+          reason == o.reason
     end
 
     # @see the `==` method
@@ -101,7 +101,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [action, reason, shutdown_time].hash
+      [shutdown_time, action, reason].hash
     end
 
     # Builds the object from hash

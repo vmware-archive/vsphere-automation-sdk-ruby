@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'floppy' when calling VmHardwareFloppyApi.connect"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/floppy/{floppy}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/floppy/{floppy}/connect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
 
       # query parameters
       query_params = {}
@@ -76,7 +76,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareFloppyCreateResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareFloppyCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def create(vm, request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(vm, request_body, opts)
       data
@@ -87,7 +87,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareFloppyCreateResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareFloppyCreateResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(vm, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.create ...'
@@ -101,7 +101,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareFloppyApi.create"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/floppy'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/floppy'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -126,7 +126,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareFloppyCreateResp',
+	  '200' => 'VCenter::VcenterVmHardwareFloppyCreateResult',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -167,7 +167,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'floppy' when calling VmHardwareFloppyApi.delete"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/floppy/{floppy}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/floppy/{floppy}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
 
       # query parameters
       query_params = {}
@@ -223,7 +223,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'floppy' when calling VmHardwareFloppyApi.disconnect"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/floppy/{floppy}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/floppy/{floppy}/disconnect'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
 
       # query parameters
       query_params = {}
@@ -254,7 +254,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareFloppyResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareFloppyResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(vm, floppy, opts = {})
       data, _status_code, _headers = get_with_http_info(vm, floppy, opts)
       data
@@ -265,7 +265,7 @@ module VSphereAutomation
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param floppy Virtual floppy drive identifier. The parameter must be an identifier for the resource type: vcenter.vm.hardware.Floppy.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareFloppyResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareFloppyResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(vm, floppy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.get ...'
@@ -279,7 +279,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'floppy' when calling VmHardwareFloppyApi.get"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/floppy/{floppy}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/floppy/{floppy}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
 
       # query parameters
       query_params = {}
@@ -302,7 +302,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareFloppyResp',
+	  '200' => 'VCenter::VcenterVmHardwareFloppyResult',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -317,7 +317,7 @@ module VSphereAutomation
     # Returns commonly used information about the virtual floppy drives belonging to the virtual machine.
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVmHardwareFloppyListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterVmHardwareFloppyListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def list(vm, opts = {})
       data, _status_code, _headers = list_with_http_info(vm, opts)
       data
@@ -327,7 +327,7 @@ module VSphereAutomation
     # @api private
     # @param vm Virtual machine identifier. The parameter must be an identifier for the resource type: VirtualMachine.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVmHardwareFloppyListResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVmHardwareFloppyListResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(vm, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VmHardwareFloppyApi.list ...'
@@ -337,7 +337,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'vm' when calling VmHardwareFloppyApi.list"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/floppy'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/floppy'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}
@@ -360,7 +360,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVmHardwareFloppyListResp',
+	  '200' => 'VCenter::VcenterVmHardwareFloppyListResult',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
@@ -407,7 +407,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VmHardwareFloppyApi.update"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vm/{vm}/hardware/floppy/{floppy}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
+      local_var_path = '/vcenter/vm/{vm}/hardware/floppy/{floppy}'.sub('{' + 'vm' + '}', vm.to_s).sub('{' + 'floppy' + '}', floppy.to_s)
 
       # query parameters
       query_params = {}

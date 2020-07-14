@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagApi.add_to_used_by"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=add-to-used-by'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}?~action=add-to-used-by'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -77,7 +77,7 @@ module VSphereAutomation
     # Creates a tag. To invoke this {@term operation}, you need the create tag privilege on the input category.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagCreateResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [CisTaggingTagCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -87,7 +87,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagCreateResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.create ...'
@@ -97,7 +97,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagApi.create"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag'
+      local_var_path = '/com/vmware/cis/tagging/tag'
 
       # query parameters
       query_params = {}
@@ -122,7 +122,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagCreateResp',
+	  '200' => 'CIS::CisTaggingTagCreateResult',
 	  '400' => 'CIS::VapiStdErrorsInvalidArgumentError',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	  '404' => 'CIS::VapiStdErrorsNotFoundError',
@@ -135,7 +135,7 @@ module VSphereAutomation
     # Deletes an existing tag. To invoke this {@term operation}, you need the delete privilege on the tag.
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
-    # @return [|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
+    # @return [|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil]
     def delete(tag_id, opts = {})
       delete_with_http_info(tag_id, opts)
       nil
@@ -145,7 +145,7 @@ module VSphereAutomation
     # @api private
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_with_http_info(tag_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.delete ...'
@@ -155,7 +155,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'tag_id' when calling TaggingTagApi.delete"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -185,7 +185,7 @@ module VSphereAutomation
     # Fetches the tag information for the given tag identifier. To invoke this {@term operation}, you need the read privilege on the tag in order to view the tag info.
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [CisTaggingTagResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def get(tag_id, opts = {})
       data, _status_code, _headers = get_with_http_info(tag_id, opts)
       data
@@ -195,7 +195,7 @@ module VSphereAutomation
     # @api private
     # @param tag_id The identifier of the input tag.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(tag_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.get ...'
@@ -205,7 +205,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'tag_id' when calling TaggingTagApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -228,7 +228,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagResp',
+	  '200' => 'CIS::CisTaggingTagResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	  '404' => 'CIS::VapiStdErrorsNotFoundError',
 	})
@@ -239,7 +239,7 @@ module VSphereAutomation
     end
     # Enumerates the tags in the system. To invoke this {@term operation}, you need read privilege on the individual tags. The {@term list} will only contain tags for which you have read privileges.
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagListResp|]
+    # @return [CisTaggingTagListResult|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -248,13 +248,13 @@ module VSphereAutomation
     # Enumerates the tags in the system. To invoke this {@term operation}, you need read privilege on the individual tags. The {@term list} will only contain tags for which you have read privileges.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagListResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagListResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag'
+      local_var_path = '/com/vmware/cis/tagging/tag'
 
       # query parameters
       query_params = {}
@@ -277,7 +277,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagListResp',
+	  '200' => 'CIS::CisTaggingTagListResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaggingTagApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -287,7 +287,7 @@ module VSphereAutomation
     # Enumerates all tags for the given category. To invoke this {@term operation}, you need the read privilege on the given category and the individual tags in that category.
     # @param category_id The identifier of the input category.
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagListTagsForCategoryResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [CisTaggingTagListTagsForCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def list_tags_for_category(category_id, opts = {})
       data, _status_code, _headers = list_tags_for_category_with_http_info(category_id, opts)
       data
@@ -297,7 +297,7 @@ module VSphereAutomation
     # @api private
     # @param category_id The identifier of the input category.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagListTagsForCategoryResp|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagListTagsForCategoryResult|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_tags_for_category_with_http_info(category_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.list_tags_for_category ...'
@@ -307,7 +307,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'category_id' when calling TaggingTagApi.list_tags_for_category"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag/id:{category_id}?~action=list-tags-for-category'.sub('{' + 'category_id' + '}', category_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{category_id}?~action=list-tags-for-category'.sub('{' + 'category_id' + '}', category_id.to_s)
 
       # query parameters
       query_params = {}
@@ -330,7 +330,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagListTagsForCategoryResp',
+	  '200' => 'CIS::CisTaggingTagListTagsForCategoryResult',
 	  '403' => 'CIS::VapiStdErrorsUnauthorizedError',
 	  '404' => 'CIS::VapiStdErrorsNotFoundError',
 	})
@@ -342,7 +342,7 @@ module VSphereAutomation
     # Enumerates all tags for which the {@param.name usedByEntity} is part of the {@link TagModel#usedBy} subscribers {@term set}. To invoke this {@term operation}, you need the read privilege on the individual tags.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [CisTaggingTagListUsedTagsResp|]
+    # @return [CisTaggingTagListUsedTagsResult|]
     def list_used_tags(request_body, opts = {})
       data, _status_code, _headers = list_used_tags_with_http_info(request_body, opts)
       data
@@ -352,7 +352,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CisTaggingTagListUsedTagsResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(CisTaggingTagListUsedTagsResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_used_tags_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TaggingTagApi.list_used_tags ...'
@@ -362,7 +362,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagApi.list_used_tags"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag?~action=list-used-tags'
+      local_var_path = '/com/vmware/cis/tagging/tag?~action=list-used-tags'
 
       # query parameters
       query_params = {}
@@ -387,7 +387,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'CIS::CisTaggingTagListUsedTagsResp',
+	  '200' => 'CIS::CisTaggingTagListUsedTagsResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TaggingTagApi#list_used_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -423,7 +423,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagApi.remove_from_used_by"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=remove-from-used-by'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}?~action=remove-from-used-by'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -475,7 +475,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'tag_id' when calling TaggingTagApi.revoke_propagating_permissions"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag/id:{tag_id}?~action=revoke-propagating-permissions'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}?~action=revoke-propagating-permissions'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}
@@ -531,7 +531,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TaggingTagApi.update"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/cis/tagging/tag/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
+      local_var_path = '/com/vmware/cis/tagging/tag/id:{tag_id}'.sub('{' + 'tag_id' + '}', tag_id.to_s)
 
       # query parameters
       query_params = {}

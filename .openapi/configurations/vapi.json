@@ -7,6 +7,6 @@
   "gemName": "vsphere-automation-vapi",
   "gemRequiredRubyVersion": ">= 2.3",
   "gemSummary": "A Ruby SDK for the vSphere APIs (VAPI)",
-  "gemVersion": "0.5.0",
+  "gemVersion": "0.4.6",
   "moduleName": "VAPI"
 }

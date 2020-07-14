@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::AccessShellApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](AccessShellApi.md#get) | **GET** /rest/appliance/access/shell | Get enabled state of BASH, that is, access to BASH from within the controlled CLI.
-[**set**](AccessShellApi.md#set) | **PUT** /rest/appliance/access/shell | Set enabled state of BASH, that is, access to BASH from within the controlled CLI.
+[**get**](AccessShellApi.md#get) | **GET** /appliance/access/shell | Get enabled state of BASH, that is, access to BASH from within the controlled CLI.
+[**set**](AccessShellApi.md#set) | **PUT** /appliance/access/shell | Set enabled state of BASH, that is, access to BASH from within the controlled CLI.
 
 
 # **get**
-> ApplianceAccessShellResp get
+> ApplianceAccessShellResult get
 
 Get enabled state of BASH, that is, access to BASH from within the controlled CLI.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceAccessShellResp**](ApplianceAccessShellResp.md)
+[**ApplianceAccessShellResult**](ApplianceAccessShellResult.md)
 
 ### Authorization
 

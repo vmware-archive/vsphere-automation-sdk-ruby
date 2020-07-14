@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::NetworkingInterfacesApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](NetworkingInterfacesApi.md#get) | **GET** /rest/appliance/networking/interfaces/{interface_name} | Get information about a particular network interface.
-[**list**](NetworkingInterfacesApi.md#list) | **GET** /rest/appliance/networking/interfaces | Get list of available network interfaces, including those that are not yet configured.
+[**get**](NetworkingInterfacesApi.md#get) | **GET** /appliance/networking/interfaces/{interface_name} | Get information about a particular network interface.
+[**list**](NetworkingInterfacesApi.md#list) | **GET** /appliance/networking/interfaces | Get list of available network interfaces, including those that are not yet configured.
 
 
 # **get**
-> ApplianceNetworkingInterfacesResp get(interface_name)
+> ApplianceNetworkingInterfacesResult get(interface_name)
 
 Get information about a particular network interface.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplianceNetworkingInterfacesResp**](ApplianceNetworkingInterfacesResp.md)
+[**ApplianceNetworkingInterfacesResult**](ApplianceNetworkingInterfacesResult.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> ApplianceNetworkingInterfacesListResp list
+> ApplianceNetworkingInterfacesListResult list
 
 Get list of available network interfaces, including those that are not yet configured.
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceNetworkingInterfacesListResp**](ApplianceNetworkingInterfacesListResp.md)
+[**ApplianceNetworkingInterfacesListResult**](ApplianceNetworkingInterfacesListResult.md)
 
 ### Authorization
 

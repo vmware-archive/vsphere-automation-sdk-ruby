@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get the global password policy.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceLocalAccountsPolicyResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceLocalAccountsPolicyResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get the global password policy.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceLocalAccountsPolicyResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceLocalAccountsPolicyResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LocalAccountsPolicyApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/local-accounts/global-policy'
+      local_var_path = '/appliance/local-accounts/global-policy'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceLocalAccountsPolicyResp',
+	  '200' => 'Appliance::ApplianceLocalAccountsPolicyResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -87,7 +87,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LocalAccountsPolicyApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/local-accounts/global-policy'
+      local_var_path = '/appliance/local-accounts/global-policy'
 
       # query parameters
       query_params = {}

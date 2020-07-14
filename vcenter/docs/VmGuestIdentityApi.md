@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::VmGuestIdentityApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VmGuestIdentityApi.md#get) | **GET** /rest/vcenter/vm/{vm}/guest/identity | Return information about the guest.
+[**get**](VmGuestIdentityApi.md#get) | **GET** /vcenter/vm/{vm}/guest/identity | Return information about the guest.
 
 
 # **get**
-> VcenterVmGuestIdentityResp get(vm)
+> VcenterVmGuestIdentityResult get(vm)
 
 Return information about the guest.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmGuestIdentityResp**](VcenterVmGuestIdentityResp.md)
+[**VcenterVmGuestIdentityResult**](VcenterVmGuestIdentityResult.md)
 
 ### Authorization
 

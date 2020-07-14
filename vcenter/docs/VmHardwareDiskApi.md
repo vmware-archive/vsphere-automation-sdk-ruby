@@ -1,18 +1,18 @@
 # VSphereAutomation::VCenter::VmHardwareDiskApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](VmHardwareDiskApi.md#create) | **POST** /rest/vcenter/vm/{vm}/hardware/disk | Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
-[**delete**](VmHardwareDiskApi.md#delete) | **DELETE** /rest/vcenter/vm/{vm}/hardware/disk/{disk} | Removes a virtual disk from the virtual machine. This operation does not destroy the VMDK file that backs the virtual disk. It only detaches the VMDK file from the virtual machine. Once detached, the VMDK file will not be destroyed when the virtual machine to which it was associated is deleted.
-[**get**](VmHardwareDiskApi.md#get) | **GET** /rest/vcenter/vm/{vm}/hardware/disk/{disk} | Returns information about a virtual disk.
-[**list**](VmHardwareDiskApi.md#list) | **GET** /rest/vcenter/vm/{vm}/hardware/disk | Returns commonly used information about the virtual disks belonging to the virtual machine.
-[**update**](VmHardwareDiskApi.md#update) | **PATCH** /rest/vcenter/vm/{vm}/hardware/disk/{disk} | Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
+[**create**](VmHardwareDiskApi.md#create) | **POST** /vcenter/vm/{vm}/hardware/disk | Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
+[**delete**](VmHardwareDiskApi.md#delete) | **DELETE** /vcenter/vm/{vm}/hardware/disk/{disk} | Removes a virtual disk from the virtual machine. This operation does not destroy the VMDK file that backs the virtual disk. It only detaches the VMDK file from the virtual machine. Once detached, the VMDK file will not be destroyed when the virtual machine to which it was associated is deleted.
+[**get**](VmHardwareDiskApi.md#get) | **GET** /vcenter/vm/{vm}/hardware/disk/{disk} | Returns information about a virtual disk.
+[**list**](VmHardwareDiskApi.md#list) | **GET** /vcenter/vm/{vm}/hardware/disk | Returns commonly used information about the virtual disks belonging to the virtual machine.
+[**update**](VmHardwareDiskApi.md#update) | **PATCH** /vcenter/vm/{vm}/hardware/disk/{disk} | Updates the configuration of a virtual disk. An update operation can be used to detach the existing VMDK file and attach another VMDK file to the virtual machine.
 
 
 # **create**
-> VcenterVmHardwareDiskCreateResp create(vm, request_body)
+> VcenterVmHardwareDiskCreateResult create(vm, request_body)
 
 Adds a virtual disk to the virtual machine. While adding the virtual disk, a new VMDK file may be created or an existing VMDK file may be used to back the virtual disk.
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareDiskCreateResp**](VcenterVmHardwareDiskCreateResp.md)
+[**VcenterVmHardwareDiskCreateResult**](VcenterVmHardwareDiskCreateResult.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ nil (empty response body)
 
 
 # **get**
-> VcenterVmHardwareDiskResp get(vm, disk)
+> VcenterVmHardwareDiskResult get(vm, disk)
 
 Returns information about a virtual disk.
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareDiskResp**](VcenterVmHardwareDiskResp.md)
+[**VcenterVmHardwareDiskResult**](VcenterVmHardwareDiskResult.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 
 # **list**
-> VcenterVmHardwareDiskListResp list(vm)
+> VcenterVmHardwareDiskListResult list(vm)
 
 Returns commonly used information about the virtual disks belonging to the virtual machine.
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmHardwareDiskListResp**](VcenterVmHardwareDiskListResp.md)
+[**VcenterVmHardwareDiskListResult**](VcenterVmHardwareDiskListResult.md)
 
 ### Authorization
 

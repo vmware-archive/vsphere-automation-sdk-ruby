@@ -28,6 +28,12 @@ describe 'ContentLibrarySubscriptionsSummary' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibrarySubscriptionsSummary)
     end
   end
+  describe 'test attribute "subscription"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "subscribed_library"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -41,12 +47,6 @@ describe 'ContentLibrarySubscriptionsSummary' do
   end
 
   describe 'test attribute "subscribed_library_vcenter_hostname"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "subscription"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

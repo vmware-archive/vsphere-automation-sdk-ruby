@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active** | [**VcenterVchaClusterActiveSpec**](VcenterVchaClusterActiveSpec.md) |  | 
-**deployment** | [**VcenterVchaClusterType**](VcenterVchaClusterType.md) |  | 
-**passive** | [**VcenterVchaClusterPassiveSpec**](VcenterVchaClusterPassiveSpec.md) |  | 
 **vc_spec** | [**VcenterVchaCredentialsSpec**](VcenterVchaCredentialsSpec.md) |  | [optional] 
+**deployment** | [**VcenterVchaClusterType**](VcenterVchaClusterType.md) |  | 
+**active** | [**VcenterVchaClusterActiveSpec**](VcenterVchaClusterActiveSpec.md) |  | 
+**passive** | [**VcenterVchaClusterPassiveSpec**](VcenterVchaClusterPassiveSpec.md) |  | 
 **witness** | [**VcenterVchaClusterWitnessSpec**](VcenterVchaClusterWitnessSpec.md) |  | 
 
 

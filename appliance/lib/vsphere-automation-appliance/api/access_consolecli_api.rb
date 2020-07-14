@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get enabled state of the console-based controlled CLI (TTY1).
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceAccessConsolecliResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceAccessConsolecliResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get enabled state of the console-based controlled CLI (TTY1).
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceAccessConsolecliResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceAccessConsolecliResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AccessConsolecliApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/access/consolecli'
+      local_var_path = '/appliance/access/consolecli'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceAccessConsolecliResp',
+	  '200' => 'Appliance::ApplianceAccessConsolecliResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -87,7 +87,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling AccessConsolecliApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/access/consolecli'
+      local_var_path = '/appliance/access/consolecli'
 
       # query parameters
       query_params = {}

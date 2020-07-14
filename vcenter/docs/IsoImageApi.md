@@ -1,15 +1,15 @@
 # VSphereAutomation::VCenter::IsoImageApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**mount**](IsoImageApi.md#mount) | **POST** /rest/com/vmware/vcenter/iso/image/id:{library_item}?~action&#x3D;mount | Mounts an ISO image from a content library on a virtual machine.
-[**unmount**](IsoImageApi.md#unmount) | **POST** /rest/com/vmware/vcenter/iso/image/id:{vm}?~action&#x3D;unmount | Unmounts a previously mounted CD-ROM using an ISO image as a backing.
+[**mount**](IsoImageApi.md#mount) | **POST** /com/vmware/vcenter/iso/image/id:{library_item}?~action&#x3D;mount | Mounts an ISO image from a content library on a virtual machine.
+[**unmount**](IsoImageApi.md#unmount) | **POST** /com/vmware/vcenter/iso/image/id:{vm}?~action&#x3D;unmount | Unmounts a previously mounted CD-ROM using an ISO image as a backing.
 
 
 # **mount**
-> VcenterIsoImageMountResp mount(library_item, request_body)
+> VcenterIsoImageMountResult mount(library_item, request_body)
 
 Mounts an ISO image from a content library on a virtual machine.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterIsoImageMountResp**](VcenterIsoImageMountResp.md)
+[**VcenterIsoImageMountResult**](VcenterIsoImageMountResult.md)
 
 ### Authorization
 

@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves information about the package element corresponding to {@param.name packageId}.
     # @param package_id Identifier of the package element.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelPackageResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiMetadataMetamodelPackageResult|VapiStdErrorsNotFoundError|]
     def get(package_id, opts = {})
       data, _status_code, _headers = get_with_http_info(package_id, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param package_id Identifier of the package element.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelPackageResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelPackageResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(package_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelPackageApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'package_id' when calling MetadataMetamodelPackageApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/package/id:{package_id}'.sub('{' + 'package_id' + '}', package_id.to_s)
+      local_var_path = '/com/vmware/vapi/metadata/metamodel/package/id:{package_id}'.sub('{' + 'package_id' + '}', package_id.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelPackageResp',
+	  '200' => 'VAPI::VapiMetadataMetamodelPackageResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -72,7 +72,7 @@ module VSphereAutomation
     end
     # Returns the identifiers for the packages elements that are contained in all the registered component elements.
     # @param [Hash] opts the optional parameters
-    # @return [VapiMetadataMetamodelPackageListResp|]
+    # @return [VapiMetadataMetamodelPackageListResult|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -81,13 +81,13 @@ module VSphereAutomation
     # Returns the identifiers for the packages elements that are contained in all the registered component elements.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiMetadataMetamodelPackageListResp|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiMetadataMetamodelPackageListResult|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MetadataMetamodelPackageApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/metadata/metamodel/package'
+      local_var_path = '/com/vmware/vapi/metadata/metamodel/package'
 
       # query parameters
       query_params = {}
@@ -110,7 +110,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiMetadataMetamodelPackageListResp',
+	  '200' => 'VAPI::VapiMetadataMetamodelPackageListResult',
 	})
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MetadataMetamodelPackageApi#list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"

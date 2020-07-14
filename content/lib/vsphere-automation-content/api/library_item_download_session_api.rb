@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'download_session_id' when calling LibraryItemDownloadSessionApi.cancel"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=cancel'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=cancel'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -69,7 +69,7 @@ module VSphereAutomation
     # Creates a new download session.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemDownloadSessionCreateResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemDownloadSessionCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|]
     def create(request_body, opts = {})
       data, _status_code, _headers = create_with_http_info(request_body, opts)
       data
@@ -79,7 +79,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemDownloadSessionCreateResp|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemDownloadSessionCreateResult|VapiStdErrorsInvalidArgumentError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def create_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.create ...'
@@ -89,7 +89,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemDownloadSessionApi.create"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/download-session'
+      local_var_path = '/com/vmware/content/library/item/download-session'
 
       # query parameters
       query_params = {}
@@ -114,7 +114,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemDownloadSessionCreateResp',
+	  '200' => 'Content::ContentLibraryItemDownloadSessionCreateResult',
 	  '400' => 'Content::VapiStdErrorsInvalidArgumentError',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
@@ -146,7 +146,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'download_session_id' when calling LibraryItemDownloadSessionApi.delete"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/download-session/id:{download_session_id}'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -202,7 +202,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling LibraryItemDownloadSessionApi.fail"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=fail'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=fail'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -234,7 +234,7 @@ module VSphereAutomation
     # Gets the download session with the specified identifier, including the most up-to-date status information for the session.
     # @param download_session_id Identifier of the download session to retrieve.
     # @param [Hash] opts the optional parameters
-    # @return [ContentLibraryItemDownloadSessionResp|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemDownloadSessionResult|VapiStdErrorsNotFoundError|]
     def get(download_session_id, opts = {})
       data, _status_code, _headers = get_with_http_info(download_session_id, opts)
       data
@@ -244,7 +244,7 @@ module VSphereAutomation
     # @api private
     # @param download_session_id Identifier of the download session to retrieve.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContentLibraryItemDownloadSessionResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemDownloadSessionResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(download_session_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.get ...'
@@ -254,7 +254,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'download_session_id' when calling LibraryItemDownloadSessionApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/download-session/id:{download_session_id}'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -277,7 +277,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemDownloadSessionResp',
+	  '200' => 'Content::ContentLibraryItemDownloadSessionResult',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging
@@ -310,7 +310,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'download_session_id' when calling LibraryItemDownloadSessionApi.keep_alive"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=keep-alive'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
+      local_var_path = '/com/vmware/content/library/item/download-session/id:{download_session_id}?~action=keep-alive'.sub('{' + 'download_session_id' + '}', download_session_id.to_s)
 
       # query parameters
       query_params = {}
@@ -342,7 +342,7 @@ module VSphereAutomation
     # Lists the identifiers of the download sessions created by the calling user. Optionally may filter by library item.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :library_item_id Library item identifier on which to filter results.
-    # @return [ContentLibraryItemDownloadSessionListResp|VapiStdErrorsNotFoundError|]
+    # @return [ContentLibraryItemDownloadSessionListResult|VapiStdErrorsNotFoundError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
@@ -352,13 +352,13 @@ module VSphereAutomation
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [String] :library_item_id Library item identifier on which to filter results.
-    # @return [Array<(ContentLibraryItemDownloadSessionListResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ContentLibraryItemDownloadSessionListResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LibraryItemDownloadSessionApi.list ...'
       end
       # resource path
-      local_var_path = '/rest/com/vmware/content/library/item/download-session'
+      local_var_path = '/com/vmware/content/library/item/download-session'
 
       # query parameters
       query_params = {}
@@ -382,7 +382,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Content::ContentLibraryItemDownloadSessionListResp',
+	  '200' => 'Content::ContentLibraryItemDownloadSessionListResult',
 	  '404' => 'Content::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

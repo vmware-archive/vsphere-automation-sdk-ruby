@@ -14,16 +14,16 @@ module VSphereAutomation
     # FQDN or IP address of the configured remote logging servers.
     attr_accessor :hostname
 
-    attr_accessor :message
-
     attr_accessor :state
+
+    attr_accessor :message
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'hostname' => :'hostname',
-        :'message' => :'message',
-        :'state' => :'state'
+        :'state' => :'state',
+        :'message' => :'message'
       }
     end
 
@@ -31,8 +31,8 @@ module VSphereAutomation
     def self.openapi_types
       {
         :'hostname' => :'String',
-        :'message' => :'VapiStdLocalizableMessage',
-        :'state' => :'ApplianceLoggingForwardingConnectionStatusState'
+        :'state' => :'ApplianceLoggingForwardingConnectionStatusState',
+        :'message' => :'VapiStdLocalizableMessage'
       }
     end
 
@@ -48,12 +48,12 @@ module VSphereAutomation
         self.hostname = attributes[:'hostname']
       end
 
-      if attributes.has_key?(:'message')
-        self.message = attributes[:'message']
-      end
-
       if attributes.has_key?(:'state')
         self.state = attributes[:'state']
+      end
+
+      if attributes.has_key?(:'message')
+        self.message = attributes[:'message']
       end
     end
 
@@ -86,8 +86,8 @@ module VSphereAutomation
       return true if self.equal?(o)
       self.class == o.class &&
           hostname == o.hostname &&
-          message == o.message &&
-          state == o.state
+          state == o.state &&
+          message == o.message
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [hostname, message, state].hash
+      [hostname, state, message].hash
     end
 
     # Builds the object from hash

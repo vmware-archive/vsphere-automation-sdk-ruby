@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::HostApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**connect**](HostApi.md#connect) | **POST** /rest/vcenter/host/{host}/connect | Connect to the host corresponding to host previously added to the vCenter server.
-[**create**](HostApi.md#create) | **POST** /rest/vcenter/host | Add a new standalone host in the vCenter inventory. The newly connected host will be in connected state. The vCenter Server will verify the SSL certificate before adding the host to its inventory. In the case where the SSL certificate cannot be verified because the Certificate Authority is not recognized or the certificate is self signed, the vCenter Server will fall back to thumbprint verification mode as defined by Host.CreateSpec.ThumbprintVerification.
-[**delete**](HostApi.md#delete) | **DELETE** /rest/vcenter/host/{host} | Remove a standalone host from the vCenter Server.
-[**disconnect**](HostApi.md#disconnect) | **POST** /rest/vcenter/host/{host}/disconnect | Disconnect the host corresponding to host from the vCenter server
-[**list**](HostApi.md#list) | **GET** /rest/vcenter/host | Returns information about at most 2500 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
+[**connect**](HostApi.md#connect) | **POST** /vcenter/host/{host}/connect | Connect to the host corresponding to host previously added to the vCenter server.
+[**create**](HostApi.md#create) | **POST** /vcenter/host | Add a new standalone host in the vCenter inventory. The newly connected host will be in connected state. The vCenter Server will verify the SSL certificate before adding the host to its inventory. In the case where the SSL certificate cannot be verified because the Certificate Authority is not recognized or the certificate is self signed, the vCenter Server will fall back to thumbprint verification mode as defined by Host.CreateSpec.ThumbprintVerification.
+[**delete**](HostApi.md#delete) | **DELETE** /vcenter/host/{host} | Remove a standalone host from the vCenter Server.
+[**disconnect**](HostApi.md#disconnect) | **POST** /vcenter/host/{host}/disconnect | Disconnect the host corresponding to host from the vCenter server
+[**list**](HostApi.md#list) | **GET** /vcenter/host | Returns information about at most 1000 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
 
 
 # **connect**
@@ -61,7 +61,7 @@ nil (empty response body)
 
 
 # **create**
-> VcenterHostCreateResp create(request_body)
+> VcenterHostCreateResult create(request_body)
 
 Add a new standalone host in the vCenter inventory. The newly connected host will be in connected state. The vCenter Server will verify the SSL certificate before adding the host to its inventory. In the case where the SSL certificate cannot be verified because the Certificate Authority is not recognized or the certificate is self signed, the vCenter Server will fall back to thumbprint verification mode as defined by Host.CreateSpec.ThumbprintVerification.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterHostCreateResp**](VcenterHostCreateResp.md)
+[**VcenterHostCreateResult**](VcenterHostCreateResult.md)
 
 ### Authorization
 
@@ -209,9 +209,9 @@ nil (empty response body)
 
 
 # **list**
-> VcenterHostListResp list(opts)
+> VcenterHostListResult list(opts)
 
-Returns information about at most 2500 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
+Returns information about at most 1000 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
 
 ### Example
 ```ruby
@@ -237,7 +237,7 @@ opts = {
 }
 
 begin
-  #Returns information about at most 2500 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
+  #Returns information about at most 1000 visible (subject to permission checks) hosts in vCenter matching the Host.FilterSpec.
   result = api_instance.list(opts)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterHostListResp**](VcenterHostListResp.md)
+[**VcenterHostListResult**](VcenterHostListResult.md)
 
 ### Authorization
 

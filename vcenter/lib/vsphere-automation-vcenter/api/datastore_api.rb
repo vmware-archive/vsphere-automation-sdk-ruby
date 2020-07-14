@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves information about the datastore indicated by datastore.
     # @param datastore Identifier of the datastore for which information should be retrieved. The parameter must be an identifier for the resource type: Datastore.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterDatastoreResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterDatastoreResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def get(datastore, opts = {})
       data, _status_code, _headers = get_with_http_info(datastore, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param datastore Identifier of the datastore for which information should be retrieved. The parameter must be an identifier for the resource type: Datastore.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterDatastoreResp|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDatastoreResult|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(datastore, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatastoreApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'datastore' when calling DatastoreApi.get"
       end
       # resource path
-      local_var_path = '/rest/vcenter/datastore/{datastore}'.sub('{' + 'datastore' + '}', datastore.to_s)
+      local_var_path = '/vcenter/datastore/{datastore}'.sub('{' + 'datastore' + '}', datastore.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDatastoreResp',
+	  '200' => 'VCenter::VcenterDatastoreResult',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
@@ -73,20 +73,20 @@ module VSphereAutomation
       end
       return data, status_code, headers
     end
-    # Returns information about at most 2500 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
+    # Returns information about at most 1000 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_datastores Identifiers of datastores that can match the filter. If unset or empty, datastores with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datastore. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datastore.
     # @option opts [Array<String>] :filter_names Names that datastores must have to match the filter (see Datastore.Info.name). If unset or empty, datastores with any name match the filter.
     # @option opts [Array<String>] :filter_types Types that datastores must have to match the filter (see Datastore.Summary.type). If unset or empty, datastores with any type match the filter.
     # @option opts [Array<String>] :filter_folders Folders that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_datacenters Datacenters that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    # @return [VcenterDatastoreListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterDatastoreListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|]
     def list(opts = {})
       data, _status_code, _headers = list_with_http_info(opts)
       data
     end
 
-    # Returns information about at most 2500 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
+    # Returns information about at most 1000 visible (subject to permission checks) datastores in vCenter matching the Datastore.FilterSpec.
     # @api private
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :filter_datastores Identifiers of datastores that can match the filter. If unset or empty, datastores with any identifier match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datastore. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datastore.
@@ -94,7 +94,7 @@ module VSphereAutomation
     # @option opts [Array<String>] :filter_types Types that datastores must have to match the filter (see Datastore.Summary.type). If unset or empty, datastores with any type match the filter.
     # @option opts [Array<String>] :filter_folders Folders that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any folder match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Folder. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Folder.
     # @option opts [Array<String>] :filter_datacenters Datacenters that must contain the datastore for the datastore to match the filter. If unset or empty, datastores in any datacenter match the filter. When clients pass a value of this structure as a parameter, the field must contain identifiers for the resource type: Datacenter. When operations return a value of this structure as a result, the field will contain identifiers for the resource type: Datacenter.
-    # @return [Array<(VcenterDatastoreListResp|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterDatastoreListResult|VapiStdErrorsUnableToAllocateResourceError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DatastoreApi.list ...'
@@ -103,7 +103,7 @@ module VSphereAutomation
         fail ArgumentError, 'invalid value for "filter_types", must include one of VMFS, NFS, NFS41, CIFS, VSAN, VFFS, VVOL'
       end
       # resource path
-      local_var_path = '/rest/vcenter/datastore'
+      local_var_path = '/vcenter/datastore'
 
       # query parameters
       query_params = {}
@@ -131,7 +131,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterDatastoreListResp',
+	  '200' => 'VCenter::VcenterDatastoreListResult',
 	  '400' => 'VCenter::VapiStdErrorsUnableToAllocateResourceError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

@@ -18,7 +18,7 @@ module VSphereAutomation
     end
     # Get health status of applmgmt services.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceHealthApplmgmtResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceHealthApplmgmtResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -27,13 +27,13 @@ module VSphereAutomation
     # Get health status of applmgmt services.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceHealthApplmgmtResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceHealthApplmgmtResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: HealthApplmgmtApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/health/applmgmt'
+      local_var_path = '/appliance/health/applmgmt'
 
       # query parameters
       query_params = {}
@@ -56,7 +56,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceHealthApplmgmtResp',
+	  '200' => 'Appliance::ApplianceHealthApplmgmtResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

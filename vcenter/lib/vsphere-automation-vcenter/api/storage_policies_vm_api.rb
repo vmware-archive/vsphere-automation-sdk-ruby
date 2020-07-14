@@ -19,7 +19,7 @@ module VSphereAutomation
     # Returns information about the virtual machines and/or their virtual disks that are associated with the given storage policy.
     # @param policy storage policy identifier. The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
     # @param [Hash] opts the optional parameters
-    # @return [VcenterStoragePoliciesVMListResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
+    # @return [VcenterStoragePoliciesVMListResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|]
     def list(policy, opts = {})
       data, _status_code, _headers = list_with_http_info(policy, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param policy storage policy identifier. The parameter must be an identifier for the resource type: vcenter.StoragePolicy.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterStoragePoliciesVMListResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterStoragePoliciesVMListResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthenticatedError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|VapiStdErrorsServiceUnavailableError|, Fixnum, Hash)>]  data, response status code and response headers
     def list_with_http_info(policy, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StoragePoliciesVMApi.list ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'policy' when calling StoragePoliciesVMApi.list"
       end
       # resource path
-      local_var_path = '/rest/vcenter/storage/policies/{policy}/vm'.sub('{' + 'policy' + '}', policy.to_s)
+      local_var_path = '/vcenter/storage/policies/{policy}/vm'.sub('{' + 'policy' + '}', policy.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterStoragePoliciesVMListResp',
+	  '200' => 'VCenter::VcenterStoragePoliciesVMListResult',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '401' => 'VCenter::VapiStdErrorsUnauthenticatedError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',

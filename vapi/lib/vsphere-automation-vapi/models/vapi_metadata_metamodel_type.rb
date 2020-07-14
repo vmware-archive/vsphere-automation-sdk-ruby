@@ -11,31 +11,31 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelType
-    attr_accessor :builtin_type
-
     attr_accessor :category
 
-    attr_accessor :generic_instantiation
+    attr_accessor :builtin_type
 
     attr_accessor :user_defined_type
+
+    attr_accessor :generic_instantiation
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'builtin_type' => :'builtin_type',
         :'category' => :'category',
-        :'generic_instantiation' => :'generic_instantiation',
-        :'user_defined_type' => :'user_defined_type'
+        :'builtin_type' => :'builtin_type',
+        :'user_defined_type' => :'user_defined_type',
+        :'generic_instantiation' => :'generic_instantiation'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'builtin_type' => :'VapiMetadataMetamodelTypeBuiltinType',
         :'category' => :'VapiMetadataMetamodelTypeCategory',
-        :'generic_instantiation' => :'VapiMetadataMetamodelGenericInstantiation',
-        :'user_defined_type' => :'VapiMetadataMetamodelUserDefinedType'
+        :'builtin_type' => :'VapiMetadataMetamodelTypeBuiltinType',
+        :'user_defined_type' => :'VapiMetadataMetamodelUserDefinedType',
+        :'generic_instantiation' => :'VapiMetadataMetamodelGenericInstantiation'
       }
     end
 
@@ -47,20 +47,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'builtin_type')
-        self.builtin_type = attributes[:'builtin_type']
-      end
-
       if attributes.has_key?(:'category')
         self.category = attributes[:'category']
       end
 
-      if attributes.has_key?(:'generic_instantiation')
-        self.generic_instantiation = attributes[:'generic_instantiation']
+      if attributes.has_key?(:'builtin_type')
+        self.builtin_type = attributes[:'builtin_type']
       end
 
       if attributes.has_key?(:'user_defined_type')
         self.user_defined_type = attributes[:'user_defined_type']
+      end
+
+      if attributes.has_key?(:'generic_instantiation')
+        self.generic_instantiation = attributes[:'generic_instantiation']
       end
     end
 
@@ -87,10 +87,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          builtin_type == o.builtin_type &&
           category == o.category &&
-          generic_instantiation == o.generic_instantiation &&
-          user_defined_type == o.user_defined_type
+          builtin_type == o.builtin_type &&
+          user_defined_type == o.user_defined_type &&
+          generic_instantiation == o.generic_instantiation
     end
 
     # @see the `==` method
@@ -102,7 +102,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [builtin_type, category, generic_instantiation, user_defined_type].hash
+      [category, builtin_type, user_defined_type, generic_instantiation].hash
     end
 
     # Builds the object from hash

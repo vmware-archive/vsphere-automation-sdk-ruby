@@ -19,7 +19,7 @@ module VSphereAutomation
     # Validates the specified passive node's placement configuration.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVchaClusterPassiveCheckResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterVchaClusterPassiveCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|]
     def check(request_body, opts = {})
       data, _status_code, _headers = check_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVchaClusterPassiveCheckResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterVchaClusterPassiveCheckResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def check_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VchaClusterPassiveApi.check ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterPassiveApi.check"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vcha/cluster/passive?action=check'
+      local_var_path = '/vcenter/vcha/cluster/passive?action=check'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaClusterPassiveCheckResp',
+	  '200' => 'VCenter::VcenterVchaClusterPassiveCheckResult',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
@@ -77,9 +77,9 @@ module VSphereAutomation
     # Creates the passive node in a degraded cluster with node location information and pre-existing VCHA cluster configuration from the active node.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterVchaClusterPassiveRedeployTaskResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
-    def redeploy_task(request_body, opts = {})
-      data, _status_code, _headers = redeploy_task_with_http_info(request_body, opts)
+    # @return [VcenterVchaClusterPassiveRedeployTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|]
+    def redeploytask(request_body, opts = {})
+      data, _status_code, _headers = redeploytask_with_http_info(request_body, opts)
       data
     end
 
@@ -87,17 +87,17 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterVchaClusterPassiveRedeployTaskResp|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
-    def redeploy_task_with_http_info(request_body, opts = {})
+    # @return [Array<(VcenterVchaClusterPassiveRedeployTaskResult|VapiStdErrorsErrorError|VapiStdErrorsUnauthorizedError|, Fixnum, Hash)>]  data, response status code and response headers
+    def redeploytask_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: VchaClusterPassiveApi.redeploy_task ...'
+        @api_client.config.logger.debug 'Calling API: VchaClusterPassiveApi.redeploytask ...'
       end
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
-        fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterPassiveApi.redeploy_task"
+        fail ArgumentError, "Missing the required parameter 'request_body' when calling VchaClusterPassiveApi.redeploytask"
       end
       # resource path
-      local_var_path = '/rest/vcenter/vcha/cluster/passive?action=redeploy&vmw-task=true'
+      local_var_path = '/vcenter/vcha/cluster/passive?action=redeploy&vmw-task=true'
 
       # query parameters
       query_params = {}
@@ -122,12 +122,12 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterVchaClusterPassiveRedeployTaskResp',
+	  '200' => 'VCenter::VcenterVchaClusterPassiveRedeployTaskResult',
 	  '400' => 'VCenter::VapiStdErrorsErrorError',
 	  '403' => 'VCenter::VapiStdErrorsUnauthorizedError',
 	})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: VchaClusterPassiveApi#redeploy_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: VchaClusterPassiveApi#redeploytask\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

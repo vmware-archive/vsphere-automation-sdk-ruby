@@ -11,25 +11,25 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisTaggingTagAssociationTagToObjects
-    # The identifiers of the related objects.
-    attr_accessor :object_ids
-
     # The identifier of the tag.
     attr_accessor :tag_id
+
+    # The identifiers of the related objects.
+    attr_accessor :object_ids
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'object_ids' => :'object_ids',
-        :'tag_id' => :'tag_id'
+        :'tag_id' => :'tag_id',
+        :'object_ids' => :'object_ids'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'object_ids' => :'Array<VapiStdDynamicID>',
-        :'tag_id' => :'String'
+        :'tag_id' => :'String',
+        :'object_ids' => :'Array<VapiStdDynamicID>'
       }
     end
 
@@ -41,14 +41,14 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'tag_id')
+        self.tag_id = attributes[:'tag_id']
+      end
+
       if attributes.has_key?(:'object_ids')
         if (value = attributes[:'object_ids']).is_a?(Array)
           self.object_ids = value
         end
-      end
-
-      if attributes.has_key?(:'tag_id')
-        self.tag_id = attributes[:'tag_id']
       end
     end
 
@@ -56,12 +56,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @object_ids.nil?
-        invalid_properties.push('invalid value for "object_ids", object_ids cannot be nil.')
-      end
-
       if @tag_id.nil?
         invalid_properties.push('invalid value for "tag_id", tag_id cannot be nil.')
+      end
+
+      if @object_ids.nil?
+        invalid_properties.push('invalid value for "object_ids", object_ids cannot be nil.')
       end
 
       invalid_properties
@@ -70,8 +70,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @object_ids.nil?
       return false if @tag_id.nil?
+      return false if @object_ids.nil?
       true
     end
 
@@ -80,8 +80,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          object_ids == o.object_ids &&
-          tag_id == o.tag_id
+          tag_id == o.tag_id &&
+          object_ids == o.object_ids
     end
 
     # @see the `==` method
@@ -93,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [object_ids, tag_id].hash
+      [tag_id, object_ids].hash
     end
 
     # Builds the object from hash

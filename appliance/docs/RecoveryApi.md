@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::RecoveryApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](RecoveryApi.md#get) | **GET** /rest/appliance/recovery | Gets the properties of the appliance Recovery subsystem.
+[**get**](RecoveryApi.md#get) | **GET** /appliance/recovery | Gets the properties of the appliance Recovery subsystem.
 
 
 # **get**
-> ApplianceRecoveryResp get
+> ApplianceRecoveryResult get
 
 Gets the properties of the appliance Recovery subsystem.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceRecoveryResp**](ApplianceRecoveryResp.md)
+[**ApplianceRecoveryResult**](ApplianceRecoveryResult.md)
 
 ### Authorization
 

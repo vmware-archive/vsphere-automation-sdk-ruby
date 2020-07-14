@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsServersApi.add"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/dns/servers'
+      local_var_path = '/appliance/networking/dns/servers'
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
     end
     # Get DNS server configuration.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingDnsServersResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingDnsServersResult|VapiStdErrorsErrorError|]
     def get(opts = {})
       data, _status_code, _headers = get_with_http_info(opts)
       data
@@ -79,13 +79,13 @@ module VSphereAutomation
     # Get DNS server configuration.
     # @api private
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingDnsServersResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingDnsServersResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsServersApi.get ...'
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/dns/servers'
+      local_var_path = '/appliance/networking/dns/servers'
 
       # query parameters
       query_params = {}
@@ -108,7 +108,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingDnsServersResp',
+	  '200' => 'Appliance::ApplianceNetworkingDnsServersResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging
@@ -139,7 +139,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsServersApi.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/dns/servers'
+      local_var_path = '/appliance/networking/dns/servers'
 
       # query parameters
       query_params = {}
@@ -171,7 +171,7 @@ module VSphereAutomation
     # Test if dns servers are reachable.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingDnsServersTestResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceNetworkingDnsServersTestResult|VapiStdErrorsErrorError|]
     def test(request_body, opts = {})
       data, _status_code, _headers = test_with_http_info(request_body, opts)
       data
@@ -181,7 +181,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingDnsServersTestResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingDnsServersTestResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def test_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingDnsServersApi.test ...'
@@ -191,7 +191,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingDnsServersApi.test"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/dns/servers/test'
+      local_var_path = '/appliance/networking/dns/servers/test'
 
       # query parameters
       query_params = {}
@@ -216,7 +216,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingDnsServersTestResp',
+	  '200' => 'Appliance::ApplianceNetworkingDnsServersTestResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

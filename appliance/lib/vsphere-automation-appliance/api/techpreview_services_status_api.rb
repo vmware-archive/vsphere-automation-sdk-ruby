@@ -19,7 +19,7 @@ module VSphereAutomation
     # Get status of a service.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceTechpreviewServicesStatusResp|VapiStdErrorsErrorError|]
+    # @return [ApplianceTechpreviewServicesStatusResult|VapiStdErrorsErrorError|]
     def get(request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceTechpreviewServicesStatusResp|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceTechpreviewServicesStatusResult|VapiStdErrorsErrorError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TechpreviewServicesStatusApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling TechpreviewServicesStatusApi.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/techpreview/services/status/get'
+      local_var_path = '/appliance/techpreview/services/status/get'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceTechpreviewServicesStatusResp',
+	  '200' => 'Appliance::ApplianceTechpreviewServicesStatusResult',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	})
       if @api_client.config.debugging

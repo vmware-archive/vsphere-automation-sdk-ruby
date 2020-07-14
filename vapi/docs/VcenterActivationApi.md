@@ -1,10 +1,10 @@
 # VSphereAutomation::VAPI::VcenterActivationApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel**](VcenterActivationApi.md#cancel) | **POST** /rest/com/vmware/vapi/vcenter/activation/id:{activation_id}?~action&#x3D;cancel | Sends a request to cancel the task associated with the provided {@param.name activationId}.
+[**cancel**](VcenterActivationApi.md#cancel) | **POST** /com/vmware/vapi/vcenter/activation/id:{activation_id}?~action&#x3D;cancel | Sends a request to cancel the task associated with the provided {@param.name activationId}.
 
 
 # **cancel**

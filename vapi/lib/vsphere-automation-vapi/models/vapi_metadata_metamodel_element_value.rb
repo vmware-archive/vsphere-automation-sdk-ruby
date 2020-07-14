@@ -11,8 +11,7 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelElementValue
-    # List of strings value of the metadata element.
-    attr_accessor :list_value
+    attr_accessor :type
 
     # Long value of the metadata element.
     attr_accessor :long_value
@@ -20,35 +19,36 @@ module VSphereAutomation
     # String value of the metadata element.
     attr_accessor :string_value
 
+    # List of strings value of the metadata element.
+    attr_accessor :list_value
+
     # Identifier of the structure element.
     attr_accessor :structure_id
 
     # List of identifiers of the structure elements.
     attr_accessor :structure_ids
 
-    attr_accessor :type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'list_value' => :'list_value',
+        :'type' => :'type',
         :'long_value' => :'long_value',
         :'string_value' => :'string_value',
+        :'list_value' => :'list_value',
         :'structure_id' => :'structure_id',
-        :'structure_ids' => :'structure_ids',
-        :'type' => :'type'
+        :'structure_ids' => :'structure_ids'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'list_value' => :'Array<String>',
+        :'type' => :'VapiMetadataMetamodelElementValueType',
         :'long_value' => :'Integer',
         :'string_value' => :'String',
+        :'list_value' => :'Array<String>',
         :'structure_id' => :'String',
-        :'structure_ids' => :'Array<String>',
-        :'type' => :'VapiMetadataMetamodelElementValueType'
+        :'structure_ids' => :'Array<String>'
       }
     end
 
@@ -60,10 +60,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'list_value')
-        if (value = attributes[:'list_value']).is_a?(Array)
-          self.list_value = value
-        end
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'long_value')
@@ -74,6 +72,12 @@ module VSphereAutomation
         self.string_value = attributes[:'string_value']
       end
 
+      if attributes.has_key?(:'list_value')
+        if (value = attributes[:'list_value']).is_a?(Array)
+          self.list_value = value
+        end
+      end
+
       if attributes.has_key?(:'structure_id')
         self.structure_id = attributes[:'structure_id']
       end
@@ -82,10 +86,6 @@ module VSphereAutomation
         if (value = attributes[:'structure_ids']).is_a?(Array)
           self.structure_ids = value
         end
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
       end
     end
 
@@ -112,12 +112,12 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          list_value == o.list_value &&
+          type == o.type &&
           long_value == o.long_value &&
           string_value == o.string_value &&
+          list_value == o.list_value &&
           structure_id == o.structure_id &&
-          structure_ids == o.structure_ids &&
-          type == o.type
+          structure_ids == o.structure_ids
     end
 
     # @see the `==` method
@@ -129,7 +129,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [list_value, long_value, string_value, structure_id, structure_ids, type].hash
+      [type, long_value, string_value, list_value, structure_id, structure_ids].hash
     end
 
     # Builds the object from hash

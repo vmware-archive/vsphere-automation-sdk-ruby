@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::VchaOperationsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](VchaOperationsApi.md#get) | **GET** /rest/vcenter/vcha/operations | Retrieves the current active and disabled operations of a VCHA cluster.
+[**get**](VchaOperationsApi.md#get) | **GET** /vcenter/vcha/operations | Retrieves the current active and disabled operations of a VCHA cluster.
 
 
 # **get**
-> VcenterVchaOperationsResp get
+> VcenterVchaOperationsResult get
 
 Retrieves the current active and disabled operations of a VCHA cluster.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VcenterVchaOperationsResp**](VcenterVchaOperationsResp.md)
+[**VcenterVchaOperationsResult**](VcenterVchaOperationsResult.md)
 
 ### Authorization
 

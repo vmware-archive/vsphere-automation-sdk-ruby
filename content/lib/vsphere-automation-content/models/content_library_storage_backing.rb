@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryStorageBacking
+    attr_accessor :type
+
     # Identifier of the datastore used to store the content in the library.
     attr_accessor :datastore_id
 
     # URI identifying the location used to store the content in the library. <p> The following URI formats are supported: <p> vSphere 6.5 <ul> <li>nfs://server/path?version=4 (for vCenter Server Appliance only) - Specifies an NFS Version 4 server.</li> <li>nfs://server/path (for vCenter Server Appliance only) - Specifies an NFS Version 3 server. The nfs://server:/path format is also supported.</li> <li>smb://server/path - Specifies an SMB server or Windows share.</li> </ul> <p> vSphere 6.0 Update 1 <ul> <li>nfs://server:/path (for vCenter Server Appliance only)</li> <li>file://unc-server/path (for vCenter Server for Windows only)</li> <li>file:///mount/point (for vCenter Server Appliance only) - Local file URIs are supported only when the path is a local mount point for an NFS file system. Use of file URIs is strongly discouraged. Instead, use an NFS URI to specify the remote file system.</li> </ul> <p> vSphere 6.0 <ul> <li>nfs://server:/path (for vCenter Server Appliance only)</li> <li>file://unc-server/path (for vCenter Server for Windows only)</li> <li>file:///path - Local file URIs are supported but strongly discouraged because it may interfere with the performance of vCenter Server.</li> </ul>
     attr_accessor :storage_uri
 
-    attr_accessor :type
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'type' => :'type',
         :'datastore_id' => :'datastore_id',
-        :'storage_uri' => :'storage_uri',
-        :'type' => :'type'
+        :'storage_uri' => :'storage_uri'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'type' => :'ContentLibraryStorageBackingType',
         :'datastore_id' => :'String',
-        :'storage_uri' => :'String',
-        :'type' => :'ContentLibraryStorageBackingType'
+        :'storage_uri' => :'String'
       }
     end
 
@@ -45,16 +45,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
+
       if attributes.has_key?(:'datastore_id')
         self.datastore_id = attributes[:'datastore_id']
       end
 
       if attributes.has_key?(:'storage_uri')
         self.storage_uri = attributes[:'storage_uri']
-      end
-
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
       end
     end
 
@@ -76,9 +76,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          type == o.type &&
           datastore_id == o.datastore_id &&
-          storage_uri == o.storage_uri &&
-          type == o.type
+          storage_uri == o.storage_uri
     end
 
     # @see the `==` method
@@ -90,7 +90,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [datastore_id, storage_uri, type].hash
+      [type, datastore_id, storage_uri].hash
     end
 
     # Builds the object from hash

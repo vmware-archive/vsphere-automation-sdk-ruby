@@ -11,16 +11,15 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmHardwareBootInfo
-    # Delay in milliseconds before beginning the firmware boot process when the virtual machine is powered on. This delay may be used to provide a time window for users to connect to the virtual machine console and enter BIOS setup mode.
-    attr_accessor :delay
+    attr_accessor :type
 
     # Flag indicating whether to use EFI legacy boot mode. This field is optional and it is only relevant when the value of Boot.Info.type is EFI.
     attr_accessor :efi_legacy_boot
 
-    # Flag indicating whether the firmware boot process will automatically enter setup mode the next time the virtual machine boots. Note that this flag will automatically be reset to false once the virtual machine enters setup mode.
-    attr_accessor :enter_setup_mode
-
     attr_accessor :network_protocol
+
+    # Delay in milliseconds before beginning the firmware boot process when the virtual machine is powered on. This delay may be used to provide a time window for users to connect to the virtual machine console and enter BIOS setup mode.
+    attr_accessor :delay
 
     # Flag indicating whether the virtual machine will automatically retry the boot process after a failure.
     attr_accessor :_retry
@@ -28,31 +27,32 @@ module VSphereAutomation
     # Delay in milliseconds before retrying the boot process after a failure; applicable only when Boot.Info.retry is true.
     attr_accessor :retry_delay
 
-    attr_accessor :type
+    # Flag indicating whether the firmware boot process will automatically enter setup mode the next time the virtual machine boots. Note that this flag will automatically be reset to false once the virtual machine enters setup mode.
+    attr_accessor :enter_setup_mode
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'delay' => :'delay',
+        :'type' => :'type',
         :'efi_legacy_boot' => :'efi_legacy_boot',
-        :'enter_setup_mode' => :'enter_setup_mode',
         :'network_protocol' => :'network_protocol',
+        :'delay' => :'delay',
         :'_retry' => :'retry',
         :'retry_delay' => :'retry_delay',
-        :'type' => :'type'
+        :'enter_setup_mode' => :'enter_setup_mode'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'delay' => :'Integer',
+        :'type' => :'VcenterVmHardwareBootType',
         :'efi_legacy_boot' => :'Boolean',
-        :'enter_setup_mode' => :'Boolean',
         :'network_protocol' => :'VcenterVmHardwareBootNetworkProtocol',
+        :'delay' => :'Integer',
         :'_retry' => :'Boolean',
         :'retry_delay' => :'Integer',
-        :'type' => :'VcenterVmHardwareBootType'
+        :'enter_setup_mode' => :'Boolean'
       }
     end
 
@@ -64,20 +64,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'delay')
-        self.delay = attributes[:'delay']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'efi_legacy_boot')
         self.efi_legacy_boot = attributes[:'efi_legacy_boot']
       end
 
-      if attributes.has_key?(:'enter_setup_mode')
-        self.enter_setup_mode = attributes[:'enter_setup_mode']
-      end
-
       if attributes.has_key?(:'network_protocol')
         self.network_protocol = attributes[:'network_protocol']
+      end
+
+      if attributes.has_key?(:'delay')
+        self.delay = attributes[:'delay']
       end
 
       if attributes.has_key?(:'retry')
@@ -88,8 +88,8 @@ module VSphereAutomation
         self.retry_delay = attributes[:'retry_delay']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'enter_setup_mode')
+        self.enter_setup_mode = attributes[:'enter_setup_mode']
       end
     end
 
@@ -97,12 +97,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @delay.nil?
-        invalid_properties.push('invalid value for "delay", delay cannot be nil.')
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
-      if @enter_setup_mode.nil?
-        invalid_properties.push('invalid value for "enter_setup_mode", enter_setup_mode cannot be nil.')
+      if @delay.nil?
+        invalid_properties.push('invalid value for "delay", delay cannot be nil.')
       end
 
       if @_retry.nil?
@@ -113,8 +113,8 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "retry_delay", retry_delay cannot be nil.')
       end
 
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      if @enter_setup_mode.nil?
+        invalid_properties.push('invalid value for "enter_setup_mode", enter_setup_mode cannot be nil.')
       end
 
       invalid_properties
@@ -123,11 +123,11 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @type.nil?
       return false if @delay.nil?
-      return false if @enter_setup_mode.nil?
       return false if @_retry.nil?
       return false if @retry_delay.nil?
-      return false if @type.nil?
+      return false if @enter_setup_mode.nil?
       true
     end
 
@@ -136,13 +136,13 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          delay == o.delay &&
+          type == o.type &&
           efi_legacy_boot == o.efi_legacy_boot &&
-          enter_setup_mode == o.enter_setup_mode &&
           network_protocol == o.network_protocol &&
+          delay == o.delay &&
           _retry == o._retry &&
           retry_delay == o.retry_delay &&
-          type == o.type
+          enter_setup_mode == o.enter_setup_mode
     end
 
     # @see the `==` method
@@ -154,7 +154,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [delay, efi_legacy_boot, enter_setup_mode, network_protocol, _retry, retry_delay, type].hash
+      [type, efi_legacy_boot, network_protocol, delay, _retry, retry_delay, enter_setup_mode].hash
     end
 
     # Builds the object from hash

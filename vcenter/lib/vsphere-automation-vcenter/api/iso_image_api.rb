@@ -20,7 +20,7 @@ module VSphereAutomation
     # @param library_item The identifier of the library item having the ISO image to mount on the virtual machine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VcenterIsoImageMountResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|]
+    # @return [VcenterIsoImageMountResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|]
     def mount(library_item, request_body, opts = {})
       data, _status_code, _headers = mount_with_http_info(library_item, request_body, opts)
       data
@@ -31,7 +31,7 @@ module VSphereAutomation
     # @param library_item The identifier of the library item having the ISO image to mount on the virtual machine.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VcenterIsoImageMountResp|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VcenterIsoImageMountResult|VapiStdErrorsResourceInaccessibleError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def mount_with_http_info(library_item, request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IsoImageApi.mount ...'
@@ -45,7 +45,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling IsoImageApi.mount"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vcenter/iso/image/id:{library_item}?~action=mount'.sub('{' + 'library_item' + '}', library_item.to_s)
+      local_var_path = '/com/vmware/vcenter/iso/image/id:{library_item}?~action=mount'.sub('{' + 'library_item' + '}', library_item.to_s)
 
       # query parameters
       query_params = {}
@@ -70,7 +70,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VCenter::VcenterIsoImageMountResp',
+	  '200' => 'VCenter::VcenterIsoImageMountResult',
 	  '400' => 'VCenter::VapiStdErrorsResourceInaccessibleError',
 	  '404' => 'VCenter::VapiStdErrorsNotFoundError',
 	})
@@ -108,7 +108,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling IsoImageApi.unmount"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vcenter/iso/image/id:{vm}?~action=unmount'.sub('{' + 'vm' + '}', vm.to_s)
+      local_var_path = '/com/vmware/vcenter/iso/image/id:{vm}?~action=unmount'.sub('{' + 'vm' + '}', vm.to_s)
 
       # query parameters
       query_params = {}

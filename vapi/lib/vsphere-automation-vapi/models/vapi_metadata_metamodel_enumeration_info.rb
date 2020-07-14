@@ -11,35 +11,35 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelEnumerationInfo
-    # English language documentation for an enumeration element. It can contain HTML markup and Javadoc tags. The first sentence of the enumeration documentation is a complete sentence that identifies the enumeration by name and summarizes the purpose of the enumeration. The documentation describes the context in which the enumeration is used. <p> The documentation also contains references to the context in which the enumeration is used. But if the enumeration is used in many contexts, the references may not be present.
-    attr_accessor :documentation
-
-    # Generic metadata elements for an enumeration element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
-    attr_accessor :metadata
-
     # Dot separated name of the enumeration element. The segments in the name reflect the organization of the APIs. The format of each segment is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
     attr_accessor :name
 
     # Metamodel information of all the enumeration value elements contained in this enumeration element. The order of the enumeration value elements in the list is same as the order in which they are defined in the interface definition file.
     attr_accessor :values
 
+    # Generic metadata elements for an enumeration element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
+    attr_accessor :metadata
+
+    # English language documentation for an enumeration element. It can contain HTML markup and Javadoc tags. The first sentence of the enumeration documentation is a complete sentence that identifies the enumeration by name and summarizes the purpose of the enumeration. The documentation describes the context in which the enumeration is used. <p> The documentation also contains references to the context in which the enumeration is used. But if the enumeration is used in many contexts, the references may not be present.
+    attr_accessor :documentation
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'documentation' => :'documentation',
-        :'metadata' => :'metadata',
         :'name' => :'name',
-        :'values' => :'values'
+        :'values' => :'values',
+        :'metadata' => :'metadata',
+        :'documentation' => :'documentation'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'documentation' => :'String',
-        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'name' => :'String',
-        :'values' => :'Array<VapiMetadataMetamodelEnumerationValueInfo>'
+        :'values' => :'Array<VapiMetadataMetamodelEnumerationValueInfo>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
+        :'documentation' => :'String'
       }
     end
 
@@ -51,16 +51,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
-      end
-
-      if attributes.has_key?(:'metadata')
-        if (value = attributes[:'metadata']).is_a?(Array)
-          self.metadata = value
-        end
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
@@ -70,20 +60,22 @@ module VSphereAutomation
           self.values = value
         end
       end
+
+      if attributes.has_key?(:'metadata')
+        if (value = attributes[:'metadata']).is_a?(Array)
+          self.metadata = value
+        end
+      end
+
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
-      end
-
-      if @metadata.nil?
-        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
-      end
-
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
@@ -92,16 +84,24 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "values", values cannot be nil.')
       end
 
+      if @metadata.nil?
+        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
+      end
+
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @documentation.nil?
-      return false if @metadata.nil?
       return false if @name.nil?
       return false if @values.nil?
+      return false if @metadata.nil?
+      return false if @documentation.nil?
       true
     end
 
@@ -110,10 +110,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          documentation == o.documentation &&
-          metadata == o.metadata &&
           name == o.name &&
-          values == o.values
+          values == o.values &&
+          metadata == o.metadata &&
+          documentation == o.documentation
     end
 
     # @see the `==` method
@@ -125,7 +125,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [documentation, metadata, name, values].hash
+      [name, values, metadata, documentation].hash
     end
 
     # Builds the object from hash

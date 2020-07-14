@@ -11,34 +11,25 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiStdErrorsUnauthenticated
-    # Indicates the authentication challenges applicable to the target API provider. It can be used by a client to discover the correct authentication scheme to use. The exact syntax of the value is defined by the specific provider, the protocol and authentication schemes used. <p> For example, a provider using REST may adhere to the WWW-Authenticate HTTP header specification, RFC7235, section 4.1. In this case an example challenge value may be: SIGN realm=\"27da1358-2ba4-11e9-b210-d663bd873d93\",sts=\"http://vcenter/sso?vsphere.local\", Basic realm=\"vCenter\"
-    attr_accessor :challenge
+    # Stack of one or more localizable messages for human {@term error} consumers. <p> The message at the top of the stack (first in the list) describes the {@term error} from the perspective of the {@term operation} the client invoked. Each subsequent message in the stack describes the \"cause\" of the prior message.
+    attr_accessor :messages
 
     # Data to facilitate clients responding to the {@term operation} reporting a standard {@term error} to indicating that it was unable to complete successfully. <p> {@term Operations} may provide data that clients can use when responding to {@term errors}.  Since the data that clients need may be specific to the context of the {@term operation} reporting the {@term error}, different {@term operations} that report the same {@term error} may provide different data in the {@term error}.  The documentation for each each {@term operation} will describe what, if any, data it provides for each {@term error} it reports. The {@link ArgumentLocations}, {@link FileLocations}, and {@link TransientIndication} {@term structures} are intended as possible values for this {@term field}.  {@link vapi.std.DynamicID} may also be useful as a value for this {@term field} (although that is not its primary purpose).  Some {@term services} may provide their own specific {@term structures} for use as the value of this {@term field} when reporting {@term errors} from their {@term operations}.
     attr_accessor :data
 
-    attr_accessor :error_type
-
-    # Stack of one or more localizable messages for human {@term error} consumers. <p> The message at the top of the stack (first in the list) describes the {@term error} from the perspective of the {@term operation} the client invoked. Each subsequent message in the stack describes the \"cause\" of the prior message.
-    attr_accessor :messages
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'challenge' => :'challenge',
-        :'data' => :'data',
-        :'error_type' => :'error_type',
-        :'messages' => :'messages'
+        :'messages' => :'messages',
+        :'data' => :'data'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'challenge' => :'String',
-        :'data' => :'Object',
-        :'error_type' => :'VapiStdErrorsErrorType',
-        :'messages' => :'Array<VapiStdLocalizableMessage>'
+        :'messages' => :'Array<VapiStdLocalizableMessage>',
+        :'data' => :'Object'
       }
     end
 
@@ -50,22 +41,14 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'challenge')
-        self.challenge = attributes[:'challenge']
-      end
-
-      if attributes.has_key?(:'data')
-        self.data = attributes[:'data']
-      end
-
-      if attributes.has_key?(:'error_type')
-        self.error_type = attributes[:'error_type']
-      end
-
       if attributes.has_key?(:'messages')
         if (value = attributes[:'messages']).is_a?(Array)
           self.messages = value
         end
+      end
+
+      if attributes.has_key?(:'data')
+        self.data = attributes[:'data']
       end
     end
 
@@ -92,10 +75,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          challenge == o.challenge &&
-          data == o.data &&
-          error_type == o.error_type &&
-          messages == o.messages
+          messages == o.messages &&
+          data == o.data
     end
 
     # @see the `==` method
@@ -107,7 +88,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [challenge, data, error_type, messages].hash
+      [messages, data].hash
     end
 
     # Builds the object from hash

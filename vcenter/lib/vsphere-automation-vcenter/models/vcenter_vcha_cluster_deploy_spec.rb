@@ -11,23 +11,23 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterDeploySpec
-    attr_accessor :active
+    attr_accessor :vc_spec
 
     attr_accessor :deployment
 
-    attr_accessor :passive
+    attr_accessor :active
 
-    attr_accessor :vc_spec
+    attr_accessor :passive
 
     attr_accessor :witness
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'active' => :'active',
-        :'deployment' => :'deployment',
-        :'passive' => :'passive',
         :'vc_spec' => :'vc_spec',
+        :'deployment' => :'deployment',
+        :'active' => :'active',
+        :'passive' => :'passive',
         :'witness' => :'witness'
       }
     end
@@ -35,10 +35,10 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'active' => :'VcenterVchaClusterActiveSpec',
-        :'deployment' => :'VcenterVchaClusterType',
-        :'passive' => :'VcenterVchaClusterPassiveSpec',
         :'vc_spec' => :'VcenterVchaCredentialsSpec',
+        :'deployment' => :'VcenterVchaClusterType',
+        :'active' => :'VcenterVchaClusterActiveSpec',
+        :'passive' => :'VcenterVchaClusterPassiveSpec',
         :'witness' => :'VcenterVchaClusterWitnessSpec'
       }
     end
@@ -51,20 +51,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'active')
-        self.active = attributes[:'active']
+      if attributes.has_key?(:'vc_spec')
+        self.vc_spec = attributes[:'vc_spec']
       end
 
       if attributes.has_key?(:'deployment')
         self.deployment = attributes[:'deployment']
       end
 
-      if attributes.has_key?(:'passive')
-        self.passive = attributes[:'passive']
+      if attributes.has_key?(:'active')
+        self.active = attributes[:'active']
       end
 
-      if attributes.has_key?(:'vc_spec')
-        self.vc_spec = attributes[:'vc_spec']
+      if attributes.has_key?(:'passive')
+        self.passive = attributes[:'passive']
       end
 
       if attributes.has_key?(:'witness')
@@ -76,12 +76,12 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @active.nil?
-        invalid_properties.push('invalid value for "active", active cannot be nil.')
-      end
-
       if @deployment.nil?
         invalid_properties.push('invalid value for "deployment", deployment cannot be nil.')
+      end
+
+      if @active.nil?
+        invalid_properties.push('invalid value for "active", active cannot be nil.')
       end
 
       if @passive.nil?
@@ -98,8 +98,8 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @active.nil?
       return false if @deployment.nil?
+      return false if @active.nil?
       return false if @passive.nil?
       return false if @witness.nil?
       true
@@ -110,10 +110,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          active == o.active &&
-          deployment == o.deployment &&
-          passive == o.passive &&
           vc_spec == o.vc_spec &&
+          deployment == o.deployment &&
+          active == o.active &&
+          passive == o.passive &&
           witness == o.witness
     end
 
@@ -126,7 +126,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [active, deployment, passive, vc_spec, witness].hash
+      [vc_spec, deployment, active, passive, witness].hash
     end
 
     # Builds the object from hash

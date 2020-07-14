@@ -11,55 +11,55 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmTemplateLibraryItemsDeploySpec
+    # Name of the deployed virtual machine.
+    attr_accessor :name
+
     # Description of the deployed virtual machine.
     attr_accessor :description
+
+    attr_accessor :vm_home_storage
 
     attr_accessor :disk_storage
 
     # Storage specification for individual disks in the deployed virtual machine. This is specified as a mapping between disk identifiers in the source virtual machine template contained in the library item and their storage specifications.
     attr_accessor :disk_storage_overrides
 
-    attr_accessor :guest_customization
-
-    attr_accessor :hardware_customization
-
-    # Name of the deployed virtual machine.
-    attr_accessor :name
-
     attr_accessor :placement
 
     # Specifies whether the deployed virtual machine should be powered on after deployment.
     attr_accessor :powered_on
 
-    attr_accessor :vm_home_storage
+    attr_accessor :guest_customization
+
+    attr_accessor :hardware_customization
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'name' => :'name',
         :'description' => :'description',
+        :'vm_home_storage' => :'vm_home_storage',
         :'disk_storage' => :'disk_storage',
         :'disk_storage_overrides' => :'disk_storage_overrides',
-        :'guest_customization' => :'guest_customization',
-        :'hardware_customization' => :'hardware_customization',
-        :'name' => :'name',
         :'placement' => :'placement',
         :'powered_on' => :'powered_on',
-        :'vm_home_storage' => :'vm_home_storage'
+        :'guest_customization' => :'guest_customization',
+        :'hardware_customization' => :'hardware_customization'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'name' => :'String',
         :'description' => :'String',
+        :'vm_home_storage' => :'VcenterVmTemplateLibraryItemsDeploySpecVmHomeStorage',
         :'disk_storage' => :'VcenterVmTemplateLibraryItemsDeploySpecDiskStorage',
         :'disk_storage_overrides' => :'Array<VcenterVmTemplateLibraryItemsDeploySpecDiskStorageOverrides>',
-        :'guest_customization' => :'VcenterVmTemplateLibraryItemsGuestCustomizationSpec',
-        :'hardware_customization' => :'VcenterVmTemplateLibraryItemsHardwareCustomizationSpec',
-        :'name' => :'String',
         :'placement' => :'VcenterVmTemplateLibraryItemsDeployPlacementSpec',
         :'powered_on' => :'Boolean',
-        :'vm_home_storage' => :'VcenterVmTemplateLibraryItemsDeploySpecVmHomeStorage'
+        :'guest_customization' => :'VcenterVmTemplateLibraryItemsGuestCustomizationSpec',
+        :'hardware_customization' => :'VcenterVmTemplateLibraryItemsHardwareCustomizationSpec'
       }
     end
 
@@ -71,8 +71,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'vm_home_storage')
+        self.vm_home_storage = attributes[:'vm_home_storage']
       end
 
       if attributes.has_key?(:'disk_storage')
@@ -85,18 +93,6 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'guest_customization')
-        self.guest_customization = attributes[:'guest_customization']
-      end
-
-      if attributes.has_key?(:'hardware_customization')
-        self.hardware_customization = attributes[:'hardware_customization']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
       if attributes.has_key?(:'placement')
         self.placement = attributes[:'placement']
       end
@@ -105,8 +101,12 @@ module VSphereAutomation
         self.powered_on = attributes[:'powered_on']
       end
 
-      if attributes.has_key?(:'vm_home_storage')
-        self.vm_home_storage = attributes[:'vm_home_storage']
+      if attributes.has_key?(:'guest_customization')
+        self.guest_customization = attributes[:'guest_customization']
+      end
+
+      if attributes.has_key?(:'hardware_customization')
+        self.hardware_customization = attributes[:'hardware_customization']
       end
     end
 
@@ -133,15 +133,15 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          name == o.name &&
           description == o.description &&
+          vm_home_storage == o.vm_home_storage &&
           disk_storage == o.disk_storage &&
           disk_storage_overrides == o.disk_storage_overrides &&
-          guest_customization == o.guest_customization &&
-          hardware_customization == o.hardware_customization &&
-          name == o.name &&
           placement == o.placement &&
           powered_on == o.powered_on &&
-          vm_home_storage == o.vm_home_storage
+          guest_customization == o.guest_customization &&
+          hardware_customization == o.hardware_customization
     end
 
     # @see the `==` method
@@ -153,7 +153,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [description, disk_storage, disk_storage_overrides, guest_customization, hardware_customization, name, placement, powered_on, vm_home_storage].hash
+      [name, description, vm_home_storage, disk_storage, disk_storage_overrides, placement, powered_on, guest_customization, hardware_customization].hash
     end
 
     # Builds the object from hash

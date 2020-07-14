@@ -1,18 +1,18 @@
 # VSphereAutomation::VCenter::OvfLibraryItemApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](OvfLibraryItemApi.md#create) | **POST** /rest/com/vmware/vcenter/ovf/library-item | Creates a library item in content library from a virtual machine or virtual appliance. &lt;p&gt; This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. Meta data such as name and description is not updated for the exisitng library item. &lt;/p&gt;
-[**deploy**](OvfLibraryItemApi.md#deploy) | **POST** /rest/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action&#x3D;deploy | Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. &lt;p&gt; This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. &lt;/p&gt;
-[**filter**](OvfLibraryItemApi.md#filter) | **POST** /rest/com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action&#x3D;filter | Queries an OVF package stored in content library to retrieve information to use when deploying the package. See {@link #deploy}. &lt;p&gt; This {@term operation} retrieves information from the descriptor of the OVF package stored in the library item specified by {@param.name ovfLibraryItemId}. The information returned by the {@term operation} can be used to populate the deployment specification (see {@link ResourcePoolDeploymentSpec} when deploying the OVF package to the deployment target specified by {@param.name target}. &lt;/p&gt;
+[**create**](OvfLibraryItemApi.md#create) | **POST** /com/vmware/vcenter/ovf/library-item | Creates a library item in content library from a virtual machine or virtual appliance. &lt;p&gt; This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. &lt;/p&gt;
+[**deploy**](OvfLibraryItemApi.md#deploy) | **POST** /com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action&#x3D;deploy | Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. &lt;p&gt; This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. &lt;/p&gt;
+[**filter**](OvfLibraryItemApi.md#filter) | **POST** /com/vmware/vcenter/ovf/library-item/id:{ovf_library_item_id}?~action&#x3D;filter | Queries an OVF package stored in content library to retrieve information to use when deploying the package. See {@link #deploy}. &lt;p&gt; This {@term operation} retrieves information from the descriptor of the OVF package stored in the library item specified by {@param.name ovfLibraryItemId}. The information returned by the {@term operation} can be used to populate the deployment specification (see {@link ResourcePoolDeploymentSpec} when deploying the OVF package to the deployment target specified by {@param.name target}. &lt;/p&gt;
 
 
 # **create**
-> VcenterOvfLibraryItemCreateResp create(request_body)
+> VcenterOvfLibraryItemCreateResult create(request_body)
 
-Creates a library item in content library from a virtual machine or virtual appliance. <p> This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. Meta data such as name and description is not updated for the exisitng library item. </p>
+Creates a library item in content library from a virtual machine or virtual appliance. <p> This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. </p>
 
 ### Example
 ```ruby
@@ -30,7 +30,7 @@ api_instance = VSphereAutomation::VCenter::OvfLibraryItemApi.new
 request_body = VCenter::VcenterOvfLibraryItemCreate.new # VcenterOvfLibraryItemCreate | 
 
 begin
-  #Creates a library item in content library from a virtual machine or virtual appliance. <p> This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. Meta data such as name and description is not updated for the exisitng library item. </p>
+  #Creates a library item in content library from a virtual machine or virtual appliance. <p> This {@term operation} creates a library item in content library whose content is an OVF package derived from a source virtual machine or virtual appliance, using the supplied create specification. The OVF package may be stored as in a newly created library item or in an in an existing library item. For an existing library item whose content is updated by this {@term operation}, the original content is overwritten. </p>
   result = api_instance.create(request_body)
   p result
 rescue VSphereAutomation::ApiError => e
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterOvfLibraryItemCreateResp**](VcenterOvfLibraryItemCreateResp.md)
+[**VcenterOvfLibraryItemCreateResult**](VcenterOvfLibraryItemCreateResult.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 
 # **deploy**
-> VcenterOvfLibraryItemDeployResp deploy(ovf_library_item_id, request_body)
+> VcenterOvfLibraryItemDeployResult deploy(ovf_library_item_id, request_body)
 
 Deploys an OVF package stored in content library to a newly created virtual machine or virtual appliance. <p> This {@term operation} deploys an OVF package which is stored in the library item specified by {@param.name ovfLibraryItemId}. It uses the deployment specification in {@param.name deploymentSpec} to deploy the OVF package to the location specified by {@param.name target}. </p>
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterOvfLibraryItemDeployResp**](VcenterOvfLibraryItemDeployResp.md)
+[**VcenterOvfLibraryItemDeployResult**](VcenterOvfLibraryItemDeployResult.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 
 # **filter**
-> VcenterOvfLibraryItemFilterResp filter(ovf_library_item_id, request_body)
+> VcenterOvfLibraryItemFilterResult filter(ovf_library_item_id, request_body)
 
 Queries an OVF package stored in content library to retrieve information to use when deploying the package. See {@link #deploy}. <p> This {@term operation} retrieves information from the descriptor of the OVF package stored in the library item specified by {@param.name ovfLibraryItemId}. The information returned by the {@term operation} can be used to populate the deployment specification (see {@link ResourcePoolDeploymentSpec} when deploying the OVF package to the deployment target specified by {@param.name target}. </p>
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterOvfLibraryItemFilterResp**](VcenterOvfLibraryItemFilterResp.md)
+[**VcenterOvfLibraryItemFilterResult**](VcenterOvfLibraryItemFilterResult.md)
 
 ### Authorization
 

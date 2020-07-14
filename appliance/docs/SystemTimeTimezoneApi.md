@@ -1,15 +1,15 @@
 # VSphereAutomation::Appliance::SystemTimeTimezoneApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](SystemTimeTimezoneApi.md#get) | **GET** /rest/appliance/system/time/timezone | Get time zone.
-[**set**](SystemTimeTimezoneApi.md#set) | **PUT** /rest/appliance/system/time/timezone | Set time zone.
+[**get**](SystemTimeTimezoneApi.md#get) | **GET** /appliance/system/time/timezone | Get time zone.
+[**set**](SystemTimeTimezoneApi.md#set) | **PUT** /appliance/system/time/timezone | Set time zone.
 
 
 # **get**
-> ApplianceSystemTimeTimezoneResp get
+> ApplianceSystemTimeTimezoneResult get
 
 Get time zone.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceSystemTimeTimezoneResp**](ApplianceSystemTimeTimezoneResp.md)
+[**ApplianceSystemTimeTimezoneResult**](ApplianceSystemTimeTimezoneResult.md)
 
 ### Authorization
 

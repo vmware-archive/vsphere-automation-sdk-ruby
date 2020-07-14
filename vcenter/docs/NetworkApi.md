@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::NetworkApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list**](NetworkApi.md#list) | **GET** /rest/vcenter/network | Returns information about at most 1000 visible (subject to permission checks) networks in vCenter matching the Network.FilterSpec.
+[**list**](NetworkApi.md#list) | **GET** /vcenter/network | Returns information about at most 1000 visible (subject to permission checks) networks in vCenter matching the Network.FilterSpec.
 
 
 # **list**
-> VcenterNetworkListResp list(opts)
+> VcenterNetworkListResult list(opts)
 
 Returns information about at most 1000 visible (subject to permission checks) networks in vCenter matching the Network.FilterSpec.
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterNetworkListResp**](VcenterNetworkListResp.md)
+[**VcenterNetworkListResult**](VcenterNetworkListResult.md)
 
 ### Authorization
 

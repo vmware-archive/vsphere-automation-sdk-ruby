@@ -1,16 +1,16 @@
 # VSphereAutomation::VCenter::VmTemplateLibraryItemsApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](VmTemplateLibraryItemsApi.md#create) | **POST** /rest/vcenter/vm-template/library-items | Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
-[**deploy**](VmTemplateLibraryItemsApi.md#deploy) | **POST** /rest/vcenter/vm-template/library-items/{template_library_item}?action&#x3D;deploy | Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
-[**get**](VmTemplateLibraryItemsApi.md#get) | **GET** /rest/vcenter/vm-template/library-items/{template_library_item} | Returns information about a virtual machine template contained in the library item specified by {@param.name templateLibraryItem}
+[**create**](VmTemplateLibraryItemsApi.md#create) | **POST** /vcenter/vm-template/library-items | Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
+[**deploy**](VmTemplateLibraryItemsApi.md#deploy) | **POST** /vcenter/vm-template/library-items/{template_library_item}?action&#x3D;deploy | Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
+[**get**](VmTemplateLibraryItemsApi.md#get) | **GET** /vcenter/vm-template/library-items/{template_library_item} | Returns information about a virtual machine template contained in the library item specified by {@param.name templateLibraryItem}
 
 
 # **create**
-> VcenterVmTemplateLibraryItemsCreateResp create(request_body)
+> VcenterVmTemplateLibraryItemsCreateResult create(request_body)
 
 Creates a library item in content library from a virtual machine. This {@term operation} creates a library item in content library whose content is a virtual machine template created from the source virtual machine, using the supplied create specification. The virtual machine template is stored in a newly created library item.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmTemplateLibraryItemsCreateResp**](VcenterVmTemplateLibraryItemsCreateResp.md)
+[**VcenterVmTemplateLibraryItemsCreateResult**](VcenterVmTemplateLibraryItemsCreateResult.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 
 # **deploy**
-> VcenterVmTemplateLibraryItemsDeployResp deploy(template_library_item, request_body)
+> VcenterVmTemplateLibraryItemsDeployResult deploy(template_library_item, request_body)
 
 Deploys a virtual machine as a copy of the source virtual machine template contained in the library item specified by {@param.name templateLibraryItem}. It uses the deployment specification in {@param.name spec}. If {@link DeploySpec#poweredOn} and/or {@link DeploySpec#guestCustomization} are specified, the server triggers the power on and/or guest customization operations, which are executed asynchronously.
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmTemplateLibraryItemsDeployResp**](VcenterVmTemplateLibraryItemsDeployResp.md)
+[**VcenterVmTemplateLibraryItemsDeployResult**](VcenterVmTemplateLibraryItemsDeployResult.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 
 # **get**
-> VcenterVmTemplateLibraryItemsResp get(template_library_item)
+> VcenterVmTemplateLibraryItemsResult get(template_library_item)
 
 Returns information about a virtual machine template contained in the library item specified by {@param.name templateLibraryItem}
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterVmTemplateLibraryItemsResp**](VcenterVmTemplateLibraryItemsResp.md)
+[**VcenterVmTemplateLibraryItemsResult**](VcenterVmTemplateLibraryItemsResult.md)
 
 ### Authorization
 

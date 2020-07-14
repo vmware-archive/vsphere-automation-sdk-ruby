@@ -19,7 +19,7 @@ module VSphereAutomation
     # Get IPv4 network configuration for specific NIC.
     # @param interface_name The Network interface to query, for example, \&quot;nic0\&quot;.
     # @param [Hash] opts the optional parameters
-    # @return [ApplianceNetworkingInterfacesIpv4Resp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
+    # @return [ApplianceNetworkingInterfacesIpv4Result|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|]
     def get(interface_name, opts = {})
       data, _status_code, _headers = get_with_http_info(interface_name, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param interface_name The Network interface to query, for example, \&quot;nic0\&quot;.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ApplianceNetworkingInterfacesIpv4Resp|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(ApplianceNetworkingInterfacesIpv4Result|VapiStdErrorsErrorError|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(interface_name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: NetworkingInterfacesIpv4Api.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'interface_name' when calling NetworkingInterfacesIpv4Api.get"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/interfaces/{interface_name}/ipv4'.sub('{' + 'interface_name' + '}', interface_name.to_s)
+      local_var_path = '/appliance/networking/interfaces/{interface_name}/ipv4'.sub('{' + 'interface_name' + '}', interface_name.to_s)
 
       # query parameters
       query_params = {}
@@ -62,7 +62,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'Appliance::ApplianceNetworkingInterfacesIpv4Resp',
+	  '200' => 'Appliance::ApplianceNetworkingInterfacesIpv4Result',
 	  '400' => 'Appliance::VapiStdErrorsErrorError',
 	  '404' => 'Appliance::VapiStdErrorsNotFoundError',
 	})
@@ -100,7 +100,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling NetworkingInterfacesIpv4Api.set"
       end
       # resource path
-      local_var_path = '/rest/appliance/networking/interfaces/{interface_name}/ipv4'.sub('{' + 'interface_name' + '}', interface_name.to_s)
+      local_var_path = '/appliance/networking/interfaces/{interface_name}/ipv4'.sub('{' + 'interface_name' + '}', interface_name.to_s)
 
       # query parameters
       query_params = {}

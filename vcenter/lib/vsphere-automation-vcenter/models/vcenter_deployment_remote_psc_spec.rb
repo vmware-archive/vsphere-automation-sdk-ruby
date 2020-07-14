@@ -11,11 +11,14 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentRemotePscSpec
+    # The IP address or DNS resolvable name of the remote PSC to which this configuring vCenter Server will be registered to.
+    attr_accessor :psc_hostname
+
     # The HTTPS port of the external PSC appliance.
     attr_accessor :https_port
 
-    # The IP address or DNS resolvable name of the remote PSC to which this configuring vCenter Server will be registered to.
-    attr_accessor :psc_hostname
+    # The SSO administrator account password.
+    attr_accessor :sso_admin_password
 
     # SHA1 thumbprint of the server SSL certificate will be used for verification when ssl_verify field is set to true.
     attr_accessor :ssl_thumbprint
@@ -23,28 +26,25 @@ module VSphereAutomation
     # SSL verification should be enabled or disabled. If {@name #sslVerify} is true and and {@name #sslThumbprint} is {@term unset}, the CA certificate will be used for verification. If {@name #sslVerify} is true and {@name #sslThumbprint} is set then the thumbprint will be used for verification. No verification will be performed if {@name #sslVerify} value is set to false.
     attr_accessor :ssl_verify
 
-    # The SSO administrator account password.
-    attr_accessor :sso_admin_password
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'https_port' => :'https_port',
         :'psc_hostname' => :'psc_hostname',
+        :'https_port' => :'https_port',
+        :'sso_admin_password' => :'sso_admin_password',
         :'ssl_thumbprint' => :'ssl_thumbprint',
-        :'ssl_verify' => :'ssl_verify',
-        :'sso_admin_password' => :'sso_admin_password'
+        :'ssl_verify' => :'ssl_verify'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'https_port' => :'Integer',
         :'psc_hostname' => :'String',
+        :'https_port' => :'Integer',
+        :'sso_admin_password' => :'String',
         :'ssl_thumbprint' => :'String',
-        :'ssl_verify' => :'Boolean',
-        :'sso_admin_password' => :'String'
+        :'ssl_verify' => :'Boolean'
       }
     end
 
@@ -56,12 +56,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'psc_hostname')
+        self.psc_hostname = attributes[:'psc_hostname']
+      end
+
       if attributes.has_key?(:'https_port')
         self.https_port = attributes[:'https_port']
       end
 
-      if attributes.has_key?(:'psc_hostname')
-        self.psc_hostname = attributes[:'psc_hostname']
+      if attributes.has_key?(:'sso_admin_password')
+        self.sso_admin_password = attributes[:'sso_admin_password']
       end
 
       if attributes.has_key?(:'ssl_thumbprint')
@@ -70,10 +74,6 @@ module VSphereAutomation
 
       if attributes.has_key?(:'ssl_verify')
         self.ssl_verify = attributes[:'ssl_verify']
-      end
-
-      if attributes.has_key?(:'sso_admin_password')
-        self.sso_admin_password = attributes[:'sso_admin_password']
       end
     end
 
@@ -105,11 +105,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          https_port == o.https_port &&
           psc_hostname == o.psc_hostname &&
+          https_port == o.https_port &&
+          sso_admin_password == o.sso_admin_password &&
           ssl_thumbprint == o.ssl_thumbprint &&
-          ssl_verify == o.ssl_verify &&
-          sso_admin_password == o.sso_admin_password
+          ssl_verify == o.ssl_verify
     end
 
     # @see the `==` method
@@ -121,7 +121,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [https_port, psc_hostname, ssl_thumbprint, ssl_verify, sso_admin_password].hash
+      [psc_hostname, https_port, sso_admin_password, ssl_thumbprint, ssl_verify].hash
     end
 
     # Builds the object from hash

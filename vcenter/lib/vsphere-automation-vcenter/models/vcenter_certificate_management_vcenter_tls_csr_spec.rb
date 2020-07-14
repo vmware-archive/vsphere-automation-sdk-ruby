@@ -11,20 +11,11 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterCertificateManagementVcenterTlsCsrSpec
-    # commonName will take PNID if not modified.
-    attr_accessor :common_name
-
-    # Country field in certificate subject
-    attr_accessor :country
-
-    # Email field in Certificate extensions
-    attr_accessor :email_address
-
     # keySize will take 2048 bits if not modified.
     attr_accessor :key_size
 
-    # Locality field in certificate subject
-    attr_accessor :locality
+    # commonName will take PNID if not modified.
+    attr_accessor :common_name
 
     # Organization field in certificate subject
     attr_accessor :organization
@@ -32,8 +23,17 @@ module VSphereAutomation
     # Organization unit field in certificate subject
     attr_accessor :organization_unit
 
+    # Locality field in certificate subject
+    attr_accessor :locality
+
     # State field in certificate subject
     attr_accessor :state_or_province
+
+    # Country field in certificate subject
+    attr_accessor :country
+
+    # Email field in Certificate extensions
+    attr_accessor :email_address
 
     # subjectAltName is list of Dns Names and Ip addresses
     attr_accessor :subject_alt_name
@@ -41,14 +41,14 @@ module VSphereAutomation
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'common_name' => :'common_name',
-        :'country' => :'country',
-        :'email_address' => :'email_address',
         :'key_size' => :'key_size',
-        :'locality' => :'locality',
+        :'common_name' => :'common_name',
         :'organization' => :'organization',
         :'organization_unit' => :'organization_unit',
+        :'locality' => :'locality',
         :'state_or_province' => :'state_or_province',
+        :'country' => :'country',
+        :'email_address' => :'email_address',
         :'subject_alt_name' => :'subject_alt_name'
       }
     end
@@ -56,14 +56,14 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'common_name' => :'String',
-        :'country' => :'String',
-        :'email_address' => :'String',
         :'key_size' => :'Integer',
-        :'locality' => :'String',
+        :'common_name' => :'String',
         :'organization' => :'String',
         :'organization_unit' => :'String',
+        :'locality' => :'String',
         :'state_or_province' => :'String',
+        :'country' => :'String',
+        :'email_address' => :'String',
         :'subject_alt_name' => :'Array<String>'
       }
     end
@@ -76,24 +76,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'common_name')
-        self.common_name = attributes[:'common_name']
-      end
-
-      if attributes.has_key?(:'country')
-        self.country = attributes[:'country']
-      end
-
-      if attributes.has_key?(:'email_address')
-        self.email_address = attributes[:'email_address']
-      end
-
       if attributes.has_key?(:'key_size')
         self.key_size = attributes[:'key_size']
       end
 
-      if attributes.has_key?(:'locality')
-        self.locality = attributes[:'locality']
+      if attributes.has_key?(:'common_name')
+        self.common_name = attributes[:'common_name']
       end
 
       if attributes.has_key?(:'organization')
@@ -104,8 +92,20 @@ module VSphereAutomation
         self.organization_unit = attributes[:'organization_unit']
       end
 
+      if attributes.has_key?(:'locality')
+        self.locality = attributes[:'locality']
+      end
+
       if attributes.has_key?(:'state_or_province')
         self.state_or_province = attributes[:'state_or_province']
+      end
+
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
+      end
+
+      if attributes.has_key?(:'email_address')
+        self.email_address = attributes[:'email_address']
       end
 
       if attributes.has_key?(:'subject_alt_name')
@@ -119,18 +119,6 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @country.nil?
-        invalid_properties.push('invalid value for "country", country cannot be nil.')
-      end
-
-      if @email_address.nil?
-        invalid_properties.push('invalid value for "email_address", email_address cannot be nil.')
-      end
-
-      if @locality.nil?
-        invalid_properties.push('invalid value for "locality", locality cannot be nil.')
-      end
-
       if @organization.nil?
         invalid_properties.push('invalid value for "organization", organization cannot be nil.')
       end
@@ -139,8 +127,20 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "organization_unit", organization_unit cannot be nil.')
       end
 
+      if @locality.nil?
+        invalid_properties.push('invalid value for "locality", locality cannot be nil.')
+      end
+
       if @state_or_province.nil?
         invalid_properties.push('invalid value for "state_or_province", state_or_province cannot be nil.')
+      end
+
+      if @country.nil?
+        invalid_properties.push('invalid value for "country", country cannot be nil.')
+      end
+
+      if @email_address.nil?
+        invalid_properties.push('invalid value for "email_address", email_address cannot be nil.')
       end
 
       invalid_properties
@@ -149,12 +149,12 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @country.nil?
-      return false if @email_address.nil?
-      return false if @locality.nil?
       return false if @organization.nil?
       return false if @organization_unit.nil?
+      return false if @locality.nil?
       return false if @state_or_province.nil?
+      return false if @country.nil?
+      return false if @email_address.nil?
       true
     end
 
@@ -163,14 +163,14 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          common_name == o.common_name &&
-          country == o.country &&
-          email_address == o.email_address &&
           key_size == o.key_size &&
-          locality == o.locality &&
+          common_name == o.common_name &&
           organization == o.organization &&
           organization_unit == o.organization_unit &&
+          locality == o.locality &&
           state_or_province == o.state_or_province &&
+          country == o.country &&
+          email_address == o.email_address &&
           subject_alt_name == o.subject_alt_name
     end
 
@@ -183,7 +183,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [common_name, country, email_address, key_size, locality, organization, organization_unit, state_or_province, subject_alt_name].hash
+      [key_size, common_name, organization, organization_unit, locality, state_or_province, country, email_address, subject_alt_name].hash
     end
 
     # Builds the object from hash

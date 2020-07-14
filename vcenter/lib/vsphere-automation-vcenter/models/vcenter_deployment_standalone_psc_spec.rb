@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterDeploymentStandalonePscSpec
+    # The SSO site name used for this PSC.
+    attr_accessor :sso_site_name
+
     # The SSO administrator account password.
     attr_accessor :sso_admin_password
 
     # The SSO domain name to be used to configure this appliance.
     attr_accessor :sso_domain_name
 
-    # The SSO site name used for this PSC.
-    attr_accessor :sso_site_name
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'sso_site_name' => :'sso_site_name',
         :'sso_admin_password' => :'sso_admin_password',
-        :'sso_domain_name' => :'sso_domain_name',
-        :'sso_site_name' => :'sso_site_name'
+        :'sso_domain_name' => :'sso_domain_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'sso_site_name' => :'String',
         :'sso_admin_password' => :'String',
-        :'sso_domain_name' => :'String',
-        :'sso_site_name' => :'String'
+        :'sso_domain_name' => :'String'
       }
     end
 
@@ -46,16 +46,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'sso_site_name')
+        self.sso_site_name = attributes[:'sso_site_name']
+      end
+
       if attributes.has_key?(:'sso_admin_password')
         self.sso_admin_password = attributes[:'sso_admin_password']
       end
 
       if attributes.has_key?(:'sso_domain_name')
         self.sso_domain_name = attributes[:'sso_domain_name']
-      end
-
-      if attributes.has_key?(:'sso_site_name')
-        self.sso_site_name = attributes[:'sso_site_name']
       end
     end
 
@@ -82,9 +82,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          sso_site_name == o.sso_site_name &&
           sso_admin_password == o.sso_admin_password &&
-          sso_domain_name == o.sso_domain_name &&
-          sso_site_name == o.sso_site_name
+          sso_domain_name == o.sso_domain_name
     end
 
     # @see the `==` method
@@ -96,7 +96,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [sso_admin_password, sso_domain_name, sso_site_name].hash
+      [sso_site_name, sso_admin_password, sso_domain_name].hash
     end
 
     # Builds the object from hash

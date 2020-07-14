@@ -11,19 +11,10 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceRecoveryReconciliationJobInfo
-    # Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses.
-    attr_accessor :cancelable
-
     attr_accessor :description
 
-    # Time when the operation is completed.
-    attr_accessor :end_time
-
-    # Description of the error if the operation status is \"FAILED\".
-    attr_accessor :error
-
-    # A list of localized messages.
-    attr_accessor :messages
+    # Name of the service containing the operation.
+    attr_accessor :service
 
     # Name of the operation associated with the task.
     attr_accessor :operation
@@ -31,52 +22,61 @@ module VSphereAutomation
     # Parent of the current task.
     attr_accessor :parent
 
-    # The progress of the job as a percentage.
-    attr_accessor :progress
+    attr_accessor :target
 
-    # Name of the service containing the operation.
-    attr_accessor :service
+    attr_accessor :status
+
+    # Flag to indicate whether or not the operation can be cancelled. The value may change as the operation progresses.
+    attr_accessor :cancelable
+
+    # Description of the error if the operation status is \"FAILED\".
+    attr_accessor :error
 
     # Time when the operation is started.
     attr_accessor :start_time
 
-    attr_accessor :status
+    # Time when the operation is completed.
+    attr_accessor :end_time
 
-    attr_accessor :target
+    # A list of localized messages.
+    attr_accessor :messages
+
+    # The progress of the job as a percentage.
+    attr_accessor :progress
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'cancelable' => :'cancelable',
         :'description' => :'description',
-        :'end_time' => :'end_time',
-        :'error' => :'error',
-        :'messages' => :'messages',
+        :'service' => :'service',
         :'operation' => :'operation',
         :'parent' => :'parent',
-        :'progress' => :'progress',
-        :'service' => :'service',
-        :'start_time' => :'start_time',
+        :'target' => :'target',
         :'status' => :'status',
-        :'target' => :'target'
+        :'cancelable' => :'cancelable',
+        :'error' => :'error',
+        :'start_time' => :'start_time',
+        :'end_time' => :'end_time',
+        :'messages' => :'messages',
+        :'progress' => :'progress'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'cancelable' => :'Boolean',
         :'description' => :'VapiStdLocalizableMessage',
-        :'end_time' => :'DateTime',
-        :'error' => :'String',
-        :'messages' => :'Array<VapiStdLocalizableMessage>',
+        :'service' => :'String',
         :'operation' => :'String',
         :'parent' => :'String',
-        :'progress' => :'Integer',
-        :'service' => :'String',
-        :'start_time' => :'DateTime',
+        :'target' => :'VapiStdDynamicID',
         :'status' => :'ApplianceRecoveryReconciliationJobStatus',
-        :'target' => :'VapiStdDynamicID'
+        :'cancelable' => :'Boolean',
+        :'error' => :'String',
+        :'start_time' => :'DateTime',
+        :'end_time' => :'DateTime',
+        :'messages' => :'Array<VapiStdLocalizableMessage>',
+        :'progress' => :'Integer'
       }
     end
 
@@ -88,26 +88,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'cancelable')
-        self.cancelable = attributes[:'cancelable']
-      end
-
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'end_time')
-        self.end_time = attributes[:'end_time']
-      end
-
-      if attributes.has_key?(:'error')
-        self.error = attributes[:'error']
-      end
-
-      if attributes.has_key?(:'messages')
-        if (value = attributes[:'messages']).is_a?(Array)
-          self.messages = value
-        end
+      if attributes.has_key?(:'service')
+        self.service = attributes[:'service']
       end
 
       if attributes.has_key?(:'operation')
@@ -118,24 +104,38 @@ module VSphereAutomation
         self.parent = attributes[:'parent']
       end
 
-      if attributes.has_key?(:'progress')
-        self.progress = attributes[:'progress']
-      end
-
-      if attributes.has_key?(:'service')
-        self.service = attributes[:'service']
-      end
-
-      if attributes.has_key?(:'start_time')
-        self.start_time = attributes[:'start_time']
+      if attributes.has_key?(:'target')
+        self.target = attributes[:'target']
       end
 
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
       end
 
-      if attributes.has_key?(:'target')
-        self.target = attributes[:'target']
+      if attributes.has_key?(:'cancelable')
+        self.cancelable = attributes[:'cancelable']
+      end
+
+      if attributes.has_key?(:'error')
+        self.error = attributes[:'error']
+      end
+
+      if attributes.has_key?(:'start_time')
+        self.start_time = attributes[:'start_time']
+      end
+
+      if attributes.has_key?(:'end_time')
+        self.end_time = attributes[:'end_time']
+      end
+
+      if attributes.has_key?(:'messages')
+        if (value = attributes[:'messages']).is_a?(Array)
+          self.messages = value
+        end
+      end
+
+      if attributes.has_key?(:'progress')
+        self.progress = attributes[:'progress']
       end
     end
 
@@ -147,24 +147,24 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
-      if @messages.nil?
-        invalid_properties.push('invalid value for "messages", messages cannot be nil.')
+      if @service.nil?
+        invalid_properties.push('invalid value for "service", service cannot be nil.')
       end
 
       if @operation.nil?
         invalid_properties.push('invalid value for "operation", operation cannot be nil.')
       end
 
-      if @progress.nil?
-        invalid_properties.push('invalid value for "progress", progress cannot be nil.')
-      end
-
-      if @service.nil?
-        invalid_properties.push('invalid value for "service", service cannot be nil.')
-      end
-
       if @status.nil?
         invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
+      if @messages.nil?
+        invalid_properties.push('invalid value for "messages", messages cannot be nil.')
+      end
+
+      if @progress.nil?
+        invalid_properties.push('invalid value for "progress", progress cannot be nil.')
       end
 
       invalid_properties
@@ -174,11 +174,11 @@ module VSphereAutomation
     # @return true if the model is valid
     def valid?
       return false if @description.nil?
-      return false if @messages.nil?
-      return false if @operation.nil?
-      return false if @progress.nil?
       return false if @service.nil?
+      return false if @operation.nil?
       return false if @status.nil?
+      return false if @messages.nil?
+      return false if @progress.nil?
       true
     end
 
@@ -187,18 +187,18 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          cancelable == o.cancelable &&
           description == o.description &&
-          end_time == o.end_time &&
-          error == o.error &&
-          messages == o.messages &&
+          service == o.service &&
           operation == o.operation &&
           parent == o.parent &&
-          progress == o.progress &&
-          service == o.service &&
-          start_time == o.start_time &&
+          target == o.target &&
           status == o.status &&
-          target == o.target
+          cancelable == o.cancelable &&
+          error == o.error &&
+          start_time == o.start_time &&
+          end_time == o.end_time &&
+          messages == o.messages &&
+          progress == o.progress
     end
 
     # @see the `==` method
@@ -210,7 +210,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [cancelable, description, end_time, error, messages, operation, parent, progress, service, start_time, status, target].hash
+      [description, service, operation, parent, target, status, cancelable, error, start_time, end_time, messages, progress].hash
     end
 
     # Builds the object from hash

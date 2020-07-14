@@ -28,13 +28,19 @@ describe 'ContentLibrarySubscriptionsPlacementInfo' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::ContentLibrarySubscriptionsPlacementInfo)
     end
   end
+  describe 'test attribute "folder"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "cluster"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "folder"' do
+  describe 'test attribute "resource_pool"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -47,12 +53,6 @@ describe 'ContentLibrarySubscriptionsPlacementInfo' do
   end
 
   describe 'test attribute "network"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "resource_pool"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

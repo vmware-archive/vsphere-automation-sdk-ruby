@@ -19,7 +19,7 @@ module VSphereAutomation
     # Retrieves operations for specific URL.
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [VapiRestNavigationOptionsResp|VapiStdErrorsNotFoundError|]
+    # @return [VapiRestNavigationOptionsResult|VapiStdErrorsNotFoundError|]
     def get(request_body, opts = {})
       data, _status_code, _headers = get_with_http_info(request_body, opts)
       data
@@ -29,7 +29,7 @@ module VSphereAutomation
     # @api private
     # @param request_body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(VapiRestNavigationOptionsResp|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
+    # @return [Array<(VapiRestNavigationOptionsResult|VapiStdErrorsNotFoundError|, Fixnum, Hash)>]  data, response status code and response headers
     def get_with_http_info(request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RestNavigationOptionsApi.get ...'
@@ -39,7 +39,7 @@ module VSphereAutomation
         fail ArgumentError, "Missing the required parameter 'request_body' when calling RestNavigationOptionsApi.get"
       end
       # resource path
-      local_var_path = '/rest/com/vmware/vapi/rest/navigation/options?~action=get'
+      local_var_path = '/com/vmware/vapi/rest/navigation/options?~action=get'
 
       # query parameters
       query_params = {}
@@ -64,7 +64,7 @@ module VSphereAutomation
         :body => post_body,
         :auth_names => auth_names,
 	:return_type => {
-	  '200' => 'VAPI::VapiRestNavigationOptionsResp',
+	  '200' => 'VAPI::VapiRestNavigationOptionsResult',
 	  '404' => 'VAPI::VapiStdErrorsNotFoundError',
 	})
       if @api_client.config.debugging

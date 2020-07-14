@@ -11,22 +11,22 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterHostSummary
-    attr_accessor :connection_state
-
     # Identifier of the host. When clients pass a value of this structure as a parameter, the field must be an identifier for the resource type: HostSystem. When operations return a value of this structure as a result, the field will be an identifier for the resource type: HostSystem.
     attr_accessor :host
 
     # Name of the host.
     attr_accessor :name
 
+    attr_accessor :connection_state
+
     attr_accessor :power_state
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'connection_state' => :'connection_state',
         :'host' => :'host',
         :'name' => :'name',
+        :'connection_state' => :'connection_state',
         :'power_state' => :'power_state'
       }
     end
@@ -34,9 +34,9 @@ module VSphereAutomation
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'connection_state' => :'VcenterHostConnectionState',
         :'host' => :'String',
         :'name' => :'String',
+        :'connection_state' => :'VcenterHostConnectionState',
         :'power_state' => :'VcenterHostPowerState'
       }
     end
@@ -49,16 +49,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'connection_state')
-        self.connection_state = attributes[:'connection_state']
-      end
-
       if attributes.has_key?(:'host')
         self.host = attributes[:'host']
       end
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'connection_state')
+        self.connection_state = attributes[:'connection_state']
       end
 
       if attributes.has_key?(:'power_state')
@@ -70,10 +70,6 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @connection_state.nil?
-        invalid_properties.push('invalid value for "connection_state", connection_state cannot be nil.')
-      end
-
       if @host.nil?
         invalid_properties.push('invalid value for "host", host cannot be nil.')
       end
@@ -82,15 +78,19 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
+      if @connection_state.nil?
+        invalid_properties.push('invalid value for "connection_state", connection_state cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @connection_state.nil?
       return false if @host.nil?
       return false if @name.nil?
+      return false if @connection_state.nil?
       true
     end
 
@@ -99,9 +99,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          connection_state == o.connection_state &&
           host == o.host &&
           name == o.name &&
+          connection_state == o.connection_state &&
           power_state == o.power_state
     end
 
@@ -114,7 +114,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [connection_state, host, name, power_state].hash
+      [host, name, connection_state, power_state].hash
     end
 
     # Builds the object from hash

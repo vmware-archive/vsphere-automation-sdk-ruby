@@ -11,32 +11,32 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterIpInfo
-    # Gateway IP address. If unset, no gateway is specified.
-    attr_accessor :gateway_ip
-
     attr_accessor :ip_family
 
     attr_accessor :ipv4
 
     attr_accessor :ipv6
 
+    # Gateway IP address. If unset, no gateway is specified.
+    attr_accessor :gateway_ip
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'gateway_ip' => :'gateway_ip',
         :'ip_family' => :'ip_family',
         :'ipv4' => :'ipv4',
-        :'ipv6' => :'ipv6'
+        :'ipv6' => :'ipv6',
+        :'gateway_ip' => :'gateway_ip'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'gateway_ip' => :'String',
         :'ip_family' => :'VcenterVchaClusterIpFamily',
         :'ipv4' => :'VcenterVchaClusterIpv4Info',
-        :'ipv6' => :'VcenterVchaClusterIpv6Info'
+        :'ipv6' => :'VcenterVchaClusterIpv6Info',
+        :'gateway_ip' => :'String'
       }
     end
 
@@ -48,10 +48,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'gateway_ip')
-        self.gateway_ip = attributes[:'gateway_ip']
-      end
-
       if attributes.has_key?(:'ip_family')
         self.ip_family = attributes[:'ip_family']
       end
@@ -62,6 +58,10 @@ module VSphereAutomation
 
       if attributes.has_key?(:'ipv6')
         self.ipv6 = attributes[:'ipv6']
+      end
+
+      if attributes.has_key?(:'gateway_ip')
+        self.gateway_ip = attributes[:'gateway_ip']
       end
     end
 
@@ -88,10 +88,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          gateway_ip == o.gateway_ip &&
           ip_family == o.ip_family &&
           ipv4 == o.ipv4 &&
-          ipv6 == o.ipv6
+          ipv6 == o.ipv6 &&
+          gateway_ip == o.gateway_ip
     end
 
     # @see the `==` method
@@ -103,7 +103,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [gateway_ip, ip_family, ipv4, ipv6].hash
+      [ip_family, ipv4, ipv6, gateway_ip].hash
     end
 
     # Builds the object from hash

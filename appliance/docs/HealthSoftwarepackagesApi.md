@@ -1,14 +1,14 @@
 # VSphereAutomation::Appliance::HealthSoftwarepackagesApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](HealthSoftwarepackagesApi.md#get) | **GET** /rest/appliance/health/software-packages | Get information on available software updates available in the remote vSphere Update Manager repository. Red indicates that security updates are available. Orange indicates that non-security updates are available. Green indicates that there are no updates available. Gray indicates that there was an error retreiving information on software updates.
+[**get**](HealthSoftwarepackagesApi.md#get) | **GET** /appliance/health/software-packages | Get information on available software updates available in the remote vSphere Update Manager repository. Red indicates that security updates are available. Orange indicates that non-security updates are available. Green indicates that there are no updates available. Gray indicates that there was an error retreiving information on software updates.
 
 
 # **get**
-> ApplianceHealthSoftwarepackagesResp get
+> ApplianceHealthSoftwarepackagesResult get
 
 Get information on available software updates available in the remote vSphere Update Manager repository. Red indicates that security updates are available. Orange indicates that non-security updates are available. Green indicates that there are no updates available. Gray indicates that there was an error retreiving information on software updates.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApplianceHealthSoftwarepackagesResp**](ApplianceHealthSoftwarepackagesResp.md)
+[**ApplianceHealthSoftwarepackagesResult**](ApplianceHealthSoftwarepackagesResult.md)
 
 ### Authorization
 

@@ -11,24 +11,24 @@ require 'date'
 module VSphereAutomation
   module Content
     class ContentLibraryItemDownloadsessionFilePrepare
-    attr_accessor :endpoint_type
-
     # Name of the file requested for download.
     attr_accessor :file_name
+
+    attr_accessor :endpoint_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'endpoint_type' => :'endpoint_type',
-        :'file_name' => :'file_name'
+        :'file_name' => :'file_name',
+        :'endpoint_type' => :'endpoint_type'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'endpoint_type' => :'ContentLibraryItemDownloadsessionFileEndpointType',
-        :'file_name' => :'String'
+        :'file_name' => :'String',
+        :'endpoint_type' => :'ContentLibraryItemDownloadsessionFileEndpointType'
       }
     end
 
@@ -40,12 +40,12 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'endpoint_type')
-        self.endpoint_type = attributes[:'endpoint_type']
-      end
-
       if attributes.has_key?(:'file_name')
         self.file_name = attributes[:'file_name']
+      end
+
+      if attributes.has_key?(:'endpoint_type')
+        self.endpoint_type = attributes[:'endpoint_type']
       end
     end
 
@@ -72,8 +72,8 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          endpoint_type == o.endpoint_type &&
-          file_name == o.file_name
+          file_name == o.file_name &&
+          endpoint_type == o.endpoint_type
     end
 
     # @see the `==` method
@@ -85,7 +85,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [endpoint_type, file_name].hash
+      [file_name, endpoint_type].hash
     end
 
     # Builds the object from hash

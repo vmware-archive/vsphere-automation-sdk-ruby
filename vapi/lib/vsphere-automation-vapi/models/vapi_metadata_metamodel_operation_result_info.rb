@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelOperationResultInfo
-    # English language documentation for the operation result element. It can contain HTML markup and Javadoc tags.
-    attr_accessor :documentation
+    attr_accessor :type
 
     # Generic metadata elements for the service element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
     attr_accessor :metadata
 
-    attr_accessor :type
+    # English language documentation for the operation result element. It can contain HTML markup and Javadoc tags.
+    attr_accessor :documentation
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'documentation' => :'documentation',
+        :'type' => :'type',
         :'metadata' => :'metadata',
-        :'type' => :'type'
+        :'documentation' => :'documentation'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'documentation' => :'String',
+        :'type' => :'VapiMetadataMetamodelType',
         :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
-        :'type' => :'VapiMetadataMetamodelType'
+        :'documentation' => :'String'
       }
     end
 
@@ -45,8 +45,8 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'metadata')
@@ -55,8 +55,8 @@ module VSphereAutomation
         end
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
       end
     end
 
@@ -64,16 +64,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
       if @metadata.nil?
         invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
       end
 
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
       end
 
       invalid_properties
@@ -82,9 +82,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @documentation.nil?
-      return false if @metadata.nil?
       return false if @type.nil?
+      return false if @metadata.nil?
+      return false if @documentation.nil?
       true
     end
 
@@ -93,9 +93,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          documentation == o.documentation &&
+          type == o.type &&
           metadata == o.metadata &&
-          type == o.type
+          documentation == o.documentation
     end
 
     # @see the `==` method
@@ -107,7 +107,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [documentation, metadata, type].hash
+      [type, metadata, documentation].hash
     end
 
     # Builds the object from hash

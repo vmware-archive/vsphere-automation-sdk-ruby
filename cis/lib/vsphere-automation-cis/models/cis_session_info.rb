@@ -11,30 +11,30 @@ require 'date'
 module VSphereAutomation
   module CIS
     class CisSessionInfo
+    # Fully qualified name of the end user that created the session, for example Administrator@vsphere.local. A typical use case for this information is in Graphical User Interfaces (GUI) or logging systems to visualize the identity of the current user.
+    attr_accessor :user
+
     # Time when the session was created.
     attr_accessor :created_time
 
     # Last time this session was used by passing the session key for invoking an API.
     attr_accessor :last_accessed_time
 
-    # Fully qualified name of the end user that created the session, for example Administrator@vsphere.local. A typical use case for this information is in Graphical User Interfaces (GUI) or logging systems to visualize the identity of the current user.
-    attr_accessor :user
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'user' => :'user',
         :'created_time' => :'created_time',
-        :'last_accessed_time' => :'last_accessed_time',
-        :'user' => :'user'
+        :'last_accessed_time' => :'last_accessed_time'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'user' => :'String',
         :'created_time' => :'DateTime',
-        :'last_accessed_time' => :'DateTime',
-        :'user' => :'String'
+        :'last_accessed_time' => :'DateTime'
       }
     end
 
@@ -46,6 +46,10 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
+      if attributes.has_key?(:'user')
+        self.user = attributes[:'user']
+      end
+
       if attributes.has_key?(:'created_time')
         self.created_time = attributes[:'created_time']
       end
@@ -53,16 +57,16 @@ module VSphereAutomation
       if attributes.has_key?(:'last_accessed_time')
         self.last_accessed_time = attributes[:'last_accessed_time']
       end
-
-      if attributes.has_key?(:'user')
-        self.user = attributes[:'user']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @user.nil?
+        invalid_properties.push('invalid value for "user", user cannot be nil.')
+      end
+
       if @created_time.nil?
         invalid_properties.push('invalid value for "created_time", created_time cannot be nil.')
       end
@@ -71,19 +75,15 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "last_accessed_time", last_accessed_time cannot be nil.')
       end
 
-      if @user.nil?
-        invalid_properties.push('invalid value for "user", user cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @user.nil?
       return false if @created_time.nil?
       return false if @last_accessed_time.nil?
-      return false if @user.nil?
       true
     end
 
@@ -92,9 +92,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          user == o.user &&
           created_time == o.created_time &&
-          last_accessed_time == o.last_accessed_time &&
-          user == o.user
+          last_accessed_time == o.last_accessed_time
     end
 
     # @see the `==` method
@@ -106,7 +106,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created_time, last_accessed_time, user].hash
+      [user, created_time, last_accessed_time].hash
     end
 
     # Builds the object from hash

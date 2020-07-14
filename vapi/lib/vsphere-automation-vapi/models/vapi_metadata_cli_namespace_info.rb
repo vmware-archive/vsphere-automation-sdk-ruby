@@ -11,29 +11,29 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataCliNamespaceInfo
-    # The children of this namespace in the tree of CLI namespaces.
-    attr_accessor :children
+    attr_accessor :identity
 
     # The text description displayed to the user in help output.
     attr_accessor :description
 
-    attr_accessor :identity
+    # The children of this namespace in the tree of CLI namespaces.
+    attr_accessor :children
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'children' => :'children',
+        :'identity' => :'identity',
         :'description' => :'description',
-        :'identity' => :'identity'
+        :'children' => :'children'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'children' => :'Array<VapiMetadataCliNamespaceIdentity>',
+        :'identity' => :'VapiMetadataCliNamespaceIdentity',
         :'description' => :'String',
-        :'identity' => :'VapiMetadataCliNamespaceIdentity'
+        :'children' => :'Array<VapiMetadataCliNamespaceIdentity>'
       }
     end
 
@@ -45,18 +45,18 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'children')
-        if (value = attributes[:'children']).is_a?(Array)
-          self.children = value
-        end
+      if attributes.has_key?(:'identity')
+        self.identity = attributes[:'identity']
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.has_key?(:'identity')
-        self.identity = attributes[:'identity']
+      if attributes.has_key?(:'children')
+        if (value = attributes[:'children']).is_a?(Array)
+          self.children = value
+        end
       end
     end
 
@@ -64,16 +64,16 @@ module VSphereAutomation
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @children.nil?
-        invalid_properties.push('invalid value for "children", children cannot be nil.')
+      if @identity.nil?
+        invalid_properties.push('invalid value for "identity", identity cannot be nil.')
       end
 
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
-      if @identity.nil?
-        invalid_properties.push('invalid value for "identity", identity cannot be nil.')
+      if @children.nil?
+        invalid_properties.push('invalid value for "children", children cannot be nil.')
       end
 
       invalid_properties
@@ -82,9 +82,9 @@ module VSphereAutomation
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @children.nil?
-      return false if @description.nil?
       return false if @identity.nil?
+      return false if @description.nil?
+      return false if @children.nil?
       true
     end
 
@@ -93,9 +93,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          children == o.children &&
+          identity == o.identity &&
           description == o.description &&
-          identity == o.identity
+          children == o.children
     end
 
     # @see the `==` method
@@ -107,7 +107,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [children, description, identity].hash
+      [identity, description, children].hash
     end
 
     # Builds the object from hash

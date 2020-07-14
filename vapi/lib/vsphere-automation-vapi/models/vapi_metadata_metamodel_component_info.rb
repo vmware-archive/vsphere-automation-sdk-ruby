@@ -11,35 +11,35 @@ require 'date'
 module VSphereAutomation
   module VAPI
     class VapiMetadataMetamodelComponentInfo
-    # English language documentation for a component. It can contain HTML markup and documentation tags (similar to Javadoc tags). The first sentence of the package documentation is a complete sentence that identifies the component by name and summarizes the purpose of the component.
-    attr_accessor :documentation
-
-    # Generic metadata for the component element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
-    attr_accessor :metadata
-
     # Dot separated name of the component element. The segments in the name reflect the organization of the APIs. The format of each segment is lower case with underscores. Each underscore represents a word boundary. If there are acronyms in the word, the capitalization is preserved. This format makes it easy to translate the segment into a different naming convention.
     attr_accessor :name
 
     # Metamodel metadata information of all the package elements contained in the component element. The key in the {@term map} is the identifier of the package element and the value in the {@term map} is the metamodel information of the package element.
     attr_accessor :packages
 
+    # Generic metadata for the component element. The key in the {@term map} is the name of the metadata element and the value is the data associated with that metadata element. <p> The {@link vapi.metadata.metamodel.MetadataIdentifier} contains possible string values for keys in the {@term map}.
+    attr_accessor :metadata
+
+    # English language documentation for a component. It can contain HTML markup and documentation tags (similar to Javadoc tags). The first sentence of the package documentation is a complete sentence that identifies the component by name and summarizes the purpose of the component.
+    attr_accessor :documentation
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'documentation' => :'documentation',
-        :'metadata' => :'metadata',
         :'name' => :'name',
-        :'packages' => :'packages'
+        :'packages' => :'packages',
+        :'metadata' => :'metadata',
+        :'documentation' => :'documentation'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'documentation' => :'String',
-        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
         :'name' => :'String',
-        :'packages' => :'Array<VapiMetadataMetamodelComponentInfoPackages>'
+        :'packages' => :'Array<VapiMetadataMetamodelComponentInfoPackages>',
+        :'metadata' => :'Array<VapiMetadataMetamodelComponentInfoMetadata>',
+        :'documentation' => :'String'
       }
     end
 
@@ -51,16 +51,6 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'documentation')
-        self.documentation = attributes[:'documentation']
-      end
-
-      if attributes.has_key?(:'metadata')
-        if (value = attributes[:'metadata']).is_a?(Array)
-          self.metadata = value
-        end
-      end
-
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
       end
@@ -70,20 +60,22 @@ module VSphereAutomation
           self.packages = value
         end
       end
+
+      if attributes.has_key?(:'metadata')
+        if (value = attributes[:'metadata']).is_a?(Array)
+          self.metadata = value
+        end
+      end
+
+      if attributes.has_key?(:'documentation')
+        self.documentation = attributes[:'documentation']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @documentation.nil?
-        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
-      end
-
-      if @metadata.nil?
-        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
-      end
-
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
@@ -92,16 +84,24 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "packages", packages cannot be nil.')
       end
 
+      if @metadata.nil?
+        invalid_properties.push('invalid value for "metadata", metadata cannot be nil.')
+      end
+
+      if @documentation.nil?
+        invalid_properties.push('invalid value for "documentation", documentation cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @documentation.nil?
-      return false if @metadata.nil?
       return false if @name.nil?
       return false if @packages.nil?
+      return false if @metadata.nil?
+      return false if @documentation.nil?
       true
     end
 
@@ -110,10 +110,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          documentation == o.documentation &&
-          metadata == o.metadata &&
           name == o.name &&
-          packages == o.packages
+          packages == o.packages &&
+          metadata == o.metadata &&
+          documentation == o.documentation
     end
 
     # @see the `==` method
@@ -125,7 +125,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [documentation, metadata, name, packages].hash
+      [name, packages, metadata, documentation].hash
     end
 
     # Builds the object from hash

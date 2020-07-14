@@ -11,6 +11,8 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVmGuestIdentityInfo
+    attr_accessor :name
+
     attr_accessor :family
 
     attr_accessor :full_name
@@ -21,27 +23,25 @@ module VSphereAutomation
     # IP address assigned by the guest operating system. If unset the guest does not have an IP address.
     attr_accessor :ip_address
 
-    attr_accessor :name
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'name' => :'name',
         :'family' => :'family',
         :'full_name' => :'full_name',
         :'host_name' => :'host_name',
-        :'ip_address' => :'ip_address',
-        :'name' => :'name'
+        :'ip_address' => :'ip_address'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'name' => :'VcenterVmGuestOS',
         :'family' => :'VcenterVmGuestOSFamily',
         :'full_name' => :'VapiStdLocalizableMessage',
         :'host_name' => :'String',
-        :'ip_address' => :'String',
-        :'name' => :'VcenterVmGuestOS'
+        :'ip_address' => :'String'
       }
     end
 
@@ -52,6 +52,10 @@ module VSphereAutomation
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
 
       if attributes.has_key?(:'family')
         self.family = attributes[:'family']
@@ -68,16 +72,16 @@ module VSphereAutomation
       if attributes.has_key?(:'ip_address')
         self.ip_address = attributes[:'ip_address']
       end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
       if @family.nil?
         invalid_properties.push('invalid value for "family", family cannot be nil.')
       end
@@ -90,20 +94,16 @@ module VSphereAutomation
         invalid_properties.push('invalid value for "host_name", host_name cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @name.nil?
       return false if @family.nil?
       return false if @full_name.nil?
       return false if @host_name.nil?
-      return false if @name.nil?
       true
     end
 
@@ -112,11 +112,11 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          name == o.name &&
           family == o.family &&
           full_name == o.full_name &&
           host_name == o.host_name &&
-          ip_address == o.ip_address &&
-          name == o.name
+          ip_address == o.ip_address
     end
 
     # @see the `==` method
@@ -128,7 +128,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [family, full_name, host_name, ip_address, name].hash
+      [name, family, full_name, host_name, ip_address].hash
     end
 
     # Builds the object from hash

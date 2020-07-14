@@ -11,27 +11,27 @@ require 'date'
 module VSphereAutomation
   module VCenter
     class VcenterVchaClusterWitnessRedeploySpec
-    attr_accessor :ha_ip
+    attr_accessor :vc_spec
 
     attr_accessor :placement
 
-    attr_accessor :vc_spec
+    attr_accessor :ha_ip
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'ha_ip' => :'ha_ip',
+        :'vc_spec' => :'vc_spec',
         :'placement' => :'placement',
-        :'vc_spec' => :'vc_spec'
+        :'ha_ip' => :'ha_ip'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'ha_ip' => :'VcenterVchaIpSpec',
+        :'vc_spec' => :'VcenterVchaCredentialsSpec',
         :'placement' => :'VcenterVchaPlacementSpec',
-        :'vc_spec' => :'VcenterVchaCredentialsSpec'
+        :'ha_ip' => :'VcenterVchaIpSpec'
       }
     end
 
@@ -43,16 +43,16 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'ha_ip')
-        self.ha_ip = attributes[:'ha_ip']
+      if attributes.has_key?(:'vc_spec')
+        self.vc_spec = attributes[:'vc_spec']
       end
 
       if attributes.has_key?(:'placement')
         self.placement = attributes[:'placement']
       end
 
-      if attributes.has_key?(:'vc_spec')
-        self.vc_spec = attributes[:'vc_spec']
+      if attributes.has_key?(:'ha_ip')
+        self.ha_ip = attributes[:'ha_ip']
       end
     end
 
@@ -79,9 +79,9 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          ha_ip == o.ha_ip &&
+          vc_spec == o.vc_spec &&
           placement == o.placement &&
-          vc_spec == o.vc_spec
+          ha_ip == o.ha_ip
     end
 
     # @see the `==` method
@@ -93,7 +93,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [ha_ip, placement, vc_spec].hash
+      [vc_spec, placement, ha_ip].hash
     end
 
     # Builds the object from hash

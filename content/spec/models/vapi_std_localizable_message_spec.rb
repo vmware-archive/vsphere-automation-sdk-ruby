@@ -28,7 +28,7 @@ describe 'VapiStdLocalizableMessage' do
       expect(@instance).to be_instance_of(VSphereAutomation::Content::VapiStdLocalizableMessage)
     end
   end
-  describe 'test attribute "args"' do
+  describe 'test attribute "id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -40,19 +40,7 @@ describe 'VapiStdLocalizableMessage' do
     end
   end
 
-  describe 'test attribute "id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "localized"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "params"' do
+  describe 'test attribute "args"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

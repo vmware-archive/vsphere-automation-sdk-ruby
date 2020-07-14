@@ -1,14 +1,14 @@
 # VSphereAutomation::VCenter::DeploymentInstallInitialConfigRemotePscThumbprintApi
 
-All URIs are relative to *https://&lt;vcenter&gt;*
+All URIs are relative to *https://&lt;vcenter&gt;/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](DeploymentInstallInitialConfigRemotePscThumbprintApi.md#get) | **GET** /rest/vcenter/deployment/install/initial-config/remote-psc/thumbprint | Gets the SHA1 thumbprint of the remote PSC.
+[**get**](DeploymentInstallInitialConfigRemotePscThumbprintApi.md#get) | **GET** /vcenter/deployment/install/initial-config/remote-psc/thumbprint | Gets the SHA1 thumbprint of the remote PSC.
 
 
 # **get**
-> VcenterDeploymentInstallInitialConfigRemotePscThumbprintResp get(spec_address, opts)
+> VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult get(spec_address, opts)
 
 Gets the SHA1 thumbprint of the remote PSC.
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VcenterDeploymentInstallInitialConfigRemotePscThumbprintResp**](VcenterDeploymentInstallInitialConfigRemotePscThumbprintResp.md)
+[**VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult**](VcenterDeploymentInstallInitialConfigRemotePscThumbprintResult.md)
 
 ### Authorization
 

@@ -28,15 +28,14 @@ describe VSphereAutomation::ApiClient do
         c.host = host
       end
     end
-    let(:url) { 'https://example.com/test' }
-    let(:return_type) { { '200' => 'FakeType' } }
+    let(:url) { 'https://example.com/rest/test' }
     subject { VSphereAutomation::ApiClient.new(config) }
 
     it 'adds headers to request' do
       headers = { 'foo' => 'bar' }
       stub_request(:get, url).with(headers: headers)
 
-      subject.call_api(:GET, '/test', header_params: headers, return_type: return_type)
+      subject.call_api(:GET, '/test', header_params: headers)
 
       expect(a_request(:get, url).with(headers: headers)).to have_been_made
     end
@@ -45,7 +44,7 @@ describe VSphereAutomation::ApiClient do
       query_params = { 'foo' => 'bar' }
       stub_request(:get, url).with(query: query_params)
 
-      subject.call_api(:GET, '/test', query_params: query_params, return_type: return_type)
+      subject.call_api(:GET, '/test', query_params: query_params)
 
       expect(a_request(:get, url).with(query: query_params)).to have_been_made
     end
@@ -58,7 +57,7 @@ describe VSphereAutomation::ApiClient do
       query_params = { key => value }
       stub_request(:post, url).with(query: query_params)
 
-      subject.call_api(:POST, "/test?#{key}=#{value}", return_type: return_type)
+      subject.call_api(:POST, "/test?#{key}=#{value}")
 
       expect(a_request(:post, url).with(query: query_params)).to have_been_made
     end
@@ -68,7 +67,7 @@ describe VSphereAutomation::ApiClient do
       body = form_params.to_a.map { |e| e.join('=') }.join('&')
       stub_request(:get, url).with(body: body)
 
-      subject.call_api(:GET, '/test', form_params: form_params, return_type: return_type)
+      subject.call_api(:GET, '/test', form_params: form_params)
 
       expect(a_request(:get, url).with(body: body)).to have_been_made
     end
@@ -79,7 +78,7 @@ describe VSphereAutomation::ApiClient do
                       config.auth_settings[auth_name][:value] }
       stub_request(:get, url).with(headers: auth_header)
 
-      subject.call_api(:GET, '/test', auth_names: [auth_name], return_type: return_type)
+      subject.call_api(:GET, '/test', auth_names: [auth_name])
 
       expect(a_request(:get, url)
                .with(headers: auth_header)).to have_been_made
@@ -92,7 +91,7 @@ describe VSphereAutomation::ApiClient do
                       config.auth_settings[auth_name][:value] }
       stub_request(:get, url).with(headers: auth_header)
 
-      subject.call_api(:GET, '/test', auth_names: [auth_name], return_type: return_type)
+      subject.call_api(:GET, '/test', auth_names: [auth_name])
 
       expect(a_request(:get, url)
                .with(headers: auth_header)).to have_been_made
@@ -106,8 +105,8 @@ describe VSphereAutomation::ApiClient do
       stub_request(:get, url + '1').to_return(headers: set_cookie_header)
       stub_request(:get, url + '2')
 
-      subject.call_api(:GET, '/test1', return_type: return_type)
-      subject.call_api(:GET, '/test2', auth_names: ['api_key'], return_type: return_type)
+      subject.call_api(:GET, '/test1')
+      subject.call_api(:GET, '/test2', auth_names: ['api_key'])
 
       expect(a_request(:get, url + '1')).to have_been_made
       expect(a_request(:get, url + '2')).to have_been_made
@@ -122,8 +121,8 @@ describe VSphereAutomation::ApiClient do
       stub_request(:get, url + '1').to_return(headers: auth_header)
       stub_request(:get, url + '2').with(headers: auth_header)
 
-      subject.call_api(:GET, '/test1', return_type: return_type)
-      subject.call_api(:GET, '/test2', auth_names: ['api_key'], return_type: return_type)
+      subject.call_api(:GET, '/test1')
+      subject.call_api(:GET, '/test2', auth_names: ['api_key'])
 
       expect(a_request(:get, url + '1')).to have_been_made
       expect(a_request(:get, url + '2')
@@ -134,7 +133,7 @@ describe VSphereAutomation::ApiClient do
       body = { foo: 'bar' }.to_json
       stub_request(:post, url).with(body: body)
 
-      subject.call_api(:POST, '/test', body: body, return_type: return_type)
+      subject.call_api(:POST, '/test', body: body)
 
       expect(a_request(:post, url).with(body: body)).to have_been_made
     end
@@ -145,7 +144,7 @@ describe VSphereAutomation::ApiClient do
 
       stub_request(:post, url).with(body: body, headers: content_type)
 
-      subject.call_api(:POST, '/test', body: body, header_params: content_type, return_type: return_type)
+      subject.call_api(:POST, '/test', body: body, header_params: content_type)
 
       expect(a_request(:post, url)
                .with(body: body, headers: content_type)).to have_been_made

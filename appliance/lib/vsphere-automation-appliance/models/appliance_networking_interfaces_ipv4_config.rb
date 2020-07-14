@@ -11,34 +11,34 @@ require 'date'
 module VSphereAutomation
   module Appliance
     class ApplianceNetworkingInterfacesIpv4Config
+    attr_accessor :mode
+
     # The IPv4 address, for example, \"10.20.80.191\".
     attr_accessor :address
-
-    # The IPv4 address of the default gateway. This configures the global default gateway on the appliance with the specified gateway address and interface. This gateway replaces the existing default gateway configured on the appliance. However, if the gateway address is link-local, then it is added for that interface. This does not support configuration of multiple global default gateways through different interfaces.
-    attr_accessor :default_gateway
-
-    attr_accessor :mode
 
     # The IPv4 CIDR prefix, for example, 24.  See http://www.oav.net/mirrors/cidr.html for netmask-to-prefix conversion.
     attr_accessor :prefix
 
+    # The IPv4 address of the default gateway. This configures the global default gateway on the appliance with the specified gateway address and interface. This gateway replaces the existing default gateway configured on the appliance. However, if the gateway address is link-local, then it is added for that interface. This does not support configuration of multiple global default gateways through different interfaces.
+    attr_accessor :default_gateway
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'address' => :'address',
-        :'default_gateway' => :'default_gateway',
         :'mode' => :'mode',
-        :'prefix' => :'prefix'
+        :'address' => :'address',
+        :'prefix' => :'prefix',
+        :'default_gateway' => :'default_gateway'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'address' => :'String',
-        :'default_gateway' => :'String',
         :'mode' => :'ApplianceNetworkingInterfacesIpv4Mode',
-        :'prefix' => :'Integer'
+        :'address' => :'String',
+        :'prefix' => :'Integer',
+        :'default_gateway' => :'String'
       }
     end
 
@@ -50,20 +50,20 @@ module VSphereAutomation
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'address')
-        self.address = attributes[:'address']
-      end
-
-      if attributes.has_key?(:'default_gateway')
-        self.default_gateway = attributes[:'default_gateway']
-      end
-
       if attributes.has_key?(:'mode')
         self.mode = attributes[:'mode']
       end
 
+      if attributes.has_key?(:'address')
+        self.address = attributes[:'address']
+      end
+
       if attributes.has_key?(:'prefix')
         self.prefix = attributes[:'prefix']
+      end
+
+      if attributes.has_key?(:'default_gateway')
+        self.default_gateway = attributes[:'default_gateway']
       end
     end
 
@@ -90,10 +90,10 @@ module VSphereAutomation
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          address == o.address &&
-          default_gateway == o.default_gateway &&
           mode == o.mode &&
-          prefix == o.prefix
+          address == o.address &&
+          prefix == o.prefix &&
+          default_gateway == o.default_gateway
     end
 
     # @see the `==` method
@@ -105,7 +105,7 @@ module VSphereAutomation
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, default_gateway, mode, prefix].hash
+      [mode, address, prefix, default_gateway].hash
     end
 
     # Builds the object from hash
