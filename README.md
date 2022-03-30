@@ -1,4 +1,6 @@
-# vSphere Automation SDK
+# DEPRECATED VMware vSphere Automation SDK for Ruby
+
+VMware has announced deprecation of vSphere Automation SDK for Ruby, effective March 29th, 2022. We highly recommend all our customers and partners to migrate from these SDKs to either [vSphere Automation SDK for Python](https://github.com/vmware/vsphere-automation-sdk-python) or [vSphere Automation SDK for Java](https://github.com/vmware/vsphere-automation-sdk-java/). Refer to https://ikb.vmware.com/s/article/87632 for more details.
 
 ## Installation
 
